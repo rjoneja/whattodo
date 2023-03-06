@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Random Activity Generator</title>
+    <style>
+      #result {
+        font-size: 32px;
+        text-align: center;
+        margin-top: 30px;
+        text-transform: uppercase;
+      }
+      #btn-generate {
+        font-size: 24px;
+        padding: 20px;
+        border-radius: 10px;
+        border: none;
+        background-color: #f9a825;
+        color: white;
+        text-align: center;
+        margin-top: 50px;
+        cursor: pointer;
+        transition: background-color 0.5s;
+        display: block;
+        margin: 0 auto;
+      }
+      #btn-generate:hover {
+        background-color: #ef6c00;
+      }
+      .map-link {
+        font-size: 10px;
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn-generate">WHAT SHALL WE DO TODAY?</button>
+    <div id="result"></div>
+
+    <script>
+      const activities = [
+        {
+          name: "Horniman Museum",
+          color: "red",
+          mapsQuery: "Horniman+Museum",
+        },
+        {
+          name: "Maritime Museum",
+          color: "blue",
+          mapsQuery: "National+Maritime+Museum",
+        },
+        {
+          name: "Burgess Park",
+          color: "green",
+          mapsQuery: "Burgess+Park",
+        },
+        {
+          name: "London Zoo",
+          color: "orange",
+          mapsQuery: "London+Zoo",
+        },
+        {
+          name: "Wave Lengths Pool",
+          color: "purple",
+          mapsQuery: "Wave+Lengths+Pool",
+        },
+        {
+          name: "Surrey Quays Softplay",
+          color: "pink",
+          mapsQuery: "Surrey+Quays+Softplay",
+        },
+      ];
+
+      const btnGenerate = document.getElementById("btn-generate");
+      const result = document.getElementById("result");
+
+      btnGenerate.addEventListener("click", () => {
+        const randomIndex = Math.floor(Math.random() * activities.length);
+        const activity = activities[randomIndex];
+        result.innerHTML = `<div style="background-color:${activity.color}; color:white; padding: 20px;">${activity.name}</div><a class="map-link" href="https://www.google.com/maps/search/${activity.mapsQuery}" target="_blank">Map</a>`;
+        document.body.style.backgroundColor = activity.color;
+      });
+    </script>
+  </body>
+</html>
