@@ -15,10 +15,12 @@ jobs:
       - name: Web sources
         if: ${{ env.ANTHROPIC_API_KEY != '' }}
         run: python3 ingest.py --days 21 --out docs/events.json
+        continue-on-error: true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - name: Instagram
         if: ${{ env.IG_TOKEN != '' }}
         run: python3 instagram.py --days 7 --out docs/events.json
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
           IG_TOKEN: "${{ secrets.IG_TOKEN }}"

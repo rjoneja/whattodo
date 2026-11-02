@@ -40,7 +40,7 @@ def get(url):
 
 def page_text(doc):
     doc = re.sub(r"(?is)<(script|style|nav|footer|header).*?</\1>", " ", doc)
-    return html.unescape(re.sub(r"\s+", " ", re.sub(r"(?s)<[^>]+>", " ", doc)))[:60000]
+    return html.unescape(re.sub(r"\s+", " ", re.sub(r"(?s)<[^>]+>", " ", doc)))[:40000]
 
 # ---------- JSON-LD ----------
 def ld_objects(doc):
@@ -143,15 +143,35 @@ def harvest_ics(venue):
     return evs
 
 # ---------- Claude ----------
+def parse_array(out):
+    """Tolerant JSON-array parse: handles trailing prose, truncated output, trailing commas; salvages complete objects."""
+    m = re.search(r"\[", out)
+    if not m: return []
+    text = out[m.start():]
+    for cand in (text, text[:text.rfind("]")+1] if "]" in text else text):
+        try: return json.loads(cand)
+        except Exception: pass
+    objs, depth, start = [], 0, None
+    for i, ch in enumerate(text):
+        if ch == "{":
+            if depth == 0: start = i
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0 and start is not None:
+                try: objs.append(json.loads(re.sub(r",\s*}", "}", text[start:i+1])))
+                except Exception: pass
+                start = None
+    return objs
+
 _client = None
-def claude(prompt, max_tokens=8000):
+def claude(prompt, max_tokens=16000):
     global _client
     import anthropic
     _client = _client or anthropic.Anthropic()
     msg = _client.messages.create(model=MODEL, max_tokens=max_tokens, messages=[{"role": "user", "content": prompt}])
     out = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
-    m = re.search(r"\[.*\]", out, re.S)
-    return json.loads(m.group(0)) if m else []
+    return parse_array(out)
 
 def harvest_html(venue, horizon):
     try: final, doc = get(venue.get("feed_url") or venue["url"])
@@ -161,7 +181,7 @@ def harvest_html(venue, horizon):
 Source: {venue['name']} ({final}). Today is {dt.date.today()}; include only events between today and {horizon}.
 Skip permanent attractions, online events, anything outside Greater London, anything without a usable date.
 If the venue is a single place, use lat {venue['lat']}, lon {venue['lon']}; otherwise estimate the venue's coordinates.
-Return ONLY a JSON array.
+Return ONLY a JSON array of at most 40 events, most relevant first.
 {SCHEMA}
 PAGE TEXT:
 {text}"""
@@ -221,12 +241,17 @@ def main():
         if a.only and v["id"] != a.only: continue
         feed = v.get("feed", "html")
         print(f"{v['id']} [{feed}]", file=sys.stderr)
-        if feed == "jsonld" or feed == "eventbrite": evs = harvest_jsonld(v)
-        elif feed == "ics": evs = harvest_ics(v)
-        elif feed in ("rss", "html"): evs = [] if a.no_llm else harvest_html(v, horizon)
-        else: evs = []
+        try:
+            if feed == "jsonld" or feed == "eventbrite": evs = harvest_jsonld(v)
+            elif feed == "ics": evs = harvest_ics(v)
+            elif feed in ("rss", "html"): evs = [] if a.no_llm else harvest_html(v, horizon)
+            else: evs = []
+        except Exception as ex:
+            print(f"  failed: {str(ex)[:120]}", file=sys.stderr); evs = []
         evs = [e for e in evs if (e.get("date") or e.get("to", "")) >= today.isoformat() and (e.get("date") or e.get("from", "")) <= horizon.isoformat()]
-        if evs and not a.no_llm: evs = enrich(evs, v)
+        if evs and not a.no_llm:
+            try: evs = enrich(evs, v)
+            except Exception as ex: print(f"  enrich failed: {str(ex)[:80]}", file=sys.stderr)
         elif evs:                                     # no LLM: venue defaults, description as blurb
             d = v.get("defaults", {})
             for e in evs:

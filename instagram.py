@@ -50,6 +50,27 @@ def refresh_token():
         print(json.loads(r.read().decode())["access_token"])
 
 # ---------- Claude ----------
+def parse_array(out):
+    """Tolerant JSON-array parse: handles trailing prose, truncated output, trailing commas; salvages complete objects."""
+    m = re.search(r"\[", out)
+    if not m: return []
+    text = out[m.start():]
+    for cand in (text, text[:text.rfind("]")+1] if "]" in text else text):
+        try: return json.loads(cand)
+        except Exception: pass
+    objs, depth, start = [], 0, None
+    for i, ch in enumerate(text):
+        if ch == "{":
+            if depth == 0: start = i
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0 and start is not None:
+                try: objs.append(json.loads(re.sub(r",\s*}", "}", text[start:i+1])))
+                except Exception: pass
+                start = None
+    return objs
+
 def extract(account, posts, today, horizon):
     import anthropic
     client = anthropic.Anthropic()
@@ -72,10 +93,9 @@ Return ONLY a JSON array of objects:
  "price": "free"|"£"|"££", "ages": [min,max], "kids": 0-3, "adults": 0-3, "dur": hours, "tags": [3-5 lowercase words],
  "blurb": your own words, max 30 words, practical, then EITHER "date": "YYYY-MM-DD" (+ optional "time") OR "from"/"to"}}
 Return [] if there is nothing."""})
-    msg = client.messages.create(model=MODEL, max_tokens=6000, messages=[{"role": "user", "content": content}])
+    msg = client.messages.create(model=MODEL, max_tokens=12000, messages=[{"role": "user", "content": content}])
     out = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
-    m = re.search(r"\[.*\]", out, re.S)
-    return json.loads(m.group(0)) if m else []
+    return parse_array(out)
 
 DATE_WORDS = re.compile(r"\b(\d{1,2}(st|nd|rd|th)?\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)|(mon|tues|wednes|thurs|fri|satur|sun)day|this weekend|next week|\d{1,2}[./]\d{1,2}|tonight|tomorrow)", re.I)
 def looks_like_poster(p):
