@@ -69,34 +69,40 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .cta:disabled{opacity:.45;box-shadow:none}
 .ghost{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink-2);align-self:flex-start}
 
-.strip{display:grid;grid-template-columns:1fr auto;gap:var(--u);align-items:center;padding:calc(var(--u)*1.5) calc(var(--u)*2);background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:13px}
+.strip{display:grid;grid-template-columns:1fr auto;gap:var(--u);align-items:center;padding:calc(var(--u)*1.1) calc(var(--u)*1.8);background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:13px}
 .strip .l{display:flex;flex-direction:column;gap:1px;min-width:0;color:var(--ink-2)}
 .strip .l b{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink)}
 .strip .wx{font-family:var(--display);font-weight:600;font-size:15px;text-align:right;line-height:1.2}
 .strip .wx small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--ink-2)}
 .wxpick{display:flex;gap:4px;align-items:center}.wxpick .chip{padding:5px 10px;font-size:13px}
 
-.wrap.fit{height:100%;min-height:0;overflow:hidden}
-#v-deck{display:flex;flex-direction:column;gap:calc(var(--u)*1.5);flex:1;min-height:0}
+.wrap.fit{height:100%;min-height:0;overflow:hidden;gap:calc(var(--u)*1.5);padding-block:var(--u) calc(var(--u)*9.5)}
+#v-deck{display:flex;flex-direction:column;gap:calc(var(--u)*1.25);flex:1;min-height:0}
+.wrap.fit .bar .ctx{display:none}
 .deck{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}
 .stack{position:relative;flex:1;min-height:260px}
-.card{position:absolute;top:0;left:0;right:0;height:auto;max-height:100%;min-height:58%;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:calc(var(--u)*1.5);padding:calc(var(--u)*2.5);touch-action:none;user-select:none;will-change:transform;overflow:hidden}
+.card{position:absolute;top:0;left:0;right:0;height:auto;max-height:100%;min-height:58%;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:calc(var(--u)*1.1);padding:calc(var(--u)*2);touch-action:none;user-select:none;will-change:transform;overflow:hidden}
 .card.under{transform:translate(0,calc(var(--u)*1.2)) scale(.97);opacity:.7}
 .card.under2{transform:translate(0,calc(var(--u)*2.4)) scale(.94);opacity:.4}
 .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--u)}
 .card .area{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
-.card h3{font-size:26px;font-weight:700;line-height:1.05;margin-top:4px}
-.price{font-family:var(--display);font-weight:700;font-size:15px;color:var(--verm);background:var(--verm-soft);border-radius:999px;padding:5px 10px;white-space:nowrap;line-height:1}
+.card h3{font-size:23px;font-weight:700;line-height:1.05;margin-top:3px}
+.card .img{margin:calc(var(--u)*-2) calc(var(--u)*-2) 0;height:clamp(84px,24vh,150px);flex:none;background:var(--paper-2) center/cover no-repeat;position:relative}
+.card .img small{position:absolute;right:6px;bottom:4px;font-size:9px;color:#fff;opacity:.75;text-shadow:0 0 3px #000}
+.card.tight .img{display:none}
+.card.tight .blurb{font-size:13.5px;line-height:1.35}
+.card.tight .why{display:none}
+.price{font-family:var(--display);font-weight:700;font-size:14px;color:var(--verm);background:var(--verm-soft);border-radius:999px;padding:5px 10px;white-space:nowrap;line-height:1}
 .price.free{color:var(--moss);background:var(--moss-soft)}
 .badges{display:flex;flex-wrap:wrap;gap:6px}
-.badge{font-family:var(--body);font-weight:500;font-size:12px;padding:4px 9px;border-radius:999px;background:var(--paper-2);color:var(--ink-2)}
+.badge{font-family:var(--body);font-weight:500;font-size:11.5px;padding:3px 8px;border-radius:999px;background:var(--paper-2);color:var(--ink-2)}
 .badge.hot{background:var(--verm-soft);color:var(--verm)}
 .badge.good{background:var(--moss-soft);color:var(--moss)}
 .badge.warn{background:var(--amber-soft);color:var(--amber)}
-.card .blurb{font-size:15px;color:var(--ink);margin:0;overflow:auto;min-height:0;line-height:1.5}
-.card .why{font-size:13px;color:var(--ink-2);margin:0}
+.card .blurb{font-size:14.5px;color:var(--ink);margin:0;overflow:hidden;min-height:0;line-height:1.42}
+.card .why{font-size:12.5px;color:var(--ink-2);margin:0}
 .card .why b{color:var(--ink);font-weight:500}
-.card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:var(--u);font-size:13px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:calc(var(--u)*1.2)}
+.card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:var(--u);font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:var(--u)}
 .card .foot a{font-family:var(--display);font-weight:600;font-size:14px}
 .stamp{position:absolute;top:calc(var(--u)*2.5);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;padding:6px 14px;border-radius:999px;opacity:0;pointer-events:none;color:#fff}
 .stamp.save{right:calc(var(--u)*2);background:var(--moss)}
@@ -104,8 +110,8 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .card.flying{transition:transform .35s cubic-bezier(.2,.7,.3,1),opacity .35s}
 .card.returning{transition:transform .25s}
 
-.actions{display:grid;grid-template-columns:1fr auto 1fr 1fr;gap:var(--u);padding-top:calc(var(--u)*1.5);flex:none}
-.act{border:1px solid var(--line);border-radius:14px;background:var(--card);font-family:var(--display);font-weight:600;padding:calc(var(--u)*1.5) var(--u);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1}
+.actions{display:grid;grid-template-columns:1fr auto 1fr 1fr;gap:var(--u);padding-top:calc(var(--u)*1.25);flex:none}
+.act{border:1px solid var(--line);border-radius:14px;background:var(--card);font-family:var(--display);font-weight:600;padding:calc(var(--u)*1.2) var(--u);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1}
 .act .k{font-size:20px}
 .act small{font-family:var(--body);font-weight:500;font-size:11px;color:var(--ink-2)}
 .act.pass .k{color:var(--verm)} .act.save{background:var(--moss);color:#fff;border-color:var(--moss)} .act.save small{color:#dff0ea}
@@ -468,10 +474,12 @@ function score(it,mins){
   return {s,why};
 }
 function openOn(it){ const d=fromIso(setup.date); if(it.days&&!it.days.includes(d.getDay())) return false; if(it.months&&!it.months.includes(d.getMonth()+1)) return false; return true; }
+let IMAGES={};
+async function loadImages(){ if(Object.keys(IMAGES).length) return; try{const r=await fetch('images.json',{cache:'no-store'}); if(r.ok) IMAGES=await r.json()}catch(e){} }
 async function loadEvents(){ if(EVENTS.length) return; try{const r=await fetch('events.json',{cache:'no-store'}); if(r.ok){const j=await r.json(); EVENTS=(j.events||[]).map(e=>Object.assign({event:true},e))}}catch(e){} }
 function eventOn(e){ const d=setup.date; if(e.date) return e.date===d; if(e.from&&d<e.from) return false; if(e.to&&d>e.to) return false; return true; }
 async function buildDeck(){
-  await Promise.all([getWeather(),loadEvents()]);
+  await Promise.all([getWeather(),loadEvents(),loadImages()]);
   const today=iso(new Date());
   const pool=[...ITEMS.filter(openOn),...EVENTS.filter(e=>eventOn(e)&&(!e.to||e.to>=today))];
   deck=pool.filter(it=>!['saved','done','pass'].includes(status[it.id]))
@@ -503,7 +511,8 @@ function cardHTML(c){
   if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5); badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left<=7?'Ends in '+left+' days':'Until '+nice(fromIso(c.to))}</span>`)} }
   if(status[c.id]==='again') badges.push(`<span class="badge good">You'd go again</span>`);
   const why=c.why.length?`<p class="why"><b>Why this:</b> ${c.why.slice(0,2).join(' · ')}</p>`:'';
-  return `<div class="stamp save">Save</div><div class="stamp pass">Nope</div>
+  const im=IMAGES[c.id]; const img=im&&im.url?`<div class="img" style="background-image:url('${im.url.replace(/'/g,'%27')}')">${im.credit?`<small>${im.credit}</small>`:''}</div>`:'';
+  return `${img}<div class="stamp save">Save</div><div class="stamp pass">Nope</div>
     <div class="top"><div><div class="area">${c.area}</div><h3>${c.name}</h3></div><div class="price ${c.price==='free'?'free':''}">${c.price==='free'?'Free':c.price}</div></div>
     <div class="badges">${badges.join('')}</div>
     <p class="blurb">${c.blurb}</p>${why}
@@ -513,6 +522,7 @@ function renderStack(){
   const st=$('#stack'); st.innerHTML='';
   if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Change the day or who's going, or check My list. More listings and one-off events coming.</span></div>`;}
   deck.slice(0,3).forEach((c,i)=>{const el=document.createElement('div');el.className='card'+(i===1?' under':i===2?' under2':'');el.style.zIndex=3-i;el.innerHTML=cardHTML(c);el.dataset.id=c.id;st.appendChild(el);if(i===0)attachDrag(el);});
+  requestAnimationFrame(()=>{const top=st.querySelector('.card');if(top&&top.scrollHeight>top.clientHeight+2){top.classList.add('tight');}});
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
   deck.slice(0,2).forEach(refineTravel);
 }
