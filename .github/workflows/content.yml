@@ -29,6 +29,7 @@ jobs:
         run: python3 images.py --events docs/events.json --out docs/images.json || true
       - run: |
           git config user.name bot && git config user.email bot@users.noreply.github.com
-          git add docs/events.json docs/images.json venues.json ig_seen.json 2>/dev/null
-          git commit -m "content $(date +%F)" || true
-          git push
+          git add docs/events.json docs/images.json venues.json
+          [ -f ig_seen.json ] && git add ig_seen.json
+          git commit -m "content $(date +%F)" || exit 0
+          git pull --rebase origin main && git push
