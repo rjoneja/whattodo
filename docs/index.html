@@ -1,0 +1,632 @@
+<title>WhatToDo?</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: quiet paper ground, white cards, one vermilion accent per screen; 8px rhythm. */
+:root{
+  --u:8px;
+  --paper:#F5F4F0; --paper-2:#ECEAE4; --ink:#1C1F2B; --ink-2:#5A5E6E; --ink-3:#9A9DA8;
+  --verm:#D1472B; --verm-soft:#FBEAE5; --verm-ink:#fff; --moss:#2F7D6B; --moss-soft:#E4F1ED; --amber:#B9770E; --amber-soft:#FBF1DC; --sky:#4E7FA6;
+  --line:#DDDAD2; --card:#FFFFFF; --shadow:0 1px 2px rgba(28,31,43,.06),0 8px 24px rgba(28,31,43,.06);
+  --display:"Jost","Futura","Avenir Next","Gill Sans",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#15171F; --paper-2:#1E2129; --ink:#EDEBE5; --ink-2:#B5B3AC; --ink-3:#7A7D88;
+  --verm:#E8603F; --verm-soft:#3A221B; --verm-ink:#15171F; --moss:#5BB09A; --moss-soft:#1E3330; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
+  --line:#2C2F39; --card:#1E2129; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --paper:#15171F; --paper-2:#1E2129; --ink:#EDEBE5; --ink-2:#B5B3AC; --ink-3:#7A7D88;
+  --verm:#E8603F; --verm-soft:#3A221B; --verm-ink:#15171F; --moss:#5BB09A; --moss-soft:#1E3330; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
+  --line:#2C2F39; --card:#1E2129; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark }
+
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--verm);outline-offset:2px}
+a{color:var(--verm);text-decoration:none}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.wrap{max-width:560px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:calc(var(--u)*2) calc(var(--u)*13);display:flex;flex-direction:column;gap:calc(var(--u)*3);min-height:100%}
+.view[hidden]{display:none}
+
+.bar{display:flex;align-items:center;justify-content:space-between;gap:var(--u);padding-top:var(--u)}
+.logo{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.02em;display:flex;align-items:baseline;gap:2px;user-select:none}
+.logo .q{color:var(--verm)}
+.bar .ctx{font-size:12px;color:var(--ink-2);text-align:right;line-height:1.35;max-width:62%}
+.bar .ctx b{color:var(--ink);font-weight:600}
+
+.eyebrow{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.step{display:flex;flex-direction:column;gap:calc(var(--u)*2)}
+.step h2{font-size:30px;font-weight:700}
+.step p.sub{margin:0;color:var(--ink-2);font-size:15px}
+
+.blocks{display:grid;gap:var(--u)}
+.block{display:flex;align-items:center;justify-content:space-between;gap:var(--u);width:100%;min-height:calc(var(--u)*9);padding:calc(var(--u)*2) calc(var(--u)*2.5);border:1px solid var(--line);border-radius:14px;background:var(--card);text-align:left;font-family:var(--display);font-weight:600;font-size:19px;line-height:1.15;box-shadow:var(--shadow);transition:transform .08s,border-color .12s}
+.block small{display:block;font-family:var(--body);font-weight:400;font-size:13px;color:var(--ink-2);margin-top:2px}
+.block .chev{font-family:var(--display);font-weight:500;font-size:22px;color:var(--ink-3);line-height:1}
+.block:active{transform:scale(.985)}
+.block.on{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.block.on small{color:var(--paper-2)} .block.on .chev{color:var(--verm)}
+
+.chips{display:flex;flex-wrap:wrap;gap:var(--u)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:calc(var(--u)*1.1) calc(var(--u)*2);font-family:var(--display);font-weight:600;font-size:15px;background:var(--card);line-height:1.15}
+.chip small{display:block;font-family:var(--body);font-weight:400;font-size:11px;color:var(--ink-2)}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip.on small{color:var(--paper-2)}
+.chip:disabled{opacity:.45}
+
+.field{display:flex;flex-direction:column;gap:var(--u)}
+.field label{font-family:var(--display);font-weight:600;font-size:15px}
+.field input[type=text],.field input[type=date]{width:100%;min-width:0;padding:calc(var(--u)*1.6) calc(var(--u)*2);border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:600 19px var(--display);text-transform:uppercase;letter-spacing:.05em}
+.field input[type=date]{text-transform:none;font-size:16px;font-weight:500}
+.hint{font-size:13px;color:var(--ink-2)}
+.err{color:var(--verm);font-size:14px;font-weight:500}
+.row{display:flex;gap:var(--u);align-items:center;flex-wrap:wrap}
+.cta{align-self:stretch;display:flex;justify-content:center;align-items:center;gap:var(--u);background:var(--verm);color:var(--verm-ink);font-family:var(--display);font-weight:700;font-size:19px;padding:calc(var(--u)*2.2);border-radius:14px;box-shadow:var(--shadow)}
+.cta:disabled{opacity:.45;box-shadow:none}
+.ghost{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink-2);align-self:flex-start}
+
+.strip{display:grid;grid-template-columns:1fr auto;gap:var(--u);align-items:center;padding:calc(var(--u)*1.5) calc(var(--u)*2);background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:13px}
+.strip .l{display:flex;flex-direction:column;gap:1px;min-width:0;color:var(--ink-2)}
+.strip .l b{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink)}
+.strip .wx{font-family:var(--display);font-weight:600;font-size:15px;text-align:right;line-height:1.2}
+.strip .wx small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--ink-2)}
+.wxpick{display:flex;gap:4px;align-items:center}.wxpick .chip{padding:5px 10px;font-size:13px}
+
+.wrap.fit{height:100%;min-height:0;overflow:hidden}
+#v-deck{display:flex;flex-direction:column;gap:calc(var(--u)*1.5);flex:1;min-height:0}
+.deck{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}
+.stack{position:relative;flex:1;min-height:260px}
+.card{position:absolute;top:0;left:0;right:0;height:auto;max-height:100%;min-height:58%;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:calc(var(--u)*1.5);padding:calc(var(--u)*2.5);touch-action:none;user-select:none;will-change:transform;overflow:hidden}
+.card.under{transform:translate(0,calc(var(--u)*1.2)) scale(.97);opacity:.7}
+.card.under2{transform:translate(0,calc(var(--u)*2.4)) scale(.94);opacity:.4}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--u)}
+.card .area{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.card h3{font-size:26px;font-weight:700;line-height:1.05;margin-top:4px}
+.price{font-family:var(--display);font-weight:700;font-size:15px;color:var(--verm);background:var(--verm-soft);border-radius:999px;padding:5px 10px;white-space:nowrap;line-height:1}
+.price.free{color:var(--moss);background:var(--moss-soft)}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-family:var(--body);font-weight:500;font-size:12px;padding:4px 9px;border-radius:999px;background:var(--paper-2);color:var(--ink-2)}
+.badge.hot{background:var(--verm-soft);color:var(--verm)}
+.badge.good{background:var(--moss-soft);color:var(--moss)}
+.badge.warn{background:var(--amber-soft);color:var(--amber)}
+.card .blurb{font-size:15px;color:var(--ink);margin:0;overflow:auto;min-height:0;line-height:1.5}
+.card .why{font-size:13px;color:var(--ink-2);margin:0}
+.card .why b{color:var(--ink);font-weight:500}
+.card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:var(--u);font-size:13px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:calc(var(--u)*1.2)}
+.card .foot a{font-family:var(--display);font-weight:600;font-size:14px}
+.stamp{position:absolute;top:calc(var(--u)*2.5);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;padding:6px 14px;border-radius:999px;opacity:0;pointer-events:none;color:#fff}
+.stamp.save{right:calc(var(--u)*2);background:var(--moss)}
+.stamp.pass{left:calc(var(--u)*2);background:var(--verm)}
+.card.flying{transition:transform .35s cubic-bezier(.2,.7,.3,1),opacity .35s}
+.card.returning{transition:transform .25s}
+
+.actions{display:grid;grid-template-columns:1fr auto 1fr 1fr;gap:var(--u);padding-top:calc(var(--u)*1.5);flex:none}
+.act{border:1px solid var(--line);border-radius:14px;background:var(--card);font-family:var(--display);font-weight:600;padding:calc(var(--u)*1.5) var(--u);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1}
+.act .k{font-size:20px}
+.act small{font-family:var(--body);font-weight:500;font-size:11px;color:var(--ink-2)}
+.act.pass .k{color:var(--verm)} .act.save{background:var(--moss);color:#fff;border-color:var(--moss)} .act.save small{color:#dff0ea}
+.act.undo{padding-inline:calc(var(--u)*1.5)}
+.act:disabled{opacity:.4;box-shadow:none}
+.act:active{transform:scale(.97)}
+.empty{position:absolute;inset:0;max-height:100%;border:1px dashed var(--line);border-radius:18px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:var(--u);text-align:center;padding:calc(var(--u)*3);color:var(--ink-2)}
+.empty b{font-family:var(--display);font-size:22px;color:var(--ink);font-weight:600}
+
+.sheet{position:fixed;inset:0;background:rgba(20,22,35,.5);display:flex;align-items:flex-end;justify-content:center;z-index:30;padding:0 max(16px,env(safe-area-inset-left,0px)) calc(env(safe-area-inset-bottom,0px) + 12px) max(16px,env(safe-area-inset-right,0px))}
+.sheet[hidden]{display:none}
+.sheet .panel{background:var(--card);border-radius:18px;box-shadow:var(--shadow);width:100%;max-width:520px;padding:calc(var(--u)*3);display:flex;flex-direction:column;gap:calc(var(--u)*2)}
+.sheet h3{font-size:21px;font-weight:600}
+
+.tabs{display:flex;background:var(--paper-2);border-radius:999px;padding:4px;gap:2px}
+.tab{flex:1;padding:calc(var(--u)*1.1) 0;font-family:var(--display);font-weight:600;font-size:13px;color:var(--ink-2);border-radius:999px}
+.tab.on{color:var(--ink);background:var(--card);box-shadow:var(--shadow)}
+.items{display:flex;flex-direction:column;gap:var(--u)}
+.item{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:calc(var(--u)*1.6) calc(var(--u)*2);display:grid;grid-template-columns:1fr auto;gap:var(--u);align-items:center}
+.item b{font-family:var(--display);font-size:17px;font-weight:600;display:block}
+.item .m{font-size:12px;color:var(--ink-2)}
+.item .mv{display:flex;gap:4px}
+.mini{border:1px solid var(--line);border-radius:999px;font-family:var(--display);font-weight:600;font-size:12px;padding:6px 10px;background:var(--card)}
+
+/* map */
+.map{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;aspect-ratio:1/1.15;max-width:100%}
+.map svg{width:100%;height:100%;display:block;touch-action:none}
+.map .river{fill:none;stroke:var(--sky);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;opacity:.35}
+.map .ring{fill:none;stroke:var(--line);stroke-dasharray:3 5}
+.map .lbl{font:500 10px var(--body);fill:var(--ink-3);text-anchor:middle}
+.map .dot{cursor:pointer}
+.map .dot circle{stroke:var(--card);stroke-width:1.5}
+.map .dot.sel circle{stroke:var(--ink);stroke-width:2.5}
+.map .you circle{fill:var(--ink)} .map .you text{font:600 11px var(--display);fill:var(--ink);text-anchor:middle}
+.maplegend{display:flex;gap:calc(var(--u)*2);font-size:12px;color:var(--ink-2);flex-wrap:wrap}
+.maplegend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.mapsel{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:calc(var(--u)*1.6) calc(var(--u)*2);display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow)}
+.mapsel b{font-family:var(--display);font-size:17px;font-weight:600}
+.mapsel .m{font-size:13px;color:var(--ink-2)}
+.mapsel .row{gap:6px}
+.toggle{display:flex;gap:4px;background:var(--paper-2);border-radius:999px;padding:3px}
+.toggle button{padding:6px 12px;border-radius:999px;font-family:var(--display);font-weight:600;font-size:13px;color:var(--ink-2)}
+.toggle button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding:0 max(16px,env(safe-area-inset-left,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-right,0px));z-index:20}
+.nav[hidden]{display:none}
+.nav>div{max-width:560px;margin:0 auto;display:flex;width:100%}
+.nav button{flex:1;padding:calc(var(--u)*1.3) 0 calc(var(--u)*1.2);font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.04em;color:var(--ink-3);display:flex;flex-direction:column;align-items:center;gap:3px}
+.nav button .k{font-size:18px;line-height:1}
+.nav button.on{color:var(--verm)}
+
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--u)}
+.tile{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:calc(var(--u)*1.5);font-variant-numeric:tabular-nums}
+.tile b{font-family:var(--display);font-size:26px;font-weight:700;display:block;line-height:1}
+.tile span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+td,th{text-align:left;padding:7px 4px;border-bottom:1px solid var(--line)}
+th{font-family:var(--display);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+td.n{text-align:right}
+.tblwrap{overflow-x:auto}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 76px);transform:translateX(-50%);background:var(--ink);color:var(--paper);font-family:var(--display);font-weight:600;padding:10px 16px;border-radius:999px;z-index:40;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion: reduce){.card.flying,.card.returning,.block,.toast{transition:none}}
+@media (max-width:380px){.step h2{font-size:27px}.card h3{font-size:23px}.block{font-size:17px}}
+</style>
+
+<div class="wrap">
+  <div class="bar">
+    <button class="logo" id="logo" aria-label="WhatToDo home">WhatToDo<span class="q">?</span></button>
+    <div class="ctx" id="ctx"></div>
+  </div>
+
+  <!-- SETUP -->
+  <section class="view" id="v-setup">
+    <div class="step" id="s-who">
+      <div class="eyebrow">Step 1 of 3</div>
+      <h2>Who's going?</h2>
+      <div class="blocks" id="who"></div>
+      <div id="ages" hidden>
+        <div class="field"><label>How old are the kids?</label>
+          <div class="chips" id="ageChips"></div></div>
+      </div>
+    </div>
+    <div class="step" id="s-when" hidden>
+      <div class="eyebrow">Step 2 of 3</div>
+      <h2>When?</h2>
+      <div class="chips" id="whenChips"></div>
+      <div class="field"><label for="dateIn">Or pick a date</label><input type="date" id="dateIn"></div>
+    </div>
+    <div class="step" id="s-where" hidden>
+      <div class="eyebrow">Step 3 of 3</div>
+      <h2>Starting from?</h2>
+      <div class="field"><label for="pc">Postcode</label>
+        <input type="text" id="pc" placeholder="SE4 2AB" autocomplete="postal-code" inputmode="text" maxlength="8">
+        <div class="hint">Only used to work out travel time and weather. Stays on your phone.</div>
+        <div class="err" id="pcErr" hidden></div></div>
+      <div class="field"><label>Got a car?</label>
+        <div class="chips">
+          <button class="chip" data-car="0" id="carNo">No <small>bus, tube, train, feet</small></button>
+          <button class="chip" data-car="1" id="carYes">Yes <small>happy to drive</small></button>
+        </div></div>
+      <button class="cta" id="go" disabled>Show me things <span>›</span></button>
+    </div>
+    <div class="row" id="setupNav"><button class="ghost" id="back" hidden>‹ Back</button></div>
+  </section>
+
+  <!-- DECK -->
+  <section class="view" id="v-deck" hidden>
+    <div class="strip">
+      <div class="l"><b id="stripDate"></b><span id="stripFrom"></span></div>
+      <div class="wx" id="stripWx"></div>
+    </div>
+    <div class="deck">
+      <div class="stack" id="stack"></div>
+      <div class="actions">
+        <button class="act pass" id="bPass"><span class="k">✕</span><small>Not for me</small></button>
+        <button class="act undo" id="bUndo" disabled><span class="k">↶</span><small>Back</small></button>
+        <button class="act been" id="bBeen"><span class="k">✓</span><small>Been</small></button>
+        <button class="act save" id="bSave"><span class="k">♥</span><small>Save it</small></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIST -->
+  <section class="view" id="v-list" hidden>
+    <h2 style="font-size:30px">My list</h2>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-tab="saved">Saved</button>
+      <button class="tab" data-tab="again">Go again</button>
+      <button class="tab" data-tab="done">Done</button>
+      <button class="tab" data-tab="pass">Passed</button>
+    </div>
+    <div class="items" id="items"></div>
+  </section>
+
+  <!-- MAP -->
+  <section class="view" id="v-map" hidden>
+    <div class="row" style="justify-content:space-between">
+      <h2 style="font-size:26px">Around you</h2>
+      <div class="toggle" id="mapMode"><button data-m="deck" class="on">Suggested</button><button data-m="saved">Saved</button></div>
+    </div>
+    <div class="map" id="map"></div>
+    <div class="maplegend"><span><i style="background:var(--verm)"></i>Ticketed</span><span><i style="background:var(--moss)"></i>Free</span><span><i style="background:var(--amber)"></i>One-off event</span><span>Bigger dot = better match · rings at 30 and 60 min</span></div>
+    <div class="mapsel" id="mapSel" hidden></div>
+  </section>
+
+  <!-- STATS (hidden: #stats or tap logo 7 times) -->
+  <section class="view" id="v-stats" hidden>
+    <div class="eyebrow">Private · this device only</div>
+    <h2 style="font-size:30px">Usage</h2>
+    <div class="tiles" id="tiles"></div>
+    <div class="tblwrap"><table id="topSaved"></table></div>
+    <div class="tblwrap"><table id="mix"></table></div>
+    <div class="tblwrap"><table id="log"></table></div>
+    <div class="row"><button class="chip" id="copyLog">Copy event log (JSON)</button><button class="chip" id="wipe">Reset everything</button></div>
+    <p class="hint">Stats live in this browser only. For pooled stats across users you'll need a backend (PostHog or a tiny endpoint) when this moves to its own domain.</p>
+  </section>
+</div>
+
+<nav class="nav" id="nav" hidden><div>
+  <button data-go="deck" class="on"><span class="k">⇄</span>Swipe</button>
+  <button data-go="map"><span class="k">◎</span>Map</button>
+  <button data-go="list"><span class="k">♥</span>My list</button>
+  <button data-go="setup"><span class="k">⚙</span>Change</button>
+</div></nav>
+
+<div class="sheet" id="sheet" hidden><div class="panel">
+  <h3 id="sheetTitle">You've been. Would you go again?</h3>
+  <div class="blocks">
+    <button class="block" id="againYes">Yes, I'd go again <small>Stays in the mix, less often</small><span class="chev">›</span></button>
+    <button class="block" id="againNo">No, done it <small>Won't show again</small><span class="chev">›</span></button>
+  </div>
+  <button class="ghost" id="sheetCancel">Cancel</button>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- DATA: London regulars (seed set; events feed to follow) ---------- */
+/* in: 'in'|'out'|'both'; price: 'free'|'£'|'££'; ages:[min,max] or null; kids/adults: 0–3 appeal; days: [0=Sun..6] or null; months: [1..12] or null; dur: hours */
+const ITEMS=[
+{id:'horniman',name:"Horniman Museum & Gardens",area:'Forest Hill',lat:51.4411,lon:-0.0612,in:'both',price:'free',ages:[0,99],kids:3,adults:2,dur:3,tags:['museum','gardens','animals','views'],blurb:"Walrus, world instruments, a butterfly house and 16 acres of gardens with one of the best views in south London. The aquarium is a small extra.",url:'https://www.horniman.ac.uk'},
+{id:'nhm',name:"Natural History Museum",area:'South Kensington',lat:51.4967,lon:-0.1764,in:'in',price:'free',ages:[2,99],kids:3,adults:2,dur:3,tags:['museum','dinosaurs','science'],blurb:"Dinosaurs, the blue whale in Hintze Hall and the Darwin Centre. Book a free timed slot at weekends; go for 10am opening or after 3pm.",url:'https://www.nhm.ac.uk'},
+{id:'sciencemuseum',name:"Science Museum",area:'South Kensington',lat:51.4978,lon:-0.1745,in:'in',price:'free',ages:[3,99],kids:3,adults:2,dur:3,tags:['museum','science','hands-on'],blurb:"Flight, space, engines and the Garden play area in the basement. Wonderlab (ticketed) is the bit kids remember.",url:'https://www.sciencemuseum.org.uk'},
+{id:'crystalpalace',name:"Crystal Palace Park Dinosaurs",area:'Crystal Palace',lat:51.4195,lon:-0.0671,in:'out',price:'free',ages:[0,99],kids:3,adults:1,dur:2,tags:['park','dinosaurs','walk','playground'],blurb:"Victorian dinosaurs around the lake, a maze, a farm and a huge playground. Add the sphinxes on the terraces and a coffee at the café.",url:'https://www.crystalpalaceparktrust.org'},
+{id:'dulwich',name:"Dulwich Picture Gallery",area:'Dulwich',lat:51.4463,lon:-0.0863,in:'in',price:'££',ages:[6,99],kids:1,adults:3,dur:2,tags:['gallery','art','quiet'],blurb:"The oldest public gallery in England, small enough to see in an hour. Pair it with a walk through Dulwich Park and the Village.",url:'https://www.dulwichpicturegallery.org.uk'},
+{id:'greenwichpark',name:"Greenwich Park & Royal Observatory",area:'Greenwich',lat:51.4769,lon:-0.0005,in:'both',price:'free',ages:[0,99],kids:2,adults:3,dur:3,tags:['park','views','history','walk'],blurb:"Climb to the Observatory for the view down to the river, stand on the Meridian line (ticket for inside), then the market and the Painted Hall.",url:'https://www.royalparks.org.uk/visit/parks/greenwich-park'},
+{id:'nmm',name:"National Maritime Museum",area:'Greenwich',lat:51.4810,lon:-0.0052,in:'in',price:'free',ages:[2,99],kids:3,adults:2,dur:2,tags:['museum','ships','hands-on'],blurb:"Free, rarely rammed, with the AHOY! play gallery for under-7s and the All Hands deck for older kids. Good rainy-day call.",url:'https://www.rmg.co.uk/national-maritime-museum'},
+{id:'cuttysark',name:"Cutty Sark",area:'Greenwich',lat:51.4829,lon:-0.0096,in:'in',price:'££',ages:[4,99],kids:2,adults:2,dur:1.5,tags:['ships','history'],blurb:"Walk under the hull of the fastest tea clipper ever built. Short visit, best combined with the park and market.",url:'https://www.rmg.co.uk/cutty-sark'},
+{id:'tatemodern',name:"Tate Modern",area:'Bankside',lat:51.5076,lon:-0.0994,in:'in',price:'free',ages:[4,99],kids:2,adults:3,dur:2,tags:['gallery','art','views'],blurb:"The Turbine Hall commission is the free spectacle; the Blavatnik viewing level is the free view. Kids run; adults linger.",url:'https://www.tate.org.uk/visit/tate-modern'},
+{id:'southbank',name:"South Bank walk",area:'Waterloo',lat:51.5056,lon:-0.1164,in:'out',price:'free',ages:[0,99],kids:2,adults:3,dur:2,tags:['walk','river','food','buskers'],blurb:"Westminster to Tower Bridge along the river: skate park, book market under the bridge, the Southbank Centre free foyers, street food at the back.",url:'https://www.southbankcentre.co.uk'},
+{id:'docklands',name:"Museum of London Docklands",area:'Canary Wharf',lat:51.5076,lon:-0.0239,in:'in',price:'free',ages:[3,99],kids:2,adults:3,dur:2,tags:['museum','history','hands-on'],blurb:"Sailortown, the sugar and slavery galleries, and Mudlarks for under-8s. Warehouse building, quiet, free.",url:'https://www.londonmuseum.org.uk/docklands'},
+{id:'va',name:"V&A South Kensington",area:'South Kensington',lat:51.4966,lon:-0.1722,in:'in',price:'free',ages:[6,99],kids:1,adults:3,dur:2.5,tags:['museum','design','art','quiet'],blurb:"The Cast Courts, the jewellery gallery, the garden café. Free hands-on backpacks for kids at the desk.",url:'https://www.vam.ac.uk'},
+{id:'youngva',name:"Young V&A",area:'Bethnal Green',lat:51.5290,lon:-0.0557,in:'in',price:'free',ages:[0,14],kids:3,adults:1,dur:2,tags:['museum','hands-on','play'],blurb:"Rebuilt around Play, Imagine and Design galleries. Under-5s get the most out of it; book a free slot.",url:'https://www.vam.ac.uk/young'},
+{id:'kew',name:"Kew Gardens",area:'Kew',lat:51.4787,lon:-0.2956,in:'both',price:'££',ages:[0,99],kids:3,adults:3,dur:4,tags:['gardens','walk','play','views'],blurb:"Treetop walkway, the Children's Garden, the glasshouses when it rains. A full day; cheaper after 4pm in summer.",url:'https://www.kew.org'},
+{id:'wetland',name:"London Wetland Centre",area:'Barnes',lat:51.4766,lon:-0.2363,in:'both',price:'££',ages:[2,99],kids:3,adults:2,dur:3,tags:['nature','birds','walk','play'],blurb:"Otters at feeding time, hides, a big adventure playground and a wobbly bridge. Bring wellies if it's been wet.",url:'https://www.wwt.org.uk/wetland-centres/london'},
+{id:'battersea',name:"Battersea Park",area:'Battersea',lat:51.4791,lon:-0.1566,in:'out',price:'free',ages:[0,99],kids:3,adults:2,dur:2.5,tags:['park','zoo','playground','river'],blurb:"The Peace Pagoda, a children's zoo (paid), boating lake, and the river path to the Power Station shops and food hall.",url:'https://www.wandsworth.gov.uk/battersea-park'},
+{id:'heath',name:"Hampstead Heath & Parliament Hill",area:'Hampstead',lat:51.5607,lon:-0.1626,in:'out',price:'free',ages:[0,99],kids:2,adults:3,dur:3,tags:['walk','views','ponds','nature'],blurb:"The view from Parliament Hill, the ponds, Kenwood House (free) and its café. Proper countryside feel an hour from anywhere.",url:'https://www.cityoflondon.gov.uk/things-to-do/green-spaces/hampstead-heath'},
+{id:'richmond',name:"Richmond Park deer walk",area:'Richmond',lat:51.4429,lon:-0.2730,in:'out',price:'free',ages:[0,99],kids:2,adults:3,dur:3,tags:['walk','nature','deer','views'],blurb:"Red and fallow deer, the Isabella Plantation, and the protected view of St Paul's from King Henry's Mound. Far easier with a car.",url:'https://www.royalparks.org.uk/visit/parks/richmond-park'},
+{id:'eltham',name:"Eltham Palace",area:'Eltham',lat:51.4475,lon:0.0509,in:'both',price:'££',ages:[4,99],kids:2,adults:3,dur:2.5,tags:['history','gardens','art deco'],blurb:"A medieval great hall bolted onto a 1930s Art Deco mansion, with a pet lemur's heated bedroom. Gardens and a moat to run around.",url:'https://www.english-heritage.org.uk/visit/places/eltham-palace-and-gardens'},
+{id:'brockwell',name:"Brockwell Park & Lido",area:'Herne Hill',lat:51.4518,lon:-0.1096,in:'out',price:'free',ages:[0,99],kids:3,adults:2,dur:2,tags:['park','playground','swim','views'],blurb:"Hilltop views, a walled garden, a miniature railway on summer Sundays and the Art Deco lido (paid, heated-ish).",url:'https://www.brockwellpark.com'},
+{id:'beckenham',name:"Beckenham Place Park",area:'Beckenham',lat:51.4165,lon:-0.0254,in:'out',price:'free',ages:[0,99],kids:3,adults:2,dur:2.5,tags:['park','walk','swim','nature'],blurb:"Ancient woodland, a swimming lake (booked, summer), a big sand-and-water playground and a café in the mansion. Lewisham's best park.",url:'https://beckenhamplacepark.com'},
+{id:'nunhead',name:"Nunhead Cemetery",area:'Nunhead',lat:51.4620,lon:-0.0533,in:'out',price:'free',ages:[6,99],kids:1,adults:3,dur:1.5,tags:['walk','quiet','history','nature'],blurb:"One of the Magnificent Seven, half-wild, with a ruined chapel and a surprise view of St Paul's. Then a bakery on Evelina Road.",url:'https://www.fonc.org.uk'},
+{id:'borough',name:"Borough Market",area:'London Bridge',lat:51.5055,lon:-0.0910,in:'both',price:'£',ages:[6,99],kids:1,adults:3,days:[2,3,4,5,6,0],dur:1.5,tags:['food','market'],blurb:"Graze your way through: Kappacasein toasties, Bread Ahead doughnuts, oysters at Richard Haward's. Saturdays are heaving by noon.",url:'https://boroughmarket.org.uk'},
+{id:'maltby',name:"Maltby Street Market",area:'Bermondsey',lat:51.4987,lon:-0.0778,in:'out',price:'£',ages:[8,99],kids:1,adults:3,days:[6,0],dur:1.5,tags:['food','market','beer'],blurb:"A single railway-arch lane of street food and the Bermondsey Beer Mile next door. Smaller and friendlier than Borough.",url:'https://www.maltby.st'},
+{id:'skygarden',name:"Sky Garden",area:'City',lat:51.5112,lon:-0.0836,in:'in',price:'free',ages:[0,99],kids:2,adults:3,dur:1,tags:['views','free','city'],blurb:"Free 360° view from the top of the Walkie-Talkie. Book a slot online up to three weeks ahead; they go fast for weekends.",url:'https://skygarden.london'},
+{id:'tower',name:"Tower of London",area:'Tower Hill',lat:51.5081,lon:-0.0759,in:'both',price:'££',ages:[5,99],kids:3,adults:3,dur:3.5,tags:['history','castle','crown jewels'],blurb:"Yeoman Warder tours, ravens, the Crown Jewels. Expensive but a genuine full-day thing. Go at opening.",url:'https://www.hrp.org.uk/tower-of-london'},
+{id:'postal',name:"The Postal Museum & Mail Rail",area:'Clerkenwell',lat:51.5250,lon:-0.1114,in:'in',price:'££',ages:[3,99],kids:3,adults:2,dur:2,tags:['museum','trains','hands-on'],blurb:"Ride the tiny underground mail train, then the Sorted! play space for under-8s. Book the Mail Rail slot in advance.",url:'https://www.postalmuseum.org'},
+{id:'ltm',name:"London Transport Museum",area:'Covent Garden',lat:51.5120,lon:-0.1210,in:'in',price:'££',ages:[2,99],kids:3,adults:2,dur:2.5,tags:['museum','trains','buses','hands-on'],blurb:"Climb into old buses and tube trains. The ticket is annual, so a second visit is free. Toddlers love it; design nerds too.",url:'https://www.ltmuseum.co.uk'},
+{id:'discover',name:"Discover Children's Story Centre",area:'Stratford',lat:51.5405,lon:-0.0019,in:'in',price:'£',ages:[0,11],kids:3,adults:0,dur:2,tags:['play','stories','hands-on'],blurb:"An indoor story-world to climb through, plus a garden. Made for under-8s; book a session.",url:'https://discover.org.uk'},
+{id:'olympic',name:"Queen Elizabeth Olympic Park",area:'Stratford',lat:51.5432,lon:-0.0130,in:'out',price:'free',ages:[0,99],kids:3,adults:2,dur:3,tags:['park','playground','walk','swim'],blurb:"Tumbling Bay playground, fountains, the Orbit slide (paid), the Aquatics Centre for a swim. Wide and flat for scooters.",url:'https://www.queenelizabetholympicpark.co.uk'},
+{id:'wellcome',name:"Wellcome Collection",area:'Euston',lat:51.5257,lon:-0.1337,in:'in',price:'free',ages:[12,99],kids:0,adults:3,dur:2,tags:['museum','science','quiet','exhibitions'],blurb:"Free exhibitions on medicine, bodies and belief, a superb reading room and the best museum café near a mainline station.",url:'https://wellcomecollection.org'},
+{id:'bm',name:"British Museum",area:'Bloomsbury',lat:51.5194,lon:-0.1270,in:'in',price:'free',ages:[5,99],kids:2,adults:3,dur:3,tags:['museum','history','mummies'],blurb:"Mummies, the Rosetta Stone, the Great Court. Do a one-hour hit list rather than the whole thing.",url:'https://www.britishmuseum.org'},
+{id:'columbia',name:"Columbia Road Flower Market",area:'Bethnal Green',lat:51.5295,lon:-0.0693,in:'out',price:'free',ages:[6,99],kids:1,adults:3,days:[0],dur:1.5,tags:['market','flowers','food','couple'],blurb:"Sunday only, 8am to 3pm. Go early for the plants, late for bargains, and the shops and cafés either side.",url:'https://www.columbiaroad.info'},
+{id:'leake',name:"Leake Street graffiti tunnel",area:'Waterloo',lat:51.5021,lon:-0.1143,in:'in',price:'free',ages:[8,99],kids:2,adults:2,dur:0.5,tags:['art','street art','free'],blurb:"The legal graffiti tunnel under Waterloo, repainted daily. Ten minutes, then on to the South Bank.",url:'https://leakestreetarches.london'},
+{id:'brixton',name:"Brixton Village & Market Row",area:'Brixton',lat:51.4622,lon:-0.1138,in:'in',price:'£',ages:[6,99],kids:1,adults:3,dur:2,tags:['food','market','couple'],blurb:"Covered arcades of small restaurants: Franco Manca's original, Caribbean, Colombian, Japanese. Lunch and a wander.",url:'https://brixtonvillage.com'},
+{id:'mudchute',name:"Mudchute Park & Farm",area:'Isle of Dogs',lat:51.4920,lon:-0.0150,in:'out',price:'free',ages:[0,12],kids:3,adults:1,dur:2,tags:['farm','animals','walk'],blurb:"A real working farm with llamas and Canary Wharf towers behind. Free, with a decent café. Combine with the Docklands museum.",url:'https://www.mudchute.org'},
+{id:'vauxhallfarm',name:"Vauxhall City Farm",area:'Vauxhall',lat:51.4848,lon:-0.1213,in:'out',price:'free',ages:[0,10],kids:3,adults:0,dur:1.5,tags:['farm','animals'],blurb:"Alpacas, goats and pony rides at weekends, opposite the Oval. An hour, then Vauxhall Pleasure Gardens next door.",url:'https://vauxhallcityfarm.org'},
+{id:'wwetlands',name:"Walthamstow Wetlands",area:'Walthamstow',lat:51.5842,lon:-0.0558,in:'out',price:'free',ages:[4,99],kids:2,adults:3,dur:2.5,tags:['nature','birds','walk','reservoirs'],blurb:"Europe's largest urban wetland: reservoirs, an engine-house café and a tower to climb. Flat paths, good for bikes.",url:'https://www.wildlondon.org.uk/walthamstow-wetlands-nature-reserve'},
+{id:'epping',name:"Epping Forest, High Beach",area:'Epping',lat:51.6591,lon:0.0405,in:'out',price:'free',ages:[3,99],kids:2,adults:3,dur:3.5,tags:['forest','walk','nature'],blurb:"Proper ancient forest. Park at High Beach, walk to the Victorian tea hut, climb Loughton Camp. Needs a car or a long bus.",url:'https://www.cityoflondon.gov.uk/things-to-do/green-spaces/epping-forest'},
+{id:'barrierpark',name:"Thames Barrier Park",area:'Silvertown',lat:51.5014,lon:0.0416,in:'out',price:'free',ages:[0,99],kids:2,adults:2,dur:1.5,tags:['park','river','views','playground'],blurb:"A modern park with sunken gardens facing the Thames Barrier. Pair with the cable car across the river.",url:'https://www.london.gov.uk/programmes-strategies/environment-and-climate-change/parks-green-spaces/thames-barrier-park'},
+{id:'cablecar',name:"IFS Cloud Cable Car",area:'Greenwich Peninsula',lat:51.5006,lon:0.0084,in:'in',price:'£',ages:[0,99],kids:3,adults:2,dur:1,tags:['views','river','transport'],blurb:"Ten minutes over the Thames with the O2 and the Docklands skyline. Pay with your Oyster/contactless. Kids rate it.",url:'https://tfl.gov.uk/modes/london-cable-car'},
+{id:'barbican',name:"Barbican Conservatory",area:'Barbican',lat:51.5201,lon:-0.0937,in:'in',price:'free',ages:[4,99],kids:1,adults:3,dur:1.5,tags:['gardens','architecture','quiet','couple'],blurb:"A tropical glasshouse hidden in the concrete. Free, but only open some days; book online. Then the lakeside terrace.",url:'https://www.barbican.org.uk/whats-on/conservatory'},
+{id:'boldtendencies',name:"Bold Tendencies & Frank's",area:'Peckham',lat:51.4722,lon:-0.0689,in:'out',price:'free',ages:[14,99],kids:0,adults:3,months:[6,7,8,9],dur:2,tags:['art','views','bar','couple'],blurb:"Sculpture on a multi-storey car park roof and the pink rooftop bar. Summer only; sunset is the time.",url:'https://boldtendencies.com'},
+{id:'severndroog',name:"Severndroog Castle",area:'Shooters Hill',lat:51.4627,lon:0.0574,in:'both',price:'£',ages:[4,99],kids:2,adults:3,days:[0],dur:2,tags:['views','history','walk','woods'],blurb:"An 18th-century folly in Oxleas Wood with a view across seven counties on a clear day. Tea room; woodland walk to get there.",url:'https://www.severndroogcastle.org.uk'},
+{id:'chislehurst',name:"Chislehurst Caves",area:'Chislehurst',lat:51.4089,lon:0.0599,in:'in',price:'£',ages:[5,99],kids:3,adults:2,days:[3,4,5,6,0],dur:1.5,tags:['caves','history','tour'],blurb:"A 45-minute lamp-lit tour of 22 miles of chalk mines used as a WWII shelter. Properly dark; a hit with 6-12s.",url:'https://www.chislehurst-caves.co.uk'},
+{id:'woolwich',name:"Royal Arsenal & Woolwich Works",area:'Woolwich',lat:51.4917,lon:0.0697,in:'both',price:'free',ages:[6,99],kids:1,adults:2,dur:2,tags:['walk','river','architecture','food'],blurb:"Georgian military buildings along the river, a Punchdrunk show if one's on, and the riverboat home from the pier.",url:'https://www.woolwich.works'},
+{id:'deptford',name:"Deptford Market Yard",area:'Deptford',lat:51.4790,lon:-0.0263,in:'both',price:'£',ages:[6,99],kids:1,adults:3,days:[6],dur:1.5,tags:['market','food','couple'],blurb:"Saturday market on the High Street, the railway-arch yard behind, and the anchor. Lunch, a wander, then the Albany if there's a show.",url:'https://www.deptfordmarketyard.com'},
+{id:'stpauls',name:"St Paul's Cathedral dome climb",area:'City',lat:51.5138,lon:-0.0984,in:'in',price:'££',ages:[8,99],kids:2,adults:3,dur:2,tags:['views','history','architecture'],blurb:"528 steps to the Golden Gallery. The Whispering Gallery is the test. Pricey; Sunday services are free but no climbing.",url:'https://www.stpauls.co.uk'},
+{id:'mayfield',name:"Mayfield Lavender & Oaks Park",area:'Banstead',lat:51.3179,lon:-0.1985,in:'out',price:'£',ages:[0,99],kids:2,adults:3,months:[6,7,8],dur:2.5,tags:['fields','flowers','walk','couple'],blurb:"Purple lavender fields on the Surrey edge, June to August. Car job. Oaks Park next door for a picnic.",url:'https://www.mayfieldlavender.com'}
+];
+const OUTCODES={"AL1":[51.7486,-0.3194],"AL10":[51.7609,-0.2311],"AL2":[51.7223,-0.331],"AL3":[51.7754,-0.3666],"AL4":[51.7713,-0.2959],"AL5":[51.8146,-0.3515],"AL6":[51.8299,-0.1994],"AL7":[51.7988,-0.1895],"AL8":[51.8034,-0.2103],"AL9":[51.7469,-0.2017],"BR1":[51.4107,0.0195],"BR2":[51.3904,0.0216],"BR3":[51.4033,-0.0319],"BR4":[51.3756,-0.01],"BR5":[51.3892,0.1025],"BR6":[51.3678,0.0928],"BR7":[51.4118,0.0588],"BR8":[51.3976,0.175],"CB11":[52.0014,0.214],"CM1":[51.746,0.4672],"CM11":[51.6238,0.4432],"CM12":[51.6267,0.4149],"CM13":[51.6152,0.3346],"CM14":[51.619,0.2959],"CM15":[51.6414,0.3041],"CM16":[51.7004,0.1186],"CM17":[51.7733,0.141],"CM18":[51.7567,0.1047],"CM19":[51.7614,0.0743],"CM2":[51.7237,0.485],"CM20":[51.7744,0.1],"CM21":[51.8121,0.148],"CM22":[51.8664,0.2182],"CM23":[51.8711,0.1587],"CM24":[51.8978,0.2066],"CM3":[51.716,0.5869],"CM4":[51.6748,0.3879],"CM5":[51.7184,0.2478],"CM6":[51.8782,0.3757],"CM92":[51.7694,0.0613],"CM98":[51.7521,0.5185],"CM99":[51.7399,0.4936],"CR0":[51.3733,-0.0788],"CR2":[51.346,-0.0957],"CR3":[51.2975,-0.0963],"CR4":[51.4026,-0.1454],"CR44":[51.3823,-0.1329],"CR5":[51.3135,-0.1413],"CR6":[51.3028,-0.0578],"CR7":[51.3923,-0.1038],"CR8":[51.3366,-0.1112],"CR9":[51.3748,-0.095],"CR90":[51.3776,-0.1089],"DA1":[51.4471,0.2095],"DA10":[51.4421,0.2996],"DA11":[51.4354,0.3515],"DA12":[51.4311,0.3836],"DA13":[51.3861,0.3541],"DA14":[51.4258,0.1106],"DA15":[51.4398,0.099],"DA16":[51.4645,0.109],"DA17":[51.4864,0.1509],"DA18":[51.4915,0.1458],"DA2":[51.4335,0.2323],"DA3":[51.3859,0.3064],"DA4":[51.3928,0.2309],"DA5":[51.441,0.1477],"DA6":[51.4561,0.1392],"DA7":[51.465,0.1431],"DA8":[51.4761,0.1798],"DA9":[51.4479,0.2799],"E1":[51.5163,-0.0603],"E10":[51.5686,-0.0128],"E11":[51.5672,0.0116],"E12":[51.5511,0.0507],"E13":[51.5283,0.0258],"E14":[51.5077,-0.0204],"E15":[51.5382,0.0002],"E16":[51.5114,0.0217],"E17":[51.5864,-0.0201],"E18":[51.5926,0.0256],"E1W":[51.5125,-0.0592],"E2":[51.5303,-0.0622],"E20":[51.5462,-0.0108],"E22":[51.5015,-0.0165],"E3":[51.5282,-0.0256],"E4":[51.6242,-0.0028],"E5":[51.5594,-0.0546],"E6":[51.5252,0.0552],"E7":[51.5476,0.026],"E77":[51.5139,-0.0691],"E8":[51.5411,-0.0648],"E9":[51.5416,-0.0463],"E98":[51.5086,-0.0641],"EC1A":[51.5202,-0.1044],"EC1M":[51.5214,-0.1036],"EC1N":[51.52,-0.1091],"EC1P":[51.5246,-0.112],"EC1R":[51.5245,-0.1089],"EC1V":[51.5265,-0.0993],"EC1Y":[51.5231,-0.0934],"EC2A":[51.5231,-0.0879],"EC2M":[51.5184,-0.0868],"EC2N":[51.516,-0.0874],"EC2P":[51.5241,-0.1106],"EC2R":[51.5163,-0.0918],"EC2V":[51.5158,-0.0949],"EC2Y":[51.52,-0.0963],"EC3A":[51.515,-0.082],"EC3B":[51.514,-0.0818],"EC3M":[51.5122,-0.0837],"EC3N":[51.5127,-0.0798],"EC3P":[51.523,-0.1083],"EC3R":[51.5112,-0.0846],"EC3V":[51.5133,-0.0869],"EC4A":[51.5159,-0.1086],"EC4M":[51.5149,-0.1006],"EC4N":[51.5134,-0.0931],"EC4P":[51.5233,-0.1108],"EC4R":[51.5114,-0.0917],"EC4V":[51.5126,-0.1002],"EC4Y":[51.5137,-0.1088],"EC50":[51.5245,-0.1121],"EC88":[51.5245,-0.0791],"EN1":[51.6533,-0.0706],"EN10":[51.7409,-0.0211],"EN11":[51.7637,-0.0095],"EN2":[51.6586,-0.0918],"EN3":[51.6579,-0.0415],"EN4":[51.6483,-0.1621],"EN5":[51.6482,-0.19],"EN6":[51.6991,-0.1796],"EN7":[51.7086,-0.0652],"EN8":[51.6958,-0.0331],"EN9":[51.6947,0.0106],"GU1":[51.2431,-0.5701],"GU10":[51.1989,-0.7964],"GU11":[51.2501,-0.7625],"GU12":[51.2516,-0.7326],"GU13":[51.2751,-0.8387],"GU14":[51.2909,-0.7614],"GU15":[51.3355,-0.7508],"GU16":[51.3133,-0.7305],"GU17":[51.3363,-0.8061],"GU18":[51.3475,-0.6632],"GU19":[51.3591,-0.6896],"GU2":[51.2447,-0.593],"GU20":[51.3599,-0.6413],"GU21":[51.3199,-0.577],"GU22":[51.3135,-0.5533],"GU23":[51.2972,-0.5113],"GU24":[51.3301,-0.6254],"GU25":[51.4013,-0.5694],"GU3":[51.2471,-0.6213],"GU4":[51.2429,-0.5466],"GU46":[51.3385,-0.8241],"GU47":[51.3475,-0.7934],"GU5":[51.2061,-0.5221],"GU51":[51.2851,-0.8395],"GU52":[51.2655,-0.8387],"GU6":[51.1401,-0.4853],"GU7":[51.1888,-0.6107],"GU8":[51.1519,-0.6397],"GU9":[51.2178,-0.7961],"GU95":[51.3263,-0.7631],"HA0":[51.5501,-0.3046],"HA1":[51.5817,-0.3361],"HA2":[51.576,-0.3543],"HA3":[51.5914,-0.3231],"HA4":[51.5708,-0.4104],"HA5":[51.5947,-0.3859],"HA6":[51.6099,-0.4205],"HA7":[51.6096,-0.3068],"HA8":[51.6116,-0.2753],"HA9":[51.5585,-0.29],"HP1":[51.7553,-0.4783],"HP10":[51.6108,-0.7107],"HP11":[51.6254,-0.7467],"HP12":[51.6247,-0.7777],"HP13":[51.633,-0.7415],"HP14":[51.6489,-0.8256],"HP15":[51.6534,-0.7174],"HP16":[51.7025,-0.7178],"HP17":[51.7498,-0.8533],"HP19":[51.8238,-0.8263],"HP2":[51.7623,-0.4541],"HP20":[51.8197,-0.8081],"HP21":[51.8068,-0.8062],"HP22":[51.8012,-0.7693],"HP23":[51.795,-0.6626],"HP27":[51.722,-0.8315],"HP3":[51.737,-0.4724],"HP4":[51.7666,-0.5678],"HP5":[51.713,-0.6086],"HP6":[51.6774,-0.6017],"HP7":[51.6663,-0.6105],"HP8":[51.6446,-0.5757],"HP9":[51.6103,-0.6418],"IG1":[51.5591,0.0728],"IG10":[51.6483,0.0658],"IG11":[51.5347,0.0921],"IG2":[51.5733,0.0795],"IG3":[51.5624,0.0978],"IG4":[51.5772,0.055],"IG5":[51.586,0.0647],"IG6":[51.5919,0.0871],"IG7":[51.6138,0.0877],"IG8":[51.6125,0.0382],"IG9":[51.6241,0.0391],"KT12":[51.3774,-0.4088],"KT1":[51.4071,-0.2976],"KT10":[51.3715,-0.3573],"KT11":[51.3283,-0.4048],"KT13":[51.3693,-0.4515],"KT14":[51.3403,-0.4863],"KT15":[51.3651,-0.4945],"KT16":[51.3839,-0.5145],"KT17":[51.3396,-0.2534],"KT18":[51.3189,-0.2636],"KT19":[51.3502,-0.2694],"KT2":[51.4162,-0.2908],"KT20":[51.2872,-0.2319],"KT21":[51.3109,-0.3029],"KT22":[51.3006,-0.3375],"KT23":[51.2819,-0.3709],"KT24":[51.2695,-0.4306],"KT3":[51.3997,-0.2569],"KT4":[51.3787,-0.2432],"KT5":[51.3927,-0.2879],"KT6":[51.3897,-0.3006],"KT7":[51.3901,-0.3291],"KT8":[51.4016,-0.3669],"KT9":[51.3648,-0.3032],"LU1":[51.8764,-0.4247],"LU2":[51.8908,-0.3978],"LU3":[51.9058,-0.4426],"LU4":[51.8985,-0.4652],"LU5":[51.9087,-0.5156],"LU6":[51.8811,-0.5326],"LU7":[51.911,-0.6615],"LU95":[51.9138,-0.6628],"ME1":[51.3753,0.4994],"ME14":[51.2748,0.5399],"ME15":[51.2549,0.5331],"ME16":[51.2735,0.4984],"ME17":[51.2366,0.6022],"ME18":[51.2441,0.4232],"ME19":[51.2927,0.4111],"ME2":[51.3912,0.4847],"ME20":[51.3051,0.4598],"ME3":[51.4313,0.5463],"ME4":[51.3814,0.5281],"ME5":[51.3523,0.5318],"ME6":[51.3246,0.4396],"ME7":[51.3804,0.5548],"ME8":[51.3622,0.5952],"ME99":[51.2858,0.5181],"N1":[51.5376,-0.0982],"N10":[51.5939,-0.1443],"N11":[51.6139,-0.1374],"N12":[51.6154,-0.1785],"N13":[51.6211,-0.1037],"N14":[51.6333,-0.13],"N15":[51.5804,-0.0867],"N16":[51.5645,-0.0768],"N17":[51.5973,-0.071],"N18":[51.6136,-0.0645],"N19":[51.5655,-0.128],"N1C":[51.5366,-0.1258],"N1P":[51.539,-0.1034],"N2":[51.5903,-0.1686],"N20":[51.6296,-0.1747],"N21":[51.6354,-0.0996],"N22":[51.5999,-0.1141],"N3":[51.6004,-0.1941],"N4":[51.5705,-0.1052],"N5":[51.5538,-0.0986],"N6":[51.5715,-0.1408],"N7":[51.5541,-0.1181],"N8":[51.5824,-0.1201],"N81":[51.5798,-0.0971],"N9":[51.6278,-0.0589],"NW1":[51.5323,-0.1428],"NW10":[51.5392,-0.2489],"NW11":[51.5787,-0.1984],"NW1W":[51.5308,-0.1354],"NW2":[51.5595,-0.2183],"NW26":[51.5331,-0.2158],"NW3":[51.5526,-0.1732],"NW4":[51.5874,-0.2237],"NW5":[51.5515,-0.1448],"NW6":[51.5402,-0.1956],"NW7":[51.615,-0.236],"NW8":[51.5318,-0.1747],"NW9":[51.5866,-0.2535],"OX39":[51.7035,-0.9169],"RG1":[51.451,-0.9708],"RG10":[51.4799,-0.8674],"RG11":[51.3986,-0.8395],"RG12":[51.4119,-0.7527],"RG2":[51.4233,-0.9551],"RG4":[51.4781,-0.9654],"RG40":[51.4022,-0.8372],"RG41":[51.4159,-0.8572],"RG42":[51.4247,-0.7605],"RG45":[51.3786,-0.8019],"RG5":[51.4529,-0.907],"RG6":[51.4427,-0.9337],"RG9":[51.5425,-0.9201],"RH1":[51.238,-0.1591],"RH10":[51.1196,-0.1643],"RH11":[51.1118,-0.2046],"RH12":[51.0749,-0.3286],"RH13":[51.0384,-0.3332],"RH14":[51.0316,-0.48],"RH16":[51.0029,-0.0998],"RH17":[51.0199,-0.1189],"RH18":[51.1008,0.0252],"RH19":[51.1259,-0.0135],"RH2":[51.2367,-0.2032],"RH3":[51.2327,-0.2844],"RH4":[51.2308,-0.3338],"RH5":[51.1962,-0.3423],"RH6":[51.1717,-0.1656],"RH7":[51.1745,-0.0186],"RH77":[51.1388,-0.1698],"RH8":[51.253,-0.0003],"RH9":[51.237,-0.0766],"RM1":[51.5802,0.1821],"RM10":[51.5456,0.1566],"RM11":[51.5696,0.2181],"RM12":[51.5549,0.2093],"RM13":[51.5233,0.1914],"RM14":[51.5561,0.2613],"RM15":[51.5091,0.2772],"RM16":[51.4889,0.3204],"RM17":[51.4796,0.3259],"RM18":[51.4677,0.3704],"RM19":[51.4825,0.2523],"RM2":[51.5825,0.1994],"RM20":[51.4789,0.2866],"RM3":[51.6022,0.2243],"RM4":[51.6334,0.1621],"RM5":[51.5981,0.1653],"RM50":[51.5703,0.1707],"RM6":[51.575,0.1337],"RM7":[51.5732,0.1697],"RM8":[51.5571,0.1308],"RM9":[51.544,0.1373],"SE1":[51.4982,-0.0903],"SE10":[51.4844,0.0016],"SE11":[51.4895,-0.1088],"SE12":[51.4462,0.0269],"SE13":[51.4594,-0.0105],"SE14":[51.4755,-0.0431],"SE15":[51.4727,-0.0671],"SE16":[51.4964,-0.0555],"SE17":[51.4886,-0.0947],"SE18":[51.4857,0.0715],"SE19":[51.4182,-0.0851],"SE1P":[51.4928,-0.0801],"SE2":[51.4915,0.1143],"SE20":[51.4131,-0.058],"SE21":[51.4383,-0.0884],"SE22":[51.4546,-0.0726],"SE23":[51.4401,-0.0502],"SE24":[51.4573,-0.1002],"SE25":[51.3982,-0.0775],"SE26":[51.4281,-0.054],"SE27":[51.4304,-0.1015],"SE28":[51.501,0.104],"SE3":[51.4684,0.0179],"SE4":[51.4618,-0.0354],"SE5":[51.4741,-0.093],"SE6":[51.4386,-0.0176],"SE7":[51.4853,0.0314],"SE8":[51.4817,-0.0289],"SE9":[51.4462,0.0546],"SE99":[51.4782,-0.0817],"SG1":[51.9089,-0.198],"SG10":[51.843,0.0661],"SG11":[51.8769,0.0255],"SG12":[51.8126,-0.0182],"SG13":[51.79,-0.072],"SG14":[51.8058,-0.0911],"SG15":[52.0117,-0.2624],"SG16":[52.0133,-0.2995],"SG2":[51.8967,-0.1691],"SG3":[51.8614,-0.1826],"SG4":[51.9244,-0.2611],"SG5":[51.9642,-0.2765],"SG6":[51.9795,-0.2207],"SG7":[52.002,-0.1783],"SG9":[51.9402,-0.0105],"SL0":[51.5227,-0.5165],"SL1":[51.516,-0.6143],"SL2":[51.5328,-0.6029],"SL3":[51.5006,-0.5581],"SL4":[51.4768,-0.6238],"SL5":[51.4048,-0.6619],"SL6":[51.5229,-0.7265],"SL60":[51.5186,-0.7148],"SL7":[51.5744,-0.7778],"SL8":[51.5778,-0.7089],"SL9":[51.5955,-0.5555],"SL95":[51.4991,-0.5388],"SM1":[51.3646,-0.193],"SM2":[51.3532,-0.1978],"SM3":[51.3699,-0.2143],"SM4":[51.393,-0.2002],"SM5":[51.3666,-0.1654],"SM6":[51.3611,-0.1466],"SM7":[51.3228,-0.202],"SS0":[51.5458,0.6914],"SS1":[51.5394,0.7242],"SS11":[51.6164,0.535],"SS12":[51.6057,0.5209],"SS13":[51.5749,0.5076],"SS14":[51.5748,0.4699],"SS15":[51.5769,0.4291],"SS16":[51.5631,0.4518],"SS17":[51.5221,0.4398],"SS2":[51.55,0.7158],"SS22":[51.5555,0.7094],"SS4":[51.5919,0.7122],"SS5":[51.607,0.6488],"SS6":[51.5879,0.6059],"SS7":[51.5631,0.5777],"SS8":[51.522,0.5894],"SS9":[51.5536,0.6522],"SS99":[51.5481,0.7108],"SW10":[51.4838,-0.183],"SW11":[51.4672,-0.1637],"SW12":[51.4462,-0.1499],"SW13":[51.4743,-0.2494],"SW14":[51.4666,-0.2666],"SW15":[51.458,-0.2257],"SW16":[51.4238,-0.1296],"SW17":[51.4304,-0.1653],"SW18":[51.4505,-0.1915],"SW19":[51.422,-0.2055],"SW1A":[51.502,-0.1339],"SW1E":[51.4968,-0.1401],"SW1H":[51.4977,-0.1344],"SW1P":[51.4889,-0.1335],"SW1V":[51.4907,-0.1394],"SW1W":[51.4932,-0.1477],"SW1X":[51.4975,-0.1534],"SW1Y":[51.5053,-0.1352],"SW2":[51.4509,-0.1207],"SW20":[51.4125,-0.2239],"SW3":[51.4879,-0.1646],"SW4":[51.4615,-0.1372],"SW5":[51.4897,-0.1895],"SW6":[51.4774,-0.2003],"SW7":[51.4965,-0.1765],"SW8":[51.4767,-0.1326],"SW9":[51.4691,-0.1137],"SW95":[51.4805,-0.1363],"SW99":[51.4724,-0.1156],"TN1":[51.1369,0.2681],"TN10":[51.2102,0.2843],"TN11":[51.2059,0.2673],"TN12":[51.1729,0.4384],"TN13":[51.2748,0.1863],"TN14":[51.2951,0.163],"TN15":[51.2991,0.2678],"TN16":[51.2973,0.0483],"TN2":[51.1267,0.268],"TN20":[51.0307,0.2539],"TN3":[51.1245,0.2504],"TN4":[51.1469,0.2584],"TN5":[51.0679,0.3582],"TN6":[51.0539,0.1717],"TN7":[51.0914,0.1103],"TN8":[51.1954,0.0759],"TN9":[51.1911,0.2789],"TW1":[51.4511,-0.328],"TW10":[51.4515,-0.3028],"TW11":[51.4267,-0.3326],"TW12":[51.421,-0.3695],"TW13":[51.4392,-0.4035],"TW14":[51.4522,-0.42],"TW15":[51.4304,-0.4558],"TW16":[51.4165,-0.4176],"TW17":[51.3975,-0.448],"TW18":[51.4293,-0.5109],"TW19":[51.4521,-0.5053],"TW2":[51.4471,-0.35],"TW20":[51.4282,-0.5485],"TW3":[51.4687,-0.3634],"TW4":[51.4669,-0.3845],"TW5":[51.4803,-0.3815],"TW6":[51.4685,-0.451],"TW7":[51.475,-0.3315],"TW8":[51.4861,-0.308],"TW9":[51.4671,-0.2972],"UB1":[51.5122,-0.3767],"UB10":[51.5472,-0.4556],"UB11":[51.5156,-0.4534],"UB18":[51.5007,-0.4027],"UB2":[51.5007,-0.3802],"UB3":[51.5049,-0.4214],"UB4":[51.5231,-0.4086],"UB5":[51.5444,-0.3746],"UB6":[51.5403,-0.3441],"UB7":[51.507,-0.4713],"UB8":[51.5371,-0.4788],"UB9":[51.58,-0.4917],"W1":[51.5197,-0.1522],"W10":[51.5201,-0.2242],"W11":[51.5128,-0.2196],"W12":[51.5095,-0.2401],"W13":[51.5131,-0.3214],"W14":[51.4954,-0.2112],"W1A":[51.5187,-0.1307],"W1B":[51.5141,-0.1406],"W1C":[51.5144,-0.1494],"W1D":[51.5136,-0.1329],"W1F":[51.5135,-0.1365],"W1G":[51.5191,-0.148],"W1H":[51.5174,-0.1595],"W1J":[51.508,-0.1449],"W1K":[51.5112,-0.1508],"W1M":[51.5182,-0.1506],"W1N":[51.5187,-0.1437],"W1P":[51.5198,-0.1376],"W1R":[51.5129,-0.141],"W1S":[51.5113,-0.1423],"W1T":[51.5201,-0.1365],"W1U":[51.5186,-0.1534],"W1V":[51.5124,-0.1358],"W1W":[51.5191,-0.1409],"W1X":[51.5095,-0.1443],"W1Y":[51.5101,-0.1498],"W2":[51.5142,-0.1899],"W3":[51.5085,-0.2701],"W4":[51.4914,-0.2636],"W5":[51.5122,-0.304],"W6":[51.4925,-0.2311],"W7":[51.5097,-0.3351],"W8":[51.5004,-0.1954],"W9":[51.5231,-0.1941],"WC1A":[51.5197,-0.1218],"WC1B":[51.519,-0.1265],"WC1E":[51.5207,-0.1324],"WC1H":[51.5248,-0.1263],"WC1N":[51.522,-0.1206],"WC1R":[51.5192,-0.117],"WC1V":[51.5177,-0.1181],"WC1X":[51.5244,-0.1171],"WC2A":[51.5161,-0.1154],"WC2B":[51.515,-0.1209],"WC2E":[51.5125,-0.1238],"WC2H":[51.5137,-0.1277],"WC2N":[51.5098,-0.1253],"WC2R":[51.5122,-0.1184],"WC99":[51.514,-0.1246],"WD1":[51.6487,-0.4016],"WD17":[51.6608,-0.4069],"WD18":[51.6475,-0.4194],"WD19":[51.6325,-0.3936],"WD2":[51.6675,-0.3787],"WD23":[51.6453,-0.3664],"WD24":[51.6697,-0.4011],"WD25":[51.6821,-0.3919],"WD3":[51.6435,-0.4829],"WD4":[51.7058,-0.4537],"WD5":[51.7033,-0.4227],"WD6":[51.6567,-0.2765],"WD7":[51.6859,-0.3126],"WD99":[51.6488,-0.4221]};
+window.WTD_CONFIG=window.WTD_CONFIG||{posthogKey:'',posthogHost:'https://eu.i.posthog.com'};
+let EVENTS=[];
+const AGEBANDS=[['0-2',0,2],['3-5',3,5],['6-9',6,9],['10-13',10,13],['14-17',14,17]];
+const WHO=[['solo','Just me','Flying solo'],['couple','A couple','Two of us'],['family','Family with kids',"We'll ask their ages"],['friends','Friends','A group of adults']];
+
+/* ---------- STATE ---------- */
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let setup=LS.get('wtd.setup',{who:null,ages:[],date:null,pc:'',car:null,lat:null,lon:null,place:''});
+let status=LS.get('wtd.status',{});       // id -> 'saved'|'again'|'done'|'pass'
+let swipes=LS.get('wtd.swipes',{like:{},pass:{}}); // tag affinity
+let log=LS.get('wtd.log',[]);
+let wx=null, deck=[], undoStack=[], travelCache={};
+const $=s=>document.querySelector(s);
+function track(type,d={}){log.push(Object.assign({t:Date.now(),type},d));if(log.length>2000)log=log.slice(-2000);LS.set('wtd.log',log);try{if(window.posthog&&window.posthog.capture)window.posthog.capture('wtd_'+type,d)}catch(e){}}
+(function(){const c=window.WTD_CONFIG;if(!c.posthogKey)return;const sc=document.createElement('script');sc.src='https://unpkg.com/posthog-js@1.200.0/dist/array.full.js';sc.onload=()=>{try{window.posthog.init(c.posthogKey,{api_host:c.posthogHost,persistence:'localStorage',capture_pageview:true})}catch(e){}};document.head.appendChild(sc)})();
+function save(){LS.set('wtd.setup',setup);LS.set('wtd.status',status);LS.set('wtd.swipes',swipes)}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1400)}
+track('session_start');
+
+/* ---------- DATES ---------- */
+const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const fromIso=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+const nice=d=>DAYS[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()];
+function whenOptions(){
+  const today=new Date();today.setHours(0,0,0,0);
+  const add=n=>{const d=new Date(today);d.setDate(d.getDate()+n);return d};
+  const dow=today.getDay(), toSat=(6-dow+7)%7, toSun=(7-dow)%7;
+  const opts=[];
+  opts.push({l:'Today',d:today});
+  opts.push({l:'Tomorrow',d:add(1)});
+  if(toSat>1) opts.push({l:'Saturday',d:add(toSat)});
+  if(toSun>1) opts.push({l:'Sunday',d:add(toSun)});
+  opts.push({l:'Next Sat',d:add(toSat+7)});
+  opts.push({l:'Next Sun',d:add(toSun+7)});
+  // default: this Saturday if it's still ahead, else today on a weekend day, else tomorrow
+  let def;
+  if(dow===6||dow===0) def=today; else if(toSat>0) def=add(toSat); else def=add(1);
+  const seen=new Set(); return {opts:opts.filter(o=>{const k=iso(o.d);if(seen.has(k))return false;seen.add(k);return true}),def};
+}
+
+/* ---------- SETUP UI ---------- */
+function renderWho(){
+  $('#who').innerHTML=WHO.map(([k,l,s])=>`<button class="block ${setup.who===k?'on':''}" data-who="${k}">${l}<span><small>${s}</small></span><span class="chev">›</span></button>`).join('');
+  $('#who').querySelectorAll('.block').forEach(b=>b.onclick=()=>{setup.who=b.dataset.who;renderWho();
+    if(setup.who==='family'){$('#ages').hidden=false;renderAges();} else {$('#ages').hidden=true;setup.ages=[];gotoStep('when');}});
+  $('#ages').hidden=setup.who!=='family';renderAges();
+}
+function renderAges(){
+  $('#ageChips').innerHTML=AGEBANDS.map(([l])=>`<button class="chip ${setup.ages.includes(l)?'on':''}" data-age="${l}">${l}</button>`).join('')+`<button class="chip" id="agesNext" ${setup.ages.length?'':'disabled'}>Next ›</button>`;
+  $('#ageChips').querySelectorAll('[data-age]').forEach(c=>c.onclick=()=>{const a=c.dataset.age;setup.ages=setup.ages.includes(a)?setup.ages.filter(x=>x!==a):[...setup.ages,a];renderAges()});
+  $('#agesNext').onclick=()=>gotoStep('when');
+}
+function renderWhen(){
+  const {opts,def}=whenOptions(); if(!setup.date) setup.date=iso(def);
+  $('#whenChips').innerHTML=opts.map(o=>`<button class="chip ${iso(o.d)===setup.date?'on':''}" data-d="${iso(o.d)}">${o.l}<small>${nice(o.d)}</small></button>`).join('');
+  $('#whenChips').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{setup.date=c.dataset.d;$('#dateIn').value=setup.date;renderWhen();gotoStep('where')});
+  $('#dateIn').value=setup.date; $('#dateIn').min=iso(new Date());
+  $('#dateIn').onchange=e=>{if(e.target.value){setup.date=e.target.value;renderWhen();gotoStep('where')}};
+}
+function renderWhere(){
+  $('#pc').value=setup.pc||''; $('#carNo').classList.toggle('on',setup.car===0); $('#carYes').classList.toggle('on',setup.car===1);
+  $('#go').disabled=!(setup.pc&&setup.car!==null);
+}
+let step='who';
+function gotoStep(s){step=s;['who','when','where'].forEach(x=>$('#s-'+x).hidden=x!==s);$('#back').hidden=s==='who';
+  if(s==='when')renderWhen(); if(s==='where')renderWhere(); window.scrollTo({top:0});}
+$('#back').onclick=()=>gotoStep(step==='where'?'when':'who');
+$('#pc').oninput=e=>{setup.pc=e.target.value.toUpperCase().trim();$('#pcErr').hidden=true;renderWhere()};
+$('#carNo').onclick=()=>{setup.car=0;renderWhere()}; $('#carYes').onclick=()=>{setup.car=1;renderWhere()};
+function parseOutcode(pc){const m=pc.replace(/\s+/g,'').toUpperCase().match(/^([A-Z]{1,2}[0-9][A-Z0-9]?)([0-9][A-Z]{2})?$/);return m?{out:m[1],full:m[2]?m[1]+' '+m[2]:null}:null}
+$('#go').onclick=async()=>{
+  const b=$('#go');b.disabled=true;b.textContent='Finding your spot…';
+  const pc=parseOutcode(setup.pc||'');
+  if(!pc||!OUTCODES[pc.out]){$('#pcErr').textContent=pc?'That postcode is outside the area we cover (London and about 60 km around it).':'That doesn\'t look like a UK postcode. Try something like SE4 2AB or just SE4.';$('#pcErr').hidden=false;b.disabled=false;b.innerHTML='Show me things <span>›</span>';return}
+  setup.lat=OUTCODES[pc.out][0];setup.lon=OUTCODES[pc.out][1];setup.pc=pc.full||pc.out;setup.place=pc.out;setup.precise=false;
+  save();track('setup_done',{who:setup.who,ages:setup.ages,car:setup.car,outcode:pc.out,date:setup.date});
+  travelCache={};await buildDeck();go('deck');
+  b.disabled=false;b.innerHTML='Show me things <span>›</span>';
+  // refine to the full postcode when the network allows (hosted version); silent if blocked
+  if(pc.full){try{const r=await fetch('https://api.postcodes.io/postcodes/'+encodeURIComponent(pc.full.replace(/\s+/g,'')));const j=await r.json();
+    if(j.status===200){setup.lat=j.result.latitude;setup.lon=j.result.longitude;setup.place=(j.result.admin_ward||pc.out);setup.precise=true;save();travelCache={};deck.forEach(c=>{c.mins=estMins(c);c.est=true});renderStrip();renderStack()}}catch(e){}}
+};
+
+/* ---------- WEATHER + TRAVEL ---------- */
+function wxWord(code,p){ if(code>=95)return'Thunder'; if(code>=71&&code<=77)return'Snow'; if((code>=51&&code<=67)||code>=80)return p>=60?'Rain':'Showers'; if(code>=45&&code<=48)return'Fog'; if(code>=2)return code===3?'Overcast':'Cloudy'; return'Sunny'; }
+function manualWx(){const m=setup.wxManual; if(!m||m.date!==setup.date) return null; const month=fromIso(setup.date).getMonth()+1;
+  return m.v==='wet'?{word:'Wet',wet:true,fine:false,dry:false,cold:false,manual:true}:{word:'Dry',wet:false,dry:true,fine:month>=5&&month<=9,cold:month<=2||month===12,manual:true}}
+async function getWeather(){
+  wx=null;
+  try{
+    const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),6000);
+    const u=`https://api.open-meteo.com/v1/forecast?latitude=${setup.lat}&longitude=${setup.lon}&daily=weather_code,temperature_2m_max,precipitation_probability_max&timezone=Europe%2FLondon&forecast_days=16`;
+    const j=await (await fetch(u,{signal:ctrl.signal})).json(); const i=j.daily.time.indexOf(setup.date);
+    if(i>=0){const code=j.daily.weather_code[i],p=j.daily.precipitation_probability_max[i]||0,t=Math.round(j.daily.temperature_2m_max[i]);
+      wx={code,p,t,word:wxWord(code,p),wet:p>=55||(code>=61&&code<=67)||code>=80,fine:p<30&&t>=12&&code<=3,dry:p<35,cold:t<=6}}
+  }catch(e){}
+  if(!wx) wx=manualWx();
+}
+const km=(a,b,c,d)=>{const R=6371,x=(c-a)*Math.PI/180,y=(d-b)*Math.PI/180,s=Math.sin(x/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(y/2)**2;return 2*R*Math.asin(Math.sqrt(s))};
+function estMins(it){const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3; return setup.car? Math.round(8+d/28*60) : Math.round(10+d/19*60)}
+async function tflMins(it){
+  if(setup.car) return null; if(travelCache[it.id]!==undefined) return travelCache[it.id];
+  travelCache[it.id]=null;
+  try{const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),7000);
+    const u=`https://api.tfl.gov.uk/Journey/JourneyResults/${setup.lat},${setup.lon}/to/${it.lat},${it.lon}?date=${setup.date.replace(/-/g,'')}&time=1000&journeyPreference=LeastTime`;
+    const r=await fetch(u,{signal:ctrl.signal}); if(!r.ok) return null; const j=await r.json();
+    if(j.journeys&&j.journeys.length){const m=Math.min(...j.journeys.map(x=>x.duration));travelCache[it.id]=m;return m}
+  }catch(e){} return null;
+}
+
+/* ---------- SCORING ---------- */
+function ageFit(it){ if(setup.who!=='family'||!setup.ages.length) return 1; const [lo,hi]=it.ages||[0,99]; let n=0; for(const[l,a,b]of AGEBANDS){ if(setup.ages.includes(l)&&!(b<lo||a>hi)) n++; } return n/setup.ages.length; }
+function score(it,mins){
+  let s=10, why=[];
+  s-=mins/9;
+  if(wx){ if(wx.wet){ if(it.in==='out'){s-=3.2;} else if(it.in==='in'){s+=1.6;why.push('indoors on a wet day')} else {s-=0.6} }
+    else if(wx.fine&&it.in!=='in'){s+=1.8;why.push('fine weather, get outside')}
+    else if(wx.dry&&it.in==='out'){s+=0.7}
+    if(wx.cold&&it.in==='out'){s-=0.9} }
+  if(setup.who==='family'){ const f=ageFit(it); if(f===0) return {s:-99,why:[]}; s+=f*1.5+it.kids*0.9; if(it.adults>=2) s+=0.4; if(f===1&&it.kids===3) why.push('right age range') }
+  else { s+=it.adults*0.9; if(it.kids===3&&it.adults<=1) s-=1.8; if(setup.who==='couple'&&it.tags.includes('couple')) {s+=0.8;why.push('good for two')} if(setup.who==='friends'&&(it.tags.includes('food')||it.tags.includes('beer')||it.tags.includes('market'))) s+=0.6; }
+  if(it.price==='free') s+=0.3;
+  let aff=0; for(const t of it.tags){aff+=(swipes.like[t]||0)*0.35-(swipes.pass[t]||0)*0.35} aff=Math.max(-2,Math.min(2,aff)); s+=aff; if(aff>=0.7) why.push('like things you saved');
+  if(status[it.id]==='again') s-=0.8;
+  if(it.event){ s+=it.date?1.4:0.6; why.push(it.date?'on this day only':'on for a limited time') }
+  if(mins<=25) why.push('close by');
+  s+=Math.random()*0.5;
+  return {s,why};
+}
+function openOn(it){ const d=fromIso(setup.date); if(it.days&&!it.days.includes(d.getDay())) return false; if(it.months&&!it.months.includes(d.getMonth()+1)) return false; return true; }
+async function loadEvents(){ if(EVENTS.length) return; try{const r=await fetch('events.json',{cache:'no-store'}); if(r.ok){const j=await r.json(); EVENTS=(j.events||[]).map(e=>Object.assign({event:true},e))}}catch(e){} }
+function eventOn(e){ const d=setup.date; if(e.date) return e.date===d; if(e.from&&d<e.from) return false; if(e.to&&d>e.to) return false; return true; }
+async function buildDeck(){
+  await Promise.all([getWeather(),loadEvents()]);
+  const today=iso(new Date());
+  const pool=[...ITEMS.filter(openOn),...EVENTS.filter(e=>eventOn(e)&&(!e.to||e.to>=today))];
+  deck=pool.filter(it=>!['saved','done','pass'].includes(status[it.id]))
+    .map(it=>{const mins=estMins(it);const r=score(it,mins);return Object.assign({},it,{mins,est:true,score:r.s,why:r.why})})
+    .filter(x=>x.score>-50).sort((a,b)=>b.score-a.score);
+  undoStack=[];
+  renderStrip(); renderStack();
+  track('deck_built',{n:deck.length,wx:wx&&wx.word});
+}
+
+/* ---------- DECK UI ---------- */
+function renderStrip(){
+  const d=fromIso(setup.date); $('#stripDate').textContent=nice(d);
+  $('#stripFrom').textContent=(setup.place||setup.pc).trim()+' · '+(setup.car?'by car':'public transport');
+  if(wx&&!wx.manual) $('#stripWx').innerHTML=`${wx.word} ${wx.t}°<small>${wx.p}% chance of rain</small>`;
+  else $('#stripWx').innerHTML=`<div class="wxpick"><small>Forecast?</small><button class="chip ${wx&&wx.wet?'on':''}" data-wx="wet">Wet</button><button class="chip ${wx&&wx.dry?'on':''}" data-wx="dry">Dry</button></div>`;
+  $('#stripWx').querySelectorAll('[data-wx]').forEach(b=>b.onclick=async()=>{setup.wxManual={v:b.dataset.wx,date:setup.date};save();track('wx_manual',{v:b.dataset.wx});await buildDeck()});
+  const whoL={solo:'Just me',couple:'Couple',family:'Family · '+setup.ages.join(', '),friends:'Friends'}[setup.who]||'';
+  $('#ctx').innerHTML=`<b>${whoL}</b><br>${nice(d)} · ${setup.pc||''}`;
+}
+function travelLabel(c){ return (c.est?'~':'')+c.mins+' min '+(setup.car?'drive':'by transport') }
+function cardHTML(c){
+  const badges=[`<span class="badge ${c.est?'':'good'}" data-tr>${travelLabel(c)}</span>`,
+    `<span class="badge">${c.in==='in'?'Indoors':c.in==='out'?'Outdoors':'In & out'}</span>`,
+    `<span class="badge">${c.dur<=1?'Under an hour':c.dur<=2?'Couple of hours':c.dur<=3?'Half a day':'Full day'}</span>`];
+  if(c.days) badges.push(`<span class="badge warn">${c.days.length===1?DAYS[c.days[0]]+'s only':'Selected days'}</span>`);
+  if(c.months) badges.push(`<span class="badge warn">Seasonal</span>`);
+  if(c.ages&&c.ages[1]<99) badges.push(`<span class="badge hot">Ages ${c.ages[0]}–${c.ages[1]}</span>`);
+  if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5); badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left<=7?'Ends in '+left+' days':'Until '+nice(fromIso(c.to))}</span>`)} }
+  if(status[c.id]==='again') badges.push(`<span class="badge good">You'd go again</span>`);
+  const why=c.why.length?`<p class="why"><b>Why this:</b> ${c.why.slice(0,2).join(' · ')}</p>`:'';
+  return `<div class="stamp save">Save</div><div class="stamp pass">Nope</div>
+    <div class="top"><div><div class="area">${c.area}</div><h3>${c.name}</h3></div><div class="price ${c.price==='free'?'free':''}">${c.price==='free'?'Free':c.price}</div></div>
+    <div class="badges">${badges.join('')}</div>
+    <p class="blurb">${c.blurb}</p>${why}
+    <div class="foot"><span>${c.event&&c.source?'via '+c.source:c.tags.slice(0,4).join(' · ')}</span><a href="${c.url}" target="_blank" rel="noopener">${c.event?'Details ›':'Website ›'}</a></div>`;
+}
+function renderStack(){
+  const st=$('#stack'); st.innerHTML='';
+  if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Change the day or who's going, or check My list. More listings and one-off events coming.</span></div>`;}
+  deck.slice(0,3).forEach((c,i)=>{const el=document.createElement('div');el.className='card'+(i===1?' under':i===2?' under2':'');el.style.zIndex=3-i;el.innerHTML=cardHTML(c);el.dataset.id=c.id;st.appendChild(el);if(i===0)attachDrag(el);});
+  $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
+  deck.slice(0,2).forEach(refineTravel);
+}
+async function refineTravel(c){ if(setup.car||!c.est) return; const m=await tflMins(c); if(m){c.mins=m;c.est=false; const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.textContent=travelLabel(c);el.classList.add('good')}} }
+
+/* drag */
+function attachDrag(el){
+  let sx=0,sy=0,dx=0,dy=0,on=false;
+  const sS=el.querySelector('.stamp.save'),sP=el.querySelector('.stamp.pass');
+  el.addEventListener('pointerdown',e=>{if(e.target.closest('a'))return;on=true;sx=e.clientX;sy=e.clientY;el.setPointerCapture(e.pointerId);el.classList.remove('returning')});
+  el.addEventListener('pointermove',e=>{if(!on)return;dx=e.clientX-sx;dy=e.clientY-sy;el.style.transform=`translate(${dx}px,${dy*0.4}px) rotate(${dx/18}deg)`;sS.style.opacity=Math.min(1,Math.max(0,dx/80));sP.style.opacity=Math.min(1,Math.max(0,-dx/80))});
+  const end=()=>{if(!on)return;on=false; if(dx>95)act('saved',el); else if(dx<-95)act('pass',el); else{el.classList.add('returning');el.style.transform='';sS.style.opacity=0;sP.style.opacity=0} dx=dy=0};
+  el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
+}
+function fly(el,dir,cb){el.classList.add('flying');el.style.transform=`translate(${dir*620}px,${dir*-40}px) rotate(${dir*22}deg)`;el.style.opacity='0';setTimeout(cb,230)}
+function act(kind,el){
+  const c=deck[0]; if(!c) return;
+  undoStack.push({c,prev:status[c.id],kind});
+  if(kind==='saved'){status[c.id]='saved';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Saved ♥')}
+  else if(kind==='pass'){status[c.id]='pass';c.tags.forEach(t=>swipes.pass[t]=(swipes.pass[t]||0)+1)}
+  else if(kind==='again'){status[c.id]='again';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Kept in the mix')}
+  else if(kind==='done'){status[c.id]='done';toast('Ticked off')}
+  save(); track('swipe',{id:c.id,kind,who:setup.who,car:setup.car,mins:c.mins});
+  deck.shift(); const target=el||$('#stack .card');
+  if(target) fly(target,kind==='pass'?-1:1,renderStack); else renderStack();
+}
+$('#bPass').onclick=()=>act('pass'); $('#bSave').onclick=()=>act('saved');
+$('#bBeen').onclick=()=>{$('#sheetTitle').textContent=`You've been to ${deck[0].name}. Would you go again?`;$('#sheet').hidden=false};
+$('#againYes').onclick=()=>{$('#sheet').hidden=true;act('again')}; $('#againNo').onclick=()=>{$('#sheet').hidden=true;act('done')}; $('#sheetCancel').onclick=()=>$('#sheet').hidden=true;
+$('#bUndo').onclick=()=>{const h=undoStack.pop(); if(!h) return; if(h.prev)status[h.c.id]=h.prev; else delete status[h.c.id];
+  const bucket=(h.kind==='saved'||h.kind==='again')?swipes.like:(h.kind==='pass'?swipes.pass:null);
+  if(bucket) h.c.tags.forEach(t=>{bucket[t]=Math.max(0,(bucket[t]||0)-1)});
+  deck.unshift(h.c); save(); track('undo',{id:h.c.id}); renderStack(); toast('Brought it back')};
+
+/* ---------- LIST ---------- */
+let tab='saved';
+$('#tabs').querySelectorAll('.tab').forEach(t=>t.onclick=()=>{tab=t.dataset.tab;$('#tabs').querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));renderList()});
+function renderList(){
+  const ids=Object.keys(status).filter(k=>status[k]===tab); const el=$('#items');
+  if(!ids.length){el.innerHTML=`<div class="empty" style="position:static;min-height:120px"><b>Nothing here yet.</b><span>${{saved:'Swipe right on things you want to do.',again:"Tap Been, then 'Yes, I'd go again'.",done:"Places you've ticked off.",pass:'Things you passed on. Change your mind here.'}[tab]}</span></div>`;return}
+  el.innerHTML=ids.map(id=>{const it=ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id);if(!it)return'';return `<div class="item"><div><b>${it.name}</b><span class="m">${it.area} · ${it.price==='free'?'Free':it.price} · ${setup.lat?'~'+estMins(it)+' min':''}</span></div>
+   <div class="mv">${tab!=='saved'?`<button class="mini" data-set="saved" data-id="${id}">Save</button>`:''}${tab!=='done'?`<button class="mini" data-set="done" data-id="${id}">Been</button>`:''}<button class="mini" data-set="" data-id="${id}">✕</button></div></div>`}).join('');
+  el.querySelectorAll('[data-set]').forEach(b=>b.onclick=()=>{const v=b.dataset.set;if(v)status[b.dataset.id]=v;else delete status[b.dataset.id];save();track('list_change',{id:b.dataset.id,to:v||'cleared'});renderList()});
+}
+
+/* ---------- MAP (schematic: no tiles needed) ---------- */
+const THAMES=[[-0.37,51.41],[-0.31,51.41],[-0.30,51.46],[-0.29,51.49],[-0.25,51.485],[-0.23,51.47],[-0.21,51.467],[-0.19,51.468],[-0.17,51.48],[-0.15,51.485],[-0.125,51.487],[-0.123,51.50],[-0.115,51.508],[-0.104,51.511],[-0.088,51.508],[-0.075,51.506],[-0.06,51.505],[-0.035,51.508],[-0.025,51.5],[-0.03,51.49],[-0.02,51.48],[-0.005,51.483],[0.003,51.495],[-0.005,51.505],[0.005,51.51],[0.02,51.503],[0.03,51.496],[0.06,51.494],[0.09,51.50],[0.14,51.49],[0.17,51.487]];
+const PLACES=[['Central',-0.12,51.513],['Greenwich',-0.005,51.477],['Richmond',-0.30,51.46],['Stratford',-0.01,51.542],['Brixton',-0.114,51.462],['Hampstead',-0.165,51.556],['Bromley',0.015,51.405],['Croydon',-0.098,51.372],['Walthamstow',-0.02,51.585],['Ealing',-0.30,51.513]];
+let mapMode='deck',mapSelId=null;
+function renderMap(){
+  const W=360,H=414,cx=W/2,cy=H/2;
+  const kmLat=111.2,kmLon=111.2*Math.cos(setup.lat*Math.PI/180);
+  const pxPerKm=W/2/ (setup.car?26:17);   // 60-min ring at roughly the edge
+  const P=(lon,lat)=>[cx+(lon-setup.lon)*kmLon*pxPerKm, cy-(lat-setup.lat)*kmLat*pxPerKm];
+  const minsToR=m=>{const kmh=setup.car?28:19, lead=setup.car?8:10; return Math.max(0,(m-lead))/60*kmh/1.3*pxPerKm};
+  let pts; if(mapMode==='saved'){ pts=Object.keys(status).filter(k=>['saved','again'].includes(status[k])).map(id=>ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id)).filter(Boolean).map(it=>Object.assign({},it,{mins:estMins(it),score:10})); }
+  else pts=deck.slice(0,40);
+  const smax=Math.max(...pts.map(p=>p.score),1),smin=Math.min(...pts.map(p=>p.score),0);
+  const river='M'+THAMES.map(q=>P(q[0],q[1]).map(v=>v.toFixed(1)).join(',')).join(' L');
+  let svg=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of suggestions around you">`;
+  svg+=`<path class="river" d="${river}"/>`;
+  svg+=`<circle class="ring" cx="${cx}" cy="${cy}" r="${minsToR(30).toFixed(1)}"/><circle class="ring" cx="${cx}" cy="${cy}" r="${minsToR(60).toFixed(1)}"/>`;
+  PLACES.forEach(([n,lo,la])=>{const [x,y]=P(lo,la); if(x>14&&x<W-14&&y>10&&y<H-4) svg+=`<text class="lbl" x="${x.toFixed(1)}" y="${y.toFixed(1)}">${n}</text>`});
+  pts.forEach(p=>{const [x,y]=P(p.lon,p.lat); if(x<6||x>W-6||y<6||y>H-6) return; const r=4+ (smax>smin?(p.score-smin)/(smax-smin):0.5)*7;
+    const col=p.event?'var(--amber)':p.price==='free'?'var(--moss)':'var(--verm)';
+    svg+=`<g class="dot ${mapSelId===p.id?'sel':''}" data-id="${p.id}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${col}" opacity=".9"/></g>`});
+  const [ux,uy]=P(setup.lon,setup.lat);
+  svg+=`<g class="you"><circle cx="${ux}" cy="${uy}" r="5"/><circle cx="${ux}" cy="${uy}" r="9" fill="none" stroke="var(--ink)" opacity=".35"/><text x="${ux}" y="${uy-14}">You</text></g></svg>`;
+  $('#map').innerHTML=svg;
+  $('#map').querySelectorAll('.dot').forEach(g=>g.onclick=()=>{mapSelId=g.dataset.id;renderMap()});
+  const sel=pts.find(p=>p.id===mapSelId); const box=$('#mapSel');
+  if(!sel){box.hidden=true;return}
+  box.hidden=false; const st=status[sel.id];
+  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ~${sel.mins} min ${setup.car?'drive':'by transport'}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
+    <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener">Details ›</a></div>`;
+  box.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{status[sel.id]=b.dataset.ms;save();track('map_action',{id:sel.id,kind:b.dataset.ms});deck=deck.filter(d=>d.id!==sel.id);renderMap();renderStack();toast(b.dataset.ms==='saved'?'Saved ♥':'Ticked off')});
+}
+$('#mapMode').querySelectorAll('button').forEach(b=>b.onclick=()=>{mapMode=b.dataset.m;mapSelId=null;$('#mapMode').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));renderMap()});
+
+/* ---------- STATS ---------- */
+function renderStats(){
+  const n=t=>log.filter(e=>e.type===t).length, sw=log.filter(e=>e.type==='swipe');
+  const by=k=>sw.reduce((m,e)=>(m[e[k]]=(m[e[k]]||0)+1,m),{});
+  const kinds=by('kind'), whos=by('who'), cars=by('car');
+  const tiles=[['Sessions',n('session_start')],['Decks built',n('deck_built')],['Swipes',sw.length],['Saved',kinds.saved||0],['Passed',kinds.pass||0],['Been',(kinds.again||0)+(kinds.done||0)]];
+  $('#tiles').innerHTML=tiles.map(([l,v])=>`<div class="tile"><b>${v}</b><span>${l}</span></div>`).join('');
+  const saved=sw.filter(e=>e.kind==='saved'||e.kind==='again').reduce((m,e)=>(m[e.id]=(m[e.id]||0)+1,m),{});
+  const top=Object.entries(saved).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  $('#topSaved').innerHTML=`<tr><th>Most saved</th><th class="n">Saves</th></tr>`+(top.length?top.map(([id,c])=>`<tr><td>${(ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id)||{name:id}).name}</td><td class="n">${c}</td></tr>`).join(''):'<tr><td colspan="2">No saves yet</td></tr>');
+  const rows=[...Object.entries(whos).map(([k,v])=>['Who: '+k,v]),...Object.entries(cars).map(([k,v])=>['Car: '+(k==='1'?'yes':'no'),v])];
+  $('#mix').innerHTML=`<tr><th>Mix</th><th class="n">Swipes</th></tr>`+(rows.length?rows.map(([k,v])=>`<tr><td>${k}</td><td class="n">${v}</td></tr>`).join(''):'<tr><td colspan="2">Nothing yet</td></tr>');
+  $('#log').innerHTML=`<tr><th>Last events</th><th>Detail</th></tr>`+log.slice(-20).reverse().map(e=>{const d=new Date(e.t);return `<tr><td>${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')} ${e.type}</td><td>${e.id||e.who||e.outcode||e.wx||''}${e.kind?' · '+e.kind:''}</td></tr>`}).join('');
+}
+$('#copyLog').onclick=()=>{const s=JSON.stringify(log);navigator.clipboard.writeText(s).then(()=>toast('Copied')).catch(()=>{const ta=document.createElement('textarea');ta.value=s;document.body.appendChild(ta);ta.select();toast('Select and copy');setTimeout(()=>ta.remove(),4000)})};
+$('#wipe').onclick=()=>{try{['wtd.setup','wtd.status','wtd.swipes','wtd.log'].forEach(k=>localStorage.removeItem(k))}catch(e){} location.hash='';location.reload()};
+let taps=0,tapT=0; $('#logo').onclick=()=>{const now=Date.now(); taps=(now-tapT<900)?taps+1:1; tapT=now; if(taps>=7){taps=0;go('stats')} else if(taps===1&&setup.lat) go('deck')};
+
+/* ---------- ROUTING ---------- */
+const VIEWS=['setup','deck','map','list','stats'];
+function go(v,push=true){
+  if(v==='deck'&&!setup.lat) v='setup';
+  VIEWS.forEach(x=>$('#v-'+x).hidden=x!==v); $('.wrap').classList.toggle('fit',v==='deck');
+  $('#nav').hidden=!setup.lat||v==='stats'; $('#nav').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.go===v));
+  if(v==='list')renderList(); if(v==='map')renderMap(); if(v==='stats')renderStats(); if(v==='setup'){gotoStep('who');renderWho()}
+  if(push&&location.hash!=='#'+v){try{history_replace(v)}catch(e){}}
+  window.scrollTo({top:0});
+}
+function history_replace(v){ if(window.history&&window.history.replaceState) window.history.replaceState(null,'','#'+v); else location.hash=v }
+$('#nav').querySelectorAll('button').forEach(b=>b.onclick=()=>go(b.dataset.go));
+window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');if(VIEWS.includes(h))go(h,false)});
+(async function boot(){
+  renderWho();
+  const h=location.hash.replace('#','');
+  if(h==='stats'){go('stats');return}
+  if(setup.lat&&setup.date&&fromIso(setup.date)>=new Date(new Date().setHours(0,0,0,0))){ await buildDeck(); go(VIEWS.includes(h)&&h!=='setup'?h:'deck'); }
+  else { if(setup.lat&&setup.date) setup.date=null; go('setup'); }
+})();
+</script>

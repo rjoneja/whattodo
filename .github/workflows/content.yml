@@ -1,0 +1,30 @@
+name: content
+on:
+  schedule: [{cron: "20 5 * * *"}]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install anthropic
+      - name: Web sources
+        if: ${{ env.ANTHROPIC_API_KEY != '' }}
+        run: python3 ingest.py --days 21 --out docs/events.json
+        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+      - name: Instagram
+        if: ${{ env.IG_TOKEN != '' }}
+        run: python3 instagram.py --days 7 --out docs/events.json
+        env:
+          ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
+          IG_TOKEN: "${{ secrets.IG_TOKEN }}"
+          IG_USER_ID: "${{ secrets.IG_USER_ID }}"
+      - run: |
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add docs/events.json venues.json ig_seen.json 2>/dev/null
+          git commit -m "content $(date +%F)" || true
+          git push

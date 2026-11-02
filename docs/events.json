@@ -1,0 +1,822 @@
+{
+ "generated": "2026-11-02",
+ "schema": "id,name,area,lat,lon,in(in|out|both),price(free|£|££),ages[min,max],kids 0-3,adults 0-3,dur hours,tags[],blurb,url,source, then either date (YYYY-MM-DD) or from/to, optional time",
+ "events": [
+  {
+   "id": "ev-diwali-nmm",
+   "name": "Diwali at the National Maritime Museum",
+   "area": "Greenwich",
+   "lat": 51.481,
+   "lon": -0.0052,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 3,
+   "tags": [
+    "festival",
+    "dance",
+    "lanterns",
+    "free",
+    "family"
+   ],
+   "blurb": "Free Festival of Lights day: lantern parades, dance performances and rangoli workshops through the museum, 10.30am to 5pm. Drop in.",
+   "url": "https://www.rmg.co.uk/whats-on",
+   "source": "Royal Museums Greenwich",
+   "date": "2026-11-07",
+   "time": "10.30am–5pm"
+  },
+  {
+   "id": "ev-blackheath-fw",
+   "name": "Blackheath Fireworks",
+   "area": "Blackheath",
+   "lat": 51.4717,
+   "lon": 0.0067,
+   "in": "out",
+   "price": "£",
+   "ages": [
+    3,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 3,
+   "tags": [
+    "fireworks",
+    "bonfire night",
+    "funfair"
+   ],
+   "blurb": "The big south-east London display on the heath, with a funfair from the afternoon. Gates 5pm, fireworks 8pm. Ticketed this year, so book ahead and wrap up.",
+   "url": "https://www.blackheathfireworks.com/",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "8pm"
+  },
+  {
+   "id": "ev-dulwich-fw",
+   "name": "Dulwich Fireworks",
+   "area": "Dulwich",
+   "lat": 51.4505,
+   "lon": -0.0905,
+   "in": "out",
+   "price": "£",
+   "ages": [
+    2,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 2.5,
+   "tags": [
+    "fireworks",
+    "bonfire night"
+   ],
+   "blurb": "A friendlier, earlier display aimed at families: gates 5pm, fireworks 7pm, kids' tickets for a pound.",
+   "url": "https://www.eventbrite.co.uk/e/dulwich-firework-display-2026-kids-for-a-quid-tickets-1991896534154",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "7pm"
+  },
+  {
+   "id": "ev-beckenham-fw",
+   "name": "Beckenham Fireworks",
+   "area": "Beckenham",
+   "lat": 51.3985,
+   "lon": -0.0384,
+   "in": "out",
+   "price": "£",
+   "ages": [
+    2,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 3,
+   "tags": [
+    "fireworks",
+    "bonfire night"
+   ],
+   "blurb": "Croydon Road Rec. Gates 4.30pm, a low-noise display at 6pm for little ones, the main show at 7.30pm.",
+   "url": "http://beckenhamfireworks.com/",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "7.30pm"
+  },
+  {
+   "id": "ev-bromley-fw",
+   "name": "Bromley Fireworks",
+   "area": "Bickley",
+   "lat": 51.4038,
+   "lon": 0.059,
+   "in": "out",
+   "price": "£",
+   "ages": [
+    3,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 2.5,
+   "tags": [
+    "fireworks",
+    "bonfire night",
+    "funfair"
+   ],
+   "blurb": "Bromley High School's display with a funfair. Gates 5.45pm, fireworks 7.30pm. Cheaper than the heath.",
+   "url": "https://www.eventbrite.co.uk/e/bromley-high-fireworks-2026-tickets-1992816335304",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "7.30pm"
+  },
+  {
+   "id": "ev-danson-fw",
+   "name": "Danson Park Fireworks",
+   "area": "Bexleyheath",
+   "lat": 51.4505,
+   "lon": 0.1285,
+   "in": "out",
+   "price": "£",
+   "ages": [
+    3,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 3,
+   "tags": [
+    "fireworks",
+    "bonfire night",
+    "funfair"
+   ],
+   "blurb": "Big display over the lake with a funfair. Gates 4pm, fireworks 8pm. Easiest by car.",
+   "url": "https://www.dansonfireworks.com/",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "8pm"
+  },
+  {
+   "id": "ev-battersea-fw-sat",
+   "name": "Battersea Park Fireworks",
+   "area": "Battersea",
+   "lat": 51.4791,
+   "lon": -0.1566,
+   "in": "out",
+   "price": "££",
+   "ages": [
+    4,
+    99
+   ],
+   "kids": 2,
+   "adults": 3,
+   "dur": 3,
+   "tags": [
+    "fireworks",
+    "bonfire night",
+    "funfair"
+   ],
+   "blurb": "The classic inner-London display with a fairground. Gates 6pm, fireworks 8.30pm; the Sunday show is the same. Late for small kids.",
+   "url": "https://www.batterseaparkfireworks.com/",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "8.30pm"
+  },
+  {
+   "id": "ev-battersea-fw-sun",
+   "name": "Battersea Park Fireworks (Sunday)",
+   "area": "Battersea",
+   "lat": 51.4791,
+   "lon": -0.1566,
+   "in": "out",
+   "price": "££",
+   "ages": [
+    4,
+    99
+   ],
+   "kids": 2,
+   "adults": 3,
+   "dur": 3,
+   "tags": [
+    "fireworks",
+    "bonfire night",
+    "funfair"
+   ],
+   "blurb": "Second night of the Battersea display. Gates 6pm, fireworks 8.30pm. Quieter than Saturday.",
+   "url": "https://www.batterseaparkfireworks.com/",
+   "source": "IanVisits",
+   "date": "2026-11-08",
+   "time": "8.30pm"
+  },
+  {
+   "id": "ev-allypally-fw-sat",
+   "name": "Alexandra Palace Fireworks Festival",
+   "area": "Alexandra Palace",
+   "lat": 51.5942,
+   "lon": -0.13,
+   "in": "out",
+   "price": "££",
+   "ages": [
+    4,
+    99
+   ],
+   "kids": 2,
+   "adults": 3,
+   "dur": 4,
+   "tags": [
+    "fireworks",
+    "bonfire night",
+    "street food",
+    "drones"
+   ],
+   "blurb": "Street food, a bonfire, a drone show and the fireworks at 8pm over the whole of London. Gates 4pm. A long cold evening but a spectacular one.",
+   "url": "https://fireworks.london/",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "8pm"
+  },
+  {
+   "id": "ev-allypally-fw-sun",
+   "name": "Alexandra Palace Fireworks (Sunday)",
+   "area": "Alexandra Palace",
+   "lat": 51.5942,
+   "lon": -0.13,
+   "in": "out",
+   "price": "££",
+   "ages": [
+    3,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 3,
+   "tags": [
+    "fireworks",
+    "bonfire night",
+    "street food"
+   ],
+   "blurb": "The earlier Sunday show: gates 4pm, fireworks 6pm. The better night if you've got children.",
+   "url": "https://fireworks.london/",
+   "source": "IanVisits",
+   "date": "2026-11-08",
+   "time": "6pm"
+  },
+  {
+   "id": "ev-clockworks",
+   "name": "The Clockworks open day",
+   "area": "West Norwood",
+   "lat": 51.4315,
+   "lon": -0.103,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    7,
+    99
+   ],
+   "kids": 1,
+   "adults": 3,
+   "dur": 1.5,
+   "tags": [
+    "museum",
+    "clocks",
+    "open day",
+    "quirky"
+   ],
+   "blurb": "A museum of electric clocks that rarely opens at weekends. 10am to 4pm, free. One for the curious and the mechanically minded.",
+   "url": "https://www.ianvisits.co.uk/calendar/open-day-at-the-clockworks-435498/",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "10am–4pm"
+  },
+  {
+   "id": "ev-sewing",
+   "name": "London Sewing Machine Museum open day",
+   "area": "Tooting",
+   "lat": 51.427,
+   "lon": -0.168,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    8,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "museum",
+    "quirky",
+    "open day"
+   ],
+   "blurb": "Monthly open afternoon, 2pm to 5pm, for a genuinely odd collection of 600 machines above a shop.",
+   "url": "https://www.ianvisits.co.uk/calendar/london-sewing-machine-museum-monthly-open-day-2-360410/",
+   "source": "IanVisits",
+   "date": "2026-11-07",
+   "time": "2–5pm"
+  },
+  {
+   "id": "ev-showtrain",
+   "name": "Tolworth Showtrain model railway show",
+   "area": "Tolworth",
+   "lat": 51.3786,
+   "lon": -0.284,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    3,
+    99
+   ],
+   "kids": 3,
+   "adults": 1,
+   "dur": 2,
+   "tags": [
+    "trains",
+    "models",
+    "show"
+   ],
+   "blurb": "One of the biggest model railway exhibitions in the south-east, both days of the weekend. Train-obsessed under-10s will not want to leave.",
+   "url": "https://www.ianvisits.co.uk/calendar/tolworth-showtrain-model-railway-exhibition-2-406628/",
+   "source": "IanVisits",
+   "from": "2026-11-07",
+   "to": "2026-11-08",
+   "time": "10am–5pm"
+  },
+  {
+   "id": "ev-remembrance",
+   "name": "Remembrance Sunday at the Cenotaph",
+   "area": "Whitehall",
+   "lat": 51.5033,
+   "lon": -0.1263,
+   "in": "out",
+   "price": "free",
+   "ages": [
+    8,
+    99
+   ],
+   "kids": 1,
+   "adults": 3,
+   "dur": 2,
+   "tags": [
+    "ceremony",
+    "history",
+    "free"
+   ],
+   "blurb": "The national service and two-minute silence at 11am, then the march past. Arrive by 9.30am for a view; expect crowds and road closures.",
+   "url": "https://www.gov.uk/government/organisations/the-royal-british-legion",
+   "source": "Calendar",
+   "date": "2026-11-08",
+   "time": "11am"
+  },
+  {
+   "id": "ev-aardman",
+   "name": "Inside Aardman: Wallace & Gromit and Friends",
+   "area": "Bethnal Green",
+   "lat": 51.529,
+   "lon": -0.0557,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    4,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 2,
+   "tags": [
+    "exhibition",
+    "animation",
+    "hands-on",
+    "museum"
+   ],
+   "blurb": "Behind-the-scenes stop-motion sets and characters at the Young V&A, with the rest of the museum free. Closes 15 November.",
+   "url": "https://www.vam.ac.uk/young",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-15"
+  },
+  {
+   "id": "ev-luxmuralis",
+   "name": "Lost Worlds by Luxmuralis",
+   "area": "Greenwich",
+   "lat": 51.483,
+   "lon": -0.006,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    5,
+    99
+   ],
+   "kids": 3,
+   "adults": 3,
+   "dur": 1.5,
+   "tags": [
+    "light show",
+    "immersive",
+    "evening"
+   ],
+   "blurb": "A sound-and-light walk through the Old Royal Naval College, projecting lost civilisations onto the Painted Hall and chapel. Evening slots; book. Closes 15 November.",
+   "url": "https://ornc.org",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-15",
+   "time": "evenings"
+  },
+  {
+   "id": "ev-schiaparelli",
+   "name": "Schiaparelli: Fashion Becomes Art",
+   "area": "South Kensington",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    12,
+    99
+   ],
+   "kids": 0,
+   "adults": 3,
+   "dur": 2,
+   "tags": [
+    "exhibition",
+    "fashion",
+    "art",
+    "last chance"
+   ],
+   "blurb": "The V&A's Schiaparelli survey closes this Sunday. Surrealist dresses, the lobster, the shoe hat. Book a slot.",
+   "url": "https://www.vam.ac.uk",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-08"
+  },
+  {
+   "id": "ev-punjab",
+   "name": "The Last Princesses of Punjab",
+   "area": "Kensington",
+   "lat": 51.505,
+   "lon": -0.1877,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    10,
+    99
+   ],
+   "kids": 1,
+   "adults": 3,
+   "dur": 2.5,
+   "tags": [
+    "exhibition",
+    "history",
+    "palace",
+    "last chance"
+   ],
+   "blurb": "Sophia Duleep Singh, suffragette and goddaughter of Queen Victoria, told through objects at Kensington Palace. Closes this Sunday; palace entry included.",
+   "url": "https://www.hrp.org.uk/kensington-palace",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-08"
+  },
+  {
+   "id": "ev-stmartin",
+   "name": "St Martin-in-the-Fields at 300",
+   "area": "Trafalgar Square",
+   "lat": 51.5088,
+   "lon": -0.1267,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    10,
+    99
+   ],
+   "kids": 0,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "exhibition",
+    "history",
+    "free",
+    "church"
+   ],
+   "blurb": "A free exhibition on three centuries of the church on Trafalgar Square. Twenty minutes, then the crypt café. Closes 15 November.",
+   "url": "https://www.stmartin-in-the-fields.org",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-15"
+  },
+  {
+   "id": "ev-churchill",
+   "name": "Winston Churchill: The Painter",
+   "area": "Marylebone",
+   "lat": 51.5173,
+   "lon": -0.153,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    12,
+    99
+   ],
+   "kids": 0,
+   "adults": 3,
+   "dur": 1.5,
+   "tags": [
+    "exhibition",
+    "art",
+    "history"
+   ],
+   "blurb": "Fifty-odd of Churchill's own paintings at the Wallace Collection, the first big show of them in decades. The permanent collection is free. Closes 29 November.",
+   "url": "https://www.wallacecollection.org",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-29"
+  },
+  {
+   "id": "ev-comingofage",
+   "name": "The Coming of Age",
+   "area": "Euston",
+   "lat": 51.5257,
+   "lon": -0.1337,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    13,
+    99
+   ],
+   "kids": 0,
+   "adults": 3,
+   "dur": 1.5,
+   "tags": [
+    "exhibition",
+    "science",
+    "free"
+   ],
+   "blurb": "Wellcome Collection's free show on ageing, from adolescence to old age. Pair it with the Reading Room upstairs. Closes 29 November.",
+   "url": "https://wellcomecollection.org",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-29"
+  },
+  {
+   "id": "ev-lordmayor",
+   "name": "The Lord Mayor's Show",
+   "area": "City",
+   "lat": 51.5138,
+   "lon": -0.0984,
+   "in": "out",
+   "price": "free",
+   "ages": [
+    3,
+    99
+   ],
+   "kids": 3,
+   "adults": 3,
+   "dur": 3,
+   "tags": [
+    "parade",
+    "ceremony",
+    "free",
+    "river"
+   ],
+   "blurb": "The City's 800-year-old parade: floats, bands, the gold State Coach, and this year a river pageant too. Procession starts late morning; stand near St Paul's or along Cheapside.",
+   "url": "https://lordmayorsshow.london",
+   "source": "IanVisits",
+   "date": "2026-11-14",
+   "time": "from 11am"
+  },
+  {
+   "id": "ev-stpauls-free",
+   "name": "Free entry to St Paul's Cathedral",
+   "area": "City",
+   "lat": 51.5138,
+   "lon": -0.0984,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    5,
+    99
+   ],
+   "kids": 2,
+   "adults": 3,
+   "dur": 1.5,
+   "tags": [
+    "cathedral",
+    "free",
+    "architecture"
+   ],
+   "blurb": "St Paul's drops its (steep) entry fee for Lord Mayor's Show day, 9.30am to 4.30pm. Go in before or after the parade. Galleries may be restricted.",
+   "url": "https://www.stpauls.co.uk",
+   "source": "IanVisits",
+   "date": "2026-11-14",
+   "time": "9.30am–4.30pm"
+  },
+  {
+   "id": "ev-gunsalute",
+   "name": "Gun salute in Green Park",
+   "area": "Green Park",
+   "lat": 51.5047,
+   "lon": -0.143,
+   "in": "out",
+   "price": "free",
+   "ages": [
+    4,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "ceremony",
+    "horses",
+    "free"
+   ],
+   "blurb": "The King's Troop fire a 41-gun salute for the King's birthday at midday, horses and all, then a 62-gun salute at the Tower at 1pm. Loud; ten minutes of it.",
+   "url": "https://www.royal.uk",
+   "source": "IanVisits",
+   "date": "2026-11-14",
+   "time": "12 noon"
+  },
+  {
+   "id": "ev-fulhamfire",
+   "name": "Fulham Fire Station open day",
+   "area": "Fulham",
+   "lat": 51.4827,
+   "lon": -0.1865,
+   "in": "both",
+   "price": "free",
+   "ages": [
+    2,
+    12
+   ],
+   "kids": 3,
+   "adults": 1,
+   "dur": 1.5,
+   "tags": [
+    "open day",
+    "fire engines",
+    "free"
+   ],
+   "blurb": "The station's 130th birthday open day, 11am to 4pm. Engines, hoses, firefighters who let kids climb in. Free.",
+   "url": "https://www.ianvisits.co.uk/calendar/fulham-fire-station-open-day-2-435808/",
+   "source": "IanVisits",
+   "date": "2026-11-14",
+   "time": "11am–4pm"
+  },
+  {
+   "id": "ev-stables",
+   "name": "Wimbledon Village Stables open hour",
+   "area": "Wimbledon",
+   "lat": 51.4244,
+   "lon": -0.211,
+   "in": "both",
+   "price": "free",
+   "ages": [
+    2,
+    12
+   ],
+   "kids": 3,
+   "adults": 1,
+   "dur": 1,
+   "tags": [
+    "horses",
+    "open day",
+    "free"
+   ],
+   "blurb": "Meet the horses and see the yard, 2pm to 3pm on the second Saturday of the month. Then Wimbledon Common.",
+   "url": "https://www.ianvisits.co.uk/calendar/monthly-open-hour-at-the-wimbledon-village-stables-422355/",
+   "source": "IanVisits",
+   "date": "2026-11-14",
+   "time": "2–3pm"
+  },
+  {
+   "id": "ev-posters",
+   "name": "Art deco and the golden age of poster design",
+   "area": "Covent Garden",
+   "lat": 51.512,
+   "lon": -0.121,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    14,
+    99
+   ],
+   "kids": 0,
+   "adults": 3,
+   "dur": 1,
+   "tags": [
+    "talk",
+    "design",
+    "museum"
+   ],
+   "blurb": "A curator's talk at the London Transport Museum on the 1920s–30s poster boom. 2pm. Museum entry is separate.",
+   "url": "https://www.ianvisits.co.uk/calendar/art-deco-and-the-golden-age-of-poster-design-435270/",
+   "source": "IanVisits",
+   "date": "2026-11-14",
+   "time": "2pm"
+  },
+  {
+   "id": "ev-brixtonwalk",
+   "name": "Brixton Market heritage walk",
+   "area": "Brixton",
+   "lat": 51.4622,
+   "lon": -0.1138,
+   "in": "both",
+   "price": "£",
+   "ages": [
+    10,
+    99
+   ],
+   "kids": 1,
+   "adults": 3,
+   "dur": 1.5,
+   "tags": [
+    "walk",
+    "market",
+    "history"
+   ],
+   "blurb": "A volunteer-led walk through the arcades and the market's history, 2.30pm to 4pm, a fiver. Eat afterwards in the Village.",
+   "url": "https://www.ianvisits.co.uk/calendar/brixton-market-heritage-walk-3-431857/",
+   "source": "IanVisits",
+   "date": "2026-11-14",
+   "time": "2.30pm"
+  },
+  {
+   "id": "ev-rev250",
+   "name": "Revolution 250 at The National Archives",
+   "area": "Kew",
+   "lat": 51.481,
+   "lon": -0.279,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    11,
+    99
+   ],
+   "kids": 1,
+   "adults": 3,
+   "dur": 1.5,
+   "tags": [
+    "exhibition",
+    "history",
+    "free"
+   ],
+   "blurb": "Original documents from the American War of Independence, free, next to Kew Gardens. Closes 28 November.",
+   "url": "https://www.nationalarchives.gov.uk",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-28"
+  },
+  {
+   "id": "ev-valence",
+   "name": "When Barking & Dagenham won the World Cup",
+   "area": "Dagenham",
+   "lat": 51.5604,
+   "lon": 0.133,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    7,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "exhibition",
+    "football",
+    "history",
+    "free"
+   ],
+   "blurb": "Valence House marks 60 years since 1966 with the borough's part in it. Small, free, and the manor house itself is worth a look. Closes 26 November.",
+   "url": "https://www.lbbd.gov.uk/valence-house-museum",
+   "source": "IanVisits",
+   "from": "2026-11-02",
+   "to": "2026-11-26"
+  },
+  {
+   "id": "ev-shanty-cuttysark",
+   "name": "Sea Shanty Festival at Cutty Sark",
+   "area": "Greenwich",
+   "lat": 51.4829,
+   "lon": -0.0096,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    4,
+    99
+   ],
+   "kids": 2,
+   "adults": 3,
+   "dur": 3,
+   "tags": [
+    "music",
+    "ships",
+    "festival"
+   ],
+   "blurb": "A day of shanty crews and singing workshops under the ship, 10am to 6pm, included with a Cutty Sark ticket.",
+   "url": "https://www.rmg.co.uk/whats-on",
+   "source": "Royal Museums Greenwich",
+   "date": "2026-11-21",
+   "time": "10am–6pm"
+  }
+ ]
+}
