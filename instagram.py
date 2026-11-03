@@ -36,8 +36,15 @@ MEDIA_FIELDS = "id,caption,media_type,media_url,thumbnail_url,permalink,timestam
 def api(path, params):
     params = dict(params, access_token=os.environ["IG_TOKEN"])
     url = f"https://{HOST}/{VER}/{path}?" + "&".join(f"{k}={quote(str(v), safe='(){},.')}" for k, v in params.items())
-    with urlopen(Request(url, headers={"User-Agent": "WhatToDo-ig/0.1"}), timeout=30) as r:
-        return json.loads(r.read().decode())
+    from urllib.error import HTTPError
+    try:
+        with urlopen(Request(url, headers={"User-Agent": "WhatToDo-ig/0.1"}), timeout=30) as r:
+            return json.loads(r.read().decode())
+    except HTTPError as ex:
+        body = ex.read().decode("utf-8", "ignore")
+        try: body = json.loads(body).get("error", {}).get("message", body)
+        except Exception: pass
+        raise RuntimeError(f"HTTP {ex.code}: {body[:200]}")
 
 def discover(handle, limit=25):
     fields = f"business_discovery.username({handle}){{username,name,media.limit({limit}){{{MEDIA_FIELDS}}}}}"
@@ -128,8 +135,15 @@ def main():
     ap.add_argument("--out", default="events.json"); ap.add_argument("--accounts", default="accounts.json")
     ap.add_argument("--state", default="ig_seen.json"); ap.add_argument("--check", action="store_true")
     ap.add_argument("--refresh-token", action="store_true"); ap.add_argument("--only")
+    ap.add_argument("--selftest", action="store_true")
     a = ap.parse_args()
     if a.refresh_token: return refresh_token()
+    if a.selftest:
+        try: print("me:", api(os.environ["IG_USER_ID"], {"fields": "username,name"}))
+        except Exception as ex: print("me failed:", ex)
+        try: print("discovery:", str(discover("hornimanmuseum", 2))[:300])
+        except Exception as ex: print("discovery failed:", ex)
+        return
     for k in ("IG_TOKEN", "IG_USER_ID"):
         if not os.environ.get(k): sys.exit(f"set {k} (see the header of this file)")
 
