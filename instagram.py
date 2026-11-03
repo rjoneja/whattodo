@@ -135,9 +135,15 @@ def main():
     ap.add_argument("--out", default="events.json"); ap.add_argument("--accounts", default="accounts.json")
     ap.add_argument("--state", default="ig_seen.json"); ap.add_argument("--check", action="store_true")
     ap.add_argument("--refresh-token", action="store_true"); ap.add_argument("--only")
-    ap.add_argument("--selftest", action="store_true")
+    ap.add_argument("--selftest", action="store_true"); ap.add_argument("--probe", help="comma-separated handles to test")
     a = ap.parse_args()
     if a.refresh_token: return refresh_token()
+    if a.probe:
+        for h in a.probe.split(","):
+            try:
+                bd = discover(h.strip(), 1); print("OK  ", h, "|", bd.get("name"), "|", bd.get("username"))
+            except Exception as ex: print("no  ", h, str(ex)[:60])
+        return
     if a.selftest:
         try: print("me:", api(os.environ["IG_USER_ID"], {"fields": "username,name"}))
         except Exception as ex: print("me failed:", ex)

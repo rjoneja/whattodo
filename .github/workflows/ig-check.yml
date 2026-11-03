@@ -13,4 +13,4 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: python3 instagram.py --selftest
-      - run: python3 instagram.py --check
+      - run: python3 instagram.py --probe "horniman,thehorniman,hornimanmuseumgardens,horniman_museum,youngvamuseum,young_vam,youngvanda,youngvandamuseum,thealbany_,albanydeptford,the_albany,albany_deptford,maltbystmarket,maltbystreet,maltby_street_market,maltbyst,brixton_village,brixtonvillagemarket,brixtonvillageldn,deptfordmktyard,deptford_market_yard,deptfordmarketyard_,friendsofbrockwellpark,brockwell_park,brockwellparklondon,mudchute_farm,mudchute,mudchutepark,vauxhall_city_farm,vauxhallcityfarmlondon,vcfarm,hackney_city_farm,hackneycityfarmuk,hackneycityfarm_,londonwildlifetrust,wild_london,wildlondonlwt,dulwichgallery,dulwich_gallery,dulwichpicturegallery_"
