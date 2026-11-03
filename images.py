@@ -113,14 +113,21 @@ def pick(e, used):
         return {"url": u, "credit": host}
     return None
 
-def wiki_near(lat, lon):
-    """Fallback: a Wikimedia photo of the nearest notable place."""
-    _, body = get(f"https://en.wikipedia.org/w/api.php?action=query&format=json&generator=geosearch&ggscoord={lat}|{lon}&ggsradius=600&ggslimit=8&prop=pageimages&piprop=thumbnail&pithumbsize=800", "application/json")
-    pages = sorted(json.loads(body).get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
-    for p in pages:
-        t = (p.get("thumbnail") or {}).get("source")
-        if t and not BAD_WORDS.search(t) and not t.lower().endswith((".svg.png",)):
-            return {"url": t, "credit": "Photo: Wikimedia Commons", "page": "https://en.wikipedia.org/wiki/" + quote(p["title"].replace(" ", "_"))}
+_area_cache = {}
+def wiki_area(area, name):
+    """Fallback: Wikipedia's lead photo of the neighbourhood (e.g. 'Blackheath, London'), vetted like any other picture."""
+    if not area or area.lower() in ("london-wide", "london", "central"): return None
+    if area not in _area_cache:
+        t = None
+        for title in (f"{area}, London", area):
+            try:
+                t = wiki_thumb(title)
+                if t and not BAD_WORDS.search(t["url"]) and ".svg" not in t["url"].lower(): break
+                t = None
+            except Exception: t = None
+        _area_cache[area] = t
+    t = _area_cache[area]
+    if t and looks_like_photo(t["url"], f"{name} (in {area})"): return dict(t)
     return None
 
 def main():
@@ -138,9 +145,11 @@ def main():
             print(f"{id_}: wiki failed {ex}", file=sys.stderr)
         time.sleep(0.5)
     events = json.load(open(a.events)).get("events", []) if os.path.exists(a.events) else []
+    for k, v in out.items():
+        if v.get("checked") == 2 and "Wikimedia" not in v.get("credit", ""): v["checked"] = 3
     if a.recheck:
         for e in events:
-            if e["id"] in out and out[e["id"]].get("checked") != 2: out.pop(e["id"])
+            if e["id"] in out and (out[e["id"]].get("checked") != 3): out.pop(e["id"])
     used = {}
     for k, v in out.items(): used[v["url"]] = used.get(v["url"], 0) + 1
     for e in events:
@@ -150,11 +159,11 @@ def main():
             try: t = pick(e, used)
             except Exception as ex: print(f"{e['id']}: page failed {str(ex)[:60]}", file=sys.stderr)
         if not t:
-            try: t = wiki_near(e["lat"], e["lon"])
+            try: t = wiki_area(e.get("area"), e["name"])
             except Exception: t = None
         if t:
-            t["checked"] = 2; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
-            print(f"{e['id']}: {'page' if 'Wikimedia' not in t['credit'] else 'wiki-near'} ok", file=sys.stderr)
+            t["checked"] = 3; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
+            print(f"{e['id']}: {'page' if 'Wikimedia' not in t['credit'] else 'wiki-area'} ok", file=sys.stderr)
         time.sleep(0.5)
     live = set(WIKI) | {e["id"] for e in events}
     out = {k: v for k, v in out.items() if k in live}
