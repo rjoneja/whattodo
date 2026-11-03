@@ -3,19 +3,14 @@ on: workflow_dispatch
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      IG_TOKEN: "${{ secrets.IG_TOKEN }}"
+      IG_USER_ID: "${{ secrets.IG_USER_ID }}"
+      IG_HOST: graph.facebook.com
+      IG_API_VERSION: v26.0
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: python3 instagram.py --selftest
       - run: python3 instagram.py --check
-        env:
-          IG_TOKEN: "${{ secrets.IG_TOKEN }}"
-          IG_USER_ID: "${{ secrets.IG_USER_ID }}"
-          IG_HOST: graph.facebook.com
-          IG_API_VERSION: v26.0
-        env:
-          IG_TOKEN: "${{ secrets.IG_TOKEN }}"
-          IG_USER_ID: "${{ secrets.IG_USER_ID }}"
-          IG_HOST: graph.facebook.com
-          IG_API_VERSION: v26.0
