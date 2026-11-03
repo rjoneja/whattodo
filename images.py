@@ -93,11 +93,18 @@ def looks_like_photo(u, name):
     import anthropic
     _client = _client or anthropic.Anthropic()
     try:
+        import base64
+        with urlopen(Request(u, headers={"User-Agent": UA}), timeout=20) as r:
+            data = r.read(4_500_000); ctype = (r.headers.get("Content-Type") or "").split(";")[0].strip()
+        if len(data) >= 4_500_000: return False
+        if ctype not in ("image/jpeg", "image/png", "image/webp", "image/gif"):
+            ctype = "image/png" if data[:4] == b"\x89PNG" else "image/webp" if data[8:12] == b"WEBP" else "image/jpeg"
         msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=5, messages=[{"role": "user", "content": [
-            {"type": "image", "source": {"type": "url", "url": u}},
+            {"type": "image", "source": {"type": "base64", "media_type": ctype, "data": base64.b64encode(data).decode()}},
             {"type": "text", "text": f"This image is for a listing called '{name}'. Answer YES if it is an appealing photograph (people, a place, an activity, an exhibit or artwork) that would make someone want to go. Answer NO if it is a logo, coat of arms, icon, plain text, a flyer that is mostly words, a map, a screenshot or a generic graphic. One word."}]}])
         return "YES" in "".join(getattr(b, "text", "") for b in msg.content).upper()
-    except Exception:
+    except Exception as ex:
+        print(f"  vet failed {u[:60]}: {str(ex)[:80]}", file=sys.stderr)
         return False
 
 def pick(e, used):
