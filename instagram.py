@@ -45,7 +45,12 @@ def discover(handle, limit=25):
     return data.get("business_discovery", {})
 
 def refresh_token():
-    url = f"https://{HOST}/refresh_access_token?grant_type=ig_refresh_token&access_token={os.environ['IG_TOKEN']}"
+    if HOST == "graph.facebook.com":
+        # Facebook-login tokens: extend with app id + secret (or use Graph API Explorer > Access Token Tool > Extend)
+        url = (f"https://graph.facebook.com/{VER}/oauth/access_token?grant_type=fb_exchange_token"
+               f"&client_id={os.environ['FB_APP_ID']}&client_secret={os.environ['FB_APP_SECRET']}&fb_exchange_token={os.environ['IG_TOKEN']}")
+    else:
+        url = f"https://{HOST}/refresh_access_token?grant_type=ig_refresh_token&access_token={os.environ['IG_TOKEN']}"
     with urlopen(url, timeout=30) as r:
         print(json.loads(r.read().decode())["access_token"])
 

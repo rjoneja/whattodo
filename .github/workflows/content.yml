@@ -25,6 +25,8 @@ jobs:
           ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
           IG_TOKEN: "${{ secrets.IG_TOKEN }}"
           IG_USER_ID: "${{ secrets.IG_USER_ID }}"
+          IG_HOST: graph.facebook.com
+          IG_API_VERSION: v26.0
       - name: Pictures
         run: python3 images.py --events docs/events.json --out docs/images.json || true
       - run: |
