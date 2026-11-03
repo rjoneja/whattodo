@@ -982,90 +982,6 @@
    "group": "young"
   },
   {
-   "handle": "londonkidsactivities",
-   "name": "Creative crafts, sensory play groups, and local toddler meet",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "totstoutlondon",
-   "name": "Specifically targets parents looking for rainy day activitie",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "mummyinthecity",
-   "name": "Practical tips on navigating West London attractions with a ",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "londonparents",
-   "name": "Comprehensive lists of soft plays, petting zoos, and local b",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
    "handle": "citykidsmagazine",
    "name": "Showcases child-friendly theatre, music classes, and early y",
    "area": "London-wide",
@@ -1108,323 +1024,8 @@
    "group": "young"
   },
   {
-   "handle": "pushchairparentldn",
-   "name": "Testing step-free routes, accessible cafes, and family bathr",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "littlelondonmag",
-   "name": "Culture, fashion, and lifestyle activities for early-years k",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "kiddo_london",
-   "name": "Pop-up family events, immersive child experiences, and baby ",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "southlondonmums",
-   "name": "Hyper-local playgrounds and early development groups south o",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "northlondonmums",
-   "name": "Playgrounds, family-friendly pubs, and toy libraries in Nort",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "eastlondonkids",
-   "name": "Creative community hubs, parks, and indie toddler classes in",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "urban_mummy",
-   "name": "Everyday activities, toy store openings, and splash park map",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "londonwithakid",
-   "name": "Real, unedited reviews of major London museums from a parent",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "happylittleldners",
-   "name": "Focusing on nature walks, city farms, and sensory gardens.",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "playcafesldn",
-   "name": "Dedicated exclusively to charting cafes where parents can si",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
    "handle": "discover_story",
    "name": "The official feed for the Children’s Story Centre in Stratfo",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "mudlarks_childrens_gallery",
-   "name": "Showcasing the interactive early-years play gallery at Dockl",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "londonwithtoddlers",
-   "name": "Free activities, library rhyme times, and toddler-proof muse",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "thesuburbanmummy",
-   "name": "Day trips right on the edge of the London train boundaries f",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "joyful_parenting_ldn",
-   "name": "Mindful, stress-free activity ideas for children under five.",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 1,
-    "ages": [
-     0,
-     6
-    ],
-    "tags": [
-     "family",
-     "toddlers"
-    ]
-   },
-   "group": "young"
-  },
-  {
-   "handle": "londonkidsguide",
-   "name": "Weekend roundups of free events, seasonal markets, and kid-f",
    "area": "London-wide",
    "lat": 51.5074,
    "lon": -0.1278,
@@ -2387,6 +1988,84 @@
     ]
    },
    "group": "couples"
+  }
+ ],
+ "rejected": [
+  {
+   "handle": "londonkidsactivities",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "totstoutlondon",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "mummyinthecity",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "londonparents",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "pushchairparentldn",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "littlelondonmag",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "kiddo_london",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "southlondonmums",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "northlondonmums",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "eastlondonkids",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "urban_mummy",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "londonwithakid",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "happylittleldners",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "playcafesldn",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "mudlarks_childrens_gallery",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "londonwithtoddlers",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "thesuburbanmummy",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "joyful_parenting_ldn",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "londonkidsguide",
+   "why": "HTTP 400: Invalid user id"
   }
  ]
 }

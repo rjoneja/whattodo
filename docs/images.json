@@ -1336,5 +1336,46 @@
 "ev-ceramics-workshop-turning-london-clay-in-11-21": {
 "url": "https://www.horniman.ac.uk/wp-content/uploads/2020/03/Laura-Mtungwazi-Images-children-in-teh-Gardens-scaled.jpg",
 "credit": "horniman.ac.uk"
+},
+"wwetlands": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Aerial_view_of_Walthamstow_Reservoirs_from_the_north.jpg/640px-Aerial_view_of_Walthamstow_Reservoirs_from_the_north.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Walthamstow_Wetlands"
+},
+"epping": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Epping_Forest_Centenary_Walk_2_-_Sept_2008.jpg/640px-Epping_Forest_Centenary_Walk_2_-_Sept_2008.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Epping_Forest"
+},
+"barrierpark": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Thamesbarrierpark.jpg/640px-Thamesbarrierpark.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Thames_Barrier_Park"
+},
+"cablecar": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Emirates_Air_Line_towers_24_May_2012.jpg/640px-Emirates_Air_Line_towers_24_May_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/London_cable_car"
+},
+"barbican": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Barbican_Lakeside_on_a_summer_evening.jpg/640px-Barbican_Lakeside_on_a_summer_evening.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Barbican_Centre"
+},
+"ev-traditional-chinese-tea-ceremony-for-2-11-03": {
+"url": "https://eu-assets.simpleview-europe.com/enjoyroyalgreenwich/imageresizer/?image=%2Fdbimgs%2FERG%20-%20Main%20Gallery%20-%20What%27s%20On.png&action=OpenGraph",
+"credit": "enjoyroyalgreenwich.org.uk"
+},
+"ev-greenwich-peninsula-winter-market-11-07": {
+"url": "https://eu-assets.simpleview-europe.com/enjoyroyalgreenwich/imageresizer/?image=%2Fdbimgs%2FERG%20-%20Main%20Gallery%20-%20What%27s%20On.png&action=OpenGraph",
+"credit": "enjoyroyalgreenwich.org.uk"
+},
+"ev-andaluza-11-14": {
+"url": "https://eu-assets.simpleview-europe.com/enjoyroyalgreenwich/imageresizer/?image=%2Fdbimgs%2FERG%20-%20Main%20Gallery%20-%20What%27s%20On.png&action=OpenGraph",
+"credit": "enjoyroyalgreenwich.org.uk"
+},
+"ev-national-children-s-orchestras-winter-co-11-22": {
+"url": "https://eu-assets.simpleview-europe.com/enjoyroyalgreenwich/imageresizer/?image=%2Fdbimgs%2FERG%20-%20Main%20Gallery%20-%20What%27s%20On.png&action=OpenGraph",
+"credit": "enjoyroyalgreenwich.org.uk"
 }
 }
