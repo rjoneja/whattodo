@@ -17,7 +17,10 @@
      "museum",
      "science"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.nhm.ac.uk/whats-on.html"
   },
   {
    "id": "sciencemuseum",
@@ -35,7 +38,10 @@
      "museum",
      "science"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.sciencemuseum.org.uk/see-and-do"
   },
   {
    "id": "va",
@@ -54,7 +60,10 @@
      "design",
      "art"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.vam.ac.uk/whatson"
   },
   {
    "id": "youngva",
@@ -76,7 +85,10 @@
      "museum",
      "play"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "bm",
@@ -94,7 +106,10 @@
      "museum",
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "tatemodern",
@@ -112,7 +127,10 @@
      "gallery",
      "art"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.tate.org.uk/whats-on"
   },
   {
    "id": "tatebritain",
@@ -130,7 +148,10 @@
      "gallery",
      "art"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.tate.org.uk/whats-on"
   },
   {
    "id": "nationalgallery",
@@ -148,7 +169,10 @@
      "gallery",
      "art"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.nationalgallery.org.uk/events"
   },
   {
    "id": "npg",
@@ -166,7 +190,10 @@
      "gallery",
      "art"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "horniman",
@@ -184,7 +211,10 @@
      "museum",
      "gardens"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.horniman.ac.uk/whats-on/"
   },
   {
    "id": "dulwich",
@@ -202,7 +232,10 @@
      "gallery",
      "art"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "rmg",
@@ -221,7 +254,10 @@
      "ships",
      "space"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.rmg.co.uk/whats-on"
   },
   {
    "id": "ornc",
@@ -239,7 +275,11 @@
      "history",
      "architecture"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://ornc.org/feed/",
+   "has_rss": "https://ornc.org/feed/"
   },
   {
    "id": "londonmuseum",
@@ -257,7 +297,10 @@
      "museum",
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.londonmuseum.org.uk/whats-on/"
   },
   {
    "id": "docklands",
@@ -275,7 +318,10 @@
      "museum",
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.londonmuseum.org.uk/whats-on/"
   },
   {
    "id": "ltm",
@@ -293,7 +339,10 @@
      "museum",
      "transport"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "postal",
@@ -311,7 +360,10 @@
      "museum",
      "trains"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "wellcome",
@@ -333,7 +385,10 @@
      "museum",
      "science"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://wellcomecollection.org/events"
   },
   {
    "id": "ri",
@@ -351,7 +406,10 @@
      "science",
      "talk"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.rigb.org/whats-on"
   },
   {
    "id": "iwm",
@@ -369,7 +427,10 @@
      "museum",
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.iwm.org.uk/whats-on"
   },
   {
    "id": "hmsbelfast",
@@ -387,7 +448,10 @@
      "ships",
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.iwm.org.uk/whats-on"
   },
   {
    "id": "designmuseum",
@@ -405,7 +469,10 @@
      "museum",
      "design"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://designmuseum.org/whats-on"
   },
   {
    "id": "museumofthehome",
@@ -423,7 +490,10 @@
      "museum",
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://museumofthehome.org.uk/whats-on/"
   },
   {
    "id": "whitechapel",
@@ -441,7 +511,11 @@
      "gallery",
      "art"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.whitechapelgallery.org/feed/",
+   "has_rss": "https://www.whitechapelgallery.org/feed/"
   },
   {
    "id": "southbank",
@@ -459,7 +533,10 @@
      "music",
      "arts"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "barbican",
@@ -478,7 +555,10 @@
      "arts",
      "film"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.barbican.org.uk/whats-on"
   },
   {
    "id": "bfi",
@@ -495,7 +575,10 @@
     "tags": [
      "film"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "somersethouse",
@@ -512,7 +595,10 @@
     "tags": [
      "arts"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.somersethouse.org.uk/whats-on"
   },
   {
    "id": "roundhouse",
@@ -530,7 +616,10 @@
      "music",
      "circus"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.roundhouse.org.uk/whats-on/"
   },
   {
    "id": "unicorn",
@@ -552,7 +641,10 @@
      "theatre",
      "kids"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 522: <none>"
   },
   {
    "id": "polka",
@@ -574,7 +666,11 @@
      "theatre",
      "kids"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://polkatheatre.com/feed/",
+   "has_rss": "https://polkatheatre.com/feed/"
   },
   {
    "id": "littleangel",
@@ -596,7 +692,10 @@
      "puppets",
      "theatre"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.littleangeltheatre.com/whats-on/"
   },
   {
    "id": "halfmoon",
@@ -618,7 +717,11 @@
      "theatre",
      "kids"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.halfmoon.org.uk/feed/",
+   "has_rss": "https://www.halfmoon.org.uk/feed/"
   },
   {
    "id": "albany",
@@ -636,7 +739,10 @@
      "theatre",
      "music"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "blackheathhalls",
@@ -653,7 +759,11 @@
     "tags": [
      "music"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.blackheathhalls.com/feed/",
+   "has_rss": "https://www.blackheathhalls.com/feed/"
   },
   {
    "id": "lyric",
@@ -670,7 +780,10 @@
     "tags": [
      "theatre"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://lyric.co.uk/whats-on/"
   },
   {
    "id": "stratfordeast",
@@ -687,7 +800,10 @@
     "tags": [
      "theatre"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "discover",
@@ -709,7 +825,10 @@
      "play",
      "stories"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "royalparks",
@@ -727,7 +846,10 @@
      "park",
      "walk"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.royalparks.org.uk/whats-on"
   },
   {
    "id": "kew",
@@ -744,7 +866,10 @@
     "tags": [
      "gardens"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "chelseaphysic",
@@ -761,7 +886,10 @@
     "tags": [
      "gardens"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.chelseaphysicgarden.co.uk/whats-on/"
   },
   {
    "id": "wwtlondon",
@@ -779,7 +907,10 @@
      "nature",
      "birds"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.wwt.org.uk/wetland-centres/london/whats-on"
   },
   {
    "id": "wildlondon",
@@ -797,7 +928,11 @@
      "nature",
      "walk"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.wildlondon.org.uk/events/rss.xml",
+   "has_rss": "https://www.wildlondon.org.uk/events/rss.xml"
   },
   {
    "id": "cityoflondongreen",
@@ -815,7 +950,10 @@
      "nature",
      "walk"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.cityoflondon.gov.uk/things-to-do/green-spaces"
   },
   {
    "id": "leevalley",
@@ -834,7 +972,10 @@
      "sport",
      "nature"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "qeop",
@@ -852,7 +993,10 @@
      "park",
      "sport"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.queenelizabetholympicpark.co.uk/whats-on"
   },
   {
    "id": "crystalpalacepark",
@@ -869,7 +1013,10 @@
     "tags": [
      "park"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 307: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error messag"
   },
   {
    "id": "beckenhamplace",
@@ -886,7 +1033,10 @@
     "tags": [
      "park"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "brockwell",
@@ -903,7 +1053,11 @@
     "tags": [
      "park"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://friendsofbrockwellpark.org/feed/",
+   "has_rss": "https://friendsofbrockwellpark.org/feed/"
   },
   {
    "id": "mudchute",
@@ -921,7 +1075,10 @@
      "farm",
      "animals"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "vauxhallfarm",
@@ -939,7 +1096,10 @@
      "farm",
      "animals"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "hackneyfarm",
@@ -957,7 +1117,10 @@
      "farm",
      "animals"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "surreydocksfarm",
@@ -975,7 +1138,10 @@
      "farm",
      "animals"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.surreydocksfarm.org.uk/whats-on"
   },
   {
    "id": "spitalfieldsfarm",
@@ -993,7 +1159,11 @@
      "farm",
      "animals"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "ics",
+   "feed_url": "https://www.spitalfieldscityfarm.org/whats-on/2026/10/21/atph1j1ps39l6xnh61o73mvyydxybd?format=ical",
+   "has_ics": "https://www.spitalfieldscityfarm.org/whats-on/2026/10/21/atph1j1ps39l6xnh61o73mvyydxybd?format=ical"
   },
   {
    "id": "zsl",
@@ -1010,7 +1180,10 @@
     "tags": [
      "animals"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.londonzoo.org/plan-your-visit/events"
   },
   {
    "id": "eh",
@@ -1027,7 +1200,10 @@
     "tags": [
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.english-heritage.org.uk/visit/whats-on/"
   },
   {
    "id": "nt",
@@ -1045,7 +1221,10 @@
      "history",
      "gardens"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "hrp",
@@ -1063,7 +1242,10 @@
      "history",
      "palace"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "stpauls",
@@ -1080,7 +1262,10 @@
     "tags": [
      "cathedral"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.stpauls.co.uk/whats-on"
   },
   {
    "id": "southwarkcathedral",
@@ -1098,7 +1283,10 @@
      "cathedral",
      "music"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://cathedral.southwark.anglican.org/whats-on/"
   },
   {
    "id": "openhouse",
@@ -1115,7 +1303,10 @@
     "tags": [
      "architecture"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://programme.openhouse.org.uk/"
   },
   {
    "id": "severndroog",
@@ -1133,7 +1324,10 @@
      "views",
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "chislehurst",
@@ -1150,7 +1344,11 @@
     "tags": [
      "caves"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://chislehurst-caves.co.uk/feed/",
+   "has_rss": "https://chislehurst-caves.co.uk/feed/"
   },
   {
    "id": "brunelmuseum",
@@ -1168,7 +1366,10 @@
      "engineering",
      "history"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "kirkaldy",
@@ -1186,7 +1387,10 @@
      "engineering",
      "quirky"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "<urlopen error [Errno -2] Name or service not known>"
   },
   {
    "id": "crossness",
@@ -1204,7 +1408,10 @@
      "engineering",
      "victorian"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.crossness.org.uk/visit/open-days/"
   },
   {
    "id": "kempton",
@@ -1222,7 +1429,11 @@
      "engineering",
      "steam"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://kemptonsteam.org/feed/",
+   "has_rss": "https://kemptonsteam.org/feed/"
   },
   {
    "id": "markfield",
@@ -1240,7 +1451,10 @@
      "engineering",
      "steam"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.mbeam.org/"
   },
   {
    "id": "brooklands",
@@ -1258,7 +1472,10 @@
      "cars",
      "planes"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.brooklandsmuseum.com/whats-on"
   },
   {
    "id": "rafmuseum",
@@ -1276,7 +1493,10 @@
      "planes",
      "museum"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.rafmuseum.org.uk/london/whats-going-on/page/1/"
   },
   {
    "id": "boroughmarket",
@@ -1294,7 +1514,10 @@
      "food",
      "market"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "spitalfieldsmarket",
@@ -1311,7 +1534,10 @@
     "tags": [
      "market"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://oldspitalfieldsmarket.com/whats-on"
   },
   {
    "id": "greenwichmarket",
@@ -1329,7 +1555,10 @@
      "market",
      "food"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://greenwichmarket.london/whats-on/"
   },
   {
    "id": "brixtonvillage",
@@ -1347,7 +1576,11 @@
      "food",
      "market"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://brixtonvillage.com/feed/",
+   "has_rss": "https://brixtonvillage.com/feed/"
   },
   {
    "id": "peckhamlevels",
@@ -1365,7 +1598,10 @@
      "food",
      "arts"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://peckhamlevels.org/whats-on"
   },
   {
    "id": "batterseaps",
@@ -1383,7 +1619,10 @@
      "shops",
      "events"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "coalyards",
@@ -1401,7 +1640,10 @@
      "events",
      "food"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.kingscross.co.uk/whats-on"
   },
   {
    "id": "canarywharf",
@@ -1418,7 +1660,10 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://canarywharf.com/whats-on/"
   },
   {
    "id": "wembleypark",
@@ -1435,7 +1680,10 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://wembleypark.com/whats-on/"
   },
   {
    "id": "lewisham",
@@ -1452,7 +1700,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://lewisham.gov.uk/inmyarea/events"
   },
   {
    "id": "southwark",
@@ -1469,7 +1720,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.southwark.gov.uk/southwark-presents"
   },
   {
    "id": "greenwichcouncil",
@@ -1486,7 +1740,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "enjoygreenwich",
@@ -1503,7 +1760,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "id": "lambeth",
@@ -1520,7 +1780,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.lambeth.gov.uk/events"
   },
   {
    "id": "bromley",
@@ -1537,7 +1800,11 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.bromley.gov.uk/rss/news",
+   "has_rss": "https://www.bromley.gov.uk/rss/news"
   },
   {
    "id": "camden",
@@ -1554,7 +1821,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "hackney",
@@ -1571,7 +1841,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.hackney.gov.uk/events"
   },
   {
    "id": "islington",
@@ -1588,7 +1861,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://directory.islington.gov.uk/kb5/islington/directory/whats_on.page"
   },
   {
    "id": "towerhamlets",
@@ -1605,7 +1881,11 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.towerhamlets.gov.uk/News_events/Events/Events.aspx?Calendar_List_SyndicationType=1",
+   "has_rss": "https://www.towerhamlets.gov.uk/News_events/Events/Events.aspx?Calendar_List_SyndicationType=1"
   },
   {
    "id": "wandsworth",
@@ -1622,7 +1902,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.wandsworth.gov.uk/events/"
   },
   {
    "id": "richmondcouncil",
@@ -1639,7 +1922,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.visitrichmond.co.uk/events"
   },
   {
    "id": "ealing",
@@ -1656,7 +1942,11 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.ealing.gov.uk/rss/news",
+   "has_rss": "https://www.ealing.gov.uk/rss/news"
   },
   {
    "id": "walthamforest",
@@ -1673,7 +1963,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 405: Not Allowed"
   },
   {
    "id": "haringey",
@@ -1690,7 +1983,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://haringey.gov.uk/events"
   },
   {
    "id": "croydon",
@@ -1707,7 +2003,10 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "allypally",
@@ -1725,7 +2024,10 @@
      "events",
      "views"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.alexandrapalace.com/whats-on/"
   },
   {
    "id": "o2",
@@ -1743,7 +2045,10 @@
      "music",
      "shows"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.theo2.co.uk/events"
   },
   {
    "id": "excel",
@@ -1761,7 +2066,10 @@
      "shows",
      "fairs"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.excel.london/whats-on"
   },
   {
    "id": "olympia",
@@ -1779,7 +2087,10 @@
      "shows",
      "fairs"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.olympia.co.uk/whats-on"
   },
   {
    "id": "businessdesign",
@@ -1796,7 +2107,10 @@
     "tags": [
      "fairs"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "eventbrite-family",
@@ -1813,7 +2127,10 @@
     "tags": [
      "family"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 405: Not Allowed"
   },
   {
    "id": "eventbrite-free",
@@ -1830,7 +2147,10 @@
     "tags": [
      "free"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 405: Not Allowed"
   },
   {
    "id": "eventbrite-food",
@@ -1847,7 +2167,10 @@
     "tags": [
      "food"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 405: Not Allowed"
   },
   {
    "id": "skiddle-london",
@@ -1864,7 +2187,11 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "jsonld",
+   "feed_url": "https://www.skiddle.com/whats-on/London/",
+   "jsonld_events": 72
   },
   {
    "id": "dmn",
@@ -1886,7 +2213,10 @@
      "nightlife",
      "food"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.designmynight.com/london/whats-on"
   },
   {
    "id": "ianvisits",
@@ -1903,7 +2233,11 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.ianvisits.co.uk/calendar/feed/",
+   "has_rss": "https://www.ianvisits.co.uk/calendar/feed/"
   },
   {
    "id": "londonist",
@@ -1920,7 +2254,10 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "timeout",
@@ -1937,7 +2274,10 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.timeout.com/london/things-to-do"
   },
   {
    "id": "kidrated",
@@ -1954,7 +2294,10 @@
     "tags": [
      "family"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.kidrated.com/"
   },
   {
    "id": "hoop",
@@ -1971,7 +2314,10 @@
     "tags": [
      "family"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "visitlondon",
@@ -1988,7 +2334,10 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "dadsinlondon",
@@ -1997,8 +2346,8 @@
    "lat": 51.5074,
    "lon": -0.1278,
    "url": "https://www.dadsinlondon.com/archive",
-   "feed": "rss",
-   "feed_url": "https://www.dadsinlondon.com/feed",
+   "feed": "html",
+   "feed_url": "https://www.dadsinlondon.com/archive",
    "kind": "aggregator",
    "defaults": {
     "in": "both",
@@ -2007,7 +2356,8 @@
     "tags": [
      "family"
     ]
-   }
+   },
+   "probed": "2026-11-03"
   },
   {
    "id": "barkingdagenham",
@@ -2025,7 +2375,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "barnet",
@@ -2043,7 +2396,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.barnet.gov.uk/events"
   },
   {
    "id": "bexley",
@@ -2061,7 +2417,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.bexley.gov.uk/events"
   },
   {
    "id": "brent",
@@ -2079,7 +2438,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.brent.gov.uk/events"
   },
   {
    "id": "cityoflondonevents",
@@ -2097,7 +2459,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "enfield",
@@ -2115,7 +2480,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "error",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "hammersmithfulham",
@@ -2133,7 +2501,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.lbhf.gov.uk/events"
   },
   {
    "id": "harrow",
@@ -2151,7 +2522,11 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.harrow.gov.uk/rss/news",
+   "has_rss": "https://www.harrow.gov.uk/rss/news"
   },
   {
    "id": "havering",
@@ -2169,7 +2544,11 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.havering.gov.uk/rss/news",
+   "has_rss": "https://www.havering.gov.uk/rss/news"
   },
   {
    "id": "hillingdon",
@@ -2187,7 +2566,11 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://pre.hillingdon.gov.uk/rss/news",
+   "has_rss": "https://pre.hillingdon.gov.uk/rss/news"
   },
   {
    "id": "hounslow",
@@ -2205,7 +2588,11 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.hounslow.gov.uk/rss/news",
+   "has_rss": "https://www.hounslow.gov.uk/rss/news"
   },
   {
    "id": "kensingtonchelsea",
@@ -2223,7 +2610,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.rbkc.gov.uk/events"
   },
   {
    "id": "kingston",
@@ -2241,7 +2631,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.kingston.gov.uk/events"
   },
   {
    "id": "merton",
@@ -2259,7 +2652,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.merton.gov.uk/communities-and-neighbourhoods/events"
   },
   {
    "id": "newham",
@@ -2277,7 +2673,11 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "rss",
+   "feed_url": "https://www.newham.gov.uk/rss/news",
+   "has_rss": "https://www.newham.gov.uk/rss/news"
   },
   {
    "id": "redbridge",
@@ -2295,7 +2695,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.redbridge.gov.uk/"
   },
   {
    "id": "sutton",
@@ -2313,7 +2716,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://events.sutton.gov.uk/"
   },
   {
    "id": "westminster",
@@ -2331,7 +2737,10 @@
      "community",
      "local"
     ]
-   }
+   },
+   "probed": "2026-11-03",
+   "feed": "html",
+   "feed_url": "https://www.westminster.gov.uk/event"
   }
  ]
 }
