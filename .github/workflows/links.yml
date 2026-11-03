@@ -1,0 +1,24 @@
+name: links
+on:
+  workflow_dispatch:
+    inputs:
+      url: {description: "Page to list outbound links from", required: true}
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 - "${{ github.event.inputs.url }}" <<'PY'
+          import re, sys, html
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlparse
+          u = sys.argv[1]
+          doc = urlopen(Request(u, headers={"User-Agent": "JauntOut-links/0.1"}), timeout=30).read().decode("utf-8", "ignore")
+          host = urlparse(u).netloc
+          seen = set()
+          for m in re.finditer(r'(?is)<a\b[^>]*href=["\'](https?://[^"\']+)["\'][^>]*>(.*?)</a>', doc):
+              href, text = html.unescape(m.group(1)), re.sub(r"<[^>]+>", "", m.group(2)).strip()
+              h = urlparse(href).netloc
+              if h == host or h in seen or not text or "blogger" in h or "google" in h: continue
+              seen.add(h); print("LINK", text[:60], "|", href)
+          PY
