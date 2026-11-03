@@ -135,7 +135,8 @@ In `index.html`, `score(item, mins)`:
 | free | +0.3 |
 | tag affinity from swipes | ±0.35 per tag count, capped ±2 |
 | "would go again" | −0.8 |
-| one-off event | +1.4 (single day) / +0.6 (run) |
+| one-off / temporary | single day +6 · ends in ≤3 days +5 · ≤7 +4.2 · ≤14 +3.4 · ≤30 +2.6 · ≤90 +1.6 · longer +0.8 |
+| everyday listing within 400 m of a one-off or soon-ending event that day | −4 |
 | jitter | +0 to 0.5 |
 
 Tuning is a matter of editing those numbers. Add real swipe data from PostHog before touching them much.

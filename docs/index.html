@@ -468,7 +468,15 @@ function score(it,mins){
   if(it.price==='free') s+=0.3;
   let aff=0; for(const t of it.tags){aff+=(swipes.like[t]||0)*0.35-(swipes.pass[t]||0)*0.35} aff=Math.max(-2,Math.min(2,aff)); s+=aff; if(aff>=0.7) why.push('like things you saved');
   if(status[it.id]==='again') s-=0.8;
-  if(it.event){ s+=it.date?1.4:0.6; why.push(it.date?'on this day only':'on for a limited time') }
+  if(it.event){
+    // scarcity: the fewer chances left to go, the bigger the boost
+    let left;
+    if(it.date) left=1;
+    else { const end=it.to?fromIso(it.to):null; left=end?Math.max(1,Math.round((end-fromIso(setup.date))/864e5)+1):365; }
+    const boost = left<=1 ? 6 : left<=3 ? 5 : left<=7 ? 4.2 : left<=14 ? 3.4 : left<=30 ? 2.6 : left<=90 ? 1.6 : 0.8;
+    s+=boost;
+    why.push(left<=1?'one day only':left<=7?'ends in '+left+' days':left<=30?'on for a limited time':'temporary');
+  }
   if(mins<=25) why.push('close by');
   s+=Math.random()*0.5;
   return {s,why};
@@ -484,7 +492,15 @@ async function buildDeck(){
   const pool=[...ITEMS.filter(openOn),...EVENTS.filter(e=>eventOn(e)&&(!e.to||e.to>=today))];
   deck=pool.filter(it=>!['saved','done','pass'].includes(status[it.id]))
     .map(it=>{const mins=estMins(it);const r=score(it,mins);return Object.assign({},it,{mins,est:true,score:r.s,why:r.why})})
-    .filter(x=>x.score>-50).sort((a,b)=>b.score-a.score);
+    .filter(x=>x.score>-50);
+  // a one-off at a place beats the place itself: push the everyday listing well down when an event is on there
+  const special=deck.filter(x=>x.event&&(x.date||(x.to&&(fromIso(x.to)-fromIso(setup.date))/864e5<=30)));
+  deck.forEach(x=>{ if(!x.event && special.some(e=>km(e.lat,e.lon,x.lat,x.lon)<0.4)) x.score-=4; });
+  deck.sort((a,b)=>b.score-a.score);
+  // drop near-duplicates (same event listed by two sources, or singular/plural titles)
+  const seenKeys=new Set();
+  deck=deck.filter(x=>{const k=x.name.toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9 ]/g,'').replace(/s\b/g,'').trim().split(/\s+/).slice(0,4).join(' ')+'|'+(x.date||x.from||'');
+    if(seenKeys.has(k)) return false; seenKeys.add(k); return true;});
   undoStack=[];
   renderStrip(); renderStack();
   track('deck_built',{n:deck.length,wx:wx&&wx.word});
