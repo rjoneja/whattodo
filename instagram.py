@@ -141,8 +141,11 @@ def main():
     if a.selftest:
         try: print("me:", api(os.environ["IG_USER_ID"], {"fields": "username,name"}))
         except Exception as ex: print("me failed:", ex)
-        try: print("discovery:", str(discover("hornimanmuseum", 2))[:300])
-        except Exception as ex: print("discovery failed:", ex)
+        for h in ["instagram", "natgeo", "britishmuseum", "tate", "hornimanmuseum", "barbicancentre", "kewgardens", "southbankcentre"]:
+            try:
+                bd = discover(h, 1); m = bd.get("media", {}).get("data", [])
+                print("discovery ok:", h, "| posts:", len(m), "|", (m[0].get("caption") or "")[:60].replace("\n", " ") if m else "")
+            except Exception as ex: print("discovery failed:", h, ex)
         return
     for k in ("IG_TOKEN", "IG_USER_ID"):
         if not os.environ.get(k): sys.exit(f"set {k} (see the header of this file)")
