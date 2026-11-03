@@ -1,0 +1,26 @@
+name: instagram
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
+      IG_TOKEN: "${{ secrets.IG_TOKEN }}"
+      IG_USER_ID: "${{ secrets.IG_USER_ID }}"
+      IG_HOST: graph.facebook.com
+      IG_API_VERSION: v26.0
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install anthropic
+      - run: python3 instagram.py --days 21 --out docs/events.json
+      - run: python3 images.py --events docs/events.json --out docs/images.json || true
+      - run: |
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add docs/events.json docs/images.json accounts.json
+          [ -f ig_seen.json ] && git add ig_seen.json
+          git commit -m "instagram $(date +%F)" || exit 0
+          git pull --rebase origin main && git push

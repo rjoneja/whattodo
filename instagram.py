@@ -163,7 +163,7 @@ def main():
     if reg.get("candidates") and not a.only:
         keep, promoted = [], 0
         for i, c in enumerate(reg["candidates"]):
-            if i >= 40: keep.append(c); continue
+            if i >= int(os.environ.get("IG_CANDIDATES_PER_RUN", "25")): keep.append(c); continue
             try:
                 bd = discover(c["handle"], 1)
                 c.pop("group", None); c["name"] = bd.get("name") or c["name"]

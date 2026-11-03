@@ -924,6 +924,22 @@
  ],
  "candidates": [
   {
+   "handle": "lesserknownlondonn",
+   "name": "Lesser Known London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "hidden gems",
+     "quirky"
+    ]
+   }
+  },
+  {
    "handle": "tinylondoner",
    "name": "Curated aesthetic days out, dining, and activities tailored ",
    "area": "London-wide",
