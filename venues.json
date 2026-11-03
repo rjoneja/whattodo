@@ -1,116 +1,2013 @@
 {
-  "note": "Source registry. feed is filled in by probe.py: jsonld | ics | rss | html | eventbrite | none. defaults are used for events from that venue unless the event itself says otherwise.",
-  "venues": [
-    {"id":"nhm","name":"Natural History Museum","area":"South Kensington","lat":51.4967,"lon":-0.1764,"url":"https://www.nhm.ac.uk/events.html","kind":"museum","defaults":{"in":"in","kids":3,"adults":2,"tags":["museum","science"]}},
-    {"id":"sciencemuseum","name":"Science Museum","area":"South Kensington","lat":51.4978,"lon":-0.1745,"url":"https://www.sciencemuseum.org.uk/see-and-do","kind":"museum","defaults":{"in":"in","kids":3,"adults":2,"tags":["museum","science"]}},
-    {"id":"va","name":"V&A South Kensington","area":"South Kensington","lat":51.4966,"lon":-0.1722,"url":"https://www.vam.ac.uk/whatson","kind":"museum","defaults":{"in":"in","kids":1,"adults":3,"tags":["museum","design","art"]}},
-    {"id":"youngva","name":"Young V&A","area":"Bethnal Green","lat":51.5290,"lon":-0.0557,"url":"https://www.vam.ac.uk/young/whats-on","kind":"museum","defaults":{"in":"in","kids":3,"adults":1,"ages":[0,14],"tags":["museum","play"]}},
-    {"id":"bm","name":"British Museum","area":"Bloomsbury","lat":51.5194,"lon":-0.1270,"url":"https://www.britishmuseum.org/events","kind":"museum","defaults":{"in":"in","kids":2,"adults":3,"tags":["museum","history"]}},
-    {"id":"tatemodern","name":"Tate Modern","area":"Bankside","lat":51.5076,"lon":-0.0994,"url":"https://www.tate.org.uk/whats-on","kind":"gallery","defaults":{"in":"in","kids":2,"adults":3,"tags":["gallery","art"]}},
-    {"id":"tatebritain","name":"Tate Britain","area":"Pimlico","lat":51.4911,"lon":-0.1278,"url":"https://www.tate.org.uk/whats-on","kind":"gallery","defaults":{"in":"in","kids":1,"adults":3,"tags":["gallery","art"]}},
-    {"id":"nationalgallery","name":"National Gallery","area":"Trafalgar Square","lat":51.5089,"lon":-0.1283,"url":"https://www.nationalgallery.org.uk/events","kind":"gallery","defaults":{"in":"in","kids":1,"adults":3,"tags":["gallery","art"]}},
-    {"id":"npg","name":"National Portrait Gallery","area":"Charing Cross","lat":51.5094,"lon":-0.1281,"url":"https://www.npg.org.uk/whatson/","kind":"gallery","defaults":{"in":"in","kids":1,"adults":3,"tags":["gallery","art"]}},
-    {"id":"horniman","name":"Horniman Museum & Gardens","area":"Forest Hill","lat":51.4411,"lon":-0.0612,"url":"https://www.horniman.ac.uk/whats-on/","kind":"museum","defaults":{"in":"both","kids":3,"adults":2,"tags":["museum","gardens"]}},
-    {"id":"dulwich","name":"Dulwich Picture Gallery","area":"Dulwich","lat":51.4463,"lon":-0.0863,"url":"https://www.dulwichpicturegallery.org.uk/whats-on/","kind":"gallery","defaults":{"in":"in","kids":1,"adults":3,"tags":["gallery","art"]}},
-    {"id":"rmg","name":"Royal Museums Greenwich","area":"Greenwich","lat":51.4810,"lon":-0.0052,"url":"https://www.rmg.co.uk/whats-on","kind":"museum","defaults":{"in":"in","kids":3,"adults":2,"tags":["museum","ships","space"]}},
-    {"id":"ornc","name":"Old Royal Naval College","area":"Greenwich","lat":51.4830,"lon":-0.0060,"url":"https://ornc.org/whats-on/","kind":"heritage","defaults":{"in":"both","kids":2,"adults":3,"tags":["history","architecture"]}},
-    {"id":"londonmuseum","name":"London Museum","area":"Smithfield","lat":51.5190,"lon":-0.1010,"url":"https://www.londonmuseum.org.uk/whats-on/","kind":"museum","defaults":{"in":"in","kids":2,"adults":3,"tags":["museum","history"]}},
-    {"id":"docklands","name":"London Museum Docklands","area":"Canary Wharf","lat":51.5076,"lon":-0.0239,"url":"https://www.londonmuseum.org.uk/whats-on/","kind":"museum","defaults":{"in":"in","kids":2,"adults":3,"tags":["museum","history"]}},
-    {"id":"ltm","name":"London Transport Museum","area":"Covent Garden","lat":51.5120,"lon":-0.1210,"url":"https://www.ltmuseum.co.uk/whats-on","kind":"museum","defaults":{"in":"in","kids":3,"adults":2,"tags":["museum","transport"]}},
-    {"id":"postal","name":"The Postal Museum","area":"Clerkenwell","lat":51.5250,"lon":-0.1114,"url":"https://www.postalmuseum.org/whats-on/","kind":"museum","defaults":{"in":"in","kids":3,"adults":2,"tags":["museum","trains"]}},
-    {"id":"wellcome","name":"Wellcome Collection","area":"Euston","lat":51.5257,"lon":-0.1337,"url":"https://wellcomecollection.org/events","kind":"museum","defaults":{"in":"in","kids":0,"adults":3,"ages":[12,99],"tags":["museum","science"]}},
-    {"id":"ri","name":"Royal Institution","area":"Mayfair","lat":51.5098,"lon":-0.1423,"url":"https://www.rigb.org/whats-on","kind":"talks","defaults":{"in":"in","kids":2,"adults":3,"tags":["science","talk"]}},
-    {"id":"iwm","name":"Imperial War Museum London","area":"Lambeth","lat":51.4958,"lon":-0.1086,"url":"https://www.iwm.org.uk/events","kind":"museum","defaults":{"in":"in","kids":2,"adults":3,"tags":["museum","history"]}},
-    {"id":"hmsbelfast","name":"HMS Belfast","area":"London Bridge","lat":51.5066,"lon":-0.0814,"url":"https://www.iwm.org.uk/events","kind":"museum","defaults":{"in":"in","kids":3,"adults":2,"tags":["ships","history"]}},
-    {"id":"designmuseum","name":"Design Museum","area":"Kensington","lat":51.4998,"lon":-0.1998,"url":"https://designmuseum.org/whats-on","kind":"museum","defaults":{"in":"in","kids":1,"adults":3,"tags":["museum","design"]}},
-    {"id":"museumofthehome","name":"Museum of the Home","area":"Hoxton","lat":51.5321,"lon":-0.0763,"url":"https://www.museumofthehome.org.uk/whats-on/","kind":"museum","defaults":{"in":"both","kids":2,"adults":3,"tags":["museum","history"]}},
-    {"id":"whitechapel","name":"Whitechapel Gallery","area":"Whitechapel","lat":51.5160,"lon":-0.0703,"url":"https://www.whitechapelgallery.org/whats-on/","kind":"gallery","defaults":{"in":"in","kids":1,"adults":3,"tags":["gallery","art"]}},
-    {"id":"southbank","name":"Southbank Centre","area":"Waterloo","lat":51.5056,"lon":-0.1164,"url":"https://www.southbankcentre.co.uk/whats-on","kind":"arts","defaults":{"in":"in","kids":2,"adults":3,"tags":["music","arts"]}},
-    {"id":"barbican","name":"Barbican Centre","area":"Barbican","lat":51.5201,"lon":-0.0937,"url":"https://www.barbican.org.uk/whats-on","kind":"arts","defaults":{"in":"in","kids":2,"adults":3,"tags":["music","arts","film"]}},
-    {"id":"bfi","name":"BFI Southbank","area":"Waterloo","lat":51.5068,"lon":-0.1152,"url":"https://whatson.bfi.org.uk/Online/","kind":"cinema","defaults":{"in":"in","kids":1,"adults":3,"tags":["film"]}},
-    {"id":"somersethouse","name":"Somerset House","area":"Strand","lat":51.5110,"lon":-0.1170,"url":"https://www.somersethouse.org.uk/whats-on","kind":"arts","defaults":{"in":"both","kids":2,"adults":3,"tags":["arts"]}},
-    {"id":"roundhouse","name":"Roundhouse","area":"Camden","lat":51.5433,"lon":-0.1526,"url":"https://www.roundhouse.org.uk/whats-on/","kind":"arts","defaults":{"in":"in","kids":1,"adults":3,"tags":["music","circus"]}},
-    {"id":"unicorn","name":"Unicorn Theatre","area":"London Bridge","lat":51.5041,"lon":-0.0820,"url":"https://www.unicorntheatre.com/whats-on","kind":"theatre","defaults":{"in":"in","kids":3,"adults":1,"ages":[0,13],"tags":["theatre","kids"]}},
-    {"id":"polka","name":"Polka Theatre","area":"Wimbledon","lat":51.4192,"lon":-0.1990,"url":"https://polkatheatre.com/whats-on/","kind":"theatre","defaults":{"in":"in","kids":3,"adults":1,"ages":[0,12],"tags":["theatre","kids"]}},
-    {"id":"littleangel","name":"Little Angel Theatre","area":"Islington","lat":51.5392,"lon":-0.1012,"url":"https://littleangeltheatre.com/whats-on/","kind":"theatre","defaults":{"in":"in","kids":3,"adults":1,"ages":[2,11],"tags":["puppets","theatre"]}},
-    {"id":"halfmoon","name":"Half Moon Theatre","area":"Limehouse","lat":51.5114,"lon":-0.0324,"url":"https://www.halfmoon.org.uk/whats-on/","kind":"theatre","defaults":{"in":"in","kids":3,"adults":1,"ages":[0,13],"tags":["theatre","kids"]}},
-    {"id":"albany","name":"The Albany","area":"Deptford","lat":51.4790,"lon":-0.0260,"url":"https://www.thealbany.org.uk/whats-on/","kind":"arts","defaults":{"in":"in","kids":2,"adults":3,"tags":["theatre","music"]}},
-    {"id":"blackheathhalls","name":"Blackheath Halls","area":"Blackheath","lat":51.4660,"lon":0.0060,"url":"https://www.blackheathhalls.com/whats-on/","kind":"arts","defaults":{"in":"in","kids":2,"adults":3,"tags":["music"]}},
-    {"id":"lyric","name":"Lyric Hammersmith","area":"Hammersmith","lat":51.4928,"lon":-0.2238,"url":"https://lyric.co.uk/whats-on/","kind":"theatre","defaults":{"in":"in","kids":2,"adults":3,"tags":["theatre"]}},
-    {"id":"stratfordeast","name":"Theatre Royal Stratford East","area":"Stratford","lat":51.5420,"lon":-0.0030,"url":"https://www.stratfordeast.com/whats-on","kind":"theatre","defaults":{"in":"in","kids":2,"adults":3,"tags":["theatre"]}},
-    {"id":"discover","name":"Discover Children's Story Centre","area":"Stratford","lat":51.5405,"lon":-0.0019,"url":"https://discover.org.uk/whats-on/","kind":"kids","defaults":{"in":"in","kids":3,"adults":0,"ages":[0,11],"tags":["play","stories"]}},
-    {"id":"royalparks","name":"The Royal Parks","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.royalparks.org.uk/whats-on","kind":"park","defaults":{"in":"out","kids":2,"adults":3,"tags":["park","walk"]}},
-    {"id":"kew","name":"Kew Gardens","area":"Kew","lat":51.4787,"lon":-0.2956,"url":"https://www.kew.org/kew-gardens/whats-on","kind":"gardens","defaults":{"in":"both","kids":3,"adults":3,"tags":["gardens"]}},
-    {"id":"chelseaphysic","name":"Chelsea Physic Garden","area":"Chelsea","lat":51.4846,"lon":-0.1625,"url":"https://www.chelseaphysicgarden.co.uk/whats-on/","kind":"gardens","defaults":{"in":"out","kids":1,"adults":3,"tags":["gardens"]}},
-    {"id":"wwtlondon","name":"London Wetland Centre","area":"Barnes","lat":51.4766,"lon":-0.2363,"url":"https://www.wwt.org.uk/wetland-centres/london/whats-on/","kind":"nature","defaults":{"in":"both","kids":3,"adults":2,"tags":["nature","birds"]}},
-    {"id":"wildlondon","name":"London Wildlife Trust","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.wildlondon.org.uk/events","kind":"nature","defaults":{"in":"out","kids":2,"adults":2,"tags":["nature","walk"]}},
-    {"id":"cityoflondongreen","name":"City of London green spaces (Heath, Epping, cemeteries)","area":"London-wide","lat":51.5607,"lon":-0.1626,"url":"https://www.cityoflondon.gov.uk/things-to-do/green-spaces","kind":"park","defaults":{"in":"out","kids":2,"adults":3,"tags":["nature","walk"]}},
-    {"id":"leevalley","name":"Lee Valley Regional Park","area":"Lee Valley","lat":51.6100,"lon":-0.0300,"url":"https://www.visitleevalley.org.uk/whats-on","kind":"park","defaults":{"in":"out","kids":3,"adults":2,"tags":["park","sport","nature"]}},
-    {"id":"qeop","name":"Queen Elizabeth Olympic Park","area":"Stratford","lat":51.5432,"lon":-0.0130,"url":"https://www.queenelizabetholympicpark.co.uk/whats-on","kind":"park","defaults":{"in":"out","kids":3,"adults":2,"tags":["park","sport"]}},
-    {"id":"crystalpalacepark","name":"Crystal Palace Park Trust","area":"Crystal Palace","lat":51.4195,"lon":-0.0671,"url":"https://www.crystalpalaceparktrust.org/whats-on","kind":"park","defaults":{"in":"out","kids":3,"adults":2,"tags":["park"]}},
-    {"id":"beckenhamplace","name":"Beckenham Place Park","area":"Beckenham","lat":51.4165,"lon":-0.0254,"url":"https://beckenhamplacepark.com/whats-on/","kind":"park","defaults":{"in":"out","kids":3,"adults":2,"tags":["park"]}},
-    {"id":"brockwell","name":"Brockwell Park (Lambeth)","area":"Herne Hill","lat":51.4518,"lon":-0.1096,"url":"https://www.brockwellpark.com/events/","kind":"park","defaults":{"in":"out","kids":3,"adults":2,"tags":["park"]}},
-    {"id":"mudchute","name":"Mudchute Park & Farm","area":"Isle of Dogs","lat":51.4920,"lon":-0.0150,"url":"https://www.mudchute.org/events","kind":"farm","defaults":{"in":"out","kids":3,"adults":1,"tags":["farm","animals"]}},
-    {"id":"vauxhallfarm","name":"Vauxhall City Farm","area":"Vauxhall","lat":51.4848,"lon":-0.1213,"url":"https://vauxhallcityfarm.org/whats-on/","kind":"farm","defaults":{"in":"out","kids":3,"adults":0,"tags":["farm","animals"]}},
-    {"id":"hackneyfarm","name":"Hackney City Farm","area":"Hackney","lat":51.5318,"lon":-0.0640,"url":"https://hackneycityfarm.co.uk/whats-on/","kind":"farm","defaults":{"in":"out","kids":3,"adults":1,"tags":["farm","animals"]}},
-    {"id":"surreydocksfarm","name":"Surrey Docks Farm","area":"Rotherhithe","lat":51.4985,"lon":-0.0380,"url":"https://www.surreydocksfarm.org.uk/whats-on","kind":"farm","defaults":{"in":"out","kids":3,"adults":1,"tags":["farm","animals"]}},
-    {"id":"spitalfieldsfarm","name":"Spitalfields City Farm","area":"Shoreditch","lat":51.5218,"lon":-0.0640,"url":"https://www.spitalfieldscityfarm.org/whats-on","kind":"farm","defaults":{"in":"out","kids":3,"adults":1,"tags":["farm","animals"]}},
-    {"id":"zsl","name":"London Zoo","area":"Regent's Park","lat":51.5353,"lon":-0.1534,"url":"https://www.londonzoo.org/whats-on","kind":"zoo","defaults":{"in":"both","kids":3,"adults":2,"tags":["animals"]}},
-    {"id":"eh","name":"English Heritage (London sites)","area":"London-wide","lat":51.4475,"lon":0.0509,"url":"https://www.english-heritage.org.uk/visit/whats-on/","kind":"heritage","defaults":{"in":"both","kids":2,"adults":3,"tags":["history"]}},
-    {"id":"nt","name":"National Trust (London)","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.nationaltrust.org.uk/visit/london/whats-on","kind":"heritage","defaults":{"in":"both","kids":2,"adults":3,"tags":["history","gardens"]}},
-    {"id":"hrp","name":"Historic Royal Palaces","area":"London-wide","lat":51.5081,"lon":-0.0759,"url":"https://www.hrp.org.uk/whats-on/","kind":"heritage","defaults":{"in":"both","kids":3,"adults":3,"tags":["history","palace"]}},
-    {"id":"stpauls","name":"St Paul's Cathedral","area":"City","lat":51.5138,"lon":-0.0984,"url":"https://www.stpauls.co.uk/whats-on","kind":"heritage","defaults":{"in":"in","kids":2,"adults":3,"tags":["cathedral"]}},
-    {"id":"southwarkcathedral","name":"Southwark Cathedral","area":"London Bridge","lat":51.5061,"lon":-0.0900,"url":"https://cathedral.southwark.anglican.org/whats-on/","kind":"heritage","defaults":{"in":"in","kids":1,"adults":3,"tags":["cathedral","music"]}},
-    {"id":"openhouse","name":"Open House London","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://programme.openhouse.org.uk/","kind":"festival","defaults":{"in":"both","kids":1,"adults":3,"tags":["architecture"]}},
-    {"id":"severndroog","name":"Severndroog Castle","area":"Shooters Hill","lat":51.4627,"lon":0.0574,"url":"https://www.severndroogcastle.org.uk/events/","kind":"heritage","defaults":{"in":"both","kids":2,"adults":3,"tags":["views","history"]}},
-    {"id":"chislehurst","name":"Chislehurst Caves","area":"Chislehurst","lat":51.4089,"lon":0.0599,"url":"https://www.chislehurst-caves.co.uk/","kind":"attraction","defaults":{"in":"in","kids":3,"adults":2,"tags":["caves"]}},
-    {"id":"brunelmuseum","name":"Brunel Museum","area":"Rotherhithe","lat":51.5014,"lon":-0.0528,"url":"https://thebrunelmuseum.com/whats-on/","kind":"museum","defaults":{"in":"in","kids":2,"adults":3,"tags":["engineering","history"]}},
-    {"id":"kirkaldy","name":"Kirkaldy Testing Museum","area":"Southwark","lat":51.5048,"lon":-0.1040,"url":"https://kirkaldytestingmuseum.org.uk/","kind":"museum","defaults":{"in":"in","kids":2,"adults":3,"tags":["engineering","quirky"]}},
-    {"id":"crossness","name":"Crossness Pumping Station","area":"Abbey Wood","lat":51.5095,"lon":0.1335,"url":"https://www.crossness.org.uk/visit/open-days/","kind":"heritage","defaults":{"in":"in","kids":2,"adults":3,"tags":["engineering","victorian"]}},
-    {"id":"kempton","name":"Kempton Steam Museum","area":"Hanworth","lat":51.4280,"lon":-0.4030,"url":"https://www.kemptonsteam.org/","kind":"heritage","defaults":{"in":"in","kids":3,"adults":2,"tags":["engineering","steam"]}},
-    {"id":"markfield","name":"Markfield Beam Engine","area":"Tottenham","lat":51.5810,"lon":-0.0570,"url":"https://www.mbeam.org/","kind":"heritage","defaults":{"in":"in","kids":2,"adults":3,"tags":["engineering","steam"]}},
-    {"id":"brooklands","name":"Brooklands Museum","area":"Weybridge","lat":51.3520,"lon":-0.4700,"url":"https://www.brooklandsmuseum.com/whats-on","kind":"museum","defaults":{"in":"both","kids":3,"adults":3,"tags":["cars","planes"]}},
-    {"id":"rafmuseum","name":"RAF Museum London","area":"Colindale","lat":51.5980,"lon":-0.2410,"url":"https://www.rafmuseum.org.uk/london/whats-going-on/","kind":"museum","defaults":{"in":"in","kids":3,"adults":2,"tags":["planes","museum"]}},
-    {"id":"boroughmarket","name":"Borough Market","area":"London Bridge","lat":51.5055,"lon":-0.0910,"url":"https://boroughmarket.org.uk/whats-on/","kind":"market","defaults":{"in":"both","kids":1,"adults":3,"tags":["food","market"]}},
-    {"id":"spitalfieldsmarket","name":"Old Spitalfields Market","area":"Spitalfields","lat":51.5195,"lon":-0.0750,"url":"https://oldspitalfieldsmarket.com/whats-on","kind":"market","defaults":{"in":"in","kids":1,"adults":3,"tags":["market"]}},
-    {"id":"greenwichmarket","name":"Greenwich Market","area":"Greenwich","lat":51.4815,"lon":-0.0092,"url":"https://www.greenwichmarket.london/whats-on","kind":"market","defaults":{"in":"both","kids":1,"adults":3,"tags":["market","food"]}},
-    {"id":"brixtonvillage","name":"Brixton Village","area":"Brixton","lat":51.4622,"lon":-0.1138,"url":"https://brixtonvillage.com/whats-on/","kind":"market","defaults":{"in":"in","kids":1,"adults":3,"tags":["food","market"]}},
-    {"id":"peckhamlevels","name":"Peckham Levels","area":"Peckham","lat":51.4727,"lon":-0.0700,"url":"https://www.peckhamlevels.org/whats-on","kind":"arts","defaults":{"in":"in","kids":1,"adults":3,"tags":["food","arts"]}},
-    {"id":"batterseaps","name":"Battersea Power Station","area":"Battersea","lat":51.4817,"lon":-0.1442,"url":"https://batterseapowerstation.co.uk/whats-on/","kind":"attraction","defaults":{"in":"both","kids":2,"adults":3,"tags":["shops","events"]}},
-    {"id":"coalyards","name":"King's Cross / Coal Drops Yard","area":"King's Cross","lat":51.5360,"lon":-0.1255,"url":"https://www.kingscross.co.uk/whats-on","kind":"attraction","defaults":{"in":"both","kids":2,"adults":3,"tags":["events","food"]}},
-    {"id":"canarywharf","name":"Canary Wharf events","area":"Canary Wharf","lat":51.5054,"lon":-0.0235,"url":"https://canarywharf.com/whats-on/","kind":"attraction","defaults":{"in":"both","kids":2,"adults":3,"tags":["events"]}},
-    {"id":"wembleypark","name":"Wembley Park","area":"Wembley","lat":51.5570,"lon":-0.2795,"url":"https://wembleypark.com/whats-on/","kind":"attraction","defaults":{"in":"both","kids":2,"adults":2,"tags":["events"]}},
-    {"id":"lewisham","name":"Lewisham Council what's on","area":"Lewisham","lat":51.4620,"lon":-0.0100,"url":"https://lewisham.gov.uk/inmyarea/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"southwark","name":"Southwark Council events","area":"Southwark","lat":51.4900,"lon":-0.0700,"url":"https://www.southwark.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"greenwichcouncil","name":"Royal Greenwich events","area":"Greenwich","lat":51.4810,"lon":0.0100,"url":"https://www.royalgreenwich.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"enjoygreenwich","name":"Enjoy Royal Greenwich","area":"Greenwich","lat":51.4810,"lon":0.0100,"url":"https://www.enjoyroyalgreenwich.org.uk/whats-on","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"lambeth","name":"Lambeth events","area":"Lambeth","lat":51.4600,"lon":-0.1150,"url":"https://www.lambeth.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"bromley","name":"Bromley events","area":"Bromley","lat":51.4050,"lon":0.0150,"url":"https://www.bromley.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"camden","name":"Camden events","area":"Camden","lat":51.5420,"lon":-0.1420,"url":"https://www.camden.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"hackney","name":"Hackney events","area":"Hackney","lat":51.5450,"lon":-0.0550,"url":"https://hackney.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"islington","name":"Islington events","area":"Islington","lat":51.5380,"lon":-0.1030,"url":"https://www.islington.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"towerhamlets","name":"Tower Hamlets events","area":"Tower Hamlets","lat":51.5150,"lon":-0.0300,"url":"https://www.towerhamlets.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"wandsworth","name":"Wandsworth events","area":"Wandsworth","lat":51.4570,"lon":-0.1900,"url":"https://www.wandsworth.gov.uk/events/","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"richmondcouncil","name":"Richmond events","area":"Richmond","lat":51.4610,"lon":-0.3040,"url":"https://www.richmond.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"ealing","name":"Ealing events","area":"Ealing","lat":51.5130,"lon":-0.3050,"url":"https://www.ealing.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"walthamforest","name":"Waltham Forest events","area":"Walthamstow","lat":51.5900,"lon":-0.0200,"url":"https://www.walthamforest.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"haringey","name":"Haringey events","area":"Haringey","lat":51.5900,"lon":-0.1100,"url":"https://www.haringey.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"croydon","name":"Croydon events","area":"Croydon","lat":51.3720,"lon":-0.0980,"url":"https://www.croydon.gov.uk/events","kind":"council","defaults":{"in":"both","kids":2,"adults":2,"tags":["community"]}},
-    {"id":"allypally","name":"Alexandra Palace","area":"Alexandra Palace","lat":51.5942,"lon":-0.1300,"url":"https://www.alexandrapalace.com/whats-on/","kind":"attraction","defaults":{"in":"both","kids":2,"adults":3,"tags":["events","views"]}},
-    {"id":"o2","name":"The O2","area":"Greenwich Peninsula","lat":51.5030,"lon":0.0032,"url":"https://www.theo2.co.uk/events","kind":"arena","defaults":{"in":"in","kids":1,"adults":3,"tags":["music","shows"]}},
-    {"id":"excel","name":"ExCeL London","area":"Royal Docks","lat":51.5083,"lon":0.0291,"url":"https://www.excel.london/whats-on","kind":"arena","defaults":{"in":"in","kids":2,"adults":2,"tags":["shows","fairs"]}},
-    {"id":"olympia","name":"Olympia London","area":"Kensington","lat":51.4960,"lon":-0.2100,"url":"https://olympia.london/whats-on","kind":"arena","defaults":{"in":"in","kids":2,"adults":2,"tags":["shows","fairs"]}},
-    {"id":"businessdesign","name":"Business Design Centre","area":"Islington","lat":51.5360,"lon":-0.1050,"url":"https://www.businessdesigncentre.co.uk/whats-on/","kind":"arena","defaults":{"in":"in","kids":1,"adults":2,"tags":["fairs"]}},
-    {"id":"eventbrite-family","name":"Eventbrite: family & education, London","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.eventbrite.co.uk/d/united-kingdom--london/family-and-education--events/","kind":"ticketing","defaults":{"in":"both","kids":3,"adults":1,"tags":["family"]}},
-    {"id":"eventbrite-free","name":"Eventbrite: free events this weekend, London","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.eventbrite.co.uk/d/united-kingdom--london/free--events--this-weekend/","kind":"ticketing","defaults":{"in":"both","kids":2,"adults":2,"tags":["free"]}},
-    {"id":"eventbrite-food","name":"Eventbrite: food & drink, London","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.eventbrite.co.uk/d/united-kingdom--london/food-and-drink--events/","kind":"ticketing","defaults":{"in":"both","kids":1,"adults":3,"tags":["food"]}},
-    {"id":"skiddle-london","name":"Skiddle: what's on in London","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.skiddle.com/whats-on/London/","kind":"ticketing","defaults":{"in":"both","kids":1,"adults":3,"tags":["events"]}},
-    {"id":"dmn","name":"DesignMyNight London","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.designmynight.com/london/whats-on","kind":"ticketing","defaults":{"in":"both","kids":0,"adults":3,"ages":[18,99],"tags":["nightlife","food"]}},
-    {"id":"ianvisits","name":"IanVisits calendar (aggregator, quality check)","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.ianvisits.co.uk/calendar/","kind":"aggregator","defaults":{"in":"both","kids":1,"adults":3,"tags":["events"]}},
-    {"id":"londonist","name":"Londonist things to do (aggregator)","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://londonist.com/london/things-to-do","kind":"aggregator","defaults":{"in":"both","kids":1,"adults":3,"tags":["events"]}},
-    {"id":"timeout","name":"Time Out London things to do (aggregator)","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.timeout.com/london/things-to-do","kind":"aggregator","defaults":{"in":"both","kids":1,"adults":3,"tags":["events"]}},
-    {"id":"kidrated","name":"Kidrated (family aggregator)","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://kidrated.com/whats-on/","kind":"aggregator","defaults":{"in":"both","kids":3,"adults":1,"tags":["family"]}},
-    {"id":"hoop","name":"Hoop (kids' activities aggregator)","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://hoop.co.uk/london/","kind":"aggregator","defaults":{"in":"both","kids":3,"adults":1,"tags":["family"]}},
-    {"id":"visitlondon","name":"Visit London what's on","area":"London-wide","lat":51.5074,"lon":-0.1278,"url":"https://www.visitlondon.com/things-to-do/whats-on","kind":"aggregator","defaults":{"in":"both","kids":2,"adults":2,"tags":["events"]}}
-  ]
+ "note": "Source registry. feed is filled in by probe.py: jsonld | ics | rss | html | eventbrite | none. defaults are used for events from that venue unless the event itself says otherwise.",
+ "venues": [
+  {
+   "id": "nhm",
+   "name": "Natural History Museum",
+   "area": "South Kensington",
+   "lat": 51.4967,
+   "lon": -0.1764,
+   "url": "https://www.nhm.ac.uk/events.html",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "museum",
+     "science"
+    ]
+   }
+  },
+  {
+   "id": "sciencemuseum",
+   "name": "Science Museum",
+   "area": "South Kensington",
+   "lat": 51.4978,
+   "lon": -0.1745,
+   "url": "https://www.sciencemuseum.org.uk/see-and-do",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "museum",
+     "science"
+    ]
+   }
+  },
+  {
+   "id": "va",
+   "name": "V&A South Kensington",
+   "area": "South Kensington",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "url": "https://www.vam.ac.uk/whatson",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "museum",
+     "design",
+     "art"
+    ]
+   }
+  },
+  {
+   "id": "youngva",
+   "name": "Young V&A",
+   "area": "Bethnal Green",
+   "lat": 51.529,
+   "lon": -0.0557,
+   "url": "https://www.vam.ac.uk/young/whats-on",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     14
+    ],
+    "tags": [
+     "museum",
+     "play"
+    ]
+   }
+  },
+  {
+   "id": "bm",
+   "name": "British Museum",
+   "area": "Bloomsbury",
+   "lat": 51.5194,
+   "lon": -0.127,
+   "url": "https://www.britishmuseum.org/events",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "museum",
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "tatemodern",
+   "name": "Tate Modern",
+   "area": "Bankside",
+   "lat": 51.5076,
+   "lon": -0.0994,
+   "url": "https://www.tate.org.uk/whats-on",
+   "kind": "gallery",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "gallery",
+     "art"
+    ]
+   }
+  },
+  {
+   "id": "tatebritain",
+   "name": "Tate Britain",
+   "area": "Pimlico",
+   "lat": 51.4911,
+   "lon": -0.1278,
+   "url": "https://www.tate.org.uk/whats-on",
+   "kind": "gallery",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "gallery",
+     "art"
+    ]
+   }
+  },
+  {
+   "id": "nationalgallery",
+   "name": "National Gallery",
+   "area": "Trafalgar Square",
+   "lat": 51.5089,
+   "lon": -0.1283,
+   "url": "https://www.nationalgallery.org.uk/events",
+   "kind": "gallery",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "gallery",
+     "art"
+    ]
+   }
+  },
+  {
+   "id": "npg",
+   "name": "National Portrait Gallery",
+   "area": "Charing Cross",
+   "lat": 51.5094,
+   "lon": -0.1281,
+   "url": "https://www.npg.org.uk/whatson/",
+   "kind": "gallery",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "gallery",
+     "art"
+    ]
+   }
+  },
+  {
+   "id": "horniman",
+   "name": "Horniman Museum & Gardens",
+   "area": "Forest Hill",
+   "lat": 51.4411,
+   "lon": -0.0612,
+   "url": "https://www.horniman.ac.uk/whats-on/",
+   "kind": "museum",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "museum",
+     "gardens"
+    ]
+   }
+  },
+  {
+   "id": "dulwich",
+   "name": "Dulwich Picture Gallery",
+   "area": "Dulwich",
+   "lat": 51.4463,
+   "lon": -0.0863,
+   "url": "https://www.dulwichpicturegallery.org.uk/whats-on/",
+   "kind": "gallery",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "gallery",
+     "art"
+    ]
+   }
+  },
+  {
+   "id": "rmg",
+   "name": "Royal Museums Greenwich",
+   "area": "Greenwich",
+   "lat": 51.481,
+   "lon": -0.0052,
+   "url": "https://www.rmg.co.uk/whats-on",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "museum",
+     "ships",
+     "space"
+    ]
+   }
+  },
+  {
+   "id": "ornc",
+   "name": "Old Royal Naval College",
+   "area": "Greenwich",
+   "lat": 51.483,
+   "lon": -0.006,
+   "url": "https://ornc.org/whats-on/",
+   "kind": "heritage",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "history",
+     "architecture"
+    ]
+   }
+  },
+  {
+   "id": "londonmuseum",
+   "name": "London Museum",
+   "area": "Smithfield",
+   "lat": 51.519,
+   "lon": -0.101,
+   "url": "https://www.londonmuseum.org.uk/whats-on/",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "museum",
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "docklands",
+   "name": "London Museum Docklands",
+   "area": "Canary Wharf",
+   "lat": 51.5076,
+   "lon": -0.0239,
+   "url": "https://www.londonmuseum.org.uk/whats-on/",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "museum",
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "ltm",
+   "name": "London Transport Museum",
+   "area": "Covent Garden",
+   "lat": 51.512,
+   "lon": -0.121,
+   "url": "https://www.ltmuseum.co.uk/whats-on",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "museum",
+     "transport"
+    ]
+   }
+  },
+  {
+   "id": "postal",
+   "name": "The Postal Museum",
+   "area": "Clerkenwell",
+   "lat": 51.525,
+   "lon": -0.1114,
+   "url": "https://www.postalmuseum.org/whats-on/",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "museum",
+     "trains"
+    ]
+   }
+  },
+  {
+   "id": "wellcome",
+   "name": "Wellcome Collection",
+   "area": "Euston",
+   "lat": 51.5257,
+   "lon": -0.1337,
+   "url": "https://wellcomecollection.org/events",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     12,
+     99
+    ],
+    "tags": [
+     "museum",
+     "science"
+    ]
+   }
+  },
+  {
+   "id": "ri",
+   "name": "Royal Institution",
+   "area": "Mayfair",
+   "lat": 51.5098,
+   "lon": -0.1423,
+   "url": "https://www.rigb.org/whats-on",
+   "kind": "talks",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "science",
+     "talk"
+    ]
+   }
+  },
+  {
+   "id": "iwm",
+   "name": "Imperial War Museum London",
+   "area": "Lambeth",
+   "lat": 51.4958,
+   "lon": -0.1086,
+   "url": "https://www.iwm.org.uk/events",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "museum",
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "hmsbelfast",
+   "name": "HMS Belfast",
+   "area": "London Bridge",
+   "lat": 51.5066,
+   "lon": -0.0814,
+   "url": "https://www.iwm.org.uk/events",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "ships",
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "designmuseum",
+   "name": "Design Museum",
+   "area": "Kensington",
+   "lat": 51.4998,
+   "lon": -0.1998,
+   "url": "https://designmuseum.org/whats-on",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "museum",
+     "design"
+    ]
+   }
+  },
+  {
+   "id": "museumofthehome",
+   "name": "Museum of the Home",
+   "area": "Hoxton",
+   "lat": 51.5321,
+   "lon": -0.0763,
+   "url": "https://www.museumofthehome.org.uk/whats-on/",
+   "kind": "museum",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "museum",
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "whitechapel",
+   "name": "Whitechapel Gallery",
+   "area": "Whitechapel",
+   "lat": 51.516,
+   "lon": -0.0703,
+   "url": "https://www.whitechapelgallery.org/whats-on/",
+   "kind": "gallery",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "gallery",
+     "art"
+    ]
+   }
+  },
+  {
+   "id": "southbank",
+   "name": "Southbank Centre",
+   "area": "Waterloo",
+   "lat": 51.5056,
+   "lon": -0.1164,
+   "url": "https://www.southbankcentre.co.uk/whats-on",
+   "kind": "arts",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "music",
+     "arts"
+    ]
+   }
+  },
+  {
+   "id": "barbican",
+   "name": "Barbican Centre",
+   "area": "Barbican",
+   "lat": 51.5201,
+   "lon": -0.0937,
+   "url": "https://www.barbican.org.uk/whats-on",
+   "kind": "arts",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "music",
+     "arts",
+     "film"
+    ]
+   }
+  },
+  {
+   "id": "bfi",
+   "name": "BFI Southbank",
+   "area": "Waterloo",
+   "lat": 51.5068,
+   "lon": -0.1152,
+   "url": "https://whatson.bfi.org.uk/Online/",
+   "kind": "cinema",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "film"
+    ]
+   }
+  },
+  {
+   "id": "somersethouse",
+   "name": "Somerset House",
+   "area": "Strand",
+   "lat": 51.511,
+   "lon": -0.117,
+   "url": "https://www.somersethouse.org.uk/whats-on",
+   "kind": "arts",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "arts"
+    ]
+   }
+  },
+  {
+   "id": "roundhouse",
+   "name": "Roundhouse",
+   "area": "Camden",
+   "lat": 51.5433,
+   "lon": -0.1526,
+   "url": "https://www.roundhouse.org.uk/whats-on/",
+   "kind": "arts",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "music",
+     "circus"
+    ]
+   }
+  },
+  {
+   "id": "unicorn",
+   "name": "Unicorn Theatre",
+   "area": "London Bridge",
+   "lat": 51.5041,
+   "lon": -0.082,
+   "url": "https://www.unicorntheatre.com/whats-on",
+   "kind": "theatre",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     13
+    ],
+    "tags": [
+     "theatre",
+     "kids"
+    ]
+   }
+  },
+  {
+   "id": "polka",
+   "name": "Polka Theatre",
+   "area": "Wimbledon",
+   "lat": 51.4192,
+   "lon": -0.199,
+   "url": "https://polkatheatre.com/whats-on/",
+   "kind": "theatre",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     12
+    ],
+    "tags": [
+     "theatre",
+     "kids"
+    ]
+   }
+  },
+  {
+   "id": "littleangel",
+   "name": "Little Angel Theatre",
+   "area": "Islington",
+   "lat": 51.5392,
+   "lon": -0.1012,
+   "url": "https://littleangeltheatre.com/whats-on/",
+   "kind": "theatre",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     2,
+     11
+    ],
+    "tags": [
+     "puppets",
+     "theatre"
+    ]
+   }
+  },
+  {
+   "id": "halfmoon",
+   "name": "Half Moon Theatre",
+   "area": "Limehouse",
+   "lat": 51.5114,
+   "lon": -0.0324,
+   "url": "https://www.halfmoon.org.uk/whats-on/",
+   "kind": "theatre",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     13
+    ],
+    "tags": [
+     "theatre",
+     "kids"
+    ]
+   }
+  },
+  {
+   "id": "albany",
+   "name": "The Albany",
+   "area": "Deptford",
+   "lat": 51.479,
+   "lon": -0.026,
+   "url": "https://www.thealbany.org.uk/whats-on/",
+   "kind": "arts",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "music"
+    ]
+   }
+  },
+  {
+   "id": "blackheathhalls",
+   "name": "Blackheath Halls",
+   "area": "Blackheath",
+   "lat": 51.466,
+   "lon": 0.006,
+   "url": "https://www.blackheathhalls.com/whats-on/",
+   "kind": "arts",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "music"
+    ]
+   }
+  },
+  {
+   "id": "lyric",
+   "name": "Lyric Hammersmith",
+   "area": "Hammersmith",
+   "lat": 51.4928,
+   "lon": -0.2238,
+   "url": "https://lyric.co.uk/whats-on/",
+   "kind": "theatre",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre"
+    ]
+   }
+  },
+  {
+   "id": "stratfordeast",
+   "name": "Theatre Royal Stratford East",
+   "area": "Stratford",
+   "lat": 51.542,
+   "lon": -0.003,
+   "url": "https://www.stratfordeast.com/whats-on",
+   "kind": "theatre",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre"
+    ]
+   }
+  },
+  {
+   "id": "discover",
+   "name": "Discover Children's Story Centre",
+   "area": "Stratford",
+   "lat": 51.5405,
+   "lon": -0.0019,
+   "url": "https://discover.org.uk/whats-on/",
+   "kind": "kids",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 0,
+    "ages": [
+     0,
+     11
+    ],
+    "tags": [
+     "play",
+     "stories"
+    ]
+   }
+  },
+  {
+   "id": "royalparks",
+   "name": "The Royal Parks",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.royalparks.org.uk/whats-on",
+   "kind": "park",
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "park",
+     "walk"
+    ]
+   }
+  },
+  {
+   "id": "kew",
+   "name": "Kew Gardens",
+   "area": "Kew",
+   "lat": 51.4787,
+   "lon": -0.2956,
+   "url": "https://www.kew.org/kew-gardens/whats-on",
+   "kind": "gardens",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 3,
+    "tags": [
+     "gardens"
+    ]
+   }
+  },
+  {
+   "id": "chelseaphysic",
+   "name": "Chelsea Physic Garden",
+   "area": "Chelsea",
+   "lat": 51.4846,
+   "lon": -0.1625,
+   "url": "https://www.chelseaphysicgarden.co.uk/whats-on/",
+   "kind": "gardens",
+   "defaults": {
+    "in": "out",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "gardens"
+    ]
+   }
+  },
+  {
+   "id": "wwtlondon",
+   "name": "London Wetland Centre",
+   "area": "Barnes",
+   "lat": 51.4766,
+   "lon": -0.2363,
+   "url": "https://www.wwt.org.uk/wetland-centres/london/whats-on/",
+   "kind": "nature",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "nature",
+     "birds"
+    ]
+   }
+  },
+  {
+   "id": "wildlondon",
+   "name": "London Wildlife Trust",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.wildlondon.org.uk/events",
+   "kind": "nature",
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "nature",
+     "walk"
+    ]
+   }
+  },
+  {
+   "id": "cityoflondongreen",
+   "name": "City of London green spaces (Heath, Epping, cemeteries)",
+   "area": "London-wide",
+   "lat": 51.5607,
+   "lon": -0.1626,
+   "url": "https://www.cityoflondon.gov.uk/things-to-do/green-spaces",
+   "kind": "park",
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "nature",
+     "walk"
+    ]
+   }
+  },
+  {
+   "id": "leevalley",
+   "name": "Lee Valley Regional Park",
+   "area": "Lee Valley",
+   "lat": 51.61,
+   "lon": -0.03,
+   "url": "https://www.visitleevalley.org.uk/whats-on",
+   "kind": "park",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "park",
+     "sport",
+     "nature"
+    ]
+   }
+  },
+  {
+   "id": "qeop",
+   "name": "Queen Elizabeth Olympic Park",
+   "area": "Stratford",
+   "lat": 51.5432,
+   "lon": -0.013,
+   "url": "https://www.queenelizabetholympicpark.co.uk/whats-on",
+   "kind": "park",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "park",
+     "sport"
+    ]
+   }
+  },
+  {
+   "id": "crystalpalacepark",
+   "name": "Crystal Palace Park Trust",
+   "area": "Crystal Palace",
+   "lat": 51.4195,
+   "lon": -0.0671,
+   "url": "https://www.crystalpalaceparktrust.org/whats-on",
+   "kind": "park",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "park"
+    ]
+   }
+  },
+  {
+   "id": "beckenhamplace",
+   "name": "Beckenham Place Park",
+   "area": "Beckenham",
+   "lat": 51.4165,
+   "lon": -0.0254,
+   "url": "https://beckenhamplacepark.com/whats-on/",
+   "kind": "park",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "park"
+    ]
+   }
+  },
+  {
+   "id": "brockwell",
+   "name": "Brockwell Park (Lambeth)",
+   "area": "Herne Hill",
+   "lat": 51.4518,
+   "lon": -0.1096,
+   "url": "https://www.brockwellpark.com/events/",
+   "kind": "park",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "park"
+    ]
+   }
+  },
+  {
+   "id": "mudchute",
+   "name": "Mudchute Park & Farm",
+   "area": "Isle of Dogs",
+   "lat": 51.492,
+   "lon": -0.015,
+   "url": "https://www.mudchute.org/events",
+   "kind": "farm",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "farm",
+     "animals"
+    ]
+   }
+  },
+  {
+   "id": "vauxhallfarm",
+   "name": "Vauxhall City Farm",
+   "area": "Vauxhall",
+   "lat": 51.4848,
+   "lon": -0.1213,
+   "url": "https://vauxhallcityfarm.org/whats-on/",
+   "kind": "farm",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 0,
+    "tags": [
+     "farm",
+     "animals"
+    ]
+   }
+  },
+  {
+   "id": "hackneyfarm",
+   "name": "Hackney City Farm",
+   "area": "Hackney",
+   "lat": 51.5318,
+   "lon": -0.064,
+   "url": "https://hackneycityfarm.co.uk/whats-on/",
+   "kind": "farm",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "farm",
+     "animals"
+    ]
+   }
+  },
+  {
+   "id": "surreydocksfarm",
+   "name": "Surrey Docks Farm",
+   "area": "Rotherhithe",
+   "lat": 51.4985,
+   "lon": -0.038,
+   "url": "https://www.surreydocksfarm.org.uk/whats-on",
+   "kind": "farm",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "farm",
+     "animals"
+    ]
+   }
+  },
+  {
+   "id": "spitalfieldsfarm",
+   "name": "Spitalfields City Farm",
+   "area": "Shoreditch",
+   "lat": 51.5218,
+   "lon": -0.064,
+   "url": "https://www.spitalfieldscityfarm.org/whats-on",
+   "kind": "farm",
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "farm",
+     "animals"
+    ]
+   }
+  },
+  {
+   "id": "zsl",
+   "name": "London Zoo",
+   "area": "Regent's Park",
+   "lat": 51.5353,
+   "lon": -0.1534,
+   "url": "https://www.londonzoo.org/whats-on",
+   "kind": "zoo",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "animals"
+    ]
+   }
+  },
+  {
+   "id": "eh",
+   "name": "English Heritage (London sites)",
+   "area": "London-wide",
+   "lat": 51.4475,
+   "lon": 0.0509,
+   "url": "https://www.english-heritage.org.uk/visit/whats-on/",
+   "kind": "heritage",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "nt",
+   "name": "National Trust (London)",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.nationaltrust.org.uk/visit/london/whats-on",
+   "kind": "heritage",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "history",
+     "gardens"
+    ]
+   }
+  },
+  {
+   "id": "hrp",
+   "name": "Historic Royal Palaces",
+   "area": "London-wide",
+   "lat": 51.5081,
+   "lon": -0.0759,
+   "url": "https://www.hrp.org.uk/whats-on/",
+   "kind": "heritage",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 3,
+    "tags": [
+     "history",
+     "palace"
+    ]
+   }
+  },
+  {
+   "id": "stpauls",
+   "name": "St Paul's Cathedral",
+   "area": "City",
+   "lat": 51.5138,
+   "lon": -0.0984,
+   "url": "https://www.stpauls.co.uk/whats-on",
+   "kind": "heritage",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "cathedral"
+    ]
+   }
+  },
+  {
+   "id": "southwarkcathedral",
+   "name": "Southwark Cathedral",
+   "area": "London Bridge",
+   "lat": 51.5061,
+   "lon": -0.09,
+   "url": "https://cathedral.southwark.anglican.org/whats-on/",
+   "kind": "heritage",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "cathedral",
+     "music"
+    ]
+   }
+  },
+  {
+   "id": "openhouse",
+   "name": "Open House London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://programme.openhouse.org.uk/",
+   "kind": "festival",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "architecture"
+    ]
+   }
+  },
+  {
+   "id": "severndroog",
+   "name": "Severndroog Castle",
+   "area": "Shooters Hill",
+   "lat": 51.4627,
+   "lon": 0.0574,
+   "url": "https://www.severndroogcastle.org.uk/events/",
+   "kind": "heritage",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "views",
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "chislehurst",
+   "name": "Chislehurst Caves",
+   "area": "Chislehurst",
+   "lat": 51.4089,
+   "lon": 0.0599,
+   "url": "https://www.chislehurst-caves.co.uk/",
+   "kind": "attraction",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "caves"
+    ]
+   }
+  },
+  {
+   "id": "brunelmuseum",
+   "name": "Brunel Museum",
+   "area": "Rotherhithe",
+   "lat": 51.5014,
+   "lon": -0.0528,
+   "url": "https://thebrunelmuseum.com/whats-on/",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "engineering",
+     "history"
+    ]
+   }
+  },
+  {
+   "id": "kirkaldy",
+   "name": "Kirkaldy Testing Museum",
+   "area": "Southwark",
+   "lat": 51.5048,
+   "lon": -0.104,
+   "url": "https://kirkaldytestingmuseum.org.uk/",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "engineering",
+     "quirky"
+    ]
+   }
+  },
+  {
+   "id": "crossness",
+   "name": "Crossness Pumping Station",
+   "area": "Abbey Wood",
+   "lat": 51.5095,
+   "lon": 0.1335,
+   "url": "https://www.crossness.org.uk/visit/open-days/",
+   "kind": "heritage",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "engineering",
+     "victorian"
+    ]
+   }
+  },
+  {
+   "id": "kempton",
+   "name": "Kempton Steam Museum",
+   "area": "Hanworth",
+   "lat": 51.428,
+   "lon": -0.403,
+   "url": "https://www.kemptonsteam.org/",
+   "kind": "heritage",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "engineering",
+     "steam"
+    ]
+   }
+  },
+  {
+   "id": "markfield",
+   "name": "Markfield Beam Engine",
+   "area": "Tottenham",
+   "lat": 51.581,
+   "lon": -0.057,
+   "url": "https://www.mbeam.org/",
+   "kind": "heritage",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "engineering",
+     "steam"
+    ]
+   }
+  },
+  {
+   "id": "brooklands",
+   "name": "Brooklands Museum",
+   "area": "Weybridge",
+   "lat": 51.352,
+   "lon": -0.47,
+   "url": "https://www.brooklandsmuseum.com/whats-on",
+   "kind": "museum",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 3,
+    "tags": [
+     "cars",
+     "planes"
+    ]
+   }
+  },
+  {
+   "id": "rafmuseum",
+   "name": "RAF Museum London",
+   "area": "Colindale",
+   "lat": 51.598,
+   "lon": -0.241,
+   "url": "https://www.rafmuseum.org.uk/london/whats-going-on/",
+   "kind": "museum",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "planes",
+     "museum"
+    ]
+   }
+  },
+  {
+   "id": "boroughmarket",
+   "name": "Borough Market",
+   "area": "London Bridge",
+   "lat": 51.5055,
+   "lon": -0.091,
+   "url": "https://boroughmarket.org.uk/whats-on/",
+   "kind": "market",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "food",
+     "market"
+    ]
+   }
+  },
+  {
+   "id": "spitalfieldsmarket",
+   "name": "Old Spitalfields Market",
+   "area": "Spitalfields",
+   "lat": 51.5195,
+   "lon": -0.075,
+   "url": "https://oldspitalfieldsmarket.com/whats-on",
+   "kind": "market",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "market"
+    ]
+   }
+  },
+  {
+   "id": "greenwichmarket",
+   "name": "Greenwich Market",
+   "area": "Greenwich",
+   "lat": 51.4815,
+   "lon": -0.0092,
+   "url": "https://www.greenwichmarket.london/whats-on",
+   "kind": "market",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "market",
+     "food"
+    ]
+   }
+  },
+  {
+   "id": "brixtonvillage",
+   "name": "Brixton Village",
+   "area": "Brixton",
+   "lat": 51.4622,
+   "lon": -0.1138,
+   "url": "https://brixtonvillage.com/whats-on/",
+   "kind": "market",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "food",
+     "market"
+    ]
+   }
+  },
+  {
+   "id": "peckhamlevels",
+   "name": "Peckham Levels",
+   "area": "Peckham",
+   "lat": 51.4727,
+   "lon": -0.07,
+   "url": "https://www.peckhamlevels.org/whats-on",
+   "kind": "arts",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "food",
+     "arts"
+    ]
+   }
+  },
+  {
+   "id": "batterseaps",
+   "name": "Battersea Power Station",
+   "area": "Battersea",
+   "lat": 51.4817,
+   "lon": -0.1442,
+   "url": "https://batterseapowerstation.co.uk/whats-on/",
+   "kind": "attraction",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "shops",
+     "events"
+    ]
+   }
+  },
+  {
+   "id": "coalyards",
+   "name": "King's Cross / Coal Drops Yard",
+   "area": "King's Cross",
+   "lat": 51.536,
+   "lon": -0.1255,
+   "url": "https://www.kingscross.co.uk/whats-on",
+   "kind": "attraction",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "events",
+     "food"
+    ]
+   }
+  },
+  {
+   "id": "canarywharf",
+   "name": "Canary Wharf events",
+   "area": "Canary Wharf",
+   "lat": 51.5054,
+   "lon": -0.0235,
+   "url": "https://canarywharf.com/whats-on/",
+   "kind": "attraction",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "events"
+    ]
+   }
+  },
+  {
+   "id": "wembleypark",
+   "name": "Wembley Park",
+   "area": "Wembley",
+   "lat": 51.557,
+   "lon": -0.2795,
+   "url": "https://wembleypark.com/whats-on/",
+   "kind": "attraction",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "events"
+    ]
+   }
+  },
+  {
+   "id": "lewisham",
+   "name": "Lewisham Council what's on",
+   "area": "Lewisham",
+   "lat": 51.462,
+   "lon": -0.01,
+   "url": "https://lewisham.gov.uk/inmyarea/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "southwark",
+   "name": "Southwark Council events",
+   "area": "Southwark",
+   "lat": 51.49,
+   "lon": -0.07,
+   "url": "https://www.southwark.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "greenwichcouncil",
+   "name": "Royal Greenwich events",
+   "area": "Greenwich",
+   "lat": 51.481,
+   "lon": 0.01,
+   "url": "https://www.royalgreenwich.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "enjoygreenwich",
+   "name": "Enjoy Royal Greenwich",
+   "area": "Greenwich",
+   "lat": 51.481,
+   "lon": 0.01,
+   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "lambeth",
+   "name": "Lambeth events",
+   "area": "Lambeth",
+   "lat": 51.46,
+   "lon": -0.115,
+   "url": "https://www.lambeth.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "bromley",
+   "name": "Bromley events",
+   "area": "Bromley",
+   "lat": 51.405,
+   "lon": 0.015,
+   "url": "https://www.bromley.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "camden",
+   "name": "Camden events",
+   "area": "Camden",
+   "lat": 51.542,
+   "lon": -0.142,
+   "url": "https://www.camden.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "hackney",
+   "name": "Hackney events",
+   "area": "Hackney",
+   "lat": 51.545,
+   "lon": -0.055,
+   "url": "https://hackney.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "islington",
+   "name": "Islington events",
+   "area": "Islington",
+   "lat": 51.538,
+   "lon": -0.103,
+   "url": "https://www.islington.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "towerhamlets",
+   "name": "Tower Hamlets events",
+   "area": "Tower Hamlets",
+   "lat": 51.515,
+   "lon": -0.03,
+   "url": "https://www.towerhamlets.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "wandsworth",
+   "name": "Wandsworth events",
+   "area": "Wandsworth",
+   "lat": 51.457,
+   "lon": -0.19,
+   "url": "https://www.wandsworth.gov.uk/events/",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "richmondcouncil",
+   "name": "Richmond events",
+   "area": "Richmond",
+   "lat": 51.461,
+   "lon": -0.304,
+   "url": "https://www.richmond.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "ealing",
+   "name": "Ealing events",
+   "area": "Ealing",
+   "lat": 51.513,
+   "lon": -0.305,
+   "url": "https://www.ealing.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "walthamforest",
+   "name": "Waltham Forest events",
+   "area": "Walthamstow",
+   "lat": 51.59,
+   "lon": -0.02,
+   "url": "https://www.walthamforest.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "haringey",
+   "name": "Haringey events",
+   "area": "Haringey",
+   "lat": 51.59,
+   "lon": -0.11,
+   "url": "https://www.haringey.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "croydon",
+   "name": "Croydon events",
+   "area": "Croydon",
+   "lat": 51.372,
+   "lon": -0.098,
+   "url": "https://www.croydon.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community"
+    ]
+   }
+  },
+  {
+   "id": "allypally",
+   "name": "Alexandra Palace",
+   "area": "Alexandra Palace",
+   "lat": 51.5942,
+   "lon": -0.13,
+   "url": "https://www.alexandrapalace.com/whats-on/",
+   "kind": "attraction",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "events",
+     "views"
+    ]
+   }
+  },
+  {
+   "id": "o2",
+   "name": "The O2",
+   "area": "Greenwich Peninsula",
+   "lat": 51.503,
+   "lon": 0.0032,
+   "url": "https://www.theo2.co.uk/events",
+   "kind": "arena",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "music",
+     "shows"
+    ]
+   }
+  },
+  {
+   "id": "excel",
+   "name": "ExCeL London",
+   "area": "Royal Docks",
+   "lat": 51.5083,
+   "lon": 0.0291,
+   "url": "https://www.excel.london/whats-on",
+   "kind": "arena",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "shows",
+     "fairs"
+    ]
+   }
+  },
+  {
+   "id": "olympia",
+   "name": "Olympia London",
+   "area": "Kensington",
+   "lat": 51.496,
+   "lon": -0.21,
+   "url": "https://olympia.london/whats-on",
+   "kind": "arena",
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "shows",
+     "fairs"
+    ]
+   }
+  },
+  {
+   "id": "businessdesign",
+   "name": "Business Design Centre",
+   "area": "Islington",
+   "lat": 51.536,
+   "lon": -0.105,
+   "url": "https://www.businessdesigncentre.co.uk/whats-on/",
+   "kind": "arena",
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "fairs"
+    ]
+   }
+  },
+  {
+   "id": "eventbrite-family",
+   "name": "Eventbrite: family & education, London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.eventbrite.co.uk/d/united-kingdom--london/family-and-education--events/",
+   "kind": "ticketing",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "family"
+    ]
+   }
+  },
+  {
+   "id": "eventbrite-free",
+   "name": "Eventbrite: free events this weekend, London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.eventbrite.co.uk/d/united-kingdom--london/free--events--this-weekend/",
+   "kind": "ticketing",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "free"
+    ]
+   }
+  },
+  {
+   "id": "eventbrite-food",
+   "name": "Eventbrite: food & drink, London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.eventbrite.co.uk/d/united-kingdom--london/food-and-drink--events/",
+   "kind": "ticketing",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "food"
+    ]
+   }
+  },
+  {
+   "id": "skiddle-london",
+   "name": "Skiddle: what's on in London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.skiddle.com/whats-on/London/",
+   "kind": "ticketing",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "events"
+    ]
+   }
+  },
+  {
+   "id": "dmn",
+   "name": "DesignMyNight London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.designmynight.com/london/whats-on",
+   "kind": "ticketing",
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "nightlife",
+     "food"
+    ]
+   }
+  },
+  {
+   "id": "ianvisits",
+   "name": "IanVisits calendar (aggregator, quality check)",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.ianvisits.co.uk/calendar/",
+   "kind": "aggregator",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "events"
+    ]
+   }
+  },
+  {
+   "id": "londonist",
+   "name": "Londonist things to do (aggregator)",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://londonist.com/london/things-to-do",
+   "kind": "aggregator",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "events"
+    ]
+   }
+  },
+  {
+   "id": "timeout",
+   "name": "Time Out London things to do (aggregator)",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.timeout.com/london/things-to-do",
+   "kind": "aggregator",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "events"
+    ]
+   }
+  },
+  {
+   "id": "kidrated",
+   "name": "Kidrated (family aggregator)",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://kidrated.com/whats-on/",
+   "kind": "aggregator",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "family"
+    ]
+   }
+  },
+  {
+   "id": "hoop",
+   "name": "Hoop (kids' activities aggregator)",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://hoop.co.uk/london/",
+   "kind": "aggregator",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "family"
+    ]
+   }
+  },
+  {
+   "id": "visitlondon",
+   "name": "Visit London what's on",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.visitlondon.com/things-to-do/whats-on",
+   "kind": "aggregator",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "events"
+    ]
+   }
+  },
+  {
+   "id": "dadsinlondon",
+   "name": "Dads in London (weekly kids' guide)",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.dadsinlondon.com/archive",
+   "feed": "rss",
+   "feed_url": "https://www.dadsinlondon.com/feed",
+   "kind": "aggregator",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "family"
+    ]
+   }
+  }
+ ]
 }
