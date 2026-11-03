@@ -87,7 +87,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -108,7 +107,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -192,7 +190,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -234,7 +231,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -341,7 +337,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -362,7 +357,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -535,7 +529,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -577,7 +570,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -643,7 +635,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 522: <none>"
   },
   {
@@ -741,7 +732,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -802,7 +792,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -827,7 +816,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -868,7 +856,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -974,7 +961,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1015,7 +1001,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 307: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error messag"
   },
   {
@@ -1035,7 +1020,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1077,7 +1061,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1098,7 +1081,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1119,7 +1101,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1223,7 +1204,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1244,7 +1224,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -1326,7 +1305,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1368,7 +1346,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1377,7 +1354,7 @@
    "area": "Southwark",
    "lat": 51.5048,
    "lon": -0.104,
-   "url": "https://kirkaldytestingmuseum.org.uk/",
+   "url": "https://www.testingmuseum.org.uk/",
    "kind": "museum",
    "defaults": {
     "in": "in",
@@ -1389,7 +1366,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "<urlopen error [Errno -2] Name or service not known>"
   },
   {
@@ -1516,7 +1492,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1621,7 +1596,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1742,7 +1716,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -1823,7 +1796,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1965,7 +1937,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 405: Not Allowed"
   },
   {
@@ -2005,7 +1976,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -2109,7 +2079,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -2129,8 +2098,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
-   "error": "HTTP Error 405: Not Allowed"
+   "feed": "skip",
+   "error": "HTTP Error 405: Not Allowed",
+   "note": "Eventbrite blocks automated page reads; use their API instead"
   },
   {
    "id": "eventbrite-free",
@@ -2149,8 +2119,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
-   "error": "HTTP Error 405: Not Allowed"
+   "feed": "skip",
+   "error": "HTTP Error 405: Not Allowed",
+   "note": "Eventbrite blocks automated page reads; use their API instead"
   },
   {
    "id": "eventbrite-food",
@@ -2169,8 +2140,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
-   "error": "HTTP Error 405: Not Allowed"
+   "feed": "skip",
+   "error": "HTTP Error 405: Not Allowed",
+   "note": "Eventbrite blocks automated page reads; use their API instead"
   },
   {
    "id": "skiddle-london",
@@ -2256,7 +2228,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -2316,7 +2287,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -2336,7 +2306,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -2377,7 +2346,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -2461,7 +2429,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -2482,7 +2449,6 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "error",
    "error": "HTTP Error 403: Forbidden"
   },
   {

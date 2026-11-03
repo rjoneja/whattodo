@@ -55,12 +55,37 @@ def find_links(doc, base):
             out["eventbrite"] = href
     return out
 
+LISTING = re.compile(r"/(whats-on|what-s-on|whatson|events?|things-to-do|calendar|programme)(/|$|\?)", re.I)
+
+def find_listing(url):
+    """URL 404s or redirects badly: open the site's home page and follow its what's-on/events link."""
+    root = re.match(r"https?://[^/]+", url).group(0) + "/"
+    final, doc = get(root)
+    best = None
+    for m in re.finditer(r'(?is)<a\b[^>]*href=["\']([^"\'#]+)["\'][^>]*>(.*?)</a>', doc):
+        href = urljoin(final, html.unescape(m.group(1))); text = re.sub(r"<[^>]+>", "", m.group(2)).strip().lower()
+        if urlparse(href).netloc.replace("www.", "") != urlparse(final).netloc.replace("www.", ""): continue
+        if LISTING.search(urlparse(href).path) or text in ("what's on", "whats on", "events", "what’s on"):
+            if best is None or len(href) < len(best): best = href
+    return best
+
 def probe(v):
     rec = {"probed": dt.date.today().isoformat()}
     try:
         final, doc = get(v["url"])
     except Exception as ex:
-        rec.update(feed="error", error=str(ex)[:120]); return rec
+        code = getattr(ex, "code", None)
+        if code in (404, 307, 308, 301, 302) or "redirect" in str(ex):
+            try:
+                alt = find_listing(v["url"])
+                if alt:
+                    final, doc = get(alt); rec["url"] = alt; rec["was"] = v["url"]
+                else:
+                    rec.update(feed="error", error=str(ex)[:120]); return rec
+            except Exception as ex2:
+                rec.update(feed="error", error=str(ex2)[:120]); return rec
+        else:
+            rec.update(feed="blocked" if code in (403, 405, 429) else "error", error=str(ex)[:120]); return rec
     n = jsonld_events(doc)
     links = find_links(doc, final)
     if n:
@@ -104,8 +129,10 @@ def main():
     reg = json.load(open("venues.json")); venues = reg["venues"]
     for v in venues:
         if a.only and v["id"] != a.only: continue
+        if v.get("feed") == "skip": continue
+        for k in ("error", "was"): v.pop(k, None)
         v.update(probe(v))
-        print(f'{v["id"]:22} {v.get("feed","?"):10} {v.get("jsonld_events","")}', file=sys.stderr)
+        print(f'{v["id"]:22} {v.get("feed","?"):10} {v.get("jsonld_events","")} {("-> " + v["url"]) if v.get("was") else ""} {v.get("error","")[:50]}', file=sys.stderr)
         time.sleep(1.5)
     json.dump(reg, open("venues.json", "w"), indent=1, ensure_ascii=False)
     counts = {}

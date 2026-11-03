@@ -244,7 +244,7 @@ def main():
         try:
             if feed == "jsonld" or feed == "eventbrite": evs = harvest_jsonld(v)
             elif feed == "ics": evs = harvest_ics(v)
-            elif feed in ("rss", "html"): evs = [] if a.no_llm else harvest_html(v, horizon)
+            elif feed in ("rss", "html", "error"): evs = [] if a.no_llm else harvest_html(v, horizon)
             else: evs = []
         except Exception as ex:
             print(f"  failed: {str(ex)[:120]}", file=sys.stderr); evs = []
