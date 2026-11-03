@@ -2008,6 +2008,330 @@
      "family"
     ]
    }
+  },
+  {
+   "id": "barkingdagenham",
+   "name": "Barking & Dagenham Council events",
+   "area": "Barking",
+   "lat": 51.5397,
+   "lon": 0.0811,
+   "url": "https://www.lbbd.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "barnet",
+   "name": "Barnet Council events",
+   "area": "Barnet",
+   "lat": 51.6252,
+   "lon": -0.1517,
+   "url": "https://www.barnet.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "bexley",
+   "name": "Bexley Council events",
+   "area": "Bexleyheath",
+   "lat": 51.4549,
+   "lon": 0.1505,
+   "url": "https://www.bexley.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "brent",
+   "name": "Brent Council events",
+   "area": "Wembley",
+   "lat": 51.5588,
+   "lon": -0.2817,
+   "url": "https://www.brent.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "cityoflondonevents",
+   "name": "City of London Council events",
+   "area": "City",
+   "lat": 51.5155,
+   "lon": -0.0922,
+   "url": "https://www.cityoflondon.gov.uk/things-to-do/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "enfield",
+   "name": "Enfield Council events",
+   "area": "Enfield",
+   "lat": 51.6538,
+   "lon": -0.0799,
+   "url": "https://www.enfield.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "hammersmithfulham",
+   "name": "Hammersmith & Fulham Council events",
+   "area": "Hammersmith",
+   "lat": 51.4927,
+   "lon": -0.2339,
+   "url": "https://www.lbhf.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "harrow",
+   "name": "Harrow Council events",
+   "area": "Harrow",
+   "lat": 51.5806,
+   "lon": -0.342,
+   "url": "https://www.harrow.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "havering",
+   "name": "Havering Council events",
+   "area": "Romford",
+   "lat": 51.5768,
+   "lon": 0.1801,
+   "url": "https://www.havering.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "hillingdon",
+   "name": "Hillingdon Council events",
+   "area": "Uxbridge",
+   "lat": 51.5441,
+   "lon": -0.476,
+   "url": "https://www.hillingdon.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "hounslow",
+   "name": "Hounslow Council events",
+   "area": "Hounslow",
+   "lat": 51.4668,
+   "lon": -0.3615,
+   "url": "https://www.hounslow.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "kensingtonchelsea",
+   "name": "Kensington & Chelsea Council events",
+   "area": "Kensington",
+   "lat": 51.502,
+   "lon": -0.1947,
+   "url": "https://www.rbkc.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "kingston",
+   "name": "Kingston Council events",
+   "area": "Kingston",
+   "lat": 51.4123,
+   "lon": -0.3007,
+   "url": "https://www.kingston.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "merton",
+   "name": "Merton Council events",
+   "area": "Wimbledon",
+   "lat": 51.4014,
+   "lon": -0.1958,
+   "url": "https://www.merton.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "newham",
+   "name": "Newham Council events",
+   "area": "Stratford",
+   "lat": 51.5255,
+   "lon": 0.0352,
+   "url": "https://www.newham.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "redbridge",
+   "name": "Redbridge Council events",
+   "area": "Ilford",
+   "lat": 51.559,
+   "lon": 0.0741,
+   "url": "https://www.redbridge.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "sutton",
+   "name": "Sutton Council events",
+   "area": "Sutton",
+   "lat": 51.3618,
+   "lon": -0.1945,
+   "url": "https://www.sutton.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
+  },
+  {
+   "id": "westminster",
+   "name": "Westminster Council events",
+   "area": "Westminster",
+   "lat": 51.4975,
+   "lon": -0.1357,
+   "url": "https://www.westminster.gov.uk/events",
+   "kind": "council",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "community",
+     "local"
+    ]
+   }
   }
  ]
 }
