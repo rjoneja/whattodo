@@ -9,7 +9,7 @@ Runs in the daily workflow; safe to re-run (keeps what it already has unless --r
   python3 images.py --events docs/events.json --out docs/images.json
 """
 import argparse, json, os, re, sys, time, html
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 from urllib.request import Request, urlopen
 
 UA = "WhatToDo-images/0.1 (+personal project; one thumbnail per venue, credited)"
@@ -43,20 +43,91 @@ def wiki_thumb(title):
     src = re.sub(r"/(\d+)px-", "/640px-", src)            # bigger thumb
     return {"url": src, "credit": "Photo: Wikimedia Commons", "page": j.get("content_urls", {}).get("desktop", {}).get("page")}
 
-def og_image(url):
-    _, doc = get(url, "text/html")
-    m = re.search(r'(?is)<meta[^>]+property=["\']og:image(?::secure_url)?["\'][^>]+content=["\']([^"\']+)', doc) or \
-        re.search(r'(?is)<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', doc)
-    if not m: return None
-    src = html.unescape(m.group(1))
-    if not src.startswith("http"): return None
-    host = re.sub(r"^https?://(www\.)?", "", url).split("/")[0]
-    return {"url": src, "credit": host}
+BAD_WORDS = re.compile(r"(logo|crest|favicon|icon|sprite|placeholder|default|share[-_]?image|social[-_]?share|brand|badge|avatar|blank)", re.I)
+
+def candidates(url):
+    """Every plausible picture on an event page: og/twitter image, then large <img>s in the content."""
+    final, doc = get(url, "text/html")
+    out = []
+    for pat in (r'(?is)<meta[^>]+(?:property|name)=["\'](?:og:image(?::secure_url)?|twitter:image)["\'][^>]+content=["\']([^"\']+)',
+                r'(?is)<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\'](?:og:image|twitter:image)'):
+        out += re.findall(pat, doc)
+    for m in re.finditer(r'(?is)<img\b[^>]*>', doc):
+        tag = m.group(0)
+        src = re.search(r'(?:data-src|src)=["\']([^"\']+)', tag)
+        if not src: continue
+        w = re.search(r'width=["\']?(\d+)', tag)
+        if w and int(w.group(1)) < 500: continue
+        out.append(src.group(1))
+    seen, res = set(), []
+    for u in out:
+        u = urljoin(final, html.unescape(u))
+        if not u.startswith("http") or u in seen or BAD_WORDS.search(u) or u.lower().endswith((".svg", ".gif")): continue
+        seen.add(u); res.append(u)
+    return res[:6]
+
+def image_size(u):
+    """Width/height from the first bytes of a JPEG/PNG/WebP, without downloading the whole file."""
+    req = Request(u, headers={"User-Agent": UA, "Range": "bytes=0-65535"})
+    with urlopen(req, timeout=15) as r:
+        b = r.read(65536); total = r.headers.get("Content-Range", "") or r.headers.get("Content-Length", "")
+    if b[:8] == b"\x89PNG\r\n\x1a\n": return int.from_bytes(b[16:20], "big"), int.from_bytes(b[20:24], "big"), "png"
+    if b[:4] == b"RIFF" and b[8:12] == b"WEBP":
+        if b[12:16] == b"VP8X": return 1 + int.from_bytes(b[24:27], "little"), 1 + int.from_bytes(b[27:30], "little"), "webp"
+        if b[12:16] == b"VP8 ": return int.from_bytes(b[26:28], "little") & 0x3fff, int.from_bytes(b[28:30], "little") & 0x3fff, "webp"
+        return None
+    if b[:2] == b"\xff\xd8":
+        i = 2
+        while i < len(b) - 9:
+            if b[i] != 0xFF: i += 1; continue
+            mk = b[i+1]
+            if mk in (0xC0, 0xC1, 0xC2): return int.from_bytes(b[i+7:i+9], "big"), int.from_bytes(b[i+5:i+7], "big"), "jpg"
+            i += 2 + int.from_bytes(b[i+2:i+4], "big")
+    return None
+
+_client = None
+def looks_like_photo(u, name):
+    """Ask Claude (cheap model) whether this is a real photo of the event/place, not a logo, crest, poster text or stock icon."""
+    if not os.environ.get("ANTHROPIC_API_KEY"): return True
+    global _client
+    import anthropic
+    _client = _client or anthropic.Anthropic()
+    try:
+        msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=5, messages=[{"role": "user", "content": [
+            {"type": "image", "source": {"type": "url", "url": u}},
+            {"type": "text", "text": f"This image is for a listing called '{name}'. Answer YES if it is an appealing photograph (people, a place, an activity, an exhibit or artwork) that would make someone want to go. Answer NO if it is a logo, coat of arms, icon, plain text, a flyer that is mostly words, a map, a screenshot or a generic graphic. One word."}]}])
+        return "YES" in "".join(getattr(b, "text", "") for b in msg.content).upper()
+    except Exception:
+        return False
+
+def pick(e, used):
+    for u in candidates(e["url"]):
+        if used.get(u, 0) >= 1: continue                          # same picture on another listing = a site-wide default
+        try: sz = image_size(u)
+        except Exception: sz = None
+        if not sz: continue
+        w, h, kind = sz
+        if w < 600 or h < 300 or w / max(h, 1) > 2.6 or w / max(h, 1) < 0.6: continue
+        if not looks_like_photo(u, e["name"]): continue
+        host = re.sub(r"^https?://(www\.)?", "", e["url"]).split("/")[0]
+        return {"url": u, "credit": host}
+    return None
+
+def wiki_near(lat, lon):
+    """Fallback: a Wikimedia photo of the nearest notable place."""
+    _, body = get(f"https://en.wikipedia.org/w/api.php?action=query&format=json&generator=geosearch&ggscoord={lat}|{lon}&ggsradius=600&ggslimit=8&prop=pageimages&piprop=thumbnail&pithumbsize=800", "application/json")
+    pages = sorted(json.loads(body).get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
+    for p in pages:
+        t = (p.get("thumbnail") or {}).get("source")
+        if t and not BAD_WORDS.search(t) and not t.lower().endswith((".svg.png",)):
+            return {"url": t, "credit": "Photo: Wikimedia Commons", "page": "https://en.wikipedia.org/wiki/" + quote(p["title"].replace(" ", "_"))}
+    return None
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--events", default="docs/events.json"); ap.add_argument("--out", default="docs/images.json")
-    ap.add_argument("--refresh", action="store_true"); a = ap.parse_args()
+    ap.add_argument("--refresh", action="store_true"); ap.add_argument("--recheck", action="store_true", help="re-vet existing event pictures")
+    a = ap.parse_args()
     out = json.load(open(a.out)) if os.path.exists(a.out) and not a.refresh else {}
     for id_, title in WIKI.items():
         if id_ in out: continue
@@ -67,15 +138,24 @@ def main():
             print(f"{id_}: wiki failed {ex}", file=sys.stderr)
         time.sleep(0.5)
     events = json.load(open(a.events)).get("events", []) if os.path.exists(a.events) else []
+    if a.recheck:
+        for e in events:
+            if e["id"] in out and out[e["id"]].get("checked") != 2: out.pop(e["id"])
+    used = {}
+    for k, v in out.items(): used[v["url"]] = used.get(v["url"], 0) + 1
     for e in events:
         if e["id"] in out or not e.get("url", "").startswith("http"): continue
-        if "instagram.com" in e["url"]: continue                 # IG media URLs expire; skip
-        try:
-            t = og_image(e["url"])
-            if t: out[e["id"]] = t; print(f"{e['id']}: og ok", file=sys.stderr)
-        except Exception as ex:
-            print(f"{e['id']}: og failed {str(ex)[:60]}", file=sys.stderr)
-        time.sleep(1)
+        t = None
+        if "instagram.com" not in e["url"]:
+            try: t = pick(e, used)
+            except Exception as ex: print(f"{e['id']}: page failed {str(ex)[:60]}", file=sys.stderr)
+        if not t:
+            try: t = wiki_near(e["lat"], e["lon"])
+            except Exception: t = None
+        if t:
+            t["checked"] = 2; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
+            print(f"{e['id']}: {'page' if 'Wikimedia' not in t['credit'] else 'wiki-near'} ok", file=sys.stderr)
+        time.sleep(0.5)
     live = set(WIKI) | {e["id"] for e in events}
     out = {k: v for k, v in out.items() if k in live}
     json.dump(out, open(a.out, "w"), indent=0, ensure_ascii=False)

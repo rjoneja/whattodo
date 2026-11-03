@@ -18,6 +18,7 @@ jobs:
       - run: pip install anthropic
       - run: python3 instagram.py --days 21 --out docs/events.json
       - run: python3 images.py --events docs/events.json --out docs/images.json || true
+        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - run: |
           git config user.name bot && git config user.email bot@users.noreply.github.com
           git add docs/events.json docs/images.json accounts.json

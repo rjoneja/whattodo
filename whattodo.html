@@ -89,9 +89,11 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .card h3{font-size:23px;font-weight:700;line-height:1.05;margin-top:3px}
 .card .img{margin:calc(var(--u)*-2) calc(var(--u)*-2) 0;height:clamp(84px,24vh,150px);flex:none;background:var(--paper-2) center/cover no-repeat;position:relative}
 .card .img small{position:absolute;right:6px;bottom:4px;font-size:9px;color:#fff;opacity:.75;text-shadow:0 0 3px #000}
-.card.tight .img{display:none}
+.card.tight .img{height:clamp(70px,16vh,110px)}
 .card.tight .blurb{font-size:13.5px;line-height:1.35}
 .card.tight .why{display:none}
+.card.tighter .img{display:none}
+.card.tighter .blurb{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
 .price{font-family:var(--display);font-weight:700;font-size:14px;color:var(--verm);background:var(--verm-soft);border-radius:999px;padding:5px 10px;white-space:nowrap;line-height:1}
 .price.free{color:var(--moss);background:var(--moss-soft)}
 .badges{display:flex;flex-wrap:wrap;gap:6px}
@@ -538,7 +540,7 @@ function renderStack(){
   const st=$('#stack'); st.innerHTML='';
   if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Change the day or who's going, or check My list. More listings and one-off events coming.</span></div>`;}
   deck.slice(0,3).forEach((c,i)=>{const el=document.createElement('div');el.className='card'+(i===1?' under':i===2?' under2':'');el.style.zIndex=3-i;el.innerHTML=cardHTML(c);el.dataset.id=c.id;st.appendChild(el);if(i===0)attachDrag(el);});
-  requestAnimationFrame(()=>{const top=st.querySelector('.card');if(top&&top.scrollHeight>top.clientHeight+2){top.classList.add('tight');}});
+  requestAnimationFrame(()=>{st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}});});
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
   deck.slice(0,2).forEach(refineTravel);
 }
