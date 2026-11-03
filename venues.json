@@ -2707,6 +2707,166 @@
    "probed": "2026-11-03",
    "feed": "html",
    "feed_url": "https://www.westminster.gov.uk/event"
+  },
+  {
+   "id": "diamondgeezer",
+   "name": "Diamond Geezer (blog)",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://diamondgeezer.blogspot.com/",
+   "feed": "rss",
+   "feed_url": "https://diamondgeezer.blogspot.com/feeds/posts/default",
+   "kind": "blog",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "hidden gems"
+    ]
+   }
+  },
+  {
+   "id": "greenwichwire",
+   "name": "The Greenwich Wire",
+   "area": "Greenwich",
+   "lat": 51.481,
+   "lon": 0.01,
+   "url": "https://greenwichwire.co.uk/",
+   "feed": "rss",
+   "feed_url": "https://greenwichwire.co.uk/feed/",
+   "kind": "blog",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "hidden gems"
+    ]
+   }
+  },
+  {
+   "id": "ourbow",
+   "name": "Our Bow",
+   "area": "Bow",
+   "lat": 51.529,
+   "lon": -0.02,
+   "url": "https://www.ourbow.com/",
+   "feed": "rss",
+   "feed_url": "https://www.ourbow.com/feed/",
+   "kind": "blog",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "hidden gems"
+    ]
+   }
+  },
+  {
+   "id": "onlondon",
+   "name": "On London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.onlondon.co.uk/",
+   "feed": "rss",
+   "feed_url": "https://www.onlondon.co.uk/feed/",
+   "kind": "blog",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "hidden gems"
+    ]
+   }
+  },
+  {
+   "id": "londoncentric",
+   "name": "London Centric",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.londoncentric.media/",
+   "feed": "rss",
+   "feed_url": "https://www.londoncentric.media/feed",
+   "kind": "blog",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "hidden gems"
+    ]
+   }
+  },
+  {
+   "id": "alondoninheritance",
+   "name": "A London Inheritance",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://alondoninheritance.com/",
+   "feed": "rss",
+   "feed_url": "https://alondoninheritance.com/feed/",
+   "kind": "blog",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "hidden gems"
+    ]
+   }
+  },
+  {
+   "id": "spitalfieldslife",
+   "name": "Spitalfields Life",
+   "area": "Spitalfields",
+   "lat": 51.5195,
+   "lon": -0.075,
+   "url": "https://spitalfieldslife.com/",
+   "feed": "rss",
+   "feed_url": "https://spitalfieldslife.com/feed/",
+   "kind": "blog",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "hidden gems"
+    ]
+   }
+  },
+  {
+   "id": "heritageoflondon",
+   "name": "Heritage of London Trust",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "url": "https://www.heritageoflondon.org/",
+   "feed": "rss",
+   "feed_url": "https://www.heritageoflondon.org/blog-feed.xml",
+   "kind": "blog",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "hidden gems"
+    ]
+   }
   }
  ]
 }
