@@ -161,15 +161,15 @@ def main():
     reg = json.load(open(a.accounts)); accounts = reg["accounts"]
     # validate up to 40 queued candidate handles per run; promote the ones Meta can see
     if reg.get("candidates") and not a.only:
-        keep, promoted = [], 0
+        keep, promoted, limited = [], 0, False
         for i, c in enumerate(reg["candidates"]):
-            if i >= int(os.environ.get("IG_CANDIDATES_PER_RUN", "25")): keep.append(c); continue
+            if limited or i >= int(os.environ.get("IG_CANDIDATES_PER_RUN", "25")): keep.append(c); continue
             try:
                 bd = discover(c["handle"], 1)
                 c.pop("group", None); c["name"] = bd.get("name") or c["name"]
                 accounts.append(c); promoted += 1
             except Exception as ex:
-                if "request limit" in str(ex): keep.append(c); continue
+                if "request limit" in str(ex): keep.append(c); limited = True; continue
                 reg.setdefault("rejected", []).append({"handle": c["handle"], "why": str(ex)[:60]})
         reg["candidates"] = keep
         json.dump(reg, open(a.accounts, "w"), indent=1, ensure_ascii=False)
@@ -186,6 +186,8 @@ def main():
             bd = discover(acc["handle"])
         except Exception as ex:
             msg = str(ex)
+            if "request limit" in msg:
+                print(f"Meta hourly limit reached at @{acc['handle']}; stopping, the rest wait for the next run", file=sys.stderr); break
             missing.append(acc["handle"]); print(f"@{acc['handle']}: not found or not a professional account ({msg[:80]})", file=sys.stderr); continue
         posts = [p for p in bd.get("media", {}).get("data", []) if p.get("timestamp", "") >= since and p["id"] not in seen]
         print(f"@{acc['handle']}: {len(posts)} new posts", file=sys.stderr)
