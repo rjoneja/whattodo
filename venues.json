@@ -71,7 +71,7 @@
    "area": "Bethnal Green",
    "lat": 51.529,
    "lon": -0.0557,
-   "url": "https://www.vam.ac.uk/young/whats-on",
+   "url": "https://www.vam.ac.uk/whatson",
    "kind": "museum",
    "defaults": {
     "in": "in",
@@ -87,7 +87,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://www.vam.ac.uk/young/whats-on",
+   "feed": "html",
+   "feed_url": "https://www.vam.ac.uk/whatson"
   },
   {
    "id": "bm",
@@ -107,6 +109,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -190,6 +193,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -231,6 +235,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -337,6 +342,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -357,6 +363,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -529,6 +536,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -570,6 +578,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -635,6 +644,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "error",
    "error": "HTTP Error 522: <none>"
   },
   {
@@ -720,7 +730,7 @@
    "area": "Deptford",
    "lat": 51.479,
    "lon": -0.026,
-   "url": "https://www.thealbany.org.uk/whats-on/",
+   "url": "https://www.thealbany.org.uk/events",
    "kind": "arts",
    "defaults": {
     "in": "in",
@@ -732,7 +742,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://www.thealbany.org.uk/whats-on/",
+   "feed": "html",
+   "feed_url": "https://www.thealbany.org.uk/events"
   },
   {
    "id": "blackheathhalls",
@@ -792,6 +804,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -800,7 +813,7 @@
    "area": "Stratford",
    "lat": 51.5405,
    "lon": -0.0019,
-   "url": "https://discover.org.uk/whats-on/",
+   "url": "https://discover.org.uk/event/luna-loves-london/",
    "kind": "kids",
    "defaults": {
     "in": "in",
@@ -816,7 +829,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://discover.org.uk/whats-on/",
+   "feed": "html",
+   "feed_url": "https://discover.org.uk/event/luna-loves-london/"
   },
   {
    "id": "royalparks",
@@ -856,6 +871,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -875,8 +891,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "html",
-   "feed_url": "https://www.chelseaphysicgarden.co.uk/whats-on/"
+   "feed": "rss",
+   "feed_url": "https://www.chelseaphysicgarden.co.uk/feed/",
+   "has_rss": "https://www.chelseaphysicgarden.co.uk/feed/"
   },
   {
    "id": "wwtlondon",
@@ -948,7 +965,7 @@
    "area": "Lee Valley",
    "lat": 51.61,
    "lon": -0.03,
-   "url": "https://www.visitleevalley.org.uk/whats-on",
+   "url": "https://www.visitleevalley.org.uk/whatson",
    "kind": "park",
    "defaults": {
     "in": "out",
@@ -961,7 +978,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://www.visitleevalley.org.uk/whats-on",
+   "feed": "html",
+   "feed_url": "https://www.visitleevalley.org.uk/whatson"
   },
   {
    "id": "qeop",
@@ -1001,7 +1020,8 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 307: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error messag"
+   "feed": "error",
+   "error": "HTTP Error 308: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error messag"
   },
   {
    "id": "beckenhamplace",
@@ -1009,7 +1029,7 @@
    "area": "Beckenham",
    "lat": 51.4165,
    "lon": -0.0254,
-   "url": "https://beckenhamplacepark.com/whats-on/",
+   "url": "https://www.beckenhamplacepark.com/events",
    "kind": "park",
    "defaults": {
     "in": "out",
@@ -1020,7 +1040,10 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://beckenhamplacepark.com/whats-on/",
+   "feed": "ics",
+   "feed_url": "https://www.beckenhamplacepark.com/events/food-and-farmers-market?format=ical",
+   "has_ics": "https://www.beckenhamplacepark.com/events/food-and-farmers-market?format=ical"
   },
   {
    "id": "brockwell",
@@ -1049,7 +1072,7 @@
    "area": "Isle of Dogs",
    "lat": 51.492,
    "lon": -0.015,
-   "url": "https://www.mudchute.org/events",
+   "url": "https://www.mudchute.org/whats-on",
    "kind": "farm",
    "defaults": {
     "in": "out",
@@ -1061,7 +1084,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://www.mudchute.org/events",
+   "feed": "html",
+   "feed_url": "https://www.mudchute.org/whats-on"
   },
   {
    "id": "vauxhallfarm",
@@ -1069,7 +1094,7 @@
    "area": "Vauxhall",
    "lat": 51.4848,
    "lon": -0.1213,
-   "url": "https://vauxhallcityfarm.org/whats-on/",
+   "url": "https://vauxhallcityfarm.org/latest-events/",
    "kind": "farm",
    "defaults": {
     "in": "out",
@@ -1081,7 +1106,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://vauxhallcityfarm.org/whats-on/",
+   "feed": "html",
+   "feed_url": "https://vauxhallcityfarm.org/latest-events/"
   },
   {
    "id": "hackneyfarm",
@@ -1101,6 +1128,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1109,7 +1137,7 @@
    "area": "Rotherhithe",
    "lat": 51.4985,
    "lon": -0.038,
-   "url": "https://www.surreydocksfarm.org.uk/whats-on",
+   "url": "https://surreydocksfarm.org.uk/events/",
    "kind": "farm",
    "defaults": {
     "in": "out",
@@ -1122,7 +1150,8 @@
    },
    "probed": "2026-11-03",
    "feed": "html",
-   "feed_url": "https://www.surreydocksfarm.org.uk/whats-on"
+   "feed_url": "https://surreydocksfarm.org.uk/events/",
+   "was": "https://www.surreydocksfarm.org.uk/whats-on"
   },
   {
    "id": "spitalfieldsfarm",
@@ -1204,6 +1233,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1224,6 +1254,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -1293,7 +1324,7 @@
    "area": "Shooters Hill",
    "lat": 51.4627,
    "lon": 0.0574,
-   "url": "https://www.severndroogcastle.org.uk/events/",
+   "url": "https://severndroogcastle.org.uk/whats-on/",
    "kind": "heritage",
    "defaults": {
     "in": "both",
@@ -1305,7 +1336,10 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://www.severndroogcastle.org.uk/events/",
+   "feed": "rss",
+   "feed_url": "https://severndroogcastle.org.uk/feed/",
+   "has_rss": "https://severndroogcastle.org.uk/feed/"
   },
   {
    "id": "chislehurst",
@@ -1334,7 +1368,7 @@
    "area": "Rotherhithe",
    "lat": 51.5014,
    "lon": -0.0528,
-   "url": "https://thebrunelmuseum.com/whats-on/",
+   "url": "https://thebrunelmuseum.com/events",
    "kind": "museum",
    "defaults": {
     "in": "in",
@@ -1346,7 +1380,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://thebrunelmuseum.com/whats-on/",
+   "feed": "html",
+   "feed_url": "https://thebrunelmuseum.com/events/"
   },
   {
    "id": "kirkaldy",
@@ -1366,7 +1402,8 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "<urlopen error [Errno -2] Name or service not known>"
+   "feed": "html",
+   "feed_url": "https://www.testingmuseum.org.uk/"
   },
   {
    "id": "crossness",
@@ -1386,8 +1423,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "feed": "html",
-   "feed_url": "https://www.crossness.org.uk/visit/open-days/"
+   "feed": "rss",
+   "feed_url": "https://crossness.org.uk/feed/",
+   "has_rss": "https://crossness.org.uk/feed/"
   },
   {
    "id": "kempton",
@@ -1480,7 +1518,7 @@
    "area": "London Bridge",
    "lat": 51.5055,
    "lon": -0.091,
-   "url": "https://boroughmarket.org.uk/whats-on/",
+   "url": "https://boroughmarket.org.uk/events/",
    "kind": "market",
    "defaults": {
     "in": "both",
@@ -1492,7 +1530,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://boroughmarket.org.uk/whats-on/",
+   "feed": "html",
+   "feed_url": "https://boroughmarket.org.uk/events/"
   },
   {
    "id": "spitalfieldsmarket",
@@ -1584,7 +1624,7 @@
    "area": "Battersea",
    "lat": 51.4817,
    "lon": -0.1442,
-   "url": "https://batterseapowerstation.co.uk/whats-on/",
+   "url": "https://batterseapowerstation.co.uk/events/",
    "kind": "attraction",
    "defaults": {
     "in": "both",
@@ -1596,7 +1636,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://batterseapowerstation.co.uk/whats-on/",
+   "feed": "html",
+   "feed_url": "https://batterseapowerstation.co.uk/events/"
   },
   {
    "id": "coalyards",
@@ -1716,6 +1758,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -1796,6 +1839,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -1937,6 +1981,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 405: Not Allowed"
   },
   {
@@ -1976,6 +2021,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -2068,7 +2114,7 @@
    "area": "Islington",
    "lat": 51.536,
    "lon": -0.105,
-   "url": "https://www.businessdesigncentre.co.uk/whats-on/",
+   "url": "https://www.businessdesigncentre.co.uk/events/",
    "kind": "arena",
    "defaults": {
     "in": "in",
@@ -2079,7 +2125,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://www.businessdesigncentre.co.uk/whats-on/",
+   "feed": "html",
+   "feed_url": "https://www.businessdesigncentre.co.uk/events/"
   },
   {
    "id": "eventbrite-family",
@@ -2217,7 +2265,7 @@
    "area": "London-wide",
    "lat": 51.5074,
    "lon": -0.1278,
-   "url": "https://londonist.com/london/things-to-do",
+   "url": "https://londonist.com/things-to-do",
    "kind": "aggregator",
    "defaults": {
     "in": "both",
@@ -2228,7 +2276,10 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://londonist.com/london/things-to-do",
+   "feed": "rss",
+   "feed_url": "https://londonist.com/feed",
+   "has_rss": "https://londonist.com/feed"
   },
   {
    "id": "timeout",
@@ -2287,6 +2338,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "error",
    "error": "HTTP Error 404: Not Found"
   },
   {
@@ -2306,6 +2358,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -2346,6 +2399,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
@@ -2417,7 +2471,7 @@
    "area": "City",
    "lat": 51.5155,
    "lon": -0.0922,
-   "url": "https://www.cityoflondon.gov.uk/things-to-do/events",
+   "url": "https://www.cityoflondon.gov.uk/events",
    "kind": "council",
    "defaults": {
     "in": "both",
@@ -2429,7 +2483,9 @@
     ]
    },
    "probed": "2026-11-03",
-   "error": "HTTP Error 404: Not Found"
+   "was": "https://www.cityoflondon.gov.uk/things-to-do/events",
+   "feed": "html",
+   "feed_url": "https://www.cityoflondon.gov.uk/events"
   },
   {
    "id": "enfield",
@@ -2449,6 +2505,7 @@
     ]
    },
    "probed": "2026-11-03",
+   "feed": "blocked",
    "error": "HTTP Error 403: Forbidden"
   },
   {
