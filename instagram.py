@@ -158,7 +158,22 @@ def main():
 
     today = dt.date.today(); horizon = today + dt.timedelta(days=a.horizon)
     since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=a.days)).isoformat()
-    accounts = json.load(open(a.accounts))["accounts"]
+    reg = json.load(open(a.accounts)); accounts = reg["accounts"]
+    # validate up to 40 queued candidate handles per run; promote the ones Meta can see
+    if reg.get("candidates") and not a.only:
+        keep, promoted = [], 0
+        for i, c in enumerate(reg["candidates"]):
+            if i >= 40: keep.append(c); continue
+            try:
+                bd = discover(c["handle"], 1)
+                c.pop("group", None); c["name"] = bd.get("name") or c["name"]
+                accounts.append(c); promoted += 1
+            except Exception as ex:
+                if "request limit" in str(ex): keep.append(c); continue
+                reg.setdefault("rejected", []).append({"handle": c["handle"], "why": str(ex)[:60]})
+        reg["candidates"] = keep
+        json.dump(reg, open(a.accounts, "w"), indent=1, ensure_ascii=False)
+        print(f"candidates: {promoted} promoted, {len(keep)} still queued, {len(reg.get('rejected', []))} rejected in total", file=sys.stderr)
     seen = set(json.load(open(a.state))) if os.path.exists(a.state) else set()
     existing = {}
     if os.path.exists(a.out):
