@@ -1,0 +1,21 @@
+name: web
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install anthropic
+      - run: python3 ingest.py --days 21 --out docs/events.json
+        continue-on-error: true
+        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+      - run: python3 images.py --events docs/events.json --out docs/images.json || true
+      - run: |
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add docs/events.json docs/images.json
+          git commit -m "web $(date +%F)" || exit 0
+          git pull --rebase origin main && git push
