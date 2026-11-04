@@ -159,7 +159,8 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .trip .eyebrow{margin-bottom:-6px}
 .trip h3{font-family:var(--brand);font-weight:400;font-size:24px;letter-spacing:-.015em}
 .trip .sub{margin:0;color:var(--ink-2);font-size:14px}
-.tmap{width:100%;aspect-ratio:17/10;border-radius:14px;background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--line);display:block}
+.tmapbox{position:relative;width:100%;padding-top:58.8%;border-radius:14px;background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;flex:none}
+.tmap{position:absolute;inset:0;width:100%;height:100%;display:block}
 .tmap .river{fill:none;stroke:var(--sky);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;opacity:.28}
 .tmap .plc{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.08em;text-transform:uppercase;fill:var(--ink-3)}
 .tmap .stop{font-family:var(--body);font-size:10.5px;font-weight:500;fill:var(--ink-2);paint-order:stroke;stroke:var(--paper-2);stroke-width:3px;stroke-linejoin:round}
@@ -184,6 +185,9 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .legbar i{display:block;min-width:4px;border-radius:2px}
 .legbar i.walk{background:repeating-linear-gradient(90deg,var(--ink-3) 0 2px,transparent 2px 5px)}
 .trip .row{justify-content:space-between;align-items:center}
+.trip .row .ghost{align-self:center}
+.topt .tm{color:var(--ink)}
+.legbar i.walk{opacity:.7}
 .trip .fine{font-size:12px;color:var(--ink-3);margin:0}
 
 .tabs{display:flex;background:var(--paper-2);border-radius:999px;padding:4px;gap:2px}
@@ -357,7 +361,7 @@ td.n{text-align:right}
   <div class="eyebrow">Getting there</div>
   <h3 id="tripTitle"></h3>
   <p class="sub" id="tripSub"></p>
-  <svg class="tmap" id="tmap" viewBox="0 0 340 200" role="img" aria-label="Route sketch"></svg>
+  <div class="tmapbox"><svg class="tmap" id="tmap" width="340" height="200" viewBox="0 0 340 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Route sketch"></svg></div>
   <div class="topts" id="topts"></div>
   <div class="row"><a class="mini" id="tripGo" target="_blank" rel="noopener">Directions in Google Maps ›</a><button class="ghost" id="tripDone">Done</button></div>
   <p class="fine" id="tripFine"></p>
@@ -889,23 +893,33 @@ const MODECOL={bus:'var(--verm)','national-rail':'var(--ink)',overground:'var(--
 let tripState=null;
 function tripOptions(c,t){
   const d=km(setup.lat,setup.lon,c.lat,c.lon)*1.3, rough=!!(wx&&(wx.wet||wx.windy)), wetW=wx&&wx.wet?'wet':'windy';
-  const o=[];
-  if(t&&t.opts) t.opts.forEach((x,i)=>o.push({kind:'pt',mins:x.mins,title:x.route==='walk'?'Walk':x.route,legs:x.legs,
-    meta:[x.changes?x.changes+(x.changes===1?' change':' changes'):'direct',x.walk?x.walk+' min walking':''].filter(Boolean).join(' · '),
-    times:x.leave&&x.arrive?'Leave '+x.leave+', arrive '+x.arrive:''}));
-  else o.push({kind:'pt',mins:transitMins(c),title:'Bus or train',legs:null,est:true,meta:'rough estimate · TfL didn’t answer'});
-  const walk=Math.round(d/4.8*60);
-  if(walk<=90) o.push({kind:'walk',mins:walk,title:'Walk',meta:[Math.round(d*10)/10+' km',walk>40&&setup.who==='family'?'long for little legs':'',rough?wetW+' forecast':''].filter(Boolean).join(' · ')});
+  const o=[], t12=x=>x?fmtT(toMin(x)):'', kmTxt=Math.round(d*10)/10+'\u00a0km';
+  let tflWalk=null;
+  if(t&&t.opts) t.opts.forEach(x=>{
+    const times=x.leave&&x.arrive?'Leave\u00a0'+t12(x.leave)+' · arrive\u00a0'+t12(x.arrive):'';
+    if(x.route==='walk'){ tflWalk={mins:x.mins,legs:x.legs,times}; return; }
+    const onboard=(x.legs||[]).filter(l=>l.m!=='walking').reduce((s,l)=>s+l.d,0);
+    o.push({kind:'pt',mins:x.mins,title:x.route,legs:x.legs,times,
+      meta:[x.changes?x.changes+(x.changes===1?'\u00a0change':'\u00a0changes'):onboard+'\u00a0min on board',x.walk?x.walk+'\u00a0min walk':''].filter(Boolean).join(' · ')}); });
+  else o.push({kind:'pt',mins:transitMins(c),title:'Bus or train',legs:null,est:true,meta:t===undefined?'checking TfL…':'rough estimate · TfL didn’t answer'});
+  const walk=tflWalk?tflWalk.mins:Math.round(d/4.8*60);
+  if(walk<=90) o.push({kind:'walk',mins:walk,title:'Walk',legs:tflWalk&&tflWalk.legs,times:tflWalk?tflWalk.times:'',
+    meta:[kmTxt,walk>40&&setup.who==='family'?'long for little legs':''].filter(Boolean).join(' · ')});
   const kmh=setup.who==='family'?11:14, bike=Math.round(4+d/kmh*60);
-  if(bike<=75&&(setup.mode==='bike'||bike<=40)) o.push({kind:'cycle',mins:bike,title:'Cycle',meta:[setup.who==='family'?'at family pace':'',rough?wetW+' forecast':'',c.parking&&/bike|cycle/i.test(c.parking)?c.parking:''].filter(Boolean).join(' · ')||'quiet roads where you can'});
+  if(bike<=75&&(setup.mode==='bike'||bike<=40)) o.push({kind:'cycle',mins:bike,title:'Cycle',meta:[kmTxt,setup.who==='family'?'at family pace':''].filter(Boolean).join(' · ')});
   if(setup.mode==='car'){ const drive=Math.round(8+d/28*60), pen=parkingPenalty(c);
     o.push({kind:'drive',mins:drive,title:'Drive',meta:[hasParking(c)?c.parking:pen>=15?'parking could take a while':'parking usually OK',pen>=12?'+'+pen+' min to park':''].filter(Boolean).join(' · ')}); }
   // which one the card went with
-  const pick=c.how==='walk'?'walk':c.how==='cycle'?'cycle':c.how==='drive'?'drive':'pt';
-  const i=o.findIndex(x=>x.kind===pick); if(i>=0){o[i].pick=true;}
-  const pts=o.filter(x=>x.kind==='pt'&&x.legs); if(pts.length>1){ const f=pts.reduce((a,b)=>a.mins<=b.mins?a:b); if(!f.pick) f.tag='Fastest'; }
-  o.forEach(x=>{ if(x.kind==='walk'||x.kind==='cycle'){ if(rough) x.warn=true; } });
-  return o;
+  // our pick: what the card went with; in rain or wind, walking/cycling only stay the pick if they're much quicker
+  let pick=c.how==='walk'?'walk':c.how==='cycle'?'cycle':c.how==='drive'?'drive':'pt';
+  const pt=o.find(x=>x.kind==='pt'&&!x.est);
+  if(rough&&(pick==='walk'||pick==='cycle')&&pt){ const me=o.find(x=>x.kind===pick); if(me&&me.mins>pt.mins-8) pick='pt'; }
+  const i=o.findIndex(x=>x.kind===pick); if(i>=0) o[i].pick=true;
+  o.forEach(x=>{ if((x.kind==='walk'||x.kind==='cycle')&&rough) x.warn=wx&&wx.wet?'Wet':'Windy'; });
+  // pick first, then quickest first, at most four
+  const out=[o[i>=0?i:0],...o.filter((x,k)=>k!==(i>=0?i:0)).sort((a,b)=>a.mins-b.mins)].slice(0,4);
+  const quick=out.reduce((a,b)=>a.mins<=b.mins?a:b); if(!quick.pick&&quick.mins<out[0].mins-2) quick.tag='Quickest';
+  return out;
 }
 function stripHTML(x){
   if(x.legs) return `<div class="legbar">${x.legs.map(l=>`<i class="${l.m==='walking'?'walk':''}" style="flex:${Math.max(1,l.d)};${l.m==='walking'?'':'background:'+(MODECOL[l.m]||'var(--ink-2)')}"></i>`).join('')}</div>`;
@@ -961,10 +975,10 @@ function renderTrip(){
   const {c,opts}=tripState; let sel=tripState.sel;
   $('#topts').innerHTML=opts.map((x,i)=>`<button class="topt ${i===sel?'on':''}" data-i="${i}">
     <span class="tm">${x.est?'~':''}${x.mins}<small>MIN</small></span>
-    <b>${escH(x.title)}${x.pick?'<span class="tag">Our pick</span>':x.tag?`<span class="tag">${x.tag}</span>`:''}${x.warn&&!x.pick?'<span class="tag warn">'+(wx&&wx.wet?'Wet':'Windy')+'</span>':''}</b>
+    <b>${escH(x.title)}${x.pick?'<span class="tag">Our pick</span>':x.tag?`<span class="tag">${x.tag}</span>`:''}${x.warn?'<span class="tag warn">'+x.warn+'</span>':''}</b>
     <span class="m">${escH(x.meta)}${x.times?'<br>'+escH(x.times):''}</span>${stripHTML(x)}</button>`).join('');
-  $('#topts').querySelectorAll('.topt').forEach(b=>b.onclick=()=>{tripState.sel=+b.dataset.i;track('trip_pick',{id:c.id,kind:opts[tripState.sel].kind});renderTrip()});
-  renderTripMap(c,opts,sel);
+  $('#topts').querySelectorAll('.topt').forEach(b=>b.onclick=()=>{tripState.sel=+b.dataset.i;tripState.touched=true;track('trip_pick',{id:c.id,kind:opts[tripState.sel].kind});renderTrip()});
+  try{ renderTripMap(c,opts,sel); }catch(e){ $('#tmap').innerHTML=''; track('trip_map_fail',{msg:String(e.message||e).slice(0,80)}); }
   const x=opts[sel], gm={walk:'walking',cycle:'bicycling',drive:'driving'}[x.kind]||'transit';
   $('#tripGo').href=`https://www.google.com/maps/dir/?api=1&origin=${setup.lat},${setup.lon}&destination=${c.lat},${c.lon}&travelmode=${gm}`;
 }
@@ -974,11 +988,10 @@ async function openTrip(c){
   $('#tripTitle').textContent=c.name;
   $('#tripSub').textContent=[ 'From '+(setup.place||'your postcode'), nice(fromIso(setup.date)), ab!=null?'arrive by '+fmtT(ab):'', hc!=null?'closes '+fmtT(hc):'' ].filter(Boolean).join(' · ');
   $('#tripFine').textContent='Times from TfL for '+nice(fromIso(setup.date))+'. Walking and cycling are straight-line estimates. Check before you set off.';
-  const show=t=>{ const opts=tripOptions(c,t); const old=tripState&&tripState.c.id===c.id?tripState.sel:-1;
-    tripState={c,opts,sel:old>=0&&old<opts.length?old:Math.max(0,opts.findIndex(x=>x.pick))}; renderTrip(); };
-  show(travelCache[c.id]||null); $('#tripSheet').hidden=false;
-  if(!travelCache[c.id]){ $('#topts').firstElementChild&&($('#topts').firstElementChild.querySelector('.m').textContent='checking TfL…');
-    const t=await tflMins(c,true); if(!$('#tripSheet').hidden&&tripState&&tripState.c.id===c.id) show(t); }
+  const show=t=>{ const opts=tripOptions(c,t); tripState={c,opts,sel:Math.max(0,opts.findIndex(x=>x.pick)),touched:false}; renderTrip(); };
+  show(travelCache[c.id]||(travelCache[c.id]===null?null:undefined)); $('#tripSheet').hidden=false;
+  if(!travelCache[c.id]){ const t=await tflMins(c,true);
+    if(!$('#tripSheet').hidden&&tripState&&tripState.c.id===c.id&&!tripState.touched) show(t||null); }
 }
 $('#tripDone').onclick=()=>$('#tripSheet').hidden=true;
 $('#tripSheet').addEventListener('click',e=>{if(e.target.id==='tripSheet')$('#tripSheet').hidden=true});
