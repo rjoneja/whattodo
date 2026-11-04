@@ -12,7 +12,7 @@ upd=("<script>window.WTD_VERSION='%s';(function(){var u=new URL(location.href);"
      "if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}"
      "var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}"
      "chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script>") % v
-head='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light dark"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>'+upd+'</head><body>'
+head='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style>'+upd+'</head><body>'
 open('docs/index.html','w').write(head+src+'</body></html>')
 json.dump({"v":v},open('docs/version.json','w'))
 print('wrote docs/index.html', v)

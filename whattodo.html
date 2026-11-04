@@ -5,26 +5,20 @@
 <meta name="description" content="Things to do near you in London this weekend, matched to who's going, the weather and how far you'll travel.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 84 84%27%3E%3Crect width=%2784%27 height=%2784%27 rx=%2718%27 fill=%27%231E3F2B%27/%3E%3Cpath transform=%27translate(12 6) scale(1 .86)%27 fill-rule=%27evenodd%27 fill=%27%23E2582E%27 d=%27M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z%27/%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#122018">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Jost:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
 /* Layout: quiet paper ground, white cards, one vermilion accent per screen; 8px rhythm. */
 :root{
+  /* One theme, whatever the phone is set to: the deep green is the brand. */
   --u:8px;
-  --paper:#F2EEE3; --paper-2:#E8E2D3; --ink:#1E3F2B; --ink-2:#4F6357; --ink-3:#8C9890;
-  --verm:#E2582E; --verm-soft:#FBE6DC; --verm-ink:#fff; --moss:#2F7D5B; --moss-soft:#E1EFE6; --amber:#A86A0C; --amber-soft:#F8EDD6; --sky:#4E7FA6;
-  --line:#DCD5C4; --card:#FBF9F3; --shadow:0 1px 2px rgba(30,63,43,.06),0 8px 24px rgba(30,63,43,.07);
+  --paper:#122018; --paper-2:#1A2C22; --ink:#F2EEE3; --ink-2:#C2C8BE; --ink-3:#86938A;
+  --verm:#EE6A3F; --verm-soft:#3A2419; --verm-ink:#122018; --moss:#5DB58A; --moss-soft:#1C3527; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
+  --line:#2A3D31; --card:#1A2C22; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark;
   --brand:"Young Serif",Georgia,"Times New Roman",serif;
   --display:"Jost","Futura","Avenir Next","Gill Sans",system-ui,sans-serif;
   --body:"IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --paper:#122018; --paper-2:#1A2C22; --ink:#F2EEE3; --ink-2:#C2C8BE; --ink-3:#86938A;
-  --verm:#EE6A3F; --verm-soft:#3A2419; --verm-ink:#122018; --moss:#5DB58A; --moss-soft:#1C3527; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
-  --line:#2A3D31; --card:#1A2C22; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark } }
-:root[data-theme="dark"]{
-  --paper:#122018; --paper-2:#1A2C22; --ink:#F2EEE3; --ink-2:#C2C8BE; --ink-3:#86938A;
-  --verm:#EE6A3F; --verm-soft:#3A2419; --verm-ink:#122018; --moss:#5DB58A; --moss-soft:#1C3527; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
-  --line:#2A3D31; --card:#1A2C22; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark }
 
 [hidden]{display:none!important}
 html,body{height:100%}
