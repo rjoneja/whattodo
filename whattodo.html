@@ -305,10 +305,10 @@ td.n{text-align:right}
 </div>
 
 <nav class="nav" id="nav" hidden><div>
-  <button data-go="deck" class="on"><span class="k">⇄</span>Swipe</button>
+  <button data-go="deck" class="on"><span class="k">✦</span>Ideas</button>
   <button data-go="map"><span class="k">◎</span>Map</button>
   <button data-go="list"><span class="k">♥</span>My list</button>
-  <button data-go="setup"><span class="k">⚙</span>Change</button>
+  <button data-go="setup"><span class="k">◷</span>Who &amp; when</button>
 </div></nav>
 
 <div class="sheet" id="sheet" hidden><div class="panel">
@@ -693,7 +693,7 @@ function cardHTML(c){
 }
 function renderStack(){
   const st=$('#stack'); st.innerHTML='';
-  if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Change the day or who's going, or check My list. More listings and one-off events coming.</span></div>`;}
+  if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Try another day or change who's going, or check My list. More listings and one-off events coming.</span></div>`;}
   deck.slice(0,3).forEach((c,i)=>{const el=document.createElement('div');el.className='card'+(i===1?' under':i===2?' under2':'');el.style.zIndex=3-i;el.innerHTML=cardHTML(c);el.dataset.id=c.id;st.appendChild(el);if(i===0)attachDrag(el);});
   requestAnimationFrame(()=>{const tops=st.querySelectorAll('.card');if(tops.length>1){const h=tops[0].offsetHeight;tops.forEach((c,i)=>{if(i>0){c.style.height=h+'px';c.style.minHeight='0';c.classList.add('peek');}});}st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}});});
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
@@ -841,7 +841,7 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
       if(!setup.lat){ setup.lat=51.5074; setup.lon=-0.1278; setup.place='Central London'; setup.pc=setup.pc||''; if(!setup.mode){setup.mode='transit';setup.car=0;} setup.who=setup.who||'couple'; setup.guest=true; }
       await buildDeck(); const i=deck.findIndex(x=>x.id===want);
       if(i>0){ const [x]=deck.splice(i,1); deck.unshift(x); } else if(i<0){ deck.unshift(Object.assign({},ev,trip(ev),{est:true,score:99,why:['shared with you']})); }
-      renderStack(); go('deck'); if(setup.guest) toast('Shared with you · set your postcode in Change'); return; } }
+      renderStack(); go('deck'); if(setup.guest) toast('Shared with you · set your postcode in Who & when'); return; } }
   const h=location.hash.replace('#','');
   if(h==='stats'){go('stats');return}
   if(setup.lat&&setup.date&&fromIso(setup.date)>=new Date(new Date().setHours(0,0,0,0))){ await buildDeck(); go(VIEWS.includes(h)&&h!=='setup'?h:'deck'); }
