@@ -1124,6 +1124,26 @@
      "date night"
     ]
    }
+  },
+  {
+   "handle": "searcyslondon",
+   "name": "House of Searcys",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
   }
  ],
  "parked": [
@@ -1318,29 +1338,7 @@
    }
   }
  ],
- "candidates": [
-  {
-   "handle": "searcyslondon",
-   "name": "Champagne bars and viewing decks set inside the absolute top",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  }
- ],
+ "candidates": [],
  "rejected": [
   {
    "handle": "londonkidsactivities",

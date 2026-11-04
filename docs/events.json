@@ -1270,6 +1270,33 @@
    "id": "ev-balloon-museum-euphoria-art-is-in-the-ai-10-24"
   },
   {
+   "name": "Yinka Shonibare and Thomas Gainsborough: A Conversation",
+   "area": "Trafalgar Square",
+   "lat": 51.5089,
+   "lon": -0.1283,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "art",
+    "exhibition",
+    "free",
+    "national gallery"
+   ],
+   "blurb": "Free display in Room 1 pairing Shonibare's sculpture with Gainsborough's Mr and Mrs Andrews. Runs until 7 February 2027.",
+   "from": "2026-10-26",
+   "to": "2027-02-07",
+   "url": "https://www.instagram.com/reel/DfR3wDMjHVc/",
+   "source": "Instagram @nationalgallery",
+   "id": "ev-ig-yinka-shonibare-and-thomas-gainsborough--10-26"
+  },
+  {
    "name": "Winter Programme",
    "area": "Hoxton",
    "lat": 51.5321,
@@ -6863,31 +6890,32 @@
    "id": "ev-low-stakes-free-games-night-4-nov-11-04"
   },
   {
-   "name": "Canopy Market",
-   "area": "King's Cross",
-   "lat": 51.536,
-   "lon": -0.1255,
-   "in": "out",
+   "name": "canopy_market",
+   "area": "Granary Square, King's Cross",
+   "lat": 51.535,
+   "lon": -0.1238,
+   "in": "both",
    "price": "free",
    "ages": [
     0,
     99
    ],
    "kids": 2,
-   "adults": 3,
-   "dur": 2,
+   "adults": 2,
+   "dur": 3,
    "tags": [
-    "street food market",
-    "artisan traders",
-    "weekend browsing",
-    "coal drops yard"
+    "market",
+    "street food",
+    "independent makers",
+    "free entry",
+    "weekly"
    ],
-   "blurb": "Street food and drinks Wed to Sun, plus artisan traders, fresh produce and design on Fri to Sun. Free to wander. Runs through the window.",
-   "url": "https://www.kingscross.co.uk/whats-on",
    "from": "2026-11-04",
-   "to": "2026-11-25",
-   "source": "King's Cross / Coal Drops Yard",
-   "id": "ev-canopy-market-11-04"
+   "to": "2026-12-02",
+   "blurb": "Covered market under the West Handyside Canopy. Street food Wed and Thu, makers and produce Fri to Sun. Free entry.",
+   "url": "https://www.instagram.com/reel/Dejtzg-OrgI/",
+   "source": "Instagram @kingscrossn1c",
+   "id": "ev-ig-canopy-market-11-04"
   },
   {
    "name": "StoryMakers - Under 5's free class",
@@ -7980,24 +8008,25 @@
    "in": "in",
    "price": "££",
    "ages": [
-    12,
+    8,
     99
    ],
    "kids": 1,
    "adults": 2,
-   "dur": 1.5,
+   "dur": 2,
    "tags": [
     "frida kahlo",
-    "art exhibition",
-    "surrealism",
-    "mexican art"
+    "exhibition",
+    "tate modern",
+    "mexican art",
+    "portraits"
    ],
-   "blurb": "Step into the life and legacy of Frida Kahlo, the revolutionary artist and global icon. Free for Tate Members; others need a ticket.",
-   "url": "https://www.tate.org.uk/whats-on",
+   "blurb": "Exhibition on the making of Frida Kahlo's public image. Open until 3 January 2027. Booking is recommended.",
    "from": "2026-11-04",
    "to": "2027-01-03",
-   "source": "Tate Britain",
-   "id": "ev-frida-the-making-of-an-icon-11-04"
+   "url": "https://www.instagram.com/reel/DfIC70_u8OH/",
+   "source": "Instagram @tate",
+   "id": "ev-ig-frida-the-making-of-an-icon-11-04"
   },
   {
    "name": "Julio Le Parc: Light. Colour. Action.",
@@ -8034,24 +8063,25 @@
    "in": "in",
    "price": "££",
    "ages": [
-    12,
+    8,
     99
    ],
    "kids": 1,
    "adults": 2,
-   "dur": 1.5,
+   "dur": 2,
    "tags": [
     "photography",
-    "art history",
-    "global story",
-    "exhibition"
+    "exhibition",
+    "tate modern",
+    "pictorialism",
+    "darkroom"
    ],
-   "blurb": "Discover the untold global story of early art photography. Free for Tate Members; others need a ticket.",
-   "url": "https://www.tate.org.uk/whats-on",
+   "blurb": "Major exhibition of over 200 rare pictorialist photographic prints from around the world. Tate members go free. Check Tate's site for timed tickets.",
    "from": "2026-11-04",
    "to": "2027-02-21",
-   "source": "Tate Britain",
-   "id": "ev-light-and-magic-the-birth-of-art-photogr-11-04"
+   "url": "https://www.instagram.com/reel/DeeZyN9Cdqi/",
+   "source": "Instagram @tate",
+   "id": "ev-ig-light-and-magic-the-birth-of-art-photogr-11-04"
   },
   {
    "name": "Ana Mendieta",
@@ -9973,6 +10003,337 @@
    "id": "ev-help-at-church-street-library-11-04"
   },
   {
+   "name": "Freddie Mercury | Splendid Things",
+   "area": "South Kensington",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 1.5,
+   "tags": [
+    "freddie mercury",
+    "free trail",
+    "costumes",
+    "music history",
+    "v&a exhibition"
+   ],
+   "blurb": "Free trail through V&A permanent galleries celebrating Freddie Mercury's 80th anniversary, with costumes and accessories from iconic performances. Runs until 17 January 2027.",
+   "from": "2026-11-04",
+   "to": "2027-01-17",
+   "url": "https://www.instagram.com/p/De3w0bmlQco/",
+   "source": "Instagram @vamuseum",
+   "id": "ev-ig-freddie-mercury-splendid-things-11-04"
+  },
+  {
+   "name": "Cyanotype printing short courses",
+   "area": "Bankside",
+   "lat": 51.5076,
+   "lon": -0.0994,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    14,
+    99
+   ],
+   "kids": 0,
+   "adults": 1,
+   "dur": 3,
+   "tags": [
+    "cyanotype",
+    "printmaking",
+    "photography course",
+    "workshop",
+    "tate modern"
+   ],
+   "blurb": "Hands-on cyanotype photography short courses linked to the Light and Magic exhibition. Running until February 2027. Book via Tate's link; dates vary.",
+   "from": "2026-11-04",
+   "to": "2027-02-21",
+   "url": "https://www.instagram.com/reel/DfRyayCu3TU/",
+   "source": "Instagram @tate",
+   "id": "ev-ig-cyanotype-printing-short-courses-11-04"
+  },
+  {
+   "name": "Robert Ryman: The Real Thing",
+   "area": "Barbican",
+   "lat": 51.5201,
+   "lon": -0.0937,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    8,
+    99
+   ],
+   "kids": 0,
+   "adults": 2,
+   "dur": 1.5,
+   "tags": [
+    "art",
+    "painting",
+    "gallery",
+    "exhibition"
+   ],
+   "blurb": "Robert Ryman paintings in the Barbican Art Gallery. Open daily until 28 Feb 2027. Book tickets via the Barbican site.",
+   "from": "2026-11-04",
+   "to": "2027-02-28",
+   "url": "https://www.instagram.com/reel/DfIDUX9uloI/",
+   "source": "Instagram @barbicancentre",
+   "id": "ev-ig-robert-ryman-the-real-thing-11-04"
+  },
+  {
+   "name": "I Am Furious Black season",
+   "area": "Barbican Cinema",
+   "lat": 51.5201,
+   "lon": -0.0937,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    14,
+    99
+   ],
+   "kids": 0,
+   "adults": 1,
+   "dur": 2,
+   "tags": [
+    "film",
+    "cinema",
+    "black cinema",
+    "screening"
+   ],
+   "blurb": "Season of William Greaves films and other Black cinema, running until 28 Nov. Screenings at the Barbican Cinema. Tickets via the Barbican site.",
+   "from": "2026-11-04",
+   "to": "2026-11-28",
+   "url": "https://www.instagram.com/reel/Det7VxDjaSO/",
+   "source": "Instagram @barbicancentre",
+   "id": "ev-ig-i-am-furious-black-season-11-04"
+  },
+  {
+   "name": "BB Broadway parent and child theatre classes",
+   "area": "Rotherhithe",
+   "lat": 51.4985,
+   "lon": -0.038,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    0,
+    5
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 1,
+   "tags": [
+    "theatre",
+    "toddlers",
+    "singing",
+    "dancing",
+    "sen inclusive"
+   ],
+   "blurb": "Weekly Monday theatre classes in the river room with professional performers. Tiny Stars runs at 3pm and Little Stars at 4pm. Book through bb_broadway.",
+   "from": "2026-11-04",
+   "to": "2026-12-02",
+   "time": "15:00",
+   "url": "https://www.instagram.com/p/DfJ5G-JGCOr/",
+   "source": "Instagram @surreydocksfarm",
+   "id": "ev-ig-bb-broadway-parent-and-child-theatre-cla-11-04"
+  },
+  {
+   "name": "Daily otter talks",
+   "area": "Barnes, London",
+   "lat": 51.4766,
+   "lon": -0.2363,
+   "in": "out",
+   "price": "££",
+   "ages": [
+    3,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 0.5,
+   "tags": [
+    "otters",
+    "talk",
+    "wildlife",
+    "daily"
+   ],
+   "blurb": "Short daily talks about the centre's otters, running throughout November. Included with admission. Check times on arrival.",
+   "from": "2026-11-04",
+   "to": "2026-11-30",
+   "url": "https://www.instagram.com/p/DfPlMLrF_LF/",
+   "source": "Instagram @wwtlondon",
+   "id": "ev-ig-daily-otter-talks-11-04"
+  },
+  {
+   "name": "LAIKA presents Wildwood: The Exhibition",
+   "area": "Kensington",
+   "lat": 51.4998,
+   "lon": -0.1998,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    5,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 1.5,
+   "tags": [
+    "stop motion",
+    "film exhibition",
+    "behind the scenes",
+    "family day out"
+   ],
+   "blurb": "Behind-the-scenes look at LAIKA's Wildwood, with puppets, sets, props and sketches. Free for members. Book timed tickets online.",
+   "from": "2026-11-04",
+   "to": "2027-01-10",
+   "url": "https://www.instagram.com/p/DemhUP4l2nq/",
+   "source": "Instagram @designmuseum",
+   "id": "ev-ig-laika-presents-wildwood-the-exhibition-11-04"
+  },
+  {
+   "name": "Es Devlin: Other Worlds",
+   "area": "Kensington",
+   "lat": 51.4998,
+   "lon": -0.1998,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    8,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 1.5,
+   "tags": [
+    "sculpture",
+    "stage design",
+    "retrospective",
+    "art exhibition"
+   ],
+   "blurb": "Three-decade retrospective of artist Es Devlin's sculpture, stage design, music and light work. Book tickets online before visiting.",
+   "from": "2026-11-04",
+   "to": "2027-04-30",
+   "url": "https://www.instagram.com/p/DeolPsel0ss/",
+   "source": "Instagram @designmuseum",
+   "id": "ev-ig-es-devlin-other-worlds-11-04"
+  },
+  {
+   "name": "PLATFORM display: Simone Brewster's Ebony Revolution",
+   "area": "Kensington",
+   "lat": 51.4998,
+   "lon": -0.1998,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 0.5,
+   "tags": [
+    "free display",
+    "black history month",
+    "wooden jewellery",
+    "design"
+   ],
+   "blurb": "Free PLATFORM display of wooden jewellery by Simone Brewster, part of Black History Month. Runs until January 2027.",
+   "from": "2026-11-04",
+   "to": "2027-01-31",
+   "url": "https://www.instagram.com/reel/De9xRsiguEq/",
+   "source": "Instagram @designmuseum",
+   "id": "ev-ig-platform-display-simone-brewster-s-ebony-11-04"
+  },
+  {
+   "name": "Amy Winehouse: In Focus outdoor photo exhibition",
+   "area": "Granary Square, King's Cross",
+   "lat": 51.535,
+   "lon": -0.1239,
+   "in": "out",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "photography",
+    "outdoor",
+    "music",
+    "exhibition",
+    "free"
+   ],
+   "from": "2026-11-04",
+   "to": "2026-11-15",
+   "blurb": "Free outdoor photos marking 20 years of Back to Black, including unseen images. Also on King's Boulevard. Runs until 15 November.",
+   "url": "https://www.instagram.com/reel/Dejtzg-OrgI/",
+   "source": "Instagram @kingscrossn1c",
+   "id": "ev-ig-amy-winehouse-in-focus-outdoor-photo-exh-11-04"
+  },
+  {
+   "name": "Larger Than Life: Aardman at Lightroom",
+   "area": "King's Cross",
+   "lat": 51.5333,
+   "lon": -0.1243,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    5,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 2,
+   "tags": [
+    "exhibition",
+    "animation",
+    "wallace and gromit",
+    "family",
+    "immersive"
+   ],
+   "from": "2026-11-04",
+   "to": "2027-01-04",
+   "blurb": "Behind-the-scenes look at Aardman's clay animation, with towering sets and tiny props. Family discounts available. Runs until 4 January 2027.",
+   "url": "https://www.instagram.com/reel/DejKAUQOC17/",
+   "source": "Instagram @kingscrossn1c",
+   "id": "ev-ig-larger-than-life-aardman-at-lightroom-11-04"
+  },
+  {
+   "name": "Everyone Involved at queerbritain",
+   "area": "King's Cross",
+   "lat": 51.5335,
+   "lon": -0.1245,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    12,
+    99
+   ],
+   "kids": 0,
+   "adults": 2,
+   "dur": 1.5,
+   "tags": [
+    "art installation",
+    "lgbtq",
+    "exhibition",
+    "immersive",
+    "history"
+   ],
+   "from": "2026-11-04",
+   "to": "2026-11-21",
+   "blurb": "Ian Giles' immersive installation celebrating 'A Gay Song', an early gay liberation anthem. Runs alongside related events until 21 November.",
+   "url": "https://www.instagram.com/p/DergyF1jmkN/",
+   "source": "Instagram @kingscrossn1c",
+   "id": "ev-ig-everyone-involved-at-queerbritain-11-04"
+  },
+  {
    "name": "Lunchtime Lectures: Curating Urushi Now",
    "area": "South Kensington",
    "lat": 51.4966,
@@ -11301,39 +11662,39 @@
   {
    "name": "Lost Worlds by Luxmuralis",
    "area": "Greenwich",
-   "lat": 51.481,
-   "lon": 0.01,
+   "lat": 51.483,
+   "lon": -0.006,
    "in": "out",
    "price": "£",
    "ages": [
-    0,
+    5,
     99
    ],
-   "kids": 1,
+   "kids": 2,
    "adults": 2,
-   "dur": 1,
+   "dur": 3.25,
    "tags": [
-    "projection show",
-    "evening light show",
-    "old royal naval college",
-    "immersive art"
+    "light show",
+    "night",
+    "immersive",
+    "family"
    ],
-   "blurb": "Large-scale projection show returning to the Old Royal Naval College. Runs 6-8 Nov and 11-15 Nov, with separate SEND sessions. Book ahead for evening slots.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "blurb": "Immersive light and sound show across the baroque buildings and grounds. Runs 6-8 and 11-15 Nov only, 5.45pm-9pm. Pre-book for a 20% cafe discount.",
    "from": "2026-11-06",
    "to": "2026-11-15",
-   "source": "Enjoy Royal Greenwich",
-   "id": "ev-lost-worlds-by-luxmuralis-11-06"
+   "url": "https://www.instagram.com/p/De1L56oiES3/",
+   "source": "Instagram @oldroyalnavalcollege",
+   "id": "ev-ig-lost-worlds-by-luxmuralis-11-06"
   },
   {
    "name": "Through Our Eyes: Sámi Art and Culture",
-   "area": "Strand",
+   "area": "Strand, Terrace Room Galleries",
    "lat": 51.511,
    "lon": -0.117,
    "in": "in",
-   "price": "££",
+   "price": "free",
    "ages": [
-    0,
+    6,
     99
    ],
    "kids": 1,
@@ -11342,15 +11703,16 @@
    "tags": [
     "art exhibition",
     "sámi culture",
-    "somerset house",
-    "indigenous art"
+    "indigenous art",
+    "free",
+    "photography"
    ],
-   "blurb": "First UK group exhibition on Sámi art, with works by 19 artists from Europe's only recognised indigenous people. Runs at Somerset House from November through February 2027.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "blurb": "Free group exhibition of 19 Sámi artists across five galleries, covering sculpture, photography, video and textiles. Booking recommended via the website.",
    "from": "2026-11-06",
-   "to": "2027-02-28",
-   "source": "Londonist things to do (aggregator)",
-   "id": "ev-through-our-eyes-s-mi-art-and-culture-11-06"
+   "to": "2027-02-07",
+   "url": "https://www.instagram.com/p/DfAWdPmDqv-/",
+   "source": "Instagram @somersethouse",
+   "id": "ev-ig-through-our-eyes-s-mi-art-and-culture-11-06"
   },
   {
    "name": "Olamony",
@@ -12202,6 +12564,87 @@
    "time": "10:00",
    "source": "Sutton Council events",
    "id": "ev-stay-play-the-grange-11-06"
+  },
+  {
+   "name": "Friday Froglets",
+   "area": "Barnes, London",
+   "lat": 51.4766,
+   "lon": -0.2363,
+   "in": "out",
+   "price": "££",
+   "ages": [
+    2,
+    6
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 1,
+   "tags": [
+    "frogs",
+    "wetland",
+    "family",
+    "friday"
+   ],
+   "blurb": "Weekly Friday session for young children to explore frogs and wetland life. Included with WWT London admission. Check times at the centre.",
+   "from": "2026-11-06",
+   "to": "2026-11-27",
+   "url": "https://www.instagram.com/p/DfPlMLrF_LF/",
+   "source": "Instagram @wwtlondon",
+   "id": "ev-ig-friday-froglets-11-06"
+  },
+  {
+   "name": "The Nue Black Aesthetic exhibition opening",
+   "area": "Kensington",
+   "lat": 51.4998,
+   "lon": -0.1998,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    12,
+    99
+   ],
+   "kids": 0,
+   "adults": 2,
+   "dur": 1.5,
+   "tags": [
+    "black design",
+    "guest curated",
+    "design exhibition",
+    "nuance"
+   ],
+   "blurb": "Guest-curated show exploring the 'Nue' era of Black design, linking the 1960s Black Aesthetic and 1980s New Black Aesthetic. Tickets via link in bio.",
+   "date": "2026-11-06",
+   "url": "https://www.instagram.com/reel/DfHiIFJD6oU/",
+   "source": "Instagram @designmuseum",
+   "id": "ev-ig-the-nue-black-aesthetic-exhibition-openi-11-06"
+  },
+  {
+   "name": "Live jazz at rails.london",
+   "area": "King's Cross",
+   "lat": 51.5345,
+   "lon": -0.124,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    18,
+    99
+   ],
+   "kids": 0,
+   "adults": 2,
+   "dur": 2,
+   "tags": [
+    "live jazz",
+    "dinner",
+    "french",
+    "evening",
+    "music"
+   ],
+   "from": "2026-11-06",
+   "to": "2026-12-02",
+   "blurb": "Live jazz with modern British dishes with a French twist, every Friday 6pm to 8pm. Softly lit Parisian-style room. Book ahead.",
+   "url": "https://www.instagram.com/p/DfPWWsYDifd/",
+   "source": "Instagram @kingscrossn1c",
+   "id": "ev-ig-live-jazz-at-rails-london-11-06"
   },
   {
    "name": "Diwali at the National Maritime Museum",
@@ -14630,6 +15073,117 @@
    "id": "ev-scared-to-dance-11-07"
   },
   {
+   "name": "All Together Now: Diwali Festival of Lights",
+   "area": "Greenwich",
+   "lat": 51.4817,
+   "lon": -0.006,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 5,
+   "tags": [
+    "diwali",
+    "festival of lights",
+    "family arts",
+    "music performance",
+    "cultural celebration"
+   ],
+   "blurb": "Museum-wide Diwali celebration with artists, performers, musicians, makers and storytellers, curated by Mehala Ford. Drop in and join the participatory activities.",
+   "date": "2026-11-07",
+   "url": "https://www.instagram.com/p/DeeovsnF-YH/",
+   "source": "Instagram @royalmuseumsgreenwich",
+   "id": "ev-ig-all-together-now-diwali-festival-of-ligh-11-07"
+  },
+  {
+   "name": "Home Song, Sat 7 Nov 11:30 (Unicorn Theatre)",
+   "area": "London Bridge",
+   "lat": 51.5041,
+   "lon": -0.082,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    0,
+    2
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 0.5,
+   "tags": [
+    "baby theatre",
+    "puppetry",
+    "live music",
+    "multi-sensory",
+    "a cappella"
+   ],
+   "blurb": "Multi-sensory puppetry and a cappella show for babies aged 6-18 months. Only a few sessions left; the 11:30 slot is still listed as available.",
+   "date": "2026-11-07",
+   "time": "11:30",
+   "url": "https://www.instagram.com/p/DfKpslJDCN9/",
+   "source": "Instagram @unicorn_theatre",
+   "id": "ev-ig-home-song-sat-7-nov-11-30-unicorn-theatr-11-07"
+  },
+  {
+   "name": "botanicalboys terrarium workshop",
+   "area": "Coal Drops Yard, King's Cross",
+   "lat": 51.5346,
+   "lon": -0.1243,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    8,
+    99
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 2,
+   "tags": [
+    "workshop",
+    "terrarium",
+    "hands-on",
+    "plants",
+    "craft"
+   ],
+   "date": "2026-11-07",
+   "time": "15:00",
+   "blurb": "Hands-on workshop to make and take home a mini garden. Also running Sun 8 Nov, 3 to 5pm. Places limited, so book early.",
+   "url": "https://www.instagram.com/p/DfPWWsYDifd/",
+   "source": "Instagram @kingscrossn1c",
+   "id": "ev-ig-botanicalboys-terrarium-workshop-11-07"
+  },
+  {
+   "name": "Alexandra Palace Fireworks & Drone Festival",
+   "area": "Alexandra Palace, Wood Green",
+   "lat": 51.5985,
+   "lon": -0.1244,
+   "in": "out",
+   "price": "££",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 4,
+   "tags": [
+    "fireworks",
+    "drone show",
+    "family outdoor",
+    "bonfire",
+    "festival"
+   ],
+   "blurb": "Two nights of fireworks and drone shows over the park, with funfair, food village, bonfire and music. Tickets are selling fast; book at fireworks.london.",
+   "from": "2026-11-07",
+   "to": "2026-11-08",
+   "url": "https://www.instagram.com/p/DfSZw0NDB1y/",
+   "source": "Instagram @yourallypally",
+   "id": "ev-ig-alexandra-palace-fireworks-drone-festiva-11-07"
+  },
+  {
    "id": "ev-battersea-fw-sun",
    "name": "Battersea Park Fireworks (Sunday)",
    "area": "Battersea",
@@ -16102,6 +16656,34 @@
    "id": "ev-remembrance-services-across-havering-11-08"
   },
   {
+   "name": "Home Song, Sun 8 Nov 10:00 (Unicorn Theatre)",
+   "area": "London Bridge",
+   "lat": 51.5041,
+   "lon": -0.082,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    0,
+    2
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 0.5,
+   "tags": [
+    "baby theatre",
+    "puppetry",
+    "live music",
+    "multi-sensory",
+    "a cappella"
+   ],
+   "blurb": "Final performances of the multi-sensory baby show. Sunday 8 November is the last day, with sessions at 10:00, 11:30 and 13:30.",
+   "date": "2026-11-08",
+   "time": "10:00",
+   "url": "https://www.instagram.com/p/DfKpslJDCN9/",
+   "source": "Instagram @unicorn_theatre",
+   "id": "ev-ig-home-song-sun-8-nov-10-00-unicorn-theatr-11-08"
+  },
+  {
    "name": "Drop-in Digital Art Season: Studying Videogames",
    "area": "South Kensington",
    "lat": 51.4966,
@@ -17328,7 +17910,7 @@
   },
   {
    "name": "Skate at Somerset House with Virgin Atlantic Holidays",
-   "area": "Strand",
+   "area": "Strand, Somerset House courtyard",
    "lat": 51.511,
    "lon": -0.117,
    "in": "out",
@@ -17337,21 +17919,22 @@
     5,
     99
    ],
-   "kids": 1,
+   "kids": 2,
    "adults": 2,
    "dur": 1.5,
    "tags": [
     "ice skating",
-    "outdoor rink",
     "winter",
-    "courtyard"
+    "christmas",
+    "outdoor rink",
+    "festive treats"
    ],
-   "blurb": "Outdoor ice rink in the Somerset House courtyard running from 11 Nov to 10 Jan. Booking is open now. Check the page for session times and prices.",
-   "url": "https://www.somersethouse.org.uk/whats-on",
+   "blurb": "London's iconic outdoor ice rink in the Somerset House courtyard, with festive treats and alpine dining. Book timed sessions online.",
    "from": "2026-11-11",
    "to": "2027-01-10",
-   "source": "Somerset House",
-   "id": "ev-skate-at-somerset-house-with-virgin-atla-11-11"
+   "url": "https://www.instagram.com/reel/DfFf9R1gdly/",
+   "source": "Instagram @somersethouse",
+   "id": "ev-ig-skate-at-somerset-house-with-virgin-atla-11-11"
   },
   {
    "name": "Christmas Lights",
@@ -18655,6 +19238,32 @@
    "time": "13:00",
    "source": "Kingston Council events",
    "id": "ev-2026-kingston-faith-and-belief-forum-com-11-12"
+  },
+  {
+   "name": "WW2 in the Caribbean: free expert talk",
+   "area": "Greenwich",
+   "lat": 51.483,
+   "lon": -0.006,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    14,
+    99
+   ],
+   "kids": 0,
+   "adults": 1,
+   "dur": 1,
+   "tags": [
+    "talk",
+    "history",
+    "free",
+    "wartime caribbean"
+   ],
+   "blurb": "Free expert-led talk on the stories of WW2 in the Caribbean. Thursday 12 November.",
+   "date": "2026-11-12",
+   "url": "https://www.instagram.com/p/DfFDEBID3I0/",
+   "source": "Instagram @oldroyalnavalcollege",
+   "id": "ev-ig-ww2-in-the-caribbean-free-expert-talk-11-12"
   },
   {
    "name": "Members' Meet the Fish",
@@ -20014,6 +20623,88 @@
    "id": "ev-sarah-ainslie-women-at-work-illustrated--11-14"
   },
   {
+   "name": "Santa's First Christmas (Unicorn Theatre)",
+   "area": "London Bridge",
+   "lat": 51.5041,
+   "lon": -0.082,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    4,
+    12
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 1.0,
+   "tags": [
+    "christmas musical",
+    "dance",
+    "roller skating",
+    "family theatre",
+    "theatre"
+   ],
+   "blurb": "Dancing, singing and roller-skating Christmas show based on Mac Barnett's book. Runs 14 November to 3 January, ages 4+. Book in advance.",
+   "from": "2026-11-14",
+   "to": "2027-01-03",
+   "url": "https://www.instagram.com/p/DfCSTUzHbgx/",
+   "source": "Instagram @unicorn_theatre",
+   "id": "ev-ig-santa-s-first-christmas-unicorn-theatre-11-14"
+  },
+  {
+   "name": "Art Deco and the Golden Age of Poster Design: Curator's Talk",
+   "area": "Covent Garden",
+   "lat": 51.512,
+   "lon": -0.121,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    16,
+    99
+   ],
+   "kids": 0,
+   "adults": 1,
+   "dur": 1.5,
+   "tags": [
+    "art deco",
+    "poster design",
+    "curator talk",
+    "london history"
+   ],
+   "blurb": "Senior Curator Georgia Morley talks about how art deco shaped London transport posters and the making of the exhibition. Book via the museum's link in bio.",
+   "date": "2026-11-14",
+   "url": "https://www.instagram.com/p/Dej4TA2F8GG/",
+   "source": "Instagram @ltmuseum",
+   "id": "ev-ig-art-deco-and-the-golden-age-of-poster-de-11-14"
+  },
+  {
+   "name": "Changing Rooms: Celebrating Trans+ Domesticities",
+   "area": "Hoxton",
+   "lat": 51.5321,
+   "lon": -0.0763,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    16,
+    99
+   ],
+   "kids": 0,
+   "adults": 2,
+   "dur": 9,
+   "tags": [
+    "trans history",
+    "cabaret",
+    "market",
+    "screenings",
+    "community"
+   ],
+   "blurb": "Day-to-night celebration with trans+ 2000s film screenings, poetry, a makers market, a panel and a cabaret. Free but ticketed; book in advance.",
+   "date": "2026-11-14",
+   "time": "12:00",
+   "url": "https://www.instagram.com/p/De9gGoIF0SU/",
+   "source": "Instagram @museumofthehome",
+   "id": "ev-ig-changing-rooms-celebrating-trans-domesti-11-14"
+  },
+  {
    "name": "Family Day in the Painted Hall",
    "area": "Greenwich",
    "lat": 51.483,
@@ -20277,6 +20968,32 @@
    "time": "12:00",
    "source": "London Wildlife Trust",
    "id": "ev-wonderful-wildlife-weekends-at-woodberry-11-15"
+  },
+  {
+   "name": "Painted Hall Family Day",
+   "area": "Greenwich",
+   "lat": 51.483,
+   "lon": -0.006,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    5,
+    12
+   ],
+   "kids": 2,
+   "adults": 1,
+   "dur": 2,
+   "tags": [
+    "family",
+    "art",
+    "architecture",
+    "painted hall"
+   ],
+   "blurb": "Family day exploring the art and architecture of the Painted Hall. Sunday 15 November. Check the site for ticket details.",
+   "date": "2026-11-15",
+   "url": "https://www.instagram.com/p/DfFDEBID3I0/",
+   "source": "Instagram @oldroyalnavalcollege",
+   "id": "ev-ig-painted-hall-family-day-11-15"
   },
   {
    "name": "Lunchtime Organ Recital (Mon 16 Nov)",
@@ -20572,6 +21289,34 @@
    "date": "2026-11-17",
    "source": "The Royal Parks",
    "id": "ev-fungi-walk-citizen-science-regent-s-park-11-17"
+  },
+  {
+   "name": "Winter Past exhibition",
+   "area": "Hoxton",
+   "lat": 51.5321,
+   "lon": -0.0763,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 1.5,
+   "tags": [
+    "exhibition",
+    "period rooms",
+    "victorian",
+    "winter history",
+    "museum"
+   ],
+   "blurb": "Annual exhibition with period rooms dressed with winter stories from past, present and future. Runs through the Winter Programme until 10 January.",
+   "from": "2026-11-17",
+   "to": "2027-01-10",
+   "url": "https://www.instagram.com/p/DfCUhUlF83D/",
+   "source": "Instagram @museumofthehome",
+   "id": "ev-ig-winter-past-exhibition-11-17"
   },
   {
    "name": "Walrus Returns",
@@ -21232,24 +21977,24 @@
    "in": "in",
    "price": "£",
    "ages": [
-    8,
+    5,
     99
    ],
    "kids": 1,
-   "adults": 2,
-   "dur": 1.5,
+   "adults": 1,
+   "dur": 1,
    "tags": [
-    "art exhibition",
+    "installation",
+    "art",
     "painted hall",
-    "contemporary art",
-    "300th anniversary"
+    "paper doves"
    ],
-   "blurb": "Peter Walker returns to the Painted Hall with Peace Doves, marking the space's 300th anniversary. Open 20 Nov 2026 to 7 Feb 2027.",
-   "url": "https://ornc.org/whats-on/",
+   "blurb": "Monumental installation of thousands of handmade paper doves in the Painted Hall. Visitors can make doves at stations in the Chapel and Painted Hall. Runs to 7 Feb 2027.",
    "from": "2026-11-20",
    "to": "2027-02-07",
-   "source": "Old Royal Naval College",
-   "id": "ev-peace-doves-by-peter-walker-11-20"
+   "url": "https://www.instagram.com/reel/DfCppntMotb/",
+   "source": "Instagram @oldroyalnavalcollege",
+   "id": "ev-ig-peace-doves-by-peter-walker-11-20"
   },
   {
    "name": "In Conversation with Peter Walker: Art, Scale, and Collective Hope",
@@ -21259,24 +22004,24 @@
    "in": "in",
    "price": "£",
    "ages": [
-    14,
+    16,
     99
    ],
    "kids": 0,
-   "adults": 2,
+   "adults": 1,
    "dur": 1.5,
    "tags": [
-    "artist talk",
-    "evening event",
-    "contemporary art",
-    "painted hall"
+    "talk",
+    "art",
+    "painted hall",
+    "evening"
    ],
-   "blurb": "An evening with the artist behind Peace Doves, held on the exhibition's opening night. Runs 7pm-8.30pm, Fri 20 Nov. Good for art lovers.",
-   "url": "https://ornc.org/whats-on/",
+   "blurb": "Evening talk with artist Peter Walker on the Peace Doves installation. Booking required via the link in bio. Check the site for ticket prices.",
    "date": "2026-11-20",
    "time": "19:00",
-   "source": "Old Royal Naval College",
-   "id": "ev-in-conversation-with-peter-walker-art-sc-11-20"
+   "url": "https://www.instagram.com/p/DfMkxfXDEV_/",
+   "source": "Instagram @oldroyalnavalcollege",
+   "id": "ev-ig-in-conversation-with-peter-walker-art-sc-11-20"
   },
   {
    "name": "Victorian Santa's grotto",
@@ -21634,6 +22379,33 @@
    "to": "2026-11-21",
    "source": "Diamond Geezer (blog)",
    "id": "ev-writeidea-festival-tower-hamlets-librari-11-20"
+  },
+  {
+   "name": "A Christmas Carol by Dickens",
+   "area": "Greenwich",
+   "lat": 51.483,
+   "lon": -0.006,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    6,
+    99
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 1.5,
+   "tags": [
+    "theatre",
+    "christmas",
+    "dickens",
+    "evening"
+   ],
+   "blurb": "Supernatural staging of Dickens' classic A Christmas Carol on site. Performances Friday 20 and Saturday 21 November. Check tickets for times.",
+   "from": "2026-11-20",
+   "to": "2026-11-21",
+   "url": "https://www.instagram.com/p/DfFDEBID3I0/",
+   "source": "Instagram @oldroyalnavalcollege",
+   "id": "ev-ig-a-christmas-carol-by-dickens-11-20"
   },
   {
    "id": "ev-shanty-cuttysark",
@@ -22601,31 +23373,32 @@
    "id": "ev-lunchtime-organ-recital-mon-23-nov-11-23"
   },
   {
-   "name": "K-pop Party on the Ice",
-   "area": "Strand",
+   "name": "K-Pop Party on the ice",
+   "area": "Strand, Somerset House courtyard",
    "lat": 51.511,
    "lon": -0.117,
    "in": "out",
    "price": "££",
    "ages": [
-    16,
+    12,
     99
    ],
    "kids": 0,
    "adults": 2,
-   "dur": 2.5,
+   "dur": 2,
    "tags": [
     "k-pop",
     "ice skating",
+    "dj",
     "party",
-    "music"
+    "winter"
    ],
-   "blurb": "A first-ever K-pop party on the outdoor rink, run with the Korean Cultural Centre UK. Skate hire and entry are extra; check the event page for times and tickets.",
-   "url": "https://www.somersethouse.org.uk/whats-on",
+   "blurb": "K-Pop hits the Skate rink for the first time, with DJ EMKAY, in collaboration with the Korean Cultural Centre UK. Book a skate session.",
    "date": "2026-11-23",
    "time": "evening",
-   "source": "Somerset House",
-   "id": "ev-k-pop-party-on-the-ice-11-23"
+   "url": "https://www.instagram.com/p/DezXJoeikm0/",
+   "source": "Instagram @somersethouse",
+   "id": "ev-ig-k-pop-party-on-the-ice-11-23"
   },
   {
    "name": "Extended Skate Session",
@@ -22924,6 +23697,221 @@
    "time": "19:30",
    "source": "Kingston Council events",
    "id": "ev-anthem-for-dissatisfaction-11-25"
+  },
+  {
+   "name": "Wellcome Collection Lates",
+   "area": "Euston",
+   "lat": 51.5257,
+   "lon": -0.1337,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    18,
+    99
+   ],
+   "kids": 0,
+   "adults": 2,
+   "dur": 3,
+   "tags": [
+    "lates",
+    "free tickets",
+    "evening event",
+    "wellbeing",
+    "museum"
+   ],
+   "blurb": "Free evening Lates at Wellcome Collection. Tickets must be booked in advance. Bring friends, since the post suggests friendship is good for your health.",
+   "date": "2026-11-26",
+   "url": "https://www.instagram.com/reel/DehZCRBj0D0/",
+   "source": "Instagram @wellcomecollection",
+   "id": "ev-ig-wellcome-collection-lates-11-26"
+  },
+  {
+   "name": "Monthly yoga flow by Kindred Yoga Life",
+   "area": "Greenwich",
+   "lat": 51.483,
+   "lon": -0.006,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    16,
+    99
+   ],
+   "kids": 0,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "yoga",
+    "wellbeing",
+    "painted hall",
+    "monthly"
+   ],
+   "blurb": "Monthly yoga flow in the historic site run by Kindred Yoga Life. Friday 27 November. Book ahead.",
+   "date": "2026-11-27",
+   "url": "https://www.instagram.com/p/DfFDEBID3I0/",
+   "source": "Instagram @oldroyalnavalcollege",
+   "id": "ev-ig-monthly-yoga-flow-by-kindred-yoga-life-11-27"
+  },
+  {
+   "name": "Huddle (Unicorn Theatre)",
+   "area": "London Bridge",
+   "lat": 51.5041,
+   "lon": -0.082,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    1,
+    4
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 0.75,
+   "tags": [
+    "theatre",
+    "winter",
+    "toddler show",
+    "penguins",
+    "christmas"
+   ],
+   "blurb": "Heart-warming penguin show returning after a sold-out 2024 run, with a new cast. Runs until 3 January. Book in advance.",
+   "from": "2026-11-27",
+   "to": "2027-01-03",
+   "url": "https://www.instagram.com/p/DfSDijnINIB/",
+   "source": "Instagram @unicorn_theatre",
+   "id": "ev-ig-huddle-unicorn-theatre-11-27"
+  },
+  {
+   "name": "Santa's Workshop at Battersea Power Station",
+   "area": "Battersea",
+   "lat": 51.4817,
+   "lon": -0.1442,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    2,
+    10
+   ],
+   "kids": 2,
+   "adults": 1,
+   "dur": 2,
+   "tags": [
+    "christmas in london",
+    "santa workshop",
+    "family day out",
+    "kids activities"
+   ],
+   "blurb": "Festive Santa's Workshop running 27 Nov to 24 Dec. Booking is recommended. Suits families with young children.",
+   "from": "2026-11-27",
+   "to": "2026-12-24",
+   "url": "https://www.instagram.com/p/DfAN3Piss2v/",
+   "source": "Instagram @batterseapwrstn",
+   "id": "ev-ig-santa-s-workshop-at-battersea-power-stat-11-27"
+  },
+  {
+   "name": "Festive Wreath-Making Workshop (Sat 28 Nov)",
+   "area": "Crystal Palace Park Visitor Centre",
+   "lat": 51.4195,
+   "lon": -0.0671,
+   "in": "both",
+   "price": "£",
+   "ages": [
+    12,
+    99
+   ],
+   "kids": 0,
+   "adults": 1,
+   "dur": 3,
+   "tags": [
+    "wreath making",
+    "christmas workshop",
+    "foraging",
+    "craft"
+   ],
+   "blurb": "Forage natural materials in the park, then make a festive wreath indoors with refreshments. No experience needed, materials provided. Book ahead, spaces limited. Members get 10% off.",
+   "date": "2026-11-28",
+   "time": "10:00",
+   "url": "https://www.instagram.com/reel/Dey9cFhoHcz/",
+   "source": "Instagram @crystalpalaceparktrust",
+   "id": "ev-ig-festive-wreath-making-workshop-sat-28-no-11-28"
+  },
+  {
+   "name": "Winter Market",
+   "area": "Hoxton",
+   "lat": 51.5321,
+   "lon": -0.0763,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 4,
+   "tags": [
+    "christmas market",
+    "artisan homewares",
+    "gifts",
+    "seasonal"
+   ],
+   "blurb": "Returning winter market with artisanal homewares, seasonal gifts and makers. Good for holiday shopping. Check the website for times.",
+   "date": "2026-11-28",
+   "url": "https://www.instagram.com/p/DfCUhUlF83D/",
+   "source": "Instagram @museumofthehome",
+   "id": "ev-ig-winter-market-11-28"
+  },
+  {
+   "name": "Festive Wreath-Making Workshop (Sun 29 Nov)",
+   "area": "Crystal Palace Park Visitor Centre",
+   "lat": 51.4195,
+   "lon": -0.0671,
+   "in": "both",
+   "price": "£",
+   "ages": [
+    12,
+    99
+   ],
+   "kids": 0,
+   "adults": 1,
+   "dur": 3,
+   "tags": [
+    "wreath making",
+    "christmas workshop",
+    "foraging",
+    "craft"
+   ],
+   "blurb": "Forage natural materials in the park, then make a festive wreath indoors with refreshments. No experience needed, materials provided. Book ahead, spaces limited. Members get 10% off.",
+   "date": "2026-11-29",
+   "time": "10:00",
+   "url": "https://www.instagram.com/reel/Dey9cFhoHcz/",
+   "source": "Instagram @crystalpalaceparktrust",
+   "id": "ev-ig-festive-wreath-making-workshop-sun-29-no-11-29"
+  },
+  {
+   "name": "Final Conservatory Plant Adoption with waywardplants",
+   "area": "Barbican Conservatory",
+   "lat": 51.5201,
+   "lon": -0.0937,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    16,
+    99
+   ],
+   "kids": 0,
+   "adults": 1,
+   "dur": 1,
+   "tags": [
+    "plants",
+    "conservatory",
+    "adoption",
+    "gardening"
+   ],
+   "blurb": "Last Conservatory plant adoption before its renewal closure. Tickets are by ballot, which opened 29 Oct. Take home a plant.",
+   "date": "2026-12-02",
+   "time": "unknown",
+   "url": "https://www.instagram.com/reel/DfDLukVhnoP/",
+   "source": "Instagram @barbicancentre",
+   "id": "ev-ig-final-conservatory-plant-adoption-with-w-12-02"
   }
  ]
 }
