@@ -12,7 +12,7 @@ import argparse, json, os, re, sys, time, html
 from urllib.parse import quote, urljoin
 from urllib.request import Request, urlopen
 
-UA = "WhatToDo-images/0.1 (+personal project; one thumbnail per venue, credited)"
+UA = "JauntOut-images/0.2 (https://www.jauntout.com; one credited thumbnail per venue)"
 # regular id → Wikipedia title
 WIKI = {
  "horniman":"Horniman Museum","nhm":"Natural History Museum, London","sciencemuseum":"Science Museum, London",
@@ -31,9 +31,16 @@ WIKI = {
 }
 
 def get(url, accept="*/*"):
-    req = Request(url, headers={"User-Agent": UA, "Accept": accept})
-    with urlopen(req, timeout=20) as r:
-        return r.geturl(), r.read().decode("utf-8", "ignore")
+    from urllib.error import HTTPError
+    for attempt in range(4):
+        try:
+            req = Request(url, headers={"User-Agent": UA, "Accept": accept})
+            with urlopen(req, timeout=20) as r:
+                return r.geturl(), r.read().decode("utf-8", "ignore")
+        except HTTPError as ex:
+            if ex.code == 429 and attempt < 3:
+                time.sleep(int(ex.headers.get("Retry-After") or 0) or 5 * (attempt + 1)); continue
+            raise
 
 def wiki_thumb(title):
     _, body = get("https://en.wikipedia.org/api/rest_v1/page/summary/" + quote(title.replace(" ", "_")), "application/json")
@@ -151,7 +158,7 @@ def main():
             if t: out[id_] = t; print(f"{id_}: wiki ok", file=sys.stderr)
         except Exception as ex:
             print(f"{id_}: wiki failed {ex}", file=sys.stderr)
-        time.sleep(0.5)
+        time.sleep(1.5)
     events = json.load(open(a.events)).get("events", []) if os.path.exists(a.events) else []
     for k, v in out.items():
         if v.get("checked") == 2 and "Wikimedia" not in v.get("credit", ""): v["checked"] = 3
