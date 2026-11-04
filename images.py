@@ -143,6 +143,7 @@ def main():
     ap.add_argument("--refresh", action="store_true"); ap.add_argument("--recheck", action="store_true", help="re-vet existing event pictures")
     a = ap.parse_args()
     out = json.load(open(a.out)) if os.path.exists(a.out) and not a.refresh else {}
+    out = {k: v for k, v in out.items() if "/640px-" not in v.get("url", "")}   # old non-standard size: refetch
     for id_, title in WIKI.items():
         if id_ in out: continue
         try:
@@ -152,7 +153,6 @@ def main():
             print(f"{id_}: wiki failed {ex}", file=sys.stderr)
         time.sleep(0.5)
     events = json.load(open(a.events)).get("events", []) if os.path.exists(a.events) else []
-    out = {k: v for k, v in out.items() if "/640px-" not in v.get("url", "")}   # old non-standard size: refetch
     for k, v in out.items():
         if v.get("checked") == 2 and "Wikimedia" not in v.get("credit", ""): v["checked"] = 3
     if a.recheck:
