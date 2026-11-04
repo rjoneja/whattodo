@@ -468,10 +468,10 @@ async function getWeather(){
   wx=null;
   try{
     const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),6000);
-    const u=`https://api.open-meteo.com/v1/forecast?latitude=${setup.lat}&longitude=${setup.lon}&daily=weather_code,temperature_2m_max,precipitation_probability_max&timezone=Europe%2FLondon&forecast_days=16`;
+    const u=`https://api.open-meteo.com/v1/forecast?latitude=${setup.lat}&longitude=${setup.lon}&daily=weather_code,temperature_2m_max,precipitation_probability_max,wind_gusts_10m_max&timezone=Europe%2FLondon&forecast_days=16`;
     const j=await (await fetch(u,{signal:ctrl.signal})).json(); const i=j.daily.time.indexOf(setup.date);
     if(i>=0){const code=j.daily.weather_code[i],p=j.daily.precipitation_probability_max[i]||0,t=Math.round(j.daily.temperature_2m_max[i]);
-      wx={code,p,t,word:wxWord(code,p),wet:p>=55||(code>=61&&code<=67)||code>=80,fine:p<30&&t>=12&&code<=3,dry:p<35,cold:t<=6}}
+      const g=Math.round((j.daily.wind_gusts_10m_max||[])[i]||0); wx={code,p,t,g,word:wxWord(code,p),wet:p>=55||(code>=61&&code<=67)||code>=80,fine:p<30&&t>=12&&code<=3&&g<40,dry:p<35,cold:t<=6,windy:g>=50}}
   }catch(e){}
   if(!wx) wx=manualWx();
 }
@@ -488,14 +488,24 @@ function parkingPenalty(it){
 function transitMins(it){ const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3; return Math.round(10+d/19*60); }
 function trip(it){
   const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3;
-  const transit=(travelCache[it.id]||transitMins(it));
-  if(setup.mode==='bike'){ const kmh=setup.who==='family'?11:14; const m=Math.round(4+d/kmh*60); return {mins:m,cost:m,how:'cycle'}; }
+  const rough=!!(wx&&(wx.wet||wx.windy));               // rain or strong wind: walking and cycling get less appealing
+  let transit=(travelCache[it.id]||transitMins(it)); const transitCost=transit+(rough?5:0);
+  const walk=Math.round(d/4.8*60);
+  // short hop on a decent day: just walk
+  if(setup.mode!=='bike' && !rough && walk<=30 && walk<=transit+8) return {mins:walk,cost:walk,how:'walk'};
+  if(rough && walk<=10) return {mins:walk,cost:walk+3,how:'walk'};
+  if(setup.mode==='bike'){
+    const kmh=setup.who==='family'?11:14; const m=Math.round(4+d/kmh*60);
+    const cost=Math.round(m*(wx&&wx.wet?1.6:wx&&wx.windy?1.35:1));
+    if(cost>transitCost+10) return {mins:transit,cost:transitCost,how:'transport',note:wx&&wx.wet?'rain':'wind'};   // grim day: suggest the bus instead
+    return {mins:m,cost,how:'cycle'};
+  }
   if(setup.mode==='car'){
     const drive=Math.round(8+d/28*60), pen=parkingPenalty(it);
-    if(drive+pen<transit) return {mins:drive,cost:drive+pen,how:'drive',park:pen};
-    return {mins:transit,cost:transit,how:'transport',park:pen};
+    if(drive+pen<transitCost) return {mins:drive,cost:drive+pen,how:'drive',park:pen};
+    return {mins:transit,cost:transitCost,how:'transport',park:pen};
   }
-  return {mins:transit,cost:transit,how:'transport'};
+  return {mins:transit,cost:transitCost,how:'transport'};
 }
 function estMins(it){ return trip(it).mins; }
 async function tflMins(it){
@@ -516,7 +526,8 @@ function score(it,mins){
   if(wx){ if(wx.wet){ if(it.in==='out'){s-=3.2;} else if(it.in==='in'){s+=1.6;why.push('indoors on a wet day')} else {s-=0.6} }
     else if(wx.fine&&it.in!=='in'){s+=1.8;why.push('fine weather, get outside')}
     else if(wx.dry&&it.in==='out'){s+=0.7}
-    if(wx.cold&&it.in==='out'){s-=0.9} }
+    if(wx.cold&&it.in==='out'){s-=0.9}
+    if(wx.windy&&it.in==='out'){s-=1.5} }
   if(setup.who==='family'){ const f=ageFit(it); if(f===0) return {s:-99,why:[]}; s+=f*1.5+it.kids*0.9; if(it.adults>=2) s+=0.4; if(f===1&&it.kids===3) why.push('right age range') }
   else { s+=it.adults*0.9; if(it.kids===3&&it.adults<=1) s-=1.8; if(setup.who==='couple'&&it.tags.includes('couple')) {s+=0.8;why.push('good for two')} if(setup.who==='friends'&&(it.tags.includes('food')||it.tags.includes('beer')||it.tags.includes('market'))) s+=0.6; }
   if(it.price==='free') s+=0.3;
@@ -564,13 +575,13 @@ async function buildDeck(){
 function renderStrip(){
   const d=fromIso(setup.date); $('#stripDate').textContent=nice(d);
   $('#stripFrom').textContent=(setup.place||setup.pc).trim()+' · '+({car:'car or transport',bike:'by bike',transit:'public transport'}[setup.mode]||'public transport');
-  if(wx&&!wx.manual) $('#stripWx').innerHTML=`${wx.word} ${wx.t}°<small>${wx.p}% chance of rain</small>`;
+  if(wx&&!wx.manual) $('#stripWx').innerHTML=`${wx.windy?'Windy':wx.word} ${wx.t}°<small>${wx.p}% rain${wx.g?' · gusts '+Math.round(wx.g*0.621)+' mph':''}</small>`;
   else $('#stripWx').innerHTML=`<div class="wxpick"><small>Forecast?</small><button class="chip ${wx&&wx.wet?'on':''}" data-wx="wet">Wet</button><button class="chip ${wx&&wx.dry?'on':''}" data-wx="dry">Dry</button></div>`;
   $('#stripWx').querySelectorAll('[data-wx]').forEach(b=>b.onclick=async()=>{setup.wxManual={v:b.dataset.wx,date:setup.date};save();track('wx_manual',{v:b.dataset.wx});await buildDeck()});
   const whoL={solo:'Just me',couple:'Couple',family:'Family · '+setup.ages.join(', '),friends:'Friends'}[setup.who]||'';
   $('#ctx').innerHTML=`<b>${whoL}</b><br>${nice(d)} · ${setup.pc||''}`;
 }
-function travelLabel(c){ return (c.est?'~':'')+c.mins+' min '+({drive:'drive',cycle:'by bike',transport:'by transport'}[c.how||'transport'])+(c.how==='drive'&&c.parking?' ('+c.parking+')':'') }
+function travelLabel(c){ return (c.est&&c.how!=='walk'?'~':'')+c.mins+' min '+({drive:'drive',cycle:'by bike',transport:'by transport',walk:'walk'}[c.how||'transport'])+(c.how==='drive'&&c.parking?' ('+c.parking+')':'')+(c.note&&c.how==='transport'&&setup.mode==='bike'?' ('+c.note+')':'') }
 /* ---------- SHARING ---------- */
 const EMOJI=[[/pickle/i,'🥒'],[/firework|bonfire/i,'🎆'],[/christmas|xmas|festive|santa/i,'🎄'],[/diwali|lantern|light show|illuminat/i,'🪔'],[/market|fair|bazaar/i,'🛍️'],[/food|street food|supper|brunch|tasting|beer|wine/i,'🍽️'],[/farm|animal|zoo|alpaca|goat/i,'🐐'],[/park|garden|walk|nature|wood|forest|heath|wetland/i,'🌳'],[/music|concert|gig|choir|orchestra|jazz|shanty/i,'🎶'],[/theatre|show|puppet|panto|circus|comedy/i,'🎭'],[/museum|exhibition|gallery|history|art/i,'🖼️'],[/swim|lido/i,'🏊'],[/train|railway|bus|transport/i,'🚂'],[/kids|family|play|story/i,'🎈']];
 function emojiFor(c){const t=c.name+' '+(c.tags||[]).join(' ');for(const [re,e] of EMOJI) if(re.test(t)) return e; return '📍';}
@@ -686,7 +697,7 @@ function renderMap(){
   const sel=pts.find(p=>p.id===mapSelId); const box=$('#mapSel');
   if(!sel){box.hidden=true;return}
   box.hidden=false; const st=status[sel.id];
-  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ~${sel.mins} min ${({drive:'drive',cycle:'by bike',transport:'by transport'})[sel.how||'transport']}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
+  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ~${sel.mins} min ${({drive:'drive',cycle:'by bike',transport:'by transport',walk:'walk'})[sel.how||'transport']}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
     <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener">Details ›</a></div>`;
   box.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{status[sel.id]=b.dataset.ms;save();track('map_action',{id:sel.id,kind:b.dataset.ms});deck=deck.filter(d=>d.id!==sel.id);renderMap();renderStack();toast(b.dataset.ms==='saved'?'Saved ♥':'Ticked off')});
 }
