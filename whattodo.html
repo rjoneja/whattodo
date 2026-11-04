@@ -75,6 +75,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .field input[type=text],.field input[type=date]{width:100%;min-width:0;padding:calc(var(--u)*1.6) calc(var(--u)*2);border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:600 19px var(--display);text-transform:uppercase;letter-spacing:.05em}
 .field input[type=date]{text-transform:none;font-size:16px;font-weight:500;width:auto;max-width:min(100%,260px);min-width:0;display:block;-webkit-appearance:none;appearance:none;text-align:left}
 .field input[type=date]::-webkit-date-and-time-value{text-align:left}
+#modes .chip.on::before{content:'✓';font-weight:700;margin-right:6px}
 .hint{font-size:13px;color:var(--ink-2)}
 .err{color:var(--verm);font-size:14px;font-weight:500}
 .row{display:flex;gap:var(--u);align-items:center;flex-wrap:wrap}
@@ -278,12 +279,13 @@ td.n{text-align:right}
         <input type="text" id="pc" placeholder="SE4 2AB" autocomplete="postal-code" inputmode="text" maxlength="8">
         <div class="hint">Only used for travel times and weather. Your last few are kept on this phone, nowhere else.</div>
         <div class="err" id="pcErr" hidden></div></div>
-      <div class="field"><label>How are you getting about?</label>
+      <div class="field"><label>How are you happy to get about?</label>
         <div class="chips" id="modes">
-          <button class="chip" data-mode="transit">Public transport <small>bus, tube, train, walking</small></button>
-          <button class="chip" data-mode="bike">Bike <small>kids on the back count</small></button>
-          <button class="chip" data-mode="car">Car available <small>but we'll pick transport when parking's a pain</small></button>
-        </div></div>
+          <button class="chip" data-mode="transit" aria-pressed="false">Public transport <small>bus, tube, train</small></button>
+          <button class="chip" data-mode="bike" aria-pressed="false">Bike <small>kids on the back count</small></button>
+          <button class="chip" data-mode="car" aria-pressed="false">Car <small>we'll weigh up the parking</small></button>
+        </div>
+        <div class="hint">Tick all that work. Each idea gets whichever is easiest, and walking is always an option for short hops.</div></div>
       <button class="cta" id="go" disabled>Show me things <span>›</span></button>
     </div>
     <div class="row" id="setupNav"><button class="ghost" id="back" hidden>‹ Back</button></div>
@@ -432,7 +434,10 @@ const WHO=[['solo','Just me','Flying solo'],['couple','A couple','Two of us'],['
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let setup=LS.get('wtd.setup',{who:null,ages:[],date:null,pc:'',car:null,lat:null,lon:null,place:''});
 if(!setup.mode){ const m=LS.get('wtd.mode',null); const c=(setup.car!==null&&setup.car!==undefined)?setup.car:LS.get('wtd.car',null); setup.mode=m||(c===1?'car':c===0?'transit':null); }
-setup.car=setup.mode==='car'?1:setup.mode?0:null;
+if(!Array.isArray(setup.modes)){ const m=LS.get('wtd.modes',null); setup.modes=Array.isArray(m)?m:setup.mode==='car'?['transit','car']:setup.mode==='bike'?['bike']:setup.mode==='transit'?['transit']:[]; }
+const has=m=>setup.modes.includes(m);
+function syncMode(){ setup.mode=has('car')?'car':has('bike')&&!has('transit')?'bike':setup.modes.length?'transit':null; setup.car=has('car')?1:setup.modes.length?0:null; }
+syncMode();
 let status=LS.get('wtd.status',{});       // id -> 'saved'|'again'|'done'|'pass'
 let swipes=LS.get('wtd.swipes',{like:{},pass:{}}); // tag affinity
 let log=LS.get('wtd.log',[]);
@@ -490,28 +495,28 @@ function rememberPlace(pc){ places=[pc,...places.filter(p=>p!==pc)].slice(0,5); 
 function renderSaved(){
   const box=$('#savedPcs'); box.hidden=!places.length;
   box.innerHTML=places.map(p=>`<span class="chip saved ${p===setup.pc?'on':''}"><button data-pc="${p}">${p}</button><button class="x" data-del="${p}" aria-label="Forget ${p}">×</button></span>`).join('');
-  box.querySelectorAll('[data-pc]').forEach(b=>b.onclick=()=>{setup.pc=b.dataset.pc;renderWhere();if(setup.mode)$('#go').click()});
+  box.querySelectorAll('[data-pc]').forEach(b=>b.onclick=()=>{setup.pc=b.dataset.pc;renderWhere();if(setup.modes.length)$('#go').click()});
   box.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{places=places.filter(p=>p!==b.dataset.del);LS.set('wtd.places',places);renderSaved()});
 }
 function renderWhere(){
   renderSaved();
-  $('#pc').value=setup.pc||''; $('#modes').querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('on',b.dataset.mode===setup.mode));
-  $('#go').disabled=!(setup.pc&&setup.mode);
+  $('#pc').value=setup.pc||''; $('#modes').querySelectorAll('[data-mode]').forEach(b=>{b.classList.toggle('on',has(b.dataset.mode));b.setAttribute('aria-pressed',has(b.dataset.mode))});
+  $('#go').disabled=!(setup.pc&&setup.modes.length);
 }
 let step='who';
 function gotoStep(s){step=s;['who','when','where'].forEach(x=>$('#s-'+x).hidden=x!==s);$('#back').hidden=s==='who';
   if(s==='when')renderWhen(); if(s==='where')renderWhere(); window.scrollTo({top:0});}
 $('#back').onclick=()=>gotoStep(step==='where'?'when':'who');
 $('#pc').oninput=e=>{setup.pc=e.target.value.toUpperCase().trim();$('#pcErr').hidden=true;renderWhere()};
-$('#modes').querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{setup.mode=b.dataset.mode;setup.car=setup.mode==='car'?1:0;renderWhere()});
+$('#modes').querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{const m=b.dataset.mode;setup.modes=has(m)?setup.modes.filter(x=>x!==m):['transit','bike','car'].filter(x=>x===m||has(x));syncMode();LS.set('wtd.modes',setup.modes);save();renderWhere()});
 function parseOutcode(pc){const m=pc.replace(/\s+/g,'').toUpperCase().match(/^([A-Z]{1,2}[0-9][A-Z0-9]?)([0-9][A-Z]{2})?$/);return m?{out:m[1],full:m[2]?m[1]+' '+m[2]:null}:null}
 $('#go').onclick=async()=>{
   const b=$('#go');b.disabled=true;b.textContent='Finding your spot…';
   const pc=parseOutcode(setup.pc||'');
   if(!pc||!OUTCODES[pc.out]){$('#pcErr').textContent=pc?'That postcode is outside the area we cover (London and about 60 km around it).':'That doesn\'t look like a UK postcode. Try something like SE4 2AB or just SE4.';$('#pcErr').hidden=false;b.disabled=false;b.innerHTML='Show me things <span>›</span>';return}
   setup.lat=OUTCODES[pc.out][0];setup.lon=OUTCODES[pc.out][1];setup.pc=pc.full||pc.out;setup.place=pc.out;setup.precise=false;
-  rememberPlace(setup.pc); LS.set('wtd.mode',setup.mode);
-  save();track('setup_done',{who:setup.who,ages:setup.ages,mode:setup.mode,car:setup.car,outcode:pc.out,date:setup.date});
+  rememberPlace(setup.pc); LS.set('wtd.mode',setup.mode);LS.set('wtd.modes',setup.modes);
+  save();track('setup_done',{who:setup.who,ages:setup.ages,mode:setup.modes.join('+'),car:setup.car,outcode:pc.out,date:setup.date});
   travelCache={};await buildDeck();go('deck');
   b.disabled=false;b.innerHTML='Show me things <span>›</span>';
   // refine to the full postcode when the network allows (hosted version); silent if blocked
@@ -591,22 +596,19 @@ function trip(it){
   const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3;
   const rough=!!(wx&&(wx.wet||wx.windy));               // rain or strong wind: walking and cycling get less appealing
   let transit=((travelCache[it.id]&&travelCache[it.id].mins)||transitMins(it)); const transitCost=transit+(rough?5:0);
-  const walk=Math.round(d/4.8*60);
-  // short hop on a decent day: just walk
-  if(setup.mode!=='bike' && !rough && walk<=30 && walk<=transit+8) return {mins:walk,cost:walk,how:'walk'};
-  if(rough && walk<=10) return {mins:walk,cost:walk+3,how:'walk'};
-  if(setup.mode==='bike'){
-    const kmh=setup.who==='family'?11:14; const m=Math.round(4+d/kmh*60);
-    const cost=Math.round(m*(wx&&wx.wet?1.6:wx&&wx.windy?1.35:1));
-    if(cost>transitCost+10) return {mins:transit,cost:transitCost,how:'transport',note:wx&&wx.wet?'rain':'wind'};   // grim day: suggest the bus instead
-    return {mins:m,cost,how:'cycle'};
-  }
-  if(setup.mode==='car'){
-    const drive=Math.round(8+d/28*60), pen=parkingPenalty(it);
-    if(drive+pen<transitCost) return {mins:drive,cost:drive+pen,how:'drive',park:pen};
-    return {mins:transit,cost:transitCost,how:'transport',park:pen};
-  }
-  return {mins:transit,cost:transitCost,how:'transport'};
+  const walk=Math.round(d/4.8*60), opts=[];
+  // each way you're happy with, costed in "hassle minutes": parking, rain and wind count against
+  if(!rough&&walk<=30) opts.push({mins:walk,cost:walk,cmp:walk-8,how:'walk'});        // a short walk beats a bus that saves a few minutes
+  else if(rough&&walk<=10) opts.push({mins:walk,cost:walk+3,cmp:walk+3,how:'walk'});
+  if(has('transit')||!setup.modes.length) opts.push({mins:transit,cost:transitCost,cmp:transitCost,how:'transport'});
+  if(has('bike')){ const kmh=setup.who==='family'?11:14, m=Math.round(4+d/kmh*60), cost=Math.round(m*(wx&&wx.wet?1.6:wx&&wx.windy?1.35:1));
+    if(m<=75) opts.push({mins:m,cost,cmp:cost,how:'cycle',note:rough?(wx.wet?'rain':'wind'):''}); }
+  if(has('car')){ const drive=Math.round(8+d/28*60), pen=parkingPenalty(it); opts.push({mins:drive,cost:drive+pen,cmp:drive+pen,how:'drive',park:pen}); }
+  if(!opts.length) opts.push({mins:walk,cost:walk,cmp:walk,how:'walk'});
+  const best=opts.sort((a,b)=>a.cmp-b.cmp)[0]; const out={mins:best.mins,cost:best.cost,how:best.how};
+  if(best.park!=null) out.park=best.park; if(best.note) out.note=best.note;
+  if(best.how==='transport'&&has('car')) out.park=parkingPenalty(it);     // remembered for "easier than parking"
+  return out;
 }
 function estMins(it){ return trip(it).mins; }
 // TfL journeys: name the actual route ("65 bus", "train from Kingston, then 213 bus") and prefer fewer changes over a few minutes saved.
@@ -650,7 +652,7 @@ function arriveBy(it){ const h=hoursOf(it); if(h.open==null) return null;
   if(it.date===setup.date) return Math.max(8*60,h.open-10);            // timed one-off: 10 minutes early
   return h.open>10.5*60?h.open:null; }                                  // opens late morning or later: be there for opening
 async function tflMins(it,force){
-  if(setup.mode==='bike'&&!force) return null; if(travelCache[it.id]) return travelCache[it.id]; if(travelCache[it.id]===null&&!force) return null;
+  if(!has('transit')&&setup.modes.length&&!force) return null; if(travelCache[it.id]) return travelCache[it.id]; if(travelCache[it.id]===null&&!force) return null;
   // timed event on the chosen day: plan to arrive 10 minutes early; otherwise leave mid-morning
   const t0=arriveBy(it);
   let q='time=1000', tkey='1000', tm=t0!=null;
@@ -751,7 +753,7 @@ async function buildDeck(){
   const today=iso(new Date());
   const pool=[...ITEMS.filter(openOn),...EVENTS.filter(e=>eventOn(e)&&(!e.to||e.to>=today))];
   deck=pool.filter(it=>!['saved','done','pass'].includes(status[it.id]))
-    .map(it=>{const t=trip(it);const r=score(it,t.cost);if(t.how==='transport'&&setup.mode==='car'&&t.park>=15)r.why.push('easier than parking');return Object.assign({},it,t,{est:true,score:r.s,why:r.why})})
+    .map(it=>{const t=trip(it);const r=score(it,t.cost);if(t.how==='transport'&&has('car')&&t.park>=15)r.why.push('easier than parking');return Object.assign({},it,t,{est:true,score:r.s,why:r.why})})
     .filter(x=>x.score>-50)
     .filter(x=>{const s=stillOn(x,x.mins); if(s.soon) x.why.unshift(s.soon); return s.ok});
   // a one-off at a place beats the place itself: push the everyday listing well down when an event is on there
@@ -771,14 +773,14 @@ async function buildDeck(){
 /* ---------- DECK UI ---------- */
 function renderStrip(){
   const d=fromIso(setup.date); $('#stripDate').textContent=nice(d);
-  $('#stripFrom').textContent=(setup.place||setup.pc).trim()+' · '+({car:'car or transport',bike:'by bike',transit:'public transport'}[setup.mode]||'public transport');
+  $('#stripFrom').textContent=(setup.place||setup.pc).trim()+' · '+(setup.modes.length===1?{car:'by car',bike:'by bike',transit:'public transport'}[setup.modes[0]]:setup.modes.map(m=>({transit:'transport',bike:'bike',car:'car'})[m]).join(', ').replace(/, ([^,]*)$/,' or $1'));
   if(wx&&!wx.manual) $('#stripWx').innerHTML=`<div class="wxrow">${wxIcon(wx.kind)}<div><span class="wxl">${wx.line}</span><small>${wx.detail}</small></div></div>`;
   else $('#stripWx').innerHTML=`<div class="wxpick"><small>Forecast?</small><button class="chip ${wx&&wx.wet?'on':''}" data-wx="wet">Wet</button><button class="chip ${wx&&wx.dry?'on':''}" data-wx="dry">Dry</button></div>`;
   $('#stripWx').querySelectorAll('[data-wx]').forEach(b=>b.onclick=async()=>{setup.wxManual={v:b.dataset.wx,date:setup.date};save();track('wx_manual',{v:b.dataset.wx});await buildDeck()});
   const whoL={solo:'Just me',couple:'Couple',family:'Family · '+setup.ages.join(', '),friends:'Friends'}[setup.who]||'';
   $('#ctx').innerHTML=`<b>${whoL}</b><br>${nice(d)} · ${setup.pc||''}`;
 }
-function travelLabel(c){ if((c.how||'transport')==='transport'&&c.route&&!c.est) return c.mins+' min '+(c.route==='walk'?'walk':'· '+c.route)+(c.note&&setup.mode==='bike'?' ('+c.note+')':'');
+function travelLabel(c){ if((c.how||'transport')==='transport'&&c.route&&!c.est) return c.mins+' min '+(c.route==='walk'?'walk':'· '+c.route)+(c.note&&c.how==='cycle'?' ('+c.note+')':'');
   return (c.est&&c.how!=='walk'?'~':'')+c.mins+' min '+({drive:'drive',cycle:'by bike',transport:'by bus or train',walk:'walk'}[c.how||'transport'])+(c.how==='drive'&&c.parking?' ('+c.parking+')':'')+(c.note&&c.how==='transport'&&setup.mode==='bike'?' ('+c.note+')':'') }
 /* ---------- SHARING ---------- */
 const EMOJI=[[/pickle/i,'🥒'],[/firework|bonfire/i,'🎆'],[/christmas|xmas|festive|santa/i,'🎄'],[/diwali|lantern|light show|illuminat/i,'🪔'],[/market|fair|bazaar/i,'🛍️'],[/food|street food|supper|brunch|tasting|beer|wine/i,'🍽️'],[/farm|animal|zoo|alpaca|goat/i,'🐐'],[/park|garden|walk|nature|wood|forest|heath|wetland/i,'🌳'],[/music|concert|gig|choir|orchestra|jazz|shanty/i,'🎶'],[/theatre|show|puppet|panto|circus|comedy/i,'🎭'],[/museum|exhibition|gallery|history|art/i,'🖼️'],[/swim|lido/i,'🏊'],[/train|railway|bus|transport/i,'🚂'],[/kids|family|play|story/i,'🎈']];
@@ -827,7 +829,10 @@ function renderStack(){
   deck.slice(0,3).forEach(refineTravel);
   st.querySelectorAll('[data-tr]').forEach(b=>b.onclick=e=>{e.stopPropagation();const c=deck.find(x=>x.id===b.closest('.card').dataset.id);if(c)openTrip(c)});
 }
-async function refineTravel(c){ if(c.how!=='transport'||!c.est) return; const t=await tflMins(c); if(t){c.mins=t.mins;c.cost=t.mins;c.route=t.route;c.steps=t.steps;c.est=false; const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.innerHTML=escH(travelLabel(c))+'<i>›</i>';el.classList.add('good')}} }
+async function refineTravel(c){ if(!c.est||!has('transit')||c.how==='walk') return; const t=await tflMins(c); if(!t) return;
+  // TfL's real time can change the answer (e.g. the bus is quicker than parking), so decide again
+  const nt=trip(c); Object.assign(c,nt); c.est=nt.how!=='transport'; if(nt.how==='transport'){c.route=t.route;c.steps=t.steps;}
+  const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.innerHTML=escH(travelLabel(c))+'<i>›</i>';el.classList.toggle('good',!c.est)} }
 
 /* drag */
 function attachDrag(el){
@@ -848,7 +853,7 @@ function act(kind,el){
     if(hit.length){ const rest=deck.slice(1).sort((a,b)=>b.score-a.score); deck=[deck[0],...diversify(rest)]; } }
   else if(kind==='again'){status[c.id]='again';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Kept in the mix')}
   else if(kind==='done'){status[c.id]='done';toast('Ticked off')}
-  save(); track('swipe',{id:c.id,kind,who:setup.who,mode:setup.mode,how:c.how,mins:c.mins});
+  save(); track('swipe',{id:c.id,kind,who:setup.who,mode:setup.modes.join('+'),how:c.how,mins:c.mins});
   deck.shift(); const target=el||$('#stack .card');
   if(target) fly(target,kind==='pass'?-1:1,renderStack); else renderStack();
 }
@@ -906,8 +911,8 @@ function tripOptions(c,t){
   if(walk<=90) o.push({kind:'walk',mins:walk,title:'Walk',legs:tflWalk&&tflWalk.legs,times:tflWalk?tflWalk.times:'',
     meta:[kmTxt,walk>40&&setup.who==='family'?'long for little legs':''].filter(Boolean).join(' · ')});
   const kmh=setup.who==='family'?11:14, bike=Math.round(4+d/kmh*60);
-  if(bike<=75&&(setup.mode==='bike'||bike<=40)) o.push({kind:'cycle',mins:bike,title:'Cycle',meta:[kmTxt,setup.who==='family'?'at family pace':''].filter(Boolean).join(' · ')});
-  if(setup.mode==='car'){ const drive=Math.round(8+d/28*60), pen=parkingPenalty(c);
+  if(bike<=75&&(has('bike')||bike<=40)) o.push({kind:'cycle',mins:bike,title:'Cycle',meta:[kmTxt,setup.who==='family'?'at family pace':''].filter(Boolean).join(' · ')});
+  if(has('car')){ const drive=Math.round(8+d/28*60), pen=parkingPenalty(c);
     o.push({kind:'drive',mins:drive,title:'Drive',meta:[hasParking(c)?c.parking:pen>=15?'parking could take a while':'parking usually OK',pen>=12?'+'+pen+' min to park':''].filter(Boolean).join(' · ')}); }
   // which one the card went with
   // our pick: what the card went with; in rain or wind, walking/cycling only stay the pick if they're much quicker
@@ -1000,9 +1005,9 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#tripSheet').hidd
 function renderSchematic(){
   const W=360,H=414,cx=W/2,cy=H/2;
   const kmLat=111.2,kmLon=111.2*Math.cos(setup.lat*Math.PI/180);
-  const pxPerKm=W/2/ ({car:22,bike:14,transit:17}[setup.mode]||17) * mapZoom;   // zoom 1: 60-min ring near the edge
+  const fm=has('car')?'car':has('transit')||!setup.modes.length?'transit':'bike'; const pxPerKm=W/2/ ({car:22,bike:14,transit:17}[fm]) * mapZoom;   // zoom 1: 60-min ring near the edge
   const P=(lon,lat)=>[cx+(lon-setup.lon)*kmLon*pxPerKm, cy-(lat-setup.lat)*kmLat*pxPerKm];
-  const minsToR=m=>{const kmh={car:22,bike:14,transit:19}[setup.mode]||19, lead={car:12,bike:4,transit:10}[setup.mode]||10; return Math.max(0,(m-lead))/60*kmh/1.3*pxPerKm};
+  const minsToR=m=>{const kmh={car:22,bike:14,transit:19}[fm], lead={car:12,bike:4,transit:10}[fm]; return Math.max(0,(m-lead))/60*kmh/1.3*pxPerKm};
   let pts; if(mapMode==='saved'){ pts=Object.keys(status).filter(k=>['saved','again'].includes(status[k])).map(id=>ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id)).filter(Boolean).map(it=>Object.assign({},it,trip(it),{score:10})); }
   else pts=deck.slice(0,40);
   const smax=Math.max(...pts.map(p=>p.score),1),smin=Math.min(...pts.map(p=>p.score),0);
@@ -1077,7 +1082,7 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
   if(want){ track('share_open',{id:want,via:via||'link'}); try{history.replaceState(null,'',location.pathname+location.hash)}catch(e){} }
   if(want){ await Promise.all([loadEvents(),loadImages()]); const ev=[...EVENTS,...ITEMS].find(x=>x.id===want);
     if(ev){ if(ev.date) setup.date=ev.date; else if(!setup.date||fromIso(setup.date)<new Date(new Date().setHours(0,0,0,0))){const o=whenOptions();setup.date=iso(o.def);}
-      if(!setup.lat){ setup.lat=51.5074; setup.lon=-0.1278; setup.place='Central London'; setup.pc=setup.pc||''; if(!setup.mode){setup.mode='transit';setup.car=0;} setup.who=setup.who||'couple'; setup.guest=true; }
+      if(!setup.lat){ setup.lat=51.5074; setup.lon=-0.1278; setup.place='Central London'; setup.pc=setup.pc||''; if(!setup.modes.length){setup.modes=['transit'];syncMode();} setup.who=setup.who||'couple'; setup.guest=true; }
       await buildDeck(); const i=deck.findIndex(x=>x.id===want);
       if(i>0){ const [x]=deck.splice(i,1); deck.unshift(x); } else if(i<0){ deck.unshift(Object.assign({},ev,trip(ev),{est:true,score:99,why:['shared with you']})); }
       renderStack(); go('deck'); if(setup.guest) toast('Shared with you · set your postcode in Who & when'); return; } }
