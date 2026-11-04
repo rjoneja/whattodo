@@ -4,6 +4,7 @@ on:
     inputs:
       recheck: {description: "Re-vet all event pictures (yes/no)", default: "no"}
       skip_ingest: {description: "Pictures only (yes/no)", default: "no"}
+      img_vets: {description: "Max picture checks this run", default: "1500"}
 permissions:
   contents: write
 jobs:
@@ -21,7 +22,7 @@ jobs:
       - run: python3 tidy.py
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - run: python3 images.py --events docs/events.json --out docs/images.json ${{ github.event.inputs.recheck == 'yes' && '--recheck' || '' }} || true
-        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}", IMG_MAX_VETS: "${{ github.event.inputs.img_vets || '1500' }}"}
       - run: python3 share_pages.py
       - run: python3 sources_page.py || true
       - run: |
