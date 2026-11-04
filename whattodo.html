@@ -158,6 +158,10 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 /* map */
 .map{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;aspect-ratio:1/1.15;max-width:100%}
 .map svg{width:100%;height:100%;display:block;touch-action:none}
+.map.real{aspect-ratio:auto;height:min(62vh,520px);isolation:isolate;z-index:0}
+.map .leaflet-control-attribution{font-size:9px}
+.youtip{background:var(--ink);color:var(--paper);border:0;font:600 11px var(--display);padding:2px 6px;box-shadow:none}
+.youtip:before{display:none}
 .map .river{fill:none;stroke:var(--sky);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;opacity:.35}
 .map .ring{fill:none;stroke:var(--line);stroke-dasharray:3 5}
 .map .lbl{font:500 10px var(--body);fill:var(--ink-3);text-anchor:middle}
@@ -275,7 +279,7 @@ td.n{text-align:right}
       <div class="toggle" id="mapMode"><button data-m="deck" class="on">Suggested</button><button data-m="saved">Saved</button></div>
     </div>
     <div class="map" id="map"></div>
-    <div class="maplegend"><span><i style="background:var(--verm)"></i>Ticketed</span><span><i style="background:var(--moss)"></i>Free</span><span><i style="background:var(--amber)"></i>One-off event</span><span>Bigger dot = better match · rings at 30 and 60 min</span></div>
+    <div class="maplegend"><span><i style="background:var(--verm)"></i>Ticketed</span><span><i style="background:var(--moss)"></i>Free</span><span><i style="background:var(--amber)"></i>One-off event</span><span>Bigger dot = better match · dashed rings at roughly 30 and 60 min</span></div>
     <div class="mapsel" id="mapSel" hidden></div>
   </section>
 
@@ -673,7 +677,55 @@ function renderList(){
 const THAMES=[[-0.37,51.41],[-0.31,51.41],[-0.30,51.46],[-0.29,51.49],[-0.25,51.485],[-0.23,51.47],[-0.21,51.467],[-0.19,51.468],[-0.17,51.48],[-0.15,51.485],[-0.125,51.487],[-0.123,51.50],[-0.115,51.508],[-0.104,51.511],[-0.088,51.508],[-0.075,51.506],[-0.06,51.505],[-0.035,51.508],[-0.025,51.5],[-0.03,51.49],[-0.02,51.48],[-0.005,51.483],[0.003,51.495],[-0.005,51.505],[0.005,51.51],[0.02,51.503],[0.03,51.496],[0.06,51.494],[0.09,51.50],[0.14,51.49],[0.17,51.487]];
 const PLACES=[['Central',-0.12,51.513],['Greenwich',-0.005,51.477],['Richmond',-0.30,51.46],['Stratford',-0.01,51.542],['Brixton',-0.114,51.462],['Hampstead',-0.165,51.556],['Bromley',0.015,51.405],['Croydon',-0.098,51.372],['Walthamstow',-0.02,51.585],['Ealing',-0.30,51.513]];
 let mapMode='deck',mapSelId=null;
-function renderMap(){
+/* Real map (Leaflet + OpenStreetMap/CARTO tiles) on the hosted site; the schematic above is the fallback */
+let lmap=null, lLayer=null, leafletState='idle';
+function loadLeaflet(){
+  if(window.L) return Promise.resolve(true);
+  if(leafletState==='loading') return new Promise(r=>{const t=setInterval(()=>{if(leafletState!=='loading'){clearInterval(t);r(!!window.L)}},100)});
+  leafletState='loading';
+  return new Promise(res=>{
+    const css=document.createElement('link'); css.rel='stylesheet'; css.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css'; document.head.appendChild(css);
+    const sc=document.createElement('script'); sc.src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js';
+    const done=ok=>{leafletState=ok?'ready':'failed';res(ok)};
+    sc.onload=()=>done(!!window.L); sc.onerror=()=>done(false); setTimeout(()=>{if(leafletState==='loading')done(false)},6000);
+    document.head.appendChild(sc);
+  });
+}
+function mapPoints(){
+  let pts; if(mapMode==='saved'){ pts=Object.keys(status).filter(k=>['saved','again'].includes(status[k])).map(id=>ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id)).filter(Boolean).map(it=>Object.assign({},it,trip(it),{score:10})); }
+  else pts=deck.slice(0,60);
+  return pts;
+}
+function ringKm(m){ const kmh={car:22,bike:14,transit:19}[setup.mode]||19, lead={car:12,bike:4,transit:10}[setup.mode]||10; return Math.max(0,(m-lead))/60*kmh/1.3; }
+function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+async function renderMap(){
+  const ok=await loadLeaflet();
+  if(!ok){ $('#map').classList.remove('real'); return renderSchematic(); }
+  const el=$('#map'); el.classList.add('real');
+  const dark=matchMedia('(prefers-color-scheme: dark)').matches && document.documentElement.dataset.theme!=='light' || document.documentElement.dataset.theme==='dark';
+  if(!lmap){
+    el.innerHTML='';
+    lmap=L.map(el,{zoomControl:true,attributionControl:true,scrollWheelZoom:false});
+    L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_all':'rastertiles/voyager'}/{z}/{x}/{y}{r}.png`,{maxZoom:18,subdomains:'abcd',attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>'}).addTo(lmap);
+    lLayer=L.layerGroup().addTo(lmap);
+    lmap.on('click',()=>{mapSelId=null;renderMapSel(mapPoints())});
+  }
+  lLayer.clearLayers();
+  const me=[setup.lat,setup.lon];
+  [30,60].forEach(m=>L.circle(me,{radius:ringKm(m)*1000,color:cssVar('--ink-3'),weight:1.2,dashArray:'4 6',fill:false,interactive:false}).addTo(lLayer));
+  L.circleMarker(me,{radius:7,color:'#fff',weight:2.5,fillColor:cssVar('--ink'),fillOpacity:1}).bindTooltip('You',{permanent:true,direction:'top',offset:[0,-8],className:'youtip'}).addTo(lLayer);
+  const pts=mapPoints(); const smax=Math.max(...pts.map(p=>p.score),1),smin=Math.min(...pts.map(p=>p.score),0);
+  const col={ev:cssVar('--amber'),free:cssVar('--moss'),paid:cssVar('--verm')};
+  pts.forEach(p=>{ if(p.lat==null) return; const r=6+(smax>smin?(p.score-smin)/(smax-smin):0.5)*8;
+    L.circleMarker([p.lat,p.lon],{radius:r,color:mapSelId===p.id?cssVar('--ink'):'#fff',weight:mapSelId===p.id?3:1.5,fillColor:p.event?col.ev:p.price==='free'?col.free:col.paid,fillOpacity:.9})
+      .on('click',e=>{L.DomEvent.stopPropagation(e);mapSelId=p.id;renderMap()}).addTo(lLayer); });
+  if(!el.dataset.fitted||el.dataset.fitted!==setup.lat+','+setup.lon+','+setup.mode){
+    lmap.setView(me,13,{animate:false}); el.dataset.fitted=setup.lat+','+setup.lon+','+setup.mode;
+  }
+  setTimeout(()=>lmap.invalidateSize(),50);
+  renderMapSel(pts);
+}
+function renderSchematic(){
   const W=360,H=414,cx=W/2,cy=H/2;
   const kmLat=111.2,kmLon=111.2*Math.cos(setup.lat*Math.PI/180);
   const pxPerKm=W/2/ ({car:22,bike:14,transit:17}[setup.mode]||17);   // 60-min ring at roughly the edge
@@ -694,6 +746,9 @@ function renderMap(){
   svg+=`<g class="you"><circle cx="${ux}" cy="${uy}" r="5"/><circle cx="${ux}" cy="${uy}" r="9" fill="none" stroke="var(--ink)" opacity=".35"/><text x="${ux}" y="${uy-14}">You</text></g></svg>`;
   $('#map').innerHTML=svg;
   $('#map').querySelectorAll('.dot').forEach(g=>g.onclick=()=>{mapSelId=g.dataset.id;renderMap()});
+  renderMapSel(pts);
+}
+function renderMapSel(pts){
   const sel=pts.find(p=>p.id===mapSelId); const box=$('#mapSel');
   if(!sel){box.hidden=true;return}
   box.hidden=false; const st=status[sel.id];
