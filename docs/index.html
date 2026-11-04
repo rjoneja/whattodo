@@ -73,7 +73,8 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .field{display:flex;flex-direction:column;gap:var(--u)}
 .field label{font-family:var(--display);font-weight:600;font-size:15px}
 .field input[type=text],.field input[type=date]{width:100%;min-width:0;padding:calc(var(--u)*1.6) calc(var(--u)*2);border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:600 19px var(--display);text-transform:uppercase;letter-spacing:.05em}
-.field input[type=date]{text-transform:none;font-size:16px;font-weight:500}
+.field input[type=date]{text-transform:none;font-size:16px;font-weight:500;width:auto;max-width:min(100%,260px);min-width:0;display:block;-webkit-appearance:none;appearance:none;text-align:left}
+.field input[type=date]::-webkit-date-and-time-value{text-align:left}
 .hint{font-size:13px;color:var(--ink-2)}
 .err{color:var(--verm);font-size:14px;font-weight:500}
 .row{display:flex;gap:var(--u);align-items:center;flex-wrap:wrap}
