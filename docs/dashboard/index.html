@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#122018">
+<title>Dashboard · JauntOut</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Jost:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--paper:#122018;--paper-2:#1A2C22;--card:#1A2C22;--ink:#F2EEE3;--ink-2:#C2C8BE;--ink-3:#86938A;--line:#2A3D31;--verm:#EE6A3F;--moss:#5DB58A;--grid:#22362A;
+  --brand:"Young Serif",Georgia,serif;--display:"Jost",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 56px}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.logo{font-family:var(--brand);font-size:26px;letter-spacing:-.03em;display:inline-flex;align-items:baseline;color:var(--ink);text-decoration:none}
+.logo svg{height:.62em;width:.45em;align-self:center;margin:0 .01em 0 .02em;fill:var(--verm)}
+.logo small{font-family:var(--display);font-weight:600;font-size:10px;letter-spacing:.24em;color:var(--ink-2);margin-left:6px}
+h1{font-family:var(--brand);font-weight:400;font-size:34px;letter-spacing:-.02em;margin:26px 0 4px}
+h2{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:30px 0 10px}
+.sub{color:var(--ink-3);font-size:13px;margin:0}
+.range{display:flex;gap:6px;margin:16px 0 4px}
+.range button,.ghost{font:600 13px var(--display);color:var(--ink-2);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+.range button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.tile .n{font-family:var(--brand);font-size:32px;line-height:1.05;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tile .l{font-size:13px;color:var(--ink-2);margin-top:4px}
+.tile .h{font-size:12px;color:var(--ink-3)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;position:relative}
+.chart{width:100%;height:190px;display:block}
+.chart .bar{fill:var(--moss)}
+.chart .bar:hover,.chart .hit:hover+.bar{fill:#7DCCA2}
+.chart text{font:11px var(--body);fill:var(--ink-3)}
+.chart .gl{stroke:var(--grid);stroke-width:1}
+.tip{position:absolute;pointer-events:none;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12px;color:var(--ink);white-space:nowrap;transform:translate(-50%,-110%);display:none}
+.tip b{font-family:var(--display);font-weight:600}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:640px){.cols{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{padding:6px 0;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+tr:first-child td,tr:first-child th{border-top:0}
+th{font:600 12px var(--display);color:var(--ink-3);letter-spacing:.04em}
+td.v{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink);padding-left:12px;white-space:nowrap}
+td .meter{display:block;height:4px;border-radius:2px;background:var(--moss);margin-top:4px;opacity:.75}
+.muted{color:var(--ink-3)}
+.login{max-width:360px;margin:60px auto;display:flex;flex-direction:column;gap:10px}
+.login input{font:16px var(--body);padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.login button{font:700 16px var(--display);padding:12px;border-radius:12px;border:0;background:var(--verm);color:var(--paper);cursor:pointer}
+.err{color:var(--verm);font-size:13px}
+details{margin-top:10px}summary{cursor:pointer;color:var(--ink-2);font-size:13px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a class="logo" href="/">jaunt<svg viewBox="0 0 60 84" aria-hidden="true"><path fill-rule="evenodd" d="M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z"/></svg>ut<small>LONDON</small></a>
+    <button class="ghost" id="out" hidden>Sign out</button></header>
+
+  <form class="login" id="login" hidden>
+    <h1 style="margin:0">Dashboard</h1>
+    <p class="sub">Private. Enter the password you saved as DASH_KEY.</p>
+    <input id="key" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password">
+    <button>Open</button><div class="err" id="lerr"></div>
+  </form>
+
+  <main id="main" hidden>
+    <h1>Dashboard</h1>
+    <p class="sub" id="asof"></p>
+    <div class="range" id="range"><button data-d="7">7 days</button><button data-d="30" class="on">30 days</button><button data-d="90">90 days</button></div>
+
+    <h2>People</h2>
+    <div class="tiles" id="tiles1"></div>
+    <h2>Phones each day</h2>
+    <div class="panel"><svg class="chart" id="chart" role="img" aria-label="Phones using JauntOut each day"></svg><div class="tip" id="tip"></div>
+      <details><summary>Daily numbers</summary><table id="dailyT"></table></details></div>
+
+    <h2>Sharing</h2>
+    <div class="tiles" id="tiles2"></div>
+    <div class="cols" style="margin-top:10px">
+      <div class="panel"><table id="shareWho"></table></div>
+      <div class="panel"><table id="topShared"></table></div>
+    </div>
+
+    <h2>Swiping</h2>
+    <div class="cols">
+      <div class="panel"><table id="swipes"></table></div>
+      <div class="panel"><table id="topSaved"></table></div>
+    </div>
+
+    <h2>Who's going &amp; how they travel</h2>
+    <div class="cols">
+      <div class="panel"><table id="who"></table></div>
+      <div class="panel"><table id="modes"></table></div>
+    </div>
+    <p class="sub" style="margin-top:22px">Counted on our own Cloudflare script. No cookies and no IP addresses; a phone is a random id it made itself.</p>
+  </main>
+  <p class="err" id="err"></p>
+</div>
+<script>
+const $=s=>document.querySelector(s), esc=x=>String(x??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}};
+let URL0=null, days=30, names={};
+const LABEL={saved:'Saved',pass:'Not for me',done:'Been',again:'Would go again',solo:'Just me',couple:'A couple',family:'Family',friends:'Friends',
+  transit:'Public transport',bike:'Bike',car:'Car',wa:'WhatsApp link',link:'Other link',direct:'Direct'};
+const lab=x=>x==null||x===''?'—':String(x).split('+').map(p=>LABEL[p]||p).join(' + ');
+const fmtDay=d=>new Date(d+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+
+async function boot(){
+  try{ const j=await (await fetch('/stats.json',{cache:'no-cache'})).json(); URL0=j.url; }catch(e){ $('#err').textContent='Stats aren’t switched on yet (no /stats.json). Add the Cloudflare secrets and run the stats deploy.'; return; }
+  fetch('/events.json').then(r=>r.json()).then(j=>{ (j.events||[]).forEach(e=>names[e.id]=e.name); }).catch(()=>{});
+  if(store.get('wtd.dashkey')) load(); else showLogin();
+}
+function showLogin(msg){ $('#login').hidden=false; $('#main').hidden=true; $('#out').hidden=true; $('#lerr').textContent=msg||''; $('#key').focus(); }
+$('#login').onsubmit=e=>{ e.preventDefault(); store.set('wtd.dashkey',$('#key').value.trim()); load(); };
+$('#out').onclick=()=>{ store.set('wtd.dashkey',null); showLogin(); };
+$('#range').querySelectorAll('button').forEach(b=>b.onclick=()=>{ days=+b.dataset.d; $('#range').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); load(); });
+
+async function load(){
+  let r; try{ r=await fetch(URL0+'/summary?days='+days,{headers:{authorization:'Bearer '+store.get('wtd.dashkey')}}); }catch(e){ $('#err').textContent='Couldn’t reach the stats script.'; return; }
+  if(r.status===401){ store.set('wtd.dashkey',null); return showLogin('That password didn’t work.'); }
+  const S=await r.json(); $('#login').hidden=true; $('#main').hidden=false; $('#out').hidden=false; $('#err').textContent='';
+  render(S);
+}
+const sum=(a,k)=>a.reduce((s,x)=>s+(+x[k]||0),0);
+function tiles(el,items){ $(el).innerHTML=items.map(([n,l,h])=>`<div class="tile"><div class="n">${esc(n)}</div><div class="l">${esc(l)}</div>${h?`<div class="h">${esc(h)}</div>`:''}</div>`).join(''); }
+function table(el,head,rows,valHead){ const max=Math.max(1,...rows.map(r=>+r[1]||0));
+  $(el).innerHTML=`<tr><th>${esc(head)}</th><th style="text-align:right">${esc(valHead||'')}</th></tr>`+(rows.length?rows.map(([k,v])=>`<tr><td>${esc(k)}<span class="meter" style="width:${Math.round(100*(+v||0)/max)}%"></span></td><td class="v">${esc(v)}</td></tr>`).join(''):`<tr><td class="muted" colspan="2">Nothing yet</td></tr>`); }
+function render(S){
+  const byDay={}; S.daily.forEach(d=>byDay[d.day]=d); const newBy={}; S.firsts.forEach(f=>newBy[f.day]=f.n);
+  const all=[]; for(let i=S.days-1;i>=0;i--){ const d=new Date(Date.now()-i*864e5).toLocaleDateString('en-CA',{timeZone:'Europe/London'}); all.push(Object.assign({day:d,phones:0,visits:0,shares:0,opens:0},byDay[d]||{},{fresh:newBy[d]||0})); }
+  const shares=sum(S.daily,'shares'), opens=sum(S.daily,'opens');
+  $('#asof').textContent=`Last ${S.days} days · from ${fmtDay(S.since)} · updated ${new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}`;
+  tiles('#tiles1',[[S.phones,'Phones','used JauntOut'],[sum(S.firsts,'n'),'New phones','first visit in this period'],[S.returning,'Came back','on more than one day']]);
+  tiles('#tiles2',[[shares,'Shares','WhatsApp button pressed'],[opens,'Opened','shared links tapped'],[shares?Math.round(100*opens/shares)+'%':'—','Open rate','opens per share']]);
+  table('#shareWho','Shared by',S.shareWho.map(x=>[lab(x.who),x.n]),'Shares');
+  table('#topShared','Most shared',S.topShared.map(x=>[names[x.id]||x.id,x.n]),'Shares');
+  table('#swipes','Swipes',S.swipes.map(x=>[lab(x.kind),x.n]),'Count');
+  table('#topSaved','Most saved',S.topSaved.map(x=>[names[x.id]||x.id,x.n]),'Saves');
+  table('#who','Who’s going',S.who.map(x=>[lab(x.who),x.phones]),'Phones');
+  table('#modes','Travel ticked',S.modes.map(x=>[lab(x.modes),x.phones]),'Phones');
+  $('#dailyT').innerHTML='<tr><th>Day</th><th style="text-align:right">Phones</th><th style="text-align:right">New</th><th style="text-align:right">Shares</th><th style="text-align:right">Opens</th></tr>'+
+    all.slice().reverse().map(d=>`<tr><td>${fmtDay(d.day)}</td><td class="v">${d.phones}</td><td class="v">${d.fresh}</td><td class="v">${d.shares}</td><td class="v">${d.opens}</td></tr>`).join('');
+  chart(all);
+}
+function chart(all){
+  const svg=$('#chart'), W=svg.clientWidth||800, H=190, L=30, R=6, T=10, B=22;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  // a top value that splits into three whole, even steps (3, 6, 9 … 30, 60, 90 …)
+  const max=Math.max(3,...all.map(d=>d.phones)), mag=Math.pow(10,Math.floor(Math.log10(max/3))), top=Math.ceil(max/(3*mag))*3*mag;
+  const y=v=>T+(H-T-B)*(1-v/top), bw=(W-L-R)/all.length, gap=Math.min(2,bw*.25);
+  let g=''; for(let i=0;i<=3;i++){ const v=Math.round(top*i/3), yy=y(v); g+=`<line class="gl" x1="${L}" x2="${W-R}" y1="${yy}" y2="${yy}"/><text x="${L-6}" y="${yy+4}" text-anchor="end">${v}</text>`; }
+  all.forEach((d,i)=>{ const x=L+i*bw+gap/2, w=Math.max(1,bw-gap), h=(H-T-B)*(d.phones/top), yy=H-B-h, r=Math.min(4,w/2,h);
+    // rounded data end, square on the baseline
+    const path=h>0?`M${x},${H-B}V${yy+r}Q${x},${yy} ${x+r},${yy}H${x+w-r}Q${x+w},${yy} ${x+w},${yy+r}V${H-B}Z`:'';
+    g+=`<rect class="hit" data-i="${i}" x="${L+i*bw}" y="${T}" width="${bw}" height="${H-T-B}" fill="transparent"/>${path?`<path class="bar" d="${path}"/>`:''}`;
+    if(all.length<=10||i%Math.ceil(all.length/6)===0) g+=`<text x="${x+w/2}" y="${H-6}" text-anchor="middle">${fmtDay(d.day)}</text>`; });
+  svg.innerHTML=g;
+  const tip=$('#tip');
+  svg.querySelectorAll('.hit').forEach(h=>{ h.onmouseenter=h.ontouchstart=()=>{ const d=all[+h.dataset.i], bx=h.getBoundingClientRect(), px=svg.parentElement.getBoundingClientRect();
+      tip.innerHTML=`<b>${fmtDay(d.day)}</b> · ${d.phones} phone${d.phones===1?'':'s'}${d.fresh?` (${d.fresh} new)`:''}`; tip.style.left=(bx.left-px.left+bx.width/2)+'px'; tip.style.top=(y(d.phones)+14)+'px'; tip.style.display='block'; };
+    h.onmouseleave=()=>tip.style.display='none'; });
+}
+addEventListener('resize',()=>{ if(!$('#main').hidden) load(); });
+boot();
+</script>
+</body>
+</html>

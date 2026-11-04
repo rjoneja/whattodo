@@ -1,4 +1,7 @@
+.wrangler/
 __pycache__/
 candidates.csv
 node_modules/
+stats/deploy.log
+stats/wrangler.toml
 tests/out/
