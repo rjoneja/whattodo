@@ -543,7 +543,7 @@ function transitMins(it){ const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3; ret
 function trip(it){
   const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3;
   const rough=!!(wx&&(wx.wet||wx.windy));               // rain or strong wind: walking and cycling get less appealing
-  let transit=(travelCache[it.id]||transitMins(it)); const transitCost=transit+(rough?5:0);
+  let transit=((travelCache[it.id]&&travelCache[it.id].mins)||transitMins(it)); const transitCost=transit+(rough?5:0);
   const walk=Math.round(d/4.8*60);
   // short hop on a decent day: just walk
   if(setup.mode!=='bike' && !rough && walk<=30 && walk<=transit+8) return {mins:walk,cost:walk,how:'walk'};
@@ -562,14 +562,57 @@ function trip(it){
   return {mins:transit,cost:transitCost,how:'transport'};
 }
 function estMins(it){ return trip(it).mins; }
+// TfL journeys: name the actual route ("65 bus", "train from Kingston, then 213 bus") and prefer fewer changes over a few minutes saved.
+function stopName(p){ return ((p&&p.commonName)||'').replace(/ \(.*?\)$/,'').replace(/ (Rail|Underground|DLR|Overground|Tram|Elizabeth line) Station$| Station$| Tram Stop$| Pier$/,'').trim(); }
+function legName(l){
+  const m=l.mode&&l.mode.id, r=(((l.routeOptions||[])[0]||{}).name||'').trim(), from=stopName(l.departurePoint);
+  switch(m){
+    case 'bus': return r?r+' bus':'bus';
+    case 'tube': return r?r.replace(/ line$/i,'')+' line':'Tube';
+    case 'national-rail': return from?'train from '+from:'train';
+    case 'overground': return r&&!/overground/i.test(r)?r.replace(/ line$/i,'')+' line':(from?'Overground from '+from:'Overground');
+    case 'elizabeth-line': return 'Elizabeth line';
+    case 'dlr': return 'DLR';
+    case 'tram': return 'tram';
+    case 'river-bus': return from?'boat from '+from:'river boat';
+    case 'cable-car': return 'cable car';
+    case 'coach': return r?r+' coach':'coach';
+    default: return r||m||'transport';
+  }
+}
+function routeOf(j){
+  const ride=(j.legs||[]).filter(l=>l.mode&&l.mode.id!=='walking'&&l.mode.id!=='cycle');
+  const names=ride.map(legName).filter((n,i,a)=>n!==a[i-1]);
+  const walk=(j.legs||[]).filter(l=>l.mode&&l.mode.id==='walking').reduce((s,l)=>s+(l.duration||0),0);
+  let route;
+  if(!names.length) route='walk';
+  else if(names.length===1) route=names[0];
+  else if(names.length===2){ const [a,b]=names; route=/ bus$/.test(a)&&/ bus$/.test(b)?a.replace(/ bus$/,'')+' then '+b:a+', then '+b; }
+  else route=ride.map(l=>({'national-rail':'train','river-bus':'boat','overground':'Overground'})[l.mode.id]||legName(l)).filter((n,i,a)=>n!==a[i-1]).join(', ');
+  const steps=(j.legs||[]).map(l=>l.mode&&l.mode.id==='walking'?`walk ${l.duration} min`:((l.instruction&&l.instruction.summary)||legName(l))).join(' → ');
+  return {mins:j.duration,route,steps,changes:Math.max(0,ride.length-1),walk};
+}
+let tflStore={}; try{tflStore=JSON.parse(localStorage.getItem('wtd.tfl')||'{}')}catch(e){}
+function tflKey(it,t){ return [setup.lat.toFixed(3),setup.lon.toFixed(3),(+it.lat).toFixed(3),(+it.lon).toFixed(3),setup.date,t].join('|'); }
 async function tflMins(it){
   if(setup.mode==='bike') return null; if(travelCache[it.id]!==undefined) return travelCache[it.id];
+  // timed event on the chosen day: plan to arrive 10 minutes early; otherwise leave mid-morning
+  const tm=(it.date===setup.date&&/^(\d{1,2}):(\d{2})/.exec(it.time||''));
+  let q='time=1000', tkey='1000';
+  if(tm){ const t=Math.max(8*60,(+tm[1])*60+(+tm[2])-10); tkey=String(Math.floor(t/60)).padStart(2,'0')+String(t%60).padStart(2,'0'); q=`time=${tkey}&timeIs=Arriving`; }
+  const key=tflKey(it,tkey); if(tflStore[key]) return (travelCache[it.id]=tflStore[key]);
   travelCache[it.id]=null;
-  try{const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),7000);
-    const u=`https://api.tfl.gov.uk/Journey/JourneyResults/${setup.lat},${setup.lon}/to/${it.lat},${it.lon}?date=${setup.date.replace(/-/g,'')}&time=1000&journeyPreference=LeastTime`;
-    const r=await fetch(u,{signal:ctrl.signal}); if(!r.ok) return null; const j=await r.json();
-    if(j.journeys&&j.journeys.length){const m=Math.min(...j.journeys.map(x=>x.duration));travelCache[it.id]=m;return m}
-  }catch(e){} return null;
+  try{const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),12000);
+    const u=`https://api.tfl.gov.uk/Journey/JourneyResults/${setup.lat},${setup.lon}/to/${it.lat},${it.lon}?date=${setup.date.replace(/-/g,'')}&${q}&journeyPreference=LeastTime`;
+    const r=await fetch(u,{signal:ctrl.signal}); if(!r.ok){track('tfl_fail',{code:r.status});delete travelCache[it.id];return null} const j=await r.json();
+    if(j.journeys&&j.journeys.length){
+      const per=setup.who==='family'?7:5;                // each change costs this many minutes of hassle (more with kids)
+      const best=j.journeys.map(routeOf).sort((a,b)=>(a.mins+a.changes*per)-(b.mins+b.changes*per))[0];
+      travelCache[it.id]=best; tflStore[key]=best;
+      try{const ks=Object.keys(tflStore); if(ks.length>300) ks.slice(0,ks.length-300).forEach(k=>delete tflStore[k]); localStorage.setItem('wtd.tfl',JSON.stringify(tflStore))}catch(e){}
+      return best;
+    }
+  }catch(e){track('tfl_fail',{code:'timeout'});delete travelCache[it.id]} return null;
 }
 
 /* ---------- SCORING ---------- */
@@ -598,7 +641,7 @@ function score(it,mins){
     else { const end=it.to?fromIso(it.to):null; left=end?Math.max(1,Math.round((end-fromIso(setup.date))/864e5)+1):365; }
     const boost = left<=1 ? 6 : left<=3 ? 5 : left<=7 ? 4.2 : left<=14 ? 3.4 : left<=30 ? 2.6 : left<=90 ? 1.6 : 0.8;
     s+=boost;
-    why.push(left<=1?'one day only':left<=7?'ends in '+left+' days':left<=30?'on for a limited time':'temporary');
+    why.push(it.date?'one day only':left<=1?'last day':left===2?'ends tomorrow':left<=7?'ends in '+(left-1)+' days':left<=30?'on for a limited time':'temporary');
   }
   if(mins<=25) why.push('close by');
   s+=Math.random()*0.5;
@@ -653,7 +696,8 @@ function renderStrip(){
   const whoL={solo:'Just me',couple:'Couple',family:'Family · '+setup.ages.join(', '),friends:'Friends'}[setup.who]||'';
   $('#ctx').innerHTML=`<b>${whoL}</b><br>${nice(d)} · ${setup.pc||''}`;
 }
-function travelLabel(c){ return (c.est&&c.how!=='walk'?'~':'')+c.mins+' min '+({drive:'drive',cycle:'by bike',transport:'by transport',walk:'walk'}[c.how||'transport'])+(c.how==='drive'&&c.parking?' ('+c.parking+')':'')+(c.note&&c.how==='transport'&&setup.mode==='bike'?' ('+c.note+')':'') }
+function travelLabel(c){ if((c.how||'transport')==='transport'&&c.route&&!c.est) return c.mins+' min '+(c.route==='walk'?'walk':'· '+c.route)+(c.note&&setup.mode==='bike'?' ('+c.note+')':'');
+  return (c.est&&c.how!=='walk'?'~':'')+c.mins+' min '+({drive:'drive',cycle:'by bike',transport:'by bus or train',walk:'walk'}[c.how||'transport'])+(c.how==='drive'&&c.parking?' ('+c.parking+')':'')+(c.note&&c.how==='transport'&&setup.mode==='bike'?' ('+c.note+')':'') }
 /* ---------- SHARING ---------- */
 const EMOJI=[[/pickle/i,'🥒'],[/firework|bonfire/i,'🎆'],[/christmas|xmas|festive|santa/i,'🎄'],[/diwali|lantern|light show|illuminat/i,'🪔'],[/market|fair|bazaar/i,'🛍️'],[/food|street food|supper|brunch|tasting|beer|wine/i,'🍽️'],[/farm|animal|zoo|alpaca|goat/i,'🐐'],[/park|garden|walk|nature|wood|forest|heath|wetland/i,'🌳'],[/music|concert|gig|choir|orchestra|jazz|shanty/i,'🎶'],[/theatre|show|puppet|panto|circus|comedy/i,'🎭'],[/museum|exhibition|gallery|history|art/i,'🖼️'],[/swim|lido/i,'🏊'],[/train|railway|bus|transport/i,'🚂'],[/kids|family|play|story/i,'🎈']];
 function emojiFor(c){const t=c.name+' '+(c.tags||[]).join(' ');for(const [re,e] of EMOJI) if(re.test(t)) return e; return '📍';}
@@ -681,7 +725,7 @@ function cardHTML(c){
   if(c.days) badges.push(`<span class="badge warn">${c.days.length===1?DAYS[c.days[0]]+'s only':'Selected days'}</span>`);
   if(c.months) badges.push(`<span class="badge warn">Seasonal</span>`);
   if(c.ages&&c.ages[1]<99) badges.push(`<span class="badge hot">Ages ${c.ages[0]}–${c.ages[1]}</span>`);
-  if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5); badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left<=7?'Ends in '+left+' days':'Until '+nice(fromIso(c.to))}</span>`)} }
+  if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5); badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left===1?'Ends tomorrow':left<=7?'Ends in '+left+' days':'Until '+nice(fromIso(c.to))}</span>`)} }
   if(status[c.id]==='again') badges.push(`<span class="badge good">You'd go again</span>`);
   const why=c.why.length?`<p class="why"><b>Why this:</b> ${c.why.slice(0,2).join(' · ')}</p>`:'';
   const im=IMAGES[c.id]; const img=im&&im.url?`<div class="img" style="background-image:url('${im.url.replace(/'/g,'%27')}')">${im.credit?`<small>${im.credit}</small>`:''}</div>`:'';
@@ -697,9 +741,9 @@ function renderStack(){
   deck.slice(0,3).forEach((c,i)=>{const el=document.createElement('div');el.className='card'+(i===1?' under':i===2?' under2':'');el.style.zIndex=3-i;el.innerHTML=cardHTML(c);el.dataset.id=c.id;st.appendChild(el);if(i===0)attachDrag(el);});
   requestAnimationFrame(()=>{const tops=st.querySelectorAll('.card');if(tops.length>1){const h=tops[0].offsetHeight;tops.forEach((c,i)=>{if(i>0){c.style.height=h+'px';c.style.minHeight='0';c.classList.add('peek');}});}st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}});});
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
-  deck.slice(0,2).forEach(refineTravel);
+  deck.slice(0,3).forEach(refineTravel);
 }
-async function refineTravel(c){ if(c.how!=='transport'||!c.est) return; const m=await tflMins(c); if(m){c.mins=m;c.cost=m;c.est=false; const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.textContent=travelLabel(c);el.classList.add('good')}} }
+async function refineTravel(c){ if(c.how!=='transport'||!c.est) return; const t=await tflMins(c); if(t){c.mins=t.mins;c.cost=t.mins;c.route=t.route;c.steps=t.steps;c.est=false; const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.textContent=travelLabel(c);el.title=t.steps;el.classList.add('good')}} }
 
 /* drag */
 function attachDrag(el){
@@ -792,7 +836,7 @@ function renderMapSel(pts){
   const sel=pts.find(p=>p.id===mapSelId); const box=$('#mapSel');
   if(!sel){box.hidden=true;return}
   box.hidden=false; const st=status[sel.id];
-  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ~${sel.mins} min ${({drive:'drive',cycle:'by bike',transport:'by transport',walk:'walk'})[sel.how||'transport']}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
+  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ${travelLabel(sel)}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
     <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener">Details ›</a><a class="mini" href="https://www.google.com/maps/dir/?api=1&destination=${sel.lat},${sel.lon}&travelmode=${({drive:'driving',cycle:'bicycling',walk:'walking'})[sel.how]||'transit'}" target="_blank" rel="noopener">Directions ›</a></div>`;
   box.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{status[sel.id]=b.dataset.ms;save();track('map_action',{id:sel.id,kind:b.dataset.ms});deck=deck.filter(d=>d.id!==sel.id);renderMap();renderStack();toast(b.dataset.ms==='saved'?'Saved ♥':'Ticked off')});
 }
