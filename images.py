@@ -95,6 +95,20 @@ def image_size(u):
     return None
 
 _client = None
+def ask(content, max_tokens=60):
+    """One short-answer call. Thinking is switched off so the answer isn't crowded out; if the API won't
+    take that, fall back to a roomy token budget instead."""
+    global _client
+    import anthropic
+    _client = _client or anthropic.Anthropic()
+    model = os.environ.get("WTD_MODEL", "claude-haiku-5-5")
+    try:
+        msg = _client.messages.create(model=model, max_tokens=max_tokens, thinking={"type": "disabled"}, messages=[{"role": "user", "content": content}])
+    except Exception as ex:
+        if "thinking" not in str(ex).lower(): raise
+        msg = _client.messages.create(model=model, max_tokens=max(max_tokens, 2000), messages=[{"role": "user", "content": content}])
+    return "".join(getattr(b, "text", "") for b in msg.content if getattr(b, "type", "") == "text"), getattr(msg, "stop_reason", "")
+
 def shrink(data, limit=1568):
     """Downscale big images so Claude accepts them (and costs less)."""
     try:
@@ -127,15 +141,14 @@ def relevance(u, name, subject):
             ctype = "image/png" if data[:4] == b"\x89PNG" else "image/webp" if data[8:12] == b"WEBP" else "image/jpeg"
         if ct2: ctype = ct2
         VETS["n"] += 1
-        msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=40, messages=[{"role": "user", "content": [
+        txt, stop = ask([
             {"type": "image", "source": {"type": "base64", "media_type": ctype, "data": base64.b64encode(data).decode()}},
             {"type": "text", "text": f"A listings app needs a photo for '{name}', which is about: {subject}.\n"
              "Score this image 0-3. 3 = an appealing photo that clearly shows the subject (e.g. Diwali lights and dancers for a Diwali event, "
              "the performers, the artwork, the activity). 2 = an appealing photo that fits well. 1 = only the venue, building, room or a generic scene "
              "that doesn't show the subject. 0 = a logo, icon, text, a flyer that is mostly words, a map, a screenshot, or unappealing.\n"
-             "Answer in the form SCORE: <digit>"}]}])
-        txt = "".join(getattr(b, "text", "") for b in msg.content)
-        if VETS["n"] <= 6: print(f"    raw reply: {txt[:80]!r} stop={getattr(msg,'stop_reason','')}", file=sys.stderr)
+             "Answer in the form SCORE: <digit>"}])
+        if VETS["n"] <= 4: print(f"    raw reply: {txt[:60]!r} stop={stop}", file=sys.stderr)
         m = re.search(r"SCORE:\s*([0-3])", txt, re.I) or re.search(r"\b([0-3])\b", txt)
         return int(m.group(1)) if m else 0
     except Exception as ex:
@@ -157,10 +170,10 @@ def looks_like_photo(u, name):
         if ctype not in ("image/jpeg", "image/png", "image/webp", "image/gif"):
             ctype = "image/png" if data[:4] == b"\x89PNG" else "image/webp" if data[8:12] == b"WEBP" else "image/jpeg"
         if ct2: ctype = ct2
-        msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=5, messages=[{"role": "user", "content": [
+        txt, _ = ask([
             {"type": "image", "source": {"type": "base64", "media_type": ctype, "data": base64.b64encode(data).decode()}},
-            {"type": "text", "text": f"This image is for a listing called '{name}'. Answer YES if it is an appealing photograph (people, a place, an activity, an exhibit or artwork) that would make someone want to go. Answer NO if it is a logo, coat of arms, icon, plain text, a flyer that is mostly words, a map, a screenshot or a generic graphic. One word."}]}])
-        return "YES" in "".join(getattr(b, "text", "") for b in msg.content).upper()
+            {"type": "text", "text": f"This image is for a listing called '{name}'. Answer YES if it is an appealing photograph (people, a place, an activity, an exhibit or artwork) that would make someone want to go. Answer NO if it is a logo, coat of arms, icon, plain text, a flyer that is mostly words, a map, a screenshot or a generic graphic. One word."}])
+        return "YES" in txt.upper()
     except Exception as ex:
         print(f"  vet failed {u[:60]}: {str(ex)[:80]}", file=sys.stderr)
         return False
