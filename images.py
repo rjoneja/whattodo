@@ -167,8 +167,12 @@ def main():
             if e["id"] in out and (out[e["id"]].get("checked") != 3): out.pop(e["id"])
     used = {}
     for k, v in out.items(): used[v["url"]] = used.get(v["url"], 0) + 1
+    tried = out.pop("_tried", {})
+    today = time.strftime("%Y-%m-%d")
     for e in events:
         if e["id"] in out or not e.get("url", "").startswith("http"): continue
+        if tried.get(e["id"]) == today or (tried.get(e["id"]) and not a.recheck and len(tried) and tried[e["id"]] >= time.strftime("%Y-%m-%d", time.gmtime(time.time() - 7 * 86400))): continue
+        tried[e["id"]] = today
         t = None
         if "instagram.com" not in e["url"]:
             try: t = pick(e, used)
@@ -182,6 +186,7 @@ def main():
         time.sleep(0.5)
     live = set(WIKI) | {e["id"] for e in events}
     out = {k: v for k, v in out.items() if k in live}
+    out["_tried"] = {k: v for k, v in tried.items() if k in live and k not in out}
     json.dump(out, open(a.out, "w"), indent=0, ensure_ascii=False)
     print(f"wrote {len(out)} images to {a.out}")
 
