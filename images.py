@@ -124,7 +124,7 @@ def shrink(data, limit=1568):
 
 VETS = {"n": 0}
 MAX_VETS = int(os.environ.get("IMG_MAX_VETS", "1500"))       # spending cap per run
-def relevance(u, name, subject):
+def relevance(u, name, subject, specific=False):
     """0-3: how well this picture shows what the event is about. 3 = clearly the subject, 2 = good fit,
     1 = only the venue/room/generic scene, 0 = logo, text, poster, map, screenshot."""
     if not os.environ.get("ANTHROPIC_API_KEY"): return 2
@@ -143,12 +143,14 @@ def relevance(u, name, subject):
         VETS["n"] += 1
         txt, stop = ask([
             {"type": "image", "source": {"type": "base64", "media_type": ctype, "data": base64.b64encode(data).decode()}},
-            {"type": "text", "text": f"A listings app needs a photo for '{name}', which is about: {subject}.\n"
-             "Score this image 0-3. 3 = an appealing photo that clearly shows the subject (e.g. Diwali lights and dancers for a Diwali event, "
-             "the performers, the artwork, the activity). 2 = an appealing photo that fits well. 1 = only the venue, building, room or a generic scene "
-             "that doesn't show the subject. 0 = a logo, icon, text, a flyer that is mostly words, a map, a screenshot, or unappealing.\n"
-             "Reply with exactly one line, SCORE: <digit>, and nothing else. Do not describe the image."}], max_tokens=300)
-        if VETS["n"] <= 4: print(f"    raw reply: {txt[:60]!r} stop={stop}", file=sys.stderr)
+            {"type": "text", "text": f"A London listings app needs a photo for '{name}', which is about: {subject}.\n"
+             + ("This is a SPECIFIC place/work: score 3 only if the photo is recognisably that exact thing; anything else scores 0.\n" if specific else "")
+             + "Score 0-3. 3 = an appealing photo that clearly shows the subject. 2 = an appealing photo that fits it well. "
+             "1 = only the venue, building, room or a generic scene. 0 = a logo, icon, text, a flyer that is mostly words, a map, a screenshot, "
+             "something unappealing, OR something that only shares a word with the subject but is really something else (sci-fi costumes for a "
+             "Dickens play, a ceiling in another country for a London hall, a different event's crowd).\n"
+             "Reply in two lines:\nWHAT: <what the photo shows, max 10 words>\nSCORE: <digit>"}], max_tokens=300)
+        print(f"      {' '.join(txt.split())[:90]}", file=sys.stderr)
         m = re.search(r"SCORE:?\s*\**\s*([0-3])", txt, re.I) or re.search(r"^\s*([0-3])\s*$", txt)
         return int(m.group(1)) if m else 0
     except Exception as ex:
@@ -191,13 +193,15 @@ def subjects(events):
         prompt = ("For each London listing, say what a photo for it should SHOW: the thing people go for, not the venue it happens in "
                   "(a Diwali celebration in a sports hall → Diwali; a model railway show at a school → model railway). If the place itself "
                   "is the point (a palace tour, a park, a late opening of a museum) the place is the subject.\n"
-                  'Return ONLY a JSON array: [{"i":0,"subject":"Diwali celebration with lights and dance","q":"Diwali"}] where q is a 1-3 word '
-                  "photo search term.\n" + json.dumps(items, ensure_ascii=False))
+                  'Return ONLY a JSON array: [{"i":0,"subject":"Diwali celebration with lights and dance","q":"Diwali","kind":"generic"}] where q is a 1-4 word '
+                  'photo search term and kind is "generic" if any good photo of that kind of thing would do (Diwali, fireworks, a farmers market, '
+                  'storytime, a tarot meetup) or "specific" if only a photo of that exact place, building, artwork, show or person would be honest '
+                  '(the Painted Hall in Greenwich, a named exhibition, a named play). For specific ones q must name it fully, e.g. "Painted Hall Greenwich".\n' + json.dumps(items, ensure_ascii=False))
         try:
             msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=6000, messages=[{"role": "user", "content": prompt}])
             txt = "".join(getattr(x, "text", "") for x in msg.content); m = re.search(r"\[.*\]", txt, re.S)
             for v in (json.loads(m.group(0)) if m else []):
-                if isinstance(v, dict) and v.get("i") is not None and v["i"] < len(b): out[b[v["i"]]["id"]] = {"subject": str(v.get("subject", ""))[:90], "q": str(v.get("q", ""))[:40]}
+                if isinstance(v, dict) and v.get("i") is not None and v["i"] < len(b): out[b[v["i"]]["id"]] = {"subject": str(v.get("subject", ""))[:90], "q": str(v.get("q", ""))[:50], "kind": "specific" if v.get("kind") == "specific" else "generic"}
         except Exception as ex:
             print(f"subjects batch failed: {str(ex)[:80]}", file=sys.stderr)
     return out
@@ -230,6 +234,7 @@ def commons(q):
 def best_for(e, used, subj):
     """Event page photo if it shows the subject; else a Commons photo of the subject; else the venue shot (score 1)."""
     name, subject, q = e["name"], (subj or {}).get("subject") or e["name"], (subj or {}).get("q") or ""
+    specific = (subj or {}).get("kind") == "specific"
     host = re.sub(r"^https?://(www\.)?", "", e["url"]).split("/")[0]
     fallback = None
     if "instagram.com" not in e["url"]:
@@ -242,13 +247,13 @@ def best_for(e, used, subj):
             if not sz: continue
             w, h, kind = sz
             if w < 600 or h < 300 or w / max(h, 1) > 2.6 or w / max(h, 1) < 0.6: continue
-            sc = relevance(u, name, subject); print(f"    page {sc} {u[:70]}", file=sys.stderr)
+            sc = relevance(u, name, subject, specific); print(f"    page {sc} {u[:70]}", file=sys.stderr)
             if sc >= 2: return {"url": u, "credit": host, "fit": sc}
             if sc == 1 and not fallback: fallback = {"url": u, "credit": host, "fit": 1}
     cs = commons(q); print(f"    commons '{q}': {len(cs)}", file=sys.stderr)
     for c in [c for c in cs if used.get(c["url"], 0) == 0][:3]:
-        sc = relevance(c["url"], name, subject); print(f"    commons {sc} {c['url'][-50:]}", file=sys.stderr)
-        if sc >= 2: return dict(c, fit=sc)
+        sc = relevance(c["url"], name, subject, specific); print(f"    commons {sc} {c['url'].split('/')[-1][:50]}", file=sys.stderr)
+        if sc >= (3 if specific else 2): return dict(c, fit=sc)
     return fallback
 
 def pick(e, used):
@@ -287,7 +292,7 @@ def main():
     ap.add_argument("--refresh", action="store_true"); ap.add_argument("--recheck", action="store_true", help="re-vet existing event pictures")
     a = ap.parse_args()
     out = json.load(open(a.out)) if os.path.exists(a.out) and not a.refresh else {}
-    out.pop("_tried", None); tried = out.pop("_tried4", {})      # attempts under the subject-aware picker only
+    out.pop("_tried", None); out.pop("_tried4", None); tried = out.pop("_tried5", {})      # attempts under the subject-aware picker only
     out = {k: v for k, v in out.items() if "/640px-" not in v.get("url", "")}   # old non-standard size: refetch
     for id_, title in WIKI.items():
         if id_ in out: continue
@@ -308,7 +313,7 @@ def main():
     today = time.strftime("%Y-%m-%d")
     week_ago = time.strftime("%Y-%m-%d", time.gmtime(time.time() - 7 * 86400))
     # events needing a (better) picture: none yet, or one chosen before relevance scoring (checked < 4)
-    need = [e for e in events if e.get("url", "").startswith("http") and (e["id"] not in out or out[e["id"]].get("checked", 0) < 4)
+    need = [e for e in events if e.get("url", "").startswith("http") and (e["id"] not in out or out[e["id"]].get("checked", 0) < 5)
             and not (tried.get(e["id"]) and tried[e["id"]] >= week_ago and e["id"] not in out)]
     subj = subjects(need)
     print(f"pictures: {len(need)} to check, {len(subj)} subjects", file=sys.stderr)
@@ -320,19 +325,19 @@ def main():
         try: t = best_for(e, used, subj.get(e["id"]))
         except Exception as ex: print(f"{e['id']}: pick failed {str(ex)[:60]}", file=sys.stderr)
         if not t or t.get("fit", 0) < 2:
-            if old and old.get("checked", 0) >= 3 and (not t or t.get("fit", 0) <= 1): t = dict(old, fit=1)   # keep a vetted old picture over a mere venue shot
+            if old and old.get("checked", 0) >= 3 and "commons" not in old.get("page", "") and (not t or t.get("fit", 0) <= 1): t = dict(old, fit=1)   # keep a vetted old picture over a mere venue shot
             elif not t:
                 try: t = wiki_area(e.get("area"), e["name"])
                 except Exception: t = None
                 if t: t["fit"] = 1
         tried[e["id"]] = today
         if t:
-            t["checked"] = 4; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
+            t["checked"] = 5; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
             print(f"{e['id']}: fit {t.get('fit')} {'commons' if 'commons' in t.get('page','') or '·' in t.get('credit','') else 'page' if t['credit'] and 'Wikimedia' not in t['credit'] else 'area'}", file=sys.stderr)
         time.sleep(0.3)
     live = set(WIKI) | {e["id"] for e in events}
     out = {k: v for k, v in out.items() if k in live}
-    out["_tried4"] = {k: v for k, v in tried.items() if k in live and k not in out}
+    out["_tried5"] = {k: v for k, v in tried.items() if k in live and k not in out}
     json.dump(out, open(a.out, "w"), indent=0, ensure_ascii=False)
     print(f"wrote {len(out)} images to {a.out}")
 
