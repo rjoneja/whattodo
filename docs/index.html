@@ -1,24 +1,27 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light dark"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>WhatToDo?</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light dark"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>JauntOut London</title>
+<meta name="description" content="Things to do near you in London this weekend, matched to who's going, the weather and how far you'll travel.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 84 84%27%3E%3Crect width=%2784%27 height=%2784%27 rx=%2718%27 fill=%27%231E3F2B%27/%3E%3Cpath transform=%27translate(12 6) scale(1 .86)%27 fill-rule=%27evenodd%27 fill=%27%23E2582E%27 d=%27M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z%27/%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Jost:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
 /* Layout: quiet paper ground, white cards, one vermilion accent per screen; 8px rhythm. */
 :root{
   --u:8px;
-  --paper:#F5F4F0; --paper-2:#ECEAE4; --ink:#1C1F2B; --ink-2:#5A5E6E; --ink-3:#9A9DA8;
-  --verm:#D1472B; --verm-soft:#FBEAE5; --verm-ink:#fff; --moss:#2F7D6B; --moss-soft:#E4F1ED; --amber:#B9770E; --amber-soft:#FBF1DC; --sky:#4E7FA6;
-  --line:#DDDAD2; --card:#FFFFFF; --shadow:0 1px 2px rgba(28,31,43,.06),0 8px 24px rgba(28,31,43,.06);
+  --paper:#F2EEE3; --paper-2:#E8E2D3; --ink:#1E3F2B; --ink-2:#4F6357; --ink-3:#8C9890;
+  --verm:#E2582E; --verm-soft:#FBE6DC; --verm-ink:#fff; --moss:#2F7D5B; --moss-soft:#E1EFE6; --amber:#A86A0C; --amber-soft:#F8EDD6; --sky:#4E7FA6;
+  --line:#DCD5C4; --card:#FBF9F3; --shadow:0 1px 2px rgba(30,63,43,.06),0 8px 24px rgba(30,63,43,.07);
+  --brand:"Young Serif",Georgia,"Times New Roman",serif;
   --display:"Jost","Futura","Avenir Next","Gill Sans",system-ui,sans-serif;
   --body:"IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --paper:#15171F; --paper-2:#1E2129; --ink:#EDEBE5; --ink-2:#B5B3AC; --ink-3:#7A7D88;
-  --verm:#E8603F; --verm-soft:#3A221B; --verm-ink:#15171F; --moss:#5BB09A; --moss-soft:#1E3330; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
-  --line:#2C2F39; --card:#1E2129; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark } }
+  --paper:#122018; --paper-2:#1A2C22; --ink:#F2EEE3; --ink-2:#C2C8BE; --ink-3:#86938A;
+  --verm:#EE6A3F; --verm-soft:#3A2419; --verm-ink:#122018; --moss:#5DB58A; --moss-soft:#1C3527; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
+  --line:#2A3D31; --card:#1A2C22; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark } }
 :root[data-theme="dark"]{
-  --paper:#15171F; --paper-2:#1E2129; --ink:#EDEBE5; --ink-2:#B5B3AC; --ink-3:#7A7D88;
-  --verm:#E8603F; --verm-soft:#3A221B; --verm-ink:#15171F; --moss:#5BB09A; --moss-soft:#1E3330; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
-  --line:#2C2F39; --card:#1E2129; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark }
+  --paper:#122018; --paper-2:#1A2C22; --ink:#F2EEE3; --ink-2:#C2C8BE; --ink-3:#86938A;
+  --verm:#EE6A3F; --verm-soft:#3A2419; --verm-ink:#122018; --moss:#5DB58A; --moss-soft:#1C3527; --amber:#E0A43A; --amber-soft:#3A2F17; --sky:#7FA9CC;
+  --line:#2A3D31; --card:#1A2C22; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark }
 
 [hidden]{display:none!important}
 html,body{height:100%}
@@ -33,8 +36,10 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .view[hidden]{display:none}
 
 .bar{display:flex;align-items:center;justify-content:space-between;gap:var(--u);padding-top:var(--u)}
-.logo{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.02em;display:flex;align-items:baseline;gap:2px;user-select:none}
-.logo .q{color:var(--verm)}
+.logo{font-family:var(--brand);font-weight:400;font-size:30px;letter-spacing:-.03em;line-height:1;display:inline-flex;align-items:baseline;user-select:none;color:var(--ink);white-space:nowrap}
+.logo .pin{height:.62em;width:.45em;align-self:center;transform:translateY(.02em);margin:0 .01em 0 .02em;fill:var(--verm)}
+.logo .city{font-family:var(--display);font-weight:600;font-size:10px;letter-spacing:.24em;color:var(--ink-2);margin-left:6px;align-self:flex-end;transform:translateY(2px)}
+.step h2,.card h3,#v-list h2,#v-map h2{font-family:var(--brand);font-weight:400;letter-spacing:-.015em}
 .bar .ctx{font-size:12px;color:var(--ink-2);text-align:right;line-height:1.35;max-width:62%}
 .bar .ctx b{color:var(--ink);font-weight:600}
 
@@ -56,6 +61,10 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .chip small{display:block;font-family:var(--body);font-weight:400;font-size:11px;color:var(--ink-2)}
 .chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .chip.on small{color:var(--paper-2)}
+.chip.saved{display:inline-flex;align-items:center;gap:2px;padding:0;overflow:hidden}
+.chip.saved button{padding:calc(var(--u)*1.1) 4px calc(var(--u)*1.1) calc(var(--u)*1.8);font:inherit;letter-spacing:.04em}
+.chip.saved .x{padding:calc(var(--u)*1.1) calc(var(--u)*1.4) calc(var(--u)*1.1) 6px;color:var(--ink-3);font-size:17px;line-height:1}
+.chip.saved.on .x{color:var(--paper-2)}
 .chip:disabled{opacity:.45}
 
 .field{display:flex;flex-direction:column;gap:var(--u)}
@@ -84,6 +93,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .card{position:absolute;top:0;left:0;right:0;height:auto;max-height:100%;min-height:58%;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:calc(var(--u)*1.1);padding:calc(var(--u)*2);touch-action:none;user-select:none;will-change:transform;overflow:hidden}
 .card.under{transform:translate(0,calc(var(--u)*1.2)) scale(.97);opacity:.7}
 .card.under2{transform:translate(0,calc(var(--u)*2.4)) scale(.94);opacity:.4}
+.card.peek>*{visibility:hidden}
 .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--u)}
 .card .area{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .card h3{font-size:23px;font-weight:700;line-height:1.05;margin-top:3px}
@@ -97,7 +107,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .price{font-family:var(--display);font-weight:700;font-size:14px;color:var(--verm);background:var(--verm-soft);border-radius:999px;padding:5px 10px;white-space:nowrap;line-height:1}
 .price.free{color:var(--moss);background:var(--moss-soft)}
 .badges{display:flex;flex-wrap:wrap;gap:6px}
-.badge{font-family:var(--body);font-weight:500;font-size:11.5px;padding:3px 8px;border-radius:999px;background:var(--paper-2);color:var(--ink-2)}
+.badge{font-family:var(--body);font-weight:500;font-size:11.5px;padding:3px 8px;border-radius:999px;background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-2)}
 .badge.hot{background:var(--verm-soft);color:var(--verm)}
 .badge.good{background:var(--moss-soft);color:var(--moss)}
 .badge.warn{background:var(--amber-soft);color:var(--amber)}
@@ -182,7 +192,7 @@ td.n{text-align:right}
 
 <div class="wrap">
   <div class="bar">
-    <button class="logo" id="logo" aria-label="WhatToDo home">WhatToDo<span class="q">?</span></button>
+    <button class="logo" id="logo" aria-label="JauntOut London, home">jaunt<svg viewBox="0 0 60 84" aria-hidden="true" class="pin"><path fill-rule="evenodd" d="M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z"></path></svg>ut<span class="city">LONDON</span></button>
     <div class="ctx" id="ctx"></div>
   </div>
 
@@ -207,8 +217,9 @@ td.n{text-align:right}
       <div class="eyebrow">Step 3 of 3</div>
       <h2>Starting from?</h2>
       <div class="field"><label for="pc">Postcode</label>
+        <div class="chips" id="savedPcs" hidden></div>
         <input type="text" id="pc" placeholder="SE4 2AB" autocomplete="postal-code" inputmode="text" maxlength="8">
-        <div class="hint">Only used to work out travel time and weather. Stays on your phone.</div>
+        <div class="hint">Only used for travel times and weather. Your last few are kept on this phone, nowhere else.</div>
         <div class="err" id="pcErr" hidden></div></div>
       <div class="field"><label>Got a car?</label>
         <div class="chips">
@@ -353,6 +364,7 @@ const WHO=[['solo','Just me','Flying solo'],['couple','A couple','Two of us'],['
 /* ---------- STATE ---------- */
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let setup=LS.get('wtd.setup',{who:null,ages:[],date:null,pc:'',car:null,lat:null,lon:null,place:''});
+if(setup.car===null||setup.car===undefined){const c=LS.get('wtd.car',null); if(c!==null) setup.car=c;}
 let status=LS.get('wtd.status',{});       // id -> 'saved'|'again'|'done'|'pass'
 let swipes=LS.get('wtd.swipes',{like:{},pass:{}}); // tag affinity
 let log=LS.get('wtd.log',[]);
@@ -405,7 +417,16 @@ function renderWhen(){
   $('#dateIn').value=setup.date; $('#dateIn').min=iso(new Date());
   $('#dateIn').onchange=e=>{if(e.target.value){setup.date=e.target.value;renderWhen();gotoStep('where')}};
 }
+let places=LS.get('wtd.places',[]);   // this device's recent postcodes, newest first
+function rememberPlace(pc){ places=[pc,...places.filter(p=>p!==pc)].slice(0,5); LS.set('wtd.places',places); }
+function renderSaved(){
+  const box=$('#savedPcs'); box.hidden=!places.length;
+  box.innerHTML=places.map(p=>`<span class="chip saved ${p===setup.pc?'on':''}"><button data-pc="${p}">${p}</button><button class="x" data-del="${p}" aria-label="Forget ${p}">×</button></span>`).join('');
+  box.querySelectorAll('[data-pc]').forEach(b=>b.onclick=()=>{setup.pc=b.dataset.pc;renderWhere();if(setup.car!==null)$('#go').click()});
+  box.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{places=places.filter(p=>p!==b.dataset.del);LS.set('wtd.places',places);renderSaved()});
+}
 function renderWhere(){
+  renderSaved();
   $('#pc').value=setup.pc||''; $('#carNo').classList.toggle('on',setup.car===0); $('#carYes').classList.toggle('on',setup.car===1);
   $('#go').disabled=!(setup.pc&&setup.car!==null);
 }
@@ -421,6 +442,7 @@ $('#go').onclick=async()=>{
   const pc=parseOutcode(setup.pc||'');
   if(!pc||!OUTCODES[pc.out]){$('#pcErr').textContent=pc?'That postcode is outside the area we cover (London and about 60 km around it).':'That doesn\'t look like a UK postcode. Try something like SE4 2AB or just SE4.';$('#pcErr').hidden=false;b.disabled=false;b.innerHTML='Show me things <span>›</span>';return}
   setup.lat=OUTCODES[pc.out][0];setup.lon=OUTCODES[pc.out][1];setup.pc=pc.full||pc.out;setup.place=pc.out;setup.precise=false;
+  rememberPlace(setup.pc); LS.set('wtd.car',setup.car);
   save();track('setup_done',{who:setup.who,ages:setup.ages,car:setup.car,outcode:pc.out,date:setup.date});
   travelCache={};await buildDeck();go('deck');
   b.disabled=false;b.innerHTML='Show me things <span>›</span>';
@@ -540,7 +562,7 @@ function renderStack(){
   const st=$('#stack'); st.innerHTML='';
   if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Change the day or who's going, or check My list. More listings and one-off events coming.</span></div>`;}
   deck.slice(0,3).forEach((c,i)=>{const el=document.createElement('div');el.className='card'+(i===1?' under':i===2?' under2':'');el.style.zIndex=3-i;el.innerHTML=cardHTML(c);el.dataset.id=c.id;st.appendChild(el);if(i===0)attachDrag(el);});
-  requestAnimationFrame(()=>{st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}});});
+  requestAnimationFrame(()=>{const tops=st.querySelectorAll('.card');if(tops.length>1){const h=tops[0].offsetHeight;tops.forEach((c,i)=>{if(i>0){c.style.height=h+'px';c.style.minHeight='0';c.classList.add('peek');}});}st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}});});
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
   deck.slice(0,2).forEach(refineTravel);
 }
