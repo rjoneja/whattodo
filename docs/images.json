@@ -564,5 +564,157 @@
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Sutton%2C_London",
 "checked": 3
+},
+"horniman": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/An_aerial_view_of_the_Horniman_Museum_and_Gardens.png/960px-An_aerial_view_of_the_Horniman_Museum_and_Gardens.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Horniman_Museum"
+},
+"nhm": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Natural_History_Museum_London_logo_%28large%29.svg/960px-Natural_History_Museum_London_logo_%28large%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Natural_History_Museum%2C_London"
+},
+"sciencemuseum": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Science_Museum%2C_Exhibition_Road_%28cropped%29.jpg/960px-Science_Museum%2C_Exhibition_Road_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Science_Museum%2C_London"
+},
+"crystalpalace": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Mantellodon_in_Crystal_Palace_Park.jpg/960px-Mantellodon_in_Crystal_Palace_Park.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Crystal_Palace_Dinosaurs"
+},
+"dulwich": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Dulwich_Picture_Gallery%2C_main_entrance.JPG/960px-Dulwich_Picture_Gallery%2C_main_entrance.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Dulwich_Picture_Gallery"
+},
+"greenwichpark": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Royal_observatory_greenwich.jpg/960px-Royal_observatory_greenwich.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Royal_Observatory%2C_Greenwich"
+},
+"nmm": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/EH1211481_National_Maritime_Museum_10_%28cropped%29.JPG/960px-EH1211481_National_Maritime_Museum_10_%28cropped%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/National_Maritime_Museum"
+},
+"cuttysark": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Northeast_View_of_the_Cutty_Sark_in_Greenwich.jpg/960px-Northeast_View_of_the_Cutty_Sark_in_Greenwich.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Cutty_Sark"
+},
+"tatemodern": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Tate_Modern_-_Bankside_Power_Station.jpg/960px-Tate_Modern_-_Bankside_Power_Station.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Tate_Modern"
+},
+"southbank": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/London_Eye_Jan_2006.jpg/960px-London_Eye_Jan_2006.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/South_Bank"
+},
+"docklands": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Museum_of_London_Docklands_-_Joy_of_Museums_%28cropped%29.jpg/960px-Museum_of_London_Docklands_-_Joy_of_Museums_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/London_Museum_Docklands"
+},
+"va": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Victoria_and_Albert_Museum_Logo.svg/960px-Victoria_and_Albert_Museum_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Victoria_and_Albert_Museum"
+},
+"youngva": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Young_V%26A_2026-06-06.jpg/960px-Young_V%26A_2026-06-06.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Young_V%26A"
+},
+"kew": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Kew_Gardens_Palm_House%2C_London_-_July_2009.jpg/960px-Kew_Gardens_Palm_House%2C_London_-_July_2009.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Kew_Gardens"
+},
+"borough": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/London_2018_March_IMG_0663.jpg/960px-London_2018_March_IMG_0663.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Borough_Market"
+},
+"vauxhallfarm": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Vauxhall_City_Farm_Entrance.jpg/960px-Vauxhall_City_Farm_Entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Vauxhall_City_Farm"
+},
+"ev-exhibition-landscapes-set-free-by-didi-b-11-03": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Waltham_Forest_Town_Hall_%281%29_-_2022-10-01.jpg/960px-Waltham_Forest_Town_Hall_%281%29_-_2022-10-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Walthamstow",
+"checked": 3
+},
+"ev-world-ports-conference-11-03": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Kensington_High_Street_2_Londres.jpg/960px-Kensington_High_Street_2_Londres.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Kensington",
+"checked": 3
+},
+"ev-the-secret-language-of-jewellery-in-art-11-03": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Bank_junction_-_2020-09-20_%282%29.jpg/960px-Bank_junction_-_2020-09-20_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/City_of_London",
+"checked": 3
+},
+"ev-christmas-2026-season-11-03": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/London_-_Victoria_and_Albert_Museum_-_panoramio_%282%29.jpg/960px-London_-_Victoria_and_Albert_Museum_-_panoramio_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/South_Kensington",
+"checked": 3
+},
+"ev-wellbeing-walk-chestnuts-park-lunchtime--11-03": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Tottenham_Hotspur_new_stadium_2019.jpg/960px-Tottenham_Hotspur_new_stadium_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Tottenham",
+"checked": 3
+},
+"ev-employability-support-for-westminster-re-11-04": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Westminster_from_the_dome_on_Methodist_Central_Hall.jpg/960px-Westminster_from_the_dome_on_Methodist_Central_Hall.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Westminster",
+"checked": 3
+},
+"ev-performance-makers-theatre-words-movemen-11-07": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Camden_Town_9.jpg/960px-Camden_Town_9.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Camden_Town",
+"checked": 3
+},
+"ev-greenwich-peninsula-winter-market-11-07": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/View_from_a_Gondola_on_the_IFS_Cloud_Cable_Car_%28January_2024%29_44.jpg/960px-View_from_a_Gondola_on_the_IFS_Cloud_Cable_Car_%28January_2024%29_44.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Greenwich_Peninsula",
+"checked": 3
+},
+"ev-family-history-group-11-07": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Sutton_Barclay%27s_Bank_building_on_crossroads.jpg/960px-Sutton_Barclay%27s_Bank_building_on_crossroads.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Sutton%2C_London",
+"checked": 3
+},
+"ev-hidden-stories-of-st-james-s-park-walkin-11-13": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Fortnum_%26_Mason_%2827335881847%29.jpg/960px-Fortnum_%26_Mason_%2827335881847%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/St_James's",
+"checked": 3
+},
+"ev-the-hidden-corners-of-london-with-jack-c-11-19": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Southwark_Cathedral%2C_24th_floor.jpg/960px-Southwark_Cathedral%2C_24th_floor.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Southwark",
+"checked": 3
+},
+"ev-churches-conservation-trust-annual-lectu-11-24": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Southwark_Cathedral%2C_24th_floor.jpg/960px-Southwark_Cathedral%2C_24th_floor.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Southwark",
+"checked": 3
 }
 }
