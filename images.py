@@ -251,7 +251,7 @@ def best_for(e, used, subj):
             if sc >= 2: return {"url": u, "credit": host, "fit": sc}
             if sc == 1 and not fallback: fallback = {"url": u, "credit": host, "fit": 1}
     cs = commons(q); print(f"    commons '{q}': {len(cs)}", file=sys.stderr)
-    for c in [c for c in cs if used.get(c["url"], 0) == 0][:3]:
+    for c in [c for c in cs if used.get(c["url"], 0) == 0][:5]:
         sc = relevance(c["url"], name, subject, specific); print(f"    commons {sc} {c['url'].split('/')[-1][:50]}", file=sys.stderr)
         if sc >= (3 if specific else 2): return dict(c, fit=sc)
     return fallback
@@ -285,6 +285,22 @@ def wiki_area(area, name):
     t = _area_cache[area]
     if t and looks_like_photo(t["url"], f"{name} (in {area})"): return dict(t)
     return None
+
+def dedupe(out, events, tried):
+    """One picture, one card. If a picture is on several, it stays on the best fit and the rest go blank
+    (and get another try at a picture of their own)."""
+    order = {e["id"]: i for i, e in enumerate(events)}
+    by = {}
+    for k, v in out.items():
+        if k.startswith("_") or k in WIKI: continue
+        by.setdefault(v["url"], []).append(k)
+    dropped = 0
+    for u, ks in by.items():
+        if len(ks) < 2: continue
+        ks.sort(key=lambda k: (-out[k].get("fit", 0), order.get(k, 9999)))
+        for k in ks[1:]: out.pop(k); tried.pop(k, None); dropped += 1
+    if dropped: print(f"dedupe: {dropped} repeated pictures removed", file=sys.stderr)
+    return out
 
 def main():
     ap = argparse.ArgumentParser()
@@ -325,16 +341,18 @@ def main():
         try: t = best_for(e, used, subj.get(e["id"]))
         except Exception as ex: print(f"{e['id']}: pick failed {str(ex)[:60]}", file=sys.stderr)
         if not t or t.get("fit", 0) < 2:
-            if old and old.get("checked", 0) >= 3 and "commons" not in old.get("page", "") and (not t or t.get("fit", 0) <= 1): t = dict(old, fit=1)   # keep a vetted old picture over a mere venue shot
+            if old and old.get("checked", 0) >= 3 and "commons" not in old.get("page", "") and used.get(old["url"], 0) == 0 and (not t or t.get("fit", 0) <= 1): t = dict(old, fit=1)   # keep a vetted old picture over a mere venue shot
             elif not t:
                 try: t = wiki_area(e.get("area"), e["name"])
                 except Exception: t = None
+                if t and used.get(t["url"], 0) > 0: t = None          # never the same picture on two cards: better none
                 if t: t["fit"] = 1
         tried[e["id"]] = today
         if t:
             t["checked"] = 5; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
             print(f"{e['id']}: fit {t.get('fit')} {'commons' if 'commons' in t.get('page','') or '·' in t.get('credit','') else 'page' if t['credit'] and 'Wikimedia' not in t['credit'] else 'area'}", file=sys.stderr)
         time.sleep(0.3)
+    out = dedupe(out, events, tried)
     live = set(WIKI) | {e["id"] for e in events}
     out = {k: v for k, v in out.items() if k in live}
     out["_tried5"] = {k: v for k, v in tried.items() if k in live and k not in out}

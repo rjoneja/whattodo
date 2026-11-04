@@ -102,9 +102,13 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .deck{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}
 .stack{position:relative;flex:1;min-height:260px}
 .card{position:absolute;top:0;left:0;right:0;height:auto;max-height:100%;min-height:58%;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:calc(var(--u)*1.1);padding:calc(var(--u)*2);touch-action:none;user-select:none;will-change:transform;overflow:hidden}
-.card.under{transform:translate(0,calc(var(--u)*1.2)) scale(.97);opacity:.7}
-.card.under2{transform:translate(0,calc(var(--u)*2.4)) scale(.94);opacity:.4}
-.card.peek>*{visibility:hidden}
+.card.under{transform:translate(0,calc(var(--u)*1.2)) scale(.97)}
+.card.under2{transform:translate(0,calc(var(--u)*2.4)) scale(.94)}
+/* faded with a solid tint, not transparency, so the card behind never shows through */
+.card.under::after,.card.under2::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--paper);pointer-events:none;transition:opacity .22s ease}
+.card.under::after{opacity:.35}.card.under2::after{opacity:.65}
+.card.front::after{opacity:0}
+.card.peek{overflow:hidden}
 .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--u)}
 .card .area{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .card h3{font-size:23px;font-weight:700;line-height:1.05;margin-top:3px}
@@ -229,7 +233,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .toggle button{padding:6px 12px;border-radius:999px;font-family:var(--display);font-weight:600;font-size:13px;color:var(--ink-2)}
 .toggle button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
 
-.nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding:0 max(16px,env(safe-area-inset-left,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-right,0px));z-index:20}
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding:0 max(16px,env(safe-area-inset-left,0px)) max(2px,calc(env(safe-area-inset-bottom,0px) - 20px)) max(16px,env(safe-area-inset-right,0px));z-index:20}
 .nav[hidden]{display:none}
 .nav>div{max-width:560px;margin:0 auto;display:flex;width:100%}
 .nav button{flex:1;padding:calc(var(--u)*1.3) 0 calc(var(--u)*1.2);font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.04em;color:var(--ink-3);display:flex;flex-direction:column;align-items:center;gap:3px}
@@ -248,6 +252,16 @@ td.n{text-align:right}
 .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 76px);transform:translateX(-50%);background:var(--ink);color:var(--paper);font-family:var(--display);font-weight:600;padding:10px 16px;border-radius:999px;z-index:40;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1}
 @media (prefers-reduced-motion: reduce){.card.flying,.card.returning,.block,.toast{transition:none}}
+
+#s-where{gap:calc(var(--u)*1.6)}
+#s-where h2{font-size:27px}
+#s-where .field{gap:6px}
+#s-where .field input[type=text]{padding:10px 14px;font-size:17px}
+#s-where .chip.saved button{padding-top:7px;padding-bottom:7px}
+#s-where .chip.saved .x{padding-top:7px;padding-bottom:7px}
+#modes{flex-wrap:nowrap}
+#modes .chip{padding:9px 13px;font-size:14px;white-space:nowrap}
+#s-where .cta{position:sticky;bottom:calc(max(2px,env(safe-area-inset-bottom,0px) - 20px) + 64px);z-index:5;padding:calc(var(--u)*1.8)}
 @media (max-width:380px){.step h2{font-size:27px}.card h3{font-size:23px}.block{font-size:17px}}
 </style>
 
@@ -280,15 +294,15 @@ td.n{text-align:right}
       <div class="field"><label for="pc">Postcode</label>
         <div class="chips" id="savedPcs" hidden></div>
         <input type="text" id="pc" placeholder="SE4 2AB" autocomplete="postal-code" inputmode="text" maxlength="8">
-        <div class="hint">Only used for travel times and weather. Your last few are kept on this phone, nowhere else.</div>
+        <div class="hint">Just for travel times and weather. Kept on this phone only.</div>
         <div class="err" id="pcErr" hidden></div></div>
       <div class="field"><label>How are you happy to get about?</label>
         <div class="chips" id="modes">
-          <button class="chip" data-mode="transit" aria-pressed="false">Public transport <small>bus, tube, train</small></button>
-          <button class="chip" data-mode="bike" aria-pressed="false">Bike <small>kids on the back count</small></button>
-          <button class="chip" data-mode="car" aria-pressed="false">Car <small>we'll weigh up the parking</small></button>
+          <button class="chip" data-mode="transit" aria-pressed="false">Public transport</button>
+          <button class="chip" data-mode="bike" aria-pressed="false">Bike</button>
+          <button class="chip" data-mode="car" aria-pressed="false">Car</button>
         </div>
-        <div class="hint">Tick all that work. Each idea gets whichever is easiest, and walking is always an option for short hops.</div></div>
+        <div class="hint">Tick all that work: each idea gets the easiest. Kids on the back of a bike count; parking counts against the car.</div></div>
       <button class="cta" id="go" disabled>Show me things <span>›</span></button>
     </div>
     <div class="row" id="setupNav"><button class="ghost" id="back" hidden>‹ Back</button></div>
@@ -830,7 +844,9 @@ function renderStack(){
   const st=$('#stack'); st.innerHTML='';
   if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Try another day or change who's going, or check My list. More listings and one-off events coming.</span></div>`;}
   deck.slice(0,3).forEach((c,i)=>{const el=document.createElement('div');el.className='card'+(i===1?' under':i===2?' under2':'');el.style.zIndex=3-i;el.innerHTML=cardHTML(c);el.dataset.id=c.id;st.appendChild(el);if(i===0)attachDrag(el);});
-  requestAnimationFrame(()=>{const tops=st.querySelectorAll('.card');if(tops.length>1){const h=tops[0].offsetHeight;tops.forEach((c,i)=>{if(i>0){c.style.height=h+'px';c.style.minHeight='0';c.classList.add('peek');}});}st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}});});
+  requestAnimationFrame(()=>{ // fit each card's text first, then trim the cards underneath to the top card's final height
+    st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}});
+    const tops=st.querySelectorAll('.card');if(tops.length>1){const h=tops[0].offsetHeight;tops.forEach((c,i)=>{if(i>0){c.style.height=h+'px';c.style.minHeight='0';c.classList.add('peek');}});} });
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
   deck.slice(0,3).forEach(refineTravel);
   st.querySelectorAll('[data-tr]').forEach(b=>b.onclick=e=>{e.stopPropagation();const c=deck.find(x=>x.id===b.closest('.card').dataset.id);if(c)openTrip(c)});
@@ -849,7 +865,9 @@ function attachDrag(el){
   const end=()=>{if(!on)return;on=false; if(dx>95)act('saved',el); else if(dx<-95)act('pass',el); else{el.classList.add('returning');el.style.transform='';sS.style.opacity=0;sP.style.opacity=0} dx=dy=0};
   el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
 }
-function fly(el,dir,cb){el.classList.add('flying');el.style.transform=`translate(${dir*620}px,${dir*-40}px) rotate(${dir*22}deg)`;el.style.opacity='0';setTimeout(cb,230)}
+function fly(el,dir,cb){ const nx=el.parentNode&&el.parentNode.querySelector('.card.under');
+  if(nx){ nx.style.transition='transform .22s ease'; nx.style.transform='none'; nx.classList.add('front'); }
+  el.classList.add('flying');el.style.transform=`translate(${dir*620}px,${dir*-40}px) rotate(${dir*22}deg)`;el.style.opacity='0';setTimeout(cb,230)}
 function act(kind,el){
   const c=deck[0]; if(!c) return;
   undoStack.push({c,prev:status[c.id],kind});
