@@ -127,14 +127,17 @@ def relevance(u, name, subject):
             ctype = "image/png" if data[:4] == b"\x89PNG" else "image/webp" if data[8:12] == b"WEBP" else "image/jpeg"
         if ct2: ctype = ct2
         VETS["n"] += 1
-        msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=5, messages=[{"role": "user", "content": [
+        msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=40, messages=[{"role": "user", "content": [
             {"type": "image", "source": {"type": "base64", "media_type": ctype, "data": base64.b64encode(data).decode()}},
             {"type": "text", "text": f"A listings app needs a photo for '{name}', which is about: {subject}.\n"
              "Score this image 0-3. 3 = an appealing photo that clearly shows the subject (e.g. Diwali lights and dancers for a Diwali event, "
              "the performers, the artwork, the activity). 2 = an appealing photo that fits well. 1 = only the venue, building, room or a generic scene "
-             "that doesn't show the subject. 0 = a logo, icon, text, a flyer that is mostly words, a map, a screenshot, or unappealing. Reply with one digit."}]}])
-        m = re.search(r"[0-3]", "".join(getattr(b, "text", "") for b in msg.content))
-        return int(m.group(0)) if m else 0
+             "that doesn't show the subject. 0 = a logo, icon, text, a flyer that is mostly words, a map, a screenshot, or unappealing.\n"
+             "Answer in the form SCORE: <digit>"}]}])
+        txt = "".join(getattr(b, "text", "") for b in msg.content)
+        if VETS["n"] <= 6: print(f"    raw reply: {txt[:80]!r} stop={getattr(msg,'stop_reason','')}", file=sys.stderr)
+        m = re.search(r"SCORE:\s*([0-3])", txt, re.I) or re.search(r"\b([0-3])\b", txt)
+        return int(m.group(1)) if m else 0
     except Exception as ex:
         print(f"  vet failed {u[:60]}: {str(ex)[:80]}", file=sys.stderr)
         return 0
