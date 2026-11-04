@@ -24,7 +24,9 @@ MIDDLEMEN = re.compile(r"(^|\.)(londonist\.com|ianvisits\.co\.uk|skiddle\.com|ti
 COUNCIL = re.compile(r"(\.gov\.uk|enjoyroyalgreenwich\.org\.uk)$")
 SKIP_OUT = re.compile(r"(facebook|twitter|x\.com|instagram|youtube|youtu\.be|tiktok|linkedin|pinterest|whatsapp|threads\.net|"
                       r"google\.[a-z.]+/maps|maps\.google|goo\.gl|maps\.apple|bit\.ly/share|addtoany|sharethis|mailchimp|list-manage|"
-                      r"doubleclick|googletagmanager|gravatar|wp\.com|cloudfront|cdn\.|apple\.com/app|play\.google|tfl\.gov\.uk/plan)", re.I)
+                      r"doubleclick|googletagmanager|gravatar|wp\.com|cloudfront|cdn\.|apple\.com/app|play\.google|tfl\.gov\.uk/plan|"
+                      r"simpleview|wordpress\.org|wix\.com|squarespace\.com|jadu|granicus|govdelivery|cookiebot|onetrust|"
+                      r"gov\.uk/(?!.*event)|nhs\.uk|police\.uk)", re.I)
 STOP = {"london", "event", "events", "family", "festival", "with", "from", "the", "and", "for", "day", "night", "show", "tour", "talk",
         "workshop", "free", "2026", "2027", "november", "december", "october", "saturday", "sunday"}
 
@@ -130,6 +132,8 @@ def main():
             if kind == "event" and not mentions(page, e): kept += 1; print(f"  ✗ {e['name'][:40]}: {url[:70]} doesn't mention it", file=sys.stderr); continue
             if "instagram.com" in e["url"] and kind != "event" and not mentions(page, e):
                 url = e.get("site") or url                          # fall back to the account's homepage, still official
+            elif kind != "event" and not mentions(page, e) and not (words(e.get("area", "")) & words(re.sub(r"<[^>]+>", " ", page))):
+                kept += 1; print(f"  ✗ {e['name'][:40]}: {url[:70]} mentions neither the event nor {e.get('area','')}", file=sys.stderr); continue
             e["via"] = e["url"]; e["url"] = got if host(got) == host(url) else url; changed += 1
             print(f"  ✓ {e['name'][:40]}: {host(e['via'])} → {e['url'][:80]} ({kind})", file=sys.stderr)
         except Exception as ex:
