@@ -228,10 +228,11 @@ td.n{text-align:right}
         <input type="text" id="pc" placeholder="SE4 2AB" autocomplete="postal-code" inputmode="text" maxlength="8">
         <div class="hint">Only used for travel times and weather. Your last few are kept on this phone, nowhere else.</div>
         <div class="err" id="pcErr" hidden></div></div>
-      <div class="field"><label>Got a car?</label>
-        <div class="chips">
-          <button class="chip" data-car="0" id="carNo">No <small>bus, tube, train, feet</small></button>
-          <button class="chip" data-car="1" id="carYes">Yes <small>happy to drive</small></button>
+      <div class="field"><label>How are you getting about?</label>
+        <div class="chips" id="modes">
+          <button class="chip" data-mode="transit">Public transport <small>bus, tube, train, walking</small></button>
+          <button class="chip" data-mode="bike">Bike <small>kids on the back count</small></button>
+          <button class="chip" data-mode="car">Car available <small>but we'll pick transport when parking's a pain</small></button>
         </div></div>
       <button class="cta" id="go" disabled>Show me things <span>›</span></button>
     </div>
@@ -371,7 +372,8 @@ const WHO=[['solo','Just me','Flying solo'],['couple','A couple','Two of us'],['
 /* ---------- STATE ---------- */
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let setup=LS.get('wtd.setup',{who:null,ages:[],date:null,pc:'',car:null,lat:null,lon:null,place:''});
-if(setup.car===null||setup.car===undefined){const c=LS.get('wtd.car',null); if(c!==null) setup.car=c;}
+if(!setup.mode){ const m=LS.get('wtd.mode',null); const c=(setup.car!==null&&setup.car!==undefined)?setup.car:LS.get('wtd.car',null); setup.mode=m||(c===1?'car':c===0?'transit':null); }
+setup.car=setup.mode==='car'?1:setup.mode?0:null;
 let status=LS.get('wtd.status',{});       // id -> 'saved'|'again'|'done'|'pass'
 let swipes=LS.get('wtd.swipes',{like:{},pass:{}}); // tag affinity
 let log=LS.get('wtd.log',[]);
@@ -429,33 +431,33 @@ function rememberPlace(pc){ places=[pc,...places.filter(p=>p!==pc)].slice(0,5); 
 function renderSaved(){
   const box=$('#savedPcs'); box.hidden=!places.length;
   box.innerHTML=places.map(p=>`<span class="chip saved ${p===setup.pc?'on':''}"><button data-pc="${p}">${p}</button><button class="x" data-del="${p}" aria-label="Forget ${p}">×</button></span>`).join('');
-  box.querySelectorAll('[data-pc]').forEach(b=>b.onclick=()=>{setup.pc=b.dataset.pc;renderWhere();if(setup.car!==null)$('#go').click()});
+  box.querySelectorAll('[data-pc]').forEach(b=>b.onclick=()=>{setup.pc=b.dataset.pc;renderWhere();if(setup.mode)$('#go').click()});
   box.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{places=places.filter(p=>p!==b.dataset.del);LS.set('wtd.places',places);renderSaved()});
 }
 function renderWhere(){
   renderSaved();
-  $('#pc').value=setup.pc||''; $('#carNo').classList.toggle('on',setup.car===0); $('#carYes').classList.toggle('on',setup.car===1);
-  $('#go').disabled=!(setup.pc&&setup.car!==null);
+  $('#pc').value=setup.pc||''; $('#modes').querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('on',b.dataset.mode===setup.mode));
+  $('#go').disabled=!(setup.pc&&setup.mode);
 }
 let step='who';
 function gotoStep(s){step=s;['who','when','where'].forEach(x=>$('#s-'+x).hidden=x!==s);$('#back').hidden=s==='who';
   if(s==='when')renderWhen(); if(s==='where')renderWhere(); window.scrollTo({top:0});}
 $('#back').onclick=()=>gotoStep(step==='where'?'when':'who');
 $('#pc').oninput=e=>{setup.pc=e.target.value.toUpperCase().trim();$('#pcErr').hidden=true;renderWhere()};
-$('#carNo').onclick=()=>{setup.car=0;renderWhere()}; $('#carYes').onclick=()=>{setup.car=1;renderWhere()};
+$('#modes').querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{setup.mode=b.dataset.mode;setup.car=setup.mode==='car'?1:0;renderWhere()});
 function parseOutcode(pc){const m=pc.replace(/\s+/g,'').toUpperCase().match(/^([A-Z]{1,2}[0-9][A-Z0-9]?)([0-9][A-Z]{2})?$/);return m?{out:m[1],full:m[2]?m[1]+' '+m[2]:null}:null}
 $('#go').onclick=async()=>{
   const b=$('#go');b.disabled=true;b.textContent='Finding your spot…';
   const pc=parseOutcode(setup.pc||'');
   if(!pc||!OUTCODES[pc.out]){$('#pcErr').textContent=pc?'That postcode is outside the area we cover (London and about 60 km around it).':'That doesn\'t look like a UK postcode. Try something like SE4 2AB or just SE4.';$('#pcErr').hidden=false;b.disabled=false;b.innerHTML='Show me things <span>›</span>';return}
   setup.lat=OUTCODES[pc.out][0];setup.lon=OUTCODES[pc.out][1];setup.pc=pc.full||pc.out;setup.place=pc.out;setup.precise=false;
-  rememberPlace(setup.pc); LS.set('wtd.car',setup.car);
-  save();track('setup_done',{who:setup.who,ages:setup.ages,car:setup.car,outcode:pc.out,date:setup.date});
+  rememberPlace(setup.pc); LS.set('wtd.mode',setup.mode);
+  save();track('setup_done',{who:setup.who,ages:setup.ages,mode:setup.mode,car:setup.car,outcode:pc.out,date:setup.date});
   travelCache={};await buildDeck();go('deck');
   b.disabled=false;b.innerHTML='Show me things <span>›</span>';
   // refine to the full postcode when the network allows (hosted version); silent if blocked
   if(pc.full){try{const r=await fetch('https://api.postcodes.io/postcodes/'+encodeURIComponent(pc.full.replace(/\s+/g,'')));const j=await r.json();
-    if(j.status===200){setup.lat=j.result.latitude;setup.lon=j.result.longitude;setup.place=(j.result.admin_ward||pc.out);setup.precise=true;save();travelCache={};deck.forEach(c=>{c.mins=estMins(c);c.est=true});renderStrip();renderStack()}}catch(e){}}
+    if(j.status===200){setup.lat=j.result.latitude;setup.lon=j.result.longitude;setup.place=(j.result.admin_ward||pc.out);setup.precise=true;save();travelCache={};deck.forEach(c=>{Object.assign(c,trip(c),{est:true})});renderStrip();renderStack()}}catch(e){}}
 };
 
 /* ---------- WEATHER + TRAVEL ---------- */
@@ -474,9 +476,24 @@ async function getWeather(){
   if(!wx) wx=manualWx();
 }
 const km=(a,b,c,d)=>{const R=6371,x=(c-a)*Math.PI/180,y=(d-b)*Math.PI/180,s=Math.sin(x/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(y/2)**2;return 2*R*Math.asin(Math.sqrt(s))};
-function estMins(it){const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3; return setup.car? Math.round(8+d/28*60) : Math.round(10+d/19*60)}
+// Travel: what it takes to get there, door to door. Parking in London is a real cost, so a car only wins when it's clearly easier.
+const CENTRE=[51.5113,-0.1281];
+function parkingPenalty(it){ const c=km(CENTRE[0],CENTRE[1],it.lat,it.lon); return c<3.5?30:c<8?15:6; }
+function transitMins(it){ const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3; return Math.round(10+d/19*60); }
+function trip(it){
+  const d=km(setup.lat,setup.lon,it.lat,it.lon)*1.3;
+  const transit=(travelCache[it.id]||transitMins(it));
+  if(setup.mode==='bike'){ const kmh=setup.who==='family'?11:14; const m=Math.round(4+d/kmh*60); return {mins:m,cost:m,how:'cycle'}; }
+  if(setup.mode==='car'){
+    const drive=Math.round(8+d/28*60), pen=parkingPenalty(it);
+    if(drive+pen<transit) return {mins:drive,cost:drive+pen,how:'drive',park:pen};
+    return {mins:transit,cost:transit,how:'transport',park:pen};
+  }
+  return {mins:transit,cost:transit,how:'transport'};
+}
+function estMins(it){ return trip(it).mins; }
 async function tflMins(it){
-  if(setup.car) return null; if(travelCache[it.id]!==undefined) return travelCache[it.id];
+  if(setup.mode==='bike') return null; if(travelCache[it.id]!==undefined) return travelCache[it.id];
   travelCache[it.id]=null;
   try{const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),7000);
     const u=`https://api.tfl.gov.uk/Journey/JourneyResults/${setup.lat},${setup.lon}/to/${it.lat},${it.lon}?date=${setup.date.replace(/-/g,'')}&time=1000&journeyPreference=LeastTime`;
@@ -522,7 +539,7 @@ async function buildDeck(){
   const today=iso(new Date());
   const pool=[...ITEMS.filter(openOn),...EVENTS.filter(e=>eventOn(e)&&(!e.to||e.to>=today))];
   deck=pool.filter(it=>!['saved','done','pass'].includes(status[it.id]))
-    .map(it=>{const mins=estMins(it);const r=score(it,mins);return Object.assign({},it,{mins,est:true,score:r.s,why:r.why})})
+    .map(it=>{const t=trip(it);const r=score(it,t.cost);if(t.how==='transport'&&setup.mode==='car'&&t.park>=15)r.why.push('easier than parking');return Object.assign({},it,t,{est:true,score:r.s,why:r.why})})
     .filter(x=>x.score>-50);
   // a one-off at a place beats the place itself: push the everyday listing well down when an event is on there
   const special=deck.filter(x=>x.event&&(x.date||(x.to&&(fromIso(x.to)-fromIso(setup.date))/864e5<=30)));
@@ -540,14 +557,14 @@ async function buildDeck(){
 /* ---------- DECK UI ---------- */
 function renderStrip(){
   const d=fromIso(setup.date); $('#stripDate').textContent=nice(d);
-  $('#stripFrom').textContent=(setup.place||setup.pc).trim()+' · '+(setup.car?'by car':'public transport');
+  $('#stripFrom').textContent=(setup.place||setup.pc).trim()+' · '+({car:'car or transport',bike:'by bike',transit:'public transport'}[setup.mode]||'public transport');
   if(wx&&!wx.manual) $('#stripWx').innerHTML=`${wx.word} ${wx.t}°<small>${wx.p}% chance of rain</small>`;
   else $('#stripWx').innerHTML=`<div class="wxpick"><small>Forecast?</small><button class="chip ${wx&&wx.wet?'on':''}" data-wx="wet">Wet</button><button class="chip ${wx&&wx.dry?'on':''}" data-wx="dry">Dry</button></div>`;
   $('#stripWx').querySelectorAll('[data-wx]').forEach(b=>b.onclick=async()=>{setup.wxManual={v:b.dataset.wx,date:setup.date};save();track('wx_manual',{v:b.dataset.wx});await buildDeck()});
   const whoL={solo:'Just me',couple:'Couple',family:'Family · '+setup.ages.join(', '),friends:'Friends'}[setup.who]||'';
   $('#ctx').innerHTML=`<b>${whoL}</b><br>${nice(d)} · ${setup.pc||''}`;
 }
-function travelLabel(c){ return (c.est?'~':'')+c.mins+' min '+(setup.car?'drive':'by transport') }
+function travelLabel(c){ return (c.est?'~':'')+c.mins+' min '+({drive:'drive',cycle:'by bike',transport:'by transport'}[c.how||'transport']) }
 /* ---------- SHARING ---------- */
 const EMOJI=[[/pickle/i,'🥒'],[/firework|bonfire/i,'🎆'],[/christmas|xmas|festive|santa/i,'🎄'],[/diwali|lantern|light show|illuminat/i,'🪔'],[/market|fair|bazaar/i,'🛍️'],[/food|street food|supper|brunch|tasting|beer|wine/i,'🍽️'],[/farm|animal|zoo|alpaca|goat/i,'🐐'],[/park|garden|walk|nature|wood|forest|heath|wetland/i,'🌳'],[/music|concert|gig|choir|orchestra|jazz|shanty/i,'🎶'],[/theatre|show|puppet|panto|circus|comedy/i,'🎭'],[/museum|exhibition|gallery|history|art/i,'🖼️'],[/swim|lido/i,'🏊'],[/train|railway|bus|transport/i,'🚂'],[/kids|family|play|story/i,'🎈']];
 function emojiFor(c){const t=c.name+' '+(c.tags||[]).join(' ');for(const [re,e] of EMOJI) if(re.test(t)) return e; return '📍';}
@@ -593,7 +610,7 @@ function renderStack(){
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
   deck.slice(0,2).forEach(refineTravel);
 }
-async function refineTravel(c){ if(setup.car||!c.est) return; const m=await tflMins(c); if(m){c.mins=m;c.est=false; const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.textContent=travelLabel(c);el.classList.add('good')}} }
+async function refineTravel(c){ if(c.how!=='transport'||!c.est) return; const m=await tflMins(c); if(m){c.mins=m;c.cost=m;c.est=false; const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.textContent=travelLabel(c);el.classList.add('good')}} }
 
 /* drag */
 function attachDrag(el){
@@ -612,7 +629,7 @@ function act(kind,el){
   else if(kind==='pass'){status[c.id]='pass';c.tags.forEach(t=>swipes.pass[t]=(swipes.pass[t]||0)+1)}
   else if(kind==='again'){status[c.id]='again';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Kept in the mix')}
   else if(kind==='done'){status[c.id]='done';toast('Ticked off')}
-  save(); track('swipe',{id:c.id,kind,who:setup.who,car:setup.car,mins:c.mins});
+  save(); track('swipe',{id:c.id,kind,who:setup.who,mode:setup.mode,how:c.how,mins:c.mins});
   deck.shift(); const target=el||$('#stack .card');
   if(target) fly(target,kind==='pass'?-1:1,renderStack); else renderStack();
 }
@@ -642,10 +659,10 @@ let mapMode='deck',mapSelId=null;
 function renderMap(){
   const W=360,H=414,cx=W/2,cy=H/2;
   const kmLat=111.2,kmLon=111.2*Math.cos(setup.lat*Math.PI/180);
-  const pxPerKm=W/2/ (setup.car?26:17);   // 60-min ring at roughly the edge
+  const pxPerKm=W/2/ ({car:22,bike:14,transit:17}[setup.mode]||17);   // 60-min ring at roughly the edge
   const P=(lon,lat)=>[cx+(lon-setup.lon)*kmLon*pxPerKm, cy-(lat-setup.lat)*kmLat*pxPerKm];
-  const minsToR=m=>{const kmh=setup.car?28:19, lead=setup.car?8:10; return Math.max(0,(m-lead))/60*kmh/1.3*pxPerKm};
-  let pts; if(mapMode==='saved'){ pts=Object.keys(status).filter(k=>['saved','again'].includes(status[k])).map(id=>ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id)).filter(Boolean).map(it=>Object.assign({},it,{mins:estMins(it),score:10})); }
+  const minsToR=m=>{const kmh={car:22,bike:14,transit:19}[setup.mode]||19, lead={car:12,bike:4,transit:10}[setup.mode]||10; return Math.max(0,(m-lead))/60*kmh/1.3*pxPerKm};
+  let pts; if(mapMode==='saved'){ pts=Object.keys(status).filter(k=>['saved','again'].includes(status[k])).map(id=>ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id)).filter(Boolean).map(it=>Object.assign({},it,trip(it),{score:10})); }
   else pts=deck.slice(0,40);
   const smax=Math.max(...pts.map(p=>p.score),1),smin=Math.min(...pts.map(p=>p.score),0);
   const river='M'+THAMES.map(q=>P(q[0],q[1]).map(v=>v.toFixed(1)).join(',')).join(' L');
@@ -663,7 +680,7 @@ function renderMap(){
   const sel=pts.find(p=>p.id===mapSelId); const box=$('#mapSel');
   if(!sel){box.hidden=true;return}
   box.hidden=false; const st=status[sel.id];
-  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ~${sel.mins} min ${setup.car?'drive':'by transport'}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
+  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ~${sel.mins} min ${({drive:'drive',cycle:'by bike',transport:'by transport'})[sel.how||'transport']}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
     <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener">Details ›</a></div>`;
   box.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{status[sel.id]=b.dataset.ms;save();track('map_action',{id:sel.id,kind:b.dataset.ms});deck=deck.filter(d=>d.id!==sel.id);renderMap();renderStack();toast(b.dataset.ms==='saved'?'Saved ♥':'Ticked off')});
 }
@@ -706,9 +723,9 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
   if(want){ track('share_open',{id:want,via:via||'link'}); try{history.replaceState(null,'',location.pathname+location.hash)}catch(e){} }
   if(want){ await Promise.all([loadEvents(),loadImages()]); const ev=[...EVENTS,...ITEMS].find(x=>x.id===want);
     if(ev){ if(ev.date) setup.date=ev.date; else if(!setup.date||fromIso(setup.date)<new Date(new Date().setHours(0,0,0,0))){const o=whenOptions();setup.date=iso(o.def);}
-      if(!setup.lat){ setup.lat=51.5074; setup.lon=-0.1278; setup.place='Central London'; setup.pc=setup.pc||''; if(setup.car===null) setup.car=0; setup.who=setup.who||'couple'; setup.guest=true; }
+      if(!setup.lat){ setup.lat=51.5074; setup.lon=-0.1278; setup.place='Central London'; setup.pc=setup.pc||''; if(!setup.mode){setup.mode='transit';setup.car=0;} setup.who=setup.who||'couple'; setup.guest=true; }
       await buildDeck(); const i=deck.findIndex(x=>x.id===want);
-      if(i>0){ const [x]=deck.splice(i,1); deck.unshift(x); } else if(i<0){ const mins=estMins(ev); deck.unshift(Object.assign({},ev,{mins,est:true,score:99,why:['shared with you']})); }
+      if(i>0){ const [x]=deck.splice(i,1); deck.unshift(x); } else if(i<0){ deck.unshift(Object.assign({},ev,trip(ev),{est:true,score:99,why:['shared with you']})); }
       renderStack(); go('deck'); if(setup.guest) toast('Shared with you · set your postcode in Change'); return; } }
   const h=location.hash.replace('#','');
   if(h==='stats'){go('stats');return}
