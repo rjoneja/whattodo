@@ -437,8 +437,11 @@ const WHO=[['solo','Just me','Flying solo'],['couple','A couple','Two of us'],['
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let setup=LS.get('wtd.setup',{who:null,ages:[],date:null,pc:'',car:null,lat:null,lon:null,place:''});
 if(!setup.mode){ const m=LS.get('wtd.mode',null); const c=(setup.car!==null&&setup.car!==undefined)?setup.car:LS.get('wtd.car',null); setup.mode=m||(c===1?'car':c===0?'transit':null); }
+if(!Array.isArray(setup.ages)) setup.ages=[];
 if(!Array.isArray(setup.modes)){ const m=LS.get('wtd.modes',null); setup.modes=Array.isArray(m)?m:setup.mode==='car'?['transit','car']:setup.mode==='bike'?['bike']:setup.mode==='transit'?['transit']:[]; }
 const has=m=>setup.modes.includes(m);
+// where you're starting from, as you'd say it: the postcode you typed (ward names can be a street or two off)
+function fromLabel(){ if(setup.guest||!setup.pc) return setup.place||'your postcode'; const p=String(setup.pc).toUpperCase().replace(/\s+/g,''); return p.length>4?p.slice(0,-3)+' '+p.slice(-3):p; }
 function syncMode(){ setup.mode=has('car')?'car':has('bike')&&!has('transit')?'bike':setup.modes.length?'transit':null; setup.car=has('car')?1:setup.modes.length?0:null; }
 syncMode();
 let status=LS.get('wtd.status',{});       // id -> 'saved'|'again'|'done'|'pass'
@@ -776,7 +779,7 @@ async function buildDeck(){
 /* ---------- DECK UI ---------- */
 function renderStrip(){
   const d=fromIso(setup.date); $('#stripDate').textContent=nice(d);
-  $('#stripFrom').textContent=(setup.place||setup.pc).trim()+' · '+(setup.modes.length===1?{car:'by car',bike:'by bike',transit:'public transport'}[setup.modes[0]]:setup.modes.map(m=>({transit:'transport',bike:'bike',car:'car'})[m]).join(', ').replace(/, ([^,]*)$/,' or $1'));
+  $('#stripFrom').textContent=fromLabel()+' · '+(setup.modes.length===1?{car:'by car',bike:'by bike',transit:'public transport'}[setup.modes[0]]:setup.modes.map(m=>({transit:'transport',bike:'bike',car:'car'})[m]).join(', ').replace(/, ([^,]*)$/,' or $1'));
   if(wx&&!wx.manual) $('#stripWx').innerHTML=`<div class="wxrow">${wxIcon(wx.kind)}<div><span class="wxl">${wx.line}</span><small>${wx.detail}</small></div></div>`;
   else $('#stripWx').innerHTML=`<div class="wxpick"><small>Forecast?</small><button class="chip ${wx&&wx.wet?'on':''}" data-wx="wet">Wet</button><button class="chip ${wx&&wx.dry?'on':''}" data-wx="dry">Dry</button></div>`;
   $('#stripWx').querySelectorAll('[data-wx]').forEach(b=>b.onclick=async()=>{setup.wxManual={v:b.dataset.wx,date:setup.date};save();track('wx_manual',{v:b.dataset.wx});await buildDeck()});
@@ -976,7 +979,7 @@ function renderTripMap(c,opts,sel){
   g=g.replace('<!--places-->',pl);
   const [a,b]=ends;
   g+=`<circle class="you" cx="${a[0].toFixed(1)}" cy="${a[1].toFixed(1)}" r="5.5"/><circle cx="${a[0].toFixed(1)}" cy="${a[1].toFixed(1)}" r="9" fill="none" stroke="var(--ink)" stroke-width="1.5" opacity=".35"/>`;
-  g+=`<text class="stop" x="${a[0].toFixed(1)}" y="${(a[1]+(a[1]>H-24?-13:21)).toFixed(1)}" text-anchor="middle">${escH(setup.place||'You')}</text>`;
+  g+=`<text class="stop" x="${a[0].toFixed(1)}" y="${(a[1]+(a[1]>H-24?-13:21)).toFixed(1)}" text-anchor="middle">${escH(setup.guest?'You':fromLabel())}</text>`;
   g+=`<g transform="translate(${(b[0]-8.5).toFixed(1)},${(b[1]-23).toFixed(1)}) scale(.29)"><path class="pin" fill-rule="evenodd" d="M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z"/></g>`;
   svg.innerHTML=g+'</g>';
 }
@@ -995,7 +998,7 @@ async function openTrip(c){
   track('trip_open',{id:c.id});
   const ab=arriveBy(c), hc=hoursOf(c).close;
   $('#tripTitle').textContent=c.name;
-  $('#tripSub').textContent=[ 'From '+(setup.place||'your postcode'), nice(fromIso(setup.date)), ab!=null?'arrive by '+fmtT(ab):'', hc!=null?'closes '+fmtT(hc):'' ].filter(Boolean).join(' · ');
+  $('#tripSub').textContent=[ 'From '+fromLabel(), nice(fromIso(setup.date)), ab!=null?'arrive by '+fmtT(ab):'', hc!=null?'closes '+fmtT(hc):'' ].filter(Boolean).join(' · ');
   $('#tripFine').textContent='TfL times for '+nice(fromIso(setup.date))+'. Walk and cycle times are estimates.';
   const show=t=>{ const opts=tripOptions(c,t); tripState={c,opts,sel:Math.max(0,opts.findIndex(x=>x.pick)),touched:false}; renderTrip(); };
   show(travelCache[c.id]||(travelCache[c.id]===null?null:undefined)); $('#tripSheet').hidden=false;
