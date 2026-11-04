@@ -924,6 +924,206 @@
      "teens"
     ]
    }
+  },
+  {
+   "handle": "fever_uk",
+   "name": "Fever UK&I",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 2,
+    "ages": [
+     7,
+     17
+    ],
+    "tags": [
+     "family",
+     "teens"
+    ]
+   }
+  },
+  {
+   "handle": "prettylittlelondon",
+   "name": "Pretty Little London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
+  },
+  {
+   "handle": "swingersldn",
+   "name": "Swingers Home of Rivalry",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
+  },
+  {
+   "handle": "citycruises",
+   "name": "City Cruises",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
+  },
+  {
+   "handle": "candlelight.concerts",
+   "name": "Candlelight Concerts by Fever",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
+  },
+  {
+   "handle": "flightclubdarts",
+   "name": "𝗙𝗟𝗜𝗚𝗛𝗧 𝗖𝗟𝗨𝗕 🎯",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
+  },
+  {
+   "handle": "gordonramsayrestaurants",
+   "name": "Gordon Ramsay Restaurants",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
+  },
+  {
+   "handle": "boundaryldn",
+   "name": "Boundary London",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
+  },
+  {
+   "handle": "clos_maggiore",
+   "name": "Clos Maggiore",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
+  },
+  {
+   "handle": "spiritedlondon",
+   "name": "Spirited",
+   "area": "London-wide",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "defaults": {
+    "in": "both",
+    "kids": 0,
+    "adults": 3,
+    "ages": [
+     18,
+     99
+    ],
+    "tags": [
+     "couple",
+     "date night"
+    ]
+   }
   }
  ],
  "parked": [
@@ -1120,531 +1320,6 @@
  ],
  "candidates": [
   {
-   "handle": "fever_uk",
-   "name": "Event ticket curator featuring pop-up immersive wizarding an",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 2,
-    "ages": [
-     7,
-     17
-    ],
-    "tags": [
-     "family",
-     "teens"
-    ]
-   },
-   "group": "older"
-  },
-  {
-   "handle": "hi_jinx_london",
-   "name": "Board game cafes and strategy gaming spaces perfect for fami",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 3,
-    "adults": 2,
-    "ages": [
-     7,
-     17
-    ],
-    "tags": [
-     "family",
-     "teens"
-    ]
-   },
-   "group": "older"
-  },
-  {
-   "handle": "londondateideas",
-   "name": "Creative, unusual, and highly aesthetic date itinerary setup",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "date_night_london",
-   "name": "Dedicated to romantic restaurant reviews and hidden cocktail",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "prettylittlelondon",
-   "name": "Highly romantic visual inspiration of cafes, flower markets,",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "skygardenlondon",
-   "name": "Booking sunrise coffees or evening drinks inside a tropical ",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "toplondorestaurants",
-   "name": "High-end date night meals, chef’s tables, and candlelight di",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "secretldn_bars",
-   "name": "Speakeasies, hidden entryways, and moody jazz spots for late",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "swingersldn",
-   "name": "Competitive indoor crazy golf combined with high-end street ",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "claysbar",
-   "name": "Interactive virtual clay target shooting bars for an active ",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "citycruises",
-   "name": "Sunset and dinner cruises along the River Thames.",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "electriccinema",
-   "name": "Luxury date night cinema setups complete with velvet double ",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "barryscocktails",
-   "name": "Dedicated mixology tours and masterclasses for couples.",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "londonrooftops",
-   "name": "A guide mapping out every open-air terrace and high-altitude",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "candlelight.concerts",
-   "name": "Live classical musicians playing modern music inside landmar",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "flightclubdarts",
-   "name": "Fast-paced social darts inside beautifully designed fairgrou",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "theliarsclubldn",
-   "name": "Low-lit underground lounge bars with an intimate, secret atm",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "london_nightlife",
-   "name": "Late night theater shows, cabaret clubs, and immersive dinin",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "gordonramsayrestaurants",
-   "name": "Fine dining structures and iconic romantic tasting menus acr",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "thecorinthia",
-   "name": "Premium luxury spa dates and thermal floor afternoons for co",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "boundaryldn",
-   "name": "Shoreditch rooftop dining complete with fire pits and season",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "clos_maggiore",
-   "name": "Widely considered one of London's most romantic blossom-cove",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "spiritedlondon",
-   "name": "Behind-the-scenes look at secret cocktail lounges and hidden",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "thethamesribexperience",
-   "name": "High-speed speedboat dates past Tower Bridge for adventurous",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
-   "handle": "circuslondon",
-   "name": "Pop-up pop cabaret dining experiences where performers dance",
-   "area": "London-wide",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "defaults": {
-    "in": "both",
-    "kids": 0,
-    "adults": 3,
-    "ages": [
-     18,
-     99
-    ],
-    "tags": [
-     "couple",
-     "date night"
-    ]
-   },
-   "group": "couples"
-  },
-  {
    "handle": "searcyslondon",
    "name": "Champagne bars and viewing decks set inside the absolute top",
    "area": "London-wide",
@@ -1801,6 +1476,66 @@
   },
   {
    "handle": "thegrid_london",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "hi_jinx_london",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "londondateideas",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "date_night_london",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "skygardenlondon",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "toplondorestaurants",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "secretldn_bars",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "claysbar",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "electriccinema",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "barryscocktails",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "londonrooftops",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "theliarsclubldn",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "london_nightlife",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "thecorinthia",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "thethamesribexperience",
+   "why": "HTTP 400: Invalid user id"
+  },
+  {
+   "handle": "circuslondon",
    "why": "HTTP 400: Invalid user id"
   }
  ]
