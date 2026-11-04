@@ -156,11 +156,11 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 /* journey sheet */
 .trbtn{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
 .trbtn i{font-style:normal;font-family:var(--display);font-weight:600;opacity:.6;margin-left:1px}
-.trip .panel{max-height:min(88vh,760px);overflow:auto;gap:calc(var(--u)*1.6)}
-.trip .eyebrow{margin-bottom:-6px}
-.trip h3{font-family:var(--brand);font-weight:400;font-size:24px;letter-spacing:-.015em}
-.trip .sub{margin:0;color:var(--ink-2);font-size:14px}
-.tmapbox{position:relative;width:100%;padding-top:58.8%;border-radius:14px;background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;flex:none}
+.trip .panel{max-height:calc(100dvh - 16px);overflow:auto;gap:10px;padding:16px 16px 12px}
+.trip .eyebrow{margin-bottom:-8px;font-size:11px}
+.trip h3{font-family:var(--brand);font-weight:400;font-size:21px;letter-spacing:-.015em;line-height:1.1}
+.trip .sub{margin:-4px 0 0;color:var(--ink-2);font-size:13px}
+.tmapbox{position:relative;width:100%;padding-top:44%;border-radius:14px;background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;flex:none}
 .tmap{position:absolute;inset:0;width:100%;height:100%;display:block}
 .tmap .river{fill:none;stroke:var(--sky);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;opacity:.28}
 .tmap .plc{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.08em;text-transform:uppercase;fill:var(--ink-3)}
@@ -173,23 +173,26 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .tmap .dot{fill:var(--card);stroke:var(--ink);stroke-width:2}
 .tmap .pin{fill:var(--verm)}
 .tmap .you{fill:var(--ink)}
-.topts{display:flex;flex-direction:column;gap:8px}
-.topt{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;text-align:left;width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.topts{display:flex;flex-direction:column;gap:6px}
+.topt{display:grid;grid-template-columns:auto 1fr;gap:1px 12px;align-items:center;text-align:left;width:100%;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
 .topt.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.topt .tm{grid-row:span 3;font-family:var(--brand);font-size:28px;line-height:1;letter-spacing:-.02em;min-width:52px}
-.topt .tm small{display:block;font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.06em;color:var(--ink-3);margin-top:3px}
-.topt b{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.2}
+.topt .tm{grid-row:span 3;font-family:var(--brand);font-size:23px;line-height:1;letter-spacing:-.02em;min-width:40px}
+.topt .tm small{display:block;font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.06em;color:var(--ink-3);margin-top:2px}
+.topt b{font-family:var(--display);font-weight:600;font-size:15px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .topt .tag{display:inline-block;margin-left:6px;font-family:var(--display);font-weight:600;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--moss);vertical-align:2px}
 .topt .tag.warn{color:var(--amber)}
-.topt span.m{font-size:13px;color:var(--ink-2)}
-.legbar{display:flex;gap:2px;height:7px;border-radius:99px;overflow:hidden;margin-top:4px}
+.topt .hd{display:flex;align-items:baseline;justify-content:space-between;gap:8px;min-width:0}
+.topt .hd em{flex:none;font-style:normal;font-size:12.5px;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.topt span.m{font-size:12.5px;color:var(--ink-2);line-height:1.3}
+.legbar{display:flex;gap:2px;height:4px;border-radius:99px;overflow:hidden;margin-top:4px}
 .legbar i{display:block;min-width:4px;border-radius:2px}
 .legbar i.walk{background:repeating-linear-gradient(90deg,var(--ink-3) 0 2px,transparent 2px 5px)}
 .trip .row{justify-content:space-between;align-items:center}
 .trip .row .ghost{align-self:center}
 .topt .tm{color:var(--ink)}
 .legbar i.walk{opacity:.7}
-.trip .fine{font-size:12px;color:var(--ink-3);margin:0}
+.trip .fine{font-size:11px;color:var(--ink-3);margin:0;line-height:1.3}
+.trip .mini{font-size:12px}
 
 .tabs{display:flex;background:var(--paper-2);border-radius:999px;padding:4px;gap:2px}
 .tab{flex:1;padding:calc(var(--u)*1.1) 0;font-family:var(--display);font-weight:600;font-size:13px;color:var(--ink-2);border-radius:999px}
@@ -363,7 +366,7 @@ td.n{text-align:right}
   <div class="eyebrow">Getting there</div>
   <h3 id="tripTitle"></h3>
   <p class="sub" id="tripSub"></p>
-  <div class="tmapbox"><svg class="tmap" id="tmap" width="340" height="200" viewBox="0 0 340 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Route sketch"></svg></div>
+  <div class="tmapbox"><svg class="tmap" id="tmap" width="340" height="150" viewBox="0 0 340 150" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Route sketch"></svg></div>
   <div class="topts" id="topts"></div>
   <div class="row"><a class="mini" id="tripGo" target="_blank" rel="noopener">Directions in Google Maps ›</a><button class="ghost" id="tripDone">Done</button></div>
   <p class="fine" id="tripFine"></p>
@@ -898,10 +901,11 @@ const MODECOL={bus:'var(--verm)','national-rail':'var(--ink)',overground:'var(--
 let tripState=null;
 function tripOptions(c,t){
   const d=km(setup.lat,setup.lon,c.lat,c.lon)*1.3, rough=!!(wx&&(wx.wet||wx.windy)), wetW=wx&&wx.wet?'wet':'windy';
+  const span12=(a,b)=>{const A=fmtT(toMin(a)),B=fmtT(toMin(b));return (A.slice(-2)===B.slice(-2)?A.slice(0,-2):A)+'–'+B};
   const o=[], t12=x=>x?fmtT(toMin(x)):'', kmTxt=Math.round(d*10)/10+'\u00a0km';
   let tflWalk=null;
   if(t&&t.opts) t.opts.forEach(x=>{
-    const times=x.leave&&x.arrive?'Leave\u00a0'+t12(x.leave)+' · arrive\u00a0'+t12(x.arrive):'';
+    const times=x.leave&&x.arrive?span12(x.leave,x.arrive):'';
     if(x.route==='walk'){ tflWalk={mins:x.mins,legs:x.legs,times}; return; }
     const onboard=(x.legs||[]).filter(l=>l.m!=='walking').reduce((s,l)=>s+l.d,0);
     o.push({kind:'pt',mins:x.mins,title:x.route,legs:x.legs,times,
@@ -932,7 +936,7 @@ function stripHTML(x){
   return `<div class="legbar"><i class="${x.kind==='walk'?'walk':''}" style="flex:1;${col?'background:'+col:''}"></i></div>`;
 }
 function renderTripMap(c,opts,sel){
-  const svg=$('#tmap'), W=340, H=200, pad=26;
+  const svg=$('#tmap'), W=340, H=150, pad=22;
   const A=[setup.lon,setup.lat], B=[+c.lon,+c.lat];
   let all=[A,B]; opts.forEach(x=>x.legs&&x.legs.forEach(l=>all=all.concat(l.p)));
   const kx=Math.cos(setup.lat*Math.PI/180);
@@ -967,7 +971,7 @@ function renderTripMap(c,opts,sel){
     if(named>=3||!st.n) return; const w=st.n.length*5.8, right=st.q[0]+8+w<W-4, x=right?st.q[0]+7:st.q[0]-7, bx=[right?x:x-w,st.q[1]-6,right?x+w:x,st.q[1]+6];
     if(hit(bx)) return; boxes.push(bx); named++;
     g+=`<text class="stop" x="${x.toFixed(1)}" y="${(st.q[1]+3.5).toFixed(1)}" text-anchor="${right?'start':'end'}">${escH(st.n)}</text>`; });
-  let pl=''; placeLater.forEach(p=>{ if(boxes.length>12) return; const w=p.n.length*6.6+6, bx=[p.q[0]-w/2,p.q[1]-9,p.q[0]+w/2,p.q[1]+3]; if(hit(bx)) return; boxes.push(bx);
+  let pl=''; placeLater.forEach(p=>{ if(boxes.length>12) return; const w=p.n.length*6.6+6, bx=[p.q[0]-w/2,p.q[1]-9,p.q[0]+w/2,p.q[1]+3]; if(bx[0]<4||bx[2]>W-4||hit(bx)) return; boxes.push(bx);
     pl+=`<text class="plc" x="${p.q[0].toFixed(1)}" y="${p.q[1].toFixed(1)}" text-anchor="middle">${escH(p.n)}</text>`; });
   g=g.replace('<!--places-->',pl);
   const [a,b]=ends;
@@ -980,8 +984,8 @@ function renderTrip(){
   const {c,opts}=tripState; let sel=tripState.sel;
   $('#topts').innerHTML=opts.map((x,i)=>`<button class="topt ${i===sel?'on':''}" data-i="${i}">
     <span class="tm">${x.est?'~':''}${x.mins}<small>MIN</small></span>
-    <b>${escH(x.title)}${x.tag?`<span class="tag">${x.tag}</span>`:''}${x.warn?'<span class="tag warn">'+x.warn+'</span>':''}</b>
-    <span class="m">${escH(x.meta)}${x.times?'<br>'+escH(x.times):''}</span>${stripHTML(x)}</button>`).join('');
+    <span class="hd"><b>${escH(x.title)}${x.tag?`<span class="tag">${x.tag}</span>`:''}${x.warn?'<span class="tag warn">'+x.warn+'</span>':''}</b>${x.times?`<em>${escH(x.times)}</em>`:''}</span>
+    <span class="m">${escH(x.meta)}</span>${stripHTML(x)}</button>`).join('');
   $('#topts').querySelectorAll('.topt').forEach(b=>b.onclick=()=>{tripState.sel=+b.dataset.i;tripState.touched=true;track('trip_pick',{id:c.id,kind:opts[tripState.sel].kind});renderTrip()});
   try{ renderTripMap(c,opts,sel); }catch(e){ $('#tmap').innerHTML=''; track('trip_map_fail',{msg:String(e.message||e).slice(0,80)}); }
   const x=opts[sel], gm={walk:'walking',cycle:'bicycling',drive:'driving'}[x.kind]||'transit';
@@ -992,7 +996,7 @@ async function openTrip(c){
   const ab=arriveBy(c), hc=hoursOf(c).close;
   $('#tripTitle').textContent=c.name;
   $('#tripSub').textContent=[ 'From '+(setup.place||'your postcode'), nice(fromIso(setup.date)), ab!=null?'arrive by '+fmtT(ab):'', hc!=null?'closes '+fmtT(hc):'' ].filter(Boolean).join(' · ');
-  $('#tripFine').textContent='Times from TfL for '+nice(fromIso(setup.date))+'. Walking and cycling are straight-line estimates. Check before you set off.';
+  $('#tripFine').textContent='TfL times for '+nice(fromIso(setup.date))+'. Walk and cycle times are estimates.';
   const show=t=>{ const opts=tripOptions(c,t); tripState={c,opts,sel:Math.max(0,opts.findIndex(x=>x.pick)),touched:false}; renderTrip(); };
   show(travelCache[c.id]||(travelCache[c.id]===null?null:undefined)); $('#tripSheet').hidden=false;
   if(!travelCache[c.id]){ const t=await tflMins(c,true);
