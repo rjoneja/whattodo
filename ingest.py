@@ -28,7 +28,7 @@ EVENT_TYPES = {"Event","ExhibitionEvent","Festival","MusicEvent","TheaterEvent",
 
 SCHEMA = """Each event is a JSON object:
 {"name": str, "area": str (neighbourhood), "lat": float, "lon": float, "in": "in"|"out"|"both",
- "price": "free"|"£"|"££" (£ = under ~£15/adult), "ages": [min,max] (99 = any), "kids": 0-3, "adults": 0-3,
+ "price": "free"|"£"|"££" (£ = under ~£15/adult), "ages": [min,max] (99 = any), "kids": 0-3 (how much children would actually enjoy it, not whether they are allowed; ceremonies, talks and services are 0), "adults": 0-3,
  "dur": hours, "parking": short note only if the venue states it, e.g. "car park on site" / "no parking" (else omit), "tags": [3-5 lowercase words], "blurb": own words, max 35 words, practical,
  "url": the event's own page, then EITHER "date": "YYYY-MM-DD" (+ optional "time") OR "from"/"to": "YYYY-MM-DD"."""
 

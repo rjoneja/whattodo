@@ -158,10 +158,11 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 /* map */
 .map{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;aspect-ratio:1/1.15;max-width:100%}
 .map svg{width:100%;height:100%;display:block;touch-action:none}
-.map.real{aspect-ratio:auto;height:min(62vh,520px);isolation:isolate;z-index:0}
-.map .leaflet-control-attribution{font-size:9px}
-.youtip{background:var(--ink);color:var(--paper);border:0;font:600 11px var(--display);padding:2px 6px;box-shadow:none}
-.youtip:before{display:none}
+.mapwrap{position:relative}
+.zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.zoom button{width:40px;height:40px;background:var(--card);color:var(--ink);font:600 22px var(--display);line-height:1}
+.zoom button+button{border-top:1px solid var(--line)}
+.zoom button:disabled{color:var(--ink-3)}
 .map .river{fill:none;stroke:var(--sky);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;opacity:.35}
 .map .ring{fill:none;stroke:var(--line);stroke-dasharray:3 5}
 .map .lbl{font:500 10px var(--body);fill:var(--ink-3);text-anchor:middle}
@@ -278,8 +279,8 @@ td.n{text-align:right}
       <h2 style="font-size:26px">Around you</h2>
       <div class="toggle" id="mapMode"><button data-m="deck" class="on">Suggested</button><button data-m="saved">Saved</button></div>
     </div>
-    <div class="map" id="map"></div>
-    <div class="maplegend"><span><i style="background:var(--verm)"></i>Ticketed</span><span><i style="background:var(--moss)"></i>Free</span><span><i style="background:var(--amber)"></i>One-off event</span><span>Bigger dot = better match · dashed rings at roughly 30 and 60 min</span></div>
+    <div class="mapwrap"><div class="map" id="map"></div><div class="zoom"><button id="zIn" aria-label="Zoom in">+</button><button id="zOut" aria-label="Zoom out">−</button></div></div>
+    <div class="maplegend"><span><i style="background:var(--verm)"></i>Ticketed</span><span><i style="background:var(--moss)"></i>Free</span><span><i style="background:var(--amber)"></i>One-off event</span><span>Bigger dot = better match · rings at roughly 30 and 60 min</span></div>
     <div class="mapsel" id="mapSel" hidden></div>
   </section>
 
@@ -524,7 +525,9 @@ async function tflMins(it){
 
 /* ---------- SCORING ---------- */
 function ageFit(it){ if(setup.who!=='family'||!setup.ages.length) return 1; const [lo,hi]=it.ages||[0,99]; let n=0; for(const[l,a,b]of AGEBANDS){ if(setup.ages.includes(l)&&!(b<lo||a>hi)) n++; } return n/setup.ages.length; }
+const SOLEMN=/remembrance|armistice|wreath|memorial service|service of|act of remembrance|vigil|commemorat|council meeting|consultation|surgery|\bagm\b|briefing|networking|careers? fair|recruitment|job fair/i;
 function score(it,mins){
+  const solemn=SOLEMN.test(it.name); if(solemn) it=Object.assign({},it,{kids:Math.min(it.kids??1,0),adults:Math.min(it.adults??1,1)});
   let s=10, why=[];
   s-=mins/9;
   if(wx){ if(wx.wet){ if(it.in==='out'){s-=3.2;} else if(it.in==='in'){s+=1.6;why.push('indoors on a wet day')} else {s-=0.6} }
@@ -532,6 +535,7 @@ function score(it,mins){
     else if(wx.dry&&it.in==='out'){s+=0.7}
     if(wx.cold&&it.in==='out'){s-=0.9}
     if(wx.windy&&it.in==='out'){s-=1.5} }
+  if(solemn&&(setup.who==='family'||setup.who==='friends')) s-=3.5;
   if(setup.who==='family'){ const f=ageFit(it); if(f===0) return {s:-99,why:[]}; s+=f*1.5+it.kids*0.9; if(it.adults>=2) s+=0.4; if(f===1&&it.kids===3) why.push('right age range') }
   else { s+=it.adults*0.9; if(it.kids===3&&it.adults<=1) s-=1.8; if(setup.who==='couple'&&it.tags.includes('couple')) {s+=0.8;why.push('good for two')} if(setup.who==='friends'&&(it.tags.includes('food')||it.tags.includes('beer')||it.tags.includes('market'))) s+=0.6; }
   if(it.price==='free') s+=0.3;
@@ -555,6 +559,19 @@ let IMAGES={};
 async function loadImages(){ if(Object.keys(IMAGES).length) return; try{const r=await fetch('images.json',{cache:'no-store'}); if(r.ok) IMAGES=await r.json()}catch(e){} }
 async function loadEvents(){ if(EVENTS.length) return; try{const r=await fetch('events.json',{cache:'no-store'}); if(r.ok){const j=await r.json(); EVENTS=(j.events||[]).map(e=>Object.assign({event:true},e))}}catch(e){} }
 function eventOn(e){ const d=setup.date; if(e.date) return e.date===d; if(e.from&&d<e.from) return false; if(e.to&&d>e.to) return false; return true; }
+const STOP=new Set(['london','event','events','sunday','saturday','weekend','family','families','festival','special','annual','street','centre','museum','gallery','free','park','day','days','tour','tours','november','december','october','with','from','your','their','great','winter','summer','autumn','spring','open','opening','evening','morning','night','late','lates']);
+function terms(x){ return new Set((x.name||'').toLowerCase().replace(/[^a-z ]/g,' ').split(/\s+/).filter(w=>w.length>=5&&!STOP.has(w))); }
+function similar(a,b){ const A=terms(a),B=terms(b); for(const w of A) if(B.has(w)) return true; return false; }
+function diversify(list,n=60){
+  // greedy re-rank: each pick costs later look-alikes 2.5 points, so four Remembrance services don't stack up
+  const pool=list.slice(), out=[];
+  while(pool.length&&out.length<n){
+    let bi=0,bv=-1e9;
+    for(let i=0;i<Math.min(pool.length,120);i++){ const p=pool[i]; const dup=out.filter(o=>similar(o,p)).length; const v=p.score-2.5*dup; if(v>bv){bv=v;bi=i;} }
+    out.push(pool.splice(bi,1)[0]);
+  }
+  return out.concat(pool);
+}
 async function buildDeck(){
   await Promise.all([getWeather(),loadEvents(),loadImages()]);
   const today=iso(new Date());
@@ -566,6 +583,7 @@ async function buildDeck(){
   const special=deck.filter(x=>x.event&&(x.date||(x.to&&(fromIso(x.to)-fromIso(setup.date))/864e5<=30)));
   deck.forEach(x=>{ if(!x.event && special.some(e=>km(e.lat,e.lon,x.lat,x.lon)<0.4)) x.score-=4; });
   deck.sort((a,b)=>b.score-a.score);
+  deck=diversify(deck);
   // drop near-duplicates (same event listed by two sources, or singular/plural titles)
   const seenKeys=new Set();
   deck=deck.filter(x=>{const k=x.name.toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9 ]/g,'').replace(/s\b/g,'').trim().split(/\s+/).slice(0,4).join(' ')+'|'+(x.date||x.from||'');
@@ -647,7 +665,9 @@ function act(kind,el){
   const c=deck[0]; if(!c) return;
   undoStack.push({c,prev:status[c.id],kind});
   if(kind==='saved'){status[c.id]='saved';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Saved ♥')}
-  else if(kind==='pass'){status[c.id]='pass';c.tags.forEach(t=>swipes.pass[t]=(swipes.pass[t]||0)+1)}
+  else if(kind==='pass'){status[c.id]='pass';c.tags.forEach(t=>swipes.pass[t]=(swipes.pass[t]||0)+1);
+    const hit=deck.slice(1).filter(x=>similar(x,c)); hit.forEach(x=>x.score-=4); undoStack[undoStack.length-1].demoted=hit.map(x=>x.id);
+    if(hit.length){ const rest=deck.slice(1).sort((a,b)=>b.score-a.score); deck=[deck[0],...diversify(rest)]; } }
   else if(kind==='again'){status[c.id]='again';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Kept in the mix')}
   else if(kind==='done'){status[c.id]='done';toast('Ticked off')}
   save(); track('swipe',{id:c.id,kind,who:setup.who,mode:setup.mode,how:c.how,mins:c.mins});
@@ -660,6 +680,7 @@ $('#againYes').onclick=()=>{$('#sheet').hidden=true;act('again')}; $('#againNo')
 $('#bUndo').onclick=()=>{const h=undoStack.pop(); if(!h) return; if(h.prev)status[h.c.id]=h.prev; else delete status[h.c.id];
   const bucket=(h.kind==='saved'||h.kind==='again')?swipes.like:(h.kind==='pass'?swipes.pass:null);
   if(bucket) h.c.tags.forEach(t=>{bucket[t]=Math.max(0,(bucket[t]||0)-1)});
+  if(h.demoted&&h.demoted.length){ deck.forEach(x=>{if(h.demoted.includes(x.id))x.score+=4}); deck=diversify(deck.sort((a,b)=>b.score-a.score)); }
   deck.unshift(h.c); save(); track('undo',{id:h.c.id}); renderStack(); toast('Brought it back')};
 
 /* ---------- LIST ---------- */
@@ -674,61 +695,23 @@ function renderList(){
 }
 
 /* ---------- MAP (schematic: no tiles needed) ---------- */
-const THAMES=[[-0.37,51.41],[-0.31,51.41],[-0.30,51.46],[-0.29,51.49],[-0.25,51.485],[-0.23,51.47],[-0.21,51.467],[-0.19,51.468],[-0.17,51.48],[-0.15,51.485],[-0.125,51.487],[-0.123,51.50],[-0.115,51.508],[-0.104,51.511],[-0.088,51.508],[-0.075,51.506],[-0.06,51.505],[-0.035,51.508],[-0.025,51.5],[-0.03,51.49],[-0.02,51.48],[-0.005,51.483],[0.003,51.495],[-0.005,51.505],[0.005,51.51],[0.02,51.503],[0.03,51.496],[0.06,51.494],[0.09,51.50],[0.14,51.49],[0.17,51.487]];
-const PLACES=[['Central',-0.12,51.513],['Greenwich',-0.005,51.477],['Richmond',-0.30,51.46],['Stratford',-0.01,51.542],['Brixton',-0.114,51.462],['Hampstead',-0.165,51.556],['Bromley',0.015,51.405],['Croydon',-0.098,51.372],['Walthamstow',-0.02,51.585],['Ealing',-0.30,51.513]];
+const THAMES=[[-0.3376,51.4031],[-0.3195,51.4045],[-0.309,51.4115],[-0.3125,51.4215],[-0.3237,51.4319],[-0.3215,51.4425],[-0.3115,51.4525],[-0.307,51.4595],[-0.3005,51.4705],[-0.289,51.484],[-0.27,51.4885],[-0.256,51.487],[-0.2455,51.4775],[-0.235,51.4775],[-0.229,51.488],[-0.2215,51.4835],[-0.216,51.467],[-0.205,51.4635],[-0.19,51.4645],[-0.18,51.475],[-0.17,51.482],[-0.15,51.486],[-0.125,51.487],[-0.123,51.501],[-0.117,51.509],[-0.104,51.51],[-0.087,51.508],[-0.075,51.5055],[-0.056,51.505],[-0.042,51.504],[-0.034,51.507],[-0.0275,51.4985],[-0.0225,51.4875],[-0.01,51.484],[-0.003,51.486],[0.005,51.5],[0.009,51.5085],[0.022,51.503],[0.045,51.4975],[0.07,51.495],[0.11,51.5],[0.16,51.507]];
+const PLACES=[
+ ['Central',-0.12,51.513,1],['City',-0.092,51.515,1],['Greenwich',-0.009,51.4826,1],['Richmond',-0.3037,51.4613,1],['Stratford',-0.003,51.542,1],['Brixton',-0.1145,51.4613,1],['Hampstead',-0.178,51.556,1],['Bromley',0.015,51.406,1],['Croydon',-0.098,51.376,1],['Walthamstow',-0.019,51.586,1],['Ealing',-0.3089,51.513,1],['Kingston',-0.3007,51.4123,1],['Wimbledon',-0.2064,51.4214,1],['Lewisham',-0.013,51.461,1],['Hackney',-0.055,51.545,1],['Camden',-0.143,51.539,1],['Wembley',-0.296,51.552,1],['Woolwich',0.069,51.49,1],
+ ['Teddington',-0.3324,51.4271,2],['Twickenham',-0.3337,51.4466,2],['Surbiton',-0.3036,51.3937,2],['Putney',-0.2167,51.4613,2],['Hammersmith',-0.2239,51.4927,2],['Chiswick',-0.2558,51.4926,2],['Hounslow',-0.3615,51.4668,2],['Barnes',-0.242,51.472,2],['Clapham',-0.138,51.462,2],['Battersea',-0.165,51.47,2],['Peckham',-0.069,51.474,2],['Camberwell',-0.093,51.474,2],['Dulwich',-0.086,51.445,2],['Brockley',-0.037,51.464,2],['Deptford',-0.026,51.479,2],['Blackheath',0.008,51.466,2],['Catford',-0.02,51.445,2],['Forest Hill',-0.053,51.439,2],['Sydenham',-0.055,51.427,2],['Crystal Palace',-0.07,51.418,2],['Beckenham',-0.025,51.408,2],['Eltham',0.052,51.451,2],['Streatham',-0.131,51.428,2],['Tooting',-0.168,51.427,2],['Balham',-0.152,51.443,2],['Vauxhall',-0.124,51.486,2],['Westminster',-0.134,51.499,2],['Shoreditch',-0.078,51.526,2],['Bow',-0.02,51.529,2],['Canary Wharf',-0.02,51.505,2],['Islington',-0.103,51.538,2],['Kentish Town',-0.141,51.55,2],['Highgate',-0.146,51.572,2],['Finsbury Park',-0.105,51.564,2],['Tottenham',-0.072,51.588,2],['Leyton',-0.005,51.56,2],['Ilford',0.069,51.559,2],['Barking',0.081,51.539,2],['Harrow',-0.334,51.58,2],['Kilburn',-0.195,51.547,2],['Notting Hill',-0.205,51.509,2],['Kensington',-0.195,51.5,2],['Chelsea',-0.169,51.487,2],['Fulham',-0.195,51.473,2],['Paddington',-0.175,51.516,2],["King's Cross",-0.124,51.531,2],['Bermondsey',-0.064,51.497,2],['Kew',-0.288,51.478,2],['Sutton',-0.1945,51.3618,2],['Morden',-0.196,51.402,2],['Mitcham',-0.168,51.403,2],['New Malden',-0.256,51.401,2],['Hampton',-0.368,51.415,2],['Ham',-0.306,51.438,2],['Esher',-0.365,51.37,2],['Southwark',-0.099,51.503,2],['Rotherhithe',-0.052,51.498,2],['Hither Green',-0.0085,51.4523,3],['Ladywell',-0.0192,51.4565,3],['Nunhead',-0.0538,51.4664,3],['Honor Oak',-0.0446,51.4499,3],['New Cross',-0.0326,51.4762,3],['Herne Hill',-0.1021,51.4535,3],['East Dulwich',-0.0752,51.4613,3],['Lee',0.0129,51.4558,3],['Charlton',0.0323,51.4865,3],['Kidbrooke',0.0272,51.4618,3],['Norbiton',-0.2836,51.4126,3],['Tolworth',-0.284,51.3786,3],['Hampton Wick',-0.3125,51.4141,3],['Strawberry Hill',-0.3393,51.4387,3],['East Sheen',-0.2672,51.4646,3],['Mortlake',-0.2675,51.4681,3]
+];
 let mapMode='deck',mapSelId=null;
-/* Real map (Leaflet + OpenStreetMap/CARTO tiles) on the hosted site; the schematic above is the fallback */
-let lmap=null, lLayer=null, leafletState='idle';
-function loadLeaflet(){
-  if(window.L) return Promise.resolve(true);
-  if(leafletState==='loading') return new Promise(r=>{const t=setInterval(()=>{if(leafletState!=='loading'){clearInterval(t);r(!!window.L)}},100)});
-  leafletState='loading';
-  return new Promise(res=>{
-    const css=document.createElement('link'); css.rel='stylesheet'; css.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css'; document.head.appendChild(css);
-    const sc=document.createElement('script'); sc.src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js';
-    const done=ok=>{leafletState=ok?'ready':'failed';res(ok)};
-    sc.onload=()=>done(!!window.L); sc.onerror=()=>done(false); setTimeout(()=>{if(leafletState==='loading')done(false)},6000);
-    document.head.appendChild(sc);
-  });
-}
+let mapZoom=2;   // 1 = whole of London, 2-4 = closer in; default is local
 function mapPoints(){
   let pts; if(mapMode==='saved'){ pts=Object.keys(status).filter(k=>['saved','again'].includes(status[k])).map(id=>ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id)).filter(Boolean).map(it=>Object.assign({},it,trip(it),{score:10})); }
   else pts=deck.slice(0,60);
   return pts;
 }
-function ringKm(m){ const kmh={car:22,bike:14,transit:19}[setup.mode]||19, lead={car:12,bike:4,transit:10}[setup.mode]||10; return Math.max(0,(m-lead))/60*kmh/1.3; }
-function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
-async function renderMap(){
-  const ok=await loadLeaflet();
-  if(!ok){ $('#map').classList.remove('real'); return renderSchematic(); }
-  const el=$('#map'); el.classList.add('real');
-  const dark=matchMedia('(prefers-color-scheme: dark)').matches && document.documentElement.dataset.theme!=='light' || document.documentElement.dataset.theme==='dark';
-  if(!lmap){
-    el.innerHTML='';
-    lmap=L.map(el,{zoomControl:true,attributionControl:true,scrollWheelZoom:false});
-    L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_all':'rastertiles/voyager'}/{z}/{x}/{y}{r}.png`,{maxZoom:18,subdomains:'abcd',attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>'}).addTo(lmap);
-    lLayer=L.layerGroup().addTo(lmap);
-    lmap.on('click',()=>{mapSelId=null;renderMapSel(mapPoints())});
-  }
-  lLayer.clearLayers();
-  const me=[setup.lat,setup.lon];
-  [30,60].forEach(m=>L.circle(me,{radius:ringKm(m)*1000,color:cssVar('--ink-3'),weight:1.2,dashArray:'4 6',fill:false,interactive:false}).addTo(lLayer));
-  L.circleMarker(me,{radius:7,color:'#fff',weight:2.5,fillColor:cssVar('--ink'),fillOpacity:1}).bindTooltip('You',{permanent:true,direction:'top',offset:[0,-8],className:'youtip'}).addTo(lLayer);
-  const pts=mapPoints(); const smax=Math.max(...pts.map(p=>p.score),1),smin=Math.min(...pts.map(p=>p.score),0);
-  const col={ev:cssVar('--amber'),free:cssVar('--moss'),paid:cssVar('--verm')};
-  pts.forEach(p=>{ if(p.lat==null) return; const r=6+(smax>smin?(p.score-smin)/(smax-smin):0.5)*8;
-    L.circleMarker([p.lat,p.lon],{radius:r,color:mapSelId===p.id?cssVar('--ink'):'#fff',weight:mapSelId===p.id?3:1.5,fillColor:p.event?col.ev:p.price==='free'?col.free:col.paid,fillOpacity:.9})
-      .on('click',e=>{L.DomEvent.stopPropagation(e);mapSelId=p.id;renderMap()}).addTo(lLayer); });
-  if(!el.dataset.fitted||el.dataset.fitted!==setup.lat+','+setup.lon+','+setup.mode){
-    lmap.setView(me,13,{animate:false}); el.dataset.fitted=setup.lat+','+setup.lon+','+setup.mode;
-  }
-  setTimeout(()=>lmap.invalidateSize(),50);
-  renderMapSel(pts);
-}
+function renderMap(){ return renderSchematic(); }
 function renderSchematic(){
   const W=360,H=414,cx=W/2,cy=H/2;
   const kmLat=111.2,kmLon=111.2*Math.cos(setup.lat*Math.PI/180);
-  const pxPerKm=W/2/ ({car:22,bike:14,transit:17}[setup.mode]||17);   // 60-min ring at roughly the edge
+  const pxPerKm=W/2/ ({car:22,bike:14,transit:17}[setup.mode]||17) * mapZoom;   // zoom 1: 60-min ring near the edge
   const P=(lon,lat)=>[cx+(lon-setup.lon)*kmLon*pxPerKm, cy-(lat-setup.lat)*kmLat*pxPerKm];
   const minsToR=m=>{const kmh={car:22,bike:14,transit:19}[setup.mode]||19, lead={car:12,bike:4,transit:10}[setup.mode]||10; return Math.max(0,(m-lead))/60*kmh/1.3*pxPerKm};
   let pts; if(mapMode==='saved'){ pts=Object.keys(status).filter(k=>['saved','again'].includes(status[k])).map(id=>ITEMS.find(x=>x.id===id)||EVENTS.find(x=>x.id===id)).filter(Boolean).map(it=>Object.assign({},it,trip(it),{score:10})); }
@@ -738,10 +721,17 @@ function renderSchematic(){
   let svg=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of suggestions around you">`;
   svg+=`<path class="river" d="${river}"/>`;
   svg+=`<circle class="ring" cx="${cx}" cy="${cy}" r="${minsToR(30).toFixed(1)}"/><circle class="ring" cx="${cx}" cy="${cy}" r="${minsToR(60).toFixed(1)}"/>`;
-  PLACES.forEach(([n,lo,la])=>{const [x,y]=P(lo,la); if(x>14&&x<W-14&&y>10&&y<H-4) svg+=`<text class="lbl" x="${x.toFixed(1)}" y="${y.toFixed(1)}">${n}</text>`});
+  const tier=mapZoom>=4?3:mapZoom>=2?2:1; let labels='';
   pts.forEach(p=>{const [x,y]=P(p.lon,p.lat); if(x<6||x>W-6||y<6||y>H-6) return; const r=4+ (smax>smin?(p.score-smin)/(smax-smin):0.5)*7;
     const col=p.event?'var(--amber)':p.price==='free'?'var(--moss)':'var(--verm)';
     svg+=`<g class="dot ${mapSelId===p.id?'sel':''}" data-id="${p.id}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${col}" opacity=".9"/></g>`});
+  const boxes=[]; const hit=(x0,y0,x1,y1)=>boxes.some(b=>!(x1<b[0]||x0>b[2]||y1<b[1]||y0>b[3]));
+  pts.forEach(p=>{const [x,y]=P(p.lon,p.lat); boxes.push([x-9,y-9,x+9,y+9]);});
+  { const [ux0,uy0]=P(setup.lon,setup.lat); boxes.push([ux0-16,uy0-26,ux0+16,uy0+10]); boxes.push([W-60,0,W,100]); }
+  PLACES.filter(q=>q[3]<=tier).sort((a,b)=>a[3]-b[3]).forEach(([n,lo,la])=>{const [x,y]=P(lo,la); const w=n.length*5.4/2+3;
+    for(const dy of [0,17,-15]){ const yy=y+dy; if(x-w<4||x+w>W-4||yy-11<4||yy+3>H-4) continue; if(hit(x-w,yy-11,x+w,yy+3)) continue;
+      boxes.push([x-w,yy-11,x+w,yy+3]); labels+=`<text class="lbl" x="${x.toFixed(1)}" y="${yy.toFixed(1)}">${n}</text>`; break; }});
+  svg+=labels;
   const [ux,uy]=P(setup.lon,setup.lat);
   svg+=`<g class="you"><circle cx="${ux}" cy="${uy}" r="5"/><circle cx="${ux}" cy="${uy}" r="9" fill="none" stroke="var(--ink)" opacity=".35"/><text x="${ux}" y="${uy-14}">You</text></g></svg>`;
   $('#map').innerHTML=svg;
@@ -753,9 +743,12 @@ function renderMapSel(pts){
   if(!sel){box.hidden=true;return}
   box.hidden=false; const st=status[sel.id];
   box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ~${sel.mins} min ${({drive:'drive',cycle:'by bike',transport:'by transport',walk:'walk'})[sel.how||'transport']}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
-    <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener">Details ›</a></div>`;
+    <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener">Details ›</a><a class="mini" href="https://www.google.com/maps/dir/?api=1&destination=${sel.lat},${sel.lon}&travelmode=${({drive:'driving',cycle:'bicycling',walk:'walking'})[sel.how]||'transit'}" target="_blank" rel="noopener">Directions ›</a></div>`;
   box.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{status[sel.id]=b.dataset.ms;save();track('map_action',{id:sel.id,kind:b.dataset.ms});deck=deck.filter(d=>d.id!==sel.id);renderMap();renderStack();toast(b.dataset.ms==='saved'?'Saved ♥':'Ticked off')});
 }
+const ZOOMS=[1,2,4];
+function setZoom(d){ const i=Math.max(0,Math.min(ZOOMS.length-1,ZOOMS.indexOf(mapZoom)+d)); mapZoom=ZOOMS[i]; $('#zIn').disabled=i===ZOOMS.length-1; $('#zOut').disabled=i===0; track('map_zoom',{z:mapZoom}); renderMap(); }
+$('#zIn').onclick=()=>setZoom(1); $('#zOut').onclick=()=>setZoom(-1);
 $('#mapMode').querySelectorAll('button').forEach(b=>b.onclick=()=>{mapMode=b.dataset.m;mapSelId=null;$('#mapMode').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));renderMap()});
 
 /* ---------- STATS ---------- */
