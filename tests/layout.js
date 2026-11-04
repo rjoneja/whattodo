@@ -16,6 +16,10 @@ const pw = require('playwright');
 const BASE = process.env.BASE || 'http://127.0.0.1:8765/';
 const BROWSERS = (process.env.BROWSERS || 'chromium').split(',');
 const CARDS = +(process.env.CARDS || 30);
+// offline runs: serve the app's fonts from @fontsource files so text measures as it does live
+const LOCAL_FONTS = process.env.LOCAL_FONTS || '';
+const FONT_CSS = [['Young Serif', 'young-serif', [400]], ['Jost', 'jost', [500, 600, 700]], ['IBM Plex Sans', 'ibm-plex-sans', [400, 500, 600]]]
+  .flatMap(([fam, dir, ws]) => ws.map(w => `@font-face{font-family:'${fam}';font-weight:${w};font-style:normal;font-display:block;src:url(https://fonts.local/${dir}/files/${dir}-latin-${w}-normal.woff2) format('woff2')}`)).join('\n');
 const OUT = path.join(__dirname, 'out'); fs.mkdirSync(OUT, { recursive: true });
 // visible area once the browser's own bars are taken off
 const PHONES = [
@@ -82,7 +86,9 @@ function pageChecks(scopeSel, label) {
       // A cut is fine when it's deliberate ("…" ellipsis, line clamp, a scroll area); otherwise it's a bug.
       const sr = scope.getBoundingClientRect();
       for (const r0 of rects) {
-        let r = { left: r0.left, right: r0.right, top: r0.top, bottom: r0.bottom }, badCut = false;
+        // fonts reserve blank space above and below the letters; measure only the middle where the ink is
+        const pad = (r0.bottom - r0.top) * 0.2;
+        let r = { left: r0.left, right: r0.right, top: r0.top + pad, bottom: r0.bottom - pad }, badCut = false;
         for (let a = el; a && a !== document.documentElement; a = a.parentElement) {
           const as = getComputedStyle(a); if (!/hidden|clip|auto|scroll/.test(as.overflow + as.overflowX + as.overflowY)) continue;
           const ar = a.getBoundingClientRect();
@@ -105,6 +111,11 @@ function pageChecks(scopeSel, label) {
     // text on text
     for (let i = 0; i < boxes.length; i++) for (let j = i + 1; j < boxes.length; j++) {
       const A = boxes[i], B = boxes[j]; if (A.el === B.el || A.el.contains(B.el) || B.el.contains(A.el)) continue;
+      // a pinned footer covering content in a panel that scrolls is normal scrolling, not an overlap
+      const pinned = e => { for (let a = e; a && a !== scope.parentElement; a = a.parentElement) if (/sticky|fixed/.test(getComputedStyle(a).position)) return a; return null; };
+      const scroller = e => { for (let a = e.parentElement; a; a = a.parentElement) { const st = getComputedStyle(a); if (/auto|scroll/.test(st.overflowY) && a.scrollHeight > a.clientHeight + 1) return a; } return null; };
+      const pa = pinned(A.el), pb = pinned(B.el);
+      if ((pa && !pb && scroller(B.el) && scroller(B.el).contains(pa)) || (pb && !pa && scroller(A.el) && scroller(A.el).contains(pb))) continue;
       const w = Math.min(A.r.right, B.r.right) - Math.max(A.r.left, B.r.left), h = Math.min(A.r.bottom, B.r.bottom) - Math.max(A.r.top, B.r.top);
       if (w > 2 && h > 2) issues.push({ kind: 'text overlaps text', where: label, el: name(A.el) + '  ×  ' + name(B.el) });
     }
@@ -133,6 +144,8 @@ function pageChecks(scopeSel, label) {
         const u = r.request().url(), t = r.request().resourceType();
         if (u.includes('api.tfl.gov.uk')) return r.fulfill({ json: tfl(u), headers: { 'access-control-allow-origin': '*' } });
         if (u.includes('api.open-meteo.com')) return r.fulfill({ json: weather(), headers: { 'access-control-allow-origin': '*' } });
+        if (LOCAL_FONTS && u.includes('fonts.googleapis.com/css')) return r.fulfill({ body: FONT_CSS, contentType: 'text/css' });
+        if (LOCAL_FONTS && u.startsWith('https://fonts.local/')) return r.fulfill({ body: fs.readFileSync(path.join(LOCAL_FONTS, u.slice(20))), contentType: 'font/woff2' });
         if (u.includes('api.postcodes.io')) return r.fulfill({ json: { status: 200, result: { latitude: 51.4565, longitude: -0.0245, admin_ward: 'Ladywell' } }, headers: { 'access-control-allow-origin': '*' } });
         if (t === 'image' || u.includes('posthog')) return r.abort();
         return r.continue();
