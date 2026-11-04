@@ -84,9 +84,9 @@ def choose(e, page_url, links):
         if "thinking" not in str(ex).lower(): raise
         msg = _client.messages.create(model=MODEL, max_tokens=2000, messages=[{"role": "user", "content": prompt}])
     txt = "".join(getattr(b, "text", "") for b in msg.content if getattr(b, "type", "") == "text")
-    m = re.search(r"\{.*\}", txt, re.S)
-    if not m: return None, None
-    v = json.loads(m.group(0))
+    i0 = txt.find("{")
+    if i0 < 0: return None, None
+    v, _ = json.JSONDecoder().raw_decode(txt[i0:])          # first JSON object only, ignore anything after it
     i = v.get("i")
     return (links[i]["url"], v.get("kind")) if isinstance(i, int) and 0 <= i < len(links) else (None, None)
 
