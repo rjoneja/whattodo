@@ -20,8 +20,9 @@ jobs:
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - run: python3 images.py --events docs/events.json --out docs/images.json ${{ github.event.inputs.recheck == 'yes' && '--recheck' || '' }} || true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+      - run: python3 share_pages.py
       - run: |
           git config user.name bot && git config user.email bot@users.noreply.github.com
-          git add docs/events.json docs/images.json
+          git add docs/events.json docs/images.json docs/e
           git commit -m "web $(date +%F)" || exit 0
           git pull --rebase origin main && git push

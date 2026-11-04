@@ -1,4 +1,7 @@
 <title>JauntOut London</title>
+<meta property="og:title" content="JauntOut London">
+<meta property="og:description" content="Swipe through things to do near you this weekend.">
+<meta property="og:url" content="https://www.jauntout.com/">
 <meta name="description" content="Things to do near you in London this weekend, matched to who's going, the weather and how far you'll travel.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 84 84%27%3E%3Crect width=%2784%27 height=%2784%27 rx=%2718%27 fill=%27%231E3F2B%27/%3E%3Cpath transform=%27translate(12 6) scale(1 .86)%27 fill-rule=%27evenodd%27 fill=%27%23E2582E%27 d=%27M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z%27/%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -116,6 +119,10 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .card .why b{color:var(--ink);font-weight:500}
 .card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:var(--u);font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:var(--u)}
 .card .foot a{font-family:var(--display);font-weight:600;font-size:14px}
+.card .foot .src{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card .foot .fa{display:flex;align-items:center;gap:14px;flex:none}
+.card .foot .wa{display:inline-flex;align-items:center;gap:5px;color:var(--moss);padding:6px 10px;margin:-6px 0;border-radius:999px;background:var(--moss-soft)}
+.card .foot .wa svg{width:17px;height:17px}
 .stamp{position:absolute;top:calc(var(--u)*2.5);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;padding:6px 14px;border-radius:999px;opacity:0;pointer-events:none;color:#fff}
 .stamp.save{right:calc(var(--u)*2);background:var(--moss)}
 .stamp.pass{left:calc(var(--u)*2);background:var(--verm)}
@@ -541,6 +548,26 @@ function renderStrip(){
   $('#ctx').innerHTML=`<b>${whoL}</b><br>${nice(d)} · ${setup.pc||''}`;
 }
 function travelLabel(c){ return (c.est?'~':'')+c.mins+' min '+(setup.car?'drive':'by transport') }
+/* ---------- SHARING ---------- */
+const EMOJI=[[/pickle/i,'🥒'],[/firework|bonfire/i,'🎆'],[/christmas|xmas|festive|santa/i,'🎄'],[/diwali|lantern|light show|illuminat/i,'🪔'],[/market|fair|bazaar/i,'🛍️'],[/food|street food|supper|brunch|tasting|beer|wine/i,'🍽️'],[/farm|animal|zoo|alpaca|goat/i,'🐐'],[/park|garden|walk|nature|wood|forest|heath|wetland/i,'🌳'],[/music|concert|gig|choir|orchestra|jazz|shanty/i,'🎶'],[/theatre|show|puppet|panto|circus|comedy/i,'🎭'],[/museum|exhibition|gallery|history|art/i,'🖼️'],[/swim|lido/i,'🏊'],[/train|railway|bus|transport/i,'🚂'],[/kids|family|play|story/i,'🎈']];
+function emojiFor(c){const t=c.name+' '+(c.tags||[]).join(' ');for(const [re,e] of EMOJI) if(re.test(t)) return e; return '📍';}
+function whenWords(c){
+  const d=c.date||setup.date; if(!d) return '';
+  const day=fromIso(d), today=new Date(); today.setHours(0,0,0,0);
+  const diff=Math.round((day-today)/864e5);
+  if(diff===0) return 'today'; if(diff===1) return 'tomorrow';
+  if(diff>1&&diff<7) return 'on '+['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][day.getDay()];
+  return 'on '+nice(day);
+}
+function shareText(c){
+  const w=whenWords(c), e=emojiFor(c);
+  const lead={solo:`Fancy this ${w}? ${e}`,couple:`Shall we do this ${w}? ${e}`,family:`Could be a good one for the kids ${w} ${e}`,friends:`Who's in for this ${w}? ${e}`}[setup.who]||`Fancy this ${w}? ${e}`;
+  const bits=[c.name, c.area, c.date?nice(fromIso(c.date))+(c.time?' · '+c.time:''):(c.to?'until '+nice(fromIso(c.to)):''), c.price==='free'?'Free':''].filter(Boolean).join(' · ');
+  return lead+'\n'+bits;
+}
+function shareURL(c){ return 'https://www.jauntout.com/'+(c.event?'e/'+encodeURIComponent(c.id)+'/':'?e='+encodeURIComponent(c.id)+'&')+(c.event?'?':'')+'s=wa'; }
+function shareLink(c){ return 'https://wa.me/?text='+encodeURIComponent(shareText(c)+'\n'+shareURL(c)); }
+document.addEventListener('click',e=>{const a=e.target.closest('[data-share]'); if(!a) return; const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===a.dataset.share); track('share',{id:a.dataset.share,who:setup.who,channel:'whatsapp',event:!!(c&&c.event)});},true);
 function cardHTML(c){
   const badges=[`<span class="badge ${c.est?'':'good'}" data-tr>${travelLabel(c)}</span>`,
     `<span class="badge">${c.in==='in'?'Indoors':c.in==='out'?'Outdoors':'In & out'}</span>`,
@@ -556,7 +583,7 @@ function cardHTML(c){
     <div class="top"><div><div class="area">${c.area}</div><h3>${c.name}</h3></div><div class="price ${c.price==='free'?'free':''}">${c.price==='free'?'Free':c.price}</div></div>
     <div class="badges">${badges.join('')}</div>
     <p class="blurb">${c.blurb}</p>${why}
-    <div class="foot"><span>${c.event&&c.source?'via '+c.source:c.tags.slice(0,4).join(' · ')}</span><a href="${c.url}" target="_blank" rel="noopener">${c.event?'Details ›':'Website ›'}</a></div>`;
+    <div class="foot"><span class="src">${c.event&&c.source?'via '+c.source:c.tags.slice(0,4).join(' · ')}</span><span class="fa"><a class="wa" href="${shareLink(c)}" target="_blank" rel="noopener" data-share="${c.id}" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.7 8.7 0 0 0-7.5 13.1L3.3 20.8l4.6-1.2A8.7 8.7 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.5.3-1.2.5-1.9.3-2.4-.7-4.3-2.6-5-5-.2-.7 0-1.4.4-1.9Z" fill="currentColor"/></svg>Share</a><a href="${c.url}" target="_blank" rel="noopener">${c.event?'Details ›':'Website ›'}</a></span></div>`;
 }
 function renderStack(){
   const st=$('#stack'); st.innerHTML='';
@@ -572,7 +599,7 @@ async function refineTravel(c){ if(setup.car||!c.est) return; const m=await tflM
 function attachDrag(el){
   let sx=0,sy=0,dx=0,dy=0,on=false;
   const sS=el.querySelector('.stamp.save'),sP=el.querySelector('.stamp.pass');
-  el.addEventListener('pointerdown',e=>{if(e.target.closest('a'))return;on=true;sx=e.clientX;sy=e.clientY;el.setPointerCapture(e.pointerId);el.classList.remove('returning')});
+  el.addEventListener('pointerdown',e=>{if(e.target.closest('a,button'))return;on=true;sx=e.clientX;sy=e.clientY;el.setPointerCapture(e.pointerId);el.classList.remove('returning')});
   el.addEventListener('pointermove',e=>{if(!on)return;dx=e.clientX-sx;dy=e.clientY-sy;el.style.transform=`translate(${dx}px,${dy*0.4}px) rotate(${dx/18}deg)`;sS.style.opacity=Math.min(1,Math.max(0,dx/80));sP.style.opacity=Math.min(1,Math.max(0,-dx/80))});
   const end=()=>{if(!on)return;on=false; if(dx>95)act('saved',el); else if(dx<-95)act('pass',el); else{el.classList.add('returning');el.style.transform='';sS.style.opacity=0;sP.style.opacity=0} dx=dy=0};
   el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
@@ -675,6 +702,14 @@ $('#nav').querySelectorAll('button').forEach(b=>b.onclick=()=>go(b.dataset.go));
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');if(VIEWS.includes(h))go(h,false)});
 (async function boot(){
   renderWho();
+  const qp=new URLSearchParams(location.search); const want=qp.get('e'), via=qp.get('s');
+  if(want){ track('share_open',{id:want,via:via||'link'}); try{history.replaceState(null,'',location.pathname+location.hash)}catch(e){} }
+  if(want){ await Promise.all([loadEvents(),loadImages()]); const ev=[...EVENTS,...ITEMS].find(x=>x.id===want);
+    if(ev){ if(ev.date) setup.date=ev.date; else if(!setup.date||fromIso(setup.date)<new Date(new Date().setHours(0,0,0,0))){const o=whenOptions();setup.date=iso(o.def);}
+      if(!setup.lat){ setup.lat=51.5074; setup.lon=-0.1278; setup.place='Central London'; setup.pc=setup.pc||''; if(setup.car===null) setup.car=0; setup.who=setup.who||'couple'; setup.guest=true; }
+      await buildDeck(); const i=deck.findIndex(x=>x.id===want);
+      if(i>0){ const [x]=deck.splice(i,1); deck.unshift(x); } else if(i<0){ const mins=estMins(ev); deck.unshift(Object.assign({},ev,{mins,est:true,score:99,why:['shared with you']})); }
+      renderStack(); go('deck'); if(setup.guest) toast('Shared with you · set your postcode in Change'); return; } }
   const h=location.hash.replace('#','');
   if(h==='stats'){go('stats');return}
   if(setup.lat&&setup.date&&fromIso(setup.date)>=new Date(new Date().setHours(0,0,0,0))){ await buildDeck(); go(VIEWS.includes(h)&&h!=='setup'?h:'deck'); }
