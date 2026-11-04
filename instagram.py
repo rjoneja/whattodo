@@ -47,7 +47,7 @@ def api(path, params):
         raise RuntimeError(f"HTTP {ex.code}: {body[:200]}")
 
 def discover(handle, limit=25):
-    fields = f"business_discovery.username({handle}){{username,name,media.limit({limit}){{{MEDIA_FIELDS}}}}}"
+    fields = f"business_discovery.username({handle}){{username,name,website,media.limit({limit}){{{MEDIA_FIELDS}}}}}"
     data = api(os.environ["IG_USER_ID"], {"fields": fields})
     return data.get("business_discovery", {})
 
@@ -154,6 +154,13 @@ def valid(e, today, horizon):
     except (KeyError, ValueError, TypeError):
         return False
 def key(e): return re.sub(r"[^a-z0-9]", "", e["name"].lower())[:40] + (e.get("date") or e.get("from", ""))
+CARRY = ("rel", "hrs", "days", "open", "close", "part", "lk", "lk_try", "via", "site", "post")
+def carry(old, new):
+    """Keep what later steps worked out (relevance, hours, official link) when a post is read again."""
+    for f in CARRY:
+        if f in old and f not in new: new[f] = old[f]
+    if old.get("via") and new.get("url") in (old.get("via"), old.get("post"), None): new["url"] = old["url"]
+    return new
 def slug(e): return "ev-ig-" + re.sub(r"[^a-z0-9]+", "-", e["name"].lower()).strip("-")[:40] + "-" + (e.get("date") or e.get("from"))[5:]
 
 def main():
@@ -208,6 +215,7 @@ def main():
         for e in json.load(open(a.out)).get("events", []): existing[key(e)] = e
 
     found, missing = [], []
+    sites_changed = False
     for acc in accounts:
         if a.only and acc["handle"] != a.only: continue
         try:
@@ -217,6 +225,7 @@ def main():
             if "request limit" in msg:
                 print(f"Meta hourly limit reached at @{acc['handle']}; stopping, the rest wait for the next run", file=sys.stderr); break
             missing.append(acc["handle"]); print(f"@{acc['handle']}: not found or not a professional account ({msg[:80]})", file=sys.stderr); continue
+        if bd.get("website") and acc.get("website") != bd["website"]: acc["website"] = bd["website"]; sites_changed = True
         posts = [p for p in bd.get("media", {}).get("data", []) if p.get("timestamp", "") >= since and p["id"] not in seen]
         print(f"@{acc['handle']}: {len(posts)} new posts", file=sys.stderr)
         if a.check or not posts: continue
@@ -229,7 +238,8 @@ def main():
         for e in evs:
             if not isinstance(e, dict) or not e.get("name") or not (e.get("date") or e.get("from")): continue
             p = by_id.get(str(e.pop("post_id", "")), posts[0])
-            e["url"] = p["permalink"]; e["source"] = f"Instagram @{acc['handle']}"
+            e["post"] = p["permalink"]; e["url"] = p["permalink"]; e["source"] = f"Instagram @{acc['handle']}"
+            if acc.get("website"): e["site"] = acc["website"]           # official_links.py looks for the event there
             e.setdefault("area", acc["area"]); e.setdefault("lat", acc["lat"]); e.setdefault("lon", acc["lon"])
             d = acc.get("defaults", {})
             for k in ("in", "kids", "adults", "ages"): e.setdefault(k, d.get(k))
@@ -241,11 +251,12 @@ def main():
         found += ok
         seen.update(p["id"] for p in posts)
         time.sleep(1)
+    if sites_changed: json.dump(reg, open(a.accounts, "w"), indent=1, ensure_ascii=False)   # remember each account's website
 
     if a.check:
         print("handles Meta could not find:", missing or "none"); return
     merged = dict(existing)
-    for e in found: merged[key(e)] = e
+    for e in found: merged[key(e)] = carry(existing[key(e)], e) if key(e) in existing else e
     events = [e for e in merged.values() if (e.get("date") or e.get("to", "")) >= today.isoformat()]
     events.sort(key=lambda e: e.get("date") or e.get("from"))
     json.dump({"generated": today.isoformat(), "events": events}, open(a.out, "w"), indent=1, ensure_ascii=False)

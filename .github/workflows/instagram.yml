@@ -19,6 +19,8 @@ jobs:
       - run: python3 instagram.py --days 21 --out docs/events.json
       - run: python3 tidy.py
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+      - run: python3 official_links.py || true
+        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - run: python3 images.py --events docs/events.json --out docs/images.json || true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - run: python3 share_pages.py

@@ -215,6 +215,14 @@ EVENTS: {json.dumps(compact, ensure_ascii=False)}"""
         e["blurb"] = f.get("blurb") or (e.get("raw_desc", "")[:160] or e["name"])
     return evs
 
+# fields later steps work out (relevance, hours, official link): keep them when an event is re-scraped
+CARRY = ("rel", "hrs", "days", "open", "close", "part", "lk", "lk_try", "via", "site")
+def carry(old, new):
+    for f in CARRY:
+        if f in old and f not in new: new[f] = old[f]
+    if old.get("via") and new.get("url") in (old.get("via"), None): new["url"] = old["url"]
+    return new
+
 # ---------- validate / merge ----------
 def valid(e, today, horizon):
     try:
@@ -271,7 +279,7 @@ def main():
         time.sleep(1.5)
 
     merged = dict(existing)
-    for e in found: merged[key(e)] = e
+    for e in found: merged[key(e)] = carry(existing[key(e)], e) if key(e) in existing else e
     events = [e for e in merged.values() if (e.get("date") or e.get("to", "")) >= today.isoformat()]
     events.sort(key=lambda e: e.get("date") or e.get("from"))
     json.dump({"generated": today.isoformat(), "events": events}, open(a.out, "w"), indent=1, ensure_ascii=False)
