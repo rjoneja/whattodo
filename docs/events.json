@@ -678,7 +678,8 @@
    "source": "Sutton Council events",
    "id": "ev-before-it-was-all-built-up-09-17",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Immuno-cautious Openings of the Audrey Amiss and Rudy Loewe exhibitions",
@@ -801,7 +802,8 @@
    "source": "City of London Council events",
    "id": "ev-highgate-wood-guided-walks-09-26",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Dance Floor at Sadler's Wells East",
@@ -860,7 +862,8 @@
    "source": "Sutton Council events",
    "id": "ev-echoes-of-resistance-windrush-generation-10-01",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Tapestry of Black Britons",
@@ -888,7 +891,8 @@
    "source": "City of London Council events",
    "id": "ev-tapestry-of-black-britons-10-01",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Song",
@@ -947,7 +951,8 @@
    "source": "Tower Hamlets events",
    "id": "ev-exhibition-jazz-dance-in-british-culture-10-06",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Cecilia Vicuña: Living Threads",
@@ -1093,7 +1098,8 @@
    "source": "Tower Hamlets events",
    "id": "ev-photography-exhibition-voices-rhythms-st-10-08",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Larger Than Life: Wallace & Gromit, Shaun and More",
@@ -1212,7 +1218,8 @@
    "source": "City of London Council events",
    "id": "ev-bringing-inclusive-ww2-histories-to-life-10-22",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Balloon Museum | Euphoria - Art is in the Air",
@@ -1266,11 +1273,14 @@
    "blurb": "Free display in Room 1 pairing Shonibare's sculpture with Gainsborough's Mr and Mrs Andrews. Runs until 7 February 2027.",
    "from": "2026-10-26",
    "to": "2027-02-07",
-   "url": "https://www.instagram.com/reel/DfR3wDMjHVc/",
+   "url": "https://www.nationalgallery.org.uk/events",
    "source": "Instagram @nationalgallery",
    "id": "ev-ig-yinka-shonibare-and-thomas-gainsborough--10-26",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.nationalgallery.org.uk/events",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DfR3wDMjHVc/"
   },
   {
    "name": "Winter Programme",
@@ -1358,7 +1368,8 @@
    "source": "City of London Council events",
    "id": "ev-1327-and-the-city-of-london-exhibition-10-30",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Black Sound Exhibition - Black History Month",
@@ -1386,7 +1397,8 @@
    "source": "City of London Council events",
    "id": "ev-black-sound-exhibition-black-history-mon-10-30",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Beyond Bayeux: Tapestry Now",
@@ -1414,7 +1426,8 @@
    "source": "City of London Council events",
    "id": "ev-beyond-bayeux-tapestry-now-10-30",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Inside Aardman: Wallace & Gromit and Friends",
@@ -1482,7 +1495,9 @@
    "open": "17:45",
    "close": "21:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.rmg.co.uk/whats-on",
+   "lk": 1
   },
   {
    "name": "Schiaparelli: Fashion Becomes Art",
@@ -1656,7 +1671,8 @@
    "from": "2026-11-02",
    "to": "2026-11-28",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "id": "ev-valence",
@@ -1685,7 +1701,8 @@
    "from": "2026-11-02",
    "to": "2026-11-26",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Meet the Designer: Christie Swallow",
@@ -2692,7 +2709,8 @@
    "id": "ev-macbeth-11-03",
    "rel": "keep",
    "also": [],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Exhibition: 'Landscapes Set Free' by Didi Baldwin and Will Handysides",
@@ -2892,7 +2910,8 @@
    "days": [
     2
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "NFL Watch Party at The Dial",
@@ -2922,7 +2941,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-nfl-watch-party-at-the-dial-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "ZWO Astronomy Photographer of the Year 18",
@@ -2952,7 +2972,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-zwo-astronomy-photographer-of-the-year-1-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Secret City Mission",
@@ -2982,7 +3003,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-secret-city-mission-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Astronomers Take Over",
@@ -3006,14 +3028,16 @@
     "museum"
    ],
    "blurb": "Interactive space experience at the National Maritime Museum, designed for families and space fans aged 4 and up. Runs into 2028, so no need to rush.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "from": "2026-11-03",
    "to": "2028-03-01",
    "source": "Enjoy Royal Greenwich",
    "id": "ev-astronomers-take-over-11-03",
    "rel": "keep",
    "also": [],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "Schiaparelli: Fashion Becomes Art",
@@ -3041,7 +3065,8 @@
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-schiaparelli-fashion-becomes-art-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Last Princesses of Punjab",
@@ -3069,7 +3094,8 @@
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-the-last-princesses-of-punjab-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Inside Aardman: Wallace & Gromit and Friends",
@@ -3097,7 +3123,8 @@
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-inside-aardman-wallace-gromit-and-friend-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Nelson, His Life and His Navy: Clive Richards Collection",
@@ -3126,7 +3153,8 @@
    "id": "ev-nelson-his-life-and-his-navy-clive-richa-11-03",
    "also": [],
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "St Martin-in-the-Fields: 300 Years at the Heart and on the Edge",
@@ -3154,7 +3182,8 @@
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-st-martin-in-the-fields-300-years-at-the-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Story of the Jewish Family who founded J Lyons",
@@ -3182,7 +3211,8 @@
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-the-story-of-the-jewish-family-who-found-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Middlesex Hospital Blues",
@@ -3210,7 +3240,8 @@
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-middlesex-hospital-blues-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "60 Years of Carnival: Our Story",
@@ -3238,7 +3269,8 @@
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-60-years-of-carnival-our-story-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Meet the Designer: Christie Swallow",
@@ -4022,13 +4054,15 @@
     "self-guided"
    ],
    "blurb": "Pick up a family trail or activity kit and explore the Queen's House galleries at your own pace. Ongoing through the year, so you can go any time in the window.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "from": "2026-11-03",
    "to": "2026-11-24",
    "source": "Enjoy Royal Greenwich",
    "id": "ev-family-trails-at-the-queen-s-house-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "Family Trails at the National Maritime Museum",
@@ -4056,7 +4090,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-family-trails-at-the-national-maritime-m-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Film Tour: Wigs, Weddings, Powder and Palaces",
@@ -4600,7 +4635,8 @@
    "id": "ev-traditional-chinese-tea-ceremony-for-2-11-03",
    "rel": "keep",
    "also": [],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Remarkable Women Tour",
@@ -4752,7 +4788,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-ghosts-of-greenwich-and-blackheath-a-lon-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Architectural Heritage Fund 50th Anniversary Exhibition",
@@ -4780,7 +4817,8 @@
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-architectural-heritage-fund-50th-anniver-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Kids Birdwatching Club",
@@ -4809,7 +4847,8 @@
    "source": "Havering Council events",
    "id": "ev-kids-birdwatching-club-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Havering Singing For The Brain",
@@ -4841,7 +4880,8 @@
    "days": [
     4
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Havering Dementia Cafe",
@@ -4870,7 +4910,8 @@
    "source": "Havering Council events",
    "id": "ev-havering-dementia-cafe-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Maylands Green Senior Table Tennis Club",
@@ -4902,7 +4943,8 @@
    "days": [
     0
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Havering Antiques Club",
@@ -4931,7 +4973,8 @@
    "source": "Havering Council events",
    "id": "ev-havering-antiques-club-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Events in Havering Libraries",
@@ -4960,7 +5003,8 @@
    "source": "Havering Council events",
    "id": "ev-events-in-havering-libraries-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "IT help sessions (evenings) at North Kensington Library",
@@ -4994,7 +5038,8 @@
     2
    ],
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Baby Rhyme Time at Brompton Library",
@@ -5027,7 +5072,8 @@
     2,
     4
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Stay and play at Chelsea Library",
@@ -5059,7 +5105,8 @@
    "days": [
     2
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "IT help sessions at Chelsea Library",
@@ -5091,7 +5138,8 @@
    "days": [
     2
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellbeing Walk",
@@ -5124,7 +5172,8 @@
    "days": [
     2
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Multisport for Disabled Adults",
@@ -5156,7 +5205,8 @@
    "days": [
     2
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Pilates (Beginners)",
@@ -5189,7 +5239,8 @@
    "days": [
     2
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Tai Chi",
@@ -5222,7 +5273,8 @@
    "days": [
     2
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Design Baby: Leap then Look",
@@ -5575,7 +5627,8 @@
    "source": "Lambeth events",
    "id": "ev-chatter-books-club-brixton-library-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Chatter Books Club (Norwood Library)",
@@ -5604,7 +5657,8 @@
    "source": "Lambeth events",
    "id": "ev-chatter-books-club-norwood-library-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Chatterbook Club (Norwood Library)",
@@ -5633,7 +5687,8 @@
    "source": "Lambeth events",
    "id": "ev-chatterbook-club-norwood-library-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Adult Fiction Reading Group (Streatham Library)",
@@ -5663,7 +5718,8 @@
    "id": "ev-adult-fiction-reading-group-streatham-li-11-04",
    "also": [],
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Free Rumba Latina",
@@ -5723,7 +5779,8 @@
    "source": "Lambeth events",
    "id": "ev-chatter-books-club-brixton-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Chatterbook Club (Norwood)",
@@ -5750,7 +5807,8 @@
    "source": "Lambeth events",
    "id": "ev-chatterbook-club-norwood-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Chatter Books Club (Norwood)",
@@ -5777,7 +5835,8 @@
    "source": "Lambeth events",
    "id": "ev-chatter-books-club-norwood-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Autumn Term Circus and Aerial Skills Drop-in",
@@ -5871,7 +5930,8 @@
    "open": "10:00",
    "close": "10:45",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Music Classes for Under-Fives - Canada Water Library",
@@ -5903,7 +5963,8 @@
    "open": "10:30",
    "close": "11:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Move, Share & Exchange",
@@ -5934,7 +5995,8 @@
    "rel": "keep",
    "open": "10:00",
    "close": "15:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Butterup Coffee X Grill sessions",
@@ -5968,7 +6030,8 @@
    "rel": "keep",
    "open": "08:00",
    "close": "21:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "University of Greenwich Postgraduate Open Evening",
@@ -5997,7 +6060,8 @@
    "id": "ev-university-of-greenwich-postgraduate-ope-11-04",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Chatter Books Club",
@@ -6025,7 +6089,8 @@
    "source": "Lambeth events",
    "id": "ev-chatter-books-club-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Adult Fiction Reading Group",
@@ -6053,7 +6118,8 @@
    "source": "Lambeth events",
    "id": "ev-adult-fiction-reading-group-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Upside Down London camera obscura exhibition",
@@ -6086,7 +6152,8 @@
    "rel": "keep",
    "open": "07:00",
    "close": "19:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Early Years SEND Event for Families",
@@ -6117,7 +6184,8 @@
    "rel": "keep",
    "open": "10:00",
    "close": "11:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Geddes Place United Reformed Church Cafe",
@@ -6148,7 +6216,8 @@
    "rel": "keep",
    "open": "10:00",
    "close": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Monthly Art Appreciation Workshop",
@@ -6179,7 +6248,8 @@
    "days": [
     3
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Root and Branch Line walk",
@@ -6209,7 +6279,8 @@
    "id": "ev-root-and-branch-line-walk-11-04",
    "rel": "keep",
    "open": "10:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Talk Club: Talking and Listening Group for Men",
@@ -6242,7 +6313,8 @@
     3
    ],
    "open": "18:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Rhymetime in Cheam Library",
@@ -6271,7 +6343,8 @@
    "id": "ev-rhymetime-in-cheam-library-11-04",
    "rel": "keep",
    "open": "10:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Rhyme Time at Paddington Children's Library",
@@ -6301,7 +6374,8 @@
    "source": "Westminster Council events",
    "id": "ev-rhyme-time-at-paddington-children-s-libr-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Baby stay and play",
@@ -6333,7 +6407,8 @@
    "days": [
     3
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Rhyme Time at Pimlico Library",
@@ -6365,7 +6440,8 @@
    "days": [
     3
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Baby stay and play at St. John Wood Library",
@@ -6397,7 +6473,8 @@
    "days": [
     3
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Sensory stay and play at Mayfair Library",
@@ -6429,7 +6506,8 @@
    "days": [
     3
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Age UK digital drop-in",
@@ -6462,7 +6540,8 @@
    "days": [
     3
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "English conversation classes at Mayfair Library",
@@ -6495,7 +6574,8 @@
    "days": [
     3
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "WAES Confidence in English Classes",
@@ -6525,7 +6605,8 @@
    "source": "Westminster Council events",
    "id": "ev-waes-confidence-in-english-classes-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Minimum Referral Form Help at Church Street Library",
@@ -6555,7 +6636,8 @@
    "source": "Westminster Council events",
    "id": "ev-minimum-referral-form-help-at-church-str-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Long Goodbye: Carrie Mae Weems",
@@ -7030,7 +7112,8 @@
    "rel": "keep",
    "open": "12:00",
    "close": "18:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Classes for Under-Fives - Canada Water Library",
@@ -7061,7 +7144,8 @@
    "rel": "keep",
    "open": "10:30",
    "close": "11:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Time To Shine",
@@ -7092,7 +7176,8 @@
    "rel": "keep",
    "open": "12:00",
    "close": "15:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Free Over 60's Dance class",
@@ -7123,7 +7208,8 @@
    "rel": "keep",
    "open": "11:00",
    "close": "13:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "My kitchen is your kitchen - Conversation Café",
@@ -7154,7 +7240,8 @@
    "rel": "keep",
    "open": "15:00",
    "close": "16:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Design District Yoga",
@@ -7183,7 +7270,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-design-district-yoga-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Painted Hall Display: Women at War, Wrens at Greenwich",
@@ -7206,13 +7294,15 @@
     "women wrens"
    ],
    "blurb": "Display in the Painted Hall presenting documents and artefacts about women serving with the Wrens at Greenwich during WW2. Runs all year. Check entry details.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "from": "2026-11-04",
    "to": "2026-12-31",
    "source": "Enjoy Royal Greenwich",
    "id": "ev-painted-hall-display-women-at-war-wrens--11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "Woodside Children's Centre family activities",
@@ -7244,7 +7334,8 @@
    "rel": "keep",
    "open": "08:00",
    "close": "16:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Petits amis French stay and play",
@@ -7276,7 +7367,8 @@
    "rel": "keep",
    "open": "10:00",
    "close": "11:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellbeing walk at Markfield Park",
@@ -7311,7 +7403,8 @@
    ],
    "open": "10:00",
    "close": "10:45",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellbeing walk at New River Sport and Leisure Centre",
@@ -7347,7 +7440,8 @@
    "open": "10:00",
    "close": "10:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellbeing walk from Russell Park to Belmont Rec",
@@ -7383,7 +7477,8 @@
    "open": "10:30",
    "close": "11:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellbeing walk around Bruce Castle Park",
@@ -7419,7 +7514,8 @@
    "open": "10:45",
    "close": "11:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellbeing walk around Priory Park",
@@ -7455,7 +7551,8 @@
    "open": "11:15",
    "close": "12:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Oh, Mary!",
@@ -7486,7 +7583,8 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Beetlejuice",
@@ -7517,7 +7615,8 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Hop-on Hop-off London + Thames River Cruise 48-hour Bus + River Cruise",
@@ -7548,7 +7647,8 @@
    "rel": "keep",
    "open": "08:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Hay Fever",
@@ -7579,7 +7679,8 @@
    "rel": "keep",
    "open": "14:30",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Charlie Mackesy Exhibition",
@@ -7608,7 +7709,8 @@
    "source": "Londonist things to do (aggregator)",
    "id": "ev-charlie-mackesy-exhibition-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Geddes Place URC Cafe",
@@ -7640,7 +7742,8 @@
    "open": "10:00",
    "close": "12:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Layers of the City: art exhibition",
@@ -7668,7 +7771,8 @@
    "source": "City of London Council events",
    "id": "ev-layers-of-the-city-art-exhibition-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Story time at Kensington Central Library",
@@ -7697,7 +7801,8 @@
    "source": "Kensington & Chelsea Council events",
    "id": "ev-story-time-at-kensington-central-library-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Tennis Activator",
@@ -7726,7 +7831,8 @@
    "source": "Kensington & Chelsea Council events",
    "id": "ev-tennis-activator-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Buggy Workout",
@@ -7755,7 +7861,8 @@
    "source": "Kensington & Chelsea Council events",
    "id": "ev-buggy-workout-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Introduction to Climbing",
@@ -7784,7 +7891,8 @@
    "source": "Kensington & Chelsea Council events",
    "id": "ev-introduction-to-climbing-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Aquamotion Pool Workout",
@@ -7813,7 +7921,8 @@
    "source": "Kensington & Chelsea Council events",
    "id": "ev-aquamotion-pool-workout-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Belrobics",
@@ -7842,7 +7951,8 @@
    "source": "Kensington & Chelsea Council events",
    "id": "ev-belrobics-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Help at Church Street Library",
@@ -7875,7 +7985,8 @@
    "days": [
     3
    ],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Cyanotype printing short courses",
@@ -7901,11 +8012,14 @@
    "blurb": "Hands-on cyanotype photography short courses linked to the Light and Magic exhibition. Running until February 2027. Book via Tate's link; dates vary.",
    "from": "2026-11-04",
    "to": "2027-02-21",
-   "url": "https://www.instagram.com/reel/DfRyayCu3TU/",
+   "url": "https://www.tate.org.uk/whats-on?date_range=from_now&amp;event_type=course&amp;event_type=workshops",
    "source": "Instagram @tate",
    "id": "ev-ig-cyanotype-printing-short-courses-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.tate.org.uk/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DfRyayCu3TU/"
   },
   {
    "name": "Robert Ryman: The Real Thing",
@@ -7930,11 +8044,14 @@
    "blurb": "Robert Ryman paintings in the Barbican Art Gallery. Open daily until 28 Feb 2027. Book tickets via the Barbican site.",
    "from": "2026-11-04",
    "to": "2027-02-28",
-   "url": "https://www.instagram.com/reel/DfIDUX9uloI/",
+   "url": "https://www.barbican.org.uk/whats-on",
    "source": "Instagram @barbicancentre",
    "id": "ev-ig-robert-ryman-the-real-thing-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.barbican.org.uk/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DfIDUX9uloI/"
   },
   {
    "name": "I Am Furious Black season",
@@ -7959,11 +8076,14 @@
    "blurb": "Season of William Greaves films and other Black cinema, running until 28 Nov. Screenings at the Barbican Cinema. Tickets via the Barbican site.",
    "from": "2026-11-04",
    "to": "2026-11-28",
-   "url": "https://www.instagram.com/reel/Det7VxDjaSO/",
+   "url": "https://www.barbican.org.uk/whats-on/cinema",
    "source": "Instagram @barbicancentre",
    "id": "ev-ig-i-am-furious-black-season-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.barbican.org.uk/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/Det7VxDjaSO/"
   },
   {
    "name": "BB Broadway parent and child theatre classes",
@@ -7999,7 +8119,9 @@
    ],
    "open": "15:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://surreydocksfarm.org.uk/events/",
+   "lk": 1
   },
   {
    "name": "Daily otter talks",
@@ -8024,11 +8146,14 @@
    "blurb": "Short daily talks about the centre's otters, running throughout November. Included with admission. Check times on arrival.",
    "from": "2026-11-04",
    "to": "2026-11-30",
-   "url": "https://www.instagram.com/p/DfPlMLrF_LF/",
+   "url": "https://www.wwt.org.uk/wetland-centres/london/whats-on/events",
    "source": "Instagram @wwtlondon",
    "id": "ev-ig-daily-otter-talks-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.wwt.org.uk/wetland-centres/london/whats-on/",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfPlMLrF_LF/"
   },
   {
    "name": "LAIKA presents Wildwood: The Exhibition",
@@ -8057,7 +8182,9 @@
    "source": "Instagram @designmuseum",
    "id": "ev-ig-laika-presents-wildwood-the-exhibition-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://designmuseum.org/whats-on",
+   "lk": 1
   },
   {
    "name": "Es Devlin: Other Worlds",
@@ -8086,7 +8213,9 @@
    "source": "Instagram @designmuseum",
    "id": "ev-ig-es-devlin-other-worlds-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://designmuseum.org/whats-on",
+   "lk": 1
   },
   {
    "name": "PLATFORM display: Simone Brewster's Ebony Revolution",
@@ -8111,11 +8240,14 @@
    "blurb": "Free PLATFORM display of wooden jewellery by Simone Brewster, part of Black History Month. Runs until January 2027.",
    "from": "2026-11-04",
    "to": "2027-01-31",
-   "url": "https://www.instagram.com/reel/De9xRsiguEq/",
+   "url": "https://designmuseum.org/whats-on",
    "source": "Instagram @designmuseum",
    "id": "ev-ig-platform-display-simone-brewster-s-ebony-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://designmuseum.org/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/De9xRsiguEq/"
   },
   {
    "name": "Amy Winehouse: In Focus outdoor photo exhibition",
@@ -8145,7 +8277,9 @@
    "source": "Instagram @kingscrossn1c",
    "id": "ev-ig-amy-winehouse-in-focus-outdoor-photo-exh-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.kingscross.co.uk/whats-on",
+   "lk_try": 1
   },
   {
    "name": "Larger Than Life: Aardman at Lightroom",
@@ -8587,7 +8721,8 @@
     4
    ],
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wriggle and Rhyme (Norwood Library)",
@@ -8616,7 +8751,8 @@
    "source": "Lambeth events",
    "id": "ev-wriggle-and-rhyme-norwood-library-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Mindfulness Meditation (Norwood Library)",
@@ -8645,7 +8781,8 @@
    "source": "Lambeth events",
    "id": "ev-mindfulness-meditation-norwood-library-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "SIM Card Giveaway (Clapham Library)",
@@ -8675,7 +8812,8 @@
    "id": "ev-sim-card-giveaway-clapham-library-11-05",
    "also": [],
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Luxury Travel Fair",
@@ -8736,7 +8874,8 @@
     4
    ],
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wriggle and Rhyme (Norwood)",
@@ -8763,7 +8902,8 @@
    "source": "Lambeth events",
    "id": "ev-wriggle-and-rhyme-norwood-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Mindfulness Meditation (Norwood)",
@@ -8790,7 +8930,8 @@
    "source": "Lambeth events",
    "id": "ev-mindfulness-meditation-norwood-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Collaborative Doctoral Partnerships 20th Anniversary Conference",
@@ -8972,7 +9113,8 @@
    "source": "Lambeth events",
    "id": "ev-wriggle-and-rhyme-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Mindfulness Meditation",
@@ -9000,7 +9142,8 @@
    "source": "Lambeth events",
    "id": "ev-mindfulness-meditation-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Bereavement Help Point",
@@ -9028,7 +9171,8 @@
    "source": "Lambeth events",
    "id": "ev-bereavement-help-point-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "9th Roxeth Scout Group Bonfire Night Firework Display",
@@ -9057,7 +9201,8 @@
    "id": "ev-9th-roxeth-scout-group-bonfire-night-fir-11-05",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Islamophobia Awareness Month 2026 Talks",
@@ -9085,7 +9230,8 @@
    "source": "Newham Council events",
    "id": "ev-islamophobia-awareness-month-2026-talks-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Game Night at the Library",
@@ -9115,7 +9261,8 @@
    "rel": "keep",
    "open": "18:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Teen Tech Club",
@@ -9144,7 +9291,8 @@
    "id": "ev-teen-tech-club-11-05",
    "rel": "keep",
    "open": "15:45",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Turkish Classical Music Ensemble - South London Choir",
@@ -9174,7 +9322,8 @@
    "rel": "keep",
    "open": "19:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Stay & Play at Cheam Library",
@@ -9204,7 +9353,8 @@
    "id": "ev-stay-play-at-cheam-library-11-05",
    "rel": "keep",
    "open": "10:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Storytime in Library @ Phoenix Centre",
@@ -9233,7 +9383,8 @@
    "id": "ev-storytime-in-library-phoenix-centre-11-05",
    "rel": "keep",
    "open": "10:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Titanique",
@@ -9263,7 +9414,8 @@
    "id": "ev-titanique-11-05",
    "rel": "keep",
    "open": "19:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Cherry Orchard",
@@ -9293,7 +9445,8 @@
    "id": "ev-the-cherry-orchard-11-05",
    "rel": "keep",
    "open": "19:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Ever After Garden",
@@ -9322,7 +9475,8 @@
    "source": "Londonist things to do (aggregator)",
    "id": "ev-ever-after-garden-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Teddington Beer Festival",
@@ -9345,13 +9499,15 @@
     "arts centre fundraiser"
    ],
    "blurb": "Cask ales and ciders at the Landmark Arts Centre, with proceeds supporting the venue. Runs 5-8 November. Adults only.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.teddingtonbeerfestival.co.uk/",
    "from": "2026-11-05",
    "to": "2026-11-08",
    "source": "Londonist things to do (aggregator)",
    "id": "ev-teddington-beer-festival-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Tango After Dark",
@@ -9380,7 +9536,8 @@
    "source": "Londonist things to do (aggregator)",
    "id": "ev-tango-after-dark-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "I Am Roland Mouret (talk)",
@@ -9470,7 +9627,9 @@
    "source": "Instagram @somersethouse",
    "id": "ev-ig-through-our-eyes-s-mi-art-and-culture-11-06",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.somersethouse.org.uk/whats-on",
+   "lk": 1
   },
   {
    "name": "Olamony",
@@ -9807,7 +9966,8 @@
    "id": "ev-residents-party-christmas-showcase-11-06",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Spanish Conversation Class at Kensal Library",
@@ -9835,7 +9995,8 @@
    "source": "Kensington & Chelsea Council events",
    "id": "ev-spanish-conversation-class-at-kensal-lib-11-06",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Stay & Play at The Grange Play Centre",
@@ -9866,7 +10027,8 @@
    "rel": "keep",
    "open": "10:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "FREE TASTER SESSION: Woodpeckers Parent & Toddler Afternoon Group",
@@ -9897,7 +10059,8 @@
    "rel": "keep",
    "open": "13:30",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Honeywood Mice",
@@ -9927,7 +10090,8 @@
    "rel": "keep",
    "open": "10:15",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Age UK Dementia Cafe",
@@ -9958,7 +10122,8 @@
    "rel": "keep",
    "open": "10:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Somali House Social - One Year!",
@@ -9988,7 +10153,8 @@
    "id": "ev-somali-house-social-one-year-11-06",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Morgan Seatree | London",
@@ -10018,7 +10184,8 @@
    "id": "ev-morgan-seatree-london-11-06",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Moulin Rouge! The Musical",
@@ -10049,7 +10216,8 @@
    "rel": "keep",
    "open": "14:30",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Oliver!",
@@ -10080,7 +10248,8 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Gidiki - London",
@@ -10111,7 +10280,8 @@
    "rel": "keep",
    "open": "18:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "International Stand Up Comedy, Covent Garden",
@@ -10142,7 +10312,8 @@
    "rel": "keep",
    "open": "20:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Luxmuralis: Lost Worlds",
@@ -10165,14 +10336,16 @@
     "evening"
    ],
    "blurb": "Luxmuralis takes over the Old Royal Naval College with light and sound journeys through prehistoric cave art, Atlantis, Troy and the age of dinosaurs. Evening-only. Check booking for exact prices.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
    "from": "2026-11-06",
    "to": "2026-11-15",
    "source": "Londonist things to do (aggregator)",
    "id": "ev-luxmuralis-lost-worlds-11-06",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Nue Black Aesthetic",
@@ -10195,13 +10368,15 @@
     "furniture fashion"
    ],
    "blurb": "The Design Museum showcases contemporary Black designers reshaping British design across furniture, architecture, fashion and installation. Runs until August 2027.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://designmuseum.org/exhibitions/the-nue-black-aesthetic",
    "from": "2026-11-06",
    "to": "2027-08-08",
    "source": "Londonist things to do (aggregator)",
    "id": "ev-nue-black-aesthetic-11-06",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Highgate Art Fair",
@@ -10224,13 +10399,15 @@
     "meet artists"
    ],
    "blurb": "Over 50 artists, galleries and creative collectives exhibit at Highgate Primary School. Chat with artists and book creative workshops in advance. Runs 6-8 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://highgateartfair.co.uk/",
    "from": "2026-11-06",
    "to": "2026-11-08",
    "source": "Londonist things to do (aggregator)",
    "id": "ev-highgate-art-fair-11-06",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Woodpeckers Parent & Toddler Afternoon Group (Free Taster Session)",
@@ -10260,7 +10437,8 @@
    "rel": "keep",
    "open": "13:30",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Stay & Play - The Grange",
@@ -10290,7 +10468,8 @@
    "rel": "keep",
    "open": "10:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Nue Black Aesthetic exhibition opening",
@@ -10314,11 +10493,14 @@
    ],
    "blurb": "Guest-curated show exploring the 'Nue' era of Black design, linking the 1960s Black Aesthetic and 1980s New Black Aesthetic. Tickets via link in bio.",
    "date": "2026-11-06",
-   "url": "https://www.instagram.com/reel/DfHiIFJD6oU/",
+   "url": "https://designmuseum.org/whats-on",
    "source": "Instagram @designmuseum",
    "id": "ev-ig-the-nue-black-aesthetic-exhibition-openi-11-06",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://designmuseum.org/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DfHiIFJD6oU/"
   },
   {
    "name": "Live jazz at rails.london",
@@ -10354,7 +10536,9 @@
    "open": "18:00",
    "close": "20:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.kingscross.co.uk/whats-on",
+   "lk_try": 1
   },
   {
    "name": "Diwali at the National Maritime Museum",
@@ -10382,7 +10566,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-diwali-at-the-national-maritime-museum-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Blackheath Fireworks",
@@ -10414,7 +10599,8 @@
    "open": "17:00",
    "close": "22:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "id": "ev-dulwich-fw",
@@ -10617,14 +10803,16 @@
     "quirky"
    ],
    "blurb": "A museum of electric clocks that rarely opens at weekends. 10am to 4pm, free. One for the curious and the mechanically minded.",
-   "url": "https://www.ianvisits.co.uk/calendar/open-day-at-the-clockworks-435498/",
+   "url": "https://www.tickettailor.com/events/theclockworks/2391509/r/ianvisits",
    "source": "IanVisits",
    "date": "2026-11-07",
    "time": "10am–4pm",
    "rel": "keep",
    "open": "10:00",
    "close": "16:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.ianvisits.co.uk/calendar/open-day-at-the-clockworks-435498/"
   },
   {
    "id": "ev-sewing",
@@ -10655,7 +10843,8 @@
    "open": "14:00",
    "close": "17:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "id": "ev-showtrain",
@@ -10678,7 +10867,7 @@
     "show"
    ],
    "blurb": "One of the biggest model railway exhibitions in the south-east, both days of the weekend. Train-obsessed under-10s will not want to leave.",
-   "url": "https://www.ianvisits.co.uk/calendar/tolworth-showtrain-model-railway-exhibition-2-406628/",
+   "url": "https://www.hamptoncourtmrs.co.uk/showtrain/showtrain%202026.html",
    "source": "IanVisits",
    "from": "2026-11-07",
    "to": "2026-11-08",
@@ -10686,7 +10875,9 @@
    "rel": "keep",
    "open": "10:00",
    "close": "17:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.ianvisits.co.uk/calendar/tolworth-showtrain-model-railway-exhibition-2-406628/"
   },
   {
    "name": "Creative Frequencies (Upstart presents)",
@@ -11294,13 +11485,15 @@
     "culture"
    ],
    "blurb": "Circus show blending dreams, Ethiopian culture and world-class acrobatic artistry. Suited to families and theatre-goers. Performances on 7 and 8 November.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "from": "2026-11-07",
    "to": "2026-11-08",
    "source": "Enjoy Royal Greenwich",
    "id": "ev-ethiopian-dreams-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "Fan Making Workshop 2026",
@@ -11329,7 +11522,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-fan-making-workshop-2026-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Minet Gardening Club",
@@ -11357,7 +11551,8 @@
    "source": "Lambeth events",
    "id": "ev-minet-gardening-club-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Reading Group (Norwood Library)",
@@ -11386,7 +11581,8 @@
    "source": "Lambeth events",
    "id": "ev-reading-group-norwood-library-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Puscifer",
@@ -11531,7 +11727,8 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Make Joy 2026",
@@ -11559,7 +11756,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-make-joy-2026-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Reading Group (Norwood)",
@@ -11586,7 +11784,8 @@
    "source": "Lambeth events",
    "id": "ev-reading-group-norwood-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Puscifer: Normal Isn't Tour",
@@ -11763,7 +11962,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-greenwich-peninsula-winter-market-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Saturday Sounds Drop In",
@@ -11914,7 +12114,8 @@
    "source": "Lambeth events",
    "id": "ev-reading-group-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Harrow Fireworks Display 2026",
@@ -11942,7 +12143,8 @@
    "source": "Harrow Council events",
    "id": "ev-harrow-fireworks-display-2026-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Best in Comedy",
@@ -11971,7 +12173,8 @@
    "id": "ev-the-best-in-comedy-11-07",
    "rel": "keep",
    "open": "19:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wild Harrow - Working Party at Lady Gilberts Orchard",
@@ -11998,7 +12201,8 @@
    "source": "Harrow Council events",
    "id": "ev-wild-harrow-working-party-at-lady-gilber-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Repair Café Kingston",
@@ -12028,7 +12232,8 @@
    "id": "ev-repair-caf-kingston-11-07",
    "rel": "keep",
    "open": "10:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Whitehall Historic House Tours",
@@ -12057,7 +12262,8 @@
    "id": "ev-whitehall-historic-house-tours-11-07",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Adventure Moves: Kids Fitness Workshop",
@@ -12086,7 +12292,8 @@
    "id": "ev-adventure-moves-kids-fitness-workshop-11-07",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Family History Group",
@@ -12115,7 +12322,8 @@
    "id": "ev-family-history-group-11-07",
    "rel": "keep",
    "open": "14:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Drop-in Play: Power of Play Together",
@@ -12296,7 +12504,8 @@
    "rel": "keep",
    "open": "22:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Buff Bingo Bottomless Drag",
@@ -12326,7 +12535,8 @@
    "id": "ev-buff-bingo-bottomless-drag-11-07",
    "rel": "keep",
    "open": "13:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Massi's Yard Brunch - London",
@@ -12356,7 +12566,8 @@
    "id": "ev-massi-s-yard-brunch-london-11-07",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Vauxhall Comedy",
@@ -12387,7 +12598,8 @@
    "rel": "keep",
    "open": "19:45",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Trance Sanctuary presents Kearnage X",
@@ -12417,7 +12629,8 @@
    "id": "ev-trance-sanctuary-presents-kearnage-x-11-07",
    "rel": "keep",
    "open": "15:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Diwali Festival at the National Maritime Museum",
@@ -12440,7 +12653,7 @@
     "dance performances"
    ],
    "blurb": "Free Diwali festival with dance, rangoli art, lantern-making and traditional clothing try-ons. Ends with a lantern parade through Greenwich Park. Runs 10.30am-5pm.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.rmg.co.uk/whats-on/national-maritime-museum/diwali",
    "date": "2026-11-07",
    "time": "10:30",
    "source": "Londonist things to do (aggregator)",
@@ -12448,7 +12661,9 @@
    "rel": "keep",
    "open": "10:30",
    "close": "17:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Sensing London Walking Tour",
@@ -12471,7 +12686,7 @@
     "open city"
    ],
    "blurb": "Open City walking tour on how vision shapes our view of the city, from Inner Temple to the Royal Academy. Runs 10am-12.30pm on 7 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://open-city.org.uk/events/sensing-spaces-5",
    "date": "2026-11-07",
    "time": "10:00",
    "source": "Londonist things to do (aggregator)",
@@ -12480,7 +12695,9 @@
    "open": "10:00",
    "close": "12:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Pumpkin Patch Dash",
@@ -12503,7 +12720,7 @@
     "velodrome"
    ],
    "blurb": "Halloween-themed balance bike event for ages 2-8 at Herne Hill Velodrome, with free rides, age-category racing, face-painting and a medal for every racer. Bike and helmet hire is free. 10am-1pm.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.hernehillvelodrome.com/events/pumpkin-patch-dash",
    "date": "2026-11-07",
    "time": "10:00",
    "source": "Londonist things to do (aggregator)",
@@ -12512,7 +12729,9 @@
    "open": "10:00",
    "close": "13:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Make Joy Craft Fair",
@@ -12535,7 +12754,7 @@
     "makers"
    ],
    "blurb": "Yarn and craft marketplace at Woolwich Works with hand-dyed and rare breed yarns, project bags and talks from craft experts. Runs 10am-5pm on 7 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.woolwich.works/events/make-joy-2026",
    "date": "2026-11-07",
    "time": "10:00",
    "source": "Londonist things to do (aggregator)",
@@ -12543,7 +12762,9 @@
    "rel": "keep",
    "open": "10:00",
    "close": "17:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Comedy Salon at the Cinema Museum",
@@ -12566,14 +12787,16 @@
     "full day"
    ],
    "blurb": "Comedy historians Robert and Gemma Ross host a full day of comedy anecdotes, rare treasures and special guests at the Cinema Museum. Starts at 12pm on 7 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://cinemamuseum.org.uk/scheduled/gemma-robert-rosss-comedy-carnival-ix/",
    "date": "2026-11-07",
    "time": "12:00",
    "source": "Londonist things to do (aggregator)",
    "id": "ev-comedy-salon-at-the-cinema-museum-11-07",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Spirit & Spice Book Talk",
@@ -12596,7 +12819,7 @@
     "fortnum & mason"
    ],
    "blurb": "Chef Vivek Singh discusses his new book Spirit & Spice at Fortnum & Mason as part of Kitchen Stories. Covers 25 years of The Cinnamon Collection. 1.30pm-3pm on 7 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.eventbrite.co.uk/e/kitchen-stories-spirit-spice-with-vivek-singh-tickets-1997560659706",
    "date": "2026-11-07",
    "time": "13:30",
    "source": "Londonist things to do (aggregator)",
@@ -12605,7 +12828,9 @@
    "open": "13:30",
    "close": "15:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Victorian Crime: Dickens vs Reality",
@@ -12628,7 +12853,7 @@
     "london archives"
    ],
    "blurb": "Blue Badge Guide Patrick Voss compares Dickens' London with the real crime, poverty and workhouse conditions of Victorian London. Held at the London Archives at 3pm on 7 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.eventbrite.co.uk/e/saturday-talk-crime-in-victorian-london-the-realities-of-charles-dickens-tickets-1997333982709",
    "date": "2026-11-07",
    "time": "15:00",
    "source": "Londonist things to do (aggregator)",
@@ -12636,7 +12861,9 @@
    "rel": "keep",
    "open": "15:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Pickle Festival",
@@ -12667,7 +12894,8 @@
    "rel": "keep",
    "open": "14:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Live at the Chapel with Chris McCausland",
@@ -12690,7 +12918,7 @@
     "live comedy"
    ],
    "blurb": "Chris McCausland headlines this monthly comedy night at Union Chapel, with Lou Sanders, Emmanuel O and Janine Harouni. Seating is first-come, first-served. Starts 7.45pm on 7 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://unionchapel.org.uk/venue/whats-on/live-at-the-chapel-with-chris-mccausland",
    "date": "2026-11-07",
    "time": "19:45",
    "source": "Londonist things to do (aggregator)",
@@ -12698,7 +12926,9 @@
    "rel": "keep",
    "open": "19:45",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Jamaica Love",
@@ -12729,7 +12959,8 @@
    "rel": "keep",
    "open": "19:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "The Collections: Bright Fear",
@@ -12760,7 +12991,8 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Feeling Gloomy: Pulp Special",
@@ -12791,7 +13023,8 @@
    "rel": "keep",
    "open": "22:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Scared To Dance",
@@ -12814,7 +13047,7 @@
     "late night"
    ],
    "blurb": "Post-punk, indiepop, new wave and art rock night at the George Tavern. Comedian Jack Shep is this month's guest DJ. Runs 11pm-3am on 7 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.scaredtodance.co.uk/2026/10/jack-shep-guest-djs-on-sat-7th-nov/",
    "date": "2026-11-07",
    "time": "23:00",
    "source": "Londonist things to do (aggregator)",
@@ -12822,7 +13055,9 @@
    "rel": "keep",
    "open": "23:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "All Together Now: Diwali Festival of Lights",
@@ -12847,11 +13082,14 @@
    ],
    "blurb": "Museum-wide Diwali celebration with artists, performers, musicians, makers and storytellers, curated by Mehala Ford. Drop in and join the participatory activities.",
    "date": "2026-11-07",
-   "url": "https://www.instagram.com/p/DeeovsnF-YH/",
+   "url": "https://www.rmg.co.uk/whats-on/national-maritime-museum/diwali",
    "source": "Instagram @royalmuseumsgreenwich",
    "id": "ev-ig-all-together-now-diwali-festival-of-ligh-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.rmg.co.uk/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DeeovsnF-YH/"
   },
   {
    "name": "Home Song, Sat 7 Nov 11:30 (Unicorn Theatre)",
@@ -12877,13 +13115,16 @@
    "blurb": "Multi-sensory puppetry and a cappella show for babies aged 6-18 months. Only a few sessions left; the 11:30 slot is still listed as available.",
    "date": "2026-11-07",
    "time": "11:30",
-   "url": "https://www.instagram.com/p/DfKpslJDCN9/",
+   "url": "https://www.unicorntheatre.com/whats-on",
    "source": "Instagram @unicorn_theatre",
    "id": "ev-ig-home-song-sat-7-nov-11-30-unicorn-theatr-11-07",
    "rel": "keep",
    "open": "11:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.unicorntheatre.com/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfKpslJDCN9/"
   },
   {
    "name": "botanicalboys terrarium workshop",
@@ -12920,7 +13161,9 @@
    "open": "15:00",
    "close": "17:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.kingscross.co.uk/whats-on",
+   "lk_try": 1
   },
   {
    "name": "Alexandra Palace Fireworks & Drone Festival",
@@ -13317,7 +13560,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-mr-sleepybum-s-dream-machine-11-08",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Why We Build",
@@ -13435,7 +13679,8 @@
    "source": "Lambeth events",
    "id": "ev-cosy-craft-cre8tive-arts-11-08",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Markfield Beam Engine open day (steaming)",
@@ -13496,7 +13741,8 @@
    "id": "ev-remembrance-sunday-event-kingston-town-c-11-08",
    "rel": "keep",
    "open": "10:45",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Remembrance Sunday event, New Malden",
@@ -13526,7 +13772,8 @@
    "id": "ev-remembrance-sunday-event-new-malden-11-08",
    "rel": "keep",
    "open": "09:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Remembrance Sunday event, Surbiton",
@@ -13556,7 +13803,8 @@
    "id": "ev-remembrance-sunday-event-surbiton-11-08",
    "rel": "keep",
    "open": "10:15",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Remembrance Sunday event, Chessington",
@@ -13586,7 +13834,8 @@
    "id": "ev-remembrance-sunday-event-chessington-11-08",
    "rel": "keep",
    "open": "10:55",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Remembrance Sunday and Armistice Day 2026 Services",
@@ -13614,7 +13863,8 @@
    "source": "Newham Council events",
    "id": "ev-remembrance-sunday-and-armistice-day-202-11-08",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wonderful Wildlife Weekends at Walthamstow Wetlands",
@@ -13739,7 +13989,8 @@
    "rel": "keep",
    "open": "10:45",
    "close": "12:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Remembrance service at The Merchant Navy Memorial 2026",
@@ -13767,7 +14018,8 @@
    "source": "Tower Hamlets events",
    "id": "ev-remembrance-service-at-the-merchant-navy-11-08",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Portobello Comedy Club",
@@ -13798,7 +14050,8 @@
    "rel": "keep",
    "open": "19:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "OSAS LIVE - The Wish We Had More Time Experience",
@@ -13828,7 +14081,8 @@
    "id": "ev-osas-live-the-wish-we-had-more-time-expe-11-08",
    "rel": "keep",
    "open": "19:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Daisy Dukes Line Dancing Social November",
@@ -13858,7 +14112,8 @@
    "id": "ev-daisy-dukes-line-dancing-social-november-11-08",
    "rel": "keep",
    "open": "15:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Diwali Boat Party Celebration on the Thames",
@@ -13888,7 +14143,8 @@
    "id": "ev-diwali-boat-party-celebration-on-the-tha-11-08",
    "rel": "keep",
    "open": "19:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Autumn Internationals - Live Screening - England v Australia",
@@ -13918,7 +14174,8 @@
    "id": "ev-autumn-internationals-live-screening-eng-11-08",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Dungeons & Dragons Immersive Experience",
@@ -13949,7 +14206,8 @@
    "rel": "keep",
    "open": "18:00",
    "close": "22:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Remembrance Sunday Service at the Cenotaph",
@@ -13979,7 +14237,8 @@
    "id": "ev-remembrance-sunday-service-at-the-cenota-11-08",
    "rel": "keep",
    "open": "11:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Wind in the Willows (Puppet Show)",
@@ -14002,14 +14261,16 @@
     "children's classic"
    ],
    "blurb": "Handmade-puppet adaptation of Kenneth Grahame's classic at Artsdepot, following Mole and Ratty into the Wild Wood. Suitable for age five and up. Shows at 10.30am and 1.30pm on 8 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.artsdepot.co.uk/event/the-wind-in-the-willows/",
    "date": "2026-11-08",
    "time": "10:30",
    "source": "Londonist things to do (aggregator)",
    "id": "ev-the-wind-in-the-willows-puppet-show-11-08",
    "rel": "keep",
    "open": "10:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "The Big Market at the Fox and Firkin",
@@ -14032,7 +14293,7 @@
     "djs"
    ],
    "blurb": "Browse 30 local makers, designers and small businesses, with free artist workshops, a craft area and DJs. Free entry, 12pm-6pm on 8 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://foxfirkin.com/event/the-big-market-8th-november-2026/",
    "date": "2026-11-08",
    "time": "12:00",
    "source": "Londonist things to do (aggregator)",
@@ -14040,7 +14301,9 @@
    "rel": "keep",
    "open": "12:00",
    "close": "18:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Fungi Walk in Horniman Gardens",
@@ -14063,7 +14326,7 @@
     "guided walk"
    ],
    "blurb": "Guided fungi walk led by Rights For Weeds, covering identification and foraging. Ends at the Horniman Pavilion, where you make something edible to share. 1pm-4pm on 8 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.horniman.ac.uk/event/guided-fungi-walk-with-rights-for-weeds/",
    "date": "2026-11-08",
    "time": "13:00",
    "source": "Londonist things to do (aggregator)",
@@ -14071,7 +14334,9 @@
    "rel": "keep",
    "open": "13:00",
    "close": "16:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Poetry of Decadence Reading",
@@ -14094,7 +14359,7 @@
     "literary"
    ],
    "blurb": "Free reading of late-1800s Decadence poems by Wilde, Beardsley and Baudelaire at Keats House in Hampstead. Runs 2.15pm-3.15pm on 8 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.eventbrite.co.uk/e/afternoon-poems-the-poetry-of-decadence-tickets-2002382645395",
    "date": "2026-11-08",
    "time": "14:15",
    "source": "Londonist things to do (aggregator)",
@@ -14102,7 +14367,9 @@
    "rel": "keep",
    "open": "14:15",
    "close": "15:15",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Monet's Poppies Paint and Prosecco",
@@ -14125,7 +14392,7 @@
     "no experience needed"
    ],
    "blurb": "Paint your own version of Monet's Poppy Field with step-by-step guidance. Ticket includes supplies, canvas, apron and a glass of prosecco. Keep your finished painting. 3pm-5.30pm.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://popuppainting.com/event/sip-paint-monets-poppy-field/",
    "date": "2026-11-08",
    "time": "15:00",
    "source": "Londonist things to do (aggregator)",
@@ -14133,7 +14400,9 @@
    "rel": "keep",
    "open": "15:00",
    "close": "17:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Black Alternative Music with Stephanie Phillips",
@@ -14156,7 +14425,7 @@
     "conway hall"
    ],
    "blurb": "Stephanie Phillips discusses her book We Were Here, covering Black artists who shaped rock and alternative music, from Sister Rosetta Tharpe to Bad Brains. Conway Hall, 3pm-4.30pm.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.conwayhall.org.uk/whats-on/event/a-history-of-black-people-and-alternative-music/",
    "date": "2026-11-08",
    "time": "15:00",
    "source": "Londonist things to do (aggregator)",
@@ -14164,7 +14433,9 @@
    "rel": "keep",
    "open": "15:00",
    "close": "16:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Hyperpolitics Book Talk",
@@ -14194,7 +14465,8 @@
    "id": "ev-hyperpolitics-book-talk-11-08",
    "rel": "keep",
    "open": "16:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Nell! Play",
@@ -14217,7 +14489,7 @@
     "south london theatre"
    ],
    "blurb": "South London Theatre presents L.A. Green's play about Nell Gwyn, actress and orange-seller, as she prepares for Charles II's funeral. Runs 6pm-7.10pm on 8 November at SLT Fire Station.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.southlondontheatre.co.uk/event/nell/",
    "date": "2026-11-08",
    "time": "18:00",
    "source": "Londonist things to do (aggregator)",
@@ -14225,7 +14497,9 @@
    "rel": "keep",
    "open": "18:00",
    "close": "19:10",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Jewish History Walking Tour",
@@ -14256,7 +14530,8 @@
    "rel": "keep",
    "open": "14:00",
    "close": "16:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Wartime Willesden Talk",
@@ -14279,7 +14554,7 @@
     "willesden"
    ],
    "blurb": "Retired Judge Dr Jonathan Lewis gives a keynote on wartime Willesden, focusing on war heroes commemorated at Willesden Jewish Cemetery and Jewish involvement at Bletchley Park. 1.45pm-4.30pm on 8 November.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
+   "url": "https://www.willesdenjewishcemetery.org.uk/events/talk-remembering-wartime-willesden",
    "date": "2026-11-08",
    "time": "13:45",
    "source": "Londonist things to do (aggregator)",
@@ -14287,7 +14562,9 @@
    "rel": "keep",
    "open": "13:45",
    "close": "16:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
   },
   {
    "name": "Remembrance Sunday services in Harrow",
@@ -14315,7 +14592,8 @@
    "source": "Harrow Council events",
    "id": "ev-remembrance-sunday-services-in-harrow-11-08",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Remembrance services across Havering",
@@ -14343,7 +14621,8 @@
    "source": "Havering Council events",
    "id": "ev-remembrance-services-across-havering-11-08",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Home Song, Sun 8 Nov 10:00 (Unicorn Theatre)",
@@ -14369,12 +14648,15 @@
    "blurb": "Final performances of the multi-sensory baby show. Sunday 8 November is the last day, with sessions at 10:00, 11:30 and 13:30.",
    "date": "2026-11-08",
    "time": "10:00",
-   "url": "https://www.instagram.com/p/DfKpslJDCN9/",
+   "url": "https://www.unicorntheatre.com/whats-on",
    "source": "Instagram @unicorn_theatre",
    "id": "ev-ig-home-song-sun-8-nov-10-00-unicorn-theatr-11-08",
    "rel": "keep",
    "open": "10:00",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.unicorntheatre.com/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfKpslJDCN9/"
   },
   {
    "name": "Drop-in Digital Art Season: Studying Videogames",
@@ -14591,7 +14873,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-lunchtime-recital-blaze-ensemble-2026-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Drop-in: Digital Art Season at the National Art Library – Studying Videogames",
@@ -14706,7 +14989,8 @@
    "source": "Lambeth events",
    "id": "ev-adult-literature-group-streatham-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellbeing Group for Dementia and Carers (Norwood)",
@@ -14733,7 +15017,8 @@
    "source": "Lambeth events",
    "id": "ev-wellbeing-group-for-dementia-and-carers--11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Basic Computer Skills Class (Brixton)",
@@ -14760,7 +15045,8 @@
    "source": "Lambeth events",
    "id": "ev-basic-computer-skills-class-brixton-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Adult literature group",
@@ -14788,7 +15074,8 @@
    "source": "Lambeth events",
    "id": "ev-adult-literature-group-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellbeing group for dementia and carers",
@@ -14816,7 +15103,8 @@
    "source": "Lambeth events",
    "id": "ev-wellbeing-group-for-dementia-and-carers-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Basic computer skills class",
@@ -14844,7 +15132,8 @@
    "source": "Lambeth events",
    "id": "ev-basic-computer-skills-class-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Digital Drop-Ins",
@@ -14872,7 +15161,8 @@
    "source": "Lambeth events",
    "id": "ev-digital-drop-ins-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Shared Reading Group",
@@ -14902,7 +15192,8 @@
    "id": "ev-shared-reading-group-11-09",
    "rel": "keep",
    "open": "10:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Digital Art Season at National Art Library: Studying Videogames",
@@ -15037,14 +15328,16 @@
     "free outdoor"
    ],
    "blurb": "Oxford Street's Christmas lights get a Harry Potter theme with a special lighting event from 4.30pm. The western end is now pedestrianised, so it's easier to wander and snap photos.",
-   "url": "https://londonist.com/london/christmas-in-london/oxford-street-christmas-lights",
+   "url": "https://www.oxfordstreet.co.uk/whats-happening/get-ready-for-a-magical-christmas-on-oxford-street/",
    "date": "2026-11-09",
    "time": "16:30",
    "source": "Londonist things to do (aggregator)",
    "id": "ev-oxford-street-harry-potter-christmas-lig-11-09",
    "rel": "keep",
    "open": "16:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/christmas-in-london/oxford-street-christmas-lights"
   },
   {
    "name": "Rethinking Christianity: Alister McGrath in conversation with Chine McDonald",
@@ -15246,7 +15539,8 @@
    "id": "ev-access-all-areas-2026-11-10",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Yarn Circle – A Friendly Craft Club",
@@ -15276,7 +15570,8 @@
    "id": "ev-yarn-circle-a-friendly-craft-club-11-10",
    "rel": "keep",
    "open": "19:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Sutton Central Chess Club",
@@ -15306,7 +15601,8 @@
    "id": "ev-sutton-central-chess-club-11-10",
    "rel": "keep",
    "open": "13:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Scrabble Club",
@@ -15336,7 +15632,8 @@
    "id": "ev-scrabble-club-11-10",
    "rel": "keep",
    "open": "13:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Knitting Club",
@@ -15366,7 +15663,8 @@
    "id": "ev-knitting-club-11-10",
    "rel": "keep",
    "open": "10:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Digital Preservation Talk 1",
@@ -15599,11 +15897,14 @@
    "blurb": "London's iconic outdoor ice rink in the Somerset House courtyard, with festive treats and alpine dining. Book timed sessions online.",
    "from": "2026-11-11",
    "to": "2027-01-10",
-   "url": "https://www.instagram.com/reel/DfFf9R1gdly/",
+   "url": "https://www.somersethouse.org.uk/whats-on/skate-somerset-house",
    "source": "Instagram @somersethouse",
    "id": "ev-ig-skate-at-somerset-house-with-virgin-atla-11-11",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.somersethouse.org.uk/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DfFf9R1gdly/"
   },
   {
    "name": "Christmas Lights",
@@ -15842,7 +16143,8 @@
    ],
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Book launch: Black and Asian Seafarers: A Visual History",
@@ -15934,7 +16236,8 @@
    "rel": "keep",
    "open": "10:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Developing a circular economy for Kingston",
@@ -15965,7 +16268,8 @@
    "id": "ev-developing-a-circular-economy-for-kingst-11-11",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Free Mobile Data Service",
@@ -15996,7 +16300,8 @@
    "rel": "keep",
    "open": "14:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Create Drama Youth Theatre",
@@ -16027,7 +16332,8 @@
    "rel": "keep",
    "open": "18:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Drop-in Digital Art: Digital Practice in Print",
@@ -16199,7 +16505,8 @@
    "rel": "keep",
    "open": "10:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Vanessa Bell & Duncan Grant: Inside Bloomsbury",
@@ -16692,7 +16999,8 @@
    "open": "13:00",
    "close": "18:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Lego Free Play",
@@ -16722,7 +17030,8 @@
    "rel": "keep",
    "open": "15:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Honeywood Reading Group",
@@ -16752,7 +17061,8 @@
    "rel": "keep",
    "open": "14:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Honeywood Colouring Group for Adults",
@@ -16783,7 +17093,8 @@
    "rel": "keep",
    "open": "10:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Turkish Classical Music Ensemble – South London Choir",
@@ -16814,7 +17125,8 @@
    "rel": "keep",
    "open": "19:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Cornwallis Cloth: WW2 Caribbean Stories Talk",
@@ -16837,12 +17149,14 @@
     "film installation"
    ],
    "blurb": "Exhibition viewing and talk on untold WW2 stories from the Caribbean, with a film installation. Good for history fans. Check the listing for booking and entry details.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "date": "2026-11-12",
    "source": "Enjoy Royal Greenwich",
    "id": "ev-cornwallis-cloth-ww2-caribbean-stories-t-11-12",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "Keats, Fanny Brawne and Regency courtship",
@@ -16869,7 +17183,8 @@
    "source": "City of London Council events",
    "id": "ev-keats-fanny-brawne-and-regency-courtship-11-12",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "WW2 in the Caribbean: free expert talk",
@@ -16893,11 +17208,14 @@
    ],
    "blurb": "Free expert-led talk on the stories of WW2 in the Caribbean. Thursday 12 November.",
    "date": "2026-11-12",
-   "url": "https://www.instagram.com/p/DfFDEBID3I0/",
+   "url": "https://www.rmg.co.uk/whats-on",
    "source": "Instagram @oldroyalnavalcollege",
    "id": "ev-ig-ww2-in-the-caribbean-free-expert-talk-11-12",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.rmg.co.uk/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfFDEBID3I0/"
   },
   {
    "name": "LIFEM26 Exhibition (Fri)",
@@ -17012,7 +17330,7 @@
     "meet people"
    ],
    "blurb": "Team quiz night at the Bob Hope Theatre in Woolwich, a fun night out for groups or solo players. Form a team or join one on the night.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "date": "2026-11-13",
    "time": "19:30",
    "source": "Enjoy Royal Greenwich",
@@ -17020,7 +17338,9 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "LIFEM26: Eun Sol Lee",
@@ -17079,7 +17399,8 @@
    "id": "ev-digital-help-sessions-11-13",
    "rel": "keep",
    "open": "09:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Storytime at Worcester Park Library",
@@ -17108,7 +17429,8 @@
    "id": "ev-storytime-at-worcester-park-library-11-13",
    "rel": "keep",
    "open": "10:35",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "ASOT Unfiltered - London: Armin van Buuren",
@@ -17138,7 +17460,8 @@
    "id": "ev-asot-unfiltered-london-armin-van-buuren-11-13",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Autumn Internationals - Live Screening - France v South Africa",
@@ -17168,7 +17491,8 @@
    "id": "ev-autumn-internationals-live-screening-fra-11-13",
    "rel": "keep",
    "open": "17:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Vauxhall Comedy",
@@ -17199,7 +17523,8 @@
    "rel": "keep",
    "open": "19:45",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Art of John Piper",
@@ -17226,7 +17551,8 @@
    "source": "City of London Council events",
    "id": "ev-art-of-john-piper-11-13",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "id": "ev-lordmayor",
@@ -17338,14 +17664,16 @@
     "free"
    ],
    "blurb": "The station's 130th birthday open day, 11am to 4pm. Engines, hoses, firefighters who let kids climb in. Free.",
-   "url": "https://www.ianvisits.co.uk/calendar/fulham-fire-station-open-day-2-435808/",
+   "url": "https://www.london-fire.gov.uk/community/hammersmith-and-fulham/fulham-fire-station-open-day/",
    "source": "IanVisits",
    "date": "2026-11-14",
    "time": "11am–4pm",
    "rel": "keep",
    "open": "11:00",
    "close": "16:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.ianvisits.co.uk/calendar/fulham-fire-station-open-day-2-435808/"
   },
   {
    "id": "ev-stables",
@@ -17368,14 +17696,16 @@
     "free"
    ],
    "blurb": "Meet the horses and see the yard, 2pm to 3pm on the second Saturday of the month. Then Wimbledon Common.",
-   "url": "https://www.ianvisits.co.uk/calendar/monthly-open-hour-at-the-wimbledon-village-stables-422355/",
+   "url": "https://www.wvstables.com/whats-on/",
    "source": "IanVisits",
    "date": "2026-11-14",
    "time": "2–3pm",
    "rel": "keep",
    "open": "14:00",
    "close": "15:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.ianvisits.co.uk/calendar/monthly-open-hour-at-the-wimbledon-village-stables-422355/"
   },
   {
    "name": "Art Deco and the Golden Age of Poster Design: Curator's Talk",
@@ -17408,7 +17738,9 @@
    ],
    "rel": "keep",
    "open": "14:00",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.ltmuseum.co.uk/whats-on",
+   "lk_try": 1
   },
   {
    "id": "ev-brixtonwalk",
@@ -17431,14 +17763,16 @@
     "history"
    ],
    "blurb": "A volunteer-led walk through the arcades and the market's history, 2.30pm to 4pm, a fiver. Eat afterwards in the Village.",
-   "url": "https://www.ianvisits.co.uk/calendar/brixton-market-heritage-walk-3-431857/",
+   "url": "https://BrixtonSociety.Eventbrite.co.uk",
    "source": "IanVisits",
    "date": "2026-11-14",
    "time": "2.30pm",
    "rel": "keep",
    "open": "14:30",
    "close": "16:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.ianvisits.co.uk/calendar/brixton-market-heritage-walk-3-431857/"
   },
   {
    "name": "Unboxing the Universe science theatre show",
@@ -17797,7 +18131,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-unboxing-the-universe-11-14",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Christmas Santa's Grotto at the Queen's House",
@@ -17882,7 +18217,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-boppin-bunnies-11-14",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "In Residence: Solan",
@@ -17904,13 +18240,15 @@
     "dining out"
    ],
    "blurb": "Michelin-experienced chefs take over a Greenwich high street restaurant for a limited residency. Booking ahead is advisable for dinner.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "date": "2026-11-14",
    "source": "Enjoy Royal Greenwich",
    "id": "ev-in-residence-solan-11-14",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "Unboxing the Universe science show",
@@ -17991,13 +18329,15 @@
     "evening show"
    ],
    "blurb": "An evening of Spanish flamenco with passionate dance, elegant guitar and rhythm. One night only on 14 November, so book ahead.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "date": "2026-11-14",
    "source": "Enjoy Royal Greenwich",
    "id": "ev-andaluza-11-14",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "The Falcon's Last Flight",
@@ -18025,7 +18365,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-the-falcon-s-last-flight-11-14",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Emlyn, A Divided Life - A Chamber Play by W.A. Drew",
@@ -18049,12 +18390,14 @@
    ],
    "blurb": "W.A. Drew's new play about Welsh writer and actor Emlyn Williams, starring Mansel Thomas. A small-scale evening drama for adults. Check the event page for showtimes.",
    "date": "2026-11-14",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "source": "Enjoy Royal Greenwich",
    "id": "ev-emlyn-a-divided-life-a-chamber-play-by-w-11-14",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "Community Planting Day",
@@ -18084,7 +18427,8 @@
    "id": "ev-community-planting-day-11-14",
    "rel": "keep",
    "open": "10:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Bingo Saturdays",
@@ -18146,7 +18490,8 @@
    "id": "ev-in-residence-presents-solan-11-14",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Buff Bingo Bottomless Drag",
@@ -18176,7 +18521,8 @@
    "id": "ev-buff-bingo-bottomless-drag-11-14",
    "rel": "keep",
    "open": "13:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Country Club - Indoor Country Music Festival - London",
@@ -18207,7 +18553,8 @@
    "rel": "keep",
    "open": "15:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Sarah Ainslie: Women At Work illustrated lecture",
@@ -18262,12 +18609,15 @@
    "blurb": "Day-to-night celebration with trans+ 2000s film screenings, poetry, a makers market, a panel and a cabaret. Free but ticketed; book in advance.",
    "date": "2026-11-14",
    "time": "12:00",
-   "url": "https://www.instagram.com/p/De9gGoIF0SU/",
+   "url": "https://museumofthehome.org.uk/whats-on/",
    "source": "Instagram @museumofthehome",
    "id": "ev-ig-changing-rooms-celebrating-trans-domesti-11-14",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.museumofthehome.org.uk/whats-on/",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/De9gGoIF0SU/"
   },
   {
    "name": "Family Day in the Painted Hall",
@@ -18390,7 +18740,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-captain-cauliflower-and-marvin-the-misch-11-15",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Timeless Icons",
@@ -18417,7 +18768,8 @@
    "source": "Harrow Council events",
    "id": "ev-timeless-icons-11-15",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wild Harrow - Orchard Care Workshop",
@@ -18445,7 +18797,8 @@
    "source": "Harrow Council events",
    "id": "ev-wild-harrow-orchard-care-workshop-11-15",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Mandarin Storytime | 中文故事时间",
@@ -18474,7 +18827,8 @@
    "id": "ev-mandarin-storytime-11-15",
    "rel": "keep",
    "open": "10:15",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Health & Movement Sessions",
@@ -18507,7 +18861,8 @@
     0
    ],
    "open": "11:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wonderful Wildlife Weekends at Camley Street Natural Park",
@@ -18639,7 +18994,8 @@
    "source": "Bromley events",
    "id": "ev-bromley-self-care-week-2026-11-16",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Lunchtime Organ Recital",
@@ -18707,7 +19063,8 @@
    ],
    "open": "18:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Windows into the Unseen",
@@ -18822,11 +19179,14 @@
    "blurb": "Annual exhibition with period rooms dressed with winter stories from past, present and future. Runs through the Winter Programme until 10 January.",
    "from": "2026-11-17",
    "to": "2027-01-10",
-   "url": "https://www.instagram.com/p/DfCUhUlF83D/",
+   "url": "https://museumofthehome.org.uk/festival/winter-programme/",
    "source": "Instagram @museumofthehome",
    "id": "ev-ig-winter-past-exhibition-11-17",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.museumofthehome.org.uk/whats-on/",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfCUhUlF83D/"
   },
   {
    "name": "Walrus Returns",
@@ -18951,7 +19311,8 @@
    "rel": "keep",
    "open": "17:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Club Bananas: Festive Making Workshop",
@@ -19465,7 +19826,9 @@
    "source": "Instagram @oldroyalnavalcollege",
    "id": "ev-ig-peace-doves-by-peter-walker-11-20",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.rmg.co.uk/whats-on",
+   "lk": 1
   },
   {
    "name": "In Conversation with Peter Walker: Art, Scale, and Collective Hope",
@@ -19496,7 +19859,9 @@
    "rel": "keep",
    "open": "19:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.rmg.co.uk/whats-on",
+   "lk": 1
   },
   {
    "name": "Victorian Santa's grotto",
@@ -19807,7 +20172,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-a-christmas-carol-presented-by-three-inc-11-20",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "U3A French Conversation Group",
@@ -19838,7 +20204,8 @@
    "rel": "keep",
    "open": "13:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Block Power (EFG London Jazz Festival)",
@@ -19922,7 +20289,7 @@
    "blurb": "Supernatural staging of Dickens' classic A Christmas Carol on site. Performances Friday 20 and Saturday 21 November. Check tickets for times.",
    "from": "2026-11-20",
    "to": "2026-11-21",
-   "url": "https://www.instagram.com/p/DfFDEBID3I0/",
+   "url": "https://www.rmg.co.uk/whats-on",
    "source": "Instagram @oldroyalnavalcollege",
    "id": "ev-ig-a-christmas-carol-by-dickens-11-20",
    "rel": "keep",
@@ -19930,7 +20297,10 @@
     5,
     6
    ],
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.rmg.co.uk/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfFDEBID3I0/"
   },
   {
    "id": "ev-shanty-cuttysark",
@@ -20317,7 +20687,8 @@
    "id": "ev-craft-fair-coffee-morning-11-21",
    "rel": "keep",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "University of Greenwich Open Day",
@@ -20345,7 +20716,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-university-of-greenwich-open-day-11-21",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Whitehall Historic House Local History Club",
@@ -20376,7 +20748,8 @@
    "rel": "keep",
    "open": "13:30",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Swar Sathi – Voices of Connection",
@@ -20406,7 +20779,8 @@
    "rel": "keep",
    "open": "16:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Sound is Now! (EFG London Jazz Festival)",
@@ -20493,7 +20867,8 @@
    "rel": "keep",
    "open": "11:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "1OAK Events Rooftop Sessions - Autumn Series - Bottomless Brunch",
@@ -20523,7 +20898,8 @@
    "id": "ev-1oak-events-rooftop-sessions-autumn-seri-11-21",
    "rel": "keep",
    "open": "12:30",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Carers Rights Day event at Hounslow House",
@@ -20555,7 +20931,8 @@
    "rel": "keep",
    "open": "10:30",
    "close": "15:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Whitehall Historic House Tours",
@@ -20584,7 +20961,8 @@
    "id": "ev-whitehall-historic-house-tours-11-21",
    "rel": "keep",
    "open": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Local History Club",
@@ -20614,7 +20992,8 @@
    "rel": "keep",
    "open": "13:30",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "lk_try": 1
   },
   {
    "name": "Markfield Beam Engine open day (22 Nov)",
@@ -20757,7 +21136,7 @@
     "woolwich works"
    ],
    "blurb": "Winter concert by the next generation of young musicians at Woolwich Works on 22 November. A relaxed, affordable family outing; check ticket prices on the event page.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "url": "https://www.simplevieweurope.com/",
    "date": "2026-11-22",
    "time": "19:00",
    "source": "Enjoy Royal Greenwich",
@@ -20765,7 +21144,9 @@
    "rel": "keep",
    "open": "19:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.enjoyroyalgreenwich.org.uk/whats-on"
   },
   {
    "name": "Wonderful Wildlife Weekends at Walthamstow Wetlands",
@@ -20892,7 +21273,8 @@
    "id": "ev-honeywood-health-movement-session-11-22",
    "rel": "keep",
    "open": "11:00",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Extended Skate Session",
@@ -20988,7 +21370,9 @@
    "id": "ev-ig-k-pop-party-on-the-ice-11-23",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.somersethouse.org.uk/whats-on",
+   "lk": 1
   },
   {
    "name": "Lunchtime Organ Recital",
@@ -21117,7 +21501,8 @@
    "rel": "keep",
    "open": "11:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "HOMES UK",
@@ -21199,7 +21584,7 @@
     "christmas market"
    ],
    "blurb": "Around 60 independent shops stay open until 9pm, with mulled wine served outside. Good for homeware, vinyl, jewellery, seasonal foliage and Christmas trees. Free to browse.",
-   "url": "https://londonist.com/london/christmas-in-london/columbia-road-christmas-market",
+   "url": "https://columbiaroad.info/",
    "date": "2026-11-25",
    "time": "17:00",
    "source": "Londonist things to do (aggregator)",
@@ -21208,7 +21593,9 @@
    "open": "17:00",
    "close": "21:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://londonist.com/london/christmas-in-london/columbia-road-christmas-market"
   },
   {
    "name": "The Addams Family - The Musical",
@@ -21239,7 +21626,8 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Anthem for Dissatisfaction",
@@ -21270,7 +21658,8 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wellcome Collection Lates",
@@ -21295,12 +21684,15 @@
    ],
    "blurb": "Free evening Lates at Wellcome Collection. Tickets must be booked in advance. Bring friends, since the post suggests friendship is good for your health.",
    "date": "2026-11-26",
-   "url": "https://www.instagram.com/reel/DehZCRBj0D0/",
+   "url": "https://wellcomecollection.org/events/wellcome-collection-lates-not-done-yet",
    "source": "Instagram @wellcomecollection",
    "id": "ev-ig-wellcome-collection-lates-11-26",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://wellcomecollection.org/events",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DehZCRBj0D0/"
   },
   {
    "name": "Monthly yoga flow by Kindred Yoga Life",
@@ -21328,7 +21720,9 @@
    "source": "Instagram @oldroyalnavalcollege",
    "id": "ev-ig-monthly-yoga-flow-by-kindred-yoga-life-11-27",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.rmg.co.uk/whats-on",
+   "lk": 1
   },
   {
    "name": "Huddle (Unicorn Theatre)",
@@ -21354,11 +21748,14 @@
    "blurb": "Heart-warming penguin show returning after a sold-out 2024 run, with a new cast. Runs until 3 January. Book in advance.",
    "from": "2026-11-27",
    "to": "2027-01-03",
-   "url": "https://www.instagram.com/p/DfSDijnINIB/",
+   "url": "https://www.unicorntheatre.com/whats-on",
    "source": "Instagram @unicorn_theatre",
    "id": "ev-ig-huddle-unicorn-theatre-11-27",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.unicorntheatre.com/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfSDijnINIB/"
   },
   {
    "name": "Santa's Workshop at Battersea Power Station",
@@ -21383,11 +21780,14 @@
    "blurb": "Festive Santa's Workshop running 27 Nov to 24 Dec. Booking is recommended. Suits families with young children.",
    "from": "2026-11-27",
    "to": "2026-12-24",
-   "url": "https://www.instagram.com/p/DfAN3Piss2v/",
+   "url": "https://batterseapowerstation.co.uk/events/santas-workshop-at-battersea-power-station/",
    "source": "Instagram @batterseapwrstn",
    "id": "ev-ig-santa-s-workshop-at-battersea-power-stat-11-27",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://batterseapowerstation.co.uk/events/",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfAN3Piss2v/"
   },
   {
    "name": "Festive Wreath-Making Workshop (Sat 28 Nov)",
@@ -21418,7 +21818,9 @@
    "rel": "keep",
    "open": "10:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.crystalpalaceparktrust.org/whats-on",
+   "lk_try": 1
   },
   {
    "name": "Winter Market",
@@ -21442,11 +21844,14 @@
    ],
    "blurb": "Returning winter market with artisanal homewares, seasonal gifts and makers. Good for holiday shopping. Check the website for times.",
    "date": "2026-11-28",
-   "url": "https://www.instagram.com/p/DfCUhUlF83D/",
+   "url": "https://museumofthehome.org.uk/whats-on/winter-market/",
    "source": "Instagram @museumofthehome",
    "id": "ev-ig-winter-market-11-28",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.museumofthehome.org.uk/whats-on/",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfCUhUlF83D/"
   },
   {
    "name": "Festive Wreath-Making Workshop (Sun 29 Nov)",
@@ -21477,7 +21882,9 @@
    "rel": "keep",
    "open": "10:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.crystalpalaceparktrust.org/whats-on",
+   "lk_try": 1
   },
   {
    "name": "Final Conservatory Plant Adoption with waywardplants",
@@ -21502,11 +21909,14 @@
    "blurb": "Last Conservatory plant adoption before its renewal closure. Tickets are by ballot, which opened 29 Oct. Take home a plant.",
    "date": "2026-12-02",
    "time": "unknown",
-   "url": "https://www.instagram.com/reel/DfDLukVhnoP/",
+   "url": "https://www.barbican.org.uk/whats-on/2026/event/visit-the-conservatory",
    "source": "Instagram @barbicancentre",
    "id": "ev-ig-final-conservatory-plant-adoption-with-w-12-02",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "site": "https://www.barbican.org.uk/whats-on",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DfDLukVhnoP/"
   }
  ],
  "dropped": []
