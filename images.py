@@ -3,7 +3,9 @@
 Build docs/images.json: one picture per card.
 
   regulars  → Wikipedia page thumbnail (Wikimedia Commons, CC/public domain; credited on the card)
-  events    → the source page's og:image (the venue's own promo image, linked back to its page)
+  events    → a picture of what the event is ABOUT: the event page's own photo if it shows the subject
+              (Diwali lights, the performers, the artwork), else a Wikimedia Commons photo of the subject,
+              and only as a last resort the venue or neighbourhood
 
 Runs in the daily workflow; safe to re-run (keeps what it already has unless --refresh).
   python3 images.py --events docs/events.json --out docs/images.json
@@ -106,6 +108,37 @@ def shrink(data, limit=1568):
     except Exception:
         return data, None
 
+VETS = {"n": 0}
+MAX_VETS = int(os.environ.get("IMG_MAX_VETS", "1500"))       # spending cap per run
+def relevance(u, name, subject):
+    """0-3: how well this picture shows what the event is about. 3 = clearly the subject, 2 = good fit,
+    1 = only the venue/room/generic scene, 0 = logo, text, poster, map, screenshot."""
+    if not os.environ.get("ANTHROPIC_API_KEY"): return 2
+    if VETS["n"] >= MAX_VETS: return -1
+    global _client
+    import anthropic, base64
+    _client = _client or anthropic.Anthropic()
+    try:
+        with urlopen(Request(u, headers={"User-Agent": UA}), timeout=20) as r:
+            data = r.read(6_000_000); ctype = (r.headers.get("Content-Type") or "").split(";")[0].strip()
+        if len(data) >= 6_000_000: return 0
+        data, ct2 = shrink(data, 512)
+        if ctype not in ("image/jpeg", "image/png", "image/webp", "image/gif"):
+            ctype = "image/png" if data[:4] == b"\x89PNG" else "image/webp" if data[8:12] == b"WEBP" else "image/jpeg"
+        if ct2: ctype = ct2
+        VETS["n"] += 1
+        msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=5, messages=[{"role": "user", "content": [
+            {"type": "image", "source": {"type": "base64", "media_type": ctype, "data": base64.b64encode(data).decode()}},
+            {"type": "text", "text": f"A listings app needs a photo for '{name}', which is about: {subject}.\n"
+             "Score this image 0-3. 3 = an appealing photo that clearly shows the subject (e.g. Diwali lights and dancers for a Diwali event, "
+             "the performers, the artwork, the activity). 2 = an appealing photo that fits well. 1 = only the venue, building, room or a generic scene "
+             "that doesn't show the subject. 0 = a logo, icon, text, a flyer that is mostly words, a map, a screenshot, or unappealing. Reply with one digit."}]}])
+        m = re.search(r"[0-3]", "".join(getattr(b, "text", "") for b in msg.content))
+        return int(m.group(0)) if m else 0
+    except Exception as ex:
+        print(f"  vet failed {u[:60]}: {str(ex)[:80]}", file=sys.stderr)
+        return 0
+
 def looks_like_photo(u, name):
     """Ask Claude (cheap model) whether this is a real photo of the event/place, not a logo, crest, poster text or stock icon."""
     if not os.environ.get("ANTHROPIC_API_KEY"): return True
@@ -128,6 +161,78 @@ def looks_like_photo(u, name):
     except Exception as ex:
         print(f"  vet failed {u[:60]}: {str(ex)[:80]}", file=sys.stderr)
         return False
+
+def subjects(events):
+    """One cheap text call per 40 events: what each is visually about, and a 1-3 word photo search."""
+    out = {}
+    if not os.environ.get("ANTHROPIC_API_KEY"): return out
+    global _client
+    import anthropic
+    _client = _client or anthropic.Anthropic()
+    for i in range(0, len(events), 40):
+        b = events[i:i+40]
+        items = [{"i": n, "name": e["name"], "at": e.get("source", ""), "about": e.get("blurb", "")[:200]} for n, e in enumerate(b)]
+        prompt = ("For each London listing, say what a photo for it should SHOW: the thing people go for, not the venue it happens in "
+                  "(a Diwali celebration in a sports hall → Diwali; a model railway show at a school → model railway). If the place itself "
+                  "is the point (a palace tour, a park, a late opening of a museum) the place is the subject.\n"
+                  'Return ONLY a JSON array: [{"i":0,"subject":"Diwali celebration with lights and dance","q":"Diwali"}] where q is a 1-3 word '
+                  "photo search term.\n" + json.dumps(items, ensure_ascii=False))
+        try:
+            msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=6000, messages=[{"role": "user", "content": prompt}])
+            txt = "".join(getattr(x, "text", "") for x in msg.content); m = re.search(r"\[.*\]", txt, re.S)
+            for v in (json.loads(m.group(0)) if m else []):
+                if isinstance(v, dict) and v.get("i") is not None and v["i"] < len(b): out[b[v["i"]]["id"]] = {"subject": str(v.get("subject", ""))[:90], "q": str(v.get("q", ""))[:40]}
+        except Exception as ex:
+            print(f"subjects batch failed: {str(ex)[:80]}", file=sys.stderr)
+    return out
+
+def strip_html(x): return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", html.unescape(x or ""))).strip()
+_commons = {}
+def commons(q):
+    """Wikimedia Commons photos for a subject, largest-licence-safe first."""
+    if not q: return []
+    if q in _commons: return _commons[q]
+    u = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=10"
+         "&gsrsearch=" + quote("filetype:bitmap " + q) + "&prop=imageinfo&iiprop=url|size|extmetadata&iiurlwidth=960")
+    res = []
+    try:
+        _, body = get(u, "application/json")
+        pages = sorted((json.loads(body).get("query") or {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
+        for p in pages:
+            ii = (p.get("imageinfo") or [{}])[0]; md = ii.get("extmetadata") or {}
+            lic = strip_html((md.get("LicenseShortName") or {}).get("value", ""))
+            w, h = ii.get("width", 0), ii.get("height", 0)
+            if not ii.get("thumburl") or w < 900 or not (0.6 < w / max(h, 1) < 2.2): continue
+            if not re.search(r"CC|Public domain|PD", lic, re.I) or re.search(r"\bNC\b|ND", lic): continue
+            artist = strip_html((md.get("Artist") or {}).get("value", ""))[:40] or "Wikimedia Commons"
+            res.append({"url": ii["thumburl"], "credit": f"Photo: {artist} · {lic}", "page": ii.get("descriptionurl")})
+    except Exception as ex:
+        print(f"  commons failed {q}: {str(ex)[:60]}", file=sys.stderr)
+    _commons[q] = res
+    return res
+
+def best_for(e, used, subj):
+    """Event page photo if it shows the subject; else a Commons photo of the subject; else the venue shot (score 1)."""
+    name, subject, q = e["name"], (subj or {}).get("subject") or e["name"], (subj or {}).get("q") or ""
+    host = re.sub(r"^https?://(www\.)?", "", e["url"]).split("/")[0]
+    fallback = None
+    if "instagram.com" not in e["url"]:
+        try: cands = candidates(e["url"])
+        except Exception: cands = []
+        for u in cands[:3]:
+            if used.get(u, 0) >= 1: continue
+            try: sz = image_size(u)
+            except Exception: sz = None
+            if not sz: continue
+            w, h, kind = sz
+            if w < 600 or h < 300 or w / max(h, 1) > 2.6 or w / max(h, 1) < 0.6: continue
+            sc = relevance(u, name, subject)
+            if sc >= 2: return {"url": u, "credit": host, "fit": sc}
+            if sc == 1 and not fallback: fallback = {"url": u, "credit": host, "fit": 1}
+    for c in [c for c in commons(q) if used.get(c["url"], 0) == 0][:3]:
+        sc = relevance(c["url"], name, subject)
+        if sc >= 2: return dict(c, fit=sc)
+    return fallback
 
 def pick(e, used):
     for u in candidates(e["url"]):
@@ -184,21 +289,30 @@ def main():
     used = {}
     for k, v in out.items(): used[v["url"]] = used.get(v["url"], 0) + 1
     today = time.strftime("%Y-%m-%d")
-    for e in events:
-        if e["id"] in out or not e.get("url", "").startswith("http"): continue
-        if tried.get(e["id"]) == today or (tried.get(e["id"]) and not a.recheck and len(tried) and tried[e["id"]] >= time.strftime("%Y-%m-%d", time.gmtime(time.time() - 7 * 86400))): continue
-        tried[e["id"]] = today
+    week_ago = time.strftime("%Y-%m-%d", time.gmtime(time.time() - 7 * 86400))
+    # events needing a (better) picture: none yet, or one chosen before relevance scoring (checked < 4)
+    need = [e for e in events if e.get("url", "").startswith("http") and (e["id"] not in out or out[e["id"]].get("checked", 0) < 4)
+            and not (tried.get(e["id"]) and tried[e["id"]] >= week_ago and e["id"] not in out)]
+    subj = subjects(need)
+    print(f"pictures: {len(need)} to check, {len(subj)} subjects", file=sys.stderr)
+    for e in need:
+        if VETS["n"] >= MAX_VETS: print("vet budget reached; the rest wait for tomorrow", file=sys.stderr); break
+        old = out.get(e["id"])
+        if old: used[old["url"]] = max(0, used.get(old["url"], 1) - 1)
         t = None
-        if "instagram.com" not in e["url"]:
-            try: t = pick(e, used)
-            except Exception as ex: print(f"{e['id']}: page failed {str(ex)[:60]}", file=sys.stderr)
-        if not t:
-            try: t = wiki_area(e.get("area"), e["name"])
-            except Exception: t = None
+        try: t = best_for(e, used, subj.get(e["id"]))
+        except Exception as ex: print(f"{e['id']}: pick failed {str(ex)[:60]}", file=sys.stderr)
+        if not t or t.get("fit", 0) < 2:
+            if old and old.get("checked", 0) >= 3 and (not t or t.get("fit", 0) <= 1): t = dict(old, fit=1)   # keep a vetted old picture over a mere venue shot
+            elif not t:
+                try: t = wiki_area(e.get("area"), e["name"])
+                except Exception: t = None
+                if t: t["fit"] = 1
+        tried[e["id"]] = today
         if t:
-            t["checked"] = 3; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
-            print(f"{e['id']}: {'page' if 'Wikimedia' not in t['credit'] else 'wiki-area'} ok", file=sys.stderr)
-        time.sleep(0.5)
+            t["checked"] = 4; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
+            print(f"{e['id']}: fit {t.get('fit')} {'commons' if 'commons' in t.get('page','') or '·' in t.get('credit','') else 'page' if t['credit'] and 'Wikimedia' not in t['credit'] else 'area'}", file=sys.stderr)
+        time.sleep(0.3)
     live = set(WIKI) | {e["id"] for e in events}
     out = {k: v for k, v in out.items() if k in live}
     out["_tried"] = {k: v for k, v in tried.items() if k in live and k not in out}
