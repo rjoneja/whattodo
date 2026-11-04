@@ -93,6 +93,19 @@ def image_size(u):
     return None
 
 _client = None
+def shrink(data, limit=1568):
+    """Downscale big images so Claude accepts them (and costs less)."""
+    try:
+        from PIL import Image
+        import io
+        im = Image.open(io.BytesIO(data))
+        if max(im.size) <= limit: return data, None
+        im.thumbnail((limit, limit)); buf = io.BytesIO()
+        im.convert("RGB").save(buf, "JPEG", quality=85)
+        return buf.getvalue(), "image/jpeg"
+    except Exception:
+        return data, None
+
 def looks_like_photo(u, name):
     """Ask Claude (cheap model) whether this is a real photo of the event/place, not a logo, crest, poster text or stock icon."""
     if not os.environ.get("ANTHROPIC_API_KEY"): return True
@@ -104,8 +117,10 @@ def looks_like_photo(u, name):
         with urlopen(Request(u, headers={"User-Agent": UA}), timeout=20) as r:
             data = r.read(4_500_000); ctype = (r.headers.get("Content-Type") or "").split(";")[0].strip()
         if len(data) >= 4_500_000: return False
+        data, ct2 = shrink(data)
         if ctype not in ("image/jpeg", "image/png", "image/webp", "image/gif"):
             ctype = "image/png" if data[:4] == b"\x89PNG" else "image/webp" if data[8:12] == b"WEBP" else "image/jpeg"
+        if ct2: ctype = ct2
         msg = _client.messages.create(model=os.environ.get("WTD_MODEL", "claude-haiku-5-5"), max_tokens=5, messages=[{"role": "user", "content": [
             {"type": "image", "source": {"type": "base64", "media_type": ctype, "data": base64.b64encode(data).decode()}},
             {"type": "text", "text": f"This image is for a listing called '{name}'. Answer YES if it is an appealing photograph (people, a place, an activity, an exhibit or artwork) that would make someone want to go. Answer NO if it is a logo, coat of arms, icon, plain text, a flyer that is mostly words, a map, a screenshot or a generic graphic. One word."}]}])
@@ -150,6 +165,7 @@ def main():
     ap.add_argument("--refresh", action="store_true"); ap.add_argument("--recheck", action="store_true", help="re-vet existing event pictures")
     a = ap.parse_args()
     out = json.load(open(a.out)) if os.path.exists(a.out) and not a.refresh else {}
+    tried = out.pop("_tried", {})
     out = {k: v for k, v in out.items() if "/640px-" not in v.get("url", "")}   # old non-standard size: refetch
     for id_, title in WIKI.items():
         if id_ in out: continue
@@ -167,7 +183,6 @@ def main():
             if e["id"] in out and (out[e["id"]].get("checked") != 3): out.pop(e["id"])
     used = {}
     for k, v in out.items(): used[v["url"]] = used.get(v["url"], 0) + 1
-    tried = out.pop("_tried", {})
     today = time.strftime("%Y-%m-%d")
     for e in events:
         if e["id"] in out or not e.get("url", "").startswith("http"): continue

@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: pip install anthropic
+      - run: pip install anthropic pillow
       - name: Web sources
         if: ${{ env.ANTHROPIC_API_KEY != '' }}
         run: python3 ingest.py --days 21 --out docs/events.json

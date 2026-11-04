@@ -110,6 +110,19 @@ Return [] if there is nothing."""})
     out = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
     return parse_array(out)
 
+def shrink(data, limit=1568):
+    """Downscale big images so Claude accepts them (and costs less)."""
+    try:
+        from PIL import Image
+        import io
+        im = Image.open(io.BytesIO(data))
+        if max(im.size) <= limit: return data, None
+        im.thumbnail((limit, limit)); buf = io.BytesIO()
+        im.convert("RGB").save(buf, "JPEG", quality=85)
+        return buf.getvalue(), "image/jpeg"
+    except Exception:
+        return data, None
+
 def fetch_image(u):
     """Download an Instagram CDN image ourselves (Claude's URL fetcher honours instagram's robots.txt)."""
     import base64
@@ -117,6 +130,7 @@ def fetch_image(u):
         with urlopen(Request(u, headers={"User-Agent": "Mozilla/5.0 (compatible; JauntOut/0.1)"}), timeout=20) as r:
             data = r.read(4_000_000); ct = (r.headers.get("Content-Type") or "image/jpeg").split(";")[0]
         if len(data) >= 4_000_000 or not ct.startswith("image/"): return None
+        data, ct2 = shrink(data); ct = ct2 or ct
         if ct not in ("image/jpeg", "image/png", "image/webp", "image/gif"): ct = "image/jpeg"
         return base64.b64encode(data).decode(), ct
     except Exception:
