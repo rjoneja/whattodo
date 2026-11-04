@@ -48,4 +48,5 @@ jobs:
           git add docs/events.json docs/images.json docs/e venues.json accounts.json
           [ -f ig_seen.json ] && git add ig_seen.json
           git commit -m "content $(date +%F)" || exit 0
-          git pull --rebase origin main && git push
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break; echo "push failed, retry $i"; sleep $((i*15)); done
+          git diff --quiet origin/main HEAD || { echo 'push never succeeded'; exit 1; }
