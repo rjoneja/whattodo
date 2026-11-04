@@ -92,7 +92,8 @@ def extract(account, posts, today, horizon):
         content.append({"type": "text", "text": f"\n--- POST {p['id']} posted {when} {p['permalink']}\n{(p.get('caption') or '').strip()[:1500]}"})
         img = p.get("media_url") if p.get("media_type") in ("IMAGE", "CAROUSEL_ALBUM") else p.get("thumbnail_url")
         if img and looks_like_poster(p):
-            content.append({"type": "image", "source": {"type": "url", "url": img}})
+            b = fetch_image(img)
+            if b: content.append({"type": "image", "source": {"type": "base64", "media_type": b[1], "data": b[0]}})
     content.append({"type": "text", "text": f"""
 These are recent Instagram posts from {account['name']} (@{account['handle']}), {account['area']}, London.
 Today is {today}. Extract every specific, dated thing to do between today and {horizon} that a Londoner could turn up to:
@@ -108,6 +109,18 @@ Return [] if there is nothing."""})
     msg = client.messages.create(model=MODEL, max_tokens=12000, messages=[{"role": "user", "content": content}])
     out = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
     return parse_array(out)
+
+def fetch_image(u):
+    """Download an Instagram CDN image ourselves (Claude's URL fetcher honours instagram's robots.txt)."""
+    import base64
+    try:
+        with urlopen(Request(u, headers={"User-Agent": "Mozilla/5.0 (compatible; JauntOut/0.1)"}), timeout=20) as r:
+            data = r.read(4_000_000); ct = (r.headers.get("Content-Type") or "image/jpeg").split(";")[0]
+        if len(data) >= 4_000_000 or not ct.startswith("image/"): return None
+        if ct not in ("image/jpeg", "image/png", "image/webp", "image/gif"): ct = "image/jpeg"
+        return base64.b64encode(data).decode(), ct
+    except Exception:
+        return None
 
 DATE_WORDS = re.compile(r"\b(\d{1,2}(st|nd|rd|th)?\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)|(mon|tues|wednes|thurs|fri|satur|sun)day|this weekend|next week|\d{1,2}[./]\d{1,2}|tonight|tomorrow)", re.I)
 def looks_like_poster(p):
