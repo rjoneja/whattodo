@@ -23,9 +23,10 @@ jobs:
       - run: python3 images.py --events docs/events.json --out docs/images.json ${{ github.event.inputs.recheck == 'yes' && '--recheck' || '' }} || true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - run: python3 share_pages.py
+      - run: python3 sources_page.py || true
       - run: |
           git config user.name bot && git config user.email bot@users.noreply.github.com
-          git add docs/events.json docs/images.json docs/e
+          git add docs/events.json docs/images.json docs/e docs/sources
           git commit -m "web $(date +%F)" || exit 0
           for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break; echo "push failed, retry $i"; sleep $((i*15)); done
           git diff --quiet origin/main HEAD || { echo 'push never succeeded'; exit 1; }

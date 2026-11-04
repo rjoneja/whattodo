@@ -42,10 +42,11 @@ jobs:
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 share_pages.py
+        run: python3 sources_page.py || true
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: |
           git config user.name bot && git config user.email bot@users.noreply.github.com
-          git add docs/events.json docs/images.json docs/e venues.json accounts.json
+          git add docs/events.json docs/images.json docs/e docs/sources venues.json accounts.json
           [ -f ig_seen.json ] && git add ig_seen.json
           git commit -m "content $(date +%F)" || exit 0
           for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break; echo "push failed, retry $i"; sleep $((i*15)); done
