@@ -84,7 +84,13 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .strip{display:grid;grid-template-columns:1fr auto;gap:var(--u);align-items:center;padding:calc(var(--u)*1.1) calc(var(--u)*1.8);background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:13px}
 .strip .l{display:flex;flex-direction:column;gap:1px;min-width:0;color:var(--ink-2)}
 .strip .l b{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink)}
-.strip .wx{font-family:var(--display);font-weight:600;font-size:15px;text-align:right;line-height:1.2}
+.strip .wx{font-family:var(--display);font-weight:600;font-size:14px;text-align:right;line-height:1.2;min-width:0}
+.wxrow{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.wxrow .wxl{display:block;text-wrap:balance}
+.wxrow small{white-space:nowrap}
+.wxi{width:26px;height:26px;flex:none;fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.wxi.sun circle,.wxi.part path:first-child{stroke:var(--verm)}
+.strip{grid-template-columns:auto 1fr}
 .strip .wx small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--ink-2)}
 .wxpick{display:flex;gap:4px;align-items:center}.wxpick .chip{padding:5px 10px;font-size:13px}
 
@@ -469,14 +475,56 @@ $('#go').onclick=async()=>{
 function wxWord(code,p){ if(code>=95)return'Thunder'; if(code>=71&&code<=77)return'Snow'; if((code>=51&&code<=67)||code>=80)return p>=60?'Rain':'Showers'; if(code>=45&&code<=48)return'Fog'; if(code>=2)return code===3?'Overcast':'Cloudy'; return'Sunny'; }
 function manualWx(){const m=setup.wxManual; if(!m||m.date!==setup.date) return null; const month=fromIso(setup.date).getMonth()+1;
   return m.v==='wet'?{word:'Wet',wet:true,fine:false,dry:false,cold:false,manual:true}:{word:'Dry',wet:false,dry:true,fine:month>=5&&month<=9,cold:month<=2||month===12,manual:true}}
+// Weather for the hours people are actually out (8am–8pm), described the way people talk.
+const fmtH=h=>h===12?'midday':h<12?h+'am':(h-12)+'pm';
+function describeDay(H){
+  // H: [{h,p,mm,t,c,g,code}] for 8..20
+  const wetH=H.filter(x=>x.mm>=0.2||x.p>=60||(x.code>=51&&x.code<=67)||x.code>=80);
+  const heavy=H.some(x=>x.mm>=1.5||x.code===65||x.code===82||x.code>=95);
+  const tMin=Math.round(Math.min(...H.map(x=>x.t))), tMax=Math.round(Math.max(...H.map(x=>x.t)));
+  const cloud=H.reduce((a,x)=>a+x.c,0)/H.length, gust=Math.max(...H.map(x=>x.g));
+  const am=H.filter(x=>x.h<12), pm=H.filter(x=>x.h>=12&&x.h<17), eve=H.filter(x=>x.h>=17);
+  const wet=set=>set.filter(x=>wetH.includes(x)).length>=Math.max(1,Math.ceil(set.length/2));
+  const rainWord=heavy?'rain':wetH.length&&wetH.every(x=>x.mm<0.6)?'drizzle':'showers';
+  const feel=tMax<=5?'cold':tMax<=10?'chilly':tMax<=16?'mild':tMax<=22?'warm':'hot';
+  const sky=cloud<35?'bright':cloud<70?'some sun':'grey';
+  let line, kind;
+  if(!wetH.length){
+    line = feel==='cold'? (sky==='bright'?'Crisp, bright and cold':'Dry but cold') :
+           feel==='chilly'? (sky==='bright'?'Crisp and bright':'Dry but chilly') :
+           feel==='mild'? (sky==='bright'?'Bright and mild':sky==='some sun'?'Dry, some sun':'Dry and mild, grey skies') :
+           feel==='warm'? (sky==='grey'?'Warm and dry':'Warm and sunny') : 'Hot, find some shade';
+    kind = sky==='bright'?'sun':sky==='some sun'?'part':'cloud';
+  } else if(wet(am)&&!wet(pm)&&!wet(eve)){ const last=Math.max(...wetH.filter(x=>x.h<13).map(x=>x.h),9); line=`${rainWord==='drizzle'?'Drizzly':'Wet'} start, dry from ${last+1>=12&&last+1<=13?'lunchtime':fmtH(last+1)}`; kind='part'; }
+  else if(!wet(am)&&(wet(pm)||wet(eve))){ const first=Math.min(...wetH.filter(x=>x.h>=11).map(x=>x.h)); line=`Dry morning, ${rainWord} from about ${fmtH(first)}`; kind='part'; }
+  else if(wetH.length>=9){ line=heavy?'Wet most of the day':`${rainWord==='drizzle'?'Drizzly':'Showery'} most of the day`; kind='rain'; }
+  else if(wetH.length<=2){ line=`Mostly dry, the odd ${rainWord==='rain'?'downpour':'shower'}`; kind='part'; }
+  else { line=`On and off ${rainWord}`; kind='rain'; }
+  const windy=gust>=50;
+  if(windy){ line+=gust>=70?', and very windy':', and blustery'; if(kind!=='rain') kind='wind'; }
+  const timed=/from|start/.test(line);   // the headline already says when
+  const rainSpan=!wetH.length?'dry all day':timed||wetH.length>=9?'':`wet ${fmtH(wetH[0].h)}–${fmtH(Math.min(20,wetH[wetH.length-1].h+1))}`;
+  const detail=[`${tMin===tMax?tMax:tMin+'–'+tMax}°`,rainSpan,windy?'gusts '+Math.round(gust*0.621)+' mph':''].filter(Boolean).join(' · ');
+  return {line,detail,kind,t:tMax,
+    wet:wetH.length>=5, wetPart:wetH.length>=2&&wetH.length<5, dry:wetH.length<=1, fine:wetH.length===0&&tMax>=12&&cloud<70&&!windy, cold:tMax<=6, windy, g:gust};
+}
+const WXICON={
+  sun:'<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/>',
+  part:'<path d="M9 5.2a4 4 0 0 1 6.6 3.4"/><path d="M9 2.8v1M3.8 8h1M5.3 4.3l.7.7"/><path d="M7.5 19.5h9a3.5 3.5 0 0 0 .3-7 5 5 0 0 0-9.6 1.2 2.9 2.9 0 0 0 .3 5.8Z"/>',
+  cloud:'<path d="M7 18.5h10a4 4 0 0 0 .4-8 5.6 5.6 0 0 0-10.8 1.3A3.4 3.4 0 0 0 7 18.5Z"/>',
+  rain:'<path d="M7 14.5h10a4 4 0 0 0 .4-8 5.6 5.6 0 0 0-10.8 1.3A3.4 3.4 0 0 0 7 14.5Z"/><path d="M8.5 17.5l-1 2.5M12.5 17.5l-1 2.5M16.5 17.5l-1 2.5"/>',
+  wind:'<path d="M3 9h11.5a2.5 2.5 0 1 0-2.4-3.2"/><path d="M3 13h15a2.5 2.5 0 1 1-2.4 3.2"/><path d="M3 17h7"/>'
+};
+function wxIcon(k){ return `<svg class="wxi ${k}" viewBox="0 0 24 24" aria-hidden="true">${WXICON[k]||WXICON.cloud}</svg>`; }
 async function getWeather(){
   wx=null;
   try{
     const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),6000);
-    const u=`https://api.open-meteo.com/v1/forecast?latitude=${setup.lat}&longitude=${setup.lon}&daily=weather_code,temperature_2m_max,precipitation_probability_max,wind_gusts_10m_max&timezone=Europe%2FLondon&forecast_days=16`;
-    const j=await (await fetch(u,{signal:ctrl.signal})).json(); const i=j.daily.time.indexOf(setup.date);
-    if(i>=0){const code=j.daily.weather_code[i],p=j.daily.precipitation_probability_max[i]||0,t=Math.round(j.daily.temperature_2m_max[i]);
-      const g=Math.round((j.daily.wind_gusts_10m_max||[])[i]||0); wx={code,p,t,g,word:wxWord(code,p),wet:p>=55||(code>=61&&code<=67)||code>=80,fine:p<30&&t>=12&&code<=3&&g<40,dry:p<35,cold:t<=6,windy:g>=50}}
+    const u=`https://api.open-meteo.com/v1/forecast?latitude=${setup.lat}&longitude=${setup.lon}&hourly=temperature_2m,precipitation_probability,precipitation,cloud_cover,wind_gusts_10m,weather_code&timezone=Europe%2FLondon&forecast_days=16`;
+    const j=await (await fetch(u,{signal:ctrl.signal})).json(); const T=j.hourly.time;
+    const H=[]; for(let i=0;i<T.length;i++){ if(!T[i].startsWith(setup.date)) continue; const h=+T[i].slice(11,13); if(h<8||h>20) continue;
+      H.push({h,t:j.hourly.temperature_2m[i],p:j.hourly.precipitation_probability[i]||0,mm:j.hourly.precipitation[i]||0,c:j.hourly.cloud_cover[i]||0,g:j.hourly.wind_gusts_10m[i]||0,code:j.hourly.weather_code[i]||0}); }
+    if(H.length>=6) wx=describeDay(H);
   }catch(e){}
   if(!wx) wx=manualWx();
 }
@@ -530,6 +578,7 @@ function score(it,mins){
   const solemn=SOLEMN.test(it.name); if(solemn) it=Object.assign({},it,{kids:Math.min(it.kids??1,0),adults:Math.min(it.adults??1,1)});
   let s=10, why=[];
   s-=mins/9;
+  if(wx&&wx.wetPart&&!wx.wet){ if(it.in==='out') s-=1; else if(it.in==='in') s+=0.5; }
   if(wx){ if(wx.wet){ if(it.in==='out'){s-=3.2;} else if(it.in==='in'){s+=1.6;why.push('indoors on a wet day')} else {s-=0.6} }
     else if(wx.fine&&it.in!=='in'){s+=1.8;why.push('fine weather, get outside')}
     else if(wx.dry&&it.in==='out'){s+=0.7}
@@ -597,7 +646,7 @@ async function buildDeck(){
 function renderStrip(){
   const d=fromIso(setup.date); $('#stripDate').textContent=nice(d);
   $('#stripFrom').textContent=(setup.place||setup.pc).trim()+' · '+({car:'car or transport',bike:'by bike',transit:'public transport'}[setup.mode]||'public transport');
-  if(wx&&!wx.manual) $('#stripWx').innerHTML=`${wx.windy?'Windy':wx.word} ${wx.t}°<small>${wx.p}% rain${wx.g?' · gusts '+Math.round(wx.g*0.621)+' mph':''}</small>`;
+  if(wx&&!wx.manual) $('#stripWx').innerHTML=`<div class="wxrow">${wxIcon(wx.kind)}<div><span class="wxl">${wx.line}</span><small>${wx.detail}</small></div></div>`;
   else $('#stripWx').innerHTML=`<div class="wxpick"><small>Forecast?</small><button class="chip ${wx&&wx.wet?'on':''}" data-wx="wet">Wet</button><button class="chip ${wx&&wx.dry?'on':''}" data-wx="dry">Dry</button></div>`;
   $('#stripWx').querySelectorAll('[data-wx]').forEach(b=>b.onclick=async()=>{setup.wxManual={v:b.dataset.wx,date:setup.date};save();track('wx_manual',{v:b.dataset.wx});await buildDeck()});
   const whoL={solo:'Just me',couple:'Couple',family:'Family · '+setup.ages.join(', '),friends:'Friends'}[setup.who]||'';
