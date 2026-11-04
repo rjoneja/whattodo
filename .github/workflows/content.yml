@@ -42,6 +42,7 @@ jobs:
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 share_pages.py
+      - if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 sources_page.py || true
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: |
