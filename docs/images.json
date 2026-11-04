@@ -2,13 +2,13 @@
 "ev-relaxed-gallery-tours-bsl-interpreted-te-07-04": {
 "url": "https://images.prismic.io/wellcomecollection/airHxKlQnVZVEN6z_BTG260520152042-Edit.jpg?w=1338&auto=compress%2Cformat&rect=&q=50",
 "credit": "wellcomecollection.org",
-"checked": 4,
+"checked": 5,
 "fit": 1
 },
 "ev-relaxed-opening-of-audrey-amiss-and-rudy-08-23": {
 "url": "https://images.prismic.io/wellcomecollection/ZtmF1bzzk9ZrXB24_EP_002108_037.jpg?w=1338&auto=compress%2Cformat&rect=446%2C527%2C3540%2C1991&q=50",
 "credit": "wellcomecollection.org",
-"checked": 4,
+"checked": 5,
 "fit": 1
 },
 "ev-winter-programme-10-27": {
@@ -50,7 +50,7 @@
 "ev-amy-winehouse-in-focus-outdoor-benches-e-11-03": {
 "url": "https://www.kingscross.co.uk/media/KXC_ECA_WHC_N3338_kxweb-600x600.jpg?cache=1792657536",
 "credit": "kingscross.co.uk",
-"checked": 4,
+"checked": 5,
 "fit": 1
 },
 "ev-larger-than-life-starring-wallace-gromit-11-03": {
@@ -78,10 +78,10 @@
 "fit": 1
 },
 "ev-friday-froglets-11-03": {
-"url": "https://www.wwt.org.uk/uploads/images/2026-09-03/Home-Ed-Green-Careers-Day-large.png",
+"url": "https://www.wwt.org.uk/uploads/images/2024-11-11/rs42051-wwt-190219-3952-hpr[966x644].jpg",
 "credit": "wwt.org.uk",
-"checked": 4,
-"fit": 1
+"fit": 3,
+"checked": 5
 },
 "ev-film-tour-spies-sleuths-and-superheroes-11-03": {
 "url": "https://et38c4vicjh.exactdn.com/wp-content/uploads/2026/09/Identity-67-1-1280x720.jpg?strip=all&quality=90&webp=90&avif=80",
@@ -264,31 +264,31 @@
 "fit": 1
 },
 "ev-wembley-park-art-trail-08-01": {
-"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Olympic_Way_in_Wembley_Park.jpg/960px-Olympic_Way_in_Wembley_Park.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-"credit": "Photo: Wikimedia Commons",
-"page": "https://en.wikipedia.org/wiki/Wembley_Park",
-"checked": 4,
-"fit": 1
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Street_Art_in_Mullumbimby%2C_mural_of_historic_buildings_02.jpg/960px-Street_Art_in_Mullumbimby%2C_mural_of_historic_buildings_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Aliceinthealice · CC0",
+"page": "https://commons.wikimedia.org/wiki/File:Street_Art_in_Mullumbimby,_mural_of_historic_buildings_02.jpg",
+"fit": 2,
+"checked": 5
 },
 "ev-200th-anniversary-history-tours-01-01": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Regent%27s_Park_bandstand.jpg/960px-Regent%27s_Park_bandstand.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Regent's_Park",
-"checked": 4,
+"checked": 5,
 "fit": 1
 },
 "ev-friends-of-brockwell-park-volunteering-a-01-01": {
-"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Herne_Hill_Junction.jpg/960px-Herne_Hill_Junction.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-"credit": "Photo: Wikimedia Commons",
-"page": "https://en.wikipedia.org/wiki/Herne_Hill",
-"checked": 4,
-"fit": 1
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Volunteers_help_maintain_the_garden_throughout_the_year._-_AA_%2813991451719%29.jpg/960px-Volunteers_help_maintain_the_garden_throughout_the_year._-_AA_%2813991451719%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: vastateparksstaff · CC BY 2.0",
+"page": "https://commons.wikimedia.org/wiki/File:Volunteers_help_maintain_the_garden_throughout_the_year._-_AA_(13991451719).jpg",
+"fit": 3,
+"checked": 5
 },
 "ev-song-10-02": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Southwark_Cathedral%2C_24th_floor.jpg/960px-Southwark_Cathedral%2C_24th_floor.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Southwark",
-"checked": 4,
+"checked": 5,
 "fit": 1
 },
 "ev-valence": {
@@ -1057,49 +1057,49 @@
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Sutton%2C_London",
 "fit": 1,
-"checked": 4
+"checked": 5
 },
 "ev-tapestry-of-black-britons-10-01": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Guildhall%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_139.JPG/960px-Guildhall%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_139.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Guildhall%2C_London",
 "fit": 1,
-"checked": 4
+"checked": 5
 },
 "ev-exhibition-jazz-dance-in-british-culture-10-06": {
-"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Bow_match_factory_1.jpg/960px-Bow_match_factory_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-"credit": "Photo: Wikimedia Commons",
-"page": "https://en.wikipedia.org/wiki/Bow%2C_London",
-"fit": 1,
-"checked": 4
+"url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Bobby_Hughes_Experience_%28164610%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+"credit": "Photo: Tore Sætre · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Bobby_Hughes_Experience_(164610).jpg",
+"fit": 3,
+"checked": 5
 },
 "ev-cecilia-vicu-a-living-threads-10-07": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Whitechapel_LU_roundel_totem_pole.jpg/960px-Whitechapel_LU_roundel_totem_pole.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Whitechapel",
 "fit": 1,
-"checked": 4
+"checked": 5
 },
 "ev-cecilia-vicu-a-foraging-quipu-10-07": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Whitechapel_LU_roundel_totem_pole.jpg/960px-Whitechapel_LU_roundel_totem_pole.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Whitechapel",
 "fit": 1,
-"checked": 4
+"checked": 5
 },
 "ev-screen-portraits-whitechapel-gallery-art-10-07": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Whitechapel_LU_roundel_totem_pole.jpg/960px-Whitechapel_LU_roundel_totem_pole.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Whitechapel",
 "fit": 1,
-"checked": 4
+"checked": 5
 },
 "ev-this-must-be-the-place-artists-for-white-10-08": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Whitechapel_LU_roundel_totem_pole.jpg/960px-Whitechapel_LU_roundel_totem_pole.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
 "credit": "Photo: Wikimedia Commons",
 "page": "https://en.wikipedia.org/wiki/Whitechapel",
 "fit": 1,
-"checked": 4
+"checked": 5
 },
 "ev-photography-exhibition-voices-rhythms-st-10-08": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Peacock_Dancer_with_Body_Art_-2.jpg/960px-Peacock_Dancer_with_Body_Art_-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -4553,89 +4553,93 @@
 "fit": 3,
 "checked": 4
 },
-"_tried4": {
-"ev-food-and-farmers-market-03-06": "2026-11-04",
-"ev-cutty-sark-street-food-market-11-03": "2026-11-04",
-"ev-zsl-at-200-the-exhibition-04-01": "2026-11-04",
-"ev-lights-up-and-audio-described-tours-of-t-11-03": "2026-11-04",
+"ev-food-and-farmers-market-03-06": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Grand_Prairie_May_2019_29_%28Grand_Prairie_Farmers_Market%29.jpg/960px-Grand_Prairie_May_2019_29_%28Grand_Prairie_Farmers_Market%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Michael Barera · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Grand_Prairie_May_2019_29_(Grand_Prairie_Farmers_Market).jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-cutty-sark-street-food-market-11-03": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Reffen_Copenhagen_Street_Food_Market_%285%29.jpg/960px-Reffen_Copenhagen_Street_Food_Market_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Turaids · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Reffen_Copenhagen_Street_Food_Market_(5).jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-zsl-at-200-the-exhibition-04-01": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Regent%27s_Park_bandstand.jpg/960px-Regent%27s_Park_bandstand.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Regent's_Park",
+"fit": 1,
+"checked": 5
+},
+"ev-lights-up-and-audio-described-tours-of-t-11-03": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Euston_Road_-_geograph.org.uk_-_723977.jpg/960px-Euston_Road_-_geograph.org.uk_-_723977.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Euston_Road",
+"fit": 1,
+"checked": 5
+},
+"ev-david-bowie-you-re-not-alone-11-03": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Repurposed_gas_holders_and_canal_locks_at_Kings_Cross_%28geograph_5691899%29.jpg/960px-Repurposed_gas_holders_and_canal_locks_at_Kings_Cross_%28geograph_5691899%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/King's_Cross%2C_London",
+"fit": 1,
+"checked": 5
+},
+"ev-zsl-s-zoo-plaque-trail-06-01": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Regent%27s_Park_bandstand.jpg/960px-Regent%27s_Park_bandstand.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Regent's_Park",
+"fit": 1,
+"checked": 5
+},
+"ev-drop-in-send-play-aug-dec-2026-08-01": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Bethnal_Green_Stairway_to_Heaven.jpg/960px-Bethnal_Green_Stairway_to_Heaven.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Bethnal_Green",
+"fit": 1,
+"checked": 5
+},
+"ev-before-it-was-all-built-up-09-17": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Carshalton_2007.jpg/960px-Carshalton_2007.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Carshalton",
+"fit": 1,
+"checked": 5
+},
+"ev-jenkin-van-zyl-enclosure-09-24": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Strand%2C_London_WC2_-_geograph.org.uk_-_752450.jpg/960px-Strand%2C_London_WC2_-_geograph.org.uk_-_752450.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Strand%2C_London",
+"fit": 1,
+"checked": 5
+},
+"ev-highgate-wood-guided-walks-09-26": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Highgate_Wood_entrance.jpg/960px-Highgate_Wood_entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Rc1959 · CC0",
+"page": "https://commons.wikimedia.org/wiki/File:Highgate_Wood_entrance.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-the-dance-floor-at-sadler-s-wells-east-11-04": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Edgar_Degas_The_Dance_Class.jpg/960px-Edgar_Degas_The_Dance_Class.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Edgar Degas · Public domain",
+"page": "https://commons.wikimedia.org/wiki/File:Edgar_Degas_The_Dance_Class.jpg",
+"fit": 3,
+"checked": 5
+},
+"_tried5": {
 "ev-bsl-interpreted-tours-of-the-coming-of-a-11-04": "2026-11-04",
-"ev-david-bowie-you-re-not-alone-11-03": "2026-11-04",
-"ev-zsl-s-zoo-plaque-trail-06-01": "2026-11-04",
 "ev-bsl-tours-of-the-coming-of-age-with-rubb-11-03": "2026-11-04",
 "ev-house-of-dreamers-london-07-01": "2026-11-04",
 "ev-bsl-interpreted-tours-of-tenderness-and--11-03": "2026-11-04",
 "ev-audio-described-tours-of-tenderness-and--11-03": "2026-11-04",
 "ev-timewalk-immersive-experience-museum-07-23": "2026-11-04",
-"ev-drop-in-send-play-aug-dec-2026-08-01": "2026-11-04",
 "ev-bsl-tour-of-audrey-amiss-the-surviving-e-11-03": "2026-11-04",
 "ev-bsl-interpreted-tours-of-audrey-amiss-an-09-12": "2026-11-04",
 "ev-sea-life-exhibition-by-art4u2-09-17": "2026-11-04",
-"ev-before-it-was-all-built-up-09-17": "2026-11-04",
-"ev-immuno-cautious-openings-of-the-audrey-a-09-18": "2026-11-04",
-"ev-jenkin-van-zyl-enclosure-09-24": "2026-11-04",
-"ev-highgate-wood-guided-walks-09-26": "2026-11-04",
-"ev-the-dance-floor-at-sadler-s-wells-east-11-04": "2026-11-04",
-"ev-british-wildlife-photography-awards-11-03": "2026-11-04",
-"ev-nature-tots-forest-school-monday-friday--11-03": "2026-11-04",
-"ev-nature-tots-forest-school-thursday-at-wo-11-03": "2026-11-04",
-"ev-architectural-heritage-fund-50th-anniver-11-03": "2026-11-04",
-"ev-havering-singing-for-the-brain-11-03": "2026-11-04",
-"ev-events-in-havering-libraries-11-03": "2026-11-04",
-"ev-it-help-sessions-evenings-at-north-kensi-11-03": "2026-11-04",
-"ev-it-help-sessions-at-chelsea-library-11-03": "2026-11-04",
-"ev-chatter-books-club-norwood-library-11-04": "2026-11-04",
-"ev-chatter-books-club-norwood-11-04": "2026-11-04",
-"ev-storymakers-under-5-s-free-class-11-04": "2026-11-04",
-"ev-music-classes-for-under-fives-canada-wat-11-04": "2026-11-04",
-"ev-early-years-send-event-for-families-11-04": "2026-11-04",
-"ev-rhyme-time-at-paddington-children-s-libr-11-04": "2026-11-04",
-"ev-age-uk-digital-drop-in-11-04": "2026-11-04",
-"ev-classes-for-under-fives-canada-water-lib-11-04": "2026-11-04",
-"ev-woodside-children-s-centre-family-activi-11-04": "2026-11-04",
-"ev-wellbeing-walk-at-new-river-sport-and-le-11-04": "2026-11-04",
-"ev-oh-mary-11-04": "2026-11-04",
-"ev-hay-fever-11-04": "2026-11-04",
-"ev-nature-tots-forest-school-thursday-at-wo-11-05": "2026-11-04",
-"ev-wriggle-and-rhyme-norwood-library-11-05": "2026-11-04",
-"ev-mindfulness-meditation-norwood-library-11-05": "2026-11-04",
-"ev-wriggle-and-rhyme-norwood-11-05": "2026-11-04",
-"ev-mindfulness-meditation-norwood-11-05": "2026-11-04",
-"ev-wriggle-and-rhyme-11-05": "2026-11-04",
-"ev-mindfulness-meditation-11-05": "2026-11-04",
-"ev-titanique-11-05": "2026-11-04",
-"ev-send-play-drop-in-11-07": "2026-11-04",
-"ev-london-museum-docklands-highlights-tour-11-07": "2026-11-04",
-"ev-reading-group-norwood-library-11-07": "2026-11-04",
-"ev-reading-group-norwood-11-07": "2026-11-04",
-"ev-reading-group-11-07": "2026-11-04",
-"ev-pumpkin-patch-dash-11-07": "2026-11-04",
-"ev-ig-botanicalboys-terrarium-workshop-11-07": "2026-11-04",
-"ev-wonders-of-the-warehouse-11-08": "2026-11-04",
-"ev-portobello-comedy-club-11-08": "2026-11-04",
-"ev-diwali-boat-party-celebration-on-the-tha-11-08": "2026-11-04",
-"ev-autumn-internationals-live-screening-eng-11-08": "2026-11-04",
-"ev-jewish-history-walking-tour-11-08": "2026-11-04",
-"ev-wellbeing-group-for-dementia-and-carers--11-09": "2026-11-04",
-"ev-wellbeing-group-for-dementia-and-carers-11-09": "2026-11-04",
-"ev-digital-drop-ins-11-09": "2026-11-04",
-"ev-an-open-mic-like-no-other-special-guest-11-10": "2026-11-04",
-"ev-tots-at-the-docks-11-11": "2026-11-04",
-"ev-quiz-night-at-bob-hope-theatre-11-13": "2026-11-04",
-"ev-storytime-at-worcester-park-library-11-13": "2026-11-04",
-"ev-autumn-internationals-live-screening-fra-11-13": "2026-11-04",
-"ev-family-workshop-pip-and-posy-puppet-maki-11-14": "2026-11-04",
-"ev-club-bananas-festive-making-workshop-11-18": "2026-11-04",
-"ev-low-stim-openings-of-the-audrey-amiss-an-11-19": "2026-11-04",
-"ev-london-tarot-meetup-for-black-women-19-n-11-19": "2026-11-04",
-"ev-victorian-santa-s-grotto-11-20": "2026-11-04",
-"ev-meet-santa-at-london-zoo-11-21": "2026-11-04",
-"ev-christmas-at-london-zoo-11-21": "2026-11-04",
-"ev-1oak-events-rooftop-sessions-autumn-seri-11-21": "2026-11-04",
-"ev-wonderful-wildlife-weekends-at-walthamst-11-22": "2026-11-04",
-"ev-wonderful-wildlife-weekends-at-centre-fo-11-22": "2026-11-04",
-"ev-extended-skate-session-11-23": "2026-11-04",
-"ev-ig-k-pop-party-on-the-ice-11-23": "2026-11-04",
-"ev-bach-to-baby-christmas-family-concert-11-24": "2026-11-04",
-"ev-nature-stamp-making-11-25": "2026-11-04"
+"ev-immuno-cautious-openings-of-the-audrey-a-09-18": "2026-11-04"
 }
 }
