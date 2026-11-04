@@ -104,6 +104,7 @@ Default location: lat {account['lat']}, lon {account['lon']}; if the post names 
 Return ONLY a JSON array of objects:
 {{"post_id": str, "name": str, "area": str, "lat": float, "lon": float, "in": "in"|"out"|"both",
  "price": "free"|"£"|"££", "ages": [min,max], "kids": 0-3 (how much children would actually enjoy it, not whether they are allowed; ceremonies, talks and services are 0), "adults": 0-3, "dur": hours, "parking": short note only if the venue states it, e.g. "car park on site" / "no parking" (else omit), "tags": [3-5 lowercase words],
+ "days": weekday names e.g. ["Sun"] ONLY if it runs on some weekdays but not others, "open"/"close": "HH:MM" opening hours or start/end ONLY if stated,
  "blurb": your own words, max 30 words, practical, then EITHER "date": "YYYY-MM-DD" (+ optional "time") OR "from"/"to"}}
 Return [] if there is nothing."""})
     msg = client.messages.create(model=MODEL, max_tokens=12000, messages=[{"role": "user", "content": content}])

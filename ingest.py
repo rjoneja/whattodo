@@ -30,6 +30,7 @@ SCHEMA = """Each event is a JSON object:
 {"name": str, "area": str (neighbourhood), "lat": float, "lon": float, "in": "in"|"out"|"both",
  "price": "free"|"£"|"££" (£ = under ~£15/adult), "ages": [min,max] (99 = any), "kids": 0-3 (how much children would actually enjoy it, not whether they are allowed; ceremonies, talks and services are 0), "adults": 0-3,
  "dur": hours, "parking": short note only if the venue states it, e.g. "car park on site" / "no parking" (else omit), "tags": [3-5 lowercase words], "blurb": own words, max 35 words, practical,
+ "days": weekday names e.g. ["Sun"] ONLY if it runs on some weekdays but not others, "open"/"close": "HH:MM" opening hours or start/end ONLY if stated,
  "url": the event's own page, then EITHER "date": "YYYY-MM-DD" (+ optional "time") OR "from"/"to": "YYYY-MM-DD"."""
 
 # ---------- fetch ----------
@@ -197,7 +198,7 @@ def enrich(evs, venue):
     compact = [{"i": i, "name": e["name"], "desc": e.get("raw_desc", "")[:300], "price": e.get("price")} for i, e in enumerate(need)]
     prompt = f"""For each event below from {venue['name']} (a {venue.get('kind')}), return a JSON array of objects
 {{"i": index, "in": "in"|"out"|"both", "price": "free"|"£"|"££" (keep the given price if present; otherwise infer, "free" only if clearly free),
- "ages": [min,max], "kids": 0-3, "adults": 0-3, "dur": hours, "parking": short note only if the venue states it, e.g. "car park on site" / "no parking" (else omit), "tags": [3-5 lowercase words], "blurb": your own words, max 30 words, practical}}.
+ "ages": [min,max], "kids": 0-3, "adults": 0-3, "dur": hours, "parking": short note only if the venue states it, e.g. "car park on site" / "no parking" (else omit), "tags": [3-5 lowercase words], "days": ["Sun"] only if it runs on some weekdays but not others, "open"/"close": "HH:MM" only if stated, "blurb": your own words, max 30 words, practical}}.
 Venue defaults if unsure: {json.dumps(d)}.
 EVENTS: {json.dumps(compact, ensure_ascii=False)}"""
     try: fills = {f["i"]: f for f in claude(prompt)}
@@ -208,6 +209,8 @@ EVENTS: {json.dumps(compact, ensure_ascii=False)}"""
         e["ages"] = f.get("ages") or d.get("ages", [0, 99]); e["kids"] = f.get("kids", d.get("kids", 1)); e["adults"] = f.get("adults", d.get("adults", 2))
         e["dur"] = f.get("dur", 2)
         if f.get("parking"): e["parking"] = str(f["parking"])[:40]
+        for k in ("days", "open", "close"):
+            if f.get(k) and not e.get(k): e[k] = f[k]
         e["tags"] = (f.get("tags") or d.get("tags", []))[:5]
         e["blurb"] = f.get("blurb") or (e.get("raw_desc", "")[:160] or e["name"])
     return evs

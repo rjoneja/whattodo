@@ -642,12 +642,15 @@ function routeOf(j){
 }
 let tflStore={}; try{tflStore=JSON.parse(localStorage.getItem('wtd.tfl')||'{}')}catch(e){}
 function tflKey(it,t){ return [setup.lat.toFixed(3),setup.lon.toFixed(3),(+it.lat).toFixed(3),(+it.lon).toFixed(3),setup.date,t].join('|'); }
+function arriveBy(it){ const h=hoursOf(it); if(h.open==null) return null;
+  if(it.date===setup.date) return Math.max(8*60,h.open-10);            // timed one-off: 10 minutes early
+  return h.open>10.5*60?h.open:null; }                                  // opens late morning or later: be there for opening
 async function tflMins(it,force){
   if(setup.mode==='bike'&&!force) return null; if(travelCache[it.id]) return travelCache[it.id]; if(travelCache[it.id]===null&&!force) return null;
   // timed event on the chosen day: plan to arrive 10 minutes early; otherwise leave mid-morning
-  const tm=(it.date===setup.date&&/^(\d{1,2}):(\d{2})/.exec(it.time||''));
-  let q='time=1000', tkey='1000';
-  if(tm){ const t=Math.max(8*60,(+tm[1])*60+(+tm[2])-10); tkey=String(Math.floor(t/60)).padStart(2,'0')+String(t%60).padStart(2,'0'); q=`time=${tkey}&timeIs=Arriving`; }
+  const t0=arriveBy(it);
+  let q='time=1000', tkey='1000', tm=t0!=null;
+  if(tm){ tkey=String(Math.floor(t0/60)).padStart(2,'0')+String(t0%60).padStart(2,'0'); q=`time=${tkey}&timeIs=Arriving`; }
   const key=tflKey(it,tkey); if(tflStore[key]&&tflStore[key].opts) return (travelCache[it.id]=tflStore[key]);
   travelCache[it.id]=null;
   try{const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),12000);
@@ -701,7 +704,31 @@ function openOn(it){ const d=fromIso(setup.date); if(it.days&&!it.days.includes(
 let IMAGES={};
 async function loadImages(){ if(Object.keys(IMAGES).length) return; try{const r=await fetch('images.json',{cache:'no-store'}); if(r.ok) IMAGES=await r.json()}catch(e){} }
 async function loadEvents(){ if(EVENTS.length) return; try{const r=await fetch('events.json',{cache:'no-store'}); if(r.ok){const j=await r.json(); EVENTS=(j.events||[]).map(e=>Object.assign({event:true},e))}}catch(e){} }
-function eventOn(e){ const d=setup.date; if(e.date) return e.date===d; if(e.from&&d<e.from) return false; if(e.to&&d>e.to) return false; return true; }
+function eventOn(e){ const d=setup.date; if(e.date) return e.date===d; if(e.from&&d<e.from) return false; if(e.to&&d>e.to) return false; return openOn(e); }
+// When in the day something is on, in minutes after midnight: from stated hours, else from a time like "10am–5pm" or "12:00"
+function toMin(t){ const m=/^\s*(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)?/i.exec(t||''); if(!m) return null; let h=+m[1]; const ap=(m[3]||'').toLowerCase();
+  if(ap==='pm'&&h<12) h+=12; if(ap==='am'&&h===12) h=0; return h<24?h*60+(+m[2]||0):null; }
+function hoursOf(it){
+  let o=toMin(it.open), c=toMin(it.close);
+  if(o==null&&it.time){ const parts=String(it.time).split(/\s*(?:–|-|—|to)\s*/); o=toMin(parts[0]); if(parts[1]){ let cc=toMin(parts[1]); if(cc!=null&&o!=null&&cc<o&&!/am|pm/i.test(parts[1])) cc+=12*60; c=cc; }
+    if(o!=null&&o<9*60&&/pm/i.test(parts[1]||'')&&!/am/i.test(parts[0])) o+=12*60; }   // "7–10pm"
+  if(c!=null&&o!=null&&c<=o) c=null;
+  return {open:o,close:c,part:it.part||(c!=null&&c<=14*60?'morning':o!=null&&o>=17*60?'evening':o!=null&&o>=12*60&&c!=null&&c<=18*60?'afternoon':null)};
+}
+const fmtT=m=>{const h=Math.floor(m/60),mi=m%60,h12=((h+11)%12)+1;return h12+(mi?':'+String(mi).padStart(2,'0'):'')+(h<12?'am':'pm')};
+function hoursLabel(it){ const h=hoursOf(it); if(h.close==null&&it.time) return null;   // a start time alone is already on the date badge
+  if(h.open==null||h.close==null) return h.part&&h.part!=='all day'?{morning:'Mornings',afternoon:'Afternoons',evening:'Evening'}[h.part]:null;
+  const span=fmtT(h.open).replace(/(am|pm)$/,(x)=>fmtT(h.close).endsWith(x)?'':x)+'–'+fmtT(h.close);
+  return (h.part==='morning'?'Morning · ':h.part==='evening'?'Evening · ':'')+span; }
+// searching for today: is there still time to get there and enjoy it?
+function stillOn(it,mins){
+  if(setup.date!==iso(new Date())) return {ok:true};
+  const now=new Date().getHours()*60+new Date().getMinutes(), arrive=now+(mins||0), h=hoursOf(it);
+  if(h.close!=null){ if(arrive+30>h.close) return {ok:false}; if(arrive+75>h.close) return {ok:true,soon:'closes '+fmtT(h.close)+', go soon'}; return {ok:true}; }
+  if(it.date&&h.open!=null&&arrive>h.open+20) return {ok:false};          // a timed one-off that has started without us
+  if(h.part==='morning'&&arrive>13*60) return {ok:false};
+  return {ok:true};
+}
 const STOP=new Set(['london','event','events','sunday','saturday','weekend','family','families','festival','special','annual','street','centre','museum','gallery','free','park','day','days','tour','tours','november','december','october','with','from','your','their','great','winter','summer','autumn','spring','open','opening','evening','morning','night','late','lates']);
 function terms(x){ return new Set((x.name||'').toLowerCase().replace(/[^a-z ]/g,' ').split(/\s+/).filter(w=>w.length>=5&&!STOP.has(w))); }
 function similar(a,b){ const A=terms(a),B=terms(b); for(const w of A) if(B.has(w)) return true; return false; }
@@ -721,7 +748,8 @@ async function buildDeck(){
   const pool=[...ITEMS.filter(openOn),...EVENTS.filter(e=>eventOn(e)&&(!e.to||e.to>=today))];
   deck=pool.filter(it=>!['saved','done','pass'].includes(status[it.id]))
     .map(it=>{const t=trip(it);const r=score(it,t.cost);if(t.how==='transport'&&setup.mode==='car'&&t.park>=15)r.why.push('easier than parking');return Object.assign({},it,t,{est:true,score:r.s,why:r.why})})
-    .filter(x=>x.score>-50);
+    .filter(x=>x.score>-50)
+    .filter(x=>{const s=stillOn(x,x.mins); if(s.soon) x.why.unshift(s.soon); return s.ok});
   // a one-off at a place beats the place itself: push the everyday listing well down when an event is on there
   const special=deck.filter(x=>x.event&&(x.date||(x.to&&(fromIso(x.to)-fromIso(setup.date))/864e5<=30)));
   deck.forEach(x=>{ if(!x.event && special.some(e=>km(e.lat,e.lon,x.lat,x.lon)<0.4)) x.score-=4; });
@@ -771,8 +799,9 @@ document.addEventListener('click',e=>{const a=e.target.closest('[data-share]'); 
 function cardHTML(c){
   const badges=[`<button class="badge trbtn ${c.est?'':'good'}" data-tr aria-label="Journey options">${escH(travelLabel(c))}<i>›</i></button>`,
     `<span class="badge">${c.in==='in'?'Indoors':c.in==='out'?'Outdoors':'In & out'}</span>`,
-    `<span class="badge">${c.dur<=1?'Under an hour':c.dur<=2?'Couple of hours':c.dur<=3?'Half a day':'Full day'}</span>`];
-  if(c.days) badges.push(`<span class="badge warn">${c.days.length===1?DAYS[c.days[0]]+'s only':'Selected days'}</span>`);
+    (hoursLabel(c)&&!c.days?`<span class="badge ${hoursOf(c).part==='morning'?'warn':''}">${hoursLabel(c)}</span>`:c.days?'':`<span class="badge">${c.dur<=1?'Under an hour':c.dur<=2?'Couple of hours':c.dur<=3?'Half a day':'Full day'}</span>`)].filter(Boolean);
+  if(c.days){ const dn=c.days.length===1?['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][c.days[0]]+'s':c.days.length===2&&c.days.includes(0)&&c.days.includes(6)?'Weekends':c.days.map(d=>DAYS[d]).join(', '), hl=hoursLabel(c);
+    badges.push(`<span class="badge warn">${dn}${hl?' · '+hl.replace(/^(Morning|Evening) · /,''):' only'}</span>`); }
   if(c.months) badges.push(`<span class="badge warn">Seasonal</span>`);
   if(c.ages&&c.ages[1]<99) badges.push(`<span class="badge hot">Ages ${c.ages[0]}–${c.ages[1]}</span>`);
   if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5); badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left===1?'Ends tomorrow':left<=7?'Ends in '+left+' days':'Until '+nice(fromIso(c.to))}</span>`)} }
@@ -941,9 +970,9 @@ function renderTrip(){
 }
 async function openTrip(c){
   track('trip_open',{id:c.id});
-  const tm=(c.date===setup.date&&/^(\d{1,2}):(\d{2})/.exec(c.time||''));
+  const ab=arriveBy(c), hc=hoursOf(c).close;
   $('#tripTitle').textContent=c.name;
-  $('#tripSub').textContent=[ 'From '+(setup.place||'your postcode'), nice(fromIso(setup.date)), tm?'arrive by '+String(Math.max(8*60,(+tm[1])*60+(+tm[2])-10)/60|0).padStart(2,'0')+':'+String(Math.max(8*60,(+tm[1])*60+(+tm[2])-10)%60).padStart(2,'0'):'' ].filter(Boolean).join(' · ');
+  $('#tripSub').textContent=[ 'From '+(setup.place||'your postcode'), nice(fromIso(setup.date)), ab!=null?'arrive by '+fmtT(ab):'', hc!=null?'closes '+fmtT(hc):'' ].filter(Boolean).join(' · ');
   $('#tripFine').textContent='Times from TfL for '+nice(fromIso(setup.date))+'. Walking and cycling are straight-line estimates. Check before you set off.';
   const show=t=>{ const opts=tripOptions(c,t); const old=tripState&&tripState.c.id===c.id?tripState.sel:-1;
     tripState={c,opts,sel:old>=0&&old<opts.length?old:Math.max(0,opts.findIndex(x=>x.pick))}; renderTrip(); };
