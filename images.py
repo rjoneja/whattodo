@@ -147,9 +147,9 @@ def relevance(u, name, subject):
              "Score this image 0-3. 3 = an appealing photo that clearly shows the subject (e.g. Diwali lights and dancers for a Diwali event, "
              "the performers, the artwork, the activity). 2 = an appealing photo that fits well. 1 = only the venue, building, room or a generic scene "
              "that doesn't show the subject. 0 = a logo, icon, text, a flyer that is mostly words, a map, a screenshot, or unappealing.\n"
-             "Answer in the form SCORE: <digit>"}])
+             "Reply with exactly one line, SCORE: <digit>, and nothing else. Do not describe the image."}], max_tokens=300)
         if VETS["n"] <= 4: print(f"    raw reply: {txt[:60]!r} stop={stop}", file=sys.stderr)
-        m = re.search(r"SCORE:\s*([0-3])", txt, re.I) or re.search(r"\b([0-3])\b", txt)
+        m = re.search(r"SCORE:?\s*\**\s*([0-3])", txt, re.I) or re.search(r"^\s*([0-3])\s*$", txt)
         return int(m.group(1)) if m else 0
     except Exception as ex:
         print(f"  vet failed {u[:60]}: {str(ex)[:80]}", file=sys.stderr)
