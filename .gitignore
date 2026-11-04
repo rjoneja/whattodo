@@ -1,2 +1,4 @@
 __pycache__/
 candidates.csv
+node_modules/
+tests/out/

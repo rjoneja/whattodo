@@ -1,0 +1,25 @@
+name: layout
+# Text must never overlap, be cut off or stick out; buttons must stay reachable.
+# Runs on every change to the app, and each morning once the new events are in.
+on:
+  push:
+    branches: [main]
+    paths: ["whattodo.html", "docs/index.html", "tests/**", ".github/workflows/layout.yml"]
+  schedule:
+    - cron: "40 8 * * *"
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "20"}
+      - run: npm i --no-save playwright@1.49.1 && npx playwright install --with-deps chromium webkit
+      - run: (cd docs && python3 -m http.server 8765 >/dev/null 2>&1 &) && sleep 2
+      - run: node tests/layout.js
+        env: {BROWSERS: "chromium,webkit", CARDS: "40"}
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with: {name: layout-failures, path: tests/out, retention-days: 14}
