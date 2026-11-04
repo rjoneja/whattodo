@@ -980,7 +980,7 @@ function renderTrip(){
   const {c,opts}=tripState; let sel=tripState.sel;
   $('#topts').innerHTML=opts.map((x,i)=>`<button class="topt ${i===sel?'on':''}" data-i="${i}">
     <span class="tm">${x.est?'~':''}${x.mins}<small>MIN</small></span>
-    <b>${escH(x.title)}${x.pick?'<span class="tag">Our pick</span>':x.tag?`<span class="tag">${x.tag}</span>`:''}${x.warn?'<span class="tag warn">'+x.warn+'</span>':''}</b>
+    <b>${escH(x.title)}${x.tag?`<span class="tag">${x.tag}</span>`:''}${x.warn?'<span class="tag warn">'+x.warn+'</span>':''}</b>
     <span class="m">${escH(x.meta)}${x.times?'<br>'+escH(x.times):''}</span>${stripHTML(x)}</button>`).join('');
   $('#topts').querySelectorAll('.topt').forEach(b=>b.onclick=()=>{tripState.sel=+b.dataset.i;tripState.touched=true;track('trip_pick',{id:c.id,kind:opts[tripState.sel].kind});renderTrip()});
   try{ renderTripMap(c,opts,sel); }catch(e){ $('#tmap').innerHTML=''; track('trip_map_fail',{msg:String(e.message||e).slice(0,80)}); }
