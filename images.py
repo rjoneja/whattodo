@@ -40,7 +40,7 @@ def wiki_thumb(title):
     j = json.loads(body)
     src = (j.get("thumbnail") or {}).get("source") or (j.get("originalimage") or {}).get("source")
     if not src: return None
-    src = re.sub(r"/(\d+)px-", "/640px-", src)            # bigger thumb
+    src = re.sub(r"/(\d+)px-", "/960px-", src)            # Wikimedia only serves standard sizes (…500, 960, 1280)
     return {"url": src, "credit": "Photo: Wikimedia Commons", "page": j.get("content_urls", {}).get("desktop", {}).get("page")}
 
 BAD_WORDS = re.compile(r"(logo|crest|favicon|icon|sprite|placeholder|default|share[-_]?image|social[-_]?share|brand|badge|avatar|blank)", re.I)
@@ -152,6 +152,7 @@ def main():
             print(f"{id_}: wiki failed {ex}", file=sys.stderr)
         time.sleep(0.5)
     events = json.load(open(a.events)).get("events", []) if os.path.exists(a.events) else []
+    out = {k: v for k, v in out.items() if "/640px-" not in v.get("url", "")}   # old non-standard size: refetch
     for k, v in out.items():
         if v.get("checked") == 2 and "Wikimedia" not in v.get("credit", ""): v["checked"] = 3
     if a.recheck:
