@@ -226,11 +226,12 @@ def best_for(e, used, subj):
             if not sz: continue
             w, h, kind = sz
             if w < 600 or h < 300 or w / max(h, 1) > 2.6 or w / max(h, 1) < 0.6: continue
-            sc = relevance(u, name, subject)
+            sc = relevance(u, name, subject); print(f"    page {sc} {u[:70]}", file=sys.stderr)
             if sc >= 2: return {"url": u, "credit": host, "fit": sc}
             if sc == 1 and not fallback: fallback = {"url": u, "credit": host, "fit": 1}
-    for c in [c for c in commons(q) if used.get(c["url"], 0) == 0][:3]:
-        sc = relevance(c["url"], name, subject)
+    cs = commons(q); print(f"    commons '{q}': {len(cs)}", file=sys.stderr)
+    for c in [c for c in cs if used.get(c["url"], 0) == 0][:3]:
+        sc = relevance(c["url"], name, subject); print(f"    commons {sc} {c['url'][-50:]}", file=sys.stderr)
         if sc >= 2: return dict(c, fit=sc)
     return fallback
 
@@ -270,7 +271,7 @@ def main():
     ap.add_argument("--refresh", action="store_true"); ap.add_argument("--recheck", action="store_true", help="re-vet existing event pictures")
     a = ap.parse_args()
     out = json.load(open(a.out)) if os.path.exists(a.out) and not a.refresh else {}
-    tried = out.pop("_tried", {})
+    out.pop("_tried", None); tried = out.pop("_tried4", {})      # attempts under the subject-aware picker only
     out = {k: v for k, v in out.items() if "/640px-" not in v.get("url", "")}   # old non-standard size: refetch
     for id_, title in WIKI.items():
         if id_ in out: continue
@@ -297,7 +298,7 @@ def main():
     print(f"pictures: {len(need)} to check, {len(subj)} subjects", file=sys.stderr)
     for e in need:
         if VETS["n"] >= MAX_VETS: print("vet budget reached; the rest wait for tomorrow", file=sys.stderr); break
-        old = out.get(e["id"])
+        old = out.get(e["id"]); print(f"{e['id']}: about '{(subj.get(e['id']) or {}).get('subject','?')}'", file=sys.stderr)
         if old: used[old["url"]] = max(0, used.get(old["url"], 1) - 1)
         t = None
         try: t = best_for(e, used, subj.get(e["id"]))
@@ -315,7 +316,7 @@ def main():
         time.sleep(0.3)
     live = set(WIKI) | {e["id"] for e in events}
     out = {k: v for k, v in out.items() if k in live}
-    out["_tried"] = {k: v for k, v in tried.items() if k in live and k not in out}
+    out["_tried4"] = {k: v for k, v in tried.items() if k in live and k not in out}
     json.dump(out, open(a.out, "w"), indent=0, ensure_ascii=False)
     print(f"wrote {len(out)} images to {a.out}")
 
