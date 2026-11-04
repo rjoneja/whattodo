@@ -210,10 +210,17 @@ def main():
         except Exception as ex:
             print(f"  model failed: {ex}", file=sys.stderr); continue
         by_id = {p["id"]: p for p in posts}
+        clean = []
         for e in evs:
+            if not isinstance(e, dict) or not e.get("name") or not (e.get("date") or e.get("from")): continue
             p = by_id.get(str(e.pop("post_id", "")), posts[0])
             e["url"] = p["permalink"]; e["source"] = f"Instagram @{acc['handle']}"
-            e["id"] = slug(e); e["tags"] = [t.lower() for t in e.get("tags", [])][:5]
+            e.setdefault("area", acc["area"]); e.setdefault("lat", acc["lat"]); e.setdefault("lon", acc["lon"])
+            d = acc.get("defaults", {})
+            for k in ("in", "kids", "adults", "ages"): e.setdefault(k, d.get(k))
+            e["id"] = slug(e); e["tags"] = [str(t).lower() for t in (e.get("tags") or d.get("tags", []))][:5]
+            clean.append(e)
+        evs = clean
         ok = [e for e in evs if valid(e, today.isoformat(), horizon.isoformat())]
         print(f"  {len(ok)} events", file=sys.stderr)
         found += ok
