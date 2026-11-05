@@ -14,6 +14,9 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
 .wrap{max-width:560px;margin:0 auto;padding:20px 16px 56px}
+.top{display:flex;align-items:center;gap:12px}
+.back{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:none;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none}
+.back svg{width:20px;height:20px}
 .logo{font-family:var(--brand);font-size:28px;letter-spacing:-.03em;display:inline-flex;align-items:baseline;color:var(--ink);text-decoration:none}
 .logo svg{height:.62em;width:.45em;align-self:center;margin:0 .01em 0 .02em;fill:var(--verm)}
 .logo small{font-family:var(--display);font-weight:600;font-size:10px;letter-spacing:.24em;color:var(--ink-2);margin-left:6px}
@@ -43,7 +46,8 @@ button:disabled{opacity:.5}
 </head>
 <body>
 <div class="wrap">
-  <a class="logo" href="/">jaunt<svg viewBox="0 0 60 84" aria-hidden="true"><path fill-rule="evenodd" d="M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z"/></svg>ut<small>LONDON</small></a>
+  <div class="top"><a class="back" id="back" href="/" aria-label="Back to JauntOut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <a class="logo" href="/">jaunt<svg viewBox="0 0 60 84" aria-hidden="true"><path fill-rule="evenodd" d="M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z"/></svg>ut<small>LONDON</small></a></div>
   <h1>List your event</h1>
   <p class="lede">Running something in London that people can turn up to? A market, a show, a workshop, an open day? Tell us and we'll add it to JauntOut, free. Every listing is checked by a person before it goes live.</p>
 
@@ -70,6 +74,8 @@ button:disabled{opacity:.5}
   <p class="fine">We list things the public can go to in London: free or ticketed, one-off or on for a while. We don't list online-only events, members-only events, trade shows or adverts. Questions: <a href="mailto:hello@jauntout.com">hello@jauntout.com</a></p>
 </div>
 <script>
+// back to where they were in the app (their deck, list or search), or the home page if they arrived from elsewhere
+document.getElementById('back').addEventListener('click',e=>{ if(document.referrer&&new URL(document.referrer).origin===location.origin&&history.length>1){ e.preventDefault(); history.back(); } });
 const f=document.getElementById('f'), msg=document.getElementById('msg'), go=document.getElementById('go');
 let URL0=null; fetch('/stats.json',{cache:'no-cache'}).then(r=>r.json()).then(j=>URL0=j.url).catch(()=>{});
 f.addEventListener('submit',async e=>{
