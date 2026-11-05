@@ -15,7 +15,8 @@
      "museum",
      "design"
     ]
-   }
+   },
+   "website": "https://linktr.ee/vamuseum"
   },
   {
    "handle": "sciencemuseum",
@@ -31,7 +32,8 @@
      "museum",
      "science"
     ]
-   }
+   },
+   "website": "https://linktr.ee/sciencemuseum"
   },
   {
    "handle": "natural_history_museum",
@@ -47,7 +49,8 @@
      "museum",
      "nature"
     ]
-   }
+   },
+   "website": "http://linkstre.am/NaturalHistoryMuseum"
   },
   {
    "handle": "britishmuseum",
@@ -63,7 +66,8 @@
      "museum",
      "history"
     ]
-   }
+   },
+   "website": "https://www.britishmuseum.org/exhibitions/korea"
   },
   {
    "handle": "tate",
@@ -79,7 +83,8 @@
      "gallery",
      "art"
     ]
-   }
+   },
+   "website": "https://sked.link/tate"
   },
   {
    "handle": "nationalgallery",
@@ -95,7 +100,8 @@
      "gallery",
      "art"
     ]
-   }
+   },
+   "website": "https://sprout.link/nationalgallery"
   },
   {
    "handle": "royalmuseumsgreenwich",
@@ -111,7 +117,8 @@
      "museum",
      "ships"
     ]
-   }
+   },
+   "website": "https://linktr.ee/royalmuseumsgreenwich"
   },
   {
    "handle": "oldroyalnavalcollege",
@@ -126,7 +133,8 @@
     "tags": [
      "history"
     ]
-   }
+   },
+   "website": "https://linktr.ee/ornc"
   },
   {
    "handle": "kewgardens",
@@ -141,7 +149,8 @@
     "tags": [
      "gardens"
     ]
-   }
+   },
+   "website": "https://linktr.ee/kewgardens"
   },
   {
    "handle": "theroyalparks",
@@ -156,7 +165,8 @@
     "tags": [
      "park"
     ]
-   }
+   },
+   "website": "https://linkin.bio/theroyalparks"
   },
   {
    "handle": "zsllondonzoo",
@@ -171,7 +181,8 @@
     "tags": [
      "animals"
     ]
-   }
+   },
+   "website": "https://www.londonzoo.org/"
   },
   {
    "handle": "southbankcentre",
@@ -187,7 +198,8 @@
      "music",
      "arts"
     ]
-   }
+   },
+   "website": "https://brewl.ink/southbankcentre"
   },
   {
    "handle": "barbicancentre",
@@ -203,7 +215,8 @@
      "arts",
      "film"
     ]
-   }
+   },
+   "website": "https://brewl.ink/barbicancentre"
   },
   {
    "handle": "somersethouse",
@@ -218,7 +231,8 @@
     "tags": [
      "arts"
     ]
-   }
+   },
+   "website": "https://linkstre.am/somersethouse"
   },
   {
    "handle": "unicorn_theatre",
@@ -238,7 +252,8 @@
      "theatre",
      "kids"
     ]
-   }
+   },
+   "website": "https://linktr.ee/Unicorntheatre"
   },
   {
    "handle": "polkatheatre",
@@ -258,7 +273,8 @@
      "theatre",
      "kids"
     ]
-   }
+   },
+   "website": "https://linktr.ee/polkatheatre"
   },
   {
    "handle": "littleangeltheatre",
@@ -277,7 +293,8 @@
     "tags": [
      "puppets"
     ]
-   }
+   },
+   "website": "https://linktr.ee/littleangeltheatre"
   },
   {
    "handle": "peckhamlevels",
@@ -293,7 +310,8 @@
      "food",
      "arts"
     ]
-   }
+   },
+   "website": "http://linktr.ee/peckhamlevels"
   },
   {
    "handle": "boldtendencies",
@@ -313,7 +331,8 @@
      "art",
      "bar"
     ]
-   }
+   },
+   "website": "https://linktr.ee/boldtendencies"
   },
   {
    "handle": "boroughmarket",
@@ -329,7 +348,8 @@
      "food",
      "market"
     ]
-   }
+   },
+   "website": "https://boroughmarket.org.uk/newsletters/"
   },
   {
    "handle": "greenwichmarket",
@@ -344,7 +364,8 @@
     "tags": [
      "market"
     ]
-   }
+   },
+   "website": "https://linktr.ee/greenwichmarket"
   },
   {
    "handle": "crystalpalaceparktrust",
@@ -359,7 +380,8 @@
     "tags": [
      "park"
     ]
-   }
+   },
+   "website": "https://linktr.ee/crystalpalaceparktrust"
   },
   {
    "handle": "beckenhamplacepark",
@@ -374,7 +396,8 @@
     "tags": [
      "park"
     ]
-   }
+   },
+   "website": "http://linktr.ee/beckenhamplacepark/"
   },
   {
    "handle": "spitalfieldscityfarm",
@@ -389,7 +412,8 @@
     "tags": [
      "farm"
     ]
-   }
+   },
+   "website": "https://linktr.ee/SpitzCityFarm"
   },
   {
    "handle": "surreydocksfarm",
@@ -404,7 +428,8 @@
     "tags": [
      "farm"
     ]
-   }
+   },
+   "website": "https://linktr.ee/surreydocksfarm"
   },
   {
    "handle": "wwtlondon",
@@ -419,7 +444,8 @@
     "tags": [
      "nature"
     ]
-   }
+   },
+   "website": "https://linktr.ee/WWTLondon"
   },
   {
    "handle": "ltmuseum",
@@ -435,7 +461,8 @@
      "museum",
      "transport"
     ]
-   }
+   },
+   "website": "https://linktr.ee/ltmuseum"
   },
   {
    "handle": "thepostalmuseum",

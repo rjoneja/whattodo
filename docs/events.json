@@ -7143,31 +7143,33 @@
    "lat": 51.5201,
    "lon": -0.0937,
    "in": "in",
-   "price": "££",
+   "price": "£",
    "ages": [
-    8,
+    12,
     99
    ],
-   "kids": 0,
+   "kids": 1,
    "adults": 2,
    "dur": 1.5,
    "tags": [
     "art",
+    "exhibition",
     "painting",
-    "gallery",
-    "exhibition"
+    "abstract",
+    "barbican"
    ],
-   "blurb": "Robert Ryman paintings in the Barbican Art Gallery. Open daily until 28 Feb 2027. Book tickets via the Barbican site.",
+   "blurb": "Ryman's paintings on canvas, paper and aluminium, shown in the Barbican Art Gallery until 28 February. Tickets are needed and booked via the Barbican website.",
    "from": "2026-11-04",
    "to": "2027-02-28",
-   "url": "https://www.barbican.org.uk/whats-on",
+   "post": "https://www.instagram.com/reel/DfW515MO3uT/",
+   "url": "https://www.instagram.com/reel/DfW515MO3uT/",
    "source": "Instagram @barbicancentre",
-   "id": "ev-ig-robert-ryman-the-real-thing-11-04",
-   "rel": "keep",
+   "site": "https://brewl.ink/barbicancentre",
+   "id": "ev-ig-robert-ryman-the-real-thing-11-05",
+   "also": [],
    "hrs": 1,
-   "site": "https://www.barbican.org.uk/whats-on",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfIDUX9uloI/"
+   "rel": "keep",
+   "lk": 1
   },
   {
    "name": "I Am Furious Black season",
@@ -12713,6 +12715,46 @@
    "rel": "keep"
   },
   {
+   "name": "Winter boating on the Serpentine, Hyde Park",
+   "area": "Hyde Park",
+   "lat": 51.5045,
+   "lon": -0.163,
+   "in": "out",
+   "price": "£",
+   "ages": [
+    5,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "boating",
+    "hyde park",
+    "winter",
+    "lake",
+    "outdoor"
+   ],
+   "days": [
+    0,
+    3,
+    4,
+    5,
+    6
+   ],
+   "blurb": "Boating stays open at Hyde Park through the winter months, Wednesday to Sunday. Paid boat hire on the lake. The Regent's Park and Greenwich Park boating has closed for winter.",
+   "from": "2026-11-05",
+   "to": "2026-12-03",
+   "post": "https://www.instagram.com/p/DfP504LF0Aw/",
+   "url": "https://www.instagram.com/p/DfP504LF0Aw/",
+   "source": "Instagram @theroyalparks",
+   "site": "https://linkin.bio/theroyalparks",
+   "id": "ev-ig-winter-boating-on-the-serpentine-hyde-pa-11-05",
+   "hrs": 1,
+   "rel": "keep",
+   "lk": 1
+  },
+  {
    "name": "I Am Roland Mouret (talk)",
    "area": "South Kensington",
    "lat": 51.4966,
@@ -14919,6 +14961,39 @@
    "rel": "keep"
   },
   {
+   "name": "Lost Worlds by Luxmuralis",
+   "area": "Greenwich",
+   "lat": 51.483,
+   "lon": -0.006,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    5,
+    99
+   ],
+   "kids": 3,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "light show",
+    "projection art",
+    "historic building",
+    "family outing",
+    "painted hall"
+   ],
+   "blurb": "Immersive projection show returning to the Painted Hall this Friday. Book timed tickets online via the link in bio, as slots are filling up fast.",
+   "date": "2026-11-06",
+   "post": "https://www.instagram.com/p/DfU6B8micSb/",
+   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
+   "source": "Instagram @oldroyalnavalcollege",
+   "site": "https://linktr.ee/ornc",
+   "id": "ev-ig-lost-worlds-by-luxmuralis-11-06",
+   "hrs": 1,
+   "rel": "keep",
+   "lk": 1,
+   "via": "https://www.instagram.com/p/DfU6B8micSb/"
+  },
+  {
    "name": "Diwali at the National Maritime Museum",
    "area": "Greenwich",
    "lat": 51.481,
@@ -16000,27 +16075,33 @@
    "lat": 51.4966,
    "lon": -0.1722,
    "in": "in",
-   "price": "££",
+   "price": "£",
    "ages": [
-    10,
+    8,
     99
    ],
    "kids": 1,
    "adults": 3,
-   "dur": 2,
+   "dur": 1.5,
    "tags": [
     "exhibition",
     "history",
+    "art and design",
     "istanbul",
-    "art"
+    "museum"
    ],
-   "blurb": "New exhibition opening 7 November charting Istanbul's history across two empires. Weekday £25, weekend £27. Book timed tickets online.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "date": "2026-11-07",
-   "source": "V&A South Kensington",
-   "id": "ev-constantinople-to-istanbul-one-city-two--11-07",
+   "blurb": "Sixteen centuries of art and design from one city across two empires. Ticketed; V&A Members go free. Runs until 9 May 2027.",
+   "from": "2026-11-07",
+   "to": "2027-05-09",
+   "post": "https://www.instagram.com/reel/DfU8eECtJkY/",
+   "url": "https://www.vam.ac.uk/exhibitions/constantinople-to-istanbul-one-city-two-empires",
+   "source": "Instagram @vamuseum",
+   "site": "https://linktr.ee/vamuseum",
+   "id": "ev-ig-constantinople-to-istanbul-one-city-two--11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DfU8eECtJkY/"
   },
   {
    "name": "Film screening: Generative – A Computer Art Documentary",
@@ -24890,6 +24971,39 @@
    "rel": "keep"
   },
   {
+   "name": "Skate at Somerset House (presented with Virgin Atlantic Holidays)",
+   "area": "Strand",
+   "lat": 51.511,
+   "lon": -0.117,
+   "in": "out",
+   "price": "£",
+   "ages": [
+    4,
+    99
+   ],
+   "kids": 3,
+   "adults": 3,
+   "dur": 1.5,
+   "tags": [
+    "ice skating",
+    "outdoor rink",
+    "christmas",
+    "winter",
+    "somerset house"
+   ],
+   "blurb": "Outdoor ice rink in the Somerset House courtyard with a Christmas tree. Book tickets in advance via the link in the Instagram bio. Runs until 10 Jan 2027.",
+   "from": "2026-11-11",
+   "to": "2027-01-10",
+   "post": "https://www.instagram.com/reel/DfU9CwWj1_n/",
+   "url": "https://www.instagram.com/reel/DfU9CwWj1_n/",
+   "source": "Instagram @somersethouse",
+   "site": "https://linkstre.am/somersethouse",
+   "id": "ev-ig-skate-at-somerset-house-presented-with-v-11-11",
+   "hrs": 1,
+   "rel": "keep",
+   "lk": 1
+  },
+  {
    "name": "Vanessa Bell & Duncan Grant: Inside Bloomsbury",
    "area": "Pimlico, Westminster",
    "lat": 51.4911,
@@ -31319,6 +31433,38 @@
    "rel": "keep"
   },
   {
+   "name": "Greenwich Market at Christmas",
+   "area": "Greenwich",
+   "lat": 51.4815,
+   "lon": -0.0092,
+   "in": "both",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 2,
+   "adults": 2,
+   "dur": 4,
+   "tags": [
+    "christmas",
+    "market",
+    "shopping",
+    "lights",
+    "crafts"
+   ],
+   "blurb": "Greenwich Market's festive Christmas event, with the halls strung with fairy lights and stalls to browse. Details to follow from the market.",
+   "date": "2026-11-18",
+   "post": "https://www.instagram.com/reel/DfXB-p_C2zF/",
+   "url": "https://www.instagram.com/reel/DfXB-p_C2zF/",
+   "source": "Instagram @greenwichmarket",
+   "site": "https://linktr.ee/greenwichmarket",
+   "id": "ev-ig-greenwich-market-at-christmas-11-18",
+   "hrs": 1,
+   "rel": "keep",
+   "lk": 1
+  },
+  {
    "name": "Low-stim Openings of the 'Audrey Amiss' and 'Rudy Loewe' exhibitions",
    "area": "Euston",
    "lat": 51.5257,
@@ -32948,7 +33094,10 @@
    "rel": "keep",
    "open": "10:00",
    "close": "18:00",
-   "hrs": 1
+   "hrs": 1,
+   "also": [
+    "Instagram @royalmuseumsgreenwich"
+   ]
   },
   {
    "name": "Ceramics Workshop with Neve Beill: Turning London Clay into Pots",
@@ -35045,7 +35194,7 @@
    "id": "ev-lady-ratlings-choir-carol-concert-at-st--11-24",
    "hrs": 1,
    "rel": "keep",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Pink Moon Rising",
@@ -36410,96 +36559,5 @@
    "via": "https://www.instagram.com/reel/DfDLukVhnoP/"
   }
  ],
- "dropped": [
-  {
-   "name": "Applications Are Now Open For ‘Arcadia: Outside’",
-   "source": "Stanley Arts",
-   "why": "application call"
-  },
-  {
-   "name": "Diptyque Advent Calendar",
-   "source": "Battersea Power Station",
-   "why": "product advert"
-  },
-  {
-   "name": "Sculpt's Wellbeing and Employability 1-1 Drop-Ins",
-   "source": "Southwark Council events",
-   "why": "employability support service"
-  },
-  {
-   "name": "Employment Support Sessions at Kensington Central Library",
-   "source": "Kensington & Chelsea Council events",
-   "why": "careers support service"
-  },
-  {
-   "name": "The Garden Room Shop &amp\\; Coffee Bar",
-   "source": "The Exchange Erith",
-   "why": "shop listing, not event"
-  },
-  {
-   "name": "Schiaparelli Cosmic Ornament Workshop",
-   "source": "V&A South Kensington",
-   "why": "membership-only workshop"
-  },
-  {
-   "name": "Music and Singing with Louise Hamer",
-   "source": "Bentley Priory Museum",
-   "why": "memory café members only"
-  },
-  {
-   "name": "Autumn Term Drama Club",
-   "source": "Roundhouse",
-   "why": "multi-week enrolled course"
-  },
-  {
-   "name": "Autumn Term Performance Makers: Theatre, Words & Movement",
-   "source": "Roundhouse",
-   "why": "multi-week enrolled course"
-  },
-  {
-   "name": "AllSaints 1 year anniversary",
-   "source": "Battersea Power Station",
-   "why": "shop promotion advert"
-  },
-  {
-   "name": "Arcadia: Outside Upcoming Events",
-   "source": "Stanley Arts",
-   "why": "listing page only"
-  },
-  {
-   "name": "National Saturday Club at Stanley Arts with Global Academy",
-   "source": "Stanley Arts",
-   "why": "enrolled multi-week club"
-  },
-  {
-   "name": "Members' Treasures Tour",
-   "source": "Royal Museums Greenwich",
-   "why": "members-only tour"
-  },
-  {
-   "name": "Members' Meet the Fish",
-   "source": "Horniman Museum & Gardens",
-   "why": "members-only session"
-  },
-  {
-   "name": "Christmas Dining at Wright Brothers",
-   "source": "Battersea Power Station",
-   "why": "restaurant menu advert"
-  },
-  {
-   "name": "What University? & What Career? Live",
-   "source": "Olympia London",
-   "why": "careers and employer fair"
-  },
-  {
-   "name": "London! How to bring your show to the Fringe: Meet the Venues",
-   "source": "The Cockpit",
-   "why": "trade industry networking"
-  },
-  {
-   "name": "M25/J24 Data Centre Consultation ends",
-   "source": "The Enfield Society",
-   "why": "council consultation"
-  }
- ]
+ "dropped": []
 }

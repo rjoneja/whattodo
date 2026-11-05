@@ -1383,13 +1383,6 @@
 "fit": 3,
 "checked": 5
 },
-"ev-ig-robert-ryman-the-real-thing-11-04": {
-"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Barbican_towers.jpg/960px-Barbican_towers.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-"credit": "Photo: Wikimedia Commons",
-"page": "https://en.wikipedia.org/wiki/Barbican_Estate",
-"fit": 1,
-"checked": 5
-},
 "ev-ig-i-am-furious-black-season-11-04": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Tengis_Movie_Theater_-_Screen.jpg/960px-Tengis_Movie_Theater_-_Screen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
 "credit": "Photo: Fred Cherrygarden · CC BY-SA 4.0",
@@ -1594,11 +1587,11 @@
 "checked": 5
 },
 "ev-oliver-11-06": {
-"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Simon_Lipkin_als_Fagin_aus_dem_Musical_Oliver%21_Live_bei_WestEnd_Live_2026.jpg/960px-Simon_Lipkin_als_Fagin_aus_dem_Musical_Oliver%21_Live_bei_WestEnd_Live_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-"credit": "Photo: NikisFotowelten · CC BY-SA 4.0",
-"page": "https://commons.wikimedia.org/wiki/File:Simon_Lipkin_als_Fagin_aus_dem_Musical_Oliver!_Live_bei_WestEnd_Live_2026.jpg",
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Oliver_Twist%2C_le_musical_01.jpg/960px-Oliver_Twist%2C_le_musical_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Remko de Keijzer · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Oliver_Twist,_le_musical_01.jpg",
 "fit": 3,
-"checked": 4
+"checked": 5
 },
 "ev-gidiki-london-11-06": {
 "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Greek_folk_dance.jpg/960px-Greek_folk_dance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -4644,6 +4637,256 @@
 "fit": 2,
 "checked": 5
 },
+"ev-ig-constantinople-to-istanbul-one-city-two--11-07": {
+"url": "https://assets-cdn.vam.ac.uk/2026/06/09/08/47/24/311426e7-ade9-4233-9ade-5cdd76380163/640.jpg",
+"credit": "vam.ac.uk",
+"fit": 2,
+"checked": 5
+},
+"ev-ig-skate-at-somerset-house-presented-with-v-11-11": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Somerset_House_-_Ice_Rink_-_geograph.org.uk_-_5280263.jpg/960px-Somerset_House_-_Ice_Rink_-_geograph.org.uk_-_5280263.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Colin Smith · CC BY-SA 2.0",
+"page": "https://commons.wikimedia.org/wiki/File:Somerset_House_-_Ice_Rink_-_geograph.org.uk_-_5280263.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-move-well-live-well-activity-fair-11-12": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Pacific_Partnership_2023-_Community_Health_Fair_at_Rups_Mega_Complex_%288107776%29.jpg/960px-Pacific_Partnership_2023-_Community_Health_Fair_at_Rups_Mega_Complex_%288107776%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: U.S. Navy photo by Petty Officer 2nd Cla · Public domain",
+"page": "https://commons.wikimedia.org/wiki/File:Pacific_Partnership_2023-_Community_Health_Fair_at_Rups_Mega_Complex_(8107776).jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-skate-lates-with-aperol-spritz-2cperrea--11-13": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Umeda_Skating_Rink_at_Night_in_201411.JPG/960px-Umeda_Skating_Rink_at_Night_in_201411.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Mc681 · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Umeda_Skating_Rink_at_Night_in_201411.JPG",
+"fit": 2,
+"checked": 5
+},
+"ev-stay-play-the-grange-11-13": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Four_small_children_playing_with_baby_carriages_in_Washington%2C_D.C.%2C_park_-_African_American_nursemaid_sitting_on_bench_with_baby_LCCN2001706156.tif/lossy-page1-960px-Four_small_children_playing_with_baby_carriages_in_Washington%2C_D.C.%2C_park_-_African_American_nursemaid_sitting_on_bench_with_baby_LCCN2001706156.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: National Photo Company Collection · Public domain",
+"page": "https://commons.wikimedia.org/wiki/File:Four_small_children_playing_with_baby_carriages_in_Washington,_D.C.,_park_-_African_American_nursemaid_sitting_on_bench_with_baby_LCCN2001706156.tif",
+"fit": 2,
+"checked": 5
+},
+"ev-latinx-scratch-night-11-13": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Glynis_Johns_with_baby_on_stage.png/960px-Glynis_Johns_with_baby_on_stage.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Dena Enterprises of Glynis Johns · Public domain",
+"page": "https://commons.wikimedia.org/wiki/File:Glynis_Johns_with_baby_on_stage.png",
+"fit": 2,
+"checked": 5
+},
+"ev-new-bands-night-knock-on-wood-presents-11-13": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Friciton_Groove_live_gig.jpg/960px-Friciton_Groove_live_gig.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Mic Dover · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Friciton_Groove_live_gig.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-building-a-sustainable-business-for-crea-11-13": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Konkani_Digitisation_Workshop%2C_Goa_Business_School%2C_Goa_University.jpg/960px-Konkani_Digitisation_Workshop%2C_Goa_Business_School%2C_Goa_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: SerChevalerie · CC BY-SA 3.0",
+"page": "https://commons.wikimedia.org/wiki/File:Konkani_Digitisation_Workshop,_Goa_Business_School,_Goa_University.jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-control-room-b-the-experimental-espresso-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/C%C3%B3ctel_de_caf%C3%A9_en_copa_martini_2.jpg/960px-C%C3%B3ctel_de_caf%C3%A9_en_copa_martini_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Rjcastillo · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:C%C3%B3ctel_de_caf%C3%A9_en_copa_martini_2.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-diptyque-holiday-collection-launch-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Candles_on_display_at_Diptyque.jpg/960px-Candles_on_display_at_Diptyque.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Mx. Granger · CC0",
+"page": "https://commons.wikimedia.org/wiki/File:Candles_on_display_at_Diptyque.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-tai-chi-in-windmill-gardens-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Tai_Chi_in_the_Snow.jpg/960px-Tai_Chi_in_the_Snow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: ShorelineTaiji · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Tai_Chi_in_the_Snow.jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-silent-laughter-weekend-2026-11-14": {
+"url": "https://cinemamuseum.org.uk/wp-content/uploads/2026/07/Wrong-Again.jpg",
+"credit": "cinemamuseum.org.uk",
+"fit": 3,
+"checked": 5
+},
+"ev-andaluza-live-spanish-music-and-flamenco-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Woman_Flamenco_dancer.jpg/960px-Woman_Flamenco_dancer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Raymonst3 · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Woman_Flamenco_dancer.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-westcombe-society-quiz-night-11-14": {
+"url": "https://mycenaehouse.co.uk/wp-content/uploads/2021/11/westcombe-soc-quiz-winners-e1776689285412.jpg",
+"credit": "mycenaehouse.co.uk",
+"fit": 2,
+"checked": 5
+},
+"ev-neurographic-art-with-ashima-kumar-11-14": {
+"url": "https://bentleypriorymuseum.org.uk/wp-content/uploads/2026/10/Neurographic-sample-2.jpg",
+"credit": "bentleypriorymuseum.org.uk",
+"fit": 2,
+"checked": 5
+},
+"ev-bird-identification-walk-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/NMAAHC_Bird_Walk.jpg/960px-NMAAHC_Bird_Walk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Dara Miles Wilson · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:NMAAHC_Bird_Walk.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-a-little-shite-mare-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/I%C3%B1aki_Queralt_-_Yogurinha_Borova_13.jpg/960px-I%C3%B1aki_Queralt_-_Yogurinha_Borova_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Iñaki Queralt · CC BY 2.0",
+"page": "https://commons.wikimedia.org/wiki/File:I%C3%B1aki_Queralt_-_Yogurinha_Borova_13.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-the-sinatra-songbook-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Zoetermeer_Jazz_2008_%282872271829%29.jpg/960px-Zoetermeer_Jazz_2008_%282872271829%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: FaceMePLS from The Hague, The Netherland · CC BY 2.0",
+"page": "https://commons.wikimedia.org/wiki/File:Zoetermeer_Jazz_2008_(2872271829).jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-enfield-choral-society-concert-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Interior_of_Eibingen_Abbey_church%2C_choral_concert_for_Lent.jpg/960px-Interior_of_Eibingen_Abbey_church%2C_choral_concert_for_Lent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Gerda Arendt · CC0",
+"page": "https://commons.wikimedia.org/wiki/File:Interior_of_Eibingen_Abbey_church,_choral_concert_for_Lent.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-litter-pick-edmonton-green-11-14": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/The_Litter_Pickers_of_Mount_Rainier_%2851914792655%29.jpg/960px-The_Litter_Pickers_of_Mount_Rainier_%2851914792655%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Mount Rainier NPS · Public domain",
+"page": "https://commons.wikimedia.org/wiki/File:The_Litter_Pickers_of_Mount_Rainier_(51914792655).jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-george-mooney-trio-sunday-roast-11-15": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/A_roast_lamb_dinner_at_Black_Horse_Inn%2C_Nuthurst_West_Sussex_England.jpg/960px-A_roast_lamb_dinner_at_Black_Horse_Inn%2C_Nuthurst_West_Sussex_England.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Acabashi · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:A_roast_lamb_dinner_at_Black_Horse_Inn,_Nuthurst_West_Sussex_England.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-botanical-tetrapak-printmaking-the-winte-11-15": {
+"url": "https://images.squarespace-cdn.com/content/v1/5ffa2020fcd2563393904d92/1622129202154-P6YM0YM9AWOFRUPROQO7/IMG_3016.jpg",
+"credit": "walworthgarden.org.uk",
+"fit": 2,
+"checked": 5
+},
+"ev-re-enchant-november-poetic-experiments-f-11-15": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Sinead_Morrissey_at_Durham_Book_Festival_%28cropped%29.jpg/960px-Sinead_Morrissey_at_Durham_Book_Festival_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: summonedbyfells · CC BY 2.0",
+"page": "https://commons.wikimedia.org/wiki/File:Sinead_Morrissey_at_Durham_Book_Festival_(cropped).jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-house-of-rainbow-monthly-in-person-fello-11-15": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Wikimedia_LGBT%2B_community_meetup_at_Wikimania_2026_009.jpg/960px-Wikimedia_LGBT%2B_community_meetup_at_Wikimania_2026_009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Nacaru · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Wikimedia_LGBT%2B_community_meetup_at_Wikimania_2026_009.jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-war-graves-tour-with-abney-unearthed-11-15": {
+"url": "https://images.squarespace-cdn.com/content/v1/5c31d7e6f8370a4abfaf4fb2/1551728956454-CHQCOOWD5T1VH229LU56/great-elm-walk.jpg",
+"credit": "abneypark.org",
+"fit": 2,
+"checked": 5
+},
+"ev-introduction-to-abney-s-ecology-11-15": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Stoke_newington_town_hall_2.jpg/960px-Stoke_newington_town_hall_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+"credit": "Photo: Wikimedia Commons",
+"page": "https://en.wikipedia.org/wiki/Stoke_Newington",
+"fit": 1,
+"checked": 5
+},
+"ev-life-drawing-theatre-divine-comedy-infer-11-15": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Antoine-Louis_Barye_-_Drawing_of_a_Model_-_Walters_372264.jpg/960px-Antoine-Louis_Barye_-_Drawing_of_a_Model_-_Walters_372264.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Antoine-Louis Barye · Public domain",
+"page": "https://commons.wikimedia.org/wiki/File:Antoine-Louis_Barye_-_Drawing_of_a_Model_-_Walters_372264.jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-el-pastor-celebrates-day-of-the-dead-11-16": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Calaveras_skulls.jpg/960px-Calaveras_skulls.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Tomas Castelazo · CC BY-SA 3.0",
+"page": "https://commons.wikimedia.org/wiki/File:Calaveras_skulls.jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-crib-club-cribbage-tournament-11-16": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Afternoon_cribbage_on_the_patio._%2850002851016%29.jpg/960px-Afternoon_cribbage_on_the_patio._%2850002851016%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: J Wynia from Minneapolis, United States · CC BY 2.0",
+"page": "https://commons.wikimedia.org/wiki/File:Afternoon_cribbage_on_the_patio._(50002851016).jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-chris-lewis-presents-jerry-lewis-s-home--11-16": {
+"url": "https://cinemamuseum.org.uk/wp-content/uploads/2026/09/16-November-Image-1-1024x576.png",
+"credit": "cinemamuseum.org.uk",
+"fit": 1,
+"checked": 5
+},
+"ev-singalong-11-16": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Messiah_Sing-Along_at_Kennedy_Center_2023_02.jpg/960px-Messiah_Sing-Along_at_Kennedy_Center_2023_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Dclemens1971 · CC BY 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Messiah_Sing-Along_at_Kennedy_Center_2023_02.jpg",
+"fit": 2,
+"checked": 5
+},
+"ev-eclectic-shock-11-16": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Oz_Noy%2C_Dave_Weckl%2C_James_Genus%2C_Jazz_Alley%2C_2011-02-01.jpg/960px-Oz_Noy%2C_Dave_Weckl%2C_James_Genus%2C_Jazz_Alley%2C_2011-02-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: ArtBrom from Seattle · CC BY-SA 2.0",
+"page": "https://commons.wikimedia.org/wiki/File:Oz_Noy,_Dave_Weckl,_James_Genus,_Jazz_Alley,_2011-02-01.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-fungi-walk-citizen-science-11-17": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Autumn_mushrooms-3.jpg/960px-Autumn_mushrooms-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Dnozdriuk · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Autumn_mushrooms-3.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-chris-lewis-presents-the-nutty-professor-11-17": {
+"url": "https://cinemamuseum.org.uk/wp-content/uploads/2026/09/The-Nutty-Professor-1024x575.png",
+"credit": "cinemamuseum.org.uk",
+"fit": 2,
+"checked": 5
+},
+"ev-carers-group-11-17": {
+"url": "https://www.timeandtalents.org.uk/wp-content/uploads/2026/03/Website-Photos-1.png",
+"credit": "timeandtalents.org.uk",
+"fit": 3,
+"checked": 5
+},
+"ev-tuesday-concerts-ram-harp-department-11-17": {
+"url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Harp_and_electric_guitar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+"credit": "Photo: Damien Boilley · CC BY 2.0",
+"page": "https://commons.wikimedia.org/wiki/File:Harp_and_electric_guitar.jpg",
+"fit": 3,
+"checked": 5
+},
+"ev-panel-talk-staging-the-un-translatable-g-11-17": {
+"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Panel_discussion_at_The_Untold_Festival.jpg/960px-Panel_discussion_at_The_Untold_Festival.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"credit": "Photo: Zeromonk · CC BY-SA 4.0",
+"page": "https://commons.wikimedia.org/wiki/File:Panel_discussion_at_The_Untold_Festival.jpg",
+"fit": 2,
+"checked": 5
+},
 "_tried5": {
 "ev-bsl-interpreted-tours-of-the-coming-of-a-11-04": "2026-11-04",
 "ev-house-of-dreamers-london-07-01": "2026-11-04",
@@ -4759,7 +5002,6 @@
 "ev-track-dogs-20th-anniversary-tour-11-07": "2026-11-04",
 "ev-music-in-the-dark-pulse-20-45-11-07": "2026-11-04",
 "ev-ethiopian-dreams-11-07": "2026-11-04",
-"ev-constantinople-to-istanbul-one-city-two--11-07": "2026-11-04",
 "ev-film-screening-generative-a-computer-art-11-07": "2026-11-04",
 "ev-music-in-the-dark-pulse-11-07": "2026-11-04",
 "ev-autumn-term-saturday-sounds-drop-in-11-07": "2026-11-04",
@@ -4986,6 +5228,50 @@
 "ev-come-and-meet-figurative-artist-fabian-p-11-12": "2026-11-05",
 "ev-under-5s-wriggle-and-rhyme-11-12": "2026-11-05",
 "ev-wriggle-and-rhyme-11-12": "2026-11-05",
-"ev-theatre-off-key-11-12": "2026-11-05"
+"ev-theatre-off-key-11-12": "2026-11-05",
+"ev-ig-robert-ryman-the-real-thing-11-05": "2026-11-05",
+"ev-ig-winter-boating-on-the-serpentine-hyde-pa-11-05": "2026-11-05",
+"ev-perpetuity-work-in-progress-11-12": "2026-11-05",
+"ev-adult-colouring-group-11-12": "2026-11-05",
+"ev-three-little-pigs-the-lives-behind-the-h-11-12": "2026-11-05",
+"ev-mike-rice-11-12": "2026-11-05",
+"ev-bossa-nova-a-tribute-to-jo-o-gilberto-11-12": "2026-11-05",
+"ev-ultimate-music-quiz-at-hillbilly-social-11-12": "2026-11-05",
+"ev-afrobeats-is-soho-11-13": "2026-11-05",
+"ev-honeywood-mice-11-13": "2026-11-05",
+"ev-pilates-11-13": "2026-11-05",
+"ev-oraculum-work-in-progress-11-13": "2026-11-05",
+"ev-liminal-work-in-progress-11-13": "2026-11-05",
+"ev-escaping-oneself-11-13": "2026-11-05",
+"ev-flying-stress-temporary-exhibition-11-13": "2026-11-05",
+"ev-held-by-trees-11-13": "2026-11-05",
+"ev-anyone-for-tennis-11-13": "2026-11-05",
+"ev-an-evening-with-robin-ince-11-13": "2026-11-05",
+"ev-skate-school-kids-skate-club-11-14": "2026-11-05",
+"ev-magic-an-illustrated-history-11-14": "2026-11-05",
+"ev-answer-me-pythia-work-in-progress-11-14": "2026-11-05",
+"ev-flying-stress-temporary-exhibition-11-14": "2026-11-05",
+"ev-the-west-wing-weekly-live-11-14": "2026-11-05",
+"ev-walk-hampstead-heath-11-14": "2026-11-05",
+"ev-family-natural-reindeer-decorating-works-11-14": "2026-11-05",
+"ev-adults-only-natural-reindeer-decorating--11-14": "2026-11-05",
+"ev-the-ukadelix-11-14": "2026-11-05",
+"ev-autumn-internationals-live-screening-sco-11-15": "2026-11-05",
+"ev-it-s-behind-you-a-short-film-11-15": "2026-11-05",
+"ev-dave-okumu-friends-london-jazz-festival-11-15": "2026-11-05",
+"ev-family-natural-reindeer-decorating-works-11-15": "2026-11-05",
+"ev-the-math-explorer-s-quest-a-journey-thro-11-16": "2026-11-05",
+"ev-xmas-painted-leaves-decoration-with-azu--11-16": "2026-11-05",
+"ev-moving-with-parkinson-s-11-16": "2026-11-05",
+"ev-playwrights-group-11-16": "2026-11-05",
+"ev-theatre-in-the-pound-november-monthly-sc-11-16": "2026-11-05",
+"ev-relaxed-hours-frida-the-making-of-an-ico-11-17": "2026-11-05",
+"ev-relaxed-hours-light-and-magic-the-birth--11-17": "2026-11-05",
+"ev-relaxed-hours-julio-le-parc-light-colour-11-17": "2026-11-05",
+"ev-relaxed-hours-ana-mendieta-11-17": "2026-11-05",
+"ev-the-math-explorer-s-quest-a-journey-thro-11-17": "2026-11-05",
+"ev-new-lands-lottie-viewfinder-11-17": "2026-11-05",
+"ev-anna-dyson-meet-the-artist-11-17": "2026-11-05",
+"ev-deep-listening-sound-journey-11-17": "2026-11-05"
 }
 }
