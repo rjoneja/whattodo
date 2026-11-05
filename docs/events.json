@@ -1702,7 +1702,8 @@
    "to": "2026-11-26",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Meet the Designer: Christie Swallow",
@@ -6314,7 +6315,8 @@
    "id": "ev-charlie-mackesy-exhibition-11-04",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Layers of the City: art exhibition",
@@ -6850,7 +6852,8 @@
    "rel": "keep",
    "hrs": 1,
    "site": "https://www.kingscross.co.uk/whats-on",
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Larger Than Life: Aardman at Lightroom",
@@ -7743,7 +7746,8 @@
    "id": "ev-bereavement-help-point-11-05",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "9th Roxeth Scout Group Bonfire Night Firework Display",
@@ -9116,7 +9120,8 @@
    "part": "evening",
    "hrs": 1,
    "site": "https://www.kingscross.co.uk/whats-on",
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Diwali at the National Maritime Museum",
@@ -9178,7 +9183,8 @@
    "close": "22:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "id": "ev-dulwich-fw",
@@ -11538,7 +11544,8 @@
    "open": "19:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "The Collections: Bright Fear",
@@ -11570,7 +11577,8 @@
    "open": "19:30",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Feeling Gloomy: Pulp Special",
@@ -11741,7 +11749,8 @@
    "part": "afternoon",
    "hrs": 1,
    "site": "https://www.kingscross.co.uk/whats-on",
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Alexandra Palace Fireworks & Drone Festival",
@@ -11894,33 +11903,35 @@
   {
    "name": "Guided Fungi Walk with Rights for Weeds",
    "area": "Forest Hill",
-   "lat": 51.4411,
-   "lon": -0.0612,
+   "lat": 51.4641,
+   "lon": -0.0332,
    "in": "out",
-   "price": "£",
+   "price": "££",
    "ages": [
-    8,
+    18,
     99
    ],
-   "kids": 0,
-   "adults": 2,
+   "kids": 1,
+   "adults": 3,
    "dur": 3,
    "tags": [
+    "fungi",
+    "foraging",
     "guided walk",
-    "fungi foraging",
-    "outdoor nature",
-    "gardens walk"
+    "ecology",
+    "outdoor"
    ],
-   "blurb": "A relaxed guided walk looking for mushrooms and fungi in the Horniman Gardens, with plenty of space to move at your own pace. Check the event page for pricing and what to bring.",
-   "url": "https://www.horniman.ac.uk/whats-on/",
+   "blurb": "Relaxed guided walk through the Horniman Gardens identifying wild fungi and discussing ecology, folklore and foraging. Ends with making something edible at the Pavilion. Outdoors in all weather; tickets non-refundable.",
+   "url": "https://www.horniman.ac.uk/event/guided-fungi-walk-with-rights-for-weeds/",
    "date": "2026-11-08",
    "time": "13:00",
-   "source": "Horniman Museum & Gardens",
+   "source": "Submitted by the organiser",
    "id": "ev-guided-fungi-walk-with-rights-for-weeds-11-08",
    "rel": "keep",
    "open": "13:00",
    "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "submitted": "4cf0913e-0c6"
   },
   {
    "name": "Adult Garden Workshops",
@@ -12321,7 +12332,8 @@
    "rel": "keep",
    "open": "10:45",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 2,
+   "lk": 1
   },
   {
    "name": "Remembrance Sunday event, New Malden",
@@ -13045,7 +13057,8 @@
    "rel": "keep",
    "open": "16:00",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Nell! Play",
@@ -13110,7 +13123,8 @@
    "open": "14:00",
    "close": "16:00",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Wartime Willesden Talk",
@@ -13597,7 +13611,8 @@
    "id": "ev-wellbeing-group-for-dementia-and-carers--11-09",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Basic Computer Skills Class (Brixton)",
@@ -13683,7 +13698,8 @@
    "id": "ev-wellbeing-group-for-dementia-and-carers-11-09",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Basic computer skills class",
@@ -13741,7 +13757,8 @@
    "id": "ev-digital-drop-ins-11-09",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Shared Reading Group",
@@ -16328,7 +16345,8 @@
    "open": "14:00",
    "hrs": 1,
    "site": "https://www.ltmuseum.co.uk/whats-on",
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "id": "ev-brixtonwalk",
@@ -20411,7 +20429,8 @@
    "part": "morning",
    "hrs": 1,
    "site": "https://www.crystalpalaceparktrust.org/whats-on",
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Winter Market",
@@ -20475,7 +20494,8 @@
    "part": "morning",
    "hrs": 1,
    "site": "https://www.crystalpalaceparktrust.org/whats-on",
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Final Conservatory Plant Adoption with waywardplants",
