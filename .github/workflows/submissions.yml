@@ -1,0 +1,35 @@
+name: submissions
+# Hourly: write up new event submissions (Raj gets an approval email) and publish approved ones.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: {group: submissions, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      DASH_KEY: ${{ secrets.DASH_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -q anthropic pillow
+      - id: sub
+        run: python3 submissions.py | tee -a "$GITHUB_OUTPUT"
+      - if: steps.sub.outputs.changed == '1'
+        run: |
+          python3 official_links.py || true
+          python3 images.py --events docs/events.json --out docs/images.json || true
+          python3 share_pages.py
+          python3 sources_page.py || true
+      - if: steps.sub.outputs.changed == '1'
+        run: |
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add docs/events.json docs/images.json docs/e docs/sources
+          git commit -m "submitted events $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break; sleep $((i*15)); done
+          git diff --quiet origin/main HEAD || { echo 'push never succeeded'; exit 1; }

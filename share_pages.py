@@ -23,6 +23,6 @@ for e in ev:
 <meta property="og:description" content="{desc}"><meta property="og:url" content="https://www.jauntout.com/e/{i}/">
 {f'<meta property="og:image" content="{html.escape(pic)}">' if pic else ''}<meta name="robots" content="noindex">
 <script>var q=new URLSearchParams(location.search);location.replace('/?e={i}&s='+(q.get('s')||'link'));</script>
-</head><body style="font-family:system-ui;background:#122018;color:#F2EEE3;padding:24px"><p><a href="/?e={i}">Open {title} in JauntOut</a></p></body></html>""")
+</head><body style="font-family:system-ui;background:#122018;color:#F2EEE3;padding:24px"><p><a href="/?e={i}">Open {title} in JauntOut</a></p><p style="font-size:13px;opacity:.7">Running something? <a href="/submit/">List your event</a></p></body></html>""")
     n += 1
 print(f"wrote {n} share pages", file=sys.stderr)

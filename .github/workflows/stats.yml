@@ -15,6 +15,7 @@ jobs:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
       DASH_KEY: ${{ secrets.DASH_KEY }}
+      NOTIFY_TO: ${{ secrets.NOTIFY_TO || 'raj.joneja@gmail.com' }}   # the Gmail verified in Cloudflare Email Routing
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,7 +33,7 @@ jobs:
           cd stats
           id=$(npx wrangler d1 list --json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const l=JSON.parse(s);const x=l.find(d=>d.name==="jauntout_stats");process.stdout.write(x?x.uuid:"")})')
           if [ -z "$id" ]; then npx wrangler d1 create jauntout_stats >/dev/null; id=$(npx wrangler d1 list --json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const x=JSON.parse(s).find(d=>d.name==="jauntout_stats");process.stdout.write(x.uuid)})'); fi
-          printf 'name = "jauntout-stats"\nmain = "worker.js"\ncompatibility_date = "2024-11-01"\nworkers_dev = true\n\n[[d1_databases]]\nbinding = "DB"\ndatabase_name = "jauntout_stats"\ndatabase_id = "%s"\n' "$id" > wrangler.toml
+          printf 'name = "jauntout-stats"\nmain = "worker.js"\ncompatibility_date = "2024-11-01"\nworkers_dev = true\n\n[vars]\nNOTIFY_TO = "%s"\n\n[[send_email]]\nname = "MAIL"\ndestination_address = "%s"\n\n[[d1_databases]]\nbinding = "DB"\ndatabase_name = "jauntout_stats"\ndatabase_id = "%s"\n' "$NOTIFY_TO" "$NOTIFY_TO" "$id" > wrangler.toml
           npx wrangler d1 execute jauntout_stats --remote --file schema.sql -y
       - name: Deploy
         if: steps.check.outputs.skip != 'true'

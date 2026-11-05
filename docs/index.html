@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='920a9a4486';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='b807260a18';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -269,6 +269,7 @@ td.n{text-align:right}
   .step h2{font-size:26px}
 }
 
+.listyours{margin-top:18px;text-align:center}
 /* example text in empty boxes: clearly a hint, not an answer */
 .field input::placeholder{color:var(--ink-3);opacity:.55;font-weight:400;text-transform:none;letter-spacing:0}
 @media (max-width:380px){.step h2{font-size:27px}.card h3{font-size:23px}.block{font-size:17px}}
@@ -344,6 +345,7 @@ td.n{text-align:right}
       <button class="tab" data-tab="pass">Passed</button>
     </div>
     <div class="items" id="items"></div>
+    <p class="hint listyours">Running something people can turn up to? <a href="/submit/">List your event</a>, free.</p>
   </section>
 
   <!-- MAP -->
@@ -869,7 +871,7 @@ function cardHTML(c){
 }
 function renderStack(){
   const st=$('#stack'); st.innerHTML='';
-  if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Try another day or change who's going, or check My list. More listings and one-off events coming.</span></div>`;}
+  if(!deck.length){st.innerHTML=`<div class="empty"><b>That's the lot for now.</b><span>Try another day or change who's going, or check My list. More listings and one-off events coming.</span><span style="margin-top:6px">Running something? <a href="/submit/">List your event</a></span></div>`;}
   deck.slice(0,3).forEach((c,i)=>{const el=document.createElement('div');el.className='card'+(i===1?' under':i===2?' under2':'');el.style.zIndex=3-i;el.innerHTML=cardHTML(c);el.dataset.id=c.id;st.appendChild(el);if(i===0)attachDrag(el);});
   requestAnimationFrame(()=>{ // fit each card's text first, then trim the cards underneath to the top card's final height
     st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}
