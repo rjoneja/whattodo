@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" preserveAspectRatio="xMidYMid slice"><rect width="720" height="240" fill="#16271D"/>
+<g stroke-linecap="round" stroke-width="5">
+<g transform="translate(260 90)" stroke="#E0A43A"><path d="M0-50V-20M0 20V50M-50 0H-20M20 0H50M-36-36l20 20M16 16l20 20M36-36l-20 20M-16 16l-20 20"/></g>
+<g transform="translate(470 80)" stroke="#EE6A3F"><path d="M0-60V-26M0 26V60M-60 0H-26M26 0H60M-42-42l22 22M20 20l22 22M42-42l-22 22M-20 20l-22 22"/></g>
+<g transform="translate(370 140)" stroke="#7FA9CC" stroke-width="4"><path d="M0-36V-14M0 14V36M-36 0H-14M14 0H36M-26-26l14 14M12 12l14 14M26-26l-14 14M-12 12l-14 14"/></g></g>
+<g fill="#F2EEE3" opacity="1"><circle cx="260" cy="90" r="5"/><circle cx="470" cy="80" r="5"/><circle cx="370" cy="140" r="5"/></g><g fill="#E0A43A" opacity=".9"><circle cx="200" cy="40" r="3"/><circle cx="320" cy="50" r="3"/><circle cx="540" cy="150" r="3"/><circle cx="600" cy="40" r="3"/><circle cx="150" cy="140" r="3"/><circle cx="420" cy="30" r="3"/></g>
+<path d="M0 214 L60 190 L110 204 L170 176 L230 200 L300 186 L360 206 L430 180 L500 200 L560 184 L630 204 L720 186 V240H0Z" fill="#122018"/></svg>

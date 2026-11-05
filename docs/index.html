@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='8497d69984';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='aee46b7ebb';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -109,7 +109,11 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .card .area{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .card h3{font-size:23px;font-weight:700;line-height:1.05;margin-top:3px}
 .card .img{margin:calc(var(--u)*-2) calc(var(--u)*-2) 0;height:clamp(84px,24vh,150px);flex:none;background:var(--paper-2) center/cover no-repeat;position:relative}
-.card .img small{position:absolute;right:6px;bottom:4px;font-size:9px;color:#fff;opacity:.75;text-shadow:0 0 3px #000}
+.card .img small{position:absolute;right:6px;bottom:4px;font-size:9px;color:#fff;opacity:.75;text-shadow:0 0 3px #000;z-index:2}
+/* photos are tinted into the house greens so they sit with the illustrations */
+.card .img.photo{filter:saturate(.7) contrast(.95) brightness(.92)}
+.card .img.photo::before{content:'';position:absolute;inset:0;background:#2F6B47;mix-blend-mode:color;opacity:.42}
+.card .img.photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,32,24,.15),rgba(18,32,24,0) 40%,rgba(26,44,34,.5))}
 .card.tight .img{height:clamp(70px,16vh,110px)}
 .card.tight .blurb{font-size:13.5px;line-height:1.35}
 .card.tight .why{display:none}
@@ -854,22 +858,31 @@ const TRICON='<svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-lin
 function travelLabel(c){ if((c.how||'transport')==='transport'&&c.route&&!c.est) return c.mins+' min '+(c.route==='walk'?'walk':'· '+c.route)+(c.note&&c.how==='cycle'?' ('+c.note+')':'');
   return (c.est&&c.how!=='walk'?'~':'')+c.mins+' min '+({drive:'drive',cycle:'by bike',transport:'by bus or train',walk:'walk'}[c.how||'transport'])+(c.how==='drive'&&c.parking?' ('+c.parking+')':'')+(c.note&&c.how==='transport'&&setup.mode==='bike'?' ('+c.note+')':'') }
 /* ---------- SHARING ---------- */
-// what the thing IS beats where it happens: specific subjects first, generic formats (show, talk, workshop) last
-const EMOJI=[[/pickle/i,'🥒'],[/\bspace (show|science|station|age|exploration)|outer space|universe|planet|rocket|astronom|stargaz|planetarium|cosmos|galax|\bmoon\b|solar system|astronaut/i,'🚀'],[/dinosaur|fossil|t\. ?rex/i,'🦕'],
-  [/firework|bonfire|guy fawkes/i,'🎆'],[/christmas|xmas|festive|santa|carol|advent|nativity/i,'🎄'],[/diwali|lantern|light show|illuminat/i,'🪔'],[/halloween|spooky|pumpkin/i,'🎃'],
-  [/hanukkah|chanukah/i,'🕎'],[/remembrance|poppy|armistice/i,'🌺'],[/science|experiment|robot|coding|stem\b|engineering|lab\b/i,'🔬'],
-  [/\bbooks?\b|reading|author|poetry|storytell|story ?time|rhyme/i,'📚'],[/film|cinema|screening|movie/i,'🎬'],[/dance|disco|ballet|ceilidh|salsa/i,'💃'],
-  [/roller|skate|skating/i,'⛸️'],[/swim|lido/i,'🏊'],[/cycl|bike|bmx/i,'🚲'],[/parkrun|fun run|running club|\b(5|10)k\b|half marathon/i,'🏃'],[/yoga|pilates|wellbeing|meditat|sound ?bath/i,'🧘'],
-  [/football|cricket|rugby|tennis|sport/i,'⚽'],[/quiz|trivia/i,'🧠'],[/chess|board ?game|games night/i,'♟️'],[/\bboats?\b|river (walk|cruise|trip)|canal|cruise|\bships?\b/i,'⛵'],
-  [/\btrains?\b|railway|steam|\btrams?\b|\bbus\b|transport museum/i,'🚂'],[/\bbirds?\b|wildlife|nature|bat walk|\bponds?\b|\bbugs?\b|insect|butterfl/i,'🦉'],[/farm|animal|zoo|alpaca|goat|pony|sheep/i,'🐐'],
-  [/\btrees?\b|\bparks?\b|garden|\bwalks?\b|\bwoods?\b|forest|\bheath\b|wetland|allotment|\bplants?\b/i,'🌳'],[/market|fair|bazaar|car boot|jumble|vintage/i,'🛍️'],
-  [/food|street food|supper|brunch|tasting|beer|wine|cider|cook|bake/i,'🍽️'],[/craft|make|making|knit|sew|pottery|ceramic|print|draw|paint|sketch|workshop/i,'🎨'],
-  [/music|concert|gig|choir|orchestra|jazz|shanty|recital|organ|folk|opera/i,'🎶'],[/comedy|stand-?up/i,'😂'],[/circus|puppet|panto|magic/i,'🎪'],
-  [/theatre|play\b|musical|drama|show/i,'🎭'],[/museum|exhibition|gallery|history|heritage|art\b|archive|tour/i,'🖼️'],[/talk|lecture|discussion|debate/i,'💬'],
-  [/kids|family|play|baby|toddler/i,'🎈']];
-function emojiFor(c){ // Claude's pick when the listing was written up; otherwise the name and tags decide, the description only if they say nothing
-  if(c.emoji) return c.emoji; if((c.tags||[]).some(t=>/^(space|astronomy)$/.test(t))) return '🚀';
-  for(const t of [c.name+' '+(c.tags||[]).join(' '),(c.blurb||'').slice(0,120)]) for(const [re,e] of EMOJI) if(re.test(t)) return e; return '📍';}
+// what the thing IS beats where it happens: specific subjects first, generic formats (show, talk, workshop) last.
+// Each rule: [pattern, emoji for sharing, illustration shown when there's no honest photo]
+const EMOJI=[[/pickle/i,'🥒','food'],[/\bspace (show|science|station|age|exploration)|outer space|universe|planet|rocket|astronom|stargaz|planetarium|cosmos|galax|\bmoon\b|solar system|astronaut/i,'🚀','space'],
+  [/dinosaur|fossil|t\. ?rex/i,'🦕','dinosaurs'],[/firework|bonfire|guy fawkes/i,'🎆','fireworks'],[/christmas|xmas|festive|santa|carol|advent|nativity|grotto|reindeer/i,'🎄','christmas'],
+  [/diwali|lantern|light show|illuminat/i,'🪔','diwali'],[/halloween|spooky|pumpkin|samhain/i,'🎃','halloween'],[/hanukkah|chanukah/i,'🕎','default'],[/remembrance|poppy|armistice/i,'🌺','remembrance'],
+  [/science|experiment|robot|coding|stem\b|engineering|\blab\b|\bmaths?\b/i,'🔬','science'],[/\bbooks?\b|reading|author|poetry|storytell|story ?time|rhyme/i,'📚','books'],
+  [/film|cinema|screening|movie/i,'🎬','film'],[/dance|disco|ballet|ceilidh|salsa|tango|zumba/i,'💃','dance'],[/roller|skate|skating|\bice\b/i,'⛸️','skating'],[/swim|lido|pool/i,'🏊','swim'],
+  [/cycl|\bbikes?\b|bmx/i,'🚲','cycling'],[/parkrun|fun run|running club|\b(5|10)k\b|half marathon/i,'🏃','running'],[/yoga|pilates|wellbeing|meditat|mindful|sound ?bath|tai chi|qigong/i,'🧘','yoga'],
+  [/football|cricket|rugby|tennis|sport|boxing|netball|basketball/i,'⚽','sport'],[/quiz|trivia|bingo/i,'🧠','quiz'],[/chess|board ?game|games? (night|club)|scrabble|bridge club/i,'♟️','games'],
+  [/\bboats?\b|river (walk|cruise|trip)|canal|cruise|\bships?\b|sailing/i,'⛵','boats'],[/\btrains?\b|railway|steam|\btrams?\b|\bbus\b|transport museum|beam engine/i,'🚂','trains'],
+  [/\bbirds?\b|wildlife|nature|bat walk|\bponds?\b|\bbugs?\b|insect|butterfl|fungi|wetland/i,'🦉','wildlife'],[/farm|animal|\bzoo\b|alpaca|goat|pony|sheep/i,'🐐','farm'],
+  [/\btrees?\b|\bparks?\b|garden|\bwalks?\b|\bwoods?\b|forest|\bheath\b|allotment|\bplants?\b/i,'🌳','park'],[/market|fair|bazaar|car boot|jumble|vintage/i,'🛍️','market'],
+  [/food|street food|supper|brunch|tasting|beer|wine|cider|cook|bake|menu/i,'🍽️','food'],[/craft|make|making|knit|sew|embroider|pottery|ceramic|print|draw|paint|sketch|colouring|workshop/i,'🎨','craft'],
+  [/choir|choral|organ|evensong|requiem|hymn|eucharist|communion|church/i,'🎶','choir'],[/music|concert|gig|orchestra|jazz|shanty|recital|folk|opera|\bdj\b|singing|band\b/i,'🎶','music'],
+  [/comedy|stand-?up|improv/i,'😂','comedy'],[/circus|puppet|panto|magic|aerial/i,'🎪','circus'],[/theatre|\bplay\b|musical|drama|\bshow\b/i,'🎭','theatre'],
+  [/history|heritage|archive|historic|castle|palace|\btours?\b/i,'🏛️','history'],[/museum|exhibition|gallery|\bart\b|artist|photograph/i,'🖼️','museum'],
+  [/talk|lecture|discussion|debate|conversation|q ?& ?a/i,'💬','talks'],[/kids|family|play|baby|toddler|tots|under ?5/i,'🎈','kids']];
+const ART_OF={'🚀':'space','🦕':'dinosaurs','🎆':'fireworks','🎄':'christmas','🪔':'diwali','🎃':'halloween','🌺':'remembrance','🔬':'science','📚':'books','🎬':'film','💃':'dance',
+  '⛸️':'skating','🏊':'swim','🚲':'cycling','🏃':'running','🧘':'yoga','⚽':'sport','🧠':'quiz','♟️':'games','⛵':'boats','🚂':'trains','🦉':'wildlife','🐐':'farm','🌳':'park',
+  '🛍️':'market','🍽️':'food','🎨':'craft','🎶':'music','😂':'comedy','🎪':'circus','🎭':'theatre','🏛️':'history','🖼️':'museum','💬':'talks','🎈':'kids'};
+function ruleFor(c){ // the name and tags decide; the description only if they say nothing
+  if((c.tags||[]).some(t=>/^(space|astronomy)$/.test(t))) return EMOJI[1];
+  for(const t of [c.name+' '+(c.tags||[]).join(' '),(c.blurb||'').slice(0,120)]) for(const r of EMOJI) if(r[0].test(t)) return r; return null; }
+function emojiFor(c){ if(c.emoji) return c.emoji; const r=ruleFor(c); return r?r[1]:'📍'; }      // Claude's pick when it wrote the listing up
+function artFor(c){ const r=ruleFor(c); return (c.emoji&&ART_OF[c.emoji]&&!(r&&r[2]==='choir'&&c.emoji==='🎶'))?ART_OF[c.emoji]:(r?r[2]:'default'); }
 function whenWords(c){
   const d=c.date||setup.date; if(!d) return '';
   const day=fromIso(d), today=new Date(); today.setHours(0,0,0,0);
@@ -888,8 +901,7 @@ function shareURL(c){ return 'https://www.jauntout.com/'+(c.event?'e/'+encodeURI
 function shareLink(c){ return 'https://wa.me/?text='+encodeURIComponent(shareText(c)+'\n'+shareURL(c)); }
 document.addEventListener('click',e=>{const a=e.target.closest('[data-share]'); if(!a) return; const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===a.dataset.share); track('share',{id:a.dataset.share,who:setup.who,channel:'whatsapp',event:!!(c&&c.event)});
   if(c&&!['saved','again'].includes(status[c.id])){            // sharing it means you like it: put it on My list
-    if(deck[0]&&deck[0].id===c.id) setTimeout(()=>{act('saved');toast('Shared · saved to My list')},350);
-    else { status[c.id]='saved'; save(); toast('Shared · saved to My list'); } } },true);
+    status[c.id]='saved'; (c.tags||[]).forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1); save(); toast('Shared · saved to My list'); } },true);   // the card stays put
 function cardHTML(c){
   const badges=[`<button class="badge trbtn" data-tr aria-label="Journey options">${TRICON}${escH(travelLabel(c))}<i>›</i></button>`,
     `<span class="badge">${c.in==='in'?'Indoors':c.in==='out'?'Outdoors':'In & out'}</span>`,
@@ -901,7 +913,10 @@ function cardHTML(c){
   if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5); badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left===1?'Ends tomorrow':left<=7?'Ends in '+left+' days':'Until '+nice(fromIso(c.to))}</span>`)} }
   if(status[c.id]==='again') badges.push(`<span class="badge good">You'd go again</span>`);
   const why=c.why.length?`<p class="why"><b>Why this:</b> ${c.why.slice(0,2).join(' · ')}</p>`:'';
-  const im=IMAGES[c.id]; const img=im&&im.url?`<div class="img" style="background-image:url('${im.url.replace(/'/g,'%27')}')">${im.credit?`<small>${im.credit}</small>`:''}</div>`:'';
+  // a real photo only when it shows this exact thing (a named exhibition, a place); otherwise our own illustration for the subject
+  const im=IMAGES[c.id], real=im&&im.url&&(!c.event||im.kind==='specific'||(!im.kind&&(im.fit||0)>=3));
+  const img=real?`<div class="img photo" style="background-image:url('${im.url.replace(/'/g,'%27')}')">${im.credit?`<small>${im.credit}</small>`:''}</div>`
+                :`<div class="img art" style="background-image:url('/art/${artFor(c)}.svg')"></div>`;
   return `${img}<div class="stamp save">Save</div><div class="stamp pass">Nope</div>
     <div class="top"><div><div class="area">${c.area}</div><h3>${c.name}</h3></div><div class="price ${c.price==='free'?'free':''}">${c.price==='free'?'Free':c.price}</div></div>
     <div class="badges">${badges.join('')}</div>

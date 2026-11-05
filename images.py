@@ -331,8 +331,21 @@ def main():
     # events needing a (better) picture: none yet, or one chosen before relevance scoring (checked < 4)
     need = [e for e in events if e.get("url", "").startswith("http") and (e["id"] not in out or out[e["id"]].get("checked", 0) < 5)
             and not (tried.get(e["id"]) and tried[e["id"]] >= week_ago and e["id"] not in out)]
-    subj = subjects(need)
-    print(f"pictures: {len(need)} to check, {len(subj)} subjects", file=sys.stderr)
+    # Generic things (a quiz, a market, carols) get the app's own illustration, so no photo search or vetting for them.
+    # Photos are only for specific things, where a real picture of that exact exhibition/show/place is honest.
+    unknown = [e for e in events if e["id"] in out and not out[e["id"]].get("kind") and e not in need]
+    subj = subjects(need + unknown)
+    dropped = 0
+    for e in unknown:
+        k = (subj.get(e["id"]) or {}).get("kind")
+        if k == "generic": out.pop(e["id"], None); tried[e["id"]] = today; dropped += 1
+        elif k == "specific": out[e["id"]]["kind"] = "specific"
+    generic = [e for e in need if (subj.get(e["id"]) or {}).get("kind") != "specific"]
+    for e in generic:
+        tried[e["id"]] = today
+        if e["id"] in out and not out[e["id"]].get("kind"): out.pop(e["id"], None)
+    need = [e for e in need if (subj.get(e["id"]) or {}).get("kind") == "specific"]
+    print(f"pictures: {len(need)} specific to check; {len(generic)} generic get an illustration; {dropped} old generic photos dropped", file=sys.stderr)
     for e in need:
         if VETS["n"] >= MAX_VETS: print("vet budget reached; the rest wait for tomorrow", file=sys.stderr); break
         old = out.get(e["id"]); print(f"{e['id']}: about '{(subj.get(e['id']) or {}).get('subject','?')}'", file=sys.stderr)
@@ -340,7 +353,8 @@ def main():
         t = None
         try: t = best_for(e, used, subj.get(e["id"]))
         except Exception as ex: print(f"{e['id']}: pick failed {str(ex)[:60]}", file=sys.stderr)
-        if not t or t.get("fit", 0) < 2:
+        if t and t.get("fit", 0) < 2: t = None                       # a mere venue shot: the illustration is better
+        if False:
             if old and old.get("checked", 0) >= 3 and "commons" not in old.get("page", "") and used.get(old["url"], 0) == 0 and (not t or t.get("fit", 0) <= 1): t = dict(old, fit=1)   # keep a vetted old picture over a mere venue shot
             elif not t:
                 try: t = wiki_area(e.get("area"), e["name"])
@@ -349,7 +363,7 @@ def main():
                 if t: t["fit"] = 1
         tried[e["id"]] = today
         if t:
-            t["checked"] = 5; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
+            t["checked"] = 5; t["kind"] = "specific"; out[e["id"]] = t; used[t["url"]] = used.get(t["url"], 0) + 1
             print(f"{e['id']}: fit {t.get('fit')} {'commons' if 'commons' in t.get('page','') or '·' in t.get('credit','') else 'page' if t['credit'] and 'Wikimedia' not in t['credit'] else 'area'}", file=sys.stderr)
         time.sleep(0.3)
     out = dedupe(out, events, tried)

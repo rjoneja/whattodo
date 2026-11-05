@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" preserveAspectRatio="xMidYMid slice"><rect width="720" height="240" fill="#1C3527"/>
+<circle cx="600" cy="60" r="26" fill="#E0A43A"/>
+<path d="M0 170 Q200 150 400 170 T720 166 V240H0Z" fill="#2F6B47"/>
+<g transform="translate(200 0)"><path d="M-60 100 L0 60 L60 100 V180 H-60Z" fill="#EE6A3F"/><path d="M-70 104 L0 54 L70 104" stroke="#F2EEE3" stroke-width="6" fill="none"/>
+<rect x="-22" y="124" width="44" height="56" fill="#F2EEE3"/><path d="M-22 124 L22 180 M22 124 L-22 180" stroke="#EE6A3F" stroke-width="4"/><rect x="-12" y="84" width="24" height="18" fill="#F2EEE3"/></g>
+<g stroke="#C2C8BE" stroke-width="5"><path d="M300 150 H700 M300 172 H700"/><path d="M320 140V190M400 140V190M480 140V190M560 140V190M640 140V190"/></g>
+<g transform="translate(460 128)"><ellipse rx="44" ry="26" fill="#F2EEE3"/><rect x="-32" y="18" width="7" height="30" fill="#C2C8BE"/><rect x="22" y="18" width="7" height="30" fill="#C2C8BE"/>
+<g transform="translate(46 -20)"><ellipse rx="16" ry="20" fill="#F2EEE3" transform="rotate(30)"/><path d="M-6-18 Q-20-40-4-46M6-18 Q12-40 26-40" stroke="#86938A" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="8" cy="-4" r="3" fill="#122018"/><path d="M14 16 q-2 12-10 14" stroke="#C2C8BE" stroke-width="4" fill="none"/></g>
+<path d="M-44-6 q-14 4-14 16" stroke="#F2EEE3" stroke-width="6" fill="none" stroke-linecap="round"/></g></svg>

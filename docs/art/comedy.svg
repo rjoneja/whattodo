@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" preserveAspectRatio="xMidYMid slice"><rect width="720" height="240" fill="#16271D"/>
+<path d="M360 0 L250 240 H470Z" fill="#F2EEE3" opacity=".08"/>
+<rect y="204" width="720" height="36" fill="#EE6A3F" opacity=".7"/>
+<g transform="translate(360 0)"><rect x="-3" y="120" width="6" height="84" fill="#86938A"/><path d="M-30 204 h60" stroke="#86938A" stroke-width="6" stroke-linecap="round"/>
+<path d="M0 120 L-40 100" stroke="#86938A" stroke-width="5"/><g transform="translate(-48 92) rotate(-30)"><rect x="-14" y="-6" width="28" height="44" rx="12" fill="#122018"/><rect x="-18" y="-40" width="36" height="40" rx="18" fill="#C2C8BE"/>
+<g stroke="#86938A" stroke-width="2"><path d="M-16-26h32M-17-16h34M-16-6h32"/></g></g></g>
+<g fill="#E0A43A"><path d="M480 90l4 12 12 4-12 4-4 12-4-12-12-4 12-4z"/><path d="M230 70l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></g>
+<g font-family="Georgia,serif" font-size="34" fill="#F2EEE3" opacity=".85"><text x="440" y="70">ha</text><text x="500" y="128" font-size="26">ha</text><text x="196" y="140" font-size="24" opacity=".7">ha</text></g></svg>
