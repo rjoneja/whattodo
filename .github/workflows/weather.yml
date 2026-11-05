@@ -1,0 +1,19 @@
+name: weather
+# Every 3 hours: one forecast file for all of London (9 points), so visitors don't each call the weather service.
+on:
+  schedule:
+    - cron: "5 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: {group: weather, cancel-in-progress: true}
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 weather.py
+      - run: |
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add docs/weather.json && git commit -m "weather $(date -u +%FT%H:%M)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break; sleep $((i*10)); done

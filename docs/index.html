@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='b807260a18';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='7bbad5c7e8';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -620,6 +620,16 @@ const WXICON={
 function wxIcon(k){ return `<svg class="wxi ${k}" viewBox="0 0 24 24" aria-hidden="true">${WXICON[k]||WXICON.cloud}</svg>`; }
 async function getWeather(){
   wx=null;
+  // 1st choice: the shared forecast file the site refreshes every few hours (one fetch, no per-visitor API call)
+  try{
+    const j=await (await fetch('/weather.json',{cache:'no-cache'})).json();
+    if(j&&j.cells&&Date.now()-new Date(j.updated).getTime()<12*36e5){
+      const c=j.cells.reduce((a,b)=>km(setup.lat,setup.lon,a.lat,a.lon)<=km(setup.lat,setup.lon,b.lat,b.lon)?a:b);
+      const H=[]; j.time.forEach((t,i)=>{ if(t.startsWith(setup.date)) H.push({h:+t.slice(11,13),t:c.t[i],p:c.p[i]||0,mm:c.mm[i]||0,c:c.c[i]||0,g:c.g[i]||0,code:c.code[i]||0}); });
+      if(H.length>=6){ wx=describeDay(H); return; }
+    }
+  }catch(e){}
+  // fallback: ask Open-Meteo directly (file missing, stale, or the date is beyond it)
   try{
     const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),6000);
     const u=`https://api.open-meteo.com/v1/forecast?latitude=${setup.lat}&longitude=${setup.lon}&hourly=temperature_2m,precipitation_probability,precipitation,cloud_cover,wind_gusts_10m,weather_code&timezone=Europe%2FLondon&forecast_days=16`;
