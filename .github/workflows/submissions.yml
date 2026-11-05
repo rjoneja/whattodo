@@ -28,8 +28,4 @@ jobs:
           python3 sources_page.py || true
       - if: steps.sub.outputs.changed == '1'
         run: |
-          git config user.name bot && git config user.email bot@users.noreply.github.com
-          git add docs/events.json docs/images.json docs/e docs/sources
-          git commit -m "submitted events $(date +%F)" || exit 0
-          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break; sleep $((i*15)); done
-          git diff --quiet origin/main HEAD || { echo 'push never succeeded'; exit 1; }
+          .github/push.sh "submitted events $(date +%F)" docs/events.json docs/images.json docs/e docs/sources

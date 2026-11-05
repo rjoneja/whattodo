@@ -52,9 +52,4 @@ jobs:
         run: python3 sources_page.py || true
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: |
-          git config user.name bot && git config user.email bot@users.noreply.github.com
-          git add docs/events.json docs/images.json docs/e docs/sources venues.json accounts.json
-          [ -f ig_seen.json ] && git add ig_seen.json
-          git commit -m "content $(date +%F)" || exit 0
-          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break; echo "push failed, retry $i"; sleep $((i*15)); done
-          git diff --quiet origin/main HEAD || { echo 'push never succeeded'; exit 1; }
+          .github/push.sh "content $(date +%F)" docs/events.json docs/images.json docs/e docs/sources venues.json accounts.json ig_seen.json
