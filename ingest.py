@@ -105,7 +105,8 @@ def event_links(doc, base, limit=40):
     out = []
     for m in re.finditer(r'(?is)<a\b[^>]*href=["\']([^"\']+)["\']', doc):
         href = urljoin(base, html.unescape(m.group(1)))
-        if re.search(r"/(event|events|whats-on|whatson|exhibition|exhibitions)/[^/?#]+", href) and href not in out and href.rstrip("/") != base.rstrip("/"):
+        if (re.search(r"/(event|events|whats-on|whatson|exhibition|exhibitions)/[^/?#]+", href) or re.search(r"eventbrite\.[a-z.]+/e/[^/?#]+-\d{6,}", href)) \
+                and href not in out and href.rstrip("/") != base.rstrip("/"):
             out.append(href)
         if len(out) >= limit: break
     return out
@@ -174,8 +175,15 @@ def claude(prompt, max_tokens=16000):
     out = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
     return parse_array(out)
 
+def listing_url(venue):
+    """The page to read. A site's RSS feed is usually its news/blog (WordPress has one by default), not its events,
+    so for "rss" venues read the events page itself unless the feed is clearly an events feed."""
+    fu = venue.get("feed_url")
+    if venue.get("feed") == "rss" and fu and not re.search(r"event|whats-?on|calendar|programme", fu, re.I): return venue["url"]
+    return fu or venue["url"]
+
 def harvest_html(venue, horizon):
-    try: final, doc = get(venue.get("feed_url") or venue["url"])
+    try: final, doc = get(listing_url(venue))
     except Exception as ex: print(f"  fetch failed: {ex}", file=sys.stderr); return []
     text = page_text(doc)
     prompt = f"""Extract things to do in London from this listings page for a weekend-planning app.
