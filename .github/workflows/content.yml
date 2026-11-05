@@ -18,6 +18,9 @@ jobs:
         with: {python-version: "3.12"}
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: pip install anthropic pillow
+      - name: Probe newly added sources
+        if: ${{ steps.check.outputs.skip != 'true' }}
+        run: python3 probe.py --new || true
       - name: Web sources
         if: ${{ steps.check.outputs.skip != 'true' && env.ANTHROPIC_API_KEY != '' }}
         run: python3 ingest.py --days 21 --out docs/events.json

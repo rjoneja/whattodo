@@ -124,11 +124,12 @@ def discover(venues):
     print(f"{len(seen)} candidate hosts written to candidates.csv")
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--discover", action="store_true"); ap.add_argument("--only")
+    ap = argparse.ArgumentParser(); ap.add_argument("--discover", action="store_true"); ap.add_argument("--only"); ap.add_argument("--new", action="store_true", help="only venues not probed yet")
     a = ap.parse_args()
     reg = json.load(open("venues.json")); venues = reg["venues"]
     for v in venues:
         if a.only and v["id"] != a.only: continue
+        if a.new and v.get("probed"): continue
         if v.get("feed") == "skip": continue
         for k in ("error", "was"): v.pop(k, None)
         v.update(probe(v))
