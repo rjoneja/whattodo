@@ -1,0 +1,30 @@
+name: pages
+# Publishes docs/ to Cloudflare Pages (project "jauntout") whenever the site changes.
+on:
+  push:
+    branches: [main]
+    paths: ["docs/**"]
+  workflow_run:
+    workflows: [content, web, instagram, newsletters, submissions, weather]
+    types: [completed]
+  workflow_dispatch:
+concurrency: {group: pages, cancel-in-progress: true}
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main}
+      - uses: actions/setup-node@v4
+        with: {node-version: "20"}
+      - run: npm i --no-save wrangler@3
+      - name: Project (create once)
+        run: |
+          if ! npx wrangler pages project list 2>&1 | tee list.log | grep -q "jauntout "; then
+            grep -qi "auth\|permission\|10000" list.log && { echo "::error::The Cloudflare token needs the permission Account · Cloudflare Pages · Edit"; exit 1; }
+            npx wrangler pages project create jauntout --production-branch main
+          fi
+      - run: npx wrangler pages deploy docs --project-name jauntout --branch main --commit-dirty=true

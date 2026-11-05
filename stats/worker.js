@@ -1,7 +1,7 @@
 // JauntOut stats + event submissions.
 //  - the app posts small batches of usage events; the private dashboard reads totals with a key
 //  - organisers submit events; a GitHub job writes them up; Raj approves each by email (signed links)
-const ORIGINS = ["https://www.jauntout.com", "https://jauntout.com"];
+const ORIGINS = ["https://www.jauntout.com", "https://jauntout.com", "https://jauntout.pages.dev"];
 const TYPES = new Set(["visit", "share", "share_open", "swipe", "setup_done", "trip_open", "trip_pick", "map_action", "save", "undo"]);
 const clip = (x, n = 60) => (x == null ? null : String(x).slice(0, n));
 const londonDay = ms => new Date(ms).toLocaleDateString("en-CA", { timeZone: "Europe/London" });
