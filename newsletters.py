@@ -94,7 +94,7 @@ EMAIL TEXT:
         for e in evs if isinstance(evs, list) else []:
             if not isinstance(e, dict): continue
             e["source"] = f"Newsletter: {name}"
-            if not ingest.valid(e, today.isoformat(), horizon.isoformat()): continue
+            if not ingest.valid(e, today, horizon): continue
             e["id"] = ingest.slug(e); k = ingest.key(e)
             existing[k] = ingest.carry(existing[k], e) if k in existing else e
             n += 1

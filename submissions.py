@@ -56,7 +56,7 @@ PAGE TEXT: {text}"""
     e = v.get("event") or {}
     if final and not e.get("url"): e["url"] = final
     verdict = v.get("verdict") or "no verdict"
-    if not ingest.valid(e, today.isoformat(), horizon.isoformat()):
+    if not ingest.valid(e, today, horizon):
         missing = [f for f in ("name", "date/from", "lat", "url", "blurb") if not (e.get(f) if "/" not in f else (e.get("date") or e.get("from")))]
         verdict = (verdict + "; " if verdict != "looks fine" else "") + "incomplete: " + (", ".join(missing) or "dates or place out of range")
     return e, verdict, img
@@ -67,7 +67,7 @@ def main():
         try: e, verdict, img = write_up(s)
         except Exception as ex: e, verdict, img = {}, f"couldn't write it up ({str(ex)[:80]})", None
         r = api("/prepared", {"id": s["id"], "event": e, "verdict": verdict, "image": img})
-        print(f"review: {s['id']} {e.get('name', s.get('name'))!r} → {verdict} (emailed: {r.get('emailed')})", file=sys.stderr)
+        print(f"review: {s['id']} {e.get('name', s.get('name'))!r} → {verdict} (emailed: {r.get('emailed')}{'; ' + str(r.get('error')) if r.get('error') else ''})", file=sys.stderr)
     approved = api("/approved").get("items", [])
     if approved:
         data = json.load(open("docs/events.json")); ev = data["events"]; ids = []
