@@ -2,23 +2,26 @@
  "<SjP-7iYA_9I0e4Lcf-xd5A@notifications.google.com>": {
   "from": "Google",
   "addr": "no-reply@accounts.google.com",
-  "subject": "Security alert",
+  "subject": "(account email, skipped)",
   "n": 0,
-  "day": "2026-11-05"
+  "day": "2026-11-05",
+  "kind": "skip"
  },
  "<LZ4AsBWitTwCE_XRbfFRnA@notifications.google.com>": {
   "from": "Google",
   "addr": "no-reply@accounts.google.com",
-  "subject": "2-Step Verification turned on",
+  "subject": "(account email, skipped)",
   "n": 0,
-  "day": "2026-11-05"
+  "day": "2026-11-05",
+  "kind": "skip"
  },
  "<ZNQQwH-7fVoFbUaW4a2wtA@notifications.google.com>": {
   "from": "Google",
   "addr": "no-reply@accounts.google.com",
-  "subject": "Security alert",
+  "subject": "(account email, skipped)",
   "n": 0,
-  "day": "2026-11-05"
+  "day": "2026-11-05",
+  "kind": "skip"
  },
  "<284839-639294307672618245@mailing.rmg.co.uk>": {
   "from": "Royal Museums Greenwich",
@@ -60,9 +63,10 @@
  "<GFCILpCMmpmlnUbx-ms02Q@notifications.google.com>": {
   "from": "Google",
   "addr": "no-reply@accounts.google.com",
-  "subject": "raj.joneja@gmail.com can now help you sign in",
+  "subject": "(account email, skipped)",
   "n": 0,
-  "day": "2026-11-05"
+  "day": "2026-11-05",
+  "kind": "skip"
  },
  "<30010842.20261104222424.6aebb098371133.72840165@mail23.mcsignup.com>": {
   "from": "Secret London",
@@ -111,15 +115,17 @@
  "<0ed1d764bfff5b4e94090f1993bc8aa3c9a1c84c-20113407-111430648@google.com>": {
   "from": "Google",
   "addr": "no-reply@google.com",
-  "subject": "Denver, finish setting up your new Google Account",
+  "subject": "(account email, skipped)",
   "n": 0,
-  "day": "2026-11-05"
+  "day": "2026-11-05",
+  "kind": "skip"
  },
  "<CIixCoB7Gxp9jZo0Pb9p9Q@notifications.google.com>": {
   "from": "Google",
   "addr": "no-reply@accounts.google.com",
-  "subject": "You've sent raj.joneja@gmail.com a recovery contact request",
+  "subject": "(account email, skipped)",
   "n": 0,
-  "day": "2026-11-05"
+  "day": "2026-11-05",
+  "kind": "skip"
  }
 }

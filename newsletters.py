@@ -65,6 +65,9 @@ def main():
         sender = email.utils.parseaddr(dec(h.get("From")))
         name, addr = (sender[0] or sender[1].split("@")[0]).strip('"'), sender[1].lower()
         subj = dec(h.get("Subject"))
+        # the account's own mail (Google security notices, sign-in alerts) is not a newsletter: never read or send it anywhere
+        if re.search(r"@(accounts\.)?google\.com$|@googlemail\.com$|no-reply@accounts", addr):
+            seen[mid] = {"from": name, "addr": addr, "subject": "(account email, skipped)", "n": 0, "kind": "skip", "day": today.isoformat()}; continue
         typ, raw = M.fetch(i, "(BODY.PEEK[])")
         msg = email.message_from_bytes(raw[0][1])
         text = body_text(msg)

@@ -63,7 +63,7 @@ for key, title, blurb, items in CATS:
     elif key == "newsletters":
         NS = json.load(open("news_seen.json")) if os.path.exists("news_seen.json") else {}
         by = {}
-        for m in NS.values():
+        for m in [m for m in NS.values() if m.get("kind") != "skip"]:
             b = by.setdefault(m.get("addr") or m.get("from"), {"name": m.get("from", ""), "addr": m.get("addr", ""), "mails": 0, "confirm": False, "last": ""})
             if m.get("kind") == "confirm": b["confirm"] = True
             else: b["mails"] += 1; b["last"] = max(b["last"], m.get("day", ""))
