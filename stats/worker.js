@@ -139,7 +139,24 @@ async function published(req, env) {
   return json(req, { ok: true });
 }
 
+// ---------- scheduler ----------
+// GitHub's own timers can run hours late or not at all, so Cloudflare's cron (reliable) starts the jobs instead.
+// Runs every hour at :17 (UTC). GitHub's schedules stay on as a back-up; the content job skips itself if it already ran.
+const JOBS = h => ["submissions", ...(h % 3 === 0 ? ["weather"] : []), ...(h === 5 || h === 7 ? ["content"] : []),
+                   ...(h === 7 ? ["newsletters"] : []), ...(h === 8 ? ["layout"] : [])];
+async function dispatch(env, wf) {
+  const r = await fetch(`https://api.github.com/repos/rjoneja/whattodo/actions/workflows/${wf}.yml/dispatches`, {
+    method: "POST", body: JSON.stringify({ ref: "main" }),
+    headers: { authorization: `Bearer ${env.GH_TOKEN}`, accept: "application/vnd.github+json", "user-agent": "jauntout-scheduler", "x-github-api-version": "2022-11-28" } });
+  return r.status;
+}
+
 export default {
+  async scheduled(event, env, ctx) {
+    if (!env.GH_TOKEN) return;
+    const h = new Date(event.scheduledTime).getUTCHours();
+    for (const wf of JOBS(h)) ctx.waitUntil(dispatch(env, wf).then(st => console.log(`dispatch ${wf}: ${st}`)));
+  },
   async fetch(req, env) {
     const url = new URL(req.url);
     if (req.method === "OPTIONS") return new Response(null, { headers: cors(req) });
@@ -149,6 +166,7 @@ export default {
     if (url.pathname === "/prepared" && req.method === "POST") return prepared(req, env);
     if (url.pathname === "/published" && req.method === "POST") return published(req, env);
     if (url.pathname === "/review" && req.method === "GET") return review(req, env);
+    if (url.pathname === "/cron-check" && req.method === "GET") return authed(req, env) ? json(req, { scheduler: !!env.GH_TOKEN, nextJobs: JOBS(new Date().getUTCHours() + 1 > 23 ? 0 : new Date().getUTCHours() + 1) }) : json(req, { error: "wrong key" }, 401);
     if (url.pathname === "/e" && req.method === "POST") return ingest(req, env);
     if (url.pathname === "/summary" && req.method === "GET") return summary(req, env);
     return new Response("JauntOut stats", { headers: cors(req) });
