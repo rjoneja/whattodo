@@ -29,10 +29,16 @@ CATS.append(("blogs", "Blogs", "Independent London writers who find the odd and 
 CATS.append(("listings", "Listings & ticketing", "Aggregators and ticket sites. We prefer the venue's own listing when both have it.",
              [v for v in V if v.get("kind") in {"aggregator", "ticketing"}]))
 known = {"council", "blog", "aggregator", "ticketing"} | set().union(*[g for _, g in VENUE_GROUPS])
-venue_sub = [(t, [v for v in V if v.get("kind") in g]) for t, g in VENUE_GROUPS]
-other = [v for v in V if v.get("kind") not in known]
+LOCAL = [v for v in V if v.get("local")]
+NL = [v for v in V if not v.get("local")]
+venue_sub = [(t, [v for v in NL if v.get("kind") in g]) for t, g in VENUE_GROUPS]
+other = [v for v in NL if v.get("kind") not in known]
 if other: venue_sub.append(("Other venues", other))
 CATS.insert(1, ("venues", "Venue websites", "Straight from the source: the venues' own what's-on pages.", venue_sub))
+by_b = collections.defaultdict(list)
+for v in LOCAL: by_b[v.get("borough") or "Other"].append(v)
+CATS.insert(1, ("local", "Local & neighbourhood", "Community centres, pubs, churches, libraries, small theatres and societies: the things on people's doorsteps.",
+                sorted(by_b.items())))
 
 def esc(s): return html.escape(str(s or ""))
 def site(url):
@@ -77,7 +83,7 @@ for key, title, blurb, items in CATS:
             rows.append(f'<li data-q="{esc((b["name"] + " " + b["addr"]).lower())}" data-st="{st or "ok"}"><a><b>{esc(b["name"])}</b><small>{esc(sub)}</small></a>{flag}{badge}</li>')
         body = "<ul>" + ("".join(rows) or '<li data-q="" data-st="ok"><a><b>No emails read yet</b><small>the reader runs each morning</small></a></li>') + "</ul>"
         n = len(by)
-    elif key == "venues":
+    elif key in ("venues", "local"):
         body = "".join(f'<h3>{esc(t)}</h3><ul>{venue_rows(vs)}</ul>' for t, vs in items if vs)
         n = sum(len(vs) for _, vs in items)
     else:

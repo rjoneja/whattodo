@@ -2924,6 +2924,2162 @@
      "hidden gems"
     ]
    }
+  },
+  {
+   "id": "thegreennunhead",
+   "name": "The Green Nunhead",
+   "area": "Nunhead",
+   "borough": "Southwark",
+   "lat": 51.4665,
+   "lon": -0.057,
+   "url": "https://thegreennunhead.org/events/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community centre on Nunhead Green: kids' music/dance/tennis classes, nature club, yoga, celebrations (e.g. Black History event)"
+  },
+  {
+   "id": "theivyhouse",
+   "name": "The Ivy House",
+   "area": "Nunhead",
+   "borough": "Southwark",
+   "lat": 51.4582,
+   "lon": -0.0539,
+   "url": "https://www.ivyhousenunhead.com/whats-on",
+   "kind": "pub",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "pub"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community-owned pub: quizzes, gigs, live band karaoke, film nights, print workshops, crib club"
+  },
+  {
+   "id": "brockleyjacktheatre",
+   "name": "Brockley Jack Theatre",
+   "area": "Brockley",
+   "borough": "Lewisham",
+   "lat": 51.452,
+   "lon": -0.0388,
+   "url": "https://brockleyjack.co.uk/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Fringe pub theatre: new plays and adaptations, Christmas show"
+  },
+  {
+   "id": "deptfordcinema",
+   "name": "Deptford Cinema",
+   "area": "Deptford",
+   "borough": "Lewisham",
+   "lat": 51.472,
+   "lon": -0.022,
+   "url": "https://deptfordcinema.org/new-events",
+   "kind": "cinema",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "film",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run community cinema, pop-up screenings around Deptford (Sci-Fi Sundays etc.)"
+  },
+  {
+   "id": "brixtonwindmill",
+   "name": "Brixton Windmill",
+   "area": "Brixton",
+   "borough": "Lambeth",
+   "lat": 51.4508,
+   "lon": -0.1197,
+   "url": "https://www.brixtonwindmill.org/events",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Windmill and education centre: family bake club, tai chi, gardening group, community club, mill tours"
+  },
+  {
+   "id": "uppernorwoodlibraryhub",
+   "name": "Upper Norwood Library Hub",
+   "area": "Upper Norwood / Crystal Palace",
+   "borough": "Croydon (Lambeth border; jointly funded)",
+   "lat": 51.4194,
+   "lon": -0.0835,
+   "url": "https://www.uppernorwoodlibraryhub.org/whats-on",
+   "kind": "library",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "books",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community-trust-run library: early years sessions, homework support, Santa's grotto, holiday camps"
+  },
+  {
+   "id": "thecinemamuseum",
+   "name": "The Cinema Museum",
+   "area": "Kennington",
+   "borough": "Lambeth",
+   "lat": 51.4934,
+   "lon": -0.1043,
+   "url": "https://cinemamuseum.org.uk/schedule/",
+   "kind": "cinema",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "film",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run museum in old workhouse: classic film screenings, silent film weekends, talks, Q&As"
+  },
+  {
+   "id": "creeksidediscoverycent",
+   "name": "Creekside Discovery Centre",
+   "area": "Deptford",
+   "borough": "Lewisham",
+   "lat": 51.4766,
+   "lon": -0.0215,
+   "url": "https://www.creeksidecentre.org.uk/events/",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Nature reserve on Deptford Creek: low-tide walks, bird surveys, family after-school adventures, after-hours talks/quiz"
+  },
+  {
+   "id": "friendsofnunheadcemete",
+   "name": "Friends of Nunhead Cemetery",
+   "area": "Nunhead",
+   "borough": "Southwark",
+   "lat": 51.4632,
+   "lon": -0.053,
+   "url": "https://www.nunheadcemetery.org.uk/events",
+   "kind": "park",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer group: free Sunday guided tours, remembrance, carol concert, annual open day"
+  },
+  {
+   "id": "omnibustheatre",
+   "name": "Omnibus Theatre",
+   "area": "Clapham",
+   "borough": "Lambeth",
+   "lat": 51.4626,
+   "lon": -0.139,
+   "url": "https://www.omnibus-clapham.org/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Independent theatre in former library: plays, improv, Christmas family show"
+  },
+  {
+   "id": "timetalents",
+   "name": "Time & Talents",
+   "area": "Rotherhithe",
+   "borough": "Southwark",
+   "lat": 51.4985,
+   "lon": -0.0525,
+   "url": "https://www.timeandtalents.org.uk/events/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community centre: repair cafe, bike repair, baby groups, arts, walks, social clubs"
+  },
+  {
+   "id": "theatrepeckham",
+   "name": "Theatre Peckham",
+   "area": "Peckham",
+   "borough": "Southwark",
+   "lat": 51.476,
+   "lon": -0.082,
+   "url": "https://www.theatrepeckham.co.uk/shows-events/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Youth-focused community theatre: panto, family Christmas shows, opera, new work"
+  },
+  {
+   "id": "myattsfieldspark",
+   "name": "Myatt's Fields Park",
+   "area": "Camberwell / Loughborough Junction",
+   "borough": "Lambeth",
+   "lat": 51.473,
+   "lon": -0.103,
+   "url": "https://www.myattsfieldspark.info/whatson/events",
+   "kind": "park",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Friends-run park: bat walks, tree walks, dog show, family fun day, cultural festivals, carols"
+  },
+  {
+   "id": "erithplayhouse",
+   "name": "Erith Playhouse",
+   "area": "Erith",
+   "borough": "Bexley",
+   "lat": 51.4823,
+   "lon": 0.178,
+   "url": "https://playhouse.org.uk/shows/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Riverside community theatre staging regular amateur productions"
+  },
+  {
+   "id": "bromleylittletheatre",
+   "name": "Bromley Little Theatre",
+   "area": "Bromley",
+   "borough": "Bromley",
+   "lat": 51.406,
+   "lon": 0.0155,
+   "url": "https://bromleylittletheatre.org/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Amateur theatre with steady programme of plays plus Bromley Blues Club nights"
+  },
+  {
+   "id": "charltonhouse",
+   "name": "Charlton House (Royal Greenwich Heritage Trust)",
+   "area": "Charlton",
+   "borough": "Greenwich",
+   "lat": 51.4795,
+   "lon": 0.039,
+   "url": "https://www.greenwichheritage.org/events",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Heritage trust events at Charlton House: Tuesday lunchtime concerts, flamenco, wreath making, panto, Santa's grotto, Christmas fair"
+  },
+  {
+   "id": "theexchangeerith",
+   "name": "The Exchange Erith",
+   "area": "Erith",
+   "borough": "Bexley",
+   "lat": 51.48,
+   "lon": 0.177,
+   "url": "https://theexchangeerith.com/whats-on",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Arts and community hub in old library: art club, crafts, board games, classes, garden"
+  },
+  {
+   "id": "edithnesbitsociety",
+   "name": "Edith Nesbit Society",
+   "area": "Eltham",
+   "borough": "Greenwich",
+   "lat": 51.451,
+   "lon": 0.053,
+   "url": "https://www.edithnesbit.co.uk/social.php",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Literary society: talks, walks and visits around Eltham/Woolwich"
+  },
+  {
+   "id": "sydenhamarts",
+   "name": "Sydenham Arts",
+   "area": "Sydenham",
+   "borough": "Lewisham",
+   "lat": 51.427,
+   "lon": -0.054,
+   "url": "https://sydenhamarts.co.uk/whats-on/",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Arts charity: craft workshops, writing nights, photo walks, artists trail, festival"
+  },
+  {
+   "id": "sydenhamsocietyeventsl",
+   "name": "Sydenham Society events listings",
+   "area": "Sydenham",
+   "borough": "Lewisham",
+   "lat": 51.428,
+   "lon": -0.055,
+   "url": "https://sydenhamsociety.com/events/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Civic society's local events board: brewery quizzes/jazz, library storytime, board games, open mics"
+  },
+  {
+   "id": "walworthgarden",
+   "name": "Walworth Garden",
+   "area": "Walworth / Kennington",
+   "borough": "Southwark",
+   "lat": 51.4855,
+   "lon": -0.105,
+   "url": "https://www.walworthgarden.org.uk/workshops",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 0,
+    "adults": 3,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community garden charity: gardening, fermentation, herbal and wreath-making workshops"
+  },
+  {
+   "id": "westnorwoodfeast",
+   "name": "West Norwood Feast",
+   "area": "West Norwood",
+   "borough": "Lambeth",
+   "lat": 51.432,
+   "lon": -0.103,
+   "url": "https://westnorwoodfeast.com/whats-on/",
+   "kind": "market",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "market",
+     "food"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run monthly street market (first Sunday) with food, makers, music; Christmas market"
+  },
+  {
+   "id": "hallplacegardens",
+   "name": "Hall Place & Gardens",
+   "area": "Bexley",
+   "borough": "Bexley",
+   "lat": 51.447,
+   "lon": 0.16,
+   "url": "https://hallplace.org.uk/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Tudor house and gardens (Bexley Heritage Trust): family shows, garden trails, owl days, farmers market"
+  },
+  {
+   "id": "mycenaehouse",
+   "name": "Mycenae House",
+   "area": "Westcombe Park / Blackheath",
+   "borough": "Greenwich",
+   "lat": 51.481,
+   "lon": 0.023,
+   "url": "https://mycenaehouse.co.uk/event/events-shows/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community centre: gigs, quiz nights, Diwali celebration, Bach to Baby, Baby Broadway, choir concerts"
+  },
+  {
+   "id": "crystalpalacecommunity",
+   "name": "Crystal Palace Community Trust (Anerley Town Hall)",
+   "area": "Anerley / Penge",
+   "borough": "Bromley",
+   "lat": 51.412,
+   "lon": -0.065,
+   "url": "https://www.cpct.org.uk/whats-on",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community trust hub: choir, youth clubs, salsa, over-50s socials, fitness"
+  },
+  {
+   "id": "bromleyboroughlocalhis",
+   "name": "Bromley Borough Local History Society",
+   "area": "Bickley",
+   "borough": "Bromley",
+   "lat": 51.404,
+   "lon": 0.045,
+   "url": "https://www.bblhs.org.uk/meetings",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Monthly history talks at St George's church hall, Bickley"
+  },
+  {
+   "id": "lamorbeysidcuplocalhis",
+   "name": "Lamorbey & Sidcup Local History Society",
+   "area": "Sidcup",
+   "borough": "Bexley",
+   "lat": 51.433,
+   "lon": 0.099,
+   "url": "https://www.lam-sid-lhs.co.uk/meetings-2026-27/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Monthly history talks at St Lawrence's Hall, Sidcup, plus visits"
+  },
+  {
+   "id": "greenwichpeninsulaecol",
+   "name": "Greenwich Peninsula Ecology Park",
+   "area": "Greenwich Peninsula",
+   "borough": "Greenwich",
+   "lat": 51.4965,
+   "lon": 0.013,
+   "url": "https://www.tcv.org.uk/greenwichpeninsula/events/",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Urban wetland nature park (TCV): family nature trails, bulb planting, wellbeing clubs, winter fayre"
+  },
+  {
+   "id": "landmarkartscentre",
+   "name": "Landmark Arts Centre",
+   "area": "Teddington",
+   "borough": "Richmond upon Thames",
+   "lat": 51.4296,
+   "lon": -0.3263,
+   "url": "https://www.landmarkartscentre.org/events-diary/",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Arts centre in a converted Victorian church: gigs, comedy, craft fairs, carols and art workshops."
+  },
+  {
+   "id": "osoartscentre",
+   "name": "OSO Arts Centre",
+   "area": "Barnes",
+   "borough": "Richmond upon Thames",
+   "lat": 51.4703,
+   "lon": -0.2423,
+   "url": "https://www.osoarts.org.uk/whats-on",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Small community arts centre on Barnes Pond: theatre, comedy, recitals, weekly piano lounge and a Christmas panto."
+  },
+  {
+   "id": "stanleyarts",
+   "name": "Stanley Arts",
+   "area": "South Norwood",
+   "borough": "Croydon",
+   "lat": 51.4007,
+   "lon": -0.078,
+   "url": "https://stanleyarts.org/events/",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community arts centre in the Grade II Stanley Halls: baby/toddler classes, family theatre, comedy, festivals."
+  },
+  {
+   "id": "deencityfarm",
+   "name": "Deen City Farm",
+   "area": "Morden / Colliers Wood",
+   "borough": "Merton",
+   "lat": 51.4085,
+   "lon": -0.1847,
+   "url": "https://www.deencityfarm.co.uk/events",
+   "kind": "farm",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "animals",
+     "outdoors"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community city farm by the Wandle with seasonal family events and workshops."
+  },
+  {
+   "id": "davidleancinema",
+   "name": "David Lean Cinema",
+   "area": "Croydon town centre",
+   "borough": "Croydon",
+   "lat": 51.372,
+   "lon": -0.0994,
+   "url": "https://www.davidleancinema.org.uk/",
+   "kind": "cinema",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "film",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run community cinema in the Croydon Clocktower; matinees, Q&As, family films, NT Live."
+  },
+  {
+   "id": "turnershouse",
+   "name": "Turner's House",
+   "area": "St Margarets / Twickenham",
+   "borough": "Richmond upon Thames",
+   "lat": 51.456,
+   "lon": -0.3155,
+   "url": "https://www.turnershouse.org/whats-on/events/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "JMW Turner's restored villa run by a trust: lectures, craft workshops, Georgian Christmas lates."
+  },
+  {
+   "id": "putneyartstheatre",
+   "name": "Putney Arts Theatre",
+   "area": "Putney",
+   "borough": "Wandsworth",
+   "lat": 51.4598,
+   "lon": -0.216,
+   "url": "https://putneyartstheatre.wildapricot.org/whatson",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community theatre in a former church hall: amateur productions, youth shows and a Christmas panto."
+  },
+  {
+   "id": "wimbledonandputneycomm",
+   "name": "Wimbledon and Putney Commons",
+   "area": "Wimbledon Common",
+   "borough": "Merton",
+   "lat": 51.4388,
+   "lon": -0.2366,
+   "url": "https://www.wpcc.org.uk/events",
+   "kind": "park",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Commons conservators' events: open day, pumpkin hunt, Friends walks, carols at the Windmill."
+  },
+  {
+   "id": "ecolocal",
+   "name": "EcoLocal (Carshalton Ecology Centre)",
+   "area": "Carshalton",
+   "borough": "Sutton",
+   "lat": 51.3678,
+   "lon": -0.1641,
+   "url": "https://www.ecolocal.org.uk/",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Environmental charity at Carshalton Ponds: gardening workshops, family cycling, Wallington Farmers' Market, Frost Fair."
+  },
+  {
+   "id": "batterseaartscentre",
+   "name": "Battersea Arts Centre",
+   "area": "Lavender Hill, Battersea",
+   "borough": "Wandsworth",
+   "lat": 51.4643,
+   "lon": -0.163,
+   "url": "https://bac.org.uk/whats-on",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Old Battersea Town Hall arts centre: experimental theatre plus big Christmas family programme (soft play, grotto)."
+  },
+  {
+   "id": "thecornerhouse",
+   "name": "The cornerHOUSE",
+   "area": "Surbiton",
+   "borough": "Kingston upon Thames",
+   "lat": 51.3878,
+   "lon": -0.2915,
+   "url": "https://www.thecornerhouse.org/whats-on",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run community arts centre: folk nights, film club, comedy, local history talks, panto."
+  },
+  {
+   "id": "allsaintskingston",
+   "name": "All Saints Kingston",
+   "area": "Kingston town centre",
+   "borough": "Kingston upon Thames",
+   "lat": 51.4103,
+   "lon": -0.3062,
+   "url": "https://allsaintskingston.co.uk/events/list/",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Market Place minster church: free Monday lunchtime recitals, history talks, toddler singing, choral evensong."
+  },
+  {
+   "id": "carshaltonwatertoweran",
+   "name": "Carshalton Water Tower and Historic Gardens",
+   "area": "Carshalton",
+   "borough": "Sutton",
+   "lat": 51.3664,
+   "lon": -0.17,
+   "url": "https://carshaltonwatertower.co.uk/events.html",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Friends-run 18th-century water tower and hermitage: Sunday openings (Apr-Sep), quizzes, concerts, Christmas soiree."
+  },
+  {
+   "id": "thefightingcocks",
+   "name": "The Fighting Cocks",
+   "area": "Kingston",
+   "borough": "Kingston upon Thames",
+   "lat": 51.4116,
+   "lon": -0.2976,
+   "url": "https://the-fighting-cocks.co.uk/gigs-events/",
+   "kind": "pub",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "pub"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Independent rock pub and grassroots venue: gigs, weekly comedy, quizzes, D&D nights, all-ages matinees."
+  },
+  {
+   "id": "thebedford",
+   "name": "The Bedford",
+   "area": "Balham",
+   "borough": "Wandsworth",
+   "lat": 51.4434,
+   "lon": -0.152,
+   "url": "https://thebedford.com/events/category/all/",
+   "kind": "pub",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 3,
+    "tags": [
+     "local",
+     "pub"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Landmark Balham pub with comedy club, live music, quizzes, dance classes."
+  },
+  {
+   "id": "croydonminster",
+   "name": "Croydon Minster",
+   "area": "Croydon Old Town",
+   "borough": "Croydon",
+   "lat": 51.373,
+   "lon": -0.105,
+   "url": "https://www.croydonminster.org/events/list/",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Historic minster church: Friday lunchtime recitals, Minster Music season, Snowman family concert, carols."
+  },
+  {
+   "id": "friendsofhoneywoodmuse",
+   "name": "Friends of Honeywood Museum",
+   "area": "Carshalton",
+   "borough": "Sutton",
+   "lat": 51.3676,
+   "lon": -0.1648,
+   "url": "https://friendsofhoneywood.co.uk/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Local history friends group: monthly Thursday evening talks, half-term family activities, Carshalton arts festival tie-ins."
+  },
+  {
+   "id": "mertonhistoricalsociet",
+   "name": "Merton Historical Society",
+   "area": "Mitcham",
+   "borough": "Merton",
+   "lat": 51.4006,
+   "lon": -0.1706,
+   "url": "https://mertonhistoricalsociety.org.uk/our-activities",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Monthly Saturday talks in Mitcham plus open local-history workshops at the Wandle Industrial Museum."
+  },
+  {
+   "id": "tootinghistorygroup",
+   "name": "Tooting History Group",
+   "area": "Tooting",
+   "borough": "Wandsworth",
+   "lat": 51.4232,
+   "lon": -0.161,
+   "url": "https://tootinghistory.org.uk/thg_events/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Monthly second-Tuesday talks at the URC, Rookstone Road, plus occasional heritage walks."
+  },
+  {
+   "id": "questorstheatre",
+   "name": "Questors Theatre",
+   "area": "Ealing",
+   "borough": "Ealing",
+   "lat": 51.5115,
+   "lon": -0.307,
+   "url": "https://www.questors.org.uk/whats-on",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Big volunteer-run community theatre, two stages; Christmas family show plus steady drama programme."
+  },
+  {
+   "id": "lauderdalehouse",
+   "name": "Lauderdale House",
+   "area": "Highgate (Waterlow Park)",
+   "borough": "Camden",
+   "lat": 51.5698,
+   "lon": -0.1435,
+   "url": "https://www.lauderdalehouse.org.uk/whats-on/by-day",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Arts centre in a Tudor house in Waterlow Park; kids' classes and shows, exhibitions, music, Christmas events."
+  },
+  {
+   "id": "chiswickhousegardens",
+   "name": "Chiswick House & Gardens",
+   "area": "Chiswick",
+   "borough": "Hounslow",
+   "lat": 51.4833,
+   "lon": -0.2582,
+   "url": "https://www.chiswickhouseandgardens.org.uk/whats-on/",
+   "kind": "park",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Trust-run house and gardens; seasonal markets, grotto, workshops and yoga."
+  },
+  {
+   "id": "artsdepot",
+   "name": "artsdepot",
+   "area": "North Finchley",
+   "borough": "Barnet",
+   "lat": 51.6131,
+   "lon": -0.1765,
+   "url": "https://www.artsdepot.co.uk/whats-on",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Independent arts centre over the bus station; theatre, classes, family shows."
+  },
+  {
+   "id": "pitzhangermanorgallery",
+   "name": "Pitzhanger Manor & Gallery",
+   "area": "Ealing (Walpole Park)",
+   "borough": "Ealing",
+   "lat": 51.5108,
+   "lon": -0.3047,
+   "url": "https://www.pitzhanger.org.uk/whats-on",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Soane's country house and gallery; exhibitions, late openings, Mini Makers family sessions, workshops."
+  },
+  {
+   "id": "bentleypriorymuseum",
+   "name": "Bentley Priory Museum",
+   "area": "Stanmore",
+   "borough": "Harrow",
+   "lat": 51.6147,
+   "lon": -0.327,
+   "url": "https://www.bentleypriorymuseum.org.uk/whats-on",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Battle of Britain HQ museum; weekly Friday talks, craft and music sessions."
+  },
+  {
+   "id": "ruisliplidorailway",
+   "name": "Ruislip Lido Railway",
+   "area": "Ruislip",
+   "borough": "Hillingdon",
+   "lat": 51.59,
+   "lon": -0.429,
+   "url": "https://www.ruisliplidorailway.org/events",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run 12in-gauge lakeside railway; steam days, Santa Specials, Twilight Express."
+  },
+  {
+   "id": "kilntheatre",
+   "name": "Kiln Theatre",
+   "area": "Kilburn",
+   "borough": "Brent",
+   "lat": 51.5427,
+   "lon": -0.1966,
+   "url": "https://www.kilntheatre.com/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Local producing theatre and cinema on Kilburn High Road."
+  },
+  {
+   "id": "stjamesspiccadilly",
+   "name": "St James's Piccadilly",
+   "area": "Piccadilly",
+   "borough": "Westminster",
+   "lat": 51.5087,
+   "lon": -0.1365,
+   "url": "https://www.sjp.org.uk/whats-on",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Wren church with free lunchtime recitals, Saturday concerts and courtyard market."
+  },
+  {
+   "id": "chelseatheatre",
+   "name": "Chelsea Theatre",
+   "area": "World's End, Chelsea",
+   "borough": "Kensington & Chelsea",
+   "lat": 51.4826,
+   "lon": -0.1803,
+   "url": "https://chelseatheatre.org.uk/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community theatre on the World's End estate; panto, comedy, quiz, light switch-on, grotto."
+  },
+  {
+   "id": "thecockpit",
+   "name": "The Cockpit",
+   "area": "Marylebone",
+   "borough": "Westminster",
+   "lat": 51.5233,
+   "lon": -0.1695,
+   "url": "https://www.thecockpit.org.uk/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Small in-the-round fringe theatre with packed day-by-day programme incl. children's shows."
+  },
+  {
+   "id": "westwaytrust",
+   "name": "Westway Trust",
+   "area": "North Kensington",
+   "borough": "Kensington & Chelsea",
+   "lat": 51.5185,
+   "lon": -0.2068,
+   "url": "https://www.westway.org/whats-on",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community trust under the Westway; free Zumba, workshops, screenings, Carnival-linked events."
+  },
+  {
+   "id": "bushtheatre",
+   "name": "Bush Theatre",
+   "area": "Shepherd's Bush",
+   "borough": "Hammersmith & Fulham",
+   "lat": 51.504,
+   "lon": -0.225,
+   "url": "https://www.bushtheatre.co.uk/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "New-writing theatre in the old library at Shepherd's Bush Green; also community/library space."
+  },
+  {
+   "id": "thephoenixgarden",
+   "name": "The Phoenix Garden",
+   "area": "St Giles / Covent Garden",
+   "borough": "Camden",
+   "lat": 51.5144,
+   "lon": -0.1291,
+   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run wildlife garden; drop-in gardening, 55+ yoga/pilates/nature sessions, seasonal one-offs."
+  },
+  {
+   "id": "barnetmuseum",
+   "name": "Barnet Museum",
+   "area": "Chipping Barnet",
+   "borough": "Barnet",
+   "lat": 51.6527,
+   "lon": -0.2027,
+   "url": "https://www.barnetmuseum.co.uk/lecture-programme.html",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer local history museum; monthly Monday talks at St John the Baptist, Wood St."
+  },
+  {
+   "id": "kensalriselibrary",
+   "name": "Kensal Rise Library",
+   "area": "Kensal Rise",
+   "borough": "Brent",
+   "lat": 51.534,
+   "lon": -0.221,
+   "url": "https://kensalriselibrary.org/whats-on/",
+   "kind": "library",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "books",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community-run library saved by residents; baby/toddler music, chatty cafe, poetry nights, bridge."
+  },
+  {
+   "id": "friendsofhollandpark",
+   "name": "Friends of Holland Park",
+   "area": "Holland Park",
+   "borough": "Kensington & Chelsea",
+   "lat": 51.5025,
+   "lon": -0.203,
+   "url": "https://thefriendsofhollandpark.org/category/calendar/",
+   "kind": "park",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Friends group running bird walks, ringing demos, pop-ups and concerts in the park."
+  },
+  {
+   "id": "thefoxhanwell",
+   "name": "The Fox, Hanwell",
+   "area": "Hanwell",
+   "borough": "Ealing",
+   "lat": 51.5048,
+   "lon": -0.3375,
+   "url": "https://www.thefoxpub.co.uk/events/",
+   "kind": "pub",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "pub"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Independent canalside freehouse; weekly quiz and live music, makers markets and beer festivals."
+  },
+  {
+   "id": "hendondistrictarchaeol",
+   "name": "Hendon & District Archaeological Society (HADAS)",
+   "area": "Finchley",
+   "borough": "Barnet",
+   "lat": 51.5995,
+   "lon": -0.191,
+   "url": "https://hadas.org.uk",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Long-running local archaeology society; monthly public lectures at Stephens House, £2 non-members."
+  },
+  {
+   "id": "primrosehillcommunityl",
+   "name": "Primrose Hill Community Library",
+   "area": "Primrose Hill",
+   "borough": "Camden",
+   "lat": 51.5411,
+   "lon": -0.1546,
+   "url": "https://www.phcl.org/events-6/",
+   "kind": "library",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 3,
+    "tags": [
+     "books",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run library with busy calendar: rhyme time, kids' ballet, author events, gigs, craft fair."
+  },
+  {
+   "id": "pinnerlocalhistorysoci",
+   "name": "Pinner Local History Society",
+   "area": "Pinner",
+   "borough": "Harrow",
+   "lat": 51.5935,
+   "lon": -0.381,
+   "url": "https://www.pinnerlhs.org.uk/programme/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Monthly Thursday talks at Pinner Village Hall; visitors welcome, £3 donation."
+  },
+  {
+   "id": "themusicalmuseum",
+   "name": "The Musical Museum",
+   "area": "Brentford",
+   "borough": "Hounslow",
+   "lat": 51.488,
+   "lon": -0.293,
+   "url": "https://www.musicalmuseum.co.uk/event",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Volunteer-run museum of self-playing instruments with Wurlitzer concert hall; tea dances, silent films, tours."
+  },
+  {
+   "id": "chatspalace",
+   "name": "Chats Palace",
+   "area": "Homerton",
+   "borough": "Hackney",
+   "lat": 51.5508,
+   "lon": -0.044,
+   "url": "https://chatspalace.com/new-events/",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community arts centre in an old library; folk club, gigs, free workshops, has a Family events category."
+  },
+  {
+   "id": "wiltonsmusichall",
+   "name": "Wilton's Music Hall",
+   "area": "Whitechapel / Shadwell",
+   "borough": "Tower Hamlets",
+   "lat": 51.5106,
+   "lon": -0.0697,
+   "url": "https://www.wiltons.org.uk/whats-on",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "World's oldest surviving grand music hall; concerts, cabaret, history tours, family genre filter."
+  },
+  {
+   "id": "chickenshed",
+   "name": "Chickenshed",
+   "area": "Southgate",
+   "borough": "Enfield",
+   "lat": 51.6447,
+   "lon": -0.1367,
+   "url": "https://www.chickenshed.org.uk/whats-on",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Inclusive theatre company; big Christmas show, baby shows, community choir and drop-in cuppa."
+  },
+  {
+   "id": "upminsterwindmill",
+   "name": "Upminster Windmill",
+   "area": "Upminster",
+   "borough": "Havering",
+   "lat": 51.5576,
+   "lon": 0.242,
+   "url": "https://www.upminsterwindmill.org/whatson",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Restored 1803 smock mill run by a trust; monthly open days, markets, family fun days."
+  },
+  {
+   "id": "dalstoneasterncurvegar",
+   "name": "Dalston Eastern Curve Garden",
+   "area": "Dalston",
+   "borough": "Hackney",
+   "lat": 51.5467,
+   "lon": -0.0737,
+   "url": "https://dalstongarden.org/activities/",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community garden on old railway land; weekly groups plus seasonal workshops and festivals."
+  },
+  {
+   "id": "thecastlecinema",
+   "name": "The Castle Cinema",
+   "area": "Homerton",
+   "borough": "Hackney",
+   "lat": 51.5506,
+   "lon": -0.0437,
+   "url": "https://thecastlecinema.com/listings/",
+   "kind": "cinema",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "film",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Crowdfunded independent cinema; parent & baby, relaxed screenings, Q&As."
+  },
+  {
+   "id": "genesiscinema",
+   "name": "Genesis Cinema",
+   "area": "Mile End",
+   "borough": "Tower Hamlets",
+   "lat": 51.5222,
+   "lon": -0.0478,
+   "url": "https://www.genesiscinema.co.uk/whatson",
+   "kind": "cinema",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "film",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Independent cinema on Mile End Road; cheap tickets, Peppa/family events, NT Live, parent & baby."
+  },
+  {
+   "id": "arthousecrouchend",
+   "name": "ArtHouse Crouch End",
+   "area": "Crouch End",
+   "borough": "Haringey",
+   "lat": 51.581,
+   "lon": -0.121,
+   "url": "https://www.arthousecrouchend.co.uk/calendar/",
+   "kind": "cinema",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "film",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Independent cinema and arts venue; Babes in Arms screenings, NT Live, live events."
+  },
+  {
+   "id": "stepneycityfarm",
+   "name": "Stepney City Farm",
+   "area": "Stepney",
+   "borough": "Tower Hamlets",
+   "lat": 51.5177,
+   "lon": -0.0488,
+   "url": "https://stepneycityfarm.org/at-the-farm/events/",
+   "kind": "farm",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "animals",
+     "outdoors"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community farm with Saturday farmers' market, baby music, seasonal Harvest and Christmas markets."
+  },
+  {
+   "id": "unionchapel",
+   "name": "Union Chapel",
+   "area": "Highbury Corner",
+   "borough": "Islington",
+   "lat": 51.5437,
+   "lon": -0.1024,
+   "url": "https://www.unionchapel.org.uk/whats-on",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Working Victorian chapel and gig venue; concerts, comedy, guided tours."
+  },
+  {
+   "id": "brooksidetheatre",
+   "name": "Brookside Theatre",
+   "area": "Romford",
+   "borough": "Havering",
+   "lat": 51.577,
+   "lon": 0.189,
+   "url": "https://www.brooksidetheatre.com/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Small independent theatre in Romford; tribute shows, plays, local productions. Coordinates approximate."
+  },
+  {
+   "id": "haveringmuseum",
+   "name": "Havering Museum",
+   "area": "Romford",
+   "borough": "Havering",
+   "lat": 51.5794,
+   "lon": 0.1795,
+   "url": "https://www.haveringmuseum.org.uk/whats-on-events-at-havering-museum/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Independent charity museum; weekly talks, reminiscence sessions, Santa day. Galleries temporarily closed for leak repairs."
+  },
+  {
+   "id": "oxfordhouse",
+   "name": "Oxford House",
+   "area": "Bethnal Green",
+   "borough": "Tower Hamlets",
+   "lat": 51.5265,
+   "lon": -0.064,
+   "url": "https://www.oxfordhouse.org.uk/whats-on",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Historic settlement-house community centre; jazz nights, building tours, open mic."
+  },
+  {
+   "id": "theenfieldsociety",
+   "name": "The Enfield Society",
+   "area": "Enfield Town",
+   "borough": "Enfield",
+   "lat": 51.656,
+   "lon": -0.079,
+   "url": "https://www.enfieldsociety.org.uk/events/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Civic society running frequent guided walks and talks, plus local community listings."
+  },
+  {
+   "id": "bricklanemusichall",
+   "name": "Brick Lane Music Hall",
+   "area": "Silvertown",
+   "borough": "Newham",
+   "lat": 51.502,
+   "lon": 0.034,
+   "url": "https://bricklanemusichall.co.uk/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Traditional music hall with dinner shows; Christmas season and adults-only panto."
+  },
+  {
+   "id": "themille17",
+   "name": "The Mill E17",
+   "area": "Walthamstow",
+   "borough": "Waltham Forest",
+   "lat": 51.581,
+   "lon": -0.027,
+   "url": "https://themille17.org/events/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community-run space in a former library; regular social groups, free baby/toddler play room."
+  },
+  {
+   "id": "queenstheatrehornchurc",
+   "name": "Queen's Theatre Hornchurch",
+   "area": "Hornchurch",
+   "borough": "Havering",
+   "lat": 51.562,
+   "lon": 0.215,
+   "url": "https://www.queens-theatre.co.uk/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Producing theatre with many family shows; Christmas show, dementia-friendly and baby events."
+  },
+  {
+   "id": "abneypark",
+   "name": "Abney Park",
+   "area": "Stoke Newington",
+   "borough": "Hackney",
+   "lat": 51.5643,
+   "lon": -0.077,
+   "url": "https://abneypark.org/events/",
+   "kind": "park",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Trust-run cemetery nature reserve with restored chapel; tours, ecology walks, talks, concerts."
+  },
+  {
+   "id": "newhambookshop",
+   "name": "Newham Bookshop",
+   "area": "Plaistow",
+   "borough": "Newham",
+   "lat": 51.5307,
+   "lon": 0.031,
+   "url": "https://www.newhambooks.co.uk/events.php?within=NB",
+   "kind": "bookshop",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "books",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Long-running independent bookshop; author talks including children's authors."
+  },
+  {
+   "id": "estorickcollection",
+   "name": "Estorick Collection",
+   "area": "Canonbury",
+   "borough": "Islington",
+   "lat": 51.5426,
+   "lon": -0.1003,
+   "url": "https://www.estorickcollection.com/events",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Small Italian art museum in a Georgian house; under-5s sensory play and family art days."
+  },
+  {
+   "id": "hackneychurch",
+   "name": "Hackney Church (St John at Hackney)",
+   "area": "Hackney Central",
+   "borough": "Hackney",
+   "lat": 51.5498,
+   "lon": -0.0547,
+   "url": "https://hackney.church/",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 3,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Parish church that doubles as a major gig venue in its churchyard setting."
+  },
+  {
+   "id": "thameschaseforestcentr",
+   "name": "Thames Chase Forest Centre",
+   "area": "Cranham / Upminster",
+   "borough": "Havering",
+   "lat": 51.5375,
+   "lon": 0.2555,
+   "url": "https://www.tickettailor.com/events/thameschase",
+   "kind": "park",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community forest centre; family craft workshops, heritage walks, story and rhyme time. Own site errored; this is their own Ticket Tailor box office."
+  },
+  {
+   "id": "valentinesmansion",
+   "name": "Valentines Mansion (Friends of)",
+   "area": "Ilford / Gants Hill",
+   "borough": "Redbridge",
+   "lat": 51.568,
+   "lon": 0.07,
+   "url": "https://valentines.org.uk/events/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Friends' charity for the Georgian mansion in Valentines Park; free open days, open studios, under-5s storytime."
+  },
+  {
+   "id": "walthamstowtradeshall",
+   "name": "Walthamstow Trades Hall",
+   "area": "Walthamstow",
+   "borough": "Waltham Forest",
+   "lat": 51.583,
+   "lon": -0.02,
+   "url": "https://wegottickets.com/walthamstowtradeshall",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Members' club and community venue; Talks@Trades, comedy, karaoke, morning sing-alongs. No own site found; WeGotTickets venue page."
+  },
+  {
+   "id": "stbrideschurch",
+   "name": "St Bride's Church",
+   "area": "Fleet Street",
+   "borough": "City of London",
+   "lat": 51.5137,
+   "lon": -0.1054,
+   "url": "https://www.stbrides.com/whats-on/",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Wren 'journalists' church'; free Tue/Fri 1:15pm lunchtime recitals, choral concerts, carols."
+  },
+  {
+   "id": "bowesandboundsconnecte",
+   "name": "Bowes and Bounds Connected",
+   "area": "Bowes Park / Bounds Green",
+   "borough": "Haringey",
+   "lat": 51.606,
+   "lon": -0.118,
+   "url": "https://bowesandbounds.org/events/event/listUpcoming",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Hyper-local community network listing neighbourhood events (choirs, talks, flea fairs, quizzes)."
+  },
+  {
+   "id": "jacksonslane",
+   "name": "Jacksons Lane",
+   "area": "Highgate",
+   "borough": "Haringey",
+   "lat": 51.5755,
+   "lon": -0.1446,
+   "url": "https://www.jacksonslane.org.uk/whats-on/all-performances/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Arts centre in a former church: circus, opera, family shows."
+  },
+  {
+   "id": "orleanshousegallery",
+   "name": "Orleans House Gallery",
+   "area": "Twickenham",
+   "borough": "Richmond upon Thames",
+   "lat": 51.4459,
+   "lon": -0.3196,
+   "url": "https://orleanshousegallery.org/whats-on/",
+   "kind": "gallery",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "art",
+     "local"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Riverside gallery with free exhibitions, family art sessions and talks."
+  },
+  {
+   "id": "telegraphhillcentre",
+   "name": "Telegraph Hill Centre",
+   "area": "Telegraph Hill",
+   "borough": "Lewisham",
+   "lat": 51.4697,
+   "lon": -0.0435,
+   "url": "https://thcentre.com/category/events/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-05",
+   "note": "Community centre: markets, screenings, sound baths, kids' clubs."
   }
  ]
 }
