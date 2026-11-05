@@ -154,7 +154,7 @@ function pageChecks(scopeSel, label) {
       const snap = async (s, issues) => { if (issues.length) { const f = path.join(OUT, `${bname}-${ph.width}-${s.replace(/[^a-z0-9]+/gi, '_').slice(0, 50)}.png`); await page.screenshot({ path: f }); issues.forEach(x => x.shot = path.relative(process.cwd(), f)); } all.push(...issues); };
       await page.goto(BASE);
       if (process.env.INJECT_CSS) await page.addInitScript(css => { document.addEventListener('DOMContentLoaded', () => { const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st); }); }, process.env.INJECT_CSS);
-      await page.evaluate(sat => { localStorage.clear(); localStorage.setItem('wtd.places', JSON.stringify(['SE4 1QA', 'KT2 5RA', 'NW7 1LA', 'E17 4PP']));
+      await page.evaluate(sat => { localStorage.clear(); localStorage.setItem('wtd.places', JSON.stringify(['SE4 1QA', 'KT2 5RA', 'NW7 1LA', 'E17 4PP'])); localStorage.setItem('wtd.hinted', 'true');
         localStorage.setItem('wtd.setup', JSON.stringify({ who: 'family', date: sat, pc: 'SE4 1QA', lat: 51.4565, lon: -0.0245, place: 'Ladywell', modes: ['transit', 'bike', 'car'], ages: ['0-2', '3-5', '6-9', '10-13'] })); }, sat);
       await page.reload(); await page.waitForTimeout(1200);
       // setup steps
