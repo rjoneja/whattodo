@@ -1,0 +1,36 @@
+name: newsletters
+# Reads the newsletter inbox (denverhudson70@gmail.com) each morning and adds the London events in it.
+on:
+  schedule:
+    - cron: "50 7 * * *"
+  workflow_dispatch:
+    inputs:
+      days: {description: "How many days of email to look back over", default: "10"}
+permissions:
+  contents: write
+jobs:
+  read:
+    runs-on: ubuntu-24.04
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      NEWS_IMAP_USER: ${{ secrets.NEWS_IMAP_USER }}
+      NEWS_IMAP_PASS: ${{ secrets.NEWS_IMAP_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install anthropic pillow
+      - run: python3 newsletters.py --days ${{ github.event.inputs.days || '10' }}
+      - run: python3 tidy.py
+      - run: python3 official_links.py || true
+      - run: python3 images.py --events docs/events.json --out docs/images.json || true
+      - run: python3 share_pages.py
+      - run: python3 sources_page.py || true
+      - name: Save
+        run: |
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add docs/events.json docs/images.json docs/e docs/sources
+          [ -f news_seen.json ] && git add news_seen.json
+          git commit -m "newsletters $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break; echo "push failed, retry $i"; sleep $((i*15)); done
+          git diff --quiet origin/main HEAD || { echo 'push never succeeded'; exit 1; }

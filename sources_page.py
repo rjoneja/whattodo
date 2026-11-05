@@ -23,7 +23,8 @@ VENUE_GROUPS = [
 CATS = [("boroughs", "Boroughs", "Council what's-on listings, one per borough.",
          [v for v in V if v.get("kind") == "council"])]
 CATS.append(("instagram", "Instagram", "Public accounts we follow for pop-ups, one-offs and things that never make a listings site.", None))
-CATS.append(("blogs", "Blogs & newsletters", "Independent London writers who find the odd and wonderful.",
+CATS.append(("newsletters", "Newsletters", "Emails sent to the JauntOut inbox, read each morning. Confirmation emails waiting to be clicked are flagged.", None))
+CATS.append(("blogs", "Blogs", "Independent London writers who find the odd and wonderful.",
              [v for v in V if v.get("kind") == "blog"]))
 CATS.append(("listings", "Listings & ticketing", "Aggregators and ticket sites. We prefer the venue's own listing when both have it.",
              [v for v in V if v.get("kind") in {"aggregator", "ticketing"}]))
@@ -59,6 +60,23 @@ for key, title, blurb, items in CATS:
                                     " · ".join(x for x in ["@" + a["handle"], a.get("area")] if x),
                                     count[f"Instagram @{a['handle']}"]) for a in accs) + "</ul>"
         n = len(accs)
+    elif key == "newsletters":
+        NS = json.load(open("news_seen.json")) if os.path.exists("news_seen.json") else {}
+        by = {}
+        for m in NS.values():
+            b = by.setdefault(m.get("addr") or m.get("from"), {"name": m.get("from", ""), "addr": m.get("addr", ""), "mails": 0, "confirm": False, "last": ""})
+            if m.get("kind") == "confirm": b["confirm"] = True
+            else: b["mails"] += 1; b["last"] = max(b["last"], m.get("day", ""))
+        rows = []
+        for b in sorted(by.values(), key=lambda b: (-count[f"Newsletter: {b['name']}"], b["name"].lower())):
+            n_ev = count[f"Newsletter: {b['name']}"]
+            sub = " · ".join(x for x in [b["addr"], f"{b['mails']} email{'s' if b['mails'] != 1 else ''} read" if b["mails"] else "", "confirm in inbox" if b["confirm"] and not b["mails"] else ""] if x)
+            st = "bad" if b["confirm"] and not b["mails"] else ("" if n_ev else "quiet")
+            badge = f'<span class="n">{n_ev}</span>' if n_ev else '<span class="n z">–</span>'
+            flag = '<em class="bad">confirm</em>' if st == "bad" else ('<em class="quiet">nothing live</em>' if st == "quiet" else "")
+            rows.append(f'<li data-q="{esc((b["name"] + " " + b["addr"]).lower())}" data-st="{st or "ok"}"><a><b>{esc(b["name"])}</b><small>{esc(sub)}</small></a>{flag}{badge}</li>')
+        body = "<ul>" + ("".join(rows) or '<li data-q="" data-st="ok"><a><b>No emails read yet</b><small>the reader runs each morning</small></a></li>') + "</ul>"
+        n = len(by)
     elif key == "venues":
         body = "".join(f'<h3>{esc(t)}</h3><ul>{venue_rows(vs)}</ul>' for t, vs in items if vs)
         n = sum(len(vs) for _, vs in items)
