@@ -54,4 +54,4 @@ jobs:
         run: python3 sources_page.py || true
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: |
-          .github/push.sh "content $(date +%F)" docs/events.json docs/images.json docs/e docs/sources venues.json accounts.json ig_seen.json ingest_cache.json
+          .github/push.sh "content $(date +%F)" docs/events.json docs/images.json docs/e docs/sources docs/followed.json venues.json accounts.json ig_seen.json ingest_cache.json

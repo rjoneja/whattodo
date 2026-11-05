@@ -39,6 +39,14 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .step h2,.card h3,#v-list h2,#v-map h2{font-family:var(--brand);font-weight:400;letter-spacing:-.015em}
 .bar .ctx{font-size:12px;color:var(--ink-2);text-align:right;line-height:1.35;max-width:62%}
 .bar .ctx b{color:var(--ink);font-weight:600}
+.srchbtn{flex:none;width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);display:grid;place-items:center;cursor:pointer;margin-left:auto}
+.srchbtn svg{width:19px;height:19px}
+.srch{display:flex;gap:8px;align-items:center;margin:4px 0 10px}
+.srch input{flex:1;min-width:0;font:16px var(--body);color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 14px}
+.srch input::placeholder{color:var(--ink-3);opacity:.7}.srch input:focus{outline:2px solid var(--moss);outline-offset:1px}
+.item.sr{cursor:pointer;grid-template-columns:auto 1fr auto}.item.sr .em{font-size:22px;line-height:1}.item.sr .go{color:var(--moss);font-family:var(--display);font-weight:700}
+.snone{border:1px dashed var(--line);border-radius:14px;padding:16px;color:var(--ink-2);font-size:14px}.snone b{color:var(--ink);display:block;margin-bottom:4px;font-family:var(--display)}
+.snone a,.hint a{color:var(--sky)}
 
 .eyebrow{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .step{display:flex;flex-direction:column;gap:calc(var(--u)*2)}
@@ -289,6 +297,7 @@ td.n{text-align:right}
   <div class="bar">
     <button class="logo" id="logo" aria-label="JauntOut London, home">jaunt<svg viewBox="0 0 60 84" aria-hidden="true" class="pin"><path fill-rule="evenodd" d="M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z"></path></svg>ut<span class="city">LONDON</span></button>
     <div class="ctx" id="ctx"></div>
+    <button class="srchbtn" id="bSearch" aria-label="Search for a venue, area or event"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
   </div>
 
   <!-- SETUP -->
@@ -356,6 +365,14 @@ td.n{text-align:right}
     </div>
     <div class="items" id="items"></div>
     <p class="hint listyours">Running something people can turn up to? <a href="/submit/">List your event</a>, free.</p>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="view" id="v-search" hidden>
+    <div class="srch"><input id="q" type="search" placeholder="A venue, an area or an event" autocomplete="off" autocapitalize="off" enterkeyhint="search" aria-label="Search">
+      <button class="mini" id="qDone">Done</button></div>
+    <p class="hint" id="sHint">Is something on at a place you know? Search everything we list, on any date.</p>
+    <div class="items" id="sres"></div>
   </section>
 
   <!-- MAP -->
@@ -490,7 +507,7 @@ const STATS={url:null,q:[],dev:null};
 const STAT_MAP={  // what's sent: event → [a, b, id]
   visit:d=>[d.via,d.ret?'returning':'new',null], share:d=>[d.who,d.event?'event':'place',d.id], share_open:d=>[d.via,null,d.id],
   swipe:d=>[d.kind,d.how,d.id], setup_done:d=>[d.who,d.mode,null], trip_open:d=>[null,null,d.id], trip_pick:d=>[d.kind,null,d.id],
-  map_action:d=>[d.kind,null,d.id], undo:d=>[null,null,d.id] };
+  map_action:d=>[d.kind,null,d.id], undo:d=>[null,null,d.id], search:d=>[d.q,String(d.n),d.f?'1':null] };
 function flushStats(leaving){ if(!STATS.url||!STATS.dev||!STATS.q.length) return; const body=JSON.stringify({d:STATS.dev,e:STATS.q.splice(0,60)});
   try{ if(leaving&&navigator.sendBeacon){ navigator.sendBeacon(STATS.url+'/e',new Blob([body],{type:'text/plain'})); return; }
     fetch(STATS.url+'/e',{method:'POST',body,headers:{'content-type':'text/plain'},keepalive:true}).catch(()=>{}); }catch(e){} }
@@ -1190,12 +1207,62 @@ $('#wipe').onclick=()=>{try{['wtd.setup','wtd.status','wtd.swipes','wtd.log'].fo
 let taps=0,tapT=0; $('#logo').onclick=()=>{const now=Date.now(); taps=(now-tapT<900)?taps+1:1; tapT=now; if(taps>=7){taps=0;go('stats')} else if(taps===1&&setup.lat) go('deck')};
 
 /* ---------- ROUTING ---------- */
-const VIEWS=['setup','deck','map','list','stats'];
+const VIEWS=['setup','deck','map','list','stats','search'];
+/* ---------- SEARCH: everything we list, any date ---------- */
+let FOLLOWED=null, sTimer=null, sLast='';
+const fold=t=>(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[’']/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+async function openSearch(){ await Promise.all([loadEvents(),loadImages()]);
+  if(!FOLLOWED) fetch('/followed.json',{cache:'no-cache'}).then(r=>r.ok?r.json():[]).then(j=>{FOLLOWED=j;runSearch()}).catch(()=>FOLLOWED=[]);
+  const q=$('#q'); setTimeout(()=>q.focus(),60); runSearch(); }
+function whenText(e){ const today=iso(new Date());
+  if(e.date) return nice(fromIso(e.date))+(e.time?' · '+e.time:'');
+  const dn=e.days?(e.days.length===1?['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][e.days[0]]+'s ':''):'';
+  if(e.to) return dn+(e.from&&e.from>today?'from '+nice(fromIso(e.from))+' ':'')+'until '+nice(fromIso(e.to));
+  return dn?dn.trim():'Most days'; }
+function runSearch(){ const raw=$('#q').value, q=fold(raw), el=$('#sres'); $('#sHint').hidden=!!q;
+  if(q.length<2){ el.innerHTML=''; return; }
+  const words=q.split(' '), today=iso(new Date());
+  const pool=[...EVENTS.filter(e=>(e.date||e.to||'9999')>=today),...ITEMS];
+  const hits=[];
+  for(const it of pool){ const name=fold(it.name), src=fold([it.source,...(it.also||[])].join(' ')), area=fold(it.area), hay=name+' '+src+' '+area+' '+fold((it.tags||[]).join(' '));
+    if(!words.every(w=>hay.includes(w))) continue;
+    const sc=(name.includes(q)?4:0)+(src.includes(q)?3:0)+(area.includes(q)?2:0)+(it.event?0.5:0);
+    hits.push({it,sc,when:it.date||(it.from&&it.from>today?it.from:today)}); }
+  hits.sort((a,b)=>b.sc-a.sc||a.when.localeCompare(b.when));
+  const fol=(FOLLOWED||[]).find(f=>{const n=fold(f.n);return n&&(n.includes(q)||(q.length>=4&&q.includes(n)))});
+  if(!hits.length){
+    el.innerHTML=`<div class="snone">${fol?`<b>We follow ${escH(fol.n)}, but nothing's listed right now</b>New dates usually appear a few weeks ahead.`
+      :`<b>Nothing found for “${escH(raw.trim())}”</b>We don't list anything there yet.`} Know something's on? <a href="/submit/">List it</a>, free.</div>`;
+  } else {
+    el.innerHTML=hits.slice(0,40).map(({it})=>`<div class="item sr" data-sid="${escH(it.id)}" role="button" tabindex="0"><span class="em" aria-hidden="true">${emojiFor(it)}</span>
+      <div><b>${escH(it.name)}</b><span class="m">${escH(it.event?whenText(it):'Open regularly')} · ${escH(it.area||'')}${setup.lat?' · ~'+estMins(it)+' min':''}</span></div><span class="go">›</span></div>`).join('')
+      +(hits.length>40?`<p class="hint">Showing 40 of ${hits.length}. Add a word to narrow it down.</p>`:'')
+      +`<p class="hint">Not what you're after? <a href="/submit/">List an event</a>.</p>`;
+    el.querySelectorAll('[data-sid]').forEach(r=>r.onclick=r.onkeydown=e=>{ if(e.type==='keydown'&&e.key!=='Enter') return; openInDeck(r.dataset.sid,'search'); });
+  }
+  clearTimeout(sTimer); sTimer=setTimeout(()=>{ if(q.length>=3&&q!==sLast){ sLast=q; track('search',{q:q.slice(0,60),n:hits.length,f:!!fol}); } },1500);
+}
+// show one listing as the top card, moving to a date it's on if the chosen day doesn't suit
+async function openInDeck(id,via){ const ev=[...EVENTS,...ITEMS].find(x=>x.id===id); if(!ev) return;
+  const prev=setup.date, today=iso(new Date());
+  if(ev.date) setup.date=ev.date;
+  else { const ok=()=>ev.event?eventOn(ev):openOn(ev); if(!setup.date||setup.date<today) setup.date=today;
+    if(!ok()){ let d=fromIso(ev.from&&ev.from>today?ev.from:today); for(let i=0;i<70;i++){ setup.date=iso(d); if(ok()) break; d.setDate(d.getDate()+1); } } }
+  if(!setup.lat){ setup.lat=51.5074; setup.lon=-0.1278; setup.place='Central London'; if(!setup.modes.length){setup.modes=['transit'];syncMode();} setup.who=setup.who||'couple'; setup.guest=true; }
+  save(); await buildDeck(); const i=deck.findIndex(x=>x.id===id);
+  if(i>0){ const [x]=deck.splice(i,1); deck.unshift(x); } else if(i<0){ deck.unshift(Object.assign({},ev,trip(ev),{est:true,score:99,why:[]})); }
+  renderStack(); go('deck'); if(setup.date!==prev) toast('Showing '+nice(fromIso(setup.date)));
+}
+$('#bSearch').onclick=()=>go('search');
+$('#qDone').onclick=()=>go(setup.lat?'deck':'setup');
+$('#q').addEventListener('input',runSearch);
+$('#q').addEventListener('keydown',e=>{ if(e.key==='Enter') e.target.blur(); });
+
 function go(v,push=true){
   if(v==='deck'&&!setup.lat) v='setup';
   VIEWS.forEach(x=>$('#v-'+x).hidden=x!==v); $('.wrap').classList.toggle('fit',v==='deck');
   $('#nav').hidden=!setup.lat||v==='stats'; $('#nav').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.go===v));
-  if(v==='list')renderList(); if(v==='map')renderMap(); if(v==='stats')renderStats(); if(v==='setup'){gotoStep('who');renderWho()}
+  if(v==='list')renderList(); if(v==='search')openSearch(); if(v==='map')renderMap(); if(v==='stats')renderStats(); if(v==='setup'){gotoStep('who');renderWho()}
   if(push&&location.hash!=='#'+v){try{history_replace(v)}catch(e){}}
   window.scrollTo({top:0});
 }

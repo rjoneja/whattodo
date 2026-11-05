@@ -40,6 +40,11 @@ for v in LOCAL: by_b[v.get("borough") or "Other"].append(v)
 CATS.insert(1, ("local", "Local & neighbourhood", "Community centres, pubs, churches, libraries, small theatres and societies: the things on people's doorsteps.",
                 sorted(by_b.items())))
 
+# names of everything we follow, for the app's search ("we follow X, but nothing's listed right now")
+_fol = [{"n": v["name"], "a": v.get("area") or ""} for v in V if v.get("kind") not in ("aggregator", "ticketing", "blog")] + \
+       [{"n": a.get("name") or a["handle"], "a": a.get("area") or ""} for a in A if isinstance(a, dict) and a.get("handle")]
+json.dump(_fol, open("docs/followed.json", "w"), ensure_ascii=False, separators=(",", ":"))
+
 def esc(s): return html.escape(str(s or ""))
 def site(url):
     m = re.match(r"https?://(www\.)?([^/]+)", url or ""); return m.group(2) if m else ""

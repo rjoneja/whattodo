@@ -30,4 +30,4 @@ jobs:
       - run: python3 share_pages.py
       - run: python3 sources_page.py || true
       - run: |
-          .github/push.sh "web $(date +%F)" docs/events.json docs/images.json docs/e docs/sources venues.json ingest_cache.json
+          .github/push.sh "web $(date +%F)" docs/events.json docs/images.json docs/e docs/sources docs/followed.json venues.json ingest_cache.json

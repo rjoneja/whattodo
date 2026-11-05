@@ -85,6 +85,12 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--ink-2);font-size:13px
       <div class="panel"><table id="topShared"></table></div>
     </div>
 
+    <h2>Search</h2>
+    <div class="cols">
+      <div class="panel"><table id="searches"></table></div>
+      <div class="panel"><table id="misses"></table></div>
+    </div>
+
     <h2>Swiping</h2>
     <div class="cols">
       <div class="panel"><table id="swipes"></table></div>
@@ -138,6 +144,8 @@ function render(S){
   tiles('#tiles2',[[shares,'Shares','WhatsApp button pressed'],[opens,'Opened','shared links tapped'],[shares?Math.round(100*opens/shares)+'%':'—','Open rate','opens per share']]);
   table('#shareWho','Shared by',S.shareWho.map(x=>[lab(x.who),x.n]),'Shares');
   table('#topShared','Most shared',S.topShared.map(x=>[names[x.id]||x.id,x.n]),'Shares');
+  table('#searches','Searched for (found something)',(S.searches||[]).map(x=>[x.q,x.n]),'Times');
+  table('#misses','Searched for, nothing found: sources to add?',(S.misses||[]).map(x=>[x.q+(x.followed?' (we follow it)':''),x.n]),'Times');
   table('#swipes','Swipes',S.swipes.map(x=>[lab(x.kind),x.n]),'Count');
   table('#topSaved','Most saved',S.topSaved.map(x=>[names[x.id]||x.id,x.n]),'Saves');
   table('#who','Who’s going',S.who.map(x=>[lab(x.who),x.phones]),'Phones');
