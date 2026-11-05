@@ -249,22 +249,21 @@ def main():
     if os.path.exists(a.out):
         for e in json.load(open(a.out)).get("events", []): existing[key(e)] = e
 
-    found = []
-    for v in venues:
-        if a.only and v["id"] != a.only: continue
+    def one(v):
+        """One venue: its log lines and its events. Venues are different sites, so several run at once."""
+        log = [f"{v['id']} [{v.get('feed', 'html')}]"]
         feed = v.get("feed", "html")
-        print(f"{v['id']} [{feed}]", file=sys.stderr)
         try:
             if feed == "jsonld" or feed == "eventbrite": evs = harvest_jsonld(v)
             elif feed == "ics": evs = harvest_ics(v)
             elif feed in ("rss", "html", "error"): evs = [] if a.no_llm else harvest_html(v, horizon)
             else: evs = []
         except Exception as ex:
-            print(f"  failed: {str(ex)[:120]}", file=sys.stderr); evs = []
+            log.append(f"  failed: {str(ex)[:120]}"); evs = []
         evs = [e for e in evs if (e.get("date") or e.get("to", "")) >= today.isoformat() and (e.get("date") or e.get("from", "")) <= horizon.isoformat()]
         if evs and not a.no_llm:
             try: evs = enrich(evs, v)
-            except Exception as ex: print(f"  enrich failed: {str(ex)[:80]}", file=sys.stderr)
+            except Exception as ex: log.append(f"  enrich failed: {str(ex)[:80]}")
         elif evs:                                     # no LLM: venue defaults, description as blurb
             d = v.get("defaults", {})
             for e in evs:
@@ -274,9 +273,15 @@ def main():
         for e in evs:
             e.pop("raw_desc", None); e["id"] = slug(e); e["source"] = e.get("source") or v["name"]
         ok = [e for e in evs if valid(e, today, horizon)]
-        print(f"  {len(ok)} events", file=sys.stderr)
-        found += ok
-        time.sleep(1.5)
+        log.append(f"  {len(ok)} events")
+        return log, ok
+
+    from concurrent.futures import ThreadPoolExecutor
+    todo = [v for v in venues if not (a.only and v["id"] != a.only)]
+    found = []
+    with ThreadPoolExecutor(max_workers=int(os.environ.get("INGEST_WORKERS", "6"))) as pool:
+        for log, ok in pool.map(one, todo):
+            print("\n".join(log), file=sys.stderr); found += ok
 
     merged = dict(existing)
     for e in found: merged[key(e)] = carry(existing[key(e)], e) if key(e) in existing else e
