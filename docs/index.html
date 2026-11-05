@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='1e2c54c48c';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='17437cba94';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -108,8 +108,8 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .deck{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}
 .stack{position:relative;flex:1;min-height:260px}
 .card{position:absolute;top:0;left:0;right:0;height:auto;max-height:100%;min-height:58%;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:calc(var(--u)*1.1);padding:calc(var(--u)*2);touch-action:none;user-select:none;will-change:transform;overflow:hidden}
-.card.under{transform:translate(0,calc(var(--u)*1.2)) scale(.97)}
-.card.under2{transform:translate(0,calc(var(--u)*2.4)) scale(.94)}
+.card.under{transform:translate(0,calc(var(--u)*1.8)) scale(.96)}
+.card.under2{transform:translate(0,calc(var(--u)*3.5)) scale(.92)}
 /* faded with a solid tint, not transparency, so the card behind never shows through */
 .card.under::after,.card.under2::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--paper);pointer-events:none;transition:opacity .22s ease}
 .card.under::after{opacity:.35}.card.under2::after{opacity:.65}
@@ -149,6 +149,9 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .stamp{position:absolute;top:calc(var(--u)*2.5);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;padding:6px 14px;border-radius:999px;opacity:0;pointer-events:none;color:#fff}
 .stamp.save{right:calc(var(--u)*2);background:var(--moss)}
 .stamp.pass{left:calc(var(--u)*2);background:var(--verm)}
+.hintcap{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);z-index:9;box-shadow:0 4px 16px rgba(0,0,0,.35);white-space:nowrap;font-family:var(--display);font-weight:600;font-size:13px;
+  color:var(--paper);background:var(--ink);padding:6px 12px;border-radius:999px;opacity:0;transition:opacity .3s;pointer-events:none}
+.hintcap.show{opacity:1}
 .card.flying{transition:transform .35s cubic-bezier(.2,.7,.3,1),opacity .35s}
 .card.returning{transition:transform .25s}
 
@@ -963,7 +966,7 @@ function renderStack(){
         if(n<1) b.style.display='none'; else Object.assign(b.style,{display:'-webkit-box',webkitBoxOrient:'vertical',webkitLineClamp:String(n),maxHeight:(n*lh)+'px',overflow:'hidden'}); } });
     const tops=st.querySelectorAll('.card');if(tops.length>1){const h=tops[0].offsetHeight;tops.forEach((c,i)=>{if(i>0){c.style.height=h+'px';c.style.minHeight='0';c.classList.add('peek');}});} });
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
-  deck.slice(0,3).forEach(refineTravel);
+  deck.slice(0,3).forEach(refineTravel); setTimeout(swipeHint,0);
   st.querySelectorAll('[data-tr]').forEach(b=>b.onclick=e=>{e.stopPropagation();const c=deck.find(x=>x.id===b.closest('.card').dataset.id);if(c)openTrip(c)});
 }
 async function refineTravel(c){ if(!c.est||!has('transit')||c.how==='walk') return; const t=await tflMins(c); if(!t) return;
@@ -972,6 +975,23 @@ async function refineTravel(c){ if(!c.est||!has('transit')||c.how==='walk') retu
   const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.innerHTML=TRICON+escH(travelLabel(c))+'<i>›</i>'} }
 
 /* drag */
+// First time on the deck: the top card nudges right (Save) then left (Nope) so the swipe is obvious. Stops once they've swiped.
+let hintPlayed=false;
+function swipeHint(){
+  if(hintPlayed||LS.get('wtd.hinted',false)||$('#v-deck').hidden||!$('#stack .card')) return; hintPlayed=true;
+  setTimeout(()=>{ const el=$('#stack .card:not(.under):not(.under2)'); if(!el||$('#v-deck').hidden){hintPlayed=false;return;}   // the card on screen now, after any re-render
+    const cap=document.createElement('div'); cap.className='hintcap'; cap.textContent='Swipe right to save · left to pass'; el.appendChild(cap);
+    const stop=()=>{ cap.classList.remove('show'); setTimeout(()=>cap.remove(),400); };
+    requestAnimationFrame(()=>cap.classList.add('show'));
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches||!el.animate){ setTimeout(stop,3200); return; }
+    const sS=el.querySelector('.stamp.save'), sP=el.querySelector('.stamp.pass'), o={duration:2600,easing:'ease-in-out'};
+    const a=el.animate([{transform:'none'},{transform:'translate(64px,-4px) rotate(4deg)',offset:.22},{transform:'translate(64px,-4px) rotate(4deg)',offset:.32},{transform:'none',offset:.48},
+      {transform:'translate(-64px,-4px) rotate(-4deg)',offset:.7},{transform:'translate(-64px,-4px) rotate(-4deg)',offset:.8},{transform:'none'}],o);
+    sS&&sS.animate([{opacity:0},{opacity:.95,offset:.22},{opacity:.95,offset:.32},{opacity:0,offset:.46},{opacity:0}],o);
+    sP&&sP.animate([{opacity:0},{opacity:0,offset:.5},{opacity:.95,offset:.7},{opacity:.95,offset:.8},{opacity:0,offset:.95},{opacity:0}],o);
+    el.addEventListener('pointerdown',()=>{a.cancel();stop()},{once:true}); a.onfinish=()=>setTimeout(stop,900);
+  },1200);
+}
 function attachDrag(el){
   let sx=0,sy=0,dx=0,dy=0,on=false;
   const sS=el.querySelector('.stamp.save'),sP=el.querySelector('.stamp.pass');
@@ -994,7 +1014,7 @@ function act(kind,el){
     if(hit.length||near) rerank(3); }
   else if(kind==='again'){status[c.id]='again';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Kept in the mix')}
   else if(kind==='done'){status[c.id]='done';toast('Ticked off')}
-  save(); track('swipe',{id:c.id,kind,who:setup.who,mode:setup.modes.join('+'),how:c.how,mins:c.mins});
+  LS.set('wtd.hinted',true); save(); track('swipe',{id:c.id,kind,who:setup.who,mode:setup.modes.join('+'),how:c.how,mins:c.mins});
   deck.shift(); const target=el||$('#stack .card');
   if(target) fly(target,kind==='pass'?-1:1,renderStack); else renderStack();
 }
