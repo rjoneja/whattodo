@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='e3e28a3d9b';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='4da3d15603';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -154,8 +154,11 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .sheet h3{font-size:21px;font-weight:600}
 
 /* journey sheet */
-.trbtn{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
-.trbtn i{font-style:normal;font-family:var(--display);font-weight:600;opacity:.6;margin-left:1px}
+.trbtn{display:inline-flex;align-items:center;gap:5px;cursor:pointer;font-family:var(--body);font-size:12px;font-weight:600;color:var(--ink);background:var(--card-2,#22382B);
+  box-shadow:inset 0 0 0 1.5px var(--moss);padding:3px 6px 3px 7px}
+.trbtn svg{width:13px;height:13px;flex:none;stroke:var(--moss)}
+.trbtn i{font-style:normal;font-family:var(--display);font-weight:700;color:var(--moss);margin-left:1px}
+.trbtn:active{transform:scale(.97)}
 .trip .panel{max-height:calc(100dvh - 16px);overflow:auto;gap:10px;padding:16px 16px 12px}
 .trip .eyebrow{margin-bottom:-8px;font-size:11px}
 .trip h3{font-family:var(--brand);font-weight:400;font-size:21px;letter-spacing:-.015em;line-height:1.1}
@@ -846,11 +849,26 @@ function renderStrip(){
   const whoL={solo:'Just me',couple:'Couple',family:'Family · '+setup.ages.join(', '),friends:'Friends'}[setup.who]||'';
   $('#ctx').innerHTML=`<b>${whoL}</b><br>${nice(d)} · ${setup.pc||''}`;
 }
+const TRICON='<svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="4" cy="12" r="1.8"/><circle cx="12" cy="4" r="1.8"/><path d="M5.6 11c2.4-.4 2-3.4 4.6-5.4"/></svg>';
 function travelLabel(c){ if((c.how||'transport')==='transport'&&c.route&&!c.est) return c.mins+' min '+(c.route==='walk'?'walk':'· '+c.route)+(c.note&&c.how==='cycle'?' ('+c.note+')':'');
   return (c.est&&c.how!=='walk'?'~':'')+c.mins+' min '+({drive:'drive',cycle:'by bike',transport:'by bus or train',walk:'walk'}[c.how||'transport'])+(c.how==='drive'&&c.parking?' ('+c.parking+')':'')+(c.note&&c.how==='transport'&&setup.mode==='bike'?' ('+c.note+')':'') }
 /* ---------- SHARING ---------- */
-const EMOJI=[[/pickle/i,'🥒'],[/firework|bonfire/i,'🎆'],[/christmas|xmas|festive|santa/i,'🎄'],[/diwali|lantern|light show|illuminat/i,'🪔'],[/market|fair|bazaar/i,'🛍️'],[/food|street food|supper|brunch|tasting|beer|wine/i,'🍽️'],[/farm|animal|zoo|alpaca|goat/i,'🐐'],[/park|garden|walk|nature|wood|forest|heath|wetland/i,'🌳'],[/music|concert|gig|choir|orchestra|jazz|shanty/i,'🎶'],[/theatre|show|puppet|panto|circus|comedy/i,'🎭'],[/museum|exhibition|gallery|history|art/i,'🖼️'],[/swim|lido/i,'🏊'],[/train|railway|bus|transport/i,'🚂'],[/kids|family|play|story/i,'🎈']];
-function emojiFor(c){const t=c.name+' '+(c.tags||[]).join(' ');for(const [re,e] of EMOJI) if(re.test(t)) return e; return '📍';}
+// what the thing IS beats where it happens: specific subjects first, generic formats (show, talk, workshop) last
+const EMOJI=[[/pickle/i,'🥒'],[/\bspace (show|science|station|age|exploration)|outer space|universe|planet|rocket|astronom|stargaz|planetarium|cosmos|galax|\bmoon\b|solar system|astronaut/i,'🚀'],[/dinosaur|fossil|t\. ?rex/i,'🦕'],
+  [/firework|bonfire|guy fawkes/i,'🎆'],[/christmas|xmas|festive|santa|carol|advent|nativity/i,'🎄'],[/diwali|lantern|light show|illuminat/i,'🪔'],[/halloween|spooky|pumpkin/i,'🎃'],
+  [/hanukkah|chanukah/i,'🕎'],[/remembrance|poppy|armistice/i,'🌺'],[/science|experiment|robot|coding|stem\b|engineering|lab\b/i,'🔬'],
+  [/\bbooks?\b|reading|author|poetry|storytell|story ?time|rhyme/i,'📚'],[/film|cinema|screening|movie/i,'🎬'],[/dance|disco|ballet|ceilidh|salsa/i,'💃'],
+  [/roller|skate|skating/i,'⛸️'],[/swim|lido/i,'🏊'],[/cycl|bike|bmx/i,'🚲'],[/parkrun|fun run|running club|\b(5|10)k\b|half marathon/i,'🏃'],[/yoga|pilates|wellbeing|meditat|sound ?bath/i,'🧘'],
+  [/football|cricket|rugby|tennis|sport/i,'⚽'],[/quiz|trivia/i,'🧠'],[/chess|board ?game|games night/i,'♟️'],[/\bboats?\b|river (walk|cruise|trip)|canal|cruise|\bships?\b/i,'⛵'],
+  [/\btrains?\b|railway|steam|\btrams?\b|\bbus\b|transport museum/i,'🚂'],[/\bbirds?\b|wildlife|nature|bat walk|\bponds?\b|\bbugs?\b|insect|butterfl/i,'🦉'],[/farm|animal|zoo|alpaca|goat|pony|sheep/i,'🐐'],
+  [/\btrees?\b|\bparks?\b|garden|\bwalks?\b|\bwoods?\b|forest|\bheath\b|wetland|allotment|\bplants?\b/i,'🌳'],[/market|fair|bazaar|car boot|jumble|vintage/i,'🛍️'],
+  [/food|street food|supper|brunch|tasting|beer|wine|cider|cook|bake/i,'🍽️'],[/craft|make|making|knit|sew|pottery|ceramic|print|draw|paint|sketch|workshop/i,'🎨'],
+  [/music|concert|gig|choir|orchestra|jazz|shanty|recital|organ|folk|opera/i,'🎶'],[/comedy|stand-?up/i,'😂'],[/circus|puppet|panto|magic/i,'🎪'],
+  [/theatre|play\b|musical|drama|show/i,'🎭'],[/museum|exhibition|gallery|history|heritage|art\b|archive|tour/i,'🖼️'],[/talk|lecture|discussion|debate/i,'💬'],
+  [/kids|family|play|baby|toddler/i,'🎈']];
+function emojiFor(c){ // Claude's pick when the listing was written up; otherwise the name and tags decide, the description only if they say nothing
+  if(c.emoji) return c.emoji; if((c.tags||[]).some(t=>/^(space|astronomy)$/.test(t))) return '🚀';
+  for(const t of [c.name+' '+(c.tags||[]).join(' '),(c.blurb||'').slice(0,120)]) for(const [re,e] of EMOJI) if(re.test(t)) return e; return '📍';}
 function whenWords(c){
   const d=c.date||setup.date; if(!d) return '';
   const day=fromIso(d), today=new Date(); today.setHours(0,0,0,0);
@@ -869,13 +887,13 @@ function shareURL(c){ return 'https://www.jauntout.com/'+(c.event?'e/'+encodeURI
 function shareLink(c){ return 'https://wa.me/?text='+encodeURIComponent(shareText(c)+'\n'+shareURL(c)); }
 document.addEventListener('click',e=>{const a=e.target.closest('[data-share]'); if(!a) return; const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===a.dataset.share); track('share',{id:a.dataset.share,who:setup.who,channel:'whatsapp',event:!!(c&&c.event)});},true);
 function cardHTML(c){
-  const badges=[`<button class="badge trbtn ${c.est?'':'good'}" data-tr aria-label="Journey options">${escH(travelLabel(c))}<i>›</i></button>`,
+  const badges=[`<button class="badge trbtn" data-tr aria-label="Journey options">${TRICON}${escH(travelLabel(c))}<i>›</i></button>`,
     `<span class="badge">${c.in==='in'?'Indoors':c.in==='out'?'Outdoors':'In & out'}</span>`,
     (hoursLabel(c)&&!c.days?`<span class="badge ${hoursOf(c).part==='morning'?'warn':''}">${hoursLabel(c)}</span>`:c.days?'':`<span class="badge">${c.dur<=1?'Under an hour':c.dur<=2?'Couple of hours':c.dur<=3?'Half a day':'Full day'}</span>`)].filter(Boolean);
   if(c.days){ const dn=c.days.length===1?['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][c.days[0]]+'s':c.days.length===2&&c.days.includes(0)&&c.days.includes(6)?'Weekends':c.days.map(d=>DAYS[d]).join(', '), hl=hoursLabel(c);
     badges.push(`<span class="badge warn">${dn}${hl?' · '+hl.replace(/^(Morning|Evening) · /,''):' only'}</span>`); }
   if(c.months) badges.push(`<span class="badge warn">Seasonal</span>`);
-  if(c.ages&&c.ages[1]<99) badges.push(`<span class="badge hot">Ages ${c.ages[0]}–${c.ages[1]}</span>`);
+  if(c.ages&&c.ages[1]<99) badges.push(`<span class="badge good">Ages ${c.ages[0]}–${c.ages[1]}</span>`);
   if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5); badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left===1?'Ends tomorrow':left<=7?'Ends in '+left+' days':'Until '+nice(fromIso(c.to))}</span>`)} }
   if(status[c.id]==='again') badges.push(`<span class="badge good">You'd go again</span>`);
   const why=c.why.length?`<p class="why"><b>Why this:</b> ${c.why.slice(0,2).join(' · ')}</p>`:'';
@@ -903,7 +921,7 @@ function renderStack(){
 async function refineTravel(c){ if(!c.est||!has('transit')||c.how==='walk') return; const t=await tflMins(c); if(!t) return;
   // TfL's real time can change the answer (e.g. the bus is quicker than parking), so decide again
   const nt=trip(c); Object.assign(c,nt); c.est=nt.how!=='transport'; if(nt.how==='transport'){c.route=t.route;c.steps=t.steps;}
-  const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.innerHTML=escH(travelLabel(c))+'<i>›</i>';el.classList.toggle('good',!c.est)} }
+  const el=$(`.card[data-id="${c.id}"] [data-tr]`); if(el){el.innerHTML=TRICON+escH(travelLabel(c))+'<i>›</i>'} }
 
 /* drag */
 function attachDrag(el){

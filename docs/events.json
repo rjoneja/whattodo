@@ -118,7 +118,8 @@
    "source": "Brockwell Park (Lambeth)",
    "id": "ev-friends-of-brockwell-park-volunteering-a-01-01",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Ramses and the Pharaoh's Gold: The Exhibition",
@@ -241,35 +242,6 @@
    "rel": "keep"
   },
   {
-   "name": "BSL Interpreted Tours of The Coming of Age (Gallery 1)",
-   "area": "Euston",
-   "lat": 51.5257,
-   "lon": -0.1337,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "bsl interpreted",
-    "gallery tour",
-    "exhibition"
-   ],
-   "blurb": "British Sign Language interpreted guided tours of The Coming of Age in Gallery 1. Runs until 28 November; window covers the rest of November.",
-   "url": "https://wellcomecollection.org/events",
-   "from": "2026-04-21",
-   "to": "2026-11-28",
-   "source": "Wellcome Collection",
-   "id": "ev-bsl-interpreted-tours-of-the-coming-of-a-11-04",
-   "rel": "keep",
-   "also": [],
-   "hrs": 1
-  },
-  {
    "name": "BSL Tour of The Coming of Age",
    "area": "Euston",
    "lat": 51.5257,
@@ -292,12 +264,14 @@
    "blurb": "British Sign Language interpreted tours of The Coming of Age in Gallery 1. Runs until 28 November 2026, so several dates fall in this window. Free.",
    "url": "https://wellcomecollection.org/events",
    "from": "2026-04-21",
-   "to": "2026-11-28",
+   "to": "2026-11-29",
    "source": "Wellcome Collection",
    "id": "ev-bsl-tour-of-the-coming-of-age-11-03",
    "rel": "keep",
    "hrs": 1,
-   "also": []
+   "also": [
+    "IanVisits"
+   ]
   },
   {
    "name": "David Bowie: You're Not Alone",
@@ -420,39 +394,6 @@
    "hrs": 1
   },
   {
-   "name": "Discover Walthamstow Wetlands Guided Tour",
-   "area": "Walthamstow",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "in": "out",
-   "price": "£",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "guided tour",
-    "wetlands",
-    "history",
-    "nature"
-   ],
-   "blurb": "Fun guided tour uncovering the natural beauty and hidden history of Europe's largest urban wetlands. Good for first-time visitors.",
-   "url": "https://www.wildlondon.org.uk/events/2026-07-02-discover-walthamstow-wetlands-guided-tour",
-   "from": "2026-07-02",
-   "to": "2026-12-03",
-   "source": "London Wildlife Trust",
-   "id": "ev-discover-walthamstow-wetlands-guided-tou-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "days": [
-    4
-   ],
-   "also": []
-  },
-  {
    "name": "BSL Interpreted Tours of Tenderness and Rage",
    "area": "Euston",
    "lat": 51.5257,
@@ -572,33 +513,36 @@
    "hrs": 1
   },
   {
-   "name": "Drop-in SEND Play (Aug-Dec 2026)",
+   "name": "Family drop-in SEND Play",
    "area": "Bethnal Green",
-   "lat": 51.5227,
-   "lon": -0.0712,
+   "lat": 51.5221,
+   "lon": -0.0716,
    "in": "in",
    "price": "free",
    "ages": [
     0,
     11
    ],
-   "kids": 1,
+   "kids": 2,
    "adults": 1,
    "dur": 1.5,
    "tags": [
     "send",
-    "family",
-    "drop-in",
-    "inclusive play"
+    "inclusive play",
+    "family"
    ],
-   "blurb": "Free play sessions designed for children with SEND at Young V&A. Runs until 5 December. Check the listing for session dates.",
+   "blurb": "Free drop-in play designed for children with special educational needs and their families at the Young V&A. Check the listing for session times and booking.",
    "url": "https://www.vam.ac.uk/whatson",
    "from": "2026-08-01",
-   "to": "2026-12-05",
+   "to": "2026-12-19",
    "source": "V&A South Kensington",
-   "id": "ev-drop-in-send-play-aug-dec-2026-08-01",
+   "id": "ev-family-drop-in-send-play-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "days": [
+    6
+   ],
+   "also": []
   },
   {
    "name": "BSL Tour of 'Audrey Amiss: The Surviving Exhibitions' with Alison Claire France",
@@ -1090,7 +1034,7 @@
    "hrs": 1
   },
   {
-   "name": "Exhibition: 'Landscapes Set Free'",
+   "name": "Exhibition: 'Landscapes Set Free' by Didi Baldwin and Will Handysides",
    "area": "Walthamstow",
    "lat": 51.5074,
    "lon": -0.1278,
@@ -1101,25 +1045,25 @@
     99
    ],
    "kids": 1,
-   "adults": 1,
-   "dur": 1,
+   "adults": 2,
+   "dur": 1.5,
    "tags": [
     "art exhibition",
-    "nature art",
-    "indoor",
-    "wetlands"
+    "wetlands",
+    "landscape art",
+    "indoor"
    ],
-   "blurb": "Art exhibition by Didi Baldwin and Will Handysides at Walthamstow Wetlands. Open daily until 15 November, 9:30am-3pm in October/November.",
+   "blurb": "Art exhibition at Walthamstow Wetlands running until 15 November. Open daily, 9:30am to 3pm in October and November. Good rainy-day option.",
    "url": "https://www.wildlondon.org.uk/events",
    "from": "2026-09-20",
    "to": "2026-11-15",
    "source": "London Wildlife Trust",
-   "id": "ev-exhibition-landscapes-set-free-11-03",
+   "id": "ev-exhibition-landscapes-set-free-by-didi-b-11-03",
    "rel": "keep",
+   "also": [],
    "open": "09:30",
    "close": "15:00",
-   "hrs": 1,
-   "also": []
+   "hrs": 1
   },
   {
    "name": "Jenkin van Zyl: Enclosure",
@@ -2018,7 +1962,8 @@
    "source": "Museum of the Home",
    "id": "ev-winter-programme-10-27",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Adult Sushi Masterclass at Sticks'n'Sushi Battersea",
@@ -2259,7 +2204,7 @@
    "rel": "keep",
    "time": "evenings",
    "also": [
-    "IanVisits"
+    "Londonist things to do (aggregator)"
    ],
    "open": "17:45",
    "close": "21:00",
@@ -2330,33 +2275,36 @@
    "hrs": 1
   },
   {
-   "id": "ev-stmartin",
-   "name": "St Martin-in-the-Fields at 300",
-   "area": "Trafalgar Square",
-   "lat": 51.5088,
-   "lon": -0.1267,
+   "name": "St Martin-in-the-Fields: 300 Years at the Heart and on the Edge",
+   "area": "Charing Cross",
+   "lat": 51.5074,
+   "lon": -0.1278,
    "in": "in",
    "price": "free",
    "ages": [
-    10,
+    5,
     99
    ],
-   "kids": 0,
+   "kids": 1,
    "adults": 2,
    "dur": 1,
    "tags": [
-    "exhibition",
-    "history",
-    "free",
-    "church"
+    "free exhibition",
+    "church history",
+    "trafalgar square"
    ],
-   "blurb": "A free exhibition on three centuries of the church on Trafalgar Square. Twenty minutes, then the crypt café. Closes 15 November.",
-   "url": "https://www.stmartin-in-the-fields.org",
-   "source": "IanVisits",
+   "blurb": "Free exhibition marking the church's 300th anniversary, exploring its long and surprising history. Located in Trafalgar Square. Open until Sunday 15 Nov.",
+   "url": "https://www.ianvisits.co.uk/calendar/",
    "from": "2026-11-02",
    "to": "2026-11-15",
+   "source": "IanVisits calendar (aggregator, quality check)",
+   "id": "ev-st-martin-in-the-fields-300-years-at-the-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "also": [
+    "IanVisits"
+   ]
   },
   {
    "id": "ev-churchill",
@@ -2380,34 +2328,6 @@
    ],
    "blurb": "Fifty-odd of Churchill's own paintings at the Wallace Collection, the first big show of them in decades. The permanent collection is free. Closes 29 November.",
    "url": "https://www.wallacecollection.org",
-   "source": "IanVisits",
-   "from": "2026-11-02",
-   "to": "2026-11-29",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "id": "ev-comingofage",
-   "name": "The Coming of Age",
-   "area": "Euston",
-   "lat": 51.5257,
-   "lon": -0.1337,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    13,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1.5,
-   "tags": [
-    "exhibition",
-    "science",
-    "free"
-   ],
-   "blurb": "Wellcome Collection's free show on ageing, from adolescence to old age. Pair it with the Reading Room upstairs. Closes 29 November.",
-   "url": "https://wellcomecollection.org",
    "source": "IanVisits",
    "from": "2026-11-02",
    "to": "2026-11-29",
@@ -2533,7 +2453,7 @@
    "hrs": 1
   },
   {
-   "name": "Highlights of the V&A tour",
+   "name": "Highlights of the V&A (guided tour)",
    "area": "South Kensington",
    "lat": 51.4966,
    "lon": -0.1722,
@@ -2543,24 +2463,25 @@
     8,
     99
    ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1.5,
+   "kids": 0,
+   "adults": 2,
+   "dur": 1,
    "tags": [
     "guided tour",
-    "highlights",
-    "free",
-    "family"
+    "museum highlights",
+    "first visit"
    ],
-   "blurb": "Free guided highlights tour of the V&A, running until 31 December. A good first visit if you want an overview of the collections.",
+   "blurb": "Free guided tour of the museum's top objects, ideal for a first visit. Check the listing for daily times and meeting point. Runs until end of December.",
    "url": "https://www.vam.ac.uk/whatson",
    "from": "2026-11-02",
    "to": "2026-12-31",
-   "source": "Young V&A",
-   "id": "ev-highlights-of-the-v-a-tour-11-04",
+   "source": "V&A South Kensington",
+   "id": "ev-highlights-of-the-v-a-guided-tour-11-03",
    "rel": "keep",
-   "also": [],
-   "hrs": 1
+   "hrs": 1,
+   "also": [
+    "Young V&A"
+   ]
   },
   {
    "name": "Tour: Designing the V&A - The Story of our Museum",
@@ -2592,40 +2513,41 @@
    "hrs": 1
   },
   {
-   "name": "National Art Library talks",
+   "name": "National Art Library and Archive talks",
    "area": "South Kensington",
    "lat": 51.4966,
    "lon": -0.1722,
    "in": "in",
    "price": "free",
    "ages": [
-    14,
+    16,
     99
    ],
    "kids": 0,
-   "adults": 2,
+   "adults": 1,
    "dur": 1,
    "tags": [
-    "talk",
-    "library",
-    "art books",
+    "library talk",
+    "archive",
+    "free",
     "monday"
    ],
-   "blurb": "Free Monday talks at the National Art Library on art books and archives, at 11:30 or 14:00. Runs until 28 December. Booking may be needed.",
+   "blurb": "Free Monday talks at the National Art Library, running weekly until 28 December. The 2pm talk is listed; there is also an 11:30 talk. Check for booking.",
+   "url": "https://www.vam.ac.uk/whatson",
+   "time": "14:00",
+   "from": "2026-11-02",
+   "to": "2026-12-28",
+   "source": "Young V&A",
+   "id": "ev-national-art-library-and-archive-talks-11-09",
+   "rel": "keep",
+   "also": [
+    "V&A South Kensington"
+   ],
    "days": [
     1
    ],
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-02",
-   "to": "2026-12-28",
-   "source": "V&A South Kensington",
-   "id": "ev-national-art-library-talks-11-05",
-   "open": "11:30",
-   "also": [
-    "Young V&A"
-   ],
    "hrs": 1,
-   "rel": "keep"
+   "open": "11:30"
   },
   {
    "name": "V&A Photography Centre drop-in tours",
@@ -2661,36 +2583,40 @@
   {
    "name": "Makers Club open studio",
    "area": "Stratford",
-   "lat": 51.5446,
-   "lon": -0.0088,
+   "lat": 51.5438,
+   "lon": -0.0047,
    "in": "in",
    "price": "free",
    "ages": [
     8,
     99
    ],
-   "kids": 1,
-   "adults": 1,
+   "kids": 2,
+   "adults": 2,
    "dur": 1.5,
    "tags": [
+    "making",
     "open studio",
-    "make create",
-    "free workshop"
+    "craft",
+    "drop-in"
    ],
-   "blurb": "Free open studio at V&A East Museum to make, create and reflect. Runs until 11 Dec. Drop in during opening hours, no fee.",
+   "blurb": "Free open studio at V&A East Museum where you can make, create and reflect. Open until 11 December. Good for hands-on creative time.",
    "url": "https://www.vam.ac.uk/whatson",
    "from": "2026-11-02",
    "to": "2026-12-11",
    "source": "V&A South Kensington",
-   "id": "ev-makers-club-open-studio-11-02",
+   "id": "ev-makers-club-open-studio-11-05",
+   "hrs": 1,
    "rel": "keep",
-   "hrs": 1
+   "also": [
+    "Young V&A"
+   ]
   },
   {
-   "name": "Special event upperground: DJ sets",
+   "name": "Upperground: DJ sets",
    "area": "Stratford",
-   "lat": 51.5446,
-   "lon": -0.0088,
+   "lat": 51.543,
+   "lon": -0.009,
    "in": "in",
    "price": "free",
    "ages": [
@@ -2698,49 +2624,58 @@
     99
    ],
    "kids": 0,
-   "adults": 2,
+   "adults": 1,
    "dur": 2,
    "tags": [
     "dj sets",
-    "evening event",
-    "free music"
+    "music",
+    "free",
+    "v&a east",
+    "evening"
    ],
-   "blurb": "Free DJ sets at V&A East Museum's upperground space. Runs until 17 Dec. A social evening option in Stratford; check the page for dates.",
+   "blurb": "Free DJ sets at V&A East Museum, running until 17 December. Listed as a new special event with last few tickets. Check the page for dates and times.",
    "url": "https://www.vam.ac.uk/whatson",
    "from": "2026-11-02",
    "to": "2026-12-17",
-   "source": "V&A South Kensington",
-   "id": "ev-special-event-upperground-dj-sets-11-02",
+   "source": "Young V&A",
+   "id": "ev-upperground-dj-sets-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": [
+    "V&A South Kensington"
+   ]
   },
   {
    "name": "The Music is Black: A British Story",
    "area": "Stratford",
-   "lat": 51.5446,
-   "lon": -0.0088,
+   "lat": 51.543,
+   "lon": -0.009,
    "in": "in",
    "price": "££",
    "ages": [
-    8,
+    10,
     99
    ],
-   "kids": 1,
-   "adults": 2,
+   "kids": 0,
+   "adults": 1,
    "dur": 2,
    "tags": [
-    "exhibition",
     "music history",
-    "british black history"
+    "exhibition",
+    "british",
+    "v&a east"
    ],
-   "blurb": "Major exhibition at V&A East Museum on Black British music history. Weekday £22.50, weekend £24.50. Runs until 10 Jan 2027. Book ahead.",
+   "blurb": "Exhibition at V&A East on the story of Black music in Britain, running until 10 January 2027. Tickets are £22.50 on weekdays and £24.50 at weekends.",
    "url": "https://www.vam.ac.uk/whatson",
    "from": "2026-11-02",
    "to": "2027-01-10",
-   "source": "V&A South Kensington",
-   "id": "ev-the-music-is-black-a-british-story-11-02",
+   "source": "Young V&A",
+   "id": "ev-the-music-is-black-a-british-story-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": [
+    "V&A South Kensington"
+   ]
   },
   {
    "name": "Rising Voices: Contemporary Art from Asia, Australia and the Pacific",
@@ -2913,96 +2848,6 @@
    "to": "2027-05-03",
    "source": "Tate Britain",
    "id": "ev-julio-le-parc-light-colour-action-11-03",
-   "rel": "keep",
-   "also": [],
-   "hrs": 1
-  },
-  {
-   "name": "Frida: The Making of an Icon",
-   "area": "Bankside",
-   "lat": 51.5076,
-   "lon": -0.0994,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "frida kahlo",
-    "art exhibition",
-    "tate modern",
-    "latin american art"
-   ],
-   "blurb": "Tate Modern exhibition tracing the life and legacy of Frida Kahlo, the revolutionary artist and global icon. Members enter free; book timed entry.",
-   "url": "https://www.tate.org.uk/whats-on",
-   "from": "2026-11-02",
-   "to": "2027-01-03",
-   "source": "Tate Britain",
-   "id": "ev-frida-the-making-of-an-icon-11-03",
-   "rel": "keep",
-   "also": [],
-   "hrs": 1
-  },
-  {
-   "name": "Ana Mendieta",
-   "area": "Bankside",
-   "lat": 51.5076,
-   "lon": -0.0994,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "performance art",
-    "feminist art",
-    "land art",
-    "tate modern"
-   ],
-   "blurb": "Retrospective of Ana Mendieta's powerful work, whose legacy shaped contemporary art. Some themes are intense, so it suits adults and older teens.",
-   "url": "https://www.tate.org.uk/whats-on",
-   "from": "2026-11-02",
-   "to": "2027-01-17",
-   "source": "Tate Britain",
-   "id": "ev-ana-mendieta-11-03",
-   "rel": "keep",
-   "also": [],
-   "hrs": 1
-  },
-  {
-   "name": "The 90s: Art and Fashion",
-   "area": "Pimlico",
-   "lat": 51.4911,
-   "lon": -0.1278,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "art exhibition",
-    "fashion history",
-    "90s culture",
-    "tate britain"
-   ],
-   "blurb": "A look at a decade defined by bold creativity and rebellious spirit, linking art and fashion. Running until 14 February 2027. Free for Tate Members.",
-   "url": "https://www.tate.org.uk/whats-on",
-   "from": "2026-11-02",
-   "to": "2027-02-14",
-   "source": "Tate Britain",
-   "id": "ev-the-90s-art-and-fashion-11-02",
    "rel": "keep",
    "also": [],
    "hrs": 1
@@ -3312,7 +3157,7 @@
    "blurb": "Weekly session for photos and selfies around the site, aimed at people wanting the perfect shot. Runs every Monday from 10am to 11am. Posing is encouraged.",
    "url": "https://ornc.org/whats-on/",
    "from": "2026-11-02",
-   "to": "2026-11-23",
+   "to": "2026-11-24",
    "time": "10:00",
    "source": "Old Royal Naval College",
    "id": "ev-social-media-mondays-11-02",
@@ -3387,7 +3232,7 @@
    "hrs": 1
   },
   {
-   "name": "Wonders of the warehouse tour",
+   "name": "Wonders of the warehouse",
    "area": "Docklands",
    "lat": 51.5076,
    "lon": -0.0239,
@@ -3397,23 +3242,25 @@
     8,
     99
    ],
-   "kids": 0,
-   "adults": 1,
+   "kids": 1,
+   "adults": 3,
    "dur": 1,
    "tags": [
     "gallery tour",
-    "georgian building",
-    "history",
-    "indoor"
+    "georgian architecture",
+    "building history",
+    "docklands",
+    "guided"
    ],
-   "blurb": "Gallery tour uncovering the hidden history of the Georgian warehouse building at London Museum Docklands. Runs until 23 November.",
+   "blurb": "Delve into the hidden history of the Georgian warehouse building that houses London Museum Docklands. A guided gallery tour for adults.",
    "url": "https://www.londonmuseum.org.uk/whats-on/",
    "from": "2026-11-02",
    "to": "2026-11-23",
    "source": "London Museum Docklands",
-   "id": "ev-wonders-of-the-warehouse-tour-11-02",
+   "id": "ev-wonders-of-the-warehouse-11-08",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Spirit of Christmas Fair",
@@ -3564,69 +3411,6 @@
    "id": "ev-green-open-homes-26-11-02",
    "hrs": 1,
    "rel": "keep"
-  },
-  {
-   "name": "Exhibition: 'Landscapes Set Free' by Didi Baldwin and Will Handysides",
-   "area": "Walthamstow",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "art exhibition",
-    "wetlands",
-    "landscape art",
-    "indoor"
-   ],
-   "blurb": "Art exhibition at Walthamstow Wetlands running until 15 November. Open daily, 9:30am to 3pm in October and November. Good rainy-day option.",
-   "url": "https://www.wildlondon.org.uk/events",
-   "from": "2026-11-03",
-   "to": "2026-11-15",
-   "source": "London Wildlife Trust",
-   "id": "ev-exhibition-landscapes-set-free-by-didi-b-11-03",
-   "rel": "keep",
-   "also": [],
-   "open": "09:30",
-   "close": "15:00",
-   "hrs": 1
-  },
-  {
-   "name": "Volunteering Activities & Events at Brockwell Park",
-   "area": "Herne Hill",
-   "lat": 51.4518,
-   "lon": -0.1096,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 4,
-   "tags": [
-    "volunteering",
-    "park conservation",
-    "community",
-    "outdoors",
-    "friends group"
-   ],
-   "blurb": "Ongoing volunteer activities across the park all year. Sessions and sign-up are handled on the separate volunteer site, so check dates there before going.",
-   "url": "https://volunteer.brockwellpark.co.uk",
-   "from": "2026-11-03",
-   "to": "2026-11-24",
-   "source": "Brockwell Park (Lambeth)",
-   "id": "ev-volunteering-activities-events-at-brockw-11-03",
-   "rel": "keep",
-   "also": [],
-   "hrs": 1
   },
   {
    "name": "Larger Than Life: Starring Wallace & Gromit, Shaun and More",
@@ -4009,35 +3793,6 @@
    "lk": 1
   },
   {
-   "name": "St Martin-in-the-Fields: 300 Years at the Heart and on the Edge",
-   "area": "Charing Cross",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "free exhibition",
-    "church history",
-    "trafalgar square"
-   ],
-   "blurb": "Free exhibition marking the church's 300th anniversary, exploring its long and surprising history. Located in Trafalgar Square. Open until Sunday 15 Nov.",
-   "url": "https://www.ianvisits.co.uk/calendar/",
-   "from": "2026-11-03",
-   "to": "2026-11-15",
-   "source": "IanVisits calendar (aggregator, quality check)",
-   "id": "ev-st-martin-in-the-fields-300-years-at-the-11-03",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "The Story of the Jewish Family who founded J Lyons",
    "area": "Central London",
    "lat": 51.5074,
@@ -4121,35 +3876,6 @@
    "to": "2026-12-12",
    "source": "V&A South Kensington",
    "id": "ev-meet-the-designer-christie-swallow-11-03",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Upperground: DJ sets",
-   "area": "Stratford",
-   "lat": 51.5438,
-   "lon": -0.009,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "dj sets",
-    "music",
-    "late night",
-    "free event"
-   ],
-   "blurb": "Free DJ sets at the V&A East Museum, running until 17 December. Good for an evening out. Check the listing for session times.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-03",
-   "to": "2026-12-17",
-   "source": "V&A South Kensington",
-   "id": "ev-upperground-dj-sets-11-03",
    "rel": "keep",
    "hrs": 1
   },
@@ -4516,40 +4242,40 @@
    "rel": "keep"
   },
   {
-   "name": "LGBTQ+ history talks at the National Maritime Museum",
+   "name": "LGBTQ+ history talks",
    "area": "Greenwich",
    "lat": 51.481,
    "lon": -0.0052,
    "in": "in",
    "price": "free",
    "ages": [
-    12,
+    14,
     99
    ],
    "kids": 0,
-   "adults": 1,
+   "adults": 2,
    "dur": 1,
    "tags": [
     "lgbtq+ history",
-    "talk",
+    "talks",
     "drop-in",
-    "free",
-    "queer history"
+    "free"
    ],
-   "blurb": "Drop-in queer history talks held on Thursdays and Sundays at 3:30pm. Free, no booking needed; check the page for specific dates.",
+   "blurb": "Queer history talks held on Thursdays and Sundays at 3.30pm, drop-in and free. Check the page for exact dates.",
    "url": "https://www.rmg.co.uk/whats-on",
    "from": "2026-11-03",
    "to": "2026-11-26",
+   "time": "15:30",
    "source": "Royal Museums Greenwich",
-   "id": "ev-lgbtq-history-talks-at-the-national-mari-11-05",
-   "also": [],
+   "id": "ev-lgbtq-history-talks-11-03",
    "rel": "keep",
    "days": [
     0,
     4
    ],
    "open": "15:30",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Saturday Art Club",
@@ -4682,7 +4408,8 @@
    ],
    "open": "11:00",
    "close": "12:00",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "History & Ecology of Grosvenor Square Guided Walk",
@@ -4842,66 +4569,6 @@
    "hrs": 1
   },
   {
-   "name": "Drop-in Play Saturdays (Sept-Dec 2026)",
-   "area": "Bethnal Green",
-   "lat": 51.5227,
-   "lon": -0.0712,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    8
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "saturday",
-    "family",
-    "drop-in",
-    "play"
-   ],
-   "blurb": "Free Saturday play drop-in at Young V&A until 19 December. Easy weekend option with little ones. Check the listing for times.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-03",
-   "to": "2026-12-19",
-   "source": "V&A South Kensington",
-   "id": "ev-drop-in-play-saturdays-sept-dec-2026-11-03",
-   "rel": "keep",
-   "days": [
-    6
-   ],
-   "hrs": 1
-  },
-  {
-   "name": "Highlights of the V&A (guided tour)",
-   "area": "South Kensington",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "guided tour",
-    "museum highlights",
-    "first visit"
-   ],
-   "blurb": "Free guided tour of the museum's top objects, ideal for a first visit. Check the listing for daily times and meeting point. Runs until end of December.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-03",
-   "to": "2026-12-31",
-   "source": "V&A South Kensington",
-   "id": "ev-highlights-of-the-v-a-guided-tour-11-03",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Tour: Exploring Historic European Art",
    "area": "South Kensington",
    "lat": 51.4966,
@@ -4956,73 +4623,6 @@
    "source": "V&A South Kensington",
    "id": "ev-tour-discover-britain-through-art-and-de-11-03",
    "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "National Art Library and Archive talks",
-   "area": "South Kensington",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "library talk",
-    "archive",
-    "free",
-    "monday"
-   ],
-   "blurb": "Free Monday talks at the National Art Library, running weekly until 28 December. The 2pm talk is listed; there is also an 11:30 talk. Check for booking.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "time": "14:00",
-   "from": "2026-11-03",
-   "to": "2026-12-28",
-   "source": "Young V&A",
-   "id": "ev-national-art-library-and-archive-talks-11-09",
-   "rel": "keep",
-   "also": [
-    "V&A South Kensington"
-   ],
-   "days": [
-    1
-   ],
-   "hrs": 1
-  },
-  {
-   "name": "British Wildlife Photography Awards Exhibition",
-   "area": "Forest Hill",
-   "lat": 51.4411,
-   "lon": -0.0612,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "photography",
-    "wildlife",
-    "exhibition",
-    "free entry"
-   ],
-   "blurb": "Free exhibition of award-winning British wildlife photos, with the photographers' own commentary on their work. Open 10am to 5:30pm during the run.",
-   "url": "https://www.horniman.ac.uk/whats-on/",
-   "from": "2026-11-03",
-   "to": "2026-11-24",
-   "source": "Horniman Museum & Gardens",
-   "id": "ev-british-wildlife-photography-awards-exhi-11-03",
-   "rel": "keep",
-   "open": "10:00",
-   "close": "17:30",
    "hrs": 1
   },
   {
@@ -5125,41 +4725,6 @@
    "rel": "keep"
   },
   {
-   "name": "LGBTQ+ history talks",
-   "area": "Greenwich",
-   "lat": 51.481,
-   "lon": -0.0052,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    14,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "lgbtq+ history",
-    "talks",
-    "drop-in",
-    "free"
-   ],
-   "blurb": "Queer history talks held on Thursdays and Sundays at 3.30pm, drop-in and free. Check the page for exact dates.",
-   "url": "https://www.rmg.co.uk/whats-on",
-   "from": "2026-11-03",
-   "to": "2026-11-24",
-   "time": "15:30",
-   "source": "Royal Museums Greenwich",
-   "id": "ev-lgbtq-history-talks-11-03",
-   "rel": "keep",
-   "days": [
-    0,
-    4
-   ],
-   "open": "15:30",
-   "hrs": 1
-  },
-  {
    "name": "Film Tour: Spies, Sleuths and Superheroes",
    "area": "Greenwich",
    "lat": 51.483,
@@ -5192,41 +4757,6 @@
     0
    ],
    "open": "11:30",
-   "hrs": 1
-  },
-  {
-   "name": "Social Media Monday",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    99,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "photo session",
-    "instagram spots",
-    "monday morning",
-    "selfies welcome"
-   ],
-   "blurb": "Monday morning session for photos and selfies, with posing encouraged. Runs 10am to 11am every Monday, so 9, 16 and 23 November are in range.",
-   "url": "https://ornc.org/whats-on/",
-   "from": "2026-11-03",
-   "to": "2026-11-24",
-   "time": "10:00",
-   "source": "Old Royal Naval College",
-   "id": "ev-social-media-monday-11-03",
-   "rel": "keep",
-   "days": [
-    1
-   ],
-   "open": "10:00",
-   "close": "11:00",
    "hrs": 1
   },
   {
@@ -5356,36 +4886,6 @@
    "open": "10:00",
    "close": "17:30",
    "also": []
-  },
-  {
-   "name": "Winter Programme at Museum of the Home",
-   "area": "Hoxton",
-   "lat": 51.5321,
-   "lon": -0.0763,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "winter",
-    "workshops",
-    "displays",
-    "family",
-    "seasonal"
-   ],
-   "blurb": "Seasonal programme of displays, workshops and events while the museum transforms for winter. Prices vary by event, so check the listing before booking.",
-   "url": "https://museumofthehome.org.uk/whats-on/",
-   "from": "2026-11-03",
-   "to": "2027-01-10",
-   "source": "Museum of the Home",
-   "id": "ev-winter-programme-at-museum-of-the-home-11-03",
-   "rel": "keep",
-   "hrs": 1
   },
   {
    "name": "Ghosts of Greenwich and Blackheath: A London Walking Tour",
@@ -5761,7 +5261,7 @@
    "blurb": "Join a friendly local walking group to get outdoors, keep active and meet new people. A good low-pressure way to build social connections. Runs every Tuesday.",
    "url": "https://www.rbkc.gov.uk/events",
    "from": "2026-11-03",
-   "to": "2026-11-25",
+   "to": "2026-11-26",
    "source": "Kensington & Chelsea Council events",
    "id": "ev-wellbeing-walk-11-03",
    "rel": "keep",
@@ -5929,7 +5429,11 @@
    "source": "Roundhouse",
    "id": "ev-theatre-drop-in-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "days": [
+    3
+   ],
+   "also": []
   },
   {
    "name": "The Sleep Show",
@@ -6017,7 +5521,8 @@
    "source": "Little Angel Theatre",
    "id": "ev-the-pied-piper-a-rat-s-tale-11-04",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Rumba Latina",
@@ -6050,40 +5555,8 @@
    "open": "19:30",
    "close": "22:30",
    "part": "evening",
-   "hrs": 1
-  },
-  {
-   "name": "Free Rumba Latina",
-   "area": "Wembley Park",
-   "lat": 51.557,
-   "lon": -0.2795,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "rumba",
-    "latin dance",
-    "free",
-    "social",
-    "evening"
-   ],
-   "blurb": "Free evening Latin rumba dancing at BOXPARK Wembley, with sessions running through to 17 December. Good for a relaxed night out with friends.",
-   "open": "19:30",
-   "close": "22:30",
-   "url": "https://wembleypark.com/whats-on/",
-   "from": "2026-11-04",
-   "to": "2026-12-17",
-   "source": "Wembley Park",
-   "id": "ev-free-rumba-latina-11-04",
-   "rel": "keep",
    "hrs": 1,
-   "part": "evening"
+   "also": []
   },
   {
    "name": "Autumn Term Circus and Aerial Skills Drop-in",
@@ -6110,37 +5583,6 @@
    "to": "2026-12-09",
    "source": "Roundhouse",
    "id": "ev-autumn-term-circus-and-aerial-skills-dro-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "hrs": 1
-  },
-  {
-   "name": "Autumn Term Theatre Drop In",
-   "area": "Chalk Farm",
-   "lat": 51.5433,
-   "lon": -0.1526,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    18,
-    25
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "theatre workshop",
-    "drop in session",
-    "no booking needed"
-   ],
-   "blurb": "Theatre drop-in for ages 18-25, £2. No need to book. Runs Wednesdays from 4 November to 9 December.",
-   "url": "https://www.roundhouse.org.uk/whats-on/",
-   "from": "2026-11-04",
-   "to": "2026-12-09",
-   "source": "Roundhouse",
-   "id": "ev-autumn-term-theatre-drop-in-11-04",
    "rel": "keep",
    "days": [
     3
@@ -6374,10 +5816,10 @@
    "lk": 1
   },
   {
-   "name": "The Long Goodbye: Carrie Mae Weems",
+   "name": "The Long Goodbye: Carrie Mae Weems film screening",
    "area": "Stratford",
-   "lat": 51.543,
-   "lon": -0.009,
+   "lat": 51.5438,
+   "lon": -0.0047,
    "in": "in",
    "price": "free",
    "ages": [
@@ -6385,22 +5827,25 @@
     99
    ],
    "kids": 0,
-   "adults": 1,
-   "dur": 1,
+   "adults": 2,
+   "dur": 1.5,
    "tags": [
+    "film",
     "photography",
-    "art exhibition",
-    "free",
-    "closing soon"
+    "screening",
+    "art"
    ],
-   "blurb": "Free photography display at V&A East Museum, closing Wednesday 11 November. Good for a short visit if you're in Stratford that week.",
+   "blurb": "Free screening of Carrie Mae Weems' The Long Goodbye at V&A East. Ends 11 November, so catch it soon. Suits fans of contemporary photography.",
    "url": "https://www.vam.ac.uk/whatson",
    "from": "2026-11-04",
    "to": "2026-11-11",
-   "source": "Young V&A",
-   "id": "ev-the-long-goodbye-carrie-mae-weems-11-04",
+   "source": "V&A South Kensington",
+   "id": "ev-the-long-goodbye-carrie-mae-weems-film-s-11-05",
+   "hrs": 1,
    "rel": "keep",
-   "hrs": 1
+   "also": [
+    "Young V&A"
+   ]
   },
   {
    "name": "Sahra Hersi Selects",
@@ -6462,94 +5907,6 @@
    "also": []
   },
   {
-   "name": "Makers Club open studio",
-   "area": "Stratford",
-   "lat": 51.543,
-   "lon": -0.009,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "makers club",
-    "hands-on",
-    "free",
-    "v&a east"
-   ],
-   "blurb": "Free open studio at V&A East Museum to make, create and reflect, running until 11 December. Drop in during opening hours.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-04",
-   "to": "2026-12-11",
-   "source": "Young V&A",
-   "id": "ev-makers-club-open-studio-11-04",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Upperground: DJ sets",
-   "area": "Stratford",
-   "lat": 51.543,
-   "lon": -0.009,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "dj sets",
-    "music",
-    "free",
-    "v&a east",
-    "evening"
-   ],
-   "blurb": "Free DJ sets at V&A East Museum, running until 17 December. Listed as a new special event with last few tickets. Check the page for dates and times.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-04",
-   "to": "2026-12-17",
-   "source": "Young V&A",
-   "id": "ev-upperground-dj-sets-11-04",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "The Music is Black: A British Story",
-   "area": "Stratford",
-   "lat": 51.543,
-   "lon": -0.009,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    10,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "music history",
-    "exhibition",
-    "british",
-    "v&a east"
-   ],
-   "blurb": "Exhibition at V&A East on the story of Black music in Britain, running until 10 January 2027. Tickets are £22.50 on weekdays and £24.50 at weekends.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-04",
-   "to": "2027-01-10",
-   "source": "Young V&A",
-   "id": "ev-the-music-is-black-a-british-story-11-04",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Roots",
    "area": "Deptford",
    "lat": 51.479,
@@ -6579,36 +5936,6 @@
    "hrs": 1
   },
   {
-   "name": "Luna Loves London",
-   "area": "Stratford",
-   "lat": 51.5405,
-   "lon": -0.0019,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    8
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 0.9,
-   "tags": [
-    "immersive exhibition",
-    "storytelling",
-    "pretend play",
-    "family day out",
-    "under eights"
-   ],
-   "blurb": "Immersive exhibition where children explore Luna's London: a library, sports street, art gallery, community garden, dance studio and carnival. Sessions run daily at various times, about 50 minutes. Book ahead.",
-   "url": "https://discover.org.uk/event/luna-loves-london/",
-   "from": "2026-11-04",
-   "to": "2026-11-25",
-   "source": "Discover Children's Story Centre",
-   "id": "ev-luna-loves-london-11-04",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Guided Tours",
    "area": "Rotherhithe",
    "lat": 51.5014,
@@ -6631,7 +5958,7 @@
    "blurb": "Guided tours of the Brunel Museum run on Saturdays and Sundays at 12:30. Check the museum site for current prices and booking details before you go.",
    "url": "https://thebrunelmuseum.com/events/",
    "from": "2026-11-04",
-   "to": "2026-11-25",
+   "to": "2026-11-26",
    "time": "12:30",
    "source": "Brunel Museum",
    "id": "ev-guided-tours-11-04",
@@ -6641,7 +5968,8 @@
     6
    ],
    "open": "12:30",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Disney's High School Musical at Wembley Park",
@@ -7521,6 +6849,39 @@
    "rel": "keep"
   },
   {
+   "name": "Luna Loves London (immersive exhibition)",
+   "area": "Stratford",
+   "lat": 51.5405,
+   "lon": -0.0019,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    0,
+    8
+   ],
+   "kids": 3,
+   "adults": 1,
+   "dur": 0.83,
+   "tags": [
+    "immersive exhibition",
+    "storytelling",
+    "imaginative play",
+    "toddler friendly"
+   ],
+   "blurb": "Join Luna on a bus trip around her city: scan library books, climb into a giant storybook, play sports, make art and join the carnival. Tickets £5.50.",
+   "date": "2026-11-05",
+   "time": "16:10",
+   "url": "https://discover.org.uk/event/luna-loves-london/",
+   "source": "Discover Children's Story Centre",
+   "id": "ev-luna-loves-london-immersive-exhibition-11-05",
+   "open": "16:10",
+   "hrs": 1,
+   "rel": "keep",
+   "to": "2026-11-25",
+   "from": "2026-11-04",
+   "also": []
+  },
+  {
    "name": "Lunchtime Lecture: Curating Urushi Now",
    "area": "South Kensington",
    "lat": 51.4966,
@@ -7575,9 +6936,7 @@
    "to": "2026-12-18",
    "source": "Young V&A",
    "id": "ev-sound-explorers-drop-in-11-05",
-   "also": [
-    "V&A South Kensington"
-   ],
+   "also": [],
    "rel": "keep",
    "hrs": 1
   },
@@ -7645,11 +7004,15 @@
    "source": "Roundhouse",
    "id": "ev-animation-club-11-05",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "days": [
+    4
+   ],
+   "also": []
   },
   {
-   "name": "Music Producers Drop In (18-25)",
-   "area": "Chalk Farm",
+   "name": "Autumn Term Music Producers Drop In (18-25)",
+   "area": "Camden",
    "lat": 51.5433,
    "lon": -0.1526,
    "in": "in",
@@ -7659,24 +7022,26 @@
     25
    ],
    "kids": 0,
-   "adults": 1,
+   "adults": 3,
    "dur": 2,
    "tags": [
     "music production",
-    "drop in workshop",
-    "no booking needed"
+    "drop in",
+    "creative",
+    "young adults"
    ],
-   "blurb": "Drop-in music production session for 18-25 year olds, £2. No booking needed. Runs Thursdays from 5 to 26 November.",
+   "blurb": "Drop-in music production sessions for 18-25 year olds. Bring your ideas and work on tracks with others. No need to book; costs £2.",
    "url": "https://www.roundhouse.org.uk/whats-on/",
    "from": "2026-11-05",
    "to": "2026-11-26",
    "source": "Roundhouse",
-   "id": "ev-music-producers-drop-in-18-25-11-05",
+   "id": "ev-autumn-term-music-producers-drop-in-18-2-11-05",
+   "hrs": 1,
    "rel": "keep",
    "days": [
     4
    ],
-   "hrs": 1
+   "also": []
   },
   {
    "name": "DJ Drop In",
@@ -7867,10 +7232,10 @@
    "hrs": 1
   },
   {
-   "name": "Wriggle and Rhyme (Brixton Library)",
+   "name": "Under 5s Wriggle and Rhyme (Brixton)",
    "area": "Brixton",
-   "lat": 51.4625,
-   "lon": -0.1145,
+   "lat": 51.46,
+   "lon": -0.115,
    "in": "in",
    "price": "free",
    "ages": [
@@ -7881,17 +7246,16 @@
    "adults": 1,
    "dur": 0.5,
    "tags": [
-    "baby",
-    "toddler",
-    "library",
-    "singing",
-    "rhymes"
+    "toddler singing",
+    "rhymes",
+    "library story time"
    ],
-   "blurb": "Interactive wriggle and rhyme with librarians in the children's library. Held Tuesday and Thursday mornings at Brixton Library. Free.",
+   "blurb": "Interactive wriggle and rhyme session led by librarians in the children's library. Held Tuesday and Thursday mornings. Bring your under 5.",
    "url": "https://www.lambeth.gov.uk/events",
    "date": "2026-11-05",
+   "time": "morning",
    "source": "Lambeth events",
-   "id": "ev-wriggle-and-rhyme-brixton-library-11-05",
+   "id": "ev-under-5s-wriggle-and-rhyme-brixton-11-05",
    "rel": "keep",
    "days": [
     2,
@@ -7899,7 +7263,8 @@
    ],
    "part": "morning",
    "hrs": 1,
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Wriggle and Rhyme (Norwood Library)",
@@ -8023,68 +7388,6 @@
    "hrs": 1
   },
   {
-   "name": "Under 5s Wriggle and Rhyme (Brixton)",
-   "area": "Brixton",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    4
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 0.5,
-   "tags": [
-    "toddler singing",
-    "rhymes",
-    "library story time"
-   ],
-   "blurb": "Interactive wriggle and rhyme session led by librarians in the children's library. Held Tuesday and Thursday mornings. Bring your under 5.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-05",
-   "time": "morning",
-   "source": "Lambeth events",
-   "id": "ev-under-5s-wriggle-and-rhyme-brixton-11-05",
-   "rel": "keep",
-   "days": [
-    2,
-    4
-   ],
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Wriggle and Rhyme (Norwood)",
-   "area": "Norwood",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    4
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 0.5,
-   "tags": [
-    "toddler singing",
-    "rhymes",
-    "library story time"
-   ],
-   "blurb": "Interactive wriggle and rhyme session led by librarians in the children's library. Bring your little one for songs and rhymes.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-05",
-   "source": "Lambeth events",
-   "id": "ev-wriggle-and-rhyme-norwood-11-05",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "Mindfulness Meditation (Norwood)",
    "area": "Norwood",
    "lat": 51.46,
@@ -8110,7 +7413,8 @@
    "id": "ev-mindfulness-meditation-norwood-11-05",
    "rel": "keep",
    "hrs": 1,
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Collaborative Doctoral Partnerships 20th Anniversary Conference",
@@ -8199,131 +7503,6 @@
    "rel": "keep",
    "part": "afternoon",
    "hrs": 1
-  },
-  {
-   "name": "Autumn Term Animation Club",
-   "area": "Camden",
-   "lat": 51.5433,
-   "lon": -0.1526,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    11,
-    14
-   ],
-   "kids": 3,
-   "adults": 0,
-   "dur": 2,
-   "tags": [
-    "animation",
-    "film",
-    "creative",
-    "youth club"
-   ],
-   "blurb": "Autumn term animation club for 11-14 year olds. Kids learn to make their own animated films in a hands-on group setting.",
-   "url": "https://www.roundhouse.org.uk/whats-on/",
-   "from": "2026-11-05",
-   "to": "2026-11-12",
-   "source": "Roundhouse",
-   "id": "ev-autumn-term-animation-club-11-05",
-   "rel": "keep",
-   "hrs": 1,
-   "days": [
-    4
-   ]
-  },
-  {
-   "name": "Lower Stable Street Market",
-   "area": "King's Cross",
-   "lat": 51.536,
-   "lon": -0.1255,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "weekly market",
-    "b corp",
-    "independent traders",
-    "outdoor market"
-   ],
-   "blurb": "B Corp certified market along Lower Stable Street with a strong line-up of traders. Free entry, Thursday to Sunday. Listed here for 5-24 Nov.",
-   "url": "https://www.kingscross.co.uk/whats-on",
-   "from": "2026-11-05",
-   "to": "2026-11-24",
-   "source": "King's Cross / Coal Drops Yard",
-   "id": "ev-lower-stable-street-market-11-05",
-   "rel": "keep",
-   "days": [
-    0,
-    4,
-    5,
-    6
-   ],
-   "hrs": 1
-  },
-  {
-   "name": "Wriggle and Rhyme",
-   "area": "Norwood",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    4
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 0.75,
-   "tags": [
-    "under 5s",
-    "songs",
-    "library",
-    "toddlers"
-   ],
-   "blurb": "Interactive singing and rhyme session for under-5s in the Norwood children's library. Free, with a librarian leading. Bring your toddler.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-05",
-   "source": "Lambeth events",
-   "id": "ev-wriggle-and-rhyme-11-05",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Mindfulness Meditation",
-   "area": "Norwood",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "mindfulness",
-    "meditation",
-    "wellbeing",
-    "weekly class"
-   ],
-   "blurb": "Free weekly mindfulness classes to help you find calm in a busy day. No experience needed. Suitable for adults.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-05",
-   "source": "Lambeth events",
-   "id": "ev-mindfulness-meditation-11-05",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
   },
   {
    "name": "Bereavement Help Point",
@@ -8764,36 +7943,6 @@
    "rel": "keep"
   },
   {
-   "name": "Sound Explorers",
-   "area": "Bethnal Green",
-   "lat": 51.529,
-   "lon": -0.0557,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    8
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "sound",
-    "music",
-    "drop-in",
-    "young v&a",
-    "family"
-   ],
-   "blurb": "Free family drop-in at the Young V&A exploring sound and music through hands-on play. Runs until 18 December.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-05",
-   "to": "2026-12-18",
-   "source": "Young V&A",
-   "id": "ev-sound-explorers-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Play After School",
    "area": "Bethnal Green",
    "lat": 51.529,
@@ -8857,35 +8006,6 @@
    "rel": "keep"
   },
   {
-   "name": "Makers Club open studio",
-   "area": "Stratford",
-   "lat": 51.5438,
-   "lon": -0.0047,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "making",
-    "open studio",
-    "craft",
-    "drop-in"
-   ],
-   "blurb": "Free open studio at V&A East Museum where you can make, create and reflect. Open until 11 December. Good for hands-on creative time.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-05",
-   "to": "2026-12-11",
-   "source": "V&A South Kensington",
-   "id": "ev-makers-club-open-studio-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Drop-in Make Space",
    "area": "Stratford",
    "lat": 51.5418,
@@ -8912,35 +8032,6 @@
    "to": "2026-12-10",
    "source": "Young V&A",
    "id": "ev-drop-in-make-space-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "The Music is Black: A British Story",
-   "area": "Stratford",
-   "lat": 51.5438,
-   "lon": -0.0047,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "music",
-    "history",
-    "black british",
-    "exhibition"
-   ],
-   "blurb": "Exhibition at V&A East tracing Black British music across decades. Weekday £22.50, weekend £24.50. Runs until 10 January 2027.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-05",
-   "to": "2027-01-10",
-   "source": "V&A South Kensington",
-   "id": "ev-the-music-is-black-a-british-story-11-05",
    "hrs": 1,
    "rel": "keep"
   },
@@ -8974,35 +8065,6 @@
    "rel": "keep"
   },
   {
-   "name": "The Long Goodbye: Carrie Mae Weems film screening",
-   "area": "Stratford",
-   "lat": 51.5438,
-   "lon": -0.0047,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    14,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "film",
-    "photography",
-    "screening",
-    "art"
-   ],
-   "blurb": "Free screening of Carrie Mae Weems' The Long Goodbye at V&A East. Ends 11 November, so catch it soon. Suits fans of contemporary photography.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-05",
-   "to": "2026-11-11",
-   "source": "V&A South Kensington",
-   "id": "ev-the-long-goodbye-carrie-mae-weems-film-s-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Play Saturdays",
    "area": "Bethnal Green",
    "lat": 51.529,
@@ -9032,96 +8094,6 @@
    "to": "2026-12-19",
    "source": "Young V&A",
    "id": "ev-play-saturdays-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Upperground: DJ Sets",
-   "area": "Stratford",
-   "lat": 51.5446,
-   "lon": -0.0103,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "dj sets",
-    "music",
-    "nightlife",
-    "free",
-    "v&a east"
-   ],
-   "blurb": "Free DJ sets in the Upperground space at V&A East Museum. Runs until 17 December; check the event page for session times.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-05",
-   "to": "2026-12-17",
-   "source": "Young V&A",
-   "id": "ev-upperground-dj-sets-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Makers Club",
-   "area": "Stratford",
-   "lat": 51.5446,
-   "lon": -0.0103,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    7,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "making",
-    "open studio",
-    "craft",
-    "free",
-    "v&a east"
-   ],
-   "blurb": "Free open-studio making space at V&A East Museum to make, create and reflect. Runs until 11 December.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-05",
-   "to": "2026-12-11",
-   "source": "Young V&A",
-   "id": "ev-makers-club-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "The Long Goodbye: Carrie Mae Weems",
-   "area": "Stratford",
-   "lat": 51.5446,
-   "lon": -0.0103,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "photography",
-    "art",
-    "exhibition",
-    "ending soon",
-    "v&a east"
-   ],
-   "blurb": "Free exhibition by Carrie Mae Weems at V&A East Museum. Final days before it closes on 11 November.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-05",
-   "to": "2026-11-11",
-   "source": "Young V&A",
-   "id": "ev-the-long-goodbye-carrie-mae-weems-11-05",
    "hrs": 1,
    "rel": "keep"
   },
@@ -9219,94 +8191,6 @@
    "rel": "keep"
   },
   {
-   "name": "Autumn Term Music Producers Drop In (18-25)",
-   "area": "Camden",
-   "lat": 51.5433,
-   "lon": -0.1526,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    18,
-    25
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "music production",
-    "drop in",
-    "creative",
-    "young adults"
-   ],
-   "blurb": "Drop-in music production sessions for 18-25 year olds. Bring your ideas and work on tracks with others. No need to book; costs £2.",
-   "url": "https://www.roundhouse.org.uk/whats-on/",
-   "from": "2026-11-05",
-   "to": "2026-11-26",
-   "source": "Roundhouse",
-   "id": "ev-autumn-term-music-producers-drop-in-18-2-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "The Pied Piper: A Rat's Tale",
-   "area": "Islington",
-   "lat": 51.5385,
-   "lon": -0.106,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "puppetry",
-    "storytelling",
-    "original music",
-    "family show"
-   ],
-   "blurb": "A funny, imaginative family puppet show told from the rat's point of view. Meet Horatio and discover the story behind the Pied Piper legend.",
-   "url": "https://www.littleangeltheatre.com/whats-on/",
-   "from": "2026-11-05",
-   "to": "2026-11-07",
-   "source": "Little Angel Theatre",
-   "id": "ev-the-pied-piper-a-rat-s-tale-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Luna Loves London (immersive exhibition)",
-   "area": "Stratford",
-   "lat": 51.5405,
-   "lon": -0.0019,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    8
-   ],
-   "kids": 3,
-   "adults": 1,
-   "dur": 0.83,
-   "tags": [
-    "immersive exhibition",
-    "storytelling",
-    "imaginative play",
-    "toddler friendly"
-   ],
-   "blurb": "Join Luna on a bus trip around her city: scan library books, climb into a giant storybook, play sports, make art and join the carnival. Tickets £5.50.",
-   "date": "2026-11-05",
-   "time": "16:10",
-   "url": "https://discover.org.uk/event/luna-loves-london/",
-   "source": "Discover Children's Story Centre",
-   "id": "ev-luna-loves-london-immersive-exhibition-11-05",
-   "open": "16:10",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Fungi Walk: Citizen Science",
    "area": "Teddington",
    "lat": 51.415,
@@ -9332,41 +8216,6 @@
    "url": "https://www.royalparks.org.uk/whats-on",
    "source": "The Royal Parks",
    "id": "ev-fungi-walk-citizen-science-11-05",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Guided Tours at the Brunel Museum",
-   "area": "Rotherhithe",
-   "lat": 51.5014,
-   "lon": -0.0528,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "guided tour",
-    "history",
-    "brunel",
-    "thames tunnel",
-    "rotherhithe"
-   ],
-   "blurb": "Guided tours of the Brunel Museum on Saturdays and Sundays at 12:30, covering the Thames Tunnel and the Brunel family. Check the museum site for current prices.",
-   "days": [
-    0,
-    6
-   ],
-   "from": "2026-11-05",
-   "to": "2026-11-26",
-   "url": "https://thebrunelmuseum.com/events/",
-   "source": "Brunel Museum",
-   "id": "ev-guided-tours-at-the-brunel-museum-11-05",
-   "open": "12:30",
    "hrs": 1,
    "rel": "keep"
   },
@@ -10239,41 +9088,6 @@
    "url": "https://www.rbkc.gov.uk/events",
    "source": "Kensington & Chelsea Council events",
    "id": "ev-rhyme-time-for-under-5s-11-05",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1
-  },
-  {
-   "name": "Wellbeing Walk",
-   "area": "Kensington & Chelsea",
-   "lat": 51.5,
-   "lon": -0.195,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1.5,
-   "tags": [
-    "walking",
-    "group walk",
-    "wellbeing",
-    "meet people",
-    "outdoors"
-   ],
-   "blurb": "Join a walking group to get out, move and meet new people. Route and meeting point not stated; runs Tuesdays and Thursdays.",
-   "days": [
-    2,
-    4
-   ],
-   "from": "2026-11-05",
-   "to": "2026-11-26",
-   "url": "https://www.rbkc.gov.uk/events",
-   "source": "Kensington & Chelsea Council events",
-   "id": "ev-wellbeing-walk-11-05",
    "hrs": 1,
    "rel": "keep",
    "lk": 1
@@ -11894,7 +10708,8 @@
    "source": "Kensal Rise Library",
    "id": "ev-toddler-and-baby-caterpillar-music-class-11-05",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "also": []
   },
   {
    "name": "Chatty Cafe",
@@ -12778,7 +11593,9 @@
    "date": "2026-11-06",
    "source": "V&A South Kensington",
    "id": "ev-i-am-roland-mouret-talk-11-06",
-   "also": [],
+   "also": [
+    "Young V&A"
+   ],
    "rel": "keep",
    "hrs": 1
   },
@@ -13038,35 +11855,6 @@
    "hrs": 1
   },
   {
-   "name": "I Am Roland Mouret (Rescheduled)",
-   "area": "South Kensington",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1.5,
-   "tags": [
-    "fashion",
-    "talk",
-    "designer",
-    "roland mouret",
-    "v&a talk"
-   ],
-   "blurb": "Rescheduled talk with fashion designer Roland Mouret at the V&A South Kensington on Friday 6 November. Tickets £15–£20.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "date": "2026-11-06",
-   "source": "Young V&A",
-   "id": "ev-i-am-roland-mouret-rescheduled-11-06",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Evening Concert: Harpists Gloria Rappo and Xinyi Wu",
    "area": "Greenwich",
    "lat": 51.481,
@@ -13246,7 +12034,8 @@
    "open": "10:00",
    "part": "morning",
    "hrs": 1,
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "FREE TASTER SESSION: Woodpeckers Parent & Toddler Afternoon Group",
@@ -13535,67 +12324,40 @@
    "lk": 1
   },
   {
-   "name": "Luxmuralis: Lost Worlds",
-   "area": "Greenwich",
-   "lat": 51.4828,
-   "lon": -0.0076,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "light art",
-    "immersive",
-    "old royal naval college",
-    "evening"
-   ],
-   "blurb": "Luxmuralis takes over the Old Royal Naval College with light and sound journeys through prehistoric cave art, Atlantis, Troy and the age of dinosaurs. Evening-only. Check booking for exact prices.",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "from": "2026-11-06",
-   "to": "2026-11-15",
-   "source": "Londonist things to do (aggregator)",
-   "id": "ev-luxmuralis-lost-worlds-11-06",
-   "rel": "keep",
-   "part": "evening",
-   "hrs": 1,
-   "lk": 1,
-   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
-  },
-  {
-   "name": "Nue Black Aesthetic",
+   "name": "The Nue Black Aesthetic exhibition opening",
    "area": "Kensington",
-   "lat": 51.5024,
-   "lon": -0.1985,
+   "lat": 51.4998,
+   "lon": -0.1998,
    "in": "in",
    "price": "££",
    "ages": [
-    0,
+    12,
     99
    ],
-   "kids": 1,
+   "kids": 0,
    "adults": 2,
    "dur": 1.5,
    "tags": [
+    "black design",
+    "guest curated",
     "design exhibition",
-    "contemporary black designers",
-    "design museum",
-    "furniture fashion"
+    "nuance"
    ],
-   "blurb": "The Design Museum showcases contemporary Black designers reshaping British design across furniture, architecture, fashion and installation. Runs until August 2027.",
-   "url": "https://designmuseum.org/exhibitions/the-nue-black-aesthetic",
-   "from": "2026-11-06",
-   "to": "2027-08-08",
-   "source": "Londonist things to do (aggregator)",
-   "id": "ev-nue-black-aesthetic-11-06",
+   "blurb": "Guest-curated show exploring the 'Nue' era of Black design, linking the 1960s Black Aesthetic and 1980s New Black Aesthetic. Tickets via link in bio.",
+   "date": "2026-11-06",
+   "url": "https://designmuseum.org/whats-on",
+   "source": "Instagram @designmuseum",
+   "id": "ev-ig-the-nue-black-aesthetic-exhibition-openi-11-06",
    "rel": "keep",
    "hrs": 1,
+   "site": "https://designmuseum.org/whats-on",
    "lk": 1,
-   "via": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026"
+   "via": "https://www.instagram.com/reel/DfHiIFJD6oU/",
+   "to": "2027-08-08",
+   "from": "2026-11-06",
+   "also": [
+    "Londonist things to do (aggregator)"
+   ]
   },
   {
    "name": "Highgate Art Fair",
@@ -13660,68 +12422,6 @@
    "lk": 1
   },
   {
-   "name": "Stay & Play - The Grange",
-   "area": "Sutton",
-   "lat": 51.3618,
-   "lon": -0.1945,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "play session",
-    "toddler play",
-    "morning activity"
-   ],
-   "blurb": "Play session for under-fives at The Grange Play Centre on 6 November at 10am. Drop in with a grown-up for indoor play.",
-   "url": "https://events.sutton.gov.uk/",
-   "date": "2026-11-06",
-   "time": "10:00",
-   "source": "Sutton Council events",
-   "id": "ev-stay-play-the-grange-11-06",
-   "rel": "keep",
-   "open": "10:00",
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "The Nue Black Aesthetic exhibition opening",
-   "area": "Kensington",
-   "lat": 51.4998,
-   "lon": -0.1998,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "black design",
-    "guest curated",
-    "design exhibition",
-    "nuance"
-   ],
-   "blurb": "Guest-curated show exploring the 'Nue' era of Black design, linking the 1960s Black Aesthetic and 1980s New Black Aesthetic. Tickets via link in bio.",
-   "date": "2026-11-06",
-   "url": "https://designmuseum.org/whats-on",
-   "source": "Instagram @designmuseum",
-   "id": "ev-ig-the-nue-black-aesthetic-exhibition-openi-11-06",
-   "rel": "keep",
-   "hrs": 1,
-   "site": "https://designmuseum.org/whats-on",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfHiIFJD6oU/"
-  },
-  {
    "name": "Live jazz at rails.london",
    "area": "King's Cross",
    "lat": 51.5345,
@@ -13759,64 +12459,6 @@
    "site": "https://www.kingscross.co.uk/whats-on",
    "lk_try": 3,
    "lk": 1
-  },
-  {
-   "name": "I Am Roland Mouret",
-   "area": "South Kensington",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1.5,
-   "tags": [
-    "talk",
-    "fashion",
-    "designer",
-    "rescheduled"
-   ],
-   "blurb": "Rescheduled talk with designer Roland Mouret at the V&A. Tickets £15-£20. Adults only. Livestream also available.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "date": "2026-11-06",
-   "source": "V&A South Kensington",
-   "id": "ev-i-am-roland-mouret-11-06",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Luna Loves London (immersive exhibition)",
-   "area": "Stratford",
-   "lat": 51.5405,
-   "lon": -0.0019,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    8
-   ],
-   "kids": 3,
-   "adults": 1,
-   "dur": 0.83,
-   "tags": [
-    "immersive exhibition",
-    "storytelling",
-    "imaginative play",
-    "toddler friendly"
-   ],
-   "blurb": "Join Luna on a bus trip around her city: scan library books, climb into a giant storybook, play sports, make art and join the carnival. Tickets £5.50.",
-   "date": "2026-11-06",
-   "time": "10:15",
-   "url": "https://discover.org.uk/event/luna-loves-london/",
-   "source": "Discover Children's Story Centre",
-   "id": "ev-luna-loves-london-immersive-exhibition-11-06",
-   "open": "10:15",
-   "hrs": 1,
-   "rel": "keep"
   },
   {
    "name": "Christmas Glide at Battersea Power Station",
@@ -14961,39 +13603,6 @@
    "rel": "keep"
   },
   {
-   "name": "Lost Worlds by Luxmuralis",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "light show",
-    "projection art",
-    "historic building",
-    "family outing",
-    "painted hall"
-   ],
-   "blurb": "Immersive projection show returning to the Painted Hall this Friday. Book timed tickets online via the link in bio, as slots are filling up fast.",
-   "date": "2026-11-06",
-   "post": "https://www.instagram.com/p/DfU6B8micSb/",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "source": "Instagram @oldroyalnavalcollege",
-   "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-06",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1,
-   "via": "https://www.instagram.com/p/DfU6B8micSb/"
-  },
-  {
    "name": "Diwali at the National Maritime Museum",
    "area": "Greenwich",
    "lat": 51.481,
@@ -15421,7 +14030,13 @@
    "source": "Young V&A",
    "id": "ev-drop-in-power-of-play-together-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "to": "2026-12-19",
+   "from": "2026-11-07",
+   "days": [
+    6
+   ],
+   "also": []
   },
   {
    "name": "SEND Play drop-in",
@@ -15449,42 +14064,8 @@
    "to": "2026-12-05",
    "source": "Young V&A",
    "id": "ev-send-play-drop-in-11-07",
-   "also": [
-    "V&A South Kensington"
-   ],
+   "also": [],
    "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Drop-in Play Saturdays",
-   "area": "Bethnal Green",
-   "lat": 51.529,
-   "lon": -0.0557,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    8
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "drop-in play",
-    "saturdays",
-    "family",
-    "young v&a"
-   ],
-   "blurb": "Free Saturday drop-in play at the Young V&A, running until 19 December. Drop in during opening hours for hands-on play with the family.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-07",
-   "to": "2026-12-19",
-   "source": "Young V&A",
-   "id": "ev-drop-in-play-saturdays-11-07",
-   "rel": "keep",
-   "days": [
-    6
-   ],
    "hrs": 1
   },
   {
@@ -15768,71 +14349,40 @@
    "hrs": 1
   },
   {
-   "name": "Music In The Dark | PULSE (18:30)",
-   "area": "Borough",
+   "name": "Music In The Dark | PULSE",
+   "area": "Southwark",
    "lat": 51.5061,
    "lon": -0.09,
    "in": "in",
    "price": "££",
    "ages": [
-    12,
+    14,
     99
    ],
    "kids": 0,
-   "adults": 2,
+   "adults": 1,
    "dur": 1.25,
    "tags": [
-    "music",
     "immersive",
+    "music",
     "darkness",
-    "evening",
-    "concert"
+    "concert",
+    "night out"
    ],
-   "blurb": "Immersive concert in complete darkness where sound takes centre stage. Tickets from £48. Evening performance, about 75 minutes.",
+   "blurb": "A total-darkness concert where sound takes centre stage and the audience becomes the performance. Tickets from £48. Earlier 18:30 slot; book ahead.",
    "url": "https://cathedral.southwark.anglican.org/whats-on/",
    "date": "2026-11-07",
    "time": "18:30",
    "source": "Southwark Cathedral",
-   "id": "ev-music-in-the-dark-pulse-18-30-11-07",
+   "id": "ev-music-in-the-dark-pulse-11-07",
    "rel": "keep",
    "open": "18:30",
-   "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "close": "22:00",
+   "also": []
   },
   {
-   "name": "Music In The Dark | PULSE (20:45)",
-   "area": "Borough",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.25,
-   "tags": [
-    "music",
-    "immersive",
-    "darkness",
-    "late evening",
-    "concert"
-   ],
-   "blurb": "Second late-evening showing of the immersive darkness concert. Tickets from £48. Runs about 75 minutes.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-07",
-   "time": "20:45",
-   "source": "Southwark Cathedral",
-   "id": "ev-music-in-the-dark-pulse-20-45-11-07",
-   "rel": "keep",
-   "open": "20:45",
-   "part": "evening",
-   "hrs": 1
-  },
-  {
-   "name": "London Tarot Meetup for Black Women",
+   "name": "London Tarot Meetup for Black Women (7 Nov)",
    "area": "Peckham",
    "lat": 51.4727,
    "lon": -0.07,
@@ -15843,20 +14393,22 @@
     99
    ],
    "kids": 0,
-   "adults": 3,
+   "adults": 1,
+   "dur": 2,
    "tags": [
-    "tarot",
+    "tarot meetup",
     "community",
     "intuition",
-    "meetup"
+    "black women"
    ],
-   "blurb": "A dedicated space for Black and Mixed-Black women to practise tarot readings and build intuition together.",
+   "blurb": "Community space for Black and Mixed-Black women to practise tarot readings and build intuition together. Check the venue page for booking details.",
    "url": "https://peckhamlevels.org/whats-on",
    "date": "2026-11-07",
    "source": "Peckham Levels",
-   "id": "ev-london-tarot-meetup-for-black-women-11-07",
+   "id": "ev-london-tarot-meetup-for-black-women-7-no-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Dinner to Dance: Kate Hutchinson b2b Mari",
@@ -15891,35 +14443,37 @@
    ]
   },
   {
-   "name": "Gladiators Live Tour",
-   "area": "Wembley",
+   "name": "Gladiators Live Tour (10am show)",
+   "area": "Wembley Park",
    "lat": 51.557,
    "lon": -0.2795,
    "in": "in",
    "price": "££",
    "ages": [
-    5,
+    6,
     99
    ],
-   "kids": 2,
+   "kids": 3,
    "adults": 2,
-   "dur": 2,
+   "dur": 2.5,
    "tags": [
+    "gladiators",
     "live show",
-    "family entertainment",
-    "ovo arena",
-    "tv sport"
+    "arena",
+    "family",
+    "sport"
    ],
-   "blurb": "Afternoon Gladiators Live show at OVO Arena Wembley on 7 Nov at 4pm. Tickets needed; check age guidance and plan travel for the Wembley Park area.",
+   "blurb": "Live arena show of the classic TV sport-competition format at OVO Arena Wembley. Morning performance on 7 November, good for families with young fans.",
    "url": "https://wembleypark.com/whats-on/",
    "date": "2026-11-07",
-   "time": "16:00",
+   "time": "10:00",
    "source": "Wembley Park",
-   "id": "ev-gladiators-live-tour-11-07",
+   "id": "ev-gladiators-live-tour-10am-show-11-07",
    "rel": "keep",
-   "open": "16:00",
-   "part": "afternoon",
-   "hrs": 1
+   "hrs": 1,
+   "open": "10:00",
+   "part": "morning",
+   "also": []
   },
   {
    "name": "Ethiopian Dreams",
@@ -16132,37 +14686,6 @@
    "hrs": 1
   },
   {
-   "name": "Music In The Dark | PULSE",
-   "area": "Southwark",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    14,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1.25,
-   "tags": [
-    "immersive",
-    "music",
-    "darkness",
-    "concert",
-    "night out"
-   ],
-   "blurb": "A total-darkness concert where sound takes centre stage and the audience becomes the performance. Tickets from £48. Earlier 18:30 slot; book ahead.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-07",
-   "time": "18:30",
-   "source": "Southwark Cathedral",
-   "id": "ev-music-in-the-dark-pulse-11-07",
-   "rel": "keep",
-   "open": "18:30",
-   "hrs": 1
-  },
-  {
    "name": "Greenwich Chamber Orchestra",
    "area": "Greenwich",
    "lat": 51.4812,
@@ -16249,7 +14772,8 @@
    "id": "ev-reading-group-norwood-11-07",
    "rel": "keep",
    "hrs": 1,
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Puscifer: Normal Isn't Tour",
@@ -16281,158 +14805,6 @@
    "hrs": 1
   },
   {
-   "name": "Family drop-in SEND Play",
-   "area": "Bethnal Green",
-   "lat": 51.5221,
-   "lon": -0.0716,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    11
-   ],
-   "kids": 2,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "send",
-    "inclusive play",
-    "family"
-   ],
-   "blurb": "Free drop-in play designed for children with special educational needs and their families at the Young V&A. Check the listing for session times and booking.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-07",
-   "to": "2026-12-05",
-   "source": "V&A South Kensington",
-   "id": "ev-family-drop-in-send-play-11-07",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Autumn Term Saturday Sounds Drop In",
-   "area": "Camden",
-   "lat": 51.5433,
-   "lon": -0.1526,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    11,
-    14
-   ],
-   "kids": 3,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "music",
-    "drop in",
-    "youth club",
-    "teens"
-   ],
-   "blurb": "A drop-in music session for 11-14 year olds during the autumn term. Just turn up, no booking needed. Costs £2.",
-   "url": "https://www.roundhouse.org.uk/whats-on/",
-   "from": "2026-11-07",
-   "to": "2026-11-28",
-   "source": "Roundhouse",
-   "id": "ev-autumn-term-saturday-sounds-drop-in-11-07",
-   "rel": "keep",
-   "hrs": 1,
-   "days": [
-    6
-   ]
-  },
-  {
-   "name": "Music In The Dark | PULSE (late show)",
-   "area": "Borough",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    14,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 1.25,
-   "tags": [
-    "immersive",
-    "music",
-    "darkness",
-    "sound",
-    "night out"
-   ],
-   "blurb": "Experience complete darkness as sound takes over and the audience becomes the stage. Tickets from £48. Adult-oriented immersive performance.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-07",
-   "time": "20:45",
-   "source": "Southwark Cathedral",
-   "id": "ev-music-in-the-dark-pulse-late-show-11-07",
-   "rel": "keep",
-   "hrs": 1,
-   "open": "20:45",
-   "close": "22:00",
-   "part": "evening"
-  },
-  {
-   "name": "London Tarot Meetup for Black Women (7 Nov)",
-   "area": "Peckham",
-   "lat": 51.4727,
-   "lon": -0.07,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "tarot meetup",
-    "community",
-    "intuition",
-    "black women"
-   ],
-   "blurb": "Community space for Black and Mixed-Black women to practise tarot readings and build intuition together. Check the venue page for booking details.",
-   "url": "https://peckhamlevels.org/whats-on",
-   "date": "2026-11-07",
-   "source": "Peckham Levels",
-   "id": "ev-london-tarot-meetup-for-black-women-7-no-11-07",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Greenwich Peninsula Winter Market",
-   "area": "Greenwich Peninsula",
-   "lat": 51.493,
-   "lon": 0.011,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 3,
-   "tags": [
-    "winter market",
-    "christmas",
-    "food and drink",
-    "lights",
-    "outdoor"
-   ],
-   "blurb": "Festive winter market with twinkling lights, stalls and food and drink on Greenwich Peninsula. Good for a relaxed evening or weekend wander.",
-   "from": "2026-11-07",
-   "to": "2027-01-03",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
-   "source": "Enjoy Royal Greenwich",
-   "id": "ev-greenwich-peninsula-winter-market-11-07",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "Saturday Sounds Drop In",
    "area": "Chalk Farm",
    "lat": 51.5433,
@@ -16461,130 +14833,36 @@
    "days": [
     6
    ],
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
-   "name": "Music In The Dark | PULSE (late slot)",
-   "area": "Southwark",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "££",
+   "name": "Greenwich Peninsula Winter Market",
+   "area": "Greenwich Peninsula",
+   "lat": 51.493,
+   "lon": 0.011,
+   "in": "out",
+   "price": "free",
    "ages": [
     0,
     99
    ],
-   "kids": 0,
+   "kids": 2,
    "adults": 2,
-   "dur": 1.25,
+   "dur": 3,
    "tags": [
-    "music",
-    "immersive",
-    "darkness",
-    "concert",
-    "unusual experience"
+    "winter market",
+    "christmas",
+    "food and drink",
+    "lights",
+    "outdoor"
    ],
-   "blurb": "Immersive darkness concert where the audience becomes the stage. Tickets from £48. Later slot starts 20:45 on Saturday 7 November.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-07",
-   "time": "20:45",
-   "source": "Southwark Cathedral",
-   "id": "ev-music-in-the-dark-pulse-late-slot-11-07",
-   "rel": "keep",
-   "open": "20:45",
-   "part": "evening",
-   "hrs": 1
-  },
-  {
-   "name": "Gladiators Live Tour (10am show)",
-   "area": "Wembley Park",
-   "lat": 51.557,
-   "lon": -0.2795,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    6,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "gladiators",
-    "live show",
-    "arena",
-    "family",
-    "sport"
-   ],
-   "blurb": "Live arena show of the classic TV sport-competition format at OVO Arena Wembley. Morning performance on 7 November, good for families with young fans.",
-   "url": "https://wembleypark.com/whats-on/",
-   "date": "2026-11-07",
-   "time": "10:00",
-   "source": "Wembley Park",
-   "id": "ev-gladiators-live-tour-10am-show-11-07",
-   "rel": "keep",
-   "hrs": 1,
-   "open": "10:00",
-   "part": "morning"
-  },
-  {
-   "name": "Gladiators Live Tour (4pm show)",
-   "area": "Wembley Park",
-   "lat": 51.557,
-   "lon": -0.2795,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    6,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "gladiators",
-    "live show",
-    "arena",
-    "family",
-    "sport"
-   ],
-   "blurb": "Live arena show of the classic TV sport-competition format at OVO Arena Wembley. Afternoon performance on 7 November.",
-   "url": "https://wembleypark.com/whats-on/",
-   "date": "2026-11-07",
-   "time": "16:00",
-   "source": "Wembley Park",
-   "id": "ev-gladiators-live-tour-4pm-show-11-07",
-   "rel": "keep",
-   "hrs": 1,
-   "open": "16:00",
-   "part": "afternoon"
-  },
-  {
-   "name": "Reading Group",
-   "area": "Norwood",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "books",
-    "reading",
-    "book club",
-    "discussion",
-    "library"
-   ],
-   "blurb": "Join a friendly reading group to share thoughts on the books you have been reading.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-07",
-   "source": "Lambeth events",
-   "id": "ev-reading-group-11-07",
+   "blurb": "Festive winter market with twinkling lights, stalls and food and drink on Greenwich Peninsula. Good for a relaxed evening or weekend wander.",
+   "from": "2026-11-07",
+   "to": "2027-01-03",
+   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
+   "source": "Enjoy Royal Greenwich",
+   "id": "ev-greenwich-peninsula-winter-market-11-07",
    "rel": "keep",
    "hrs": 1,
    "lk": 1
@@ -16706,38 +14984,6 @@
    "rel": "keep",
    "hrs": 1,
    "open": "10:30",
-   "lk": 1
-  },
-  {
-   "name": "Whitehall Historic House Tours",
-   "area": "Cheam",
-   "lat": 51.3618,
-   "lon": -0.1945,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "historic house",
-    "guided tour",
-    "local history",
-    "weekend",
-    "heritage"
-   ],
-   "blurb": "Guided tours of Whitehall, a historic house in Cheam, on Saturdays at 12:00. Good for history fans and families with older children.",
-   "url": "https://events.sutton.gov.uk/",
-   "from": "2026-11-07",
-   "to": "2026-11-21",
-   "source": "Sutton Council events",
-   "id": "ev-whitehall-historic-house-tours-11-07",
-   "rel": "keep",
-   "hrs": 1,
-   "open": "12:00",
    "lk": 1
   },
   {
@@ -16924,38 +15170,6 @@
    "rel": "keep",
    "hrs": 1,
    "open": "12:00"
-  },
-  {
-   "name": "Music In The Dark | PULSE (early slot)",
-   "area": "Southwark",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.25,
-   "tags": [
-    "music",
-    "immersive",
-    "darkness",
-    "concert",
-    "unusual experience"
-   ],
-   "blurb": "Sit in complete darkness and experience music where sound takes centre stage. Tickets from £48. Evening slot starts 18:30 on Saturday 7 November.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-07",
-   "time": "18:30",
-   "source": "Southwark Cathedral",
-   "id": "ev-music-in-the-dark-pulse-early-slot-11-07",
-   "rel": "keep",
-   "open": "18:30",
-   "part": "evening",
-   "hrs": 1
   },
   {
    "name": "XXL London at Fire - Launch Night",
@@ -17708,65 +15922,6 @@
    "rel": "keep"
   },
   {
-   "name": "SEND Play",
-   "area": "Bethnal Green",
-   "lat": 51.529,
-   "lon": -0.0557,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    12
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "send",
-    "play",
-    "drop-in",
-    "inclusive",
-    "young v&a"
-   ],
-   "blurb": "Free drop-in play for children with SEND and their families at the Young V&A. Runs weekly until 5 December.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "from": "2026-11-07",
-   "to": "2026-12-05",
-   "source": "Young V&A",
-   "id": "ev-send-play-11-07",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Power of Play Together (Nov 2026)",
-   "area": "Bethnal Green",
-   "lat": 51.529,
-   "lon": -0.0557,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    8
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "play",
-    "drop-in",
-    "young v&a",
-    "children",
-    "family"
-   ],
-   "blurb": "Free drop-in play session for children and grown-ups at the Young V&A on Saturday 7 November.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "date": "2026-11-07",
-   "source": "Young V&A",
-   "id": "ev-power-of-play-together-nov-2026-11-07",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Noname Pitchfork Music Festival",
    "area": "Charing Cross",
    "lat": 51.5088,
@@ -17791,38 +15946,6 @@
    "date": "2026-11-07",
    "source": "Roundhouse",
    "id": "ev-noname-pitchfork-music-festival-11-07",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Music In The Dark | PULSE (early show)",
-   "area": "Borough",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    14,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 1.25,
-   "tags": [
-    "immersive",
-    "music",
-    "darkness",
-    "sound",
-    "night out"
-   ],
-   "blurb": "Experience complete darkness as sound takes over and the audience becomes the stage. Tickets from £48. Adult-oriented immersive performance.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-07",
-   "time": "18:30",
-   "source": "Southwark Cathedral",
-   "id": "ev-music-in-the-dark-pulse-early-show-11-07",
-   "open": "18:30",
-   "part": "evening",
    "hrs": 1,
    "rel": "keep"
   },
@@ -18823,7 +16946,10 @@
    "rel": "keep",
    "open": "11:00",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "also": [
+    "Londonist things to do (aggregator)"
+   ]
   },
   {
    "name": "Why We Build talk",
@@ -19017,7 +17143,7 @@
    "hrs": 1
   },
   {
-   "name": "Markfield Beam Engine open day (8 Nov)",
+   "name": "Markfield Beam Engine open day (steaming)",
    "area": "Tottenham",
    "lat": 51.581,
    "lon": -0.057,
@@ -19029,23 +17155,27 @@
    ],
    "kids": 2,
    "adults": 2,
-   "dur": 5.5,
+   "dur": 2.5,
    "tags": [
+    "free",
     "steam engine",
-    "free family day",
-    "victorian heritage",
-    "riverside park"
+    "family day out",
+    "museum"
    ],
-   "blurb": "Free open day at a restored 1886 Victorian beam engine by the River Lee. Engine steams at 12:30 and 2:30. Guided tours, family activities, café and playground. Donations welcome.",
+   "blurb": "Free entry, donations welcome. See the restored 1886 Victorian beam engine run. Engine steams at 12:30 and 2:30. Guided tours, kids' activities and a café and playground in the riverside park.",
    "url": "https://www.mbeam.org/",
    "date": "2026-11-08",
    "time": "10:00",
    "source": "Markfield Beam Engine",
-   "id": "ev-markfield-beam-engine-open-day-8-nov-11-08",
+   "id": "ev-markfield-beam-engine-open-day-steaming-11-08",
+   "also": [],
    "rel": "keep",
    "open": "10:00",
-   "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "days": [
+    0
+   ],
+   "close": "15:30"
   },
   {
    "name": "Reggae at The Run Out (Vinyl Fair)",
@@ -19106,100 +17236,6 @@
    "lk_try": 1
   },
   {
-   "name": "Why We Build",
-   "area": "Stratford",
-   "lat": 51.543,
-   "lon": -0.009,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "talk",
-    "architecture",
-    "free",
-    "stratford",
-    "sunday"
-   ],
-   "blurb": "Free talk at V&A East Storehouse on Sunday 8 November. Check the event page for speakers and booking.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "date": "2026-11-08",
-   "source": "Young V&A",
-   "id": "ev-why-we-build-11-08",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Wonders of the warehouse",
-   "area": "Docklands",
-   "lat": 51.5076,
-   "lon": -0.0239,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "gallery tour",
-    "georgian architecture",
-    "building history",
-    "docklands",
-    "guided"
-   ],
-   "blurb": "Delve into the hidden history of the Georgian warehouse building that houses London Museum Docklands. A guided gallery tour for adults.",
-   "url": "https://www.londonmuseum.org.uk/whats-on/",
-   "from": "2026-11-08",
-   "to": "2026-11-23",
-   "source": "London Museum Docklands",
-   "id": "ev-wonders-of-the-warehouse-11-08",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Markfield Beam Engine open day with live steaming",
-   "area": "Tottenham",
-   "lat": 51.581,
-   "lon": -0.057,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "steam engine",
-    "free museum",
-    "family day out",
-    "victorian heritage",
-    "riverside park"
-   ],
-   "blurb": "Free open day at a restored 1886 Victorian beam engine. Watch it run under steam at 12.30 and 2.30, take a guided tour, and use the park's café and playground. Donations welcome.",
-   "days": [
-    0
-   ],
-   "open": "10:00",
-   "close": "15:30",
-   "url": "https://www.mbeam.org/",
-   "date": "2026-11-08",
-   "time": "10:00",
-   "source": "Markfield Beam Engine",
-   "id": "ev-markfield-beam-engine-open-day-with-live-11-08",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Cosy Craft (Cre8tive Arts)",
    "area": "Brixton",
    "lat": 51.46,
@@ -19226,38 +17262,8 @@
    "id": "ev-cosy-craft-cre8tive-arts-11-08",
    "rel": "keep",
    "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Markfield Beam Engine open day (steaming)",
-   "area": "Tottenham",
-   "lat": 51.581,
-   "lon": -0.057,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "free",
-    "steam engine",
-    "family day out",
-    "museum"
-   ],
-   "blurb": "Free entry, donations welcome. See the restored 1886 Victorian beam engine run. Engine steams at 12:30 and 2:30. Guided tours, kids' activities and a café and playground in the riverside park.",
-   "url": "https://www.mbeam.org/",
-   "date": "2026-11-08",
-   "time": "10:00",
-   "source": "Markfield Beam Engine",
-   "id": "ev-markfield-beam-engine-open-day-steaming-11-08",
-   "also": [],
-   "rel": "keep",
-   "open": "10:00",
-   "hrs": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Remembrance Sunday event, Kingston Town Centre",
@@ -19758,37 +17764,6 @@
    "lk": 1
   },
   {
-   "name": "Remembrance Sunday Service at the Cenotaph",
-   "area": "Westminster",
-   "lat": 51.5036,
-   "lon": -0.1272,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "remembrance",
-    "commemoration",
-    "wreath laying",
-    "two-minute silence"
-   ],
-   "blurb": "London's main Remembrance event: a procession and wreath-laying at the Cenotaph on Whitehall, with a national two-minute silence at 11am. Expect road closures nearby.",
-   "url": "https://londonist.com/london/weekend/things-to-do-in-london-this-weekend-7-8-november-2026",
-   "date": "2026-11-08",
-   "time": "11:00",
-   "source": "Londonist things to do (aggregator)",
-   "id": "ev-remembrance-sunday-service-at-the-cenota-11-08",
-   "rel": "keep",
-   "open": "11:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "The Wind in the Willows (Puppet Show)",
    "area": "Finchley",
    "lat": 51.602,
@@ -20208,64 +18183,6 @@
    "site": "https://www.unicorntheatre.com/whats-on",
    "lk": 1,
    "via": "https://www.instagram.com/p/DfKpslJDCN9/"
-  },
-  {
-   "name": "Adult Garden Workshop",
-   "area": "Forest Hill",
-   "lat": 51.4411,
-   "lon": -0.0612,
-   "in": "both",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "gardening",
-    "hands-on",
-    "adults",
-    "plant inspired"
-   ],
-   "blurb": "Hands-on adult workshop taking inspiration from the Gardens' plants. Next session 8 November; another follows 21 November.",
-   "date": "2026-11-08",
-   "url": "https://www.horniman.ac.uk/whats-on/",
-   "source": "Horniman Museum & Gardens",
-   "id": "ev-adult-garden-workshop-11-08",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Cosy Craft",
-   "area": "Brixton",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "crafts",
-    "workshop",
-    "painting",
-    "drawing",
-    "flower pressing"
-   ],
-   "blurb": "Weekly craft workshops covering drawing, painting, flower pressing and more. Materials are provided, so just turn up and try something new.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-08",
-   "source": "Lambeth events",
-   "id": "ev-cosy-craft-11-08",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1
   },
   {
    "name": "Remembrance Sunday 2026",
@@ -21154,7 +19071,8 @@
     1
    ],
    "open": "13:20",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "KS2 Oracy Workshop: The Storytelling Society",
@@ -21244,7 +19162,8 @@
    "source": "V&A South Kensington",
    "id": "ev-drop-in-digital-art-season-at-the-nation-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Drawn to Nature: Lino Printing with Seed Heads",
@@ -21277,38 +19196,6 @@
    "hrs": 1
   },
   {
-   "name": "Lunchtime Organ Recital",
-   "area": "Borough",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    10,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 0.5,
-   "tags": [
-    "free",
-    "organ",
-    "lunchtime",
-    "music",
-    "recital"
-   ],
-   "blurb": "A free 30-minute lunchtime organ recital, held most Mondays at the cathedral. Easy midday break.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-09",
-   "time": "13:20",
-   "source": "Southwark Cathedral",
-   "id": "ev-lunchtime-organ-recital-11-09",
-   "rel": "keep",
-   "hrs": 1,
-   "open": "13:20",
-   "part": "afternoon"
-  },
-  {
    "name": "Adult Literature Group (Streatham)",
    "area": "Streatham",
    "lat": 51.46,
@@ -21334,94 +19221,8 @@
    "id": "ev-adult-literature-group-streatham-11-09",
    "rel": "keep",
    "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Wellbeing Group for Dementia and Carers (Norwood)",
-   "area": "Norwood",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "dementia support",
-    "carers group",
-    "friendship activities"
-   ],
-   "blurb": "Run by Age Exchange Lambeth, offering support, friendship and activities for people living with dementia and their carers. Free to attend.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-09",
-   "source": "Lambeth events",
-   "id": "ev-wellbeing-group-for-dementia-and-carers--11-09",
-   "rel": "keep",
-   "hrs": 1,
-   "lk_try": 3,
-   "lk": 1
-  },
-  {
-   "name": "Basic Computer Skills Class (Brixton)",
-   "area": "Brixton",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "computer skills",
-    "adult learning",
-    "free class"
-   ],
-   "blurb": "Beginner class covering email setup, printing documents and browsing the internet. Free, and a good starting point for new computer users.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-09",
-   "source": "Lambeth events",
-   "id": "ev-basic-computer-skills-class-brixton-11-09",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Adult Literature Group",
-   "area": "Streatham",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "books",
-    "literature",
-    "book club",
-    "adults",
-    "library"
-   ],
-   "blurb": "Informal, friendly group for book lovers to talk about what they are reading. Drop in and join the conversation.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-09",
-   "source": "Lambeth events",
-   "id": "ev-adult-literature-group-11-09",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Wellbeing group for dementia and carers",
@@ -21451,36 +19252,37 @@
    "rel": "keep",
    "hrs": 1,
    "lk_try": 3,
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
-   "name": "Basic computer skills class",
+   "name": "Basic Computer Skills Class (Brixton)",
    "area": "Brixton",
    "lat": 51.46,
    "lon": -0.115,
    "in": "in",
    "price": "free",
    "ages": [
-    18,
+    16,
     99
    ],
    "kids": 0,
    "adults": 1,
-   "dur": 1.5,
+   "dur": 2,
    "tags": [
     "computer skills",
-    "learning",
-    "email",
+    "adult learning",
     "free class"
    ],
-   "blurb": "Learn to set up email, print documents and browse the internet. A free beginner-friendly class for adults.",
+   "blurb": "Beginner class covering email setup, printing documents and browsing the internet. Free, and a good starting point for new computer users.",
    "url": "https://www.lambeth.gov.uk/events",
    "date": "2026-11-09",
    "source": "Lambeth events",
-   "id": "ev-basic-computer-skills-class-11-09",
+   "id": "ev-basic-computer-skills-class-brixton-11-09",
    "rel": "keep",
    "hrs": 1,
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Digital Drop-Ins",
@@ -21545,62 +19347,6 @@
    "lk": 1
   },
   {
-   "name": "Digital Art Season at National Art Library: Studying Videogames",
-   "area": "South Kensington",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "videogames",
-    "digital art",
-    "drop-in",
-    "free"
-   ],
-   "blurb": "Free drop-in session on videogames and digital art in the National Art Library. No booking mentioned; drop in during opening hours.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "date": "2026-11-09",
-   "source": "V&A South Kensington",
-   "id": "ev-digital-art-season-at-national-art-libra-11-09",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Talk: Cloak & Dagger Couture",
-   "area": "South Kensington",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "fashion talk",
-    "couture",
-    "evening talk",
-    "v&a"
-   ],
-   "blurb": "Ticketed talk on couture fashion at the V&A, priced £15 to £20. Some sessions sell out, so book early.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "date": "2026-11-09",
-   "source": "V&A South Kensington",
-   "id": "ev-talk-cloak-dagger-couture-11-09",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Cloak & Dagger Couture",
    "area": "South Kensington",
    "lat": 51.4966,
@@ -21626,7 +19372,8 @@
    "source": "V&A South Kensington",
    "id": "ev-cloak-dagger-couture-11-09",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Digital Art Season: Studying Videogames drop-in",
@@ -22366,40 +20113,6 @@
    "rel": "keep"
   },
   {
-   "name": "Baby Music Classes (Term-Time)",
-   "area": "Kensal Rise",
-   "lat": 51.534,
-   "lon": -0.221,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    2
-   ],
-   "kids": 3,
-   "adults": 1,
-   "dur": 0.75,
-   "tags": [
-    "baby music",
-    "term time",
-    "rhymes",
-    "monday classes",
-    "under twos"
-   ],
-   "blurb": "Term-time Monday music classes for babies and toddlers, with sessions for different age groups from 9.30am. Book ahead via the library.",
-   "url": "https://kensalriselibrary.org/whats-on/",
-   "days": [
-    1
-   ],
-   "open": "09:30",
-   "from": "2026-11-09",
-   "to": "2026-11-23",
-   "source": "Kensal Rise Library",
-   "id": "ev-baby-music-classes-term-time-11-09",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "The College Players present A Pain In The Neck",
    "area": "Hornchurch",
    "lat": 51.562,
@@ -22916,37 +20629,8 @@
    "part": "morning",
    "hrs": 1,
    "rel": "keep",
-   "lk": 1
-  },
-  {
-   "name": "Wriggle and Rhyme",
-   "area": "Streatham",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    2
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 0.5,
-   "tags": [
-    "babies",
-    "toddlers",
-    "rhymes",
-    "interactive",
-    "library"
-   ],
-   "blurb": "Free interactive session for babies, toddlers under 2 and their parents or carers. Music and rhymes in the library.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-10",
-   "source": "Lambeth events",
-   "id": "ev-wriggle-and-rhyme-11-10",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Mischief Squad",
@@ -23011,7 +20695,8 @@
    "blurb": "Chair-based strength and balance session led by an experienced instructor. £5, with free places for those who need them.",
    "id": "ev-strength-balance-2-30pm-session-11-10",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "also": []
   },
   {
    "name": "Ruby Tuesdays",
@@ -23044,37 +20729,6 @@
    "blurb": "Welcoming Tuesday group for people with memory loss or dementia. Carers get a break while their loved ones take part in activities.",
    "id": "ev-ruby-tuesdays-11-10",
    "open": "13:00",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Strength & Balance (1pm Session)",
-   "area": "London",
-   "lat": 51.4945239,
-   "lon": -0.0462548,
-   "url": "https://www.timeandtalents.org.uk/event/strength-balance-1pm-session-2/2026-11-10/",
-   "price": "£",
-   "source": "Time & Talents",
-   "date": "2026-11-10",
-   "time": "1pm",
-   "in": "in",
-   "ages": [
-    55,
-    100
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1,
-   "open": "13:00",
-   "tags": [
-    "strength",
-    "balance",
-    "chair exercise",
-    "fitness",
-    "older adults"
-   ],
-   "blurb": "Chair-based strength and balance session led by an experienced instructor. £5, with free places for those who need them.",
-   "id": "ev-strength-balance-1pm-session-11-10",
    "hrs": 1,
    "rel": "keep"
   },
@@ -23453,37 +21107,10 @@
    "source": "London Museum Docklands",
    "id": "ev-in-around-smithfield-market-11-11",
    "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "In & around Smithfield Market walk",
-   "area": "Smithfield",
-   "lat": 51.5195,
-   "lon": -0.102,
-   "in": "out",
-   "price": "£",
-   "ages": [
-    10,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 1.5,
-   "tags": [
-    "guided walk",
-    "medieval history",
-    "tudor history",
-    "smithfield",
-    "city walk"
-   ],
-   "blurb": "A guided walk through Smithfield's medieval and Tudor history. Explores the market area and the stories hidden in its streets.",
-   "from": "2026-11-11",
-   "to": "2026-11-26",
-   "url": "https://www.londonmuseum.org.uk/whats-on/",
-   "source": "London Museum",
-   "id": "ev-in-around-smithfield-market-walk-11-11",
-   "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": [
+    "London Museum"
+   ]
   },
   {
    "name": "Extended Skate Session",
@@ -23537,7 +21164,7 @@
    ],
    "blurb": "Seasonal outdoor ice rink in the Somerset House courtyard. A classic winter activity for families, couples and groups.",
    "from": "2026-11-11",
-   "to": "2026-11-26",
+   "to": "2027-01-10",
    "url": "https://www.somersethouse.org.uk/whats-on",
    "source": "Somerset House",
    "id": "ev-skate-at-somerset-house-with-virgin-atla-11-11",
@@ -23545,7 +21172,10 @@
    "hrs": 1,
    "lk": 1,
    "via": "https://www.instagram.com/reel/DfFf9R1gdly/",
-   "site": "https://www.somersethouse.org.uk/whats-on"
+   "site": "https://www.somersethouse.org.uk/whats-on",
+   "also": [
+    "Instagram @somersethouse"
+   ]
   },
   {
    "name": "Christmas Lights",
@@ -23603,35 +21233,6 @@
    "id": "ev-lifem26-ensemble-inventio-11-11",
    "rel": "keep",
    "open": "19:00",
-   "hrs": 1
-  },
-  {
-   "name": "LIFEM26 Festival Pass (11-14 Nov)",
-   "area": "Blackheath",
-   "lat": 51.466,
-   "lon": 0.006,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    10,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 8,
-   "tags": [
-    "early music festival",
-    "multi-day pass",
-    "concerts"
-   ],
-   "blurb": "Multi-day pass for the LIFEM26 early music festival running 11 to 14 November. Covers many concerts; choose a day pass or exhibition-only option if preferred.",
-   "url": "https://www.blackheathhalls.com/whats-on/",
-   "from": "2026-11-11",
-   "to": "2026-11-14",
-   "source": "Blackheath Halls",
-   "id": "ev-lifem26-festival-pass-11-14-nov-11-11",
-   "rel": "keep",
-   "also": [],
    "hrs": 1
   },
   {
@@ -24971,37 +22572,76 @@
    "rel": "keep"
   },
   {
-   "name": "Skate at Somerset House (presented with Virgin Atlantic Holidays)",
-   "area": "Strand",
-   "lat": 51.511,
-   "lon": -0.117,
+   "name": "Discover Walthamstow Wetlands Guided Tour",
+   "area": "Walthamstow",
+   "lat": 51.5074,
+   "lon": -0.1278,
    "in": "out",
-   "price": "£",
+   "price": "free",
    "ages": [
-    4,
+    0,
     99
    ],
-   "kids": 3,
-   "adults": 3,
+   "kids": 0,
+   "adults": 1,
    "dur": 1.5,
    "tags": [
-    "ice skating",
-    "outdoor rink",
-    "christmas",
-    "winter",
-    "somerset house"
+    "guided walk",
+    "wetlands",
+    "urban nature",
+    "local history"
    ],
-   "blurb": "Outdoor ice rink in the Somerset House courtyard with a Christmas tree. Book tickets in advance via the link in the Instagram bio. Runs until 10 Jan 2027.",
-   "from": "2026-11-11",
-   "to": "2027-01-10",
-   "post": "https://www.instagram.com/reel/DfU9CwWj1_n/",
-   "url": "https://www.instagram.com/reel/DfU9CwWj1_n/",
-   "source": "Instagram @somersethouse",
-   "site": "https://linkstre.am/somersethouse",
-   "id": "ev-ig-skate-at-somerset-house-presented-with-v-11-11",
-   "hrs": 1,
+   "blurb": "Guided walk through Europe's largest urban wetlands, covering wildlife and hidden history. Thursday 12 November, 11am-12:30pm. Dress for outdoors.",
+   "url": "https://www.wildlondon.org.uk/events",
+   "date": "2026-11-12",
+   "time": "11:00",
+   "source": "London Wildlife Trust",
+   "id": "ev-discover-walthamstow-wetlands-guided-tou-11-12",
    "rel": "keep",
-   "lk": 1
+   "open": "11:00",
+   "close": "12:30",
+   "part": "morning",
+   "hrs": 1,
+   "to": "2026-12-03",
+   "from": "2026-07-02",
+   "days": [
+    4
+   ],
+   "also": []
+  },
+  {
+   "name": "LIFEM26: Festival Day Pass",
+   "area": "Blackheath",
+   "lat": 51.466,
+   "lon": 0.006,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    12,
+    99
+   ],
+   "kids": 0,
+   "adults": 1,
+   "dur": 6,
+   "tags": [
+    "early music festival",
+    "day pass",
+    "concerts",
+    "blackheath"
+   ],
+   "blurb": "Day pass for the LIFEM26 festival at Blackheath Halls on Thursday 12 November from 9.30am. Includes the day's concerts; check the listing for what's covered.",
+   "url": "https://www.blackheathhalls.com/whats-on/",
+   "date": "2026-11-12",
+   "time": "09:30",
+   "source": "Blackheath Halls",
+   "id": "ev-lifem26-festival-day-pass-11-12",
+   "rel": "keep",
+   "open": "09:30",
+   "part": "morning",
+   "hrs": 1,
+   "to": "2026-11-14",
+   "from": "2026-11-11",
+   "also": []
   },
   {
    "name": "Vanessa Bell & Duncan Grant: Inside Bloomsbury",
@@ -25158,7 +22798,8 @@
    "id": "ev-skate-lates-with-aperol-spritz-11-12",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Bones in the Desert",
@@ -25278,7 +22919,10 @@
    "rel": "keep",
    "open": "09:30",
    "part": "morning",
-   "hrs": 1
+   "hrs": 1,
+   "to": "2026-11-14",
+   "from": "2026-11-12",
+   "also": []
   },
   {
    "name": "Plant Medicine for Women's Health: Perimenopause",
@@ -25309,129 +22953,6 @@
    "rel": "keep",
    "open": "18:30",
    "part": "evening",
-   "hrs": 1
-  },
-  {
-   "name": "Discover Walthamstow Wetlands Guided Tour",
-   "area": "Walthamstow",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "guided walk",
-    "wetlands",
-    "urban nature",
-    "local history"
-   ],
-   "blurb": "Guided walk through Europe's largest urban wetlands, covering wildlife and hidden history. Thursday 12 November, 11am-12:30pm. Dress for outdoors.",
-   "url": "https://www.wildlondon.org.uk/events",
-   "date": "2026-11-12",
-   "time": "11:00",
-   "source": "London Wildlife Trust",
-   "id": "ev-discover-walthamstow-wetlands-guided-tou-11-12",
-   "rel": "keep",
-   "open": "11:00",
-   "close": "12:30",
-   "part": "morning",
-   "hrs": 1
-  },
-  {
-   "name": "LIFEM26: Exhibition Only",
-   "area": "Blackheath",
-   "lat": 51.466,
-   "lon": 0.006,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "instrument exhibition",
-    "festival",
-    "daytime",
-    "blackheath"
-   ],
-   "blurb": "Exhibition-only entry to the LIFEM26 early music festival at Blackheath Halls, with doors from 9.30am on Thursday 12 and Friday 13 November.",
-   "url": "https://www.blackheathhalls.com/whats-on/",
-   "from": "2026-11-12",
-   "to": "2026-11-13",
-   "source": "Blackheath Halls",
-   "id": "ev-lifem26-exhibition-only-11-12",
-   "rel": "keep",
-   "open": "09:30",
-   "part": "morning",
-   "hrs": 1
-  },
-  {
-   "name": "LIFEM26: Festival Day Pass",
-   "area": "Blackheath",
-   "lat": 51.466,
-   "lon": 0.006,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 6,
-   "tags": [
-    "early music festival",
-    "day pass",
-    "concerts",
-    "blackheath"
-   ],
-   "blurb": "Day pass for the LIFEM26 festival at Blackheath Halls on Thursday 12 November from 9.30am. Includes the day's concerts; check the listing for what's covered.",
-   "url": "https://www.blackheathhalls.com/whats-on/",
-   "date": "2026-11-12",
-   "time": "09:30",
-   "source": "Blackheath Halls",
-   "id": "ev-lifem26-festival-day-pass-11-12",
-   "rel": "keep",
-   "open": "09:30",
-   "part": "morning",
-   "hrs": 1
-  },
-  {
-   "name": "LIFEM26: Exhibition Entry",
-   "area": "Blackheath",
-   "lat": 51.466,
-   "lon": 0.006,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "festival exhibition",
-    "early music",
-    "instruments display"
-   ],
-   "blurb": "Exhibition-only entry to the LIFEM26 early music festival at Blackheath Halls, with daytime opening from 9:30am. Good for browsing between concerts.",
-   "url": "https://www.blackheathhalls.com/whats-on/",
-   "from": "2026-11-12",
-   "to": "2026-11-14",
-   "source": "Blackheath Halls",
-   "id": "ev-lifem26-exhibition-entry-11-12",
-   "rel": "keep",
-   "open": "09:30",
    "hrs": 1
   },
   {
@@ -25867,36 +23388,6 @@
    "rel": "keep"
   },
   {
-   "name": "Skate Lates with Aperol Spritz: Rhythm Section: Mali-I & The Return of She",
-   "area": "Strand",
-   "lat": 51.511,
-   "lon": -0.117,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "ice skating",
-    "late night",
-    "music",
-    "drinks",
-    "outdoor rink"
-   ],
-   "blurb": "Double-header late skate with DJ sets from Z Lovecraft (Mali-I) and Ayiesha, The Return of She. Aperol Spritz on offer. Adults-only night out on the ice.",
-   "date": "2026-11-12",
-   "url": "https://www.somersethouse.org.uk/whats-on",
-   "source": "Somerset House",
-   "id": "ev-skate-lates-with-aperol-spritz-rhythm-se-11-12",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Come and meet Figurative Artist Fabian Perez at Clarendon",
    "area": "Battersea Power Station",
    "lat": 51.4817,
@@ -25957,37 +23448,8 @@
    "part": "morning",
    "hrs": 1,
    "rel": "keep",
-   "lk": 1
-  },
-  {
-   "name": "Wriggle and Rhyme",
-   "area": "Norwood",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 0.5,
-   "tags": [
-    "toddlers",
-    "songs",
-    "rhymes",
-    "babies",
-    "library"
-   ],
-   "blurb": "Library rhyme and movement session for little ones and their grown-ups, led by librarians in the children's library.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-12",
-   "source": "Lambeth events",
-   "id": "ev-wriggle-and-rhyme-11-12",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Stay and Play at Cheam Library",
@@ -26421,36 +23883,6 @@
    "open": "13:15",
    "close": "14:45",
    "part": "afternoon"
-  },
-  {
-   "name": "LIFEM26: Festival Day Pass (Friday)",
-   "area": "Blackheath",
-   "lat": 51.466,
-   "lon": 0.006,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 6,
-   "tags": [
-    "early music festival",
-    "day pass",
-    "concerts",
-    "blackheath"
-   ],
-   "blurb": "Day pass for the LIFEM26 festival at Blackheath Halls on Friday 13 November from 9.30am. Includes the day's concerts; check the listing for details.",
-   "url": "https://www.blackheathhalls.com/whats-on/",
-   "date": "2026-11-13",
-   "time": "09:30",
-   "source": "Blackheath Halls",
-   "id": "ev-lifem26-festival-day-pass-friday-11-13",
-   "rel": "keep",
-   "open": "09:30",
-   "hrs": 1
   },
   {
    "name": "Quiz Night at Bob Hope Theatre",
@@ -27168,34 +24600,39 @@
    "rel": "keep"
   },
   {
-   "id": "ev-lordmayor",
-   "name": "The Lord Mayor's Show",
-   "area": "City",
+   "name": "Lord Mayor's Show Day at St Paul's 2026",
+   "area": "City of London",
    "lat": 51.5138,
    "lon": -0.0984,
-   "in": "out",
+   "in": "in",
    "price": "free",
    "ages": [
-    3,
+    0,
     99
    ],
-   "kids": 3,
-   "adults": 3,
-   "dur": 3,
+   "kids": 2,
+   "adults": 2,
+   "dur": 8.5,
    "tags": [
-    "parade",
-    "ceremony",
-    "free",
-    "river"
+    "lord mayor's show",
+    "city of london",
+    "free entry",
+    "cathedral",
+    "parade day"
    ],
-   "blurb": "The City's 800-year-old parade: floats, bands, the gold State Coach, and this year a river pageant too. Procession starts late morning; stand near St Paul's or along Cheapside.",
-   "url": "https://lordmayorsshow.london",
-   "source": "IanVisits",
+   "blurb": "Celebrate the Lord Mayor's Show with free entry to St Paul's all day. Optional paid entry of £13.50 to climb the Dome.",
+   "open": "08:30",
+   "close": "17:00",
+   "url": "https://www.stpauls.co.uk/whats-on",
    "date": "2026-11-14",
-   "time": "from 11am",
+   "time": "08:30",
+   "source": "St Paul's Cathedral",
+   "id": "ev-lord-mayor-s-show-day-at-st-paul-s-2026-11-14",
    "rel": "keep",
-   "open": "11:00",
-   "hrs": 1
+   "hrs": 1,
+   "also": [
+    "IanVisits"
+   ]
   },
   {
    "id": "ev-stpauls-free",
@@ -27389,7 +24826,7 @@
    "via": "https://www.ianvisits.co.uk/calendar/brixton-market-heritage-walk-3-431857/"
   },
   {
-   "name": "Unboxing the Universe science theatre show",
+   "name": "Unboxing the Universe",
    "area": "Greenwich",
    "lat": 51.481,
    "lon": -0.0052,
@@ -27397,25 +24834,28 @@
    "price": "£",
    "ages": [
     5,
-    99
+    12
    ],
-   "kids": 1,
-   "adults": 1,
+   "kids": 3,
+   "adults": 2,
    "dur": 1,
    "tags": [
-    "space",
     "science show",
+    "space",
     "theatre",
-    "family"
+    "universe",
+    "kids"
    ],
-   "blurb": "Science theatre show answering big questions about the Universe. Sessions at 11:30am and 1:30pm on 14 and 15 November. £8 per ticket.",
+   "blurb": "Interactive science theatre show blasting through space and tackling big questions about the universe. Sessions on 14 and 15 November at National Maritime Museum.",
    "url": "https://www.rmg.co.uk/whats-on",
    "from": "2026-11-14",
    "to": "2026-11-15",
    "source": "Royal Museums Greenwich",
-   "id": "ev-unboxing-the-universe-science-theatre-sh-11-14",
+   "id": "ev-unboxing-the-universe-11-14",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Santa's Grotto at the Queen's House",
@@ -27445,7 +24885,8 @@
    "source": "Royal Museums Greenwich",
    "id": "ev-santa-s-grotto-at-the-queen-s-house-11-14",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "SENsory Sailors",
@@ -27570,10 +25011,10 @@
    "hrs": 1
   },
   {
-   "name": "Family Workshop: Pip and Posy Animal Puppets",
+   "name": "Family Workshop: Pip and Posy",
    "area": "Islington",
-   "lat": 51.538,
-   "lon": -0.1035,
+   "lat": 51.5375,
+   "lon": -0.104,
    "in": "in",
    "price": "££",
    "ages": [
@@ -27586,16 +25027,18 @@
    "tags": [
     "puppet making",
     "craft workshop",
-    "preschool",
-    "family activity"
+    "toddlers",
+    "family activity",
+    "hands-on"
    ],
-   "blurb": "Children and an adult make their own animal puppet character inspired by Pip and Posy, working side by side. Aimed at ages 3-5. Listed as sold out, so check availability.",
+   "blurb": "Children and an accompanying adult make their own animal character puppet based on Pip and Posy. Aimed at ages 3-5. Listed as sold out, so check availability before planning.",
    "url": "https://www.littleangeltheatre.com/whats-on/",
    "date": "2026-11-14",
    "source": "Little Angel Theatre",
-   "id": "ev-family-workshop-pip-and-posy-animal-pupp-11-14",
+   "id": "ev-family-workshop-pip-and-posy-11-14",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Cinderella",
@@ -27657,38 +25100,6 @@
    "hrs": 1
   },
   {
-   "name": "Lord Mayor's Show Day at St Paul's 2026",
-   "area": "City of London",
-   "lat": 51.5138,
-   "lon": -0.0984,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 8.5,
-   "tags": [
-    "lord mayor's show",
-    "city of london",
-    "free entry",
-    "cathedral",
-    "parade day"
-   ],
-   "blurb": "Celebrate the Lord Mayor's Show with free entry to St Paul's all day. Optional paid entry of £13.50 to climb the Dome.",
-   "open": "08:30",
-   "close": "17:00",
-   "url": "https://www.stpauls.co.uk/whats-on",
-   "date": "2026-11-14",
-   "time": "08:30",
-   "source": "St Paul's Cathedral",
-   "id": "ev-lord-mayor-s-show-day-at-st-paul-s-2026-11-14",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "From Lament to Tango | Music from Argentina",
    "area": "Borough",
    "lat": 51.5061,
@@ -27721,96 +25132,6 @@
    "part": "evening"
   },
   {
-   "name": "Unboxing the Universe",
-   "area": "Greenwich",
-   "lat": 51.481,
-   "lon": -0.0052,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    5,
-    12
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "science show",
-    "space",
-    "theatre",
-    "universe",
-    "kids"
-   ],
-   "blurb": "Interactive science theatre show blasting through space and tackling big questions about the universe. Sessions on 14 and 15 November at National Maritime Museum.",
-   "url": "https://www.rmg.co.uk/whats-on",
-   "from": "2026-11-14",
-   "to": "2026-11-15",
-   "source": "Royal Museums Greenwich",
-   "id": "ev-unboxing-the-universe-11-14",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Christmas Santa's Grotto at the Queen's House",
-   "area": "Greenwich",
-   "lat": 51.481,
-   "lon": -0.0052,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    0,
-    10
-   ],
-   "kids": 3,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "christmas",
-    "santa",
-    "grotto",
-    "festive",
-    "family"
-   ],
-   "blurb": "Meet Santa and travel through a magical wonderland with the Snow Queen. Tickets £27-£30 per person; under 1s free. Pre-booking recommended.",
-   "url": "https://www.rmg.co.uk/whats-on",
-   "from": "2026-11-14",
-   "to": "2026-12-24",
-   "source": "Royal Museums Greenwich",
-   "id": "ev-christmas-santa-s-grotto-at-the-queen-s--11-14",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Family Workshop: Pip and Posy",
-   "area": "Islington",
-   "lat": 51.5375,
-   "lon": -0.104,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    3,
-    5
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "puppet making",
-    "craft workshop",
-    "toddlers",
-    "family activity",
-    "hands-on"
-   ],
-   "blurb": "Children and an accompanying adult make their own animal character puppet based on Pip and Posy. Aimed at ages 3-5. Listed as sold out, so check availability before planning.",
-   "url": "https://www.littleangeltheatre.com/whats-on/",
-   "date": "2026-11-14",
-   "source": "Little Angel Theatre",
-   "id": "ev-family-workshop-pip-and-posy-11-14",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Boppin' Bunnies",
    "area": "Greenwich",
    "lat": 51.481,
@@ -27839,62 +25160,36 @@
    "lk": 1
   },
   {
-   "name": "In Residence: Solan",
+   "name": "In Residence presents: Solan",
    "area": "Greenwich",
    "lat": 51.481,
    "lon": 0.01,
    "in": "in",
    "price": "££",
    "ages": [
-    18,
+    16,
     99
    ],
    "kids": 0,
    "adults": 2,
-   "dur": 2.5,
+   "dur": 2,
    "tags": [
     "restaurant pop-up",
-    "michelin chefs",
-    "dining out"
+    "michelin chef",
+    "dining out",
+    "high street"
    ],
-   "blurb": "Michelin-experienced chefs take over a Greenwich high street restaurant for a limited residency. Booking ahead is advisable for dinner.",
+   "blurb": "Michelin-experienced chefs take over a local Greenwich high street venue for a dining residency. Book ahead for a sit-down dinner experience.",
    "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
    "date": "2026-11-14",
    "source": "Enjoy Royal Greenwich",
-   "id": "ev-in-residence-solan-11-14",
+   "id": "ev-in-residence-presents-solan-11-14",
    "rel": "keep",
    "part": "evening",
    "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Unboxing the Universe science show",
-   "area": "Greenwich",
-   "lat": 51.481,
-   "lon": -0.0052,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "space show",
-    "science theatre",
-    "planetarium",
-    "family"
-   ],
-   "blurb": "An interactive science theatre show about the Universe with big questions answered along the way. Tickets are £8 each, with shows at 11.30 and 13.30.",
-   "url": "https://www.rmg.co.uk/whats-on",
-   "from": "2026-11-14",
-   "to": "2026-11-15",
-   "source": "Royal Museums Greenwich",
-   "id": "ev-unboxing-the-universe-science-show-11-14",
-   "rel": "keep",
-   "hrs": 1
+   "lk_try": 1,
+   "lk": 1,
+   "also": []
   },
   {
    "name": "Family Workshop: Pip and Posy Puppet Making",
@@ -28079,37 +25374,6 @@
     6
    ],
    "part": "afternoon"
-  },
-  {
-   "name": "In Residence presents: Solan",
-   "area": "Greenwich",
-   "lat": 51.481,
-   "lon": 0.01,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "restaurant pop-up",
-    "michelin chef",
-    "dining out",
-    "high street"
-   ],
-   "blurb": "Michelin-experienced chefs take over a local Greenwich high street venue for a dining residency. Book ahead for a sit-down dinner experience.",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
-   "date": "2026-11-14",
-   "source": "Enjoy Royal Greenwich",
-   "id": "ev-in-residence-presents-solan-11-14",
-   "rel": "keep",
-   "part": "evening",
-   "hrs": 1,
-   "lk_try": 1,
-   "lk": 1
   },
   {
    "name": "Buff Bingo Bottomless Drag",
@@ -29135,39 +26399,6 @@
    "lk": 1
   },
   {
-   "name": "Wonderful Wildlife Weekends at Camley Street Natural Park",
-   "area": "King's Cross",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "family",
-    "drop-in",
-    "nature crafts",
-    "city nature"
-   ],
-   "blurb": "Drop in for free, fun family nature activities at Camley Street Natural Park in the heart of King's Cross.",
-   "url": "https://www.wildlondon.org.uk/events/2026-11-15-wonderful-wildlife-weekends-camley-street-natural-park",
-   "date": "2026-11-15",
-   "source": "London Wildlife Trust",
-   "id": "ev-wonderful-wildlife-weekends-at-camley-st-11-15",
-   "rel": "keep",
-   "hrs": 1,
-   "days": [
-    0,
-    6
-   ],
-   "open": "12:00"
-  },
-  {
    "name": "Wonderful Wildlife Weekends at Woodberry Wetlands",
    "area": "Stoke Newington",
    "lat": 51.5074,
@@ -29526,72 +26757,6 @@
    "rel": "keep"
   },
   {
-   "name": "Lunchtime Organ Recital (Mon 16 Nov)",
-   "area": "Borough",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 0.5,
-   "tags": [
-    "organ",
-    "free",
-    "lunchtime",
-    "music",
-    "recital"
-   ],
-   "blurb": "Free 30-minute lunchtime organ recital, held most Mondays. Drop in for a quiet midday break.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-16",
-   "time": "13:20",
-   "source": "Southwark Cathedral",
-   "id": "ev-lunchtime-organ-recital-mon-16-nov-11-16",
-   "rel": "keep",
-   "days": [
-    1
-   ],
-   "open": "13:20",
-   "part": "afternoon",
-   "hrs": 1
-  },
-  {
-   "name": "Bromley Self Care Week 2026",
-   "area": "Bromley town centre",
-   "lat": 51.4039,
-   "lon": 0.015,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "self care",
-    "wellbeing",
-    "borough-wide",
-    "community",
-    "health"
-   ],
-   "blurb": "Borough-wide week of wellbeing activities across Bromley. Pick a session that suits you and check the events page for individual times and venues.",
-   "url": "https://www.bromley.gov.uk/events",
-   "from": "2026-11-16",
-   "to": "2026-11-22",
-   "source": "Bromley events",
-   "id": "ev-bromley-self-care-week-2026-11-16",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "Lunchtime Organ Recital",
    "area": "Borough",
    "lat": 51.5061,
@@ -29624,7 +26789,39 @@
     1
    ],
    "open": "13:20",
-   "part": "afternoon"
+   "part": "afternoon",
+   "also": []
+  },
+  {
+   "name": "Bromley Self Care Week 2026",
+   "area": "Bromley town centre",
+   "lat": 51.4039,
+   "lon": 0.015,
+   "in": "both",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 1,
+   "adults": 1,
+   "dur": 2,
+   "tags": [
+    "self care",
+    "wellbeing",
+    "borough-wide",
+    "community",
+    "health"
+   ],
+   "blurb": "Borough-wide week of wellbeing activities across Bromley. Pick a session that suits you and check the events page for individual times and venues.",
+   "url": "https://www.bromley.gov.uk/events",
+   "from": "2026-11-16",
+   "to": "2026-11-22",
+   "source": "Bromley events",
+   "id": "ev-bromley-self-care-week-2026-11-16",
+   "rel": "keep",
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Monday Social",
@@ -29993,6 +27190,81 @@
    "rel": "keep"
   },
   {
+   "name": "Relaxed Hours: Frida: The Making of an Icon",
+   "area": "Bankside, Southwark",
+   "lat": 51.5076,
+   "lon": -0.0994,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 1,
+   "adults": 3,
+   "dur": 1,
+   "tags": [
+    "art",
+    "frida kahlo",
+    "quiet hours",
+    "accessible",
+    "exhibition"
+   ],
+   "blurb": "A quieter, calmer time to explore the Frida Kahlo exhibition, with lower noise and fewer visitors. Good for sensory-sensitive visitors.",
+   "url": "https://www.tate.org.uk/whats-on",
+   "date": "2026-11-17",
+   "time": "10:00-11:00",
+   "source": "Tate Britain",
+   "id": "ev-relaxed-hours-frida-the-making-of-an-ico-11-17",
+   "open": "10:00",
+   "close": "11:00",
+   "hrs": 1,
+   "rel": "keep",
+   "to": "2027-01-03",
+   "from": "2026-11-02",
+   "also": []
+  },
+  {
+   "name": "Relaxed Hours: Ana Mendieta",
+   "area": "Bankside",
+   "lat": 51.5076,
+   "lon": -0.0994,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 1,
+   "adults": 3,
+   "dur": 1,
+   "tags": [
+    "art",
+    "performance art",
+    "quiet hours",
+    "exhibition",
+    "contemporary"
+   ],
+   "blurb": "A quieter time to experience the powerful work of Ana Mendieta, whose legacy changed the course of contemporary art, at Tate Modern.",
+   "url": "https://www.tate.org.uk/whats-on",
+   "date": "2026-11-17",
+   "time": "10:00",
+   "days": [
+    2
+   ],
+   "open": "10:00",
+   "close": "11:00",
+   "source": "Tate Modern",
+   "id": "ev-relaxed-hours-ana-mendieta-11-17",
+   "hrs": 1,
+   "rel": "keep",
+   "to": "2027-01-17",
+   "from": "2026-11-02",
+   "also": [
+    "Tate Britain"
+   ]
+  },
+  {
    "name": "Extended Skate Session",
    "area": "Strand",
    "lat": 51.511,
@@ -30085,38 +27357,6 @@
    "via": "https://www.instagram.com/p/DfCUhUlF83D/"
   },
   {
-   "name": "Relaxed Hours: Frida: The Making of an Icon",
-   "area": "Bankside, Southwark",
-   "lat": 51.5076,
-   "lon": -0.0994,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "art",
-    "frida kahlo",
-    "quiet hours",
-    "accessible",
-    "exhibition"
-   ],
-   "blurb": "A quieter, calmer time to explore the Frida Kahlo exhibition, with lower noise and fewer visitors. Good for sensory-sensitive visitors.",
-   "url": "https://www.tate.org.uk/whats-on",
-   "date": "2026-11-17",
-   "time": "10:00-11:00",
-   "source": "Tate Britain",
-   "id": "ev-relaxed-hours-frida-the-making-of-an-ico-11-17",
-   "open": "10:00",
-   "close": "11:00",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Relaxed Hours: Light and Magic: The Birth of Art Photography",
    "area": "Bankside",
    "lat": 51.5076,
@@ -30186,41 +27426,6 @@
    "also": [
     "Tate Britain"
    ],
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Relaxed Hours: Ana Mendieta",
-   "area": "Bankside",
-   "lat": 51.5076,
-   "lon": -0.0994,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "art",
-    "performance art",
-    "quiet hours",
-    "exhibition",
-    "contemporary"
-   ],
-   "blurb": "A quieter time to experience the powerful work of Ana Mendieta, whose legacy changed the course of contemporary art, at Tate Modern.",
-   "url": "https://www.tate.org.uk/whats-on",
-   "date": "2026-11-17",
-   "time": "10:00",
-   "days": [
-    2
-   ],
-   "open": "10:00",
-   "close": "11:00",
-   "source": "Tate Modern",
-   "id": "ev-relaxed-hours-ana-mendieta-11-17",
    "hrs": 1,
    "rel": "keep"
   },
@@ -30615,35 +27820,72 @@
    "rel": "keep"
   },
   {
-   "name": "Walrus Returns",
+   "name": "Relaxed Hours: The 90s: Art and Fashion",
+   "area": "Pimlico, Westminster",
+   "lat": 51.4911,
+   "lon": -0.1278,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "art",
+    "fashion",
+    "quiet hours",
+    "accessible",
+    "1990s"
+   ],
+   "blurb": "A quieter time to explore the 1990s art and fashion exhibition at Tate Britain, with fewer visitors and a calmer atmosphere.",
+   "url": "https://www.tate.org.uk/whats-on",
+   "date": "2026-11-18",
+   "time": "10:00-11:00",
+   "source": "Tate Britain",
+   "id": "ev-relaxed-hours-the-90s-art-and-fashion-11-18",
+   "open": "10:00",
+   "close": "11:00",
+   "hrs": 1,
+   "rel": "keep",
+   "to": "2027-02-14",
+   "from": "2026-11-02",
+   "also": []
+  },
+  {
+   "name": "Walrus Returns Celebration",
    "area": "Forest Hill",
    "lat": 51.4411,
    "lon": -0.0612,
    "in": "in",
    "price": "£",
    "ages": [
-    4,
+    5,
     99
    ],
-   "kids": 3,
+   "kids": 2,
    "adults": 2,
    "dur": 2.5,
    "tags": [
     "evening event",
-    "walrus",
-    "museum",
-    "family outing"
+    "aquarium",
+    "celebration",
+    "walrus"
    ],
-   "blurb": "A celebration marking the return of the Horniman's beloved walrus. Evening event, 6 to 8.30pm. Check the event page for ticket details.",
+   "blurb": "Evening celebration marking the return of the Horniman's beloved walrus. Runs 6 to 8:30pm, a good option for a weekday or Wednesday night out.",
+   "url": "https://www.horniman.ac.uk/whats-on/",
    "date": "2026-11-18",
    "time": "18:00",
-   "url": "https://www.horniman.ac.uk/whats-on/",
    "source": "Horniman Museum & Gardens",
-   "id": "ev-walrus-returns-11-18",
+   "id": "ev-walrus-returns-celebration-11-18",
    "rel": "keep",
-   "hrs": 1,
    "open": "18:00",
-   "part": "evening"
+   "close": "20:30",
+   "part": "evening",
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Raymond Briggs' Father Christmas",
@@ -30797,38 +28039,6 @@
    "hrs": 1
   },
   {
-   "name": "Walrus Returns Celebration",
-   "area": "Forest Hill",
-   "lat": 51.4411,
-   "lon": -0.0612,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "evening event",
-    "aquarium",
-    "celebration",
-    "walrus"
-   ],
-   "blurb": "Evening celebration marking the return of the Horniman's beloved walrus. Runs 6 to 8:30pm, a good option for a weekday or Wednesday night out.",
-   "url": "https://www.horniman.ac.uk/whats-on/",
-   "date": "2026-11-18",
-   "time": "18:00",
-   "source": "Horniman Museum & Gardens",
-   "id": "ev-walrus-returns-celebration-11-18",
-   "rel": "keep",
-   "open": "18:00",
-   "close": "20:30",
-   "part": "evening",
-   "hrs": 1
-  },
-  {
    "name": "Wild Skills: Create a Terrarium, Ecosystem in a Jar",
    "area": "King's Cross",
    "lat": 51.5074,
@@ -30857,38 +28067,6 @@
    "rel": "keep",
    "open": "12:00",
    "hrs": 1
-  },
-  {
-   "name": "Relaxed Hours: The 90s: Art and Fashion",
-   "area": "Pimlico, Westminster",
-   "lat": 51.4911,
-   "lon": -0.1278,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "art",
-    "fashion",
-    "quiet hours",
-    "accessible",
-    "1990s"
-   ],
-   "blurb": "A quieter time to explore the 1990s art and fashion exhibition at Tate Britain, with fewer visitors and a calmer atmosphere.",
-   "url": "https://www.tate.org.uk/whats-on",
-   "date": "2026-11-18",
-   "time": "10:00-11:00",
-   "source": "Tate Britain",
-   "id": "ev-relaxed-hours-the-90s-art-and-fashion-11-18",
-   "open": "10:00",
-   "close": "11:00",
-   "hrs": 1,
-   "rel": "keep"
   },
   {
    "name": "Relaxed Hours: Vanessa Bell and Duncan Grant",
@@ -31590,7 +28768,7 @@
    "part": "evening"
   },
   {
-   "name": "London Tarot Meetup for Black Women",
+   "name": "London Tarot Meetup for Black Women (19 Nov)",
    "area": "Peckham",
    "lat": 51.4727,
    "lon": -0.07,
@@ -31601,20 +28779,22 @@
     99
    ],
    "kids": 0,
-   "adults": 3,
+   "adults": 1,
+   "dur": 2,
    "tags": [
-    "tarot",
+    "tarot meetup",
     "community",
     "intuition",
-    "meetup"
+    "black women"
    ],
-   "blurb": "A dedicated space for Black and Mixed-Black women to practise tarot readings and build intuition together.",
+   "blurb": "Community space for Black and Mixed-Black women to practise tarot readings and build intuition together. Check the venue page for booking details.",
    "url": "https://peckhamlevels.org/whats-on",
    "date": "2026-11-19",
    "source": "Peckham Levels",
-   "id": "ev-london-tarot-meetup-for-black-women-11-19",
+   "id": "ev-london-tarot-meetup-for-black-women-19-n-11-19",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Shōtengai pan-Asian Market",
@@ -31646,34 +28826,6 @@
    "hrs": 1
   },
   {
-   "name": "London Tarot Meetup for Black Women (19 Nov)",
-   "area": "Peckham",
-   "lat": 51.4727,
-   "lon": -0.07,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "tarot meetup",
-    "community",
-    "intuition",
-    "black women"
-   ],
-   "blurb": "Community space for Black and Mixed-Black women to practise tarot readings and build intuition together. Check the venue page for booking details.",
-   "url": "https://peckhamlevels.org/whats-on",
-   "date": "2026-11-19",
-   "source": "Peckham Levels",
-   "id": "ev-london-tarot-meetup-for-black-women-19-n-11-19",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Roller Disco at Deptford Lounge",
    "area": "Deptford",
    "lat": 51.479,
@@ -31700,7 +28852,8 @@
    "source": "The Albany",
    "id": "ev-roller-disco-at-deptford-lounge-11-19",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Stargazing at Walthamstow: The Origins of the Planets",
@@ -31795,36 +28948,6 @@
    "rel": "keep",
    "hrs": 1,
    "part": "evening"
-  },
-  {
-   "name": "Roller Disco",
-   "area": "Deptford",
-   "lat": 51.479,
-   "lon": -0.026,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 3,
-   "tags": [
-    "roller disco",
-    "skating",
-    "indoor",
-    "family",
-    "pay what you decide"
-   ],
-   "blurb": "Indoor roller disco at Deptford Lounge for practising skills and dancing on wheels. Pay-what-you-decide. Check the listing for session days.",
-   "url": "https://www.thealbany.org.uk/events",
-   "from": "2026-11-19",
-   "to": "2027-03-18",
-   "source": "The Albany",
-   "id": "ev-roller-disco-11-19",
-   "hrs": 1,
-   "rel": "keep"
   },
   {
    "name": "Cultural History of Walthamstow Wetlands Guided Tour",
@@ -32165,7 +29288,10 @@
    "open": "19:30",
    "close": "21:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "also": [
+    "Instagram @oldroyalnavalcollege"
+   ]
   },
   {
    "name": "Peace Doves by Peter Walker",
@@ -32320,11 +29446,12 @@
    "rel": "keep",
    "hrs": 1,
    "open": "20:00",
-   "part": "evening"
+   "part": "evening",
+   "also": []
   },
   {
-   "name": "16th Annual Robes SleepOut",
-   "area": "Borough",
+   "name": "16th Annual Robes Project SleepOut",
+   "area": "Southwark",
    "lat": 51.5061,
    "lon": -0.09,
    "in": "in",
@@ -32339,20 +29466,21 @@
    "tags": [
     "charity",
     "sleepout",
-    "overnight",
+    "homelessness",
     "fundraiser",
-    "solidarity"
+    "overnight"
    ],
-   "blurb": "Give up your bed for one night to raise funds and stand in solidarity with people experiencing homelessness in Southwark and Lambeth.",
+   "blurb": "Give up your bed for one night to raise funds and stand in solidarity with people experiencing homelessness in Southwark and Lambeth. Free to join; sponsorship encouraged.",
    "url": "https://cathedral.southwark.anglican.org/whats-on/",
    "date": "2026-11-20",
    "time": "19:00",
    "source": "Southwark Cathedral",
-   "id": "ev-16th-annual-robes-sleepout-11-20",
+   "id": "ev-16th-annual-robes-project-sleepout-11-20",
    "rel": "keep",
-   "hrs": 1,
    "open": "19:00",
-   "part": "evening"
+   "part": "evening",
+   "hrs": 1,
+   "also": []
   },
   {
    "name": "Mission & Ministry | A Spiritual Tour of Southwark Cathedral",
@@ -32449,70 +29577,6 @@
    "hrs": 1
   },
   {
-   "name": "Robes Project SleepOut Entertainment",
-   "area": "Southwark",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "charity",
-    "entertainment",
-    "fundraiser",
-    "evening",
-    "homelessness"
-   ],
-   "blurb": "An evening of entertainment supporting the Robes Project SleepOut for people experiencing homelessness. £20 donation taken at the door.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-20",
-   "time": "20:00",
-   "source": "Southwark Cathedral",
-   "id": "ev-robes-project-sleepout-entertainment-11-20",
-   "rel": "keep",
-   "open": "20:00",
-   "part": "evening",
-   "hrs": 1
-  },
-  {
-   "name": "16th Annual Robes Project SleepOut",
-   "area": "Southwark",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 5,
-   "tags": [
-    "charity",
-    "sleepout",
-    "homelessness",
-    "fundraiser",
-    "overnight"
-   ],
-   "blurb": "Give up your bed for one night to raise funds and stand in solidarity with people experiencing homelessness in Southwark and Lambeth. Free to join; sponsorship encouraged.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-20",
-   "time": "19:00",
-   "source": "Southwark Cathedral",
-   "id": "ev-16th-annual-robes-project-sleepout-11-20",
-   "rel": "keep",
-   "open": "19:00",
-   "part": "evening",
-   "hrs": 1
-  },
-  {
    "name": "A Christmas Carol presented by Three Inch Fools",
    "area": "Greenwich",
    "lat": 51.481,
@@ -32577,7 +29641,7 @@
    "lk": 1
   },
   {
-   "name": "Block Power (EFG London Jazz Festival)",
+   "name": "Block Power",
    "area": "Deptford",
    "lat": 51.479,
    "lon": -0.026,
@@ -32588,22 +29652,24 @@
     99
    ],
    "kids": 0,
-   "adults": 1,
+   "adults": 3,
    "dur": 3,
    "tags": [
-    "live music",
-    "beatmakers",
+    "electronic music",
+    "live sequencing",
     "jazz festival",
-    "electronic"
+    "beatmakers",
+    "deptford"
    ],
-   "blurb": "Evening of live sequencing and new exclusive music from London's beatmakers scene. Part of EFG London Jazz Festival. Tickets £6-£10, 16+.",
+   "blurb": "Part of the EFG London Jazz Festival: an evening of live sequencing and new exclusive music from London's beatmakers scene. Tickets £6-£10.",
    "url": "https://www.thealbany.org.uk/events",
    "date": "2026-11-20",
    "source": "The Albany",
-   "id": "ev-block-power-efg-london-jazz-festival-11-20",
-   "rel": "keep",
+   "id": "ev-block-power-11-20",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "rel": "keep",
+   "also": []
   },
   {
    "name": "Writeidea Festival (Tower Hamlets libraries)",
@@ -32634,72 +29700,6 @@
    "id": "ev-writeidea-festival-tower-hamlets-librari-11-20",
    "rel": "keep",
    "hrs": 1
-  },
-  {
-   "name": "A Christmas Carol by Dickens",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    6,
-    99
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "theatre",
-    "christmas",
-    "dickens",
-    "evening"
-   ],
-   "blurb": "Supernatural staging of Dickens' classic A Christmas Carol on site. Performances Friday 20 and Saturday 21 November. Check tickets for times.",
-   "from": "2026-11-20",
-   "to": "2026-11-21",
-   "url": "https://www.rmg.co.uk/whats-on",
-   "source": "Instagram @oldroyalnavalcollege",
-   "id": "ev-ig-a-christmas-carol-by-dickens-11-20",
-   "rel": "keep",
-   "days": [
-    5,
-    6
-   ],
-   "hrs": 1,
-   "site": "https://www.rmg.co.uk/whats-on",
-   "lk": 1,
-   "via": "https://www.instagram.com/p/DfFDEBID3I0/"
-  },
-  {
-   "name": "Block Power",
-   "area": "Deptford",
-   "lat": 51.479,
-   "lon": -0.026,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "electronic music",
-    "live sequencing",
-    "jazz festival",
-    "beatmakers",
-    "deptford"
-   ],
-   "blurb": "Part of the EFG London Jazz Festival: an evening of live sequencing and new exclusive music from London's beatmakers scene. Tickets £6-£10.",
-   "url": "https://www.thealbany.org.uk/events",
-   "date": "2026-11-20",
-   "source": "The Albany",
-   "id": "ev-block-power-11-20",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
   },
   {
    "name": "Pilates",
@@ -33067,96 +30067,37 @@
    "rel": "keep"
   },
   {
-   "id": "ev-shanty-cuttysark",
-   "name": "Sea Shanty Festival at Cutty Sark",
-   "area": "Greenwich",
-   "lat": 51.4829,
-   "lon": -0.0096,
+   "name": "Whitehall Historic House Tours",
+   "area": "Sutton",
+   "lat": 51.3618,
+   "lon": -0.1945,
    "in": "in",
-   "price": "££",
+   "price": "£",
    "ages": [
-    4,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "music",
-    "ships",
-    "festival"
-   ],
-   "blurb": "A day of shanty crews and singing workshops under the ship, 10am to 6pm, included with a Cutty Sark ticket.",
-   "url": "https://www.rmg.co.uk/whats-on",
-   "source": "Royal Museums Greenwich",
-   "date": "2026-11-21",
-   "time": "10am–6pm",
-   "rel": "keep",
-   "open": "10:00",
-   "close": "18:00",
-   "hrs": 1,
-   "also": [
-    "Instagram @royalmuseumsgreenwich"
-   ]
-  },
-  {
-   "name": "Ceramics Workshop with Neve Beill: Turning London Clay into Pots",
-   "area": "Forest Hill",
-   "lat": 51.4411,
-   "lon": -0.0612,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    16,
+    8,
     99
    ],
    "kids": 0,
-   "adults": 3,
-   "dur": 2,
+   "adults": 2,
+   "dur": 1,
    "tags": [
-    "ceramics",
-    "pottery workshop",
-    "hands-on",
-    "adults"
+    "historic house tour",
+    "local heritage",
+    "saturday activity"
    ],
-   "blurb": "A hands-on pottery session with Neve Beill, starting with an introduction and then a guided session making pots from London clay. Adults.",
+   "blurb": "Second Saturday tour of Whitehall Historic House, starting at 12pm on 21 November. Check the listing for booking details.",
+   "url": "https://events.sutton.gov.uk/",
    "date": "2026-11-21",
-   "time": "13:00",
-   "url": "https://www.horniman.ac.uk/whats-on/",
-   "source": "Horniman Museum & Gardens",
-   "id": "ev-ceramics-workshop-with-neve-beill-turnin-11-21",
+   "time": "12:00",
+   "source": "Sutton Council events",
+   "id": "ev-whitehall-historic-house-tours-11-21",
    "rel": "keep",
+   "open": "12:00",
    "hrs": 1,
-   "open": "13:00",
-   "part": "afternoon"
-  },
-  {
-   "name": "Adult Garden Workshop",
-   "area": "Forest Hill",
-   "lat": 51.4411,
-   "lon": -0.0612,
-   "in": "both",
-   "price": "££",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "garden workshop",
-    "hands-on",
-    "plants",
-    "adults"
-   ],
-   "blurb": "Hands-on adult workshop inspired by the plants in the Horniman Gardens. Part of a recurring series; this session is on 21 November.",
-   "url": "https://www.horniman.ac.uk/whats-on/",
-   "date": "2026-11-21",
-   "source": "Horniman Museum & Gardens",
-   "id": "ev-adult-garden-workshop-11-21",
-   "rel": "keep",
-   "hrs": 1
+   "lk": 1,
+   "to": "2026-11-21",
+   "from": "2026-11-07",
+   "also": []
   },
   {
    "name": "Sea Shanty Festival 2026",
@@ -33188,7 +30129,39 @@
    "source": "Royal Museums Greenwich",
    "id": "ev-sea-shanty-festival-2026-11-21",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "also": []
+  },
+  {
+   "name": "Ceramics Workshop with Neve Beill: Turning London Clay into Pots",
+   "area": "Forest Hill",
+   "lat": 51.4411,
+   "lon": -0.0612,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    16,
+    99
+   ],
+   "kids": 0,
+   "adults": 3,
+   "dur": 2,
+   "tags": [
+    "ceramics",
+    "pottery workshop",
+    "hands-on",
+    "adults"
+   ],
+   "blurb": "A hands-on pottery session with Neve Beill, starting with an introduction and then a guided session making pots from London clay. Adults.",
+   "date": "2026-11-21",
+   "time": "13:00",
+   "url": "https://www.horniman.ac.uk/whats-on/",
+   "source": "Horniman Museum & Gardens",
+   "id": "ev-ceramics-workshop-with-neve-beill-turnin-11-21",
+   "rel": "keep",
+   "hrs": 1,
+   "open": "13:00",
+   "part": "afternoon"
   },
   {
    "name": "Santa's Grotto relaxed session at the Queen's House",
@@ -33558,7 +30531,7 @@
    "lk": 1
   },
   {
-   "name": "Sound is Now! (EFG London Jazz Festival)",
+   "name": "Sound is Now!",
    "area": "Deptford",
    "lat": 51.479,
    "lon": -0.026,
@@ -33569,21 +30542,23 @@
     99
    ],
    "kids": 0,
-   "adults": 1,
+   "adults": 3,
    "dur": 3,
    "tags": [
     "improvised music",
     "jazz festival",
     "live music",
-    "experimental"
+    "experimental",
+    "deptford"
    ],
-   "blurb": "Charles Hayward curates musicians from across genres, improvising together on stage. Part of EFG London Jazz Festival. Tickets £10-£12, 14+.",
+   "blurb": "Part of the EFG London Jazz Festival. Charles Hayward curates musicians from across the spectrum improvising together on stage. Tickets £10-£12.",
    "url": "https://www.thealbany.org.uk/events",
    "date": "2026-11-21",
    "source": "The Albany",
-   "id": "ev-sound-is-now-efg-london-jazz-festival-11-21",
+   "id": "ev-sound-is-now-11-21",
+   "hrs": 1,
    "rel": "keep",
-   "hrs": 1
+   "also": []
   },
   {
    "name": "Laundry Day: Clothes Give-away, Mending and Queer Swap",
@@ -33710,36 +30685,6 @@
    "lk": 1
   },
   {
-   "name": "Whitehall Historic House Tours",
-   "area": "Sutton",
-   "lat": 51.3618,
-   "lon": -0.1945,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "historic house tour",
-    "local heritage",
-    "saturday activity"
-   ],
-   "blurb": "Second Saturday tour of Whitehall Historic House, starting at 12pm on 21 November. Check the listing for booking details.",
-   "url": "https://events.sutton.gov.uk/",
-   "date": "2026-11-21",
-   "time": "12:00",
-   "source": "Sutton Council events",
-   "id": "ev-whitehall-historic-house-tours-11-21",
-   "rel": "keep",
-   "open": "12:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "Local History Club",
    "area": "Circle",
    "lat": 51.3618,
@@ -33772,35 +30717,6 @@
    "part": "afternoon",
    "lk": 1,
    "lk_try": 1
-  },
-  {
-   "name": "Sound is Now!",
-   "area": "Deptford",
-   "lat": 51.479,
-   "lon": -0.026,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    14,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "improvised music",
-    "jazz festival",
-    "live music",
-    "experimental",
-    "deptford"
-   ],
-   "blurb": "Part of the EFG London Jazz Festival. Charles Hayward curates musicians from across the spectrum improvising together on stage. Tickets £10-£12.",
-   "url": "https://www.thealbany.org.uk/events",
-   "date": "2026-11-21",
-   "source": "The Albany",
-   "id": "ev-sound-is-now-11-21",
-   "hrs": 1,
-   "rel": "keep"
   },
   {
    "name": "Laundry Day",
@@ -34231,93 +31147,6 @@
    "rel": "keep"
   },
   {
-   "name": "Markfield Beam Engine open day (22 Nov)",
-   "area": "Tottenham",
-   "lat": 51.581,
-   "lon": -0.057,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 5.5,
-   "tags": [
-    "steam engine",
-    "free family day",
-    "victorian heritage",
-    "riverside park"
-   ],
-   "blurb": "Free open day at a restored 1886 Victorian beam engine by the River Lee. Engine steams at 12:30 and 2:30. Guided tours, family activities, café and playground. Donations welcome.",
-   "url": "https://www.mbeam.org/",
-   "date": "2026-11-22",
-   "time": "10:00",
-   "source": "Markfield Beam Engine",
-   "id": "ev-markfield-beam-engine-open-day-22-nov-11-22",
-   "rel": "keep",
-   "open": "10:00",
-   "hrs": 1
-  },
-  {
-   "name": "Christmas Wreath Making Workshop",
-   "area": "Peckham",
-   "lat": 51.4727,
-   "lon": -0.07,
-   "in": "in",
-   "price": "££",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "tags": [
-    "christmas",
-    "wreath making",
-    "crafts",
-    "workshop"
-   ],
-   "blurb": "Hands-on workshop to make your own festive wreath ahead of the holidays. A good seasonal activity for a relaxed weekend afternoon.",
-   "url": "https://peckhamlevels.org/whats-on",
-   "date": "2026-11-22",
-   "source": "Peckham Levels",
-   "id": "ev-christmas-wreath-making-workshop-11-22",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Markfield Beam Engine open day (fourth Sunday)",
-   "area": "Tottenham",
-   "lat": 51.581,
-   "lon": -0.057,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    3,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "steam engine",
-    "family museum",
-    "free entry",
-    "riverside park"
-   ],
-   "blurb": "Usual fourth-Sunday open day with a working steam engine, free activities and guided tours. Engine runs 12.30 and 2.30. Confirm this date on the mbeam.org calendar before visiting.",
-   "url": "https://www.mbeam.org/",
-   "date": "2026-11-22",
-   "time": "10:00",
-   "source": "Markfield Beam Engine",
-   "id": "ev-markfield-beam-engine-open-day-fourth-su-11-22",
-   "rel": "keep",
-   "open": "10:00",
-   "hrs": 1
-  },
-  {
    "name": "Markfield Beam Engine open day (steaming)",
    "area": "Tottenham",
    "lat": 51.581,
@@ -34346,6 +31175,37 @@
    "also": [],
    "rel": "keep",
    "open": "10:00",
+   "hrs": 1,
+   "days": [
+    0
+   ],
+   "close": "15:30"
+  },
+  {
+   "name": "Christmas Wreath Making Workshop",
+   "area": "Peckham",
+   "lat": 51.4727,
+   "lon": -0.07,
+   "in": "in",
+   "price": "££",
+   "ages": [
+    16,
+    99
+   ],
+   "kids": 1,
+   "adults": 3,
+   "tags": [
+    "christmas",
+    "wreath making",
+    "crafts",
+    "workshop"
+   ],
+   "blurb": "Hands-on workshop to make your own festive wreath ahead of the holidays. A good seasonal activity for a relaxed weekend afternoon.",
+   "url": "https://peckhamlevels.org/whats-on",
+   "date": "2026-11-22",
+   "source": "Peckham Levels",
+   "id": "ev-christmas-wreath-making-workshop-11-22",
+   "rel": "keep",
    "hrs": 1
   },
   {
@@ -34534,41 +31394,6 @@
    "source": "London Wildlife Trust",
    "id": "ev-fungi-walk-at-gutteridge-wood-11-22",
    "open": "12:00",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Markfield Beam Engine open day with live steaming",
-   "area": "Tottenham",
-   "lat": 51.581,
-   "lon": -0.057,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "steam engine",
-    "free museum",
-    "family day out",
-    "victorian heritage",
-    "riverside park"
-   ],
-   "blurb": "Free open day at a restored 1886 Victorian beam engine. Watch it run under steam at 12.30 and 2.30, take a guided tour, and use the park's café and playground. Donations welcome.",
-   "days": [
-    0
-   ],
-   "open": "10:00",
-   "close": "15:30",
-   "url": "https://www.mbeam.org/",
-   "date": "2026-11-22",
-   "time": "10:00",
-   "source": "Markfield Beam Engine",
-   "id": "ev-markfield-beam-engine-open-day-with-live-11-22",
    "hrs": 1,
    "rel": "keep"
   },
@@ -34783,39 +31608,40 @@
    "hrs": 1
   },
   {
-   "name": "Lunchtime Organ Recital (Mon 23 Nov)",
+   "name": "Lunchtime Organ Recital",
    "area": "Borough",
    "lat": 51.5061,
    "lon": -0.09,
    "in": "in",
    "price": "free",
    "ages": [
-    0,
+    10,
     99
    ],
-   "kids": 1,
+   "kids": 0,
    "adults": 2,
    "dur": 0.5,
    "tags": [
-    "organ",
     "free",
+    "organ",
     "lunchtime",
     "music",
     "recital"
    ],
-   "blurb": "Free 30-minute lunchtime organ recital, held most Mondays. Drop in for a quiet midday break.",
+   "blurb": "A free 30-minute lunchtime organ recital, held most Mondays at the cathedral. Easy midday break.",
    "url": "https://cathedral.southwark.anglican.org/whats-on/",
    "date": "2026-11-23",
    "time": "13:20",
    "source": "Southwark Cathedral",
-   "id": "ev-lunchtime-organ-recital-mon-23-nov-11-23",
+   "id": "ev-lunchtime-organ-recital-11-23",
    "rel": "keep",
+   "hrs": 1,
    "days": [
     1
    ],
    "open": "13:20",
    "part": "afternoon",
-   "hrs": 1
+   "also": []
   },
   {
    "name": "K-Pop Party on the ice",
@@ -34849,41 +31675,6 @@
    "hrs": 1,
    "site": "https://www.somersethouse.org.uk/whats-on",
    "lk": 1
-  },
-  {
-   "name": "Lunchtime Organ Recital",
-   "area": "Borough",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    10,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 0.5,
-   "tags": [
-    "free",
-    "organ",
-    "lunchtime",
-    "music",
-    "recital"
-   ],
-   "blurb": "A free 30-minute lunchtime organ recital, held most Mondays at the cathedral. Easy midday break.",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-23",
-   "time": "13:20",
-   "source": "Southwark Cathedral",
-   "id": "ev-lunchtime-organ-recital-11-23",
-   "rel": "keep",
-   "hrs": 1,
-   "days": [
-    1
-   ],
-   "open": "13:20",
-   "part": "afternoon"
   },
   {
    "name": "Monday Night Community Takeovers",
@@ -35781,7 +32572,7 @@
    "rel": "keep"
   },
   {
-   "name": "Wellcome Collection Lates",
+   "name": "Wellcome Collection Lates: Not Done Yet",
    "area": "Euston",
    "lat": 51.5257,
    "lon": -0.1337,
@@ -35792,26 +32583,28 @@
     99
    ],
    "kids": 0,
-   "adults": 2,
+   "adults": 3,
    "dur": 3,
    "tags": [
-    "lates",
-    "free tickets",
-    "evening event",
-    "wellbeing",
-    "museum"
+    "late opening",
+    "evening",
+    "talks",
+    "art",
+    "science"
    ],
-   "blurb": "Free evening Lates at Wellcome Collection. Tickets must be booked in advance. Bring friends, since the post suggests friendship is good for your health.",
+   "blurb": "An evening Late opening at Wellcome Collection with talks, exhibitions and events. Adults-only, with BSL interpretation and captions available.",
    "date": "2026-11-26",
-   "url": "https://wellcomecollection.org/events/wellcome-collection-lates-not-done-yet",
-   "source": "Instagram @wellcomecollection",
-   "id": "ev-ig-wellcome-collection-lates-11-26",
-   "rel": "keep",
+   "time": "19:00",
+   "url": "https://wellcomecollection.org/events",
+   "source": "Wellcome Collection",
+   "id": "ev-wellcome-collection-lates-not-done-yet-11-26",
+   "open": "19:00",
    "part": "evening",
    "hrs": 1,
-   "site": "https://wellcomecollection.org/events",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DehZCRBj0D0/"
+   "rel": "keep",
+   "also": [
+    "Instagram @wellcomecollection"
+   ]
   },
   {
    "name": "Evening Concert at the Queen's House: Aúrion",
@@ -35871,38 +32664,6 @@
    "date": "2026-11-26",
    "source": "London Museum Docklands",
    "id": "ev-flock-founders-preview-11-26",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Wellcome Collection Lates: Not Done Yet",
-   "area": "Euston",
-   "lat": 51.5257,
-   "lon": -0.1337,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "late opening",
-    "evening",
-    "talks",
-    "art",
-    "science"
-   ],
-   "blurb": "An evening Late opening at Wellcome Collection with talks, exhibitions and events. Adults-only, with BSL interpretation and captions available.",
-   "date": "2026-11-26",
-   "time": "19:00",
-   "url": "https://wellcomecollection.org/events",
-   "source": "Wellcome Collection",
-   "id": "ev-wellcome-collection-lates-not-done-yet-11-26",
-   "open": "19:00",
-   "part": "evening",
    "hrs": 1,
    "rel": "keep"
   },

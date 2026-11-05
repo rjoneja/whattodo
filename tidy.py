@@ -34,6 +34,25 @@ def richness(e):
     return (tier, bool(e.get("time")), e.get("price") not in (None, ""), bool(e.get("parking")), len(e.get("blurb", "")), "instagram" not in host)
 groups = {}
 for e in events: groups.setdefault(key(e), []).append(e)
+# the same thing listed under a longer or shorter name ("Unboxing the Universe" / "Unboxing the Universe: science theatre show"):
+# same day(s), same spot, and one name's words contain all of the other's (at least two words) → one listing
+def words(e): return set(namekey(e, brackets=False).split())
+def when(e): return (e.get("date"), e.get("date")) if e.get("date") else (e.get("from", ""), e.get("to", ""))
+def same_spot(a, b): return abs(float(a.get("lat", 0)) - float(b.get("lat", 0))) < 0.003 and abs(float(a.get("lon", 0)) - float(b.get("lon", 0))) < 0.0045
+ks = list(groups); fold = {}
+for i, ka in enumerate(ks):
+    a0 = groups[ka][0]; wa = words(a0)
+    for kb in ks[i + 1:]:
+        if kb in fold or ka in fold: continue
+        b0 = groups[kb][0]; wb = words(b0)
+        small, big = (wa, wb) if len(wa) <= len(wb) else (wb, wa)
+        (fa, ta), (fb, tb) = when(a0), when(b0)
+        overlap = fa and fb and fa <= (tb or fb) and fb <= (ta or fa)
+        if len(small) >= 2 and small <= big and overlap and same_spot(a0, b0): fold[kb] = ka
+for kb, ka in fold.items():
+    while ka in fold: ka = fold[ka]
+    groups[ka] += groups.pop(kb)
+if fold: print(f"tidy: {len(fold)} listings under longer/shorter names merged", file=sys.stderr)
 merged = []
 for g in groups.values():
     g.sort(key=richness, reverse=True); best = dict(g[0])
