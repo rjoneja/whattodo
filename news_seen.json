@@ -127,5 +127,19 @@
   "n": 0,
   "day": "2026-11-05",
   "kind": "skip"
+ },
+ "<878780-639294352600455471@mailing.rmg.co.uk>": {
+  "from": "Royal Museums Greenwich",
+  "addr": "newsletter@rmg.co.uk",
+  "subject": "Welcome to Royal Museums Greenwich",
+  "n": 0,
+  "day": "2026-11-05"
+ },
+ "<4U4Z.ICTA.1906FC23FED6ABCD7IHU1DD6EF2B3821CF29B7.2674f81f-530f-497c-8d60-a5207109f036@r1.dotdigital-email.com>": {
+  "from": "Wellcome Collection",
+  "addr": "wellcome.collection@r1.dotdigital-email.com",
+  "subject": "Explore more human stories about health with Wellcome Collection",
+  "n": 0,
+  "day": "2026-11-05"
  }
 }
