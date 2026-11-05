@@ -1702,7 +1702,7 @@
    "to": "2026-11-26",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Meet the Designer: Christie Swallow",
@@ -3035,7 +3035,8 @@
    "id": "ev-astronomers-take-over-11-03",
    "rel": "keep",
    "also": [],
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Schiaparelli: Fashion Becomes Art",
@@ -3237,35 +3238,6 @@
    "to": "2026-11-18",
    "source": "IanVisits calendar (aggregator, quality check)",
    "id": "ev-middlesex-hospital-blues-11-03",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "60 Years of Carnival: Our Story",
-   "area": "Notting Hill",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 1,
-   "tags": [
-    "notting hill carnival",
-    "free exhibition",
-    "community history"
-   ],
-   "blurb": "Free exhibition marking 60 years of Notting Hill Carnival, told through Tropical Isles' journey and participants' experiences. Ends Wednesday 4 Nov.",
-   "url": "https://www.ianvisits.co.uk/calendar/",
-   "from": "2026-11-03",
-   "to": "2026-11-04",
-   "source": "IanVisits calendar (aggregator, quality check)",
-   "id": "ev-60-years-of-carnival-our-story-11-03",
    "rel": "keep",
    "hrs": 1,
    "lk": 1
@@ -4058,7 +4030,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-family-trails-at-the-queen-s-house-11-03",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Family Trails at the National Maritime Museum",
@@ -4788,35 +4761,6 @@
    "lk": 1
   },
   {
-   "name": "Architectural Heritage Fund 50th Anniversary Exhibition",
-   "area": "Central London",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "free exhibition",
-    "architecture",
-    "heritage"
-   ],
-   "blurb": "Free exhibition celebrating the Architectural Heritage Fund's 50th year, showing UK-wide and English heritage projects. Ends Wednesday 4 Nov. Check venue before visiting.",
-   "url": "https://www.ianvisits.co.uk/calendar/",
-   "from": "2026-11-03",
-   "to": "2026-11-04",
-   "source": "IanVisits calendar (aggregator, quality check)",
-   "id": "ev-architectural-heritage-fund-50th-anniver-11-03",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "Kids Birdwatching Club",
    "area": "Havering (reserve not named)",
    "lat": 51.5768,
@@ -5273,64 +5217,6 @@
    "lk": 1
   },
   {
-   "name": "Design Baby: Leap then Look",
-   "area": "South Kensington",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    3
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "baby",
-    "family",
-    "free",
-    "under threes"
-   ],
-   "blurb": "Free family session for babies and toddlers at the V&A on Wednesday 4 November. Good for an early-week outing. Check the page for times.",
-   "url": "https://www.vam.ac.uk/whatson",
-   "date": "2026-11-04",
-   "source": "Young V&A",
-   "id": "ev-design-baby-leap-then-look-11-04",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Upgrade Yourself Monthly: How to Grow Sustainable Materials Through Biodesign",
-   "area": "Strand",
-   "lat": 51.511,
-   "lon": -0.117,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "workshop",
-    "biodesign",
-    "sustainability",
-    "talk"
-   ],
-   "blurb": "A November talk and workshop with BLUNIK studios on growing sustainable materials through biodesign. Good for anyone interested in sustainable design. Check the page for booking and price.",
-   "url": "https://www.somersethouse.org.uk/whats-on",
-   "date": "2026-11-04",
-   "time": "evening",
-   "source": "Somerset House",
-   "id": "ev-upgrade-yourself-monthly-how-to-grow-sus-11-04",
-   "rel": "keep",
-   "part": "evening",
-   "hrs": 1
-  },
-  {
    "name": "Circus and Aerial Skills Drop-in",
    "area": "Camden Town",
    "lat": 51.5433,
@@ -5476,94 +5362,6 @@
    "hrs": 1
   },
   {
-   "name": "Lunchtime Recital: MozART in London",
-   "area": "Blackheath",
-   "lat": 51.466,
-   "lon": 0.006,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "lunchtime recital",
-    "mozart",
-    "classical music"
-   ],
-   "blurb": "Lunchtime recital at 1.10pm on Wednesday 4 November featuring Mozart. A short, affordable midday concert in Blackheath.",
-   "url": "https://www.blackheathhalls.com/whats-on/",
-   "date": "2026-11-04",
-   "time": "13:10",
-   "source": "Blackheath Halls",
-   "id": "ev-lunchtime-recital-mozart-in-london-11-04",
-   "rel": "keep",
-   "open": "13:10",
-   "part": "afternoon",
-   "hrs": 1
-  },
-  {
-   "name": "Low Stakes - Free Games Night (4 Nov)",
-   "area": "Peckham",
-   "lat": 51.4727,
-   "lon": -0.07,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 3,
-   "tags": [
-    "games night",
-    "arcade",
-    "karaoke",
-    "pool"
-   ],
-   "blurb": "Free evening of games, arcade machines, karaoke and pool. Drop in for a casual night out. Check the venue page for opening hours.",
-   "url": "https://peckhamlevels.org/whats-on",
-   "date": "2026-11-04",
-   "source": "Peckham Levels",
-   "id": "ev-low-stakes-free-games-night-4-nov-11-04",
-   "also": [],
-   "rel": "keep",
-   "part": "evening",
-   "hrs": 1
-  },
-  {
-   "name": "Eyeball: Intuitive Collage Workshop",
-   "area": "Peckham",
-   "lat": 51.4727,
-   "lon": -0.07,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2.5,
-   "tags": [
-    "collage workshop",
-    "self-portrait",
-    "creative",
-    "art making"
-   ],
-   "blurb": "Hands-on collage workshop on self-expression, this month themed around self-portraits. No experience needed. Check the page for price and booking.",
-   "url": "https://peckhamlevels.org/whats-on",
-   "date": "2026-11-04",
-   "source": "Peckham Levels",
-   "id": "ev-eyeball-intuitive-collage-workshop-11-04",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Rumba Latina",
    "area": "Wembley Park",
    "lat": 51.557,
@@ -5597,127 +5395,6 @@
    "hrs": 1
   },
   {
-   "name": "Chatter Books Club (Brixton Library)",
-   "area": "Brixton",
-   "lat": 51.4625,
-   "lon": -0.1145,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    7,
-    12
-   ],
-   "kids": 1,
-   "adults": 0,
-   "dur": 1,
-   "tags": [
-    "book club",
-    "kids",
-    "friends",
-    "reading",
-    "weekly"
-   ],
-   "blurb": "Weekly book club for children aged 7 to 12. Share ideas, talk about books and make new friends at Brixton Library. Drop in and join.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-chatter-books-club-brixton-library-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Chatter Books Club (Norwood Library)",
-   "area": "Norwood",
-   "lat": 51.4305,
-   "lon": -0.104,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    7,
-    12
-   ],
-   "kids": 1,
-   "adults": 0,
-   "dur": 1,
-   "tags": [
-    "book club",
-    "kids",
-    "friends",
-    "reading",
-    "weekly"
-   ],
-   "blurb": "Weekly book club for children aged 7 to 12 at Norwood Library. Share ideas, talk about books and join in with activities.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-chatter-books-club-norwood-library-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Chatterbook Club (Norwood Library)",
-   "area": "Norwood",
-   "lat": 51.4305,
-   "lon": -0.104,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    7,
-    11
-   ],
-   "kids": 1,
-   "adults": 0,
-   "dur": 1,
-   "tags": [
-    "book club",
-    "writing reviews",
-    "kids",
-    "activities",
-    "refreshments"
-   ],
-   "blurb": "Book club for 7 to 11 year olds who love reading. Talk about books, write reviews and do fun activities. Light refreshments provided at Norwood Library.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-chatterbook-club-norwood-library-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Adult Fiction Reading Group (Streatham Library)",
-   "area": "Streatham",
-   "lat": 51.429,
-   "lon": -0.13,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "book club",
-    "fiction",
-    "classic",
-    "adults",
-    "library"
-   ],
-   "blurb": "Free reading group for adults exploring modern and classic fiction at Streatham Library. Good for book lovers wanting discussion and new reads.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-adult-fiction-reading-group-streatham-li-11-04",
-   "also": [],
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "Free Rumba Latina",
    "area": "Wembley Park",
    "lat": 51.557,
@@ -5749,90 +5426,6 @@
    "close": "22:30",
    "part": "evening",
    "hrs": 1
-  },
-  {
-   "name": "Chatter Books Club (Brixton)",
-   "area": "Brixton",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    7,
-    12
-   ],
-   "kids": 1,
-   "adults": 0,
-   "dur": 1,
-   "tags": [
-    "kids book club",
-    "reading",
-    "new friends"
-   ],
-   "blurb": "Weekly club for children aged 7 to 12 to share ideas, talk about books and try activities. Drop in to meet new friends.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-chatter-books-club-brixton-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Chatterbook Club (Norwood)",
-   "area": "Norwood",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    7,
-    11
-   ],
-   "kids": 1,
-   "adults": 0,
-   "dur": 1.5,
-   "tags": [
-    "kids book club",
-    "reading",
-    "making friends"
-   ],
-   "blurb": "Weekly book club for 7 to 11 year olds to talk about books, write reviews and join fun activities. Light refreshments provided.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-chatterbook-club-norwood-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Chatter Books Club (Norwood)",
-   "area": "Norwood",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    7,
-    12
-   ],
-   "kids": 1,
-   "adults": 0,
-   "dur": 1,
-   "tags": [
-    "kids book club",
-    "reading",
-    "new friends"
-   ],
-   "blurb": "Weekly club for children aged 7 to 12 to share ideas, talk about books and try activities. Drop in to meet new friends.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-chatter-books-club-norwood-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "lk_try": 1
   },
   {
    "name": "Autumn Term Circus and Aerial Skills Drop-in",
@@ -5930,39 +5523,6 @@
    "lk": 1
   },
   {
-   "name": "Music Classes for Under-Fives - Canada Water Library",
-   "area": "Rotherhithe",
-   "lat": 51.4985,
-   "lon": -0.05,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "music",
-    "under fives",
-    "library",
-    "free class"
-   ],
-   "blurb": "Free music session for under-fives at Canada Water Library, with a grown-up joining in. Runs 10:30 to 11:30 on 4 November. Recurring sessions.",
-   "url": "https://www.southwark.gov.uk/southwark-presents",
-   "date": "2026-11-04",
-   "time": "10:30",
-   "source": "Southwark Council events",
-   "id": "ev-music-classes-for-under-fives-canada-wat-11-04",
-   "rel": "keep",
-   "open": "10:30",
-   "close": "11:30",
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "Move, Share & Exchange",
    "area": "Peckham",
    "lat": 51.473,
@@ -5995,354 +5555,6 @@
    "lk": 1
   },
   {
-   "name": "Butterup Coffee X Grill sessions",
-   "area": "Peckham",
-   "lat": 51.474,
-   "lon": -0.0705,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 13,
-   "tags": [
-    "coffee",
-    "food and drink",
-    "grill sessions",
-    "peckham venue"
-   ],
-   "blurb": "Coffee and grill sessions at Trinity College Centre in Peckham. Open 08:00 to 21:00 on 4 November. Pricing not listed, so check the page before going.",
-   "url": "https://www.southwark.gov.uk/southwark-presents",
-   "date": "2026-11-04",
-   "time": "08:00",
-   "source": "Southwark Council events",
-   "id": "ev-butterup-coffee-x-grill-sessions-11-04",
-   "to": "2026-11-25",
-   "from": "2026-11-04",
-   "also": [],
-   "rel": "keep",
-   "open": "08:00",
-   "close": "21:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "University of Greenwich Postgraduate Open Evening",
-   "area": "Greenwich",
-   "lat": 51.481,
-   "lon": 0.01,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "postgraduate open evening",
-    "masters courses",
-    "university",
-    "free event"
-   ],
-   "blurb": "Evening event to learn about postgraduate degrees and courses at the University of Greenwich. Free for prospective postgraduate students. Check the event page to register.",
-   "date": "2026-11-04",
-   "url": "https://www.enjoyroyalgreenwich.org.uk/whats-on",
-   "source": "Enjoy Royal Greenwich",
-   "id": "ev-university-of-greenwich-postgraduate-ope-11-04",
-   "rel": "keep",
-   "part": "evening",
-   "hrs": 1,
-   "lk_try": 1
-  },
-  {
-   "name": "Chatter Books Club",
-   "area": "Brixton",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    7,
-    12
-   ],
-   "kids": 1,
-   "adults": 0,
-   "dur": 1,
-   "tags": [
-    "kids reading",
-    "weekly club",
-    "friends",
-    "books"
-   ],
-   "blurb": "Weekly club for children aged 7 to 12 to share ideas, talk about books and join in activities. Drop in and meet new friends. Free.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-chatter-books-club-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Adult Fiction Reading Group",
-   "area": "Streatham",
-   "lat": 51.46,
-   "lon": -0.115,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "book club",
-    "fiction",
-    "reading",
-    "adults"
-   ],
-   "blurb": "Friendly reading group discussing modern and classic fiction. Adults welcome. Free to attend at Streatham library.",
-   "url": "https://www.lambeth.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Lambeth events",
-   "id": "ev-adult-fiction-reading-group-11-04",
-   "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Upside Down London camera obscura exhibition",
-   "area": "Alexandra Palace",
-   "lat": 51.59,
-   "lon": -0.11,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "exhibition",
-    "camera obscura",
-    "indoor",
-    "photography",
-    "free entry"
-   ],
-   "blurb": "Indoor camera obscura at Alexandra Palace, covered in photographs from the project. Free entry with donations welcome. Open 7am to 7pm on 4 November.",
-   "url": "https://haringey.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "07:00",
-   "source": "Haringey events",
-   "id": "ev-upside-down-london-camera-obscura-exhibi-11-04",
-   "also": [],
-   "rel": "keep",
-   "open": "07:00",
-   "close": "19:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Early Years SEND Event for Families",
-   "area": "Bexley",
-   "lat": 51.4549,
-   "lon": 0.1505,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "send",
-    "early years",
-    "parents",
-    "advice"
-   ],
-   "blurb": "Advice on your child's development for children aged 0-5 and their parents or carers. Wednesday 4 November, 10-11am. Venue not stated on the listing, so check the event page before going.",
-   "url": "https://www.bexley.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:00-11:00",
-   "source": "Bexley Council events",
-   "id": "ev-early-years-send-event-for-families-11-04",
-   "rel": "keep",
-   "open": "10:00",
-   "close": "11:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Geddes Place United Reformed Church Cafe",
-   "area": "Bexley",
-   "lat": 51.4549,
-   "lon": 0.1505,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "community cafe",
-    "cuppa",
-    "social",
-    "drop in"
-   ],
-   "blurb": "Relaxed community cafe at Geddes Place United Reformed Church. Drop in any time between 10am and 12pm for a cuppa and a chat. Good for a low-key morning out.",
-   "url": "https://www.bexley.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:00",
-   "source": "Bexley Council events",
-   "id": "ev-geddes-place-united-reformed-church-cafe-11-04",
-   "rel": "keep",
-   "open": "10:00",
-   "close": "12:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Monthly Art Appreciation Workshop",
-   "area": "Havering (venue not stated)",
-   "lat": 51.5768,
-   "lon": 0.1801,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "art",
-    "workshop",
-    "first wednesday",
-    "adults"
-   ],
-   "blurb": "Held on the first Wednesday of each month. The next session is Wednesday 4 November. The listing gives no time, venue or cost, so check before going.",
-   "url": "https://www.havering.gov.uk/events",
-   "date": "2026-11-04",
-   "source": "Havering Council events",
-   "id": "ev-monthly-art-appreciation-workshop-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Root and Branch Line walk",
-   "area": "Chessington Branch Line",
-   "lat": 51.365,
-   "lon": -0.29,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    10,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "walking talk",
-    "outdoor walk",
-    "local history",
-    "railway line"
-   ],
-   "blurb": "Walking and talking event along the Chessington Branch Line, starting 10am on 4 November. Good for a relaxed local stroll and history. Check the council page for meeting point details.",
-   "url": "https://www.kingston.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:00",
-   "source": "Kingston Council events",
-   "id": "ev-root-and-branch-line-walk-11-04",
-   "rel": "keep",
-   "open": "10:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Talk Club: Talking and Listening Group for Men",
-   "area": "Cheam",
-   "lat": 51.3618,
-   "lon": -0.1945,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1.5,
-   "tags": [
-    "mens group",
-    "wellbeing",
-    "talking",
-    "free"
-   ],
-   "blurb": "Friendly group for men to talk and listen at Cheam Library. Runs on several Wednesdays. Free to attend and no experience needed.",
-   "url": "https://events.sutton.gov.uk/",
-   "date": "2026-11-04",
-   "time": "18:00",
-   "source": "Sutton Council events",
-   "id": "ev-talk-club-talking-and-listening-group-fo-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "open": "18:00",
-   "hrs": 1,
-   "lk_try": 1
-  },
-  {
-   "name": "Rhymetime in Cheam Library",
-   "area": "Cheam",
-   "lat": 51.3618,
-   "lon": -0.1945,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 0.5,
-   "tags": [
-    "rhymetime",
-    "baby singing",
-    "free library session"
-   ],
-   "blurb": "Singing and rhyme session for under-fives at Cheam Library, starting 10am on 4 November. Free and suited to babies and toddlers.",
-   "url": "https://events.sutton.gov.uk/",
-   "date": "2026-11-04",
-   "time": "10:00",
-   "source": "Sutton Council events",
-   "id": "ev-rhymetime-in-cheam-library-11-04",
-   "rel": "keep",
-   "open": "10:00",
-   "hrs": 1,
-   "lk_try": 1
-  },
-  {
    "name": "Rhyme Time at Paddington Children's Library",
    "area": "Paddington",
    "lat": 51.4975,
@@ -6370,138 +5582,6 @@
    "source": "Westminster Council events",
    "id": "ev-rhyme-time-at-paddington-children-s-libr-11-04",
    "rel": "keep",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Baby stay and play",
-   "area": "Westminster (venue tbc)",
-   "lat": 51.513,
-   "lon": -0.155,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    2
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "babies",
-    "playgroup",
-    "free",
-    "first wednesday",
-    "parents"
-   ],
-   "blurb": "Free stay-and-play group for babies and under-twos with a parent or carer. Held first Wednesday of each month. Venue details are not listed on the page.",
-   "url": "https://www.westminster.gov.uk/event",
-   "date": "2026-11-04",
-   "source": "Westminster Council events",
-   "id": "ev-baby-stay-and-play-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Rhyme Time at Pimlico Library",
-   "area": "Pimlico",
-   "lat": 51.4975,
-   "lon": -0.1357,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    4
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 0.5,
-   "tags": [
-    "rhymes",
-    "toddlers",
-    "library",
-    "free",
-    "first wednesday"
-   ],
-   "blurb": "Monthly rhyme and song session for young children at Pimlico Library. Free. Held first Wednesday of each month, bring a grown-up.",
-   "url": "https://www.westminster.gov.uk/event",
-   "date": "2026-11-04",
-   "source": "Westminster Council events",
-   "id": "ev-rhyme-time-at-pimlico-library-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Baby stay and play at St. John Wood Library",
-   "area": "St John's Wood",
-   "lat": 51.4975,
-   "lon": -0.1357,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    2
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "babies",
-    "playgroup",
-    "library",
-    "free",
-    "first wednesday"
-   ],
-   "blurb": "Free stay-and-play session for babies and under-twos with a parent or carer at St. John Wood Library. Runs first Wednesday of each month.",
-   "url": "https://www.westminster.gov.uk/event",
-   "date": "2026-11-04",
-   "source": "Westminster Council events",
-   "id": "ev-baby-stay-and-play-at-st-john-wood-libra-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Sensory stay and play at Mayfair Library",
-   "area": "Mayfair",
-   "lat": 51.4975,
-   "lon": -0.1357,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "sensory",
-    "children",
-    "library",
-    "free",
-    "first wednesday"
-   ],
-   "blurb": "Free sensory play session for young children and their carers at Mayfair Library. Held first Wednesday of each month. Good for children who enjoy calm, tactile play.",
-   "url": "https://www.westminster.gov.uk/event",
-   "date": "2026-11-04",
-   "source": "Westminster Council events",
-   "id": "ev-sensory-stay-and-play-at-mayfair-library-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
    "hrs": 1,
    "lk": 1
   },
@@ -6870,36 +5950,6 @@
    "hrs": 1
   },
   {
-   "name": "Wild Skills: Cordage Making Workshop",
-   "area": "London",
-   "lat": 51.5074,
-   "lon": -0.1278,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    14,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "craft workshop",
-    "bushcraft",
-    "hands-on",
-    "wild skills"
-   ],
-   "blurb": "Learn the old wild skill of making string and cordage from natural materials. Hands-on and suitable for beginners.",
-   "url": "https://www.wildlondon.org.uk/events/2026-11-04-wild-skills-cordage-making-workshop",
-   "date": "2026-11-04",
-   "time": "12:00",
-   "source": "London Wildlife Trust",
-   "id": "ev-wild-skills-cordage-making-workshop-11-04",
-   "rel": "keep",
-   "open": "12:00",
-   "hrs": 1
-  },
-  {
    "name": "History & Ecology of Camley Street Natural Park",
    "area": "King's Cross",
    "lat": 51.5074,
@@ -7112,70 +6162,6 @@
    "lk": 1
   },
   {
-   "name": "Classes for Under-Fives - Canada Water Library",
-   "area": "Rotherhithe",
-   "lat": 51.49,
-   "lon": -0.07,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 2,
-   "adults": 1,
-   "dur": 1,
-   "tags": [
-    "under fives",
-    "library",
-    "music and dance",
-    "free class"
-   ],
-   "blurb": "Free music and dance session for under-fives at Canada Water Library, 10:30-11:30. Caregiver must attend with child. Sessions repeat on listed dates.",
-   "url": "https://www.southwark.gov.uk/southwark-presents",
-   "date": "2026-11-04",
-   "time": "10:30",
-   "source": "Southwark Council events",
-   "id": "ev-classes-for-under-fives-canada-water-lib-11-04",
-   "rel": "keep",
-   "open": "10:30",
-   "close": "11:30",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Time To Shine",
-   "area": "Walworth",
-   "lat": 51.4875,
-   "lon": -0.095,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 3,
-   "tags": [
-    "black history month",
-    "free event",
-    "talks",
-    "wellbeing"
-   ],
-   "blurb": "Free Black History Month event in Walworth, 12:00-15:00, with talks, food and wellbeing activities. Suitable for all ages. Check venue details before going.",
-   "url": "https://www.southwark.gov.uk/southwark-presents",
-   "date": "2026-11-04",
-   "time": "12:00",
-   "source": "Southwark Council events",
-   "id": "ev-time-to-shine-11-04",
-   "rel": "keep",
-   "open": "12:00",
-   "close": "15:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
    "name": "Free Over 60's Dance class",
    "area": "Dulwich",
    "lat": 51.4475,
@@ -7267,7 +6253,8 @@
    "id": "ev-design-district-yoga-11-04",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Painted Hall Display: Women at War, Wrens at Greenwich",
@@ -7296,383 +6283,6 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-painted-hall-display-women-at-war-wrens--11-04",
    "rel": "keep",
-   "hrs": 1
-  },
-  {
-   "name": "Woodside Children's Centre family activities",
-   "area": "Wood Green",
-   "lat": 51.59,
-   "lon": -0.11,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 3,
-   "tags": [
-    "toddler activities",
-    "under fives",
-    "family drop-in",
-    "community",
-    "stay and play"
-   ],
-   "blurb": "Drop-in support and activities for families with children aged 0 to 5. Runs 8am to 4pm. Check the centre for booking or drop-in details before you visit.",
-   "url": "https://haringey.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "08:00",
-   "source": "Haringey events",
-   "id": "ev-woodside-children-s-centre-family-activi-11-04",
-   "rel": "keep",
-   "open": "08:00",
-   "close": "16:00",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Petits amis French stay and play",
-   "area": "Tottenham",
-   "lat": 51.59,
-   "lon": -0.11,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    0,
-    5
-   ],
-   "kids": 1,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "stay and play",
-    "french speaking",
-    "under fives",
-    "toddler group",
-    "fortnightly"
-   ],
-   "blurb": "Fortnightly stay and play session for children aged 0 to 5 at Rising Green Family Hub. Aimed at French-speaking families. Runs 10am to 11:30am.",
-   "url": "https://haringey.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:00",
-   "source": "Haringey events",
-   "id": "ev-petits-amis-french-stay-and-play-11-04",
-   "rel": "keep",
-   "open": "10:00",
-   "close": "11:30",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Wellbeing walk at Markfield Park",
-   "area": "Tottenham",
-   "lat": 51.59,
-   "lon": -0.11,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 0.75,
-   "tags": [
-    "guided walk",
-    "park",
-    "wellbeing",
-    "outdoor",
-    "free"
-   ],
-   "blurb": "Circular walk of about 45 minutes around Markfield Park. Meet outside the café in the park, N15. Runs Wednesdays, 10am to 10:45am.",
-   "url": "https://haringey.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:00",
-   "source": "Haringey events",
-   "id": "ev-wellbeing-walk-at-markfield-park-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "open": "10:00",
-   "close": "10:45",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Wellbeing walk at New River Sport and Leisure Centre",
-   "area": "Wood Green",
-   "lat": 51.59,
-   "lon": -0.11,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 0.5,
-   "tags": [
-    "guided walk",
-    "green space",
-    "wellbeing",
-    "short walk",
-    "free"
-   ],
-   "blurb": "A 30-minute walk through the green space around New River Centre. Meet at the sports centre reception. Runs Wednesdays, 10am to 10:30am.",
-   "url": "https://haringey.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:00",
-   "source": "Haringey events",
-   "id": "ev-wellbeing-walk-at-new-river-sport-and-le-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "open": "10:00",
-   "close": "10:30",
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Wellbeing walk from Russell Park to Belmont Rec",
-   "area": "Wood Green",
-   "lat": 51.59,
-   "lon": -0.11,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 0.75,
-   "tags": [
-    "guided walk",
-    "park",
-    "wellbeing",
-    "outdoor",
-    "free"
-   ],
-   "blurb": "Circular 45-minute walk. Meet outside Russell Park Café, N22 6PU. Runs Wednesdays, 10:30am to 11:30am.",
-   "url": "https://haringey.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:30",
-   "source": "Haringey events",
-   "id": "ev-wellbeing-walk-from-russell-park-to-belm-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "open": "10:30",
-   "close": "11:30",
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Wellbeing walk around Bruce Castle Park",
-   "area": "Tottenham",
-   "lat": 51.59,
-   "lon": -0.11,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 0.75,
-   "tags": [
-    "guided walk",
-    "historic park",
-    "wellbeing",
-    "outdoor",
-    "free"
-   ],
-   "blurb": "45-minute circular walk around Bruce Castle Park. Meet outside the Pavilion Café opposite the tennis courts. Runs Wednesdays, 10:45am to 11:30am.",
-   "url": "https://haringey.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:45",
-   "source": "Haringey events",
-   "id": "ev-wellbeing-walk-around-bruce-castle-park-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "open": "10:45",
-   "close": "11:30",
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Wellbeing walk around Priory Park",
-   "area": "Crouch End",
-   "lat": 51.59,
-   "lon": -0.11,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 0.75,
-   "tags": [
-    "guided walk",
-    "park",
-    "wellbeing",
-    "outdoor",
-    "free"
-   ],
-   "blurb": "Circular 45-minute walk around Priory Park. Meet in the café at Queenswood Surgery, N8 8JD. Runs Wednesdays, 11:15am to 12pm.",
-   "url": "https://haringey.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "11:15",
-   "source": "Haringey events",
-   "id": "ev-wellbeing-walk-around-priory-park-11-04",
-   "rel": "keep",
-   "days": [
-    3
-   ],
-   "open": "11:15",
-   "close": "12:00",
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Oh, Mary!",
-   "area": "London",
-   "lat": 51.506486,
-   "lon": -0.127232,
-   "url": "https://www.skiddle.com/whats-on/London/Trafalgar-Theatre/Oh-Mary/42639682/",
-   "price": "££",
-   "source": "Skiddle: what's on in London",
-   "date": "2026-11-04",
-   "time": "7:30pm",
-   "in": "in",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1.75,
-   "tags": [
-    "dark comedy",
-    "adult humour",
-    "lincoln satire",
-    "west end"
-   ],
-   "blurb": "Award-winning dark comedy with Mason Alexander Park as Mary Todd Lincoln. Fast and raunchy; adults only.",
-   "id": "ev-oh-mary-11-04",
-   "rel": "keep",
-   "open": "19:30",
-   "part": "evening",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Beetlejuice",
-   "area": "London",
-   "lat": 51.5135117,
-   "lon": -0.1307417,
-   "url": "https://www.skiddle.com/whats-on/London/Prince-Edward-Theatre-Old-Compton-St-London-W1D-4HS/Beetlejuice/42639677/",
-   "price": "££",
-   "source": "Skiddle: what's on in London",
-   "date": "2026-11-04",
-   "time": "7:30pm",
-   "in": "in",
-   "ages": [
-    10,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 2.75,
-   "tags": [
-    "musical",
-    "tim burton",
-    "comedy",
-    "family friendly"
-   ],
-   "blurb": "Stage musical based on Tim Burton's film, full of comedy and big production numbers. Suitable for older children and adults.",
-   "id": "ev-beetlejuice-11-04",
-   "rel": "keep",
-   "open": "19:30",
-   "part": "evening",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Hop-on Hop-off London + Thames River Cruise 48-hour Bus + River Cruise",
-   "area": "London",
-   "lat": 51.51955,
-   "lon": -0.12177,
-   "url": "https://www.skiddle.com/whats-on/London/Central-London/Hop-on-Hop-off-London--Thames-River-Cruise-48-hour-Bus--River-Cruise/42614281/",
-   "price": "££",
-   "source": "Skiddle: what's on in London",
-   "date": "2026-11-04",
-   "time": "8:30am",
-   "in": "out",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "sightseeing",
-    "hop-on hop-off",
-    "thames cruise",
-    "city tour"
-   ],
-   "blurb": "Ticket covers 48 hours of hop-on hop-off buses plus a Thames river cruise. Audio guide in 11 languages; good for first-time visitors.",
-   "id": "ev-hop-on-hop-off-london-thames-river-cruis-11-04",
-   "rel": "keep",
-   "open": "08:30",
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
-  },
-  {
-   "name": "Hay Fever",
-   "area": "London",
-   "lat": 51.5111248,
-   "lon": -0.1282324,
-   "url": "https://www.skiddle.com/whats-on/London/Wyndhams-Theatre/Hay-Fever/42582333/",
-   "price": "££",
-   "source": "Skiddle: what's on in London",
-   "date": "2026-11-04",
-   "time": "2:30pm",
-   "in": "in",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 2.75,
-   "tags": [
-    "noel coward",
-    "comedy play",
-    "west end",
-    "christine baranski"
-   ],
-   "blurb": "Christine Baranski stars in Noël Coward's comedy of a chaotic country house. Classic farce, good for theatre lovers.",
-   "id": "ev-hay-fever-11-04",
-   "rel": "keep",
-   "open": "14:30",
-   "part": "afternoon",
    "hrs": 1,
    "lk": 1
   },
@@ -7704,40 +6314,7 @@
    "id": "ev-charlie-mackesy-exhibition-11-04",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
-  },
-  {
-   "name": "Geddes Place URC Cafe",
-   "area": "Bexley",
-   "lat": 51.4549,
-   "lon": 0.1505,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 2,
-   "tags": [
-    "cafe",
-    "drop-in",
-    "community",
-    "chat"
-   ],
-   "blurb": "Drop in any time between 10am and 12pm for a cuppa and a chat at the Geddes Place United Reformed Church cafe. Wednesday 4 November. Check the event page for pricing.",
-   "url": "https://www.bexley.gov.uk/events",
-   "date": "2026-11-04",
-   "time": "10:00-12:00",
-   "source": "Bexley Council events",
-   "id": "ev-geddes-place-urc-cafe-11-04",
-   "rel": "keep",
-   "open": "10:00",
-   "close": "12:00",
-   "part": "morning",
-   "hrs": 1,
-   "lk": 1
+   "lk_try": 2
   },
   {
    "name": "Layers of the City: art exhibition",
@@ -8273,7 +6850,7 @@
    "rel": "keep",
    "hrs": 1,
    "site": "https://www.kingscross.co.uk/whats-on",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Larger Than Life: Aardman at Lightroom",
@@ -9166,7 +7743,7 @@
    "id": "ev-bereavement-help-point-11-05",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "9th Roxeth Scout Group Bonfire Night Firework Display",
@@ -9256,7 +7833,8 @@
    "open": "18:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Teen Tech Club",
@@ -9286,7 +7864,8 @@
    "rel": "keep",
    "open": "15:45",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Turkish Classical Music Ensemble - South London Choir",
@@ -9317,7 +7896,8 @@
    "open": "19:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Stay & Play at Cheam Library",
@@ -9348,7 +7928,8 @@
    "rel": "keep",
    "open": "10:00",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Storytime in Library @ Phoenix Centre",
@@ -9378,7 +7959,8 @@
    "rel": "keep",
    "open": "10:00",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Titanique",
@@ -9961,7 +8543,8 @@
    "rel": "keep",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Spanish Conversation Class at Kensal Library",
@@ -10117,7 +8700,8 @@
    "open": "10:30",
    "part": "morning",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Somali House Social - One Year!",
@@ -10532,7 +9116,7 @@
    "part": "evening",
    "hrs": 1,
    "site": "https://www.kingscross.co.uk/whats-on",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Diwali at the National Maritime Museum",
@@ -10594,7 +9178,7 @@
    "close": "22:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "id": "ev-dulwich-fw",
@@ -11485,7 +10069,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-ethiopian-dreams-11-07",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Fan Making Workshop 2026",
@@ -12315,7 +10900,8 @@
    "rel": "keep",
    "open": "14:00",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Drop-in Play: Power of Play Together",
@@ -12952,7 +11538,7 @@
    "open": "19:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "The Collections: Bright Fear",
@@ -12984,7 +11570,7 @@
    "open": "19:30",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Feeling Gloomy: Pulp Special",
@@ -13155,7 +11741,7 @@
    "part": "afternoon",
    "hrs": 1,
    "site": "https://www.kingscross.co.uk/whats-on",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Alexandra Palace Fireworks & Drone Festival",
@@ -13553,7 +12139,8 @@
    "id": "ev-mr-sleepybum-s-dream-machine-11-08",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Why We Build",
@@ -13734,7 +12321,7 @@
    "rel": "keep",
    "open": "10:45",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Remembrance Sunday event, New Malden",
@@ -14458,7 +13045,7 @@
    "rel": "keep",
    "open": "16:00",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Nell! Play",
@@ -14523,7 +13110,7 @@
    "open": "14:00",
    "close": "16:00",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Wartime Willesden Talk",
@@ -15010,7 +13597,7 @@
    "id": "ev-wellbeing-group-for-dementia-and-carers--11-09",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Basic Computer Skills Class (Brixton)",
@@ -15096,7 +13683,7 @@
    "id": "ev-wellbeing-group-for-dementia-and-carers-11-09",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Basic computer skills class",
@@ -15154,7 +13741,7 @@
    "id": "ev-digital-drop-ins-11-09",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Shared Reading Group",
@@ -15185,7 +13772,8 @@
    "rel": "keep",
    "open": "10:30",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Digital Art Season at National Art Library: Studying Videogames",
@@ -15594,7 +14182,8 @@
    "rel": "keep",
    "open": "13:00",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Scrabble Club",
@@ -15625,7 +14214,8 @@
    "rel": "keep",
    "open": "13:30",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Knitting Club",
@@ -15656,7 +14246,8 @@
    "rel": "keep",
    "open": "10:00",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Digital Preservation Talk 1",
@@ -16293,7 +14884,8 @@
    "open": "14:00",
    "part": "afternoon",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Create Drama Youth Theatre",
@@ -16325,7 +14917,8 @@
    "open": "18:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Drop-in Digital Art: Digital Practice in Print",
@@ -16498,7 +15091,8 @@
    "open": "10:30",
    "part": "morning",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Vanessa Bell & Duncan Grant: Inside Bloomsbury",
@@ -17023,7 +15617,8 @@
    "open": "15:00",
    "part": "afternoon",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Honeywood Reading Group",
@@ -17118,7 +15713,8 @@
    "open": "19:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Cornwallis Cloth: WW2 Caribbean Stories Talk",
@@ -17146,7 +15742,8 @@
    "source": "Enjoy Royal Greenwich",
    "id": "ev-cornwallis-cloth-ww2-caribbean-stories-t-11-12",
    "rel": "keep",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Keats, Fanny Brawne and Regency courtship",
@@ -17328,7 +15925,8 @@
    "rel": "keep",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "LIFEM26: Eun Sol Lee",
@@ -17388,7 +15986,8 @@
    "rel": "keep",
    "open": "09:00",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Storytime at Worcester Park Library",
@@ -17418,7 +16017,8 @@
    "rel": "keep",
    "open": "10:35",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "ASOT Unfiltered - London: Armin van Buuren",
@@ -17728,7 +16328,7 @@
    "open": "14:00",
    "hrs": 1,
    "site": "https://www.ltmuseum.co.uk/whats-on",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "id": "ev-brixtonwalk",
@@ -18234,7 +16834,8 @@
    "id": "ev-in-residence-solan-11-14",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Unboxing the Universe science show",
@@ -18321,7 +16922,8 @@
    "id": "ev-andaluza-11-14",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "The Falcon's Last Flight",
@@ -18379,7 +16981,8 @@
    "id": "ev-emlyn-a-divided-life-a-chamber-play-by-w-11-14",
    "rel": "keep",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Community Planting Day",
@@ -18473,7 +17076,8 @@
    "rel": "keep",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Buff Bingo Bottomless Drag",
@@ -19046,7 +17650,8 @@
    "open": "18:00",
    "part": "evening",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Windows into the Unseen",
@@ -20155,7 +18760,8 @@
    "id": "ev-a-christmas-carol-presented-by-three-inc-11-20",
    "rel": "keep",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "U3A French Conversation Group",
@@ -20187,7 +18793,8 @@
    "open": "13:00",
    "part": "afternoon",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Block Power (EFG London Jazz Festival)",
@@ -20731,7 +19338,8 @@
    "open": "13:30",
    "part": "afternoon",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Swar Sathi – Voices of Connection",
@@ -20762,7 +19370,8 @@
    "open": "16:00",
    "part": "afternoon",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Sound is Now! (EFG London Jazz Festival)",
@@ -20975,7 +19584,8 @@
    "open": "13:30",
    "part": "afternoon",
    "hrs": 1,
-   "lk_try": 1
+   "lk_try": 1,
+   "lk": 1
   },
   {
    "name": "Markfield Beam Engine open day (22 Nov)",
@@ -21126,7 +19736,8 @@
    "rel": "keep",
    "open": "19:00",
    "part": "evening",
-   "hrs": 1
+   "hrs": 1,
+   "lk": 1
   },
   {
    "name": "Wonderful Wildlife Weekends at Walthamstow Wetlands",
@@ -21800,7 +20411,7 @@
    "part": "morning",
    "hrs": 1,
    "site": "https://www.crystalpalaceparktrust.org/whats-on",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Winter Market",
@@ -21864,7 +20475,7 @@
    "part": "morning",
    "hrs": 1,
    "site": "https://www.crystalpalaceparktrust.org/whats-on",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Final Conservatory Plant Adoption with waywardplants",
