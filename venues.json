@@ -5080,6 +5080,160 @@
    },
    "added": "2026-11-05",
    "note": "Community centre: markets, screenings, sound baths, kids' clubs."
+  },
+  {
+   "id": "thesherriffcentre",
+   "name": "The Sherriff Centre",
+   "area": "West Hampstead NW6",
+   "borough": "Camden",
+   "lat": 51.5476,
+   "lon": -0.1925,
+   "url": "https://www.eventbrite.co.uk/o/29823049173",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 3,
+    "tags": [
+     "community",
+     "kids"
+    ]
+   },
+   "note": "Own site blocks automated reading; this is their ticketing page.",
+   "added": "2026-11-05"
+  },
+  {
+   "id": "banksideopenspacestrus",
+   "name": "Bankside Open Spaces Trust",
+   "area": "Bankside SE1",
+   "borough": "Southwark",
+   "lat": 51.503,
+   "lon": -0.096,
+   "url": "https://www.eventbrite.co.uk/o/119587858941",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "note": "Own site blocks automated reading; this is their ticketing page.",
+   "added": "2026-11-05"
+  },
+  {
+   "id": "stjohnswaterloo",
+   "name": "St John's Waterloo",
+   "area": "Waterloo SE1",
+   "borough": "Lambeth",
+   "lat": 51.504,
+   "lon": -0.113,
+   "url": "https://www.eventbrite.co.uk/o/31186885665",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "note": "Own site blocks automated reading; this is their ticketing page.",
+   "added": "2026-11-05"
+  },
+  {
+   "id": "hammersmithcommunityga",
+   "name": "Hammersmith Community Gardens Association",
+   "area": "Hammersmith W6/W12",
+   "borough": "Hammersmith & Fulham",
+   "lat": 51.505,
+   "lon": -0.225,
+   "url": "https://www.eventbrite.co.uk/o/hammersmith-community-gardens-association-31723312551",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "note": "Own site blocks automated reading; this is their ticketing page.",
+   "added": "2026-11-05"
+  },
+  {
+   "id": "sandsfilmscinemaclub",
+   "name": "Sands Films Cinema Club",
+   "area": "Rotherhithe SE16",
+   "borough": "Southwark",
+   "lat": 51.5005,
+   "lon": -0.054,
+   "url": "https://www.eventbrite.co.uk/o/sands-films-cinema-and-event-listing-3135066918",
+   "kind": "cinema",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "film",
+     "local"
+    ]
+   },
+   "note": "Own site blocks automated reading; this is their ticketing page.",
+   "added": "2026-11-05"
+  },
+  {
+   "id": "keatscommunitylibrary",
+   "name": "Keats Community Library",
+   "area": "Hampstead NW3",
+   "borough": "Camden",
+   "lat": 51.556,
+   "lon": -0.166,
+   "url": "https://wegottickets.com/keatscommunitylibrary",
+   "kind": "library",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "books",
+     "local"
+    ]
+   },
+   "note": "Own site blocks automated reading; this is their ticketing page.",
+   "added": "2026-11-05"
+  },
+  {
+   "id": "stephenshousegardens",
+   "name": "Stephens House & Gardens",
+   "area": "Finchley N3",
+   "borough": "Barnet",
+   "lat": 51.596,
+   "lon": -0.188,
+   "url": "https://www.tickettailor.com/events/stephenshouseandgardens",
+   "kind": "gardens",
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "outdoors",
+     "history"
+    ]
+   },
+   "note": "Own site blocks automated reading; this is their ticketing page.",
+   "added": "2026-11-05"
   }
  ]
 }

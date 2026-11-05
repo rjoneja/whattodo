@@ -1144,6 +1144,286 @@
      "date night"
     ]
    }
+  },
+  {
+   "handle": "thesherriffcentre",
+   "name": "The Sherriff Centre",
+   "area": "West Hampstead NW6",
+   "lat": 51.5476,
+   "lon": -0.1925,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "community",
+     "kids"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "stpetersbrockley",
+   "name": "St Peter's Brockley",
+   "area": "Brockley SE4",
+   "lat": 51.468,
+   "lon": -0.03,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "riocinema",
+   "name": "Rio Cinema",
+   "area": "Dalston E8",
+   "lat": 51.5487,
+   "lon": -0.0755,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "film"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "hornseyhistoricalsociety",
+   "name": "Hornsey Historical Society",
+   "area": "Crouch End N8",
+   "lat": 51.581,
+   "lon": -0.118,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "soundloungecic",
+   "name": "The Sound Lounge",
+   "area": "Sutton SM1",
+   "lat": 51.36,
+   "lon": -0.192,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "lewishamlocal",
+   "name": "Lewisham Local",
+   "area": "Lewisham borough",
+   "lat": 51.4613,
+   "lon": -0.0106,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "sandsfilmsstudio",
+   "name": "Sands Films Cinema Club",
+   "area": "Rotherhithe SE16",
+   "lat": 51.5005,
+   "lon": -0.054,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "brockwell_greenhouses",
+   "name": "Brockwell Park Community Greenhouses",
+   "area": "Brockwell Park SE24",
+   "lat": 51.451,
+   "lon": -0.106,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "stjohnswaterloo",
+   "name": "St John's Waterloo",
+   "area": "Waterloo SE1",
+   "lat": 51.504,
+   "lon": -0.113,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "music",
+     "community"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "theatreattabard",
+   "name": "Theatre at the Tabard",
+   "area": "Chiswick W4",
+   "lat": 51.495,
+   "lon": -0.254,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "keatscommunitylibrary",
+   "name": "Keats Community Library",
+   "area": "Hampstead NW3",
+   "lat": 51.556,
+   "lon": -0.166,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "books",
+     "talks"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "gunnersburyparkmuseum",
+   "name": "Gunnersbury Park & Museum",
+   "area": "Ealing/Hounslow W3",
+   "lat": 51.498,
+   "lon": -0.285,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "riversidestudioslondon",
+   "name": "Riverside Studios",
+   "area": "Hammersmith W6",
+   "lat": 51.489,
+   "lon": -0.227,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "film"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "stephenshouseandgardens",
+   "name": "Stephens House & Gardens",
+   "area": "Finchley N3",
+   "lat": 51.596,
+   "lon": -0.188,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "gardens",
+     "history"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "sydenhamgarden",
+   "name": "Sydenham Garden",
+   "area": "Sydenham SE23",
+   "lat": 51.437,
+   "lon": -0.048,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "gardens",
+     "community"
+    ]
+   },
+   "added": "2026-11-05"
+  },
+  {
+   "handle": "lewishamarthouse",
+   "name": "Lewisham Arthouse",
+   "area": "Lewisham Way SE14",
+   "lat": 51.47,
+   "lon": -0.026,
+   "local": true,
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "art"
+    ]
+   },
+   "added": "2026-11-05"
   }
  ],
  "parked": [
