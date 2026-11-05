@@ -777,8 +777,11 @@ function score(it,mins){
 let reach=0;
 const REACH0=20, REACH_STEP=4;
 function distPen(mins){ const R=REACH0+reach*REACH_STEP; return -(mins/15) - (mins>R?(mins-R)/4:0); }
-function rerank(keepTop){ deck.forEach(x=>{ const p=distPen(x.cost??x.mins??30); x.score+=p-(x.dpen||0); x.dpen=p; });
-  if(keepTop&&deck.length){ const [top,...rest]=deck; deck=[top,...diversify(rest.sort((a,b)=>b.score-a.score))]; } else deck=diversify(deck.sort((a,b)=>b.score-a.score)); }
+// keep = how many cards at the front stay where they are: the one being swiped plus the two already showing underneath,
+// so the card you can see coming up is the card you get
+function rerank(keep){ deck.forEach(x=>{ const p=distPen(x.cost??x.mins??30); x.score+=p-(x.dpen||0); x.dpen=p; });
+  const k=Math.min(keep||0,deck.length), head=deck.slice(0,k), rest=deck.slice(k);
+  deck=[...head,...diversify(rest.sort((a,b)=>b.score-a.score))]; }
 function openOn(it){ const d=fromIso(setup.date); if(it.days&&!it.days.includes(d.getDay())) return false; if(it.months&&!it.months.includes(d.getMonth()+1)) return false; return true; }
 let IMAGES={};
 async function loadImages(){ if(Object.keys(IMAGES).length) return; try{const r=await fetch('images.json',{cache:'no-store'}); if(r.ok) IMAGES=await r.json()}catch(e){} }
@@ -959,10 +962,10 @@ function act(kind,el){
   undoStack.push({c,prev:status[c.id],kind});
   if(kind==='saved'){status[c.id]='saved';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Saved ♥')}
   else if(kind==='pass'){status[c.id]='pass';c.tags.forEach(t=>swipes.pass[t]=(swipes.pass[t]||0)+1);
-    const hit=deck.slice(1).filter(x=>similar(x,c)); hit.forEach(x=>x.score-=4); undoStack[undoStack.length-1].demoted=hit.map(x=>x.id);
+    const hit=deck.slice(3).filter(x=>similar(x,c)); hit.forEach(x=>x.score-=4); undoStack[undoStack.length-1].demoted=hit.map(x=>x.id);
     const near=(c.cost??c.mins??99)<=REACH0+reach*REACH_STEP+5;      // turned down something local: look a bit further
     if(near){ reach++; undoStack[undoStack.length-1].widened=true; }
-    if(hit.length||near) rerank(true); }
+    if(hit.length||near) rerank(3); }
   else if(kind==='again'){status[c.id]='again';c.tags.forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1);toast('Kept in the mix')}
   else if(kind==='done'){status[c.id]='done';toast('Ticked off')}
   save(); track('swipe',{id:c.id,kind,who:setup.who,mode:setup.modes.join('+'),how:c.how,mins:c.mins});
@@ -976,7 +979,7 @@ $('#bUndo').onclick=()=>{const h=undoStack.pop(); if(!h) return; if(h.prev)statu
   const bucket=(h.kind==='saved'||h.kind==='again')?swipes.like:(h.kind==='pass'?swipes.pass:null);
   if(bucket) h.c.tags.forEach(t=>{bucket[t]=Math.max(0,(bucket[t]||0)-1)});
   if(h.demoted&&h.demoted.length){ deck.forEach(x=>{if(h.demoted.includes(x.id))x.score+=4}); deck=diversify(deck.sort((a,b)=>b.score-a.score)); }
-  if(h.widened){ reach=Math.max(0,reach-1); rerank(false); }
+  if(h.widened){ reach=Math.max(0,reach-1); rerank(0); }
   deck.unshift(h.c); save(); track('undo',{id:h.c.id}); renderStack(); toast('Brought it back')};
 
 /* ---------- LIST ---------- */
