@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='4da3d15603';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='4464d6c9cc';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -127,9 +127,9 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .card .why b{color:var(--ink);font-weight:500}
 .card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:var(--u);font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:var(--u)}
 .card .foot a{font-family:var(--display);font-weight:600;font-size:14px}
-.card .foot .src{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card .foot .det{color:var(--sky);font-weight:500;padding:6px 0;margin:-6px 0}
 .card .foot .fa{display:flex;align-items:center;gap:14px;flex:none}
-.card .foot .wa{display:inline-flex;align-items:center;gap:5px;color:var(--moss);padding:6px 10px;margin:-6px 0;border-radius:999px;background:var(--moss-soft)}
+.card .foot .wa{display:inline-flex;align-items:center;gap:6px;color:var(--paper);padding:8px 16px;margin:-6px 0;border-radius:999px;background:var(--moss);font-weight:700}
 .card .foot .wa svg{width:17px;height:17px}
 .stamp{position:absolute;top:calc(var(--u)*2.5);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;padding:6px 14px;border-radius:999px;opacity:0;pointer-events:none;color:#fff}
 .stamp.save{right:calc(var(--u)*2);background:var(--moss)}
@@ -885,7 +885,10 @@ function shareText(c){
 }
 function shareURL(c){ return 'https://www.jauntout.com/'+(c.event?'e/'+encodeURIComponent(c.id)+'/':'?e='+encodeURIComponent(c.id)+'&')+(c.event?'?':'')+'s=wa'; }
 function shareLink(c){ return 'https://wa.me/?text='+encodeURIComponent(shareText(c)+'\n'+shareURL(c)); }
-document.addEventListener('click',e=>{const a=e.target.closest('[data-share]'); if(!a) return; const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===a.dataset.share); track('share',{id:a.dataset.share,who:setup.who,channel:'whatsapp',event:!!(c&&c.event)});},true);
+document.addEventListener('click',e=>{const a=e.target.closest('[data-share]'); if(!a) return; const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===a.dataset.share); track('share',{id:a.dataset.share,who:setup.who,channel:'whatsapp',event:!!(c&&c.event)});
+  if(c&&!['saved','again'].includes(status[c.id])){            // sharing it means you like it: put it on My list
+    if(deck[0]&&deck[0].id===c.id) setTimeout(()=>{act('saved');toast('Shared · saved to My list')},350);
+    else { status[c.id]='saved'; save(); toast('Shared · saved to My list'); } } },true);
 function cardHTML(c){
   const badges=[`<button class="badge trbtn" data-tr aria-label="Journey options">${TRICON}${escH(travelLabel(c))}<i>›</i></button>`,
     `<span class="badge">${c.in==='in'?'Indoors':c.in==='out'?'Outdoors':'In & out'}</span>`,
@@ -902,7 +905,7 @@ function cardHTML(c){
     <div class="top"><div><div class="area">${c.area}</div><h3>${c.name}</h3></div><div class="price ${c.price==='free'?'free':''}">${c.price==='free'?'Free':c.price}</div></div>
     <div class="badges">${badges.join('')}</div>
     <p class="blurb">${c.blurb}</p>${why}
-    <div class="foot"><span class="src">${(c.tags||[]).slice(0,3).join(' · ')}</span><span class="fa"><a class="wa" href="${shareLink(c)}" target="_blank" rel="noopener" data-share="${c.id}" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.7 8.7 0 0 0-7.5 13.1L3.3 20.8l4.6-1.2A8.7 8.7 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.5.3-1.2.5-1.9.3-2.4-.7-4.3-2.6-5-5-.2-.7 0-1.4.4-1.9Z" fill="currentColor"/></svg>Share</a><a href="${c.url}" target="_blank" rel="noopener">${c.event?'Details ›':'Website ›'}</a></span></div>`;
+    <div class="foot"><a class="det" href="${c.url}" target="_blank" rel="noopener">${c.event?'Details':'Website'} ›</a><span class="fa"><a class="wa" href="${shareLink(c)}" target="_blank" rel="noopener" data-share="${c.id}" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.7 8.7 0 0 0-7.5 13.1L3.3 20.8l4.6-1.2A8.7 8.7 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.5.3-1.2.5-1.9.3-2.4-.7-4.3-2.6-5-5-.2-.7 0-1.4.4-1.9Z" fill="currentColor"/></svg>Share</a></span></div>`;
 }
 function renderStack(){
   const st=$('#stack'); st.innerHTML='';
