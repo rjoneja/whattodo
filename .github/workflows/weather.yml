@@ -1,8 +1,8 @@
 name: weather
-# Every 3 hours: one forecast file for all of London (9 points), so visitors don't each call the weather service.
+# Twice a day (early morning and mid-afternoon): one forecast file for all of London (9 points), so visitors don't each call the weather service.
 on:
   schedule:
-    - cron: "5 */3 * * *"
+    - cron: "5 5,14 * * *"
   workflow_dispatch:
 permissions:
   contents: write

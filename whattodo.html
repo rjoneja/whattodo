@@ -620,10 +620,10 @@ const WXICON={
 function wxIcon(k){ return `<svg class="wxi ${k}" viewBox="0 0 24 24" aria-hidden="true">${WXICON[k]||WXICON.cloud}</svg>`; }
 async function getWeather(){
   wx=null;
-  // 1st choice: the shared forecast file the site refreshes every few hours (one fetch, no per-visitor API call)
+  // 1st choice: the shared forecast file the site refreshes twice a day (one fetch, no per-visitor API call)
   try{
     const j=await (await fetch('/weather.json',{cache:'no-cache'})).json();
-    if(j&&j.cells&&Date.now()-new Date(j.updated).getTime()<12*36e5){
+    if(j&&j.cells&&Date.now()-new Date(j.updated).getTime()<20*36e5){
       const c=j.cells.reduce((a,b)=>km(setup.lat,setup.lon,a.lat,a.lon)<=km(setup.lat,setup.lon,b.lat,b.lon)?a:b);
       const H=[]; j.time.forEach((t,i)=>{ if(t.startsWith(setup.date)) H.push({h:+t.slice(11,13),t:c.t[i],p:c.p[i]||0,mm:c.mm[i]||0,c:c.c[i]||0,g:c.g[i]||0,code:c.code[i]||0}); });
       if(H.length>=6){ wx=describeDay(H); return; }

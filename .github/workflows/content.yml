@@ -13,16 +13,18 @@ jobs:
       - id: check
         run: |
           if [ "${{ github.event_name }}" = "schedule" ] && git log --since="$(date -u +%Y-%m-%d)T00:00:00Z" --format=%s | grep -q '^content '; then echo "skip=true" >> $GITHUB_OUTPUT; echo "already ran today"; fi
+          # venue websites every other day (they post weeks ahead); Instagram and the rest stay daily
+          if [ "${{ github.event_name }}" != "schedule" ] || [ $(( 10#$(date -u +%j) % 2 )) -eq 0 ]; then echo "web=true" >> $GITHUB_OUTPUT; else echo "venue websites: not today"; fi
       - if: ${{ steps.check.outputs.skip != 'true' }}
         uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: pip install anthropic pillow
       - name: Probe newly added sources
-        if: ${{ steps.check.outputs.skip != 'true' }}
+        if: ${{ steps.check.outputs.skip != 'true' && steps.check.outputs.web == 'true' }}
         run: python3 probe.py --new || true
       - name: Web sources
-        if: ${{ steps.check.outputs.skip != 'true' && env.ANTHROPIC_API_KEY != '' }}
+        if: ${{ steps.check.outputs.skip != 'true' && steps.check.outputs.web == 'true' }}
         run: python3 ingest.py --days 21 --out docs/events.json
         continue-on-error: true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
@@ -45,11 +47,11 @@ jobs:
       - name: Pictures
         if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 images.py --events docs/events.json --out docs/images.json || true
-        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}", IMG_MAX_VETS: "200"}
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 share_pages.py
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 sources_page.py || true
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: |
-          .github/push.sh "content $(date +%F)" docs/events.json docs/images.json docs/e docs/sources venues.json accounts.json ig_seen.json
+          .github/push.sh "content $(date +%F)" docs/events.json docs/images.json docs/e docs/sources venues.json accounts.json ig_seen.json ingest_cache.json

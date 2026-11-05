@@ -182,10 +182,20 @@ def listing_url(venue):
     if venue.get("feed") == "rss" and fu and not re.search(r"event|whats-?on|calendar|programme", fu, re.I): return venue["url"]
     return fu or venue["url"]
 
-def harvest_html(venue, horizon):
+# Pages that haven't changed since the last read keep last time's events, so Claude only reads what's new.
+CACHE_P, CACHE_DAYS = "ingest_cache.json", 3
+CACHE = json.load(open(CACHE_P)) if os.path.exists(CACHE_P) else {}
+
+def harvest_html(venue, horizon, log=None):
     try: final, doc = get(listing_url(venue))
     except Exception as ex: print(f"  fetch failed: {ex}", file=sys.stderr); return []
     text = page_text(doc)
+    import hashlib
+    h = hashlib.sha1(re.sub(r"\d{1,2}:\d{2}(:\d{2})?", "", text).encode()).hexdigest()[:16]
+    c = CACHE.get(venue["id"])
+    if c and c.get("h") == h and (dt.date.today() - dt.date.fromisoformat(c["day"])).days < CACHE_DAYS:
+        if log is not None: log.append(f"  page unchanged since {c['day']}: reused")
+        return [dict(e) for e in c["evs"]]
     prompt = f"""Extract things to do in London from this listings page for a weekend-planning app.
 Source: {venue['name']} ({final}). Today is {dt.date.today()}; include only events between today and {horizon}.
 Skip permanent attractions, online events, anything outside Greater London, anything without a usable date.
@@ -196,6 +206,7 @@ PAGE TEXT:
 {text}"""
     evs = claude(prompt)
     for e in evs: e["source"] = venue["name"]
+    CACHE[venue["id"]] = {"h": h, "day": dt.date.today().isoformat(), "evs": [dict(e) for e in evs if isinstance(e, dict)]}
     return evs
 
 def enrich(evs, venue):
@@ -264,11 +275,16 @@ def main():
         try:
             if feed == "jsonld" or feed == "eventbrite": evs = harvest_jsonld(v)
             elif feed == "ics": evs = harvest_ics(v)
-            elif feed in ("rss", "html", "error"): evs = [] if a.no_llm else harvest_html(v, horizon)
+            elif feed in ("rss", "html", "error"): evs = [] if a.no_llm else harvest_html(v, horizon, log)
             else: evs = []
         except Exception as ex:
             log.append(f"  failed: {str(ex)[:120]}"); evs = []
         evs = [e for e in evs if (e.get("date") or e.get("to", "")) >= today.isoformat() and (e.get("date") or e.get("from", "")) <= horizon.isoformat()]
+        for e in evs:
+            old = existing.get(key(e)) if e.get("name") and (e.get("date") or e.get("from")) else None
+            if old and old.get("blurb") and "blurb" not in e:
+                for f in ("in", "price", "ages", "kids", "adults", "dur", "tags", "blurb"):
+                    if f in old and f not in e: e[f] = old[f]
         if evs and not a.no_llm:
             try: evs = enrich(evs, v)
             except Exception as ex: log.append(f"  enrich failed: {str(ex)[:80]}")
@@ -291,6 +307,8 @@ def main():
         for log, ok in pool.map(one, todo):
             print("\n".join(log), file=sys.stderr); found += ok
 
+    keep = {k: c for k, c in CACHE.items() if (today - dt.date.fromisoformat(c["day"])).days < 14}
+    json.dump(keep, open(CACHE_P, "w"), ensure_ascii=False)
     merged = dict(existing)
     for e in found: merged[key(e)] = carry(existing[key(e)], e) if key(e) in existing else e
     events = [e for e in merged.values() if (e.get("date") or e.get("to", "")) >= today.isoformat()]

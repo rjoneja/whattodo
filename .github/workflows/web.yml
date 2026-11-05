@@ -4,7 +4,7 @@ on:
     inputs:
       recheck: {description: "Re-vet all event pictures (yes/no)", default: "no"}
       skip_ingest: {description: "Pictures only (yes/no)", default: "no"}
-      img_vets: {description: "Max picture checks this run", default: "1500"}
+      img_vets: {description: "Max picture checks this run", default: "200"}
 permissions:
   contents: write
 jobs:
@@ -26,8 +26,8 @@ jobs:
       - run: python3 official_links.py || true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - run: python3 images.py --events docs/events.json --out docs/images.json ${{ github.event.inputs.recheck == 'yes' && '--recheck' || '' }} || true
-        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}", IMG_MAX_VETS: "${{ github.event.inputs.img_vets || '1500' }}"}
+        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}", IMG_MAX_VETS: "${{ github.event.inputs.img_vets || '200' }}"}
       - run: python3 share_pages.py
       - run: python3 sources_page.py || true
       - run: |
-          .github/push.sh "web $(date +%F)" docs/events.json docs/images.json docs/e docs/sources venues.json
+          .github/push.sh "web $(date +%F)" docs/events.json docs/images.json docs/e docs/sources venues.json ingest_cache.json

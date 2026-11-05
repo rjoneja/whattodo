@@ -123,7 +123,7 @@ def shrink(data, limit=1568):
         return data, None
 
 VETS = {"n": 0}
-MAX_VETS = int(os.environ.get("IMG_MAX_VETS", "1500"))       # spending cap per run
+MAX_VETS = int(os.environ.get("IMG_MAX_VETS", "200"))       # spending cap per run
 def relevance(u, name, subject, specific=False):
     """0-3: how well this picture shows what the event is about. 3 = clearly the subject, 2 = good fit,
     1 = only the venue/room/generic scene, 0 = logo, text, poster, map, screenshot."""
