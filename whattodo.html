@@ -131,6 +131,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .card .foot .fa{display:flex;align-items:center;gap:14px;flex:none}
 .card .foot .wa{display:inline-flex;align-items:center;gap:6px;color:var(--paper);padding:8px 16px;margin:-6px 0;border-radius:999px;background:var(--moss);font-weight:700}
 .card .foot .wa svg{width:17px;height:17px}
+.card.tight .foot .wa{padding:6px 13px}.card.tighter .foot .wa{padding:4px 12px}
 .stamp{position:absolute;top:calc(var(--u)*2.5);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;padding:6px 14px;border-radius:999px;opacity:0;pointer-events:none;color:#fff}
 .stamp.save{right:calc(var(--u)*2);background:var(--moss)}
 .stamp.pass{left:calc(var(--u)*2);background:var(--verm)}
@@ -914,8 +915,8 @@ function renderStack(){
   requestAnimationFrame(()=>{ // fit each card's text first, then trim the cards underneath to the top card's final height
     st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}
       // still too long: show as many WHOLE lines as fit, ending in "…", never half a line
-      if(b&&b.scrollHeight>b.clientHeight+2){ const lh=parseFloat(getComputedStyle(b).lineHeight)||20, n=Math.max(1,Math.floor((b.clientHeight+1)/lh));
-        Object.assign(b.style,{display:'-webkit-box',webkitBoxOrient:'vertical',webkitLineClamp:String(n),maxHeight:(n*lh)+'px',overflow:'hidden'}); } });
+      if(b&&b.scrollHeight>b.clientHeight+2){ const lh=parseFloat(getComputedStyle(b).lineHeight)||20, n=Math.floor((b.clientHeight+1)/lh);
+        if(n<1) b.style.display='none'; else Object.assign(b.style,{display:'-webkit-box',webkitBoxOrient:'vertical',webkitLineClamp:String(n),maxHeight:(n*lh)+'px',overflow:'hidden'}); } });
     const tops=st.querySelectorAll('.card');if(tops.length>1){const h=tops[0].offsetHeight;tops.forEach((c,i)=>{if(i>0){c.style.height=h+'px';c.style.minHeight='0';c.classList.add('peek');}});} });
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
   deck.slice(0,3).forEach(refineTravel);

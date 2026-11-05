@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='4464d6c9cc';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='8497d69984';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -131,6 +131,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .card .foot .fa{display:flex;align-items:center;gap:14px;flex:none}
 .card .foot .wa{display:inline-flex;align-items:center;gap:6px;color:var(--paper);padding:8px 16px;margin:-6px 0;border-radius:999px;background:var(--moss);font-weight:700}
 .card .foot .wa svg{width:17px;height:17px}
+.card.tight .foot .wa{padding:6px 13px}.card.tighter .foot .wa{padding:4px 12px}
 .stamp{position:absolute;top:calc(var(--u)*2.5);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;padding:6px 14px;border-radius:999px;opacity:0;pointer-events:none;color:#fff}
 .stamp.save{right:calc(var(--u)*2);background:var(--moss)}
 .stamp.pass{left:calc(var(--u)*2);background:var(--verm)}
@@ -914,8 +915,8 @@ function renderStack(){
   requestAnimationFrame(()=>{ // fit each card's text first, then trim the cards underneath to the top card's final height
     st.querySelectorAll('.card').forEach(c=>{const b=c.querySelector('.blurb');const over=()=>c.scrollHeight>c.clientHeight+2||(b&&b.scrollHeight>b.clientHeight+2);if(over()){c.classList.add('tight');if(over())c.classList.add('tighter');}
       // still too long: show as many WHOLE lines as fit, ending in "…", never half a line
-      if(b&&b.scrollHeight>b.clientHeight+2){ const lh=parseFloat(getComputedStyle(b).lineHeight)||20, n=Math.max(1,Math.floor((b.clientHeight+1)/lh));
-        Object.assign(b.style,{display:'-webkit-box',webkitBoxOrient:'vertical',webkitLineClamp:String(n),maxHeight:(n*lh)+'px',overflow:'hidden'}); } });
+      if(b&&b.scrollHeight>b.clientHeight+2){ const lh=parseFloat(getComputedStyle(b).lineHeight)||20, n=Math.floor((b.clientHeight+1)/lh);
+        if(n<1) b.style.display='none'; else Object.assign(b.style,{display:'-webkit-box',webkitBoxOrient:'vertical',webkitLineClamp:String(n),maxHeight:(n*lh)+'px',overflow:'hidden'}); } });
     const tops=st.querySelectorAll('.card');if(tops.length>1){const h=tops[0].offsetHeight;tops.forEach((c,i)=>{if(i>0){c.style.height=h+'px';c.style.minHeight='0';c.classList.add('peek');}});} });
   $('#bUndo').disabled=!undoStack.length; ['#bPass','#bBeen','#bSave'].forEach(s=>$(s).disabled=!deck.length);
   deck.slice(0,3).forEach(refineTravel);

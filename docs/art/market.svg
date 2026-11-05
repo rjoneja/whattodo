@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" preserveAspectRatio="xMidYMid slice">
+  <rect width="720" height="240" fill="#22382B"/>
+  <!-- bunting -->
+  <path d="M0 24 Q360 70 720 24" fill="none" stroke="#F2EEE3" stroke-width="2" opacity=".6"/>
+  <g>
+    <path d="M40 30 l24 2 -10 24z" fill="#EE6A3F"/><path d="M110 40 l24 3 -11 24z" fill="#E0A43A"/><path d="M180 47 l24 2 -11 24z" fill="#F2EEE3"/>
+    <path d="M250 51 l24 1 -12 24z" fill="#5DB58A"/><path d="M320 53 l24 0 -12 24z" fill="#EE6A3F"/><path d="M390 53 l24 -1 -12 24z" fill="#E0A43A"/>
+    <path d="M460 50 l24 -2 -11 24z" fill="#F2EEE3"/><path d="M530 45 l24 -3 -11 24z" fill="#5DB58A"/><path d="M600 38 l24 -3 -10 24z" fill="#EE6A3F"/><path d="M666 30 l24 -3 -10 24z" fill="#E0A43A"/>
+  </g>
+  <rect y="204" width="720" height="36" fill="#1A2C22"/>
+  <!-- stalls: awning, posts, table, goods -->
+  <g id="s1" transform="translate(150 0)">
+    <rect x="6" y="110" width="5" height="94" fill="#86938A"/><rect x="129" y="110" width="5" height="94" fill="#86938A"/>
+    <path d="M0 92 H140 V112 H0Z" fill="#F2EEE3"/>
+    <path d="M0 92h20v20H0zM40 92h20v20H40zM80 92h20v20H80zM120 92h20v20h-20z" fill="#EE6A3F"/>
+    <path d="M0 112q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0z" fill="#F2EEE3"/>
+    <rect x="-4" y="160" width="148" height="12" rx="3" fill="#C2C8BE"/>
+    <circle cx="26" cy="150" r="10" fill="#EE6A3F"/><circle cx="46" cy="152" r="8" fill="#E0A43A"/><circle cx="64" cy="150" r="10" fill="#5DB58A"/><circle cx="100" cy="152" r="8" fill="#EE6A3F"/><circle cx="118" cy="150" r="9" fill="#E0A43A"/>
+  </g>
+  <g transform="translate(300 -10)">
+    <rect x="6" y="110" width="5" height="104" fill="#86938A"/><rect x="129" y="110" width="5" height="104" fill="#86938A"/>
+    <path d="M0 92 H140 V112 H0Z" fill="#F2EEE3"/>
+    <path d="M0 92h20v20H0zM40 92h20v20H40zM80 92h20v20H80zM120 92h20v20h-20z" fill="#5DB58A"/>
+    <path d="M0 112q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0z" fill="#F2EEE3"/>
+    <rect x="-4" y="170" width="148" height="12" rx="3" fill="#C2C8BE"/>
+    <rect x="18" y="146" width="26" height="24" rx="3" fill="#E0A43A"/><rect x="52" y="140" width="30" height="30" rx="4" fill="#F2EEE3"/><path d="M90 170 l14-30 14 30z" fill="#EE6A3F"/>
+  </g>
+  <g transform="translate(450 0)">
+    <rect x="6" y="110" width="5" height="94" fill="#86938A"/><rect x="129" y="110" width="5" height="94" fill="#86938A"/>
+    <path d="M0 92 H140 V112 H0Z" fill="#F2EEE3"/>
+    <path d="M0 92h20v20H0zM40 92h20v20H40zM80 92h20v20H80zM120 92h20v20h-20z" fill="#E0A43A"/>
+    <path d="M0 112q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0q10 12 20 0z" fill="#F2EEE3"/>
+    <rect x="-4" y="160" width="148" height="12" rx="3" fill="#C2C8BE"/>
+    <path d="M22 160 q14-34 28 0z" fill="#EE6A3F"/><path d="M58 160 q14-26 28 0z" fill="#F2EEE3"/><path d="M94 160 q14-34 28 0z" fill="#5DB58A"/>
+  </g>
+</svg>

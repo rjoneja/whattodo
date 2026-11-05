@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" preserveAspectRatio="xMidYMid slice">
+  <rect width="720" height="240" fill="#1C3527"/>
+  <path d="M200 0 L120 240 H330 Z" fill="#F2EEE3" opacity=".06"/><path d="M520 0 L390 240 H600 Z" fill="#F2EEE3" opacity=".06"/>
+  <rect y="196" width="720" height="44" fill="#16271D"/>
+  <!-- record -->
+  <g transform="translate(300 124)">
+    <circle r="82" fill="#122018"/>
+    <g fill="none" stroke="#2A3D31" stroke-width="2"><circle r="72"/><circle r="62"/><circle r="52"/><circle r="42"/></g>
+    <path d="M-60-40a72 72 0 0 1 40-26" stroke="#F2EEE3" stroke-width="3" opacity=".25" fill="none" stroke-linecap="round"/>
+    <circle r="26" fill="#EE6A3F"/><circle r="5" fill="#122018"/>
+  </g>
+  <!-- tone arm -->
+  <path d="M410 46 L392 132 L366 148" stroke="#F2EEE3" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="410" cy="46" r="11" fill="#5DB58A"/>
+  <!-- notes -->
+  <g fill="#E0A43A"><ellipse cx="488" cy="120" rx="13" ry="10" transform="rotate(-20 488 120)"/><rect x="497" y="60" width="5" height="60"/><path d="M502 60 q22 6 22 28 q-6-14-22-14z"/></g>
+  <g fill="#F2EEE3"><ellipse cx="560" cy="160" rx="11" ry="8.5" transform="rotate(-20 560 160)"/><ellipse cx="606" cy="146" rx="11" ry="8.5" transform="rotate(-20 606 146)"/>
+    <rect x="567" y="100" width="4.5" height="58"/><rect x="613" y="86" width="4.5" height="58"/><path d="M567 100 L617.5 86 V98 L567 112 Z"/></g>
+  <g fill="#5DB58A"><ellipse cx="160" cy="80" rx="10" ry="8" transform="rotate(-20 160 80)"/><rect x="166" y="30" width="4" height="50"/></g>
+  <g fill="#F2EEE3" opacity=".5"><circle cx="640" cy="60" r="2"/><circle cx="96" cy="150" r="2"/><circle cx="460" cy="190" r="2"/><circle cx="60" cy="56" r="1.6"/></g>
+</svg>
