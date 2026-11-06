@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DASH_KEY: ${{ secrets.DASH_KEY }}   # lets meter.py report Claude spend to the dashboard
+      EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}   # Eventbrite's official API (their pages block automated reading)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,6 +24,7 @@ jobs:
         if: ${{ github.event.inputs.skip_ingest != 'yes' }}
         continue-on-error: true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+      - run: python3 eventbrite_fill.py || true
       - run: python3 tidy.py
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - run: python3 official_links.py || true

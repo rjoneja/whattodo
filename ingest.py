@@ -21,6 +21,7 @@ import argparse, datetime as dt, json, os, re, sys, time, html
 from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 import meter   # records what each Claude call costs, reported to the dashboard
+import eventbrite   # official API when EVENTBRITE_TOKEN is set (Eventbrite's pages block automated reading)
 
 MODEL = os.environ.get("WTD_MODEL", "claude-haiku-5-5")
 UA = "WhatToDo-ingest/0.2 (+personal project; summarises in its own words and links back)"
@@ -120,6 +121,10 @@ def harvest_jsonld(venue):
     pages = [(final, doc)]
     if sum(1 for x in ld_objects(doc) if is_event(x)) < 3:          # listing page is thin: follow links
         for href in event_links(doc, final):
+            if eventbrite.enabled() and eventbrite.event_id(href) and "eventbrite." in href:
+                e = eventbrite.event(href, default=venue)
+                if e: e["source"] = venue["name"]; evs.append(e)
+                continue
             try: pages.append(get(href)); time.sleep(1)
             except Exception: pass
     for url, d in pages:
@@ -238,7 +243,7 @@ EVENTS: {json.dumps(compact, ensure_ascii=False)}"""
     return evs
 
 # fields later steps work out (relevance, hours, official link): keep them when an event is re-scraped
-CARRY = ("rel", "hrs", "days", "open", "close", "part", "lk", "lk_try", "via", "site", "emoji")
+CARRY = ("rel", "hrs", "days", "open", "close", "part", "lk", "lk_try", "via", "site", "emoji", "eb")
 def carry(old, new):
     for f in CARRY:
         if f in old and f not in new: new[f] = old[f]
@@ -276,7 +281,9 @@ def main():
         log = [f"{v['id']} [{v.get('feed', 'html')}]"]
         feed = v.get("feed", "html")
         try:
-            if feed == "jsonld" or feed == "eventbrite": evs = harvest_jsonld(v)
+            if eventbrite.enabled() and eventbrite.organizer_id(v["url"]):          # an Eventbrite organiser: use the API
+                evs = eventbrite.organizer_events(v["url"], default=v); [e.__setitem__("source", v["name"]) for e in evs]
+            elif feed == "jsonld" or feed == "eventbrite": evs = harvest_jsonld(v)
             elif feed == "ics": evs = harvest_ics(v)
             elif feed in ("rss", "html", "error"): evs = [] if a.no_llm else harvest_html(v, horizon, log)
             else: evs = []

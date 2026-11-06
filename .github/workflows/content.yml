@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DASH_KEY: ${{ secrets.DASH_KEY }}   # lets meter.py report Claude spend to the dashboard
+      EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}   # Eventbrite's official API (their pages block automated reading)
     steps:
       - uses: actions/checkout@v4
         with: {fetch-depth: 20}
@@ -43,6 +44,9 @@ jobs:
           IG_USER_ID: "${{ secrets.IG_USER_ID }}"
           IG_HOST: graph.facebook.com
           IG_API_VERSION: v26.0
+      - name: Eventbrite details
+        if: ${{ steps.check.outputs.skip != 'true' }}
+        run: python3 eventbrite_fill.py || true
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 tidy.py
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
