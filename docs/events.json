@@ -9562,17 +9562,30 @@
    "open": "17:45",
    "close": "21:00",
    "blurb": "Immersive light and sound show projected onto the historic building at night. Book tickets online in advance. Booking also gets 20% off Painted Hall cafe drinks and snacks.",
-   "date": "2026-11-06",
    "time": "17:45",
    "post": "https://www.instagram.com/reel/DfZpYuys1nD/",
-   "url": "https://www.instagram.com/reel/DfZpYuys1nD/",
+   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
    "source": "Instagram @oldroyalnavalcollege",
    "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-06",
-   "rel": "keep",
-   "hrs": 1,
+   "id": "ev-ig-lost-worlds-by-luxmuralis-11-07",
    "part": "evening",
-   "lk": 1
+   "hrs": 1,
+   "rel": "keep",
+   "lk": 1,
+   "via": "https://www.instagram.com/reel/DfZpYuys1nD/",
+   "dates": [
+    "2026-11-06",
+    "2026-11-07",
+    "2026-11-08",
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13",
+    "2026-11-14",
+    "2026-11-15"
+   ],
+   "from": "2026-11-06",
+   "to": "2026-11-15",
+   "also": []
   },
   {
    "name": "Talk: I Am Roland Mouret (Rescheduled)",
@@ -10884,7 +10897,6 @@
    "url": "https://www.brixtonwindmill.org/events/pilates-for-50/",
    "price": "£",
    "source": "Brixton Windmill",
-   "date": "2026-11-06",
    "time": null,
    "in": "in",
    "ages": [
@@ -10892,8 +10904,9 @@
     99
    ],
    "kids": 0,
-   "adults": 2,
+   "adults": 1,
    "dur": 1,
+   "emoji": "🧘",
    "days": [
     5
    ],
@@ -10901,15 +10914,24 @@
    "close": "13:00",
    "tags": [
     "pilates",
-    "beginners",
-    "weekly",
-    "mats provided",
-    "refreshments included"
+    "beginners class",
+    "mats supplied",
+    "free refreshments"
    ],
-   "blurb": "Weekly beginners' pilates on Fridays. Pay what you can, with £5 suggested per class. Mats supplied. Places are limited and first come, first served.",
-   "id": "ev-pilates-11-06",
+   "blurb": "Weekly beginners' pilates in a warm, friendly room. Pay what you can, with £5 suggested. Mats provided and refreshments after class. Places are limited, first come, first served.",
+   "id": "ev-pilates-11-27",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-06",
+    "2026-11-13",
+    "2026-11-20",
+    "2026-11-27"
+   ],
+   "from": "2026-11-06",
+   "to": "2026-11-27",
+   "regular": true,
+   "also": []
   },
   {
    "name": "A Tribute to Ray Harryhausen, including The Beast from 20,000 Fathoms (1953)",
@@ -11439,31 +11461,46 @@
    "area": "Stanmore",
    "lat": 51.6147,
    "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-06/",
-   "price": "free",
+   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-27/",
+   "price": "£",
    "source": "Bentley Priory Museum",
-   "date": "2026-11-06",
    "time": "10am",
    "in": "in",
    "ages": [
-    8,
+    12,
     99
    ],
    "kids": 2,
    "adults": 3,
    "dur": 1,
+   "emoji": "🖼️",
    "tags": [
-    "history",
     "wwii",
     "mental health",
-    "exhibition",
-    "raf"
+    "raf aircrew",
+    "temporary exhibition"
    ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-06",
+   "blurb": "Explore the mental health pressures on Fighter Command aircrew in the Second World War through personal stories and what kept their morale going.",
+   "id": "ev-flying-stress-temporary-exhibition-11-27",
    "open": "10:00",
+   "part": "morning",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-06",
+    "2026-11-07",
+    "2026-11-11",
+    "2026-11-13",
+    "2026-11-14",
+    "2026-11-18",
+    "2026-11-20",
+    "2026-11-21",
+    "2026-11-25",
+    "2026-11-27"
+   ],
+   "from": "2026-11-06",
+   "to": "2026-11-27",
+   "also": []
   },
   {
    "name": "Legend of Kaliakra: Voices from the Black Sea cliffs",
@@ -12695,14 +12732,22 @@
    "blurb": "Drop in and learn to knit Christmas crochet hearts for the council's Christmas hampers. No experience needed, and the session runs at 18 Southsea Road.",
    "emoji": "🧶",
    "url": "https://www.kingston.gov.uk/events",
-   "date": "2026-11-06",
    "time": "13:00",
    "source": "Kingston Council events",
    "id": "ev-merry-little-makes-christmas-crochet-hea-11-06",
    "open": "13:00",
    "hrs": 1,
    "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "dates": [
+    "2026-11-06",
+    "2026-11-13",
+    "2026-11-20"
+   ],
+   "from": "2026-11-06",
+   "to": "2026-11-20",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Story Time at Marylebone Library",
@@ -14012,7 +14057,6 @@
    ],
    "blurb": "Late-night club night with live DJs from 11pm to 2am. Adults only. Check the listing for entry details.",
    "emoji": "🪩",
-   "date": "2026-11-06",
    "time": "23:00",
    "url": "https://thebedford.com/events/category/all/",
    "source": "The Bedford",
@@ -14020,7 +14064,16 @@
    "open": "23:00",
    "part": "evening",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-06",
+    "2026-11-07",
+    "2026-11-14"
+   ],
+   "from": "2026-11-06",
+   "to": "2026-11-14",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Babies and Parents Music, Craft and Stories",
@@ -14852,12 +14905,21 @@
    "open": "11:00",
    "close": "13:00",
    "url": "https://dalstongarden.org/activities/",
-   "date": "2026-11-06",
    "source": "Dalston Eastern Curve Garden",
    "id": "ev-hackney-dudes-11-06",
    "part": "morning",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-06",
+    "2026-11-13",
+    "2026-11-20",
+    "2026-11-27"
+   ],
+   "from": "2026-11-06",
+   "to": "2026-11-27",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Some Like it Swing",
@@ -16249,14 +16311,23 @@
    ],
    "blurb": "A night of new music and comedy originals from Geno Washington and Robbin Kapsalis. Tickets £20 in advance, doors at 7:30pm.",
    "emoji": "🎶",
-   "date": "2026-11-06",
    "time": "19:30",
    "url": "https://tickets.halfmoon.co.uk/",
    "source": "The Half Moon, Putney",
    "id": "ev-new-moon-nights-of-new-music-geno-washin-11-06",
    "open": "19:30",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-06",
+    "2026-11-09",
+    "2026-11-16",
+    "2026-11-23"
+   ],
+   "from": "2026-11-06",
+   "to": "2026-11-23",
+   "regular": true,
+   "also": []
   },
   {
    "name": "The Rocky Horror Picture Show Movie Night",
@@ -19445,7 +19516,6 @@
    "url": "https://www.brixtonwindmill.org/events/tai-chi-in-windmill-gardens/",
    "price": "£",
    "source": "Brixton Windmill",
-   "date": "2026-11-07",
    "time": null,
    "in": "out",
    "ages": [
@@ -19470,7 +19540,16 @@
    "blurb": "Saturday tai chi and qi gong in Windmill Gardens, led by an experienced instructor. Pay what you can. Suits adults of all levels.",
    "id": "ev-tai-chi-in-windmill-gardens-11-07",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-07",
+    "2026-11-14",
+    "2026-11-21"
+   ],
+   "from": "2026-11-07",
+   "to": "2026-11-21",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Family Bake Club – Winter 2026 – Afternoon",
@@ -19847,38 +19926,6 @@
    "url": "https://www.thecornerhouse.org/whats-on",
    "source": "The cornerHOUSE",
    "id": "ev-panto-auditions-11-07",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-07/",
-   "price": "free",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-07",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "history",
-    "wwii",
-    "mental health",
-    "exhibition",
-    "raf"
-   ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-07",
-   "open": "10:00",
-   "part": "morning",
    "hrs": 1,
    "rel": "keep"
   },
@@ -20703,39 +20750,6 @@
    "hrs": 1
   },
   {
-   "name": "Club Night: Live DJs",
-   "area": "Balham",
-   "lat": 51.4434,
-   "lon": -0.152,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "club night",
-    "late night",
-    "dj",
-    "dancing",
-    "balham"
-   ],
-   "blurb": "Late-night club night with live DJs from 11pm to 2am. Adults only. Check the listing for entry details.",
-   "emoji": "🪩",
-   "date": "2026-11-07",
-   "time": "23:00",
-   "url": "https://thebedford.com/events/category/all/",
-   "source": "The Bedford",
-   "id": "ev-club-night-live-djs-11-07",
-   "rel": "keep",
-   "open": "23:00",
-   "part": "evening",
-   "hrs": 1
-  },
-  {
    "name": "Vivaldi Four Seasons by Candlelight",
    "area": "Piccadilly",
    "lat": 51.5087,
@@ -20887,12 +20901,26 @@
    "emoji": "🌱",
    "time": "10:00",
    "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-07",
    "source": "The Phoenix Garden",
    "id": "ev-volunteer-gardening-saturday-11-07",
    "rel": "keep",
    "open": "10:00",
-   "hrs": 1
+   "hrs": 1,
+   "dates": [
+    "2026-11-07",
+    "2026-11-11",
+    "2026-11-14",
+    "2026-11-18",
+    "2026-11-21",
+    "2026-11-25"
+   ],
+   "from": "2026-11-07",
+   "to": "2026-11-25",
+   "regular": true,
+   "days": [
+    6
+   ],
+   "also": []
   },
   {
    "name": "Michael Rosen: Peas on Your Knees signing",
@@ -20949,14 +20977,22 @@
    ],
    "blurb": "A lively sing-along show with a live band, where the audience joins in on well-known songs. Doors 8pm at Walthamstow Trades Hall.",
    "emoji": "🎤",
-   "date": "2026-11-07",
    "time": "20:00",
    "url": "https://wegottickets.com/walthamstowtradeshall",
    "source": "Walthamstow Trades Hall",
    "id": "ev-mrs-h-and-the-sing-along-band-11-07",
    "rel": "keep",
    "open": "20:00",
-   "hrs": 1
+   "hrs": 1,
+   "dates": [
+    "2026-11-07",
+    "2026-11-11",
+    "2026-11-20",
+    "2026-11-25"
+   ],
+   "from": "2026-11-07",
+   "to": "2026-11-25",
+   "also": []
   },
   {
    "name": "Dissecting Aerial Symposium: The Big One",
@@ -21884,43 +21920,6 @@
    "open": "13:30",
    "hrs": 1,
    "rel": "keep"
-  },
-  {
-   "name": "Lost Worlds by Luxmuralis",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "light show",
-    "projection mapping",
-    "immersive sound",
-    "night",
-    "greenwich"
-   ],
-   "open": "17:45",
-   "close": "21:00",
-   "blurb": "Immersive light and sound show projected onto the historic building at night. Book tickets online in advance. Booking also gets 20% off Painted Hall cafe drinks and snacks.",
-   "date": "2026-11-07",
-   "time": "17:45",
-   "post": "https://www.instagram.com/reel/DfZpYuys1nD/",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "source": "Instagram @oldroyalnavalcollege",
-   "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-07",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfZpYuys1nD/"
   },
   {
    "name": "Fireworks & Drone Festival: Party Night (German Bier Festival bundle)",
@@ -24950,43 +24949,6 @@
    "rel": "keep"
   },
   {
-   "name": "Lost Worlds by Luxmuralis",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "light show",
-    "projection mapping",
-    "immersive sound",
-    "night",
-    "greenwich"
-   ],
-   "open": "17:45",
-   "close": "21:00",
-   "blurb": "Immersive light and sound show projected onto the historic building at night. Book tickets online in advance. Booking also gets 20% off Painted Hall cafe drinks and snacks.",
-   "date": "2026-11-08",
-   "time": "17:45",
-   "post": "https://www.instagram.com/reel/DfZpYuys1nD/",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "source": "Instagram @oldroyalnavalcollege",
-   "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-08",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfZpYuys1nD/"
-  },
-  {
    "name": "Lewisham Remembrance Sunday civic service",
    "area": "Lewisham High Street",
    "lat": 51.4613,
@@ -25204,7 +25166,6 @@
    ],
    "blurb": "Free 30-minute lunchtime organ recital, held most Mondays. No booking noted on listing. Good for a quick midday break.",
    "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "date": "2026-11-09",
    "time": "13:20",
    "source": "Southwark Cathedral",
    "id": "ev-lunchtime-organ-recital-mon-9-nov-11-09",
@@ -25214,7 +25175,15 @@
    ],
    "open": "13:20",
    "hrs": 1,
-   "also": []
+   "also": [],
+   "dates": [
+    "2026-11-09",
+    "2026-11-16",
+    "2026-11-23"
+   ],
+   "from": "2026-11-09",
+   "to": "2026-11-23",
+   "regular": true
   },
   {
    "name": "KS2 Oracy Workshop: The Storytelling Society",
@@ -26660,7 +26629,6 @@
    "url": "https://www.eventbrite.co.uk/e/breathe-tickets-2002723719557",
    "price": "free",
    "source": "St John's Waterloo",
-   "date": "2026-11-09",
    "time": "6pm",
    "in": "in",
    "ages": [
@@ -26682,7 +26650,16 @@
    "id": "ev-breathe-11-09",
    "open": "18:00",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-09",
+    "2026-11-16",
+    "2026-11-23"
+   ],
+   "from": "2026-11-09",
+   "to": "2026-11-23",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Brunel Writers Talking: Benjamin Wood",
@@ -26902,38 +26879,6 @@
    ],
    "open": "14:30",
    "part": "afternoon",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "New Moon - A Night of New Music",
-   "area": "Putney",
-   "lat": 51.466,
-   "lon": -0.224,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2.5,
-   "tags": [
-    "new music",
-    "emerging artists",
-    "gig night",
-    "low cost"
-   ],
-   "blurb": "Low-cost night of new music showcasing emerging acts. Tickets just £2.50 in advance, or pay on the door.",
-   "emoji": "🎶",
-   "date": "2026-11-09",
-   "time": "19:30",
-   "url": "https://tickets.halfmoon.co.uk/",
-   "source": "The Half Moon, Putney",
-   "id": "ev-new-moon-a-night-of-new-music-11-09",
-   "open": "19:30",
-   "part": "evening",
    "hrs": 1,
    "rel": "keep"
   },
@@ -28355,12 +28300,20 @@
    "emoji": "🌿",
    "time": "12:30",
    "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-10",
    "source": "The Phoenix Garden",
    "id": "ev-back-to-nature-11-10",
    "open": "12:30",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-10",
+    "2026-11-17",
+    "2026-11-24"
+   ],
+   "from": "2026-11-10",
+   "to": "2026-11-24",
+   "regular": true,
+   "also": []
   },
   {
    "name": "HADAS Lecture: William Powell on Pembrokeshire Prehistory",
@@ -28565,11 +28518,19 @@
    "open": "11:00",
    "close": "13:30",
    "url": "https://dalstongarden.org/activities/",
-   "date": "2026-11-10",
    "source": "Dalston Eastern Curve Garden",
    "id": "ev-weekly-older-peoples-group-11-10",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-10",
+    "2026-11-17",
+    "2026-11-24"
+   ],
+   "from": "2026-11-10",
+   "to": "2026-11-24",
+   "regular": true,
+   "also": []
   },
   {
    "name": "DHP Presents THE SLOW SHOW: WHITE WATER ANNIVERSARY LIVE TOUR",
@@ -28951,12 +28912,20 @@
    ],
    "time": "10:00",
    "url": "https://www.thecanonsmitcham.co.uk/events-activities",
-   "date": "2026-11-10",
    "source": "The Canons, Mitcham",
    "id": "ev-social-sewing-drop-in-beginner-intermedi-11-10",
    "open": "10:00",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-10",
+    "2026-11-17",
+    "2026-11-24"
+   ],
+   "from": "2026-11-10",
+   "to": "2026-11-24",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Jack Broadbent",
@@ -30346,37 +30315,6 @@
    "hrs": 1
   },
   {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-11/",
-   "price": "free",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-11",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "history",
-    "wwii",
-    "mental health",
-    "exhibition",
-    "raf"
-   ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-11",
-   "open": "10:00",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Hackney Folk Club – Anna McLuckie",
    "area": "London",
    "lat": 51.5508,
@@ -30562,37 +30500,6 @@
    "rel": "keep",
    "hrs": 1,
    "open": "10:00"
-  },
-  {
-   "name": "Mrs H and the Sing-Along Band",
-   "area": "Walthamstow",
-   "lat": 51.583,
-   "lon": -0.02,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "sing-along",
-    "live music",
-    "morning",
-    "family"
-   ],
-   "blurb": "A morning sing-along session with a live band at Walthamstow Trades Hall. Doors 9:45am, start 10am.",
-   "url": "https://wegottickets.com/walthamstowtradeshall",
-   "date": "2026-11-11",
-   "time": "10:00",
-   "source": "Walthamstow Trades Hall",
-   "id": "ev-mrs-h-and-the-sing-along-band-11-11",
-   "open": "10:00",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
   },
   {
    "name": "Care Constellations by Kat Cotta",
@@ -30973,12 +30880,20 @@
    "emoji": "🧘",
    "time": "10:00",
    "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-11",
    "source": "The Phoenix Garden",
    "id": "ev-yoga-for-55-11-11",
    "open": "10:00",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-11",
+    "2026-11-18",
+    "2026-11-25"
+   ],
+   "from": "2026-11-11",
+   "to": "2026-11-25",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Pilates for 55+",
@@ -31005,47 +30920,20 @@
    "emoji": "🤸",
    "time": "11:15",
    "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-11",
    "source": "The Phoenix Garden",
    "id": "ev-pilates-for-55-11-11",
    "open": "11:15",
    "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Volunteer gardening (Wednesday)",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
+   "rel": "keep",
+   "dates": [
+    "2026-11-11",
+    "2026-11-18",
+    "2026-11-25"
    ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "volunteering",
-    "gardening",
-    "community",
-    "wildlife",
-    "outdoors"
-   ],
-   "blurb": "Drop-in volunteer session to look after plants and wildlife in the garden. Stay as long as you like.",
-   "emoji": "🌱",
-   "time": "12:30",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-11",
-   "source": "The Phoenix Garden",
-   "id": "ev-volunteer-gardening-wednesday-11-11",
-   "days": [
-    3
-   ],
-   "open": "12:30",
-   "hrs": 1,
-   "rel": "keep"
+   "from": "2026-11-11",
+   "to": "2026-11-25",
+   "regular": true,
+   "also": []
   },
   {
    "name": "London Sound Project Choir",
@@ -31233,13 +31121,21 @@
    "emoji": "🏛️",
    "close": "16:00",
    "url": "https://trentparkhouse.org.uk/blogs/articles/whats-coming-up-this-november",
-   "date": "2026-11-11",
    "time": "14:00",
    "source": "Trent Park House of Secrets",
    "id": "ev-from-country-house-to-listening-station--11-11",
    "open": "14:00",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-11",
+    "2026-11-18",
+    "2026-11-25"
+   ],
+   "from": "2026-11-11",
+   "to": "2026-11-25",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Woolwich Works Games Night",
@@ -31601,43 +31497,6 @@
    "id": "ev-peckham-pacers-7-7-11-11",
    "hrs": 1,
    "rel": "keep"
-  },
-  {
-   "name": "Lost Worlds by Luxmuralis",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "light show",
-    "projection mapping",
-    "immersive sound",
-    "night",
-    "greenwich"
-   ],
-   "open": "17:45",
-   "close": "21:00",
-   "blurb": "Immersive light and sound show projected onto the historic building at night. Book tickets online in advance. Booking also gets 20% off Painted Hall cafe drinks and snacks.",
-   "date": "2026-11-11",
-   "time": "17:45",
-   "post": "https://www.instagram.com/reel/DfZpYuys1nD/",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "source": "Instagram @oldroyalnavalcollege",
-   "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-11",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfZpYuys1nD/"
   },
   {
    "name": "Discover Walthamstow Wetlands Guided Tour",
@@ -33612,12 +33471,20 @@
    ],
    "time": "10:00",
    "url": "https://www.thecanonsmitcham.co.uk/events-activities",
-   "date": "2026-11-12",
    "source": "The Canons, Mitcham",
    "id": "ev-knit-stitch-social-11-12",
    "open": "10:00",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "dates": [
+    "2026-11-12",
+    "2026-11-19",
+    "2026-11-26"
+   ],
+   "from": "2026-11-12",
+   "to": "2026-11-26",
+   "regular": true,
+   "also": []
   },
   {
    "name": "Ben Poole",
@@ -33927,43 +33794,6 @@
    "id": "ev-dungeon-cruiser-11-12",
    "hrs": 1,
    "rel": "keep"
-  },
-  {
-   "name": "Lost Worlds by Luxmuralis",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "light show",
-    "projection mapping",
-    "immersive sound",
-    "night",
-    "greenwich"
-   ],
-   "open": "17:45",
-   "close": "21:00",
-   "blurb": "Immersive light and sound show projected onto the historic building at night. Book tickets online in advance. Booking also gets 20% off Painted Hall cafe drinks and snacks.",
-   "date": "2026-11-12",
-   "time": "17:45",
-   "post": "https://www.instagram.com/reel/DfZpYuys1nD/",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "source": "Instagram @oldroyalnavalcollege",
-   "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-12",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfZpYuys1nD/"
   },
   {
    "name": "LIFEM26 Exhibition (Fri)",
@@ -34414,41 +34244,6 @@
    "lk": 1
   },
   {
-   "name": "Pilates",
-   "area": "Brixton",
-   "lat": 51.4508,
-   "lon": -0.1197,
-   "url": "https://www.brixtonwindmill.org/events/pilates-for-50/",
-   "price": "£",
-   "source": "Brixton Windmill",
-   "date": "2026-11-13",
-   "time": null,
-   "in": "in",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1,
-   "days": [
-    5
-   ],
-   "open": "12:00",
-   "close": "13:00",
-   "tags": [
-    "pilates",
-    "beginners",
-    "weekly",
-    "mats provided",
-    "refreshments included"
-   ],
-   "blurb": "Weekly beginners' pilates on Fridays. Pay what you can, with £5 suggested per class. Mats supplied. Places are limited and first come, first served.",
-   "id": "ev-pilates-11-13",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Latinx Scratch Night",
    "area": "Clapham",
    "lat": 51.4626,
@@ -34568,38 +34363,6 @@
    "id": "ev-escaping-oneself-11-13",
    "rel": "keep",
    "hrs": 1
-  },
-  {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-13/",
-   "price": "free",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-13",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "history",
-    "wwii",
-    "mental health",
-    "exhibition",
-    "raf"
-   ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-13",
-   "open": "10:00",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
   },
   {
    "name": "HELD BY TREES",
@@ -34912,39 +34675,6 @@
    "lk": 1
   },
   {
-   "name": "Merry Little Makes: Christmas crochet hearts",
-   "area": "Kingston town centre",
-   "lat": 51.4123,
-   "lon": -0.3007,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "drop-in craft",
-    "learn to knit",
-    "christmas crafts",
-    "community hampers"
-   ],
-   "blurb": "Drop in and learn to knit Christmas crochet hearts for the council's Christmas hampers. No experience needed, and the session runs at 18 Southsea Road.",
-   "emoji": "🧶",
-   "url": "https://www.kingston.gov.uk/events",
-   "date": "2026-11-13",
-   "time": "13:00",
-   "source": "Kingston Council events",
-   "id": "ev-merry-little-makes-christmas-crochet-hea-11-13",
-   "open": "13:00",
-   "part": "afternoon",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1
-  },
-  {
    "name": "Lunchtime Book Club",
    "area": "Teddington",
    "lat": 51.4296,
@@ -35202,41 +34932,6 @@
    "rel": "keep"
   },
   {
-   "name": "Hackney Dudes",
-   "area": "Dalston",
-   "lat": 51.5467,
-   "lon": -0.0737,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "community group",
-    "social morning",
-    "friday",
-    "dalston garden"
-   ],
-   "blurb": "Friday morning community group at Dalston Eastern Curve Garden. Cost is not listed on the page, so check the Garden's site before going.",
-   "emoji": "☕",
-   "days": [
-    5
-   ],
-   "open": "11:00",
-   "close": "13:00",
-   "url": "https://dalstongarden.org/activities/",
-   "date": "2026-11-13",
-   "source": "Dalston Eastern Curve Garden",
-   "id": "ev-hackney-dudes-11-13",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "The Ukadelix",
    "area": "Walthamstow",
    "lat": 51.583,
@@ -35303,36 +34998,43 @@
   },
   {
    "name": "Play: Make: Art",
-   "area": "Twickenham",
+   "area": "Riverside, Twickenham",
    "lat": 51.4459,
    "lon": -0.3196,
    "in": "in",
-   "price": "£",
+   "price": "free",
    "ages": [
-    3,
-    8
+    5,
+    12
    ],
    "kids": 3,
    "adults": 1,
    "dur": 1.5,
    "tags": [
-    "family",
-    "art",
+    "kids",
     "making",
-    "craft",
-    "hands-on"
+    "art workshop",
+    "creative",
+    "family"
    ],
-   "blurb": "Hands-on art-making session for children with a grown-up. Check the event page for booking and what materials are provided.",
-   "emoji": "🎨",
+   "blurb": "Hands-on making session where children create their own artwork inspired by the gallery's exhibitions. Materials provided on the day.",
+   "url": "https://orleanshousegallery.org/whats-on/",
+   "source": "Orleans House Gallery",
+   "id": "ev-play-make-art-11-17",
+   "hrs": 1,
+   "rel": "keep",
+   "dates": [
+    "2026-11-13",
+    "2026-11-17",
+    "2026-11-27"
+   ],
+   "from": "2026-11-13",
+   "to": "2026-11-27",
+   "regular": true,
    "days": [
     5
    ],
-   "url": "https://orleanshousegallery.org/whats-on/",
-   "date": "2026-11-13",
-   "source": "Orleans House Gallery",
-   "id": "ev-play-make-art-11-13",
-   "hrs": 1,
-   "rel": "keep"
+   "also": []
   },
   {
    "name": "Brunel Arts Lunchtime Concert - Samrat Majumder",
@@ -35786,43 +35488,6 @@
    "part": "afternoon",
    "hrs": 1,
    "rel": "keep"
-  },
-  {
-   "name": "Lost Worlds by Luxmuralis",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "light show",
-    "projection mapping",
-    "immersive sound",
-    "night",
-    "greenwich"
-   ],
-   "open": "17:45",
-   "close": "21:00",
-   "blurb": "Immersive light and sound show projected onto the historic building at night. Book tickets online in advance. Booking also gets 20% off Painted Hall cafe drinks and snacks.",
-   "date": "2026-11-13",
-   "time": "17:45",
-   "post": "https://www.instagram.com/reel/DfZpYuys1nD/",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "source": "Instagram @oldroyalnavalcollege",
-   "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-13",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfZpYuys1nD/"
   },
   {
    "name": "Lord Mayor's Show Day at St Paul's 2026",
@@ -36794,41 +36459,6 @@
    "rel": "keep"
   },
   {
-   "name": "Tai Chi in Windmill Gardens",
-   "area": "Brixton",
-   "lat": 51.4508,
-   "lon": -0.1197,
-   "url": "https://www.brixtonwindmill.org/events/tai-chi-in-windmill-gardens/",
-   "price": "£",
-   "source": "Brixton Windmill",
-   "date": "2026-11-14",
-   "time": null,
-   "in": "out",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1,
-   "days": [
-    6
-   ],
-   "open": "11:30",
-   "close": "12:30",
-   "tags": [
-    "tai chi",
-    "qi gong",
-    "outdoor",
-    "weekly",
-    "instructor-led"
-   ],
-   "blurb": "Saturday tai chi and qi gong in Windmill Gardens, led by an experienced instructor. Pay what you can. Suits adults of all levels.",
-   "id": "ev-tai-chi-in-windmill-gardens-11-14",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Silent Laughter Weekend 2026",
    "area": "Kennington",
    "lat": 51.4934,
@@ -36980,38 +36610,6 @@
    "id": "ev-neurographic-art-with-ashima-kumar-11-14",
    "open": "13:00",
    "part": "afternoon",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-14/",
-   "price": "free",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-14",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "history",
-    "wwii",
-    "mental health",
-    "exhibition",
-    "raf"
-   ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-14",
-   "open": "10:00",
-   "part": "morning",
    "hrs": 1,
    "rel": "keep"
   },
@@ -37557,39 +37155,6 @@
    "rel": "keep"
   },
   {
-   "name": "Club Night: Live DJs",
-   "area": "Balham",
-   "lat": 51.4434,
-   "lon": -0.152,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "club night",
-    "late night",
-    "dj",
-    "dancing",
-    "balham"
-   ],
-   "blurb": "Late-night club night with live DJs from 11pm to 2am. Adults only. Check the listing for entry details.",
-   "emoji": "🪩",
-   "date": "2026-11-14",
-   "time": "23:00",
-   "url": "https://thebedford.com/events/category/all/",
-   "source": "The Bedford",
-   "id": "ev-club-night-live-djs-11-14",
-   "open": "23:00",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "AGM and talk: Memories of MHS Coach Visits",
    "area": "Mitcham",
    "lat": 51.4006,
@@ -37650,41 +37215,6 @@
    "id": "ev-lvgo-next-gen-nostalgia-11-14",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Volunteer gardening (Saturday)",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 4,
-   "tags": [
-    "volunteering",
-    "gardening",
-    "community",
-    "wildlife",
-    "outdoors"
-   ],
-   "blurb": "Drop-in group session to help look after the garden's plants and wildlife, meet people and help at events. Stay as long as you like.",
-   "emoji": "🌱",
-   "time": "10:00",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-14",
-   "source": "The Phoenix Garden",
-   "id": "ev-volunteer-gardening-saturday-11-14",
-   "days": [
-    6
-   ],
-   "open": "10:00",
    "hrs": 1,
    "rel": "keep"
   },
@@ -38315,43 +37845,6 @@
    "id": "ev-love-handles-launch-party-11-14",
    "hrs": 1,
    "rel": "keep"
-  },
-  {
-   "name": "Lost Worlds by Luxmuralis",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "light show",
-    "projection mapping",
-    "immersive sound",
-    "night",
-    "greenwich"
-   ],
-   "open": "17:45",
-   "close": "21:00",
-   "blurb": "Immersive light and sound show projected onto the historic building at night. Book tickets online in advance. Booking also gets 20% off Painted Hall cafe drinks and snacks.",
-   "date": "2026-11-14",
-   "time": "17:45",
-   "post": "https://www.instagram.com/reel/DfZpYuys1nD/",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "source": "Instagram @oldroyalnavalcollege",
-   "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-14",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfZpYuys1nD/"
   },
   {
    "name": "Santa's Christmas Eve (Unicorn Theatre family show)",
@@ -39557,43 +39050,6 @@
    "rel": "keep"
   },
   {
-   "name": "Lost Worlds by Luxmuralis",
-   "area": "Greenwich",
-   "lat": 51.483,
-   "lon": -0.006,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "light show",
-    "projection mapping",
-    "immersive sound",
-    "night",
-    "greenwich"
-   ],
-   "open": "17:45",
-   "close": "21:00",
-   "blurb": "Immersive light and sound show projected onto the historic building at night. Book tickets online in advance. Booking also gets 20% off Painted Hall cafe drinks and snacks.",
-   "date": "2026-11-15",
-   "time": "17:45",
-   "post": "https://www.instagram.com/reel/DfZpYuys1nD/",
-   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
-   "source": "Instagram @oldroyalnavalcollege",
-   "site": "https://linktr.ee/ornc",
-   "id": "ev-ig-lost-worlds-by-luxmuralis-11-15",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1,
-   "via": "https://www.instagram.com/reel/DfZpYuys1nD/"
-  },
-  {
    "name": "Festive Origami with Coco Sato at Moleskine",
    "area": "Battersea",
    "lat": 51.4817,
@@ -39626,42 +39082,6 @@
    "part": "evening",
    "hrs": 1,
    "rel": "keep"
-  },
-  {
-   "name": "Lunchtime Organ Recital",
-   "area": "Borough",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 0.5,
-   "tags": [
-    "organ recital",
-    "free concert",
-    "lunchtime",
-    "classical music",
-    "quiet break"
-   ],
-   "blurb": "A free 30-minute organ recital, held most Mondays at lunchtime. A calm midday break in the cathedral.",
-   "emoji": "🎹",
-   "date": "2026-11-16",
-   "time": "13:20",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "source": "Southwark Cathedral",
-   "id": "ev-lunchtime-organ-recital-11-16",
-   "rel": "keep",
-   "hrs": 1,
-   "days": [
-    1
-   ],
-   "open": "13:20",
-   "part": "afternoon"
   },
   {
    "name": "Bromley Self Care Week 2026",
@@ -40294,39 +39714,6 @@
    "rel": "keep"
   },
   {
-   "name": "Breathe",
-   "area": "London",
-   "lat": 51.504,
-   "lon": -0.113,
-   "url": "https://www.eventbrite.co.uk/e/breathe-tickets-2002724439711",
-   "price": "free",
-   "source": "St John's Waterloo",
-   "date": "2026-11-16",
-   "time": "6pm",
-   "in": "in",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 0.75,
-   "emoji": "🧘",
-   "tags": [
-    "meditation",
-    "mindfulness",
-    "city",
-    "calm",
-    "church"
-   ],
-   "blurb": "A free 45-minute meditation in the heart of the City, held indoors at St John's Waterloo. Suits adults looking for a quiet break.",
-   "id": "ev-breathe-11-16",
-   "open": "18:00",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Eltham Palace Gardens talk by Aron Clay",
    "area": "Charlton",
    "lat": 51.4797,
@@ -40446,38 +39833,6 @@
    "url": "https://wimbledonmusicfestival.co.uk/wimf2026/programme/",
    "source": "Wimbledon International Music Festival",
    "id": "ev-mendelssohn-s-octet-plus-11-16",
-   "open": "19:30",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "New Moon - A Night of New Music",
-   "area": "Putney",
-   "lat": 51.466,
-   "lon": -0.224,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2.5,
-   "tags": [
-    "new music",
-    "emerging artists",
-    "gig night",
-    "low cost"
-   ],
-   "blurb": "Low-cost night of new music showcasing emerging acts. Tickets just £2.50 in advance, or pay on the door.",
-   "emoji": "🎶",
-   "date": "2026-11-16",
-   "time": "19:30",
-   "url": "https://tickets.halfmoon.co.uk/",
-   "source": "The Half Moon, Putney",
-   "id": "ev-new-moon-a-night-of-new-music-11-16",
    "open": "19:30",
    "part": "evening",
    "hrs": 1,
@@ -41089,35 +40444,6 @@
    "hrs": 1
   },
   {
-   "name": "Play: Make: Art",
-   "area": "Riverside, Twickenham",
-   "lat": 51.4459,
-   "lon": -0.3196,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    5,
-    12
-   ],
-   "kids": 3,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "kids",
-    "making",
-    "art workshop",
-    "creative",
-    "family"
-   ],
-   "blurb": "Hands-on making session where children create their own artwork inspired by the gallery's exhibitions. Materials provided on the day.",
-   "date": "2026-11-17",
-   "url": "https://orleanshousegallery.org/whats-on/",
-   "source": "Orleans House Gallery",
-   "id": "ev-play-make-art-11-17",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "1 in 2 (2:30pm)",
    "area": "Croydon",
    "lat": 51.372,
@@ -41212,72 +40538,6 @@
    "id": "ev-live-at-the-bedford-julia-faulks-maddy-c-11-17",
    "open": "19:00",
    "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Back to Nature",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "out",
-   "price": "£",
-   "ages": [
-    55,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "gardening",
-    "environment",
-    "over 55s",
-    "outdoors",
-    "nature"
-   ],
-   "blurb": "Gardening and environmental activities for people aged 55 and over. Register in advance by emailing Louise Gates at louise@thephoenixgarden.org.uk.",
-   "emoji": "🌿",
-   "time": "12:30",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-17",
-   "source": "The Phoenix Garden",
-   "id": "ev-back-to-nature-11-17",
-   "open": "12:30",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Weekly Older Peoples Group",
-   "area": "Dalston",
-   "lat": 51.5467,
-   "lon": -0.0737,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "older people",
-    "weekly group",
-    "social",
-    "dalston garden"
-   ],
-   "blurb": "Weekly social group for older people at Dalston Eastern Curve Garden. Cost is not listed on the page, so check the Garden's site before going.",
-   "emoji": "🤝",
-   "days": [
-    2
-   ],
-   "open": "11:00",
-   "close": "13:30",
-   "url": "https://dalstongarden.org/activities/",
-   "date": "2026-11-17",
-   "source": "Dalston Eastern Curve Garden",
-   "id": "ev-weekly-older-peoples-group-11-17",
    "hrs": 1,
    "rel": "keep"
   },
@@ -41654,40 +40914,6 @@
    "id": "ev-wimf-nordic-folk-meets-bach-by-candlelig-11-17",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Social Sewing Drop-in (Beginner/Intermediate)",
-   "area": "Mitcham",
-   "lat": 51.402,
-   "lon": -0.166,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "sewing drop-in",
-    "social making",
-    "beginner friendly",
-    "craft workshop"
-   ],
-   "blurb": "Relaxed drop-in sewing session for beginner and intermediate makers. Bring your own project and enjoy company while you stitch.",
-   "emoji": "🧵",
-   "days": [
-    2
-   ],
-   "time": "10:00",
-   "url": "https://www.thecanonsmitcham.co.uk/events-activities",
-   "date": "2026-11-17",
-   "source": "The Canons, Mitcham",
-   "id": "ev-social-sewing-drop-in-beginner-intermedi-11-17",
-   "open": "10:00",
    "hrs": 1,
    "rel": "keep"
   },
@@ -42295,37 +41521,6 @@
    "open": "14:00"
   },
   {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-18/",
-   "price": "free",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-18",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "history",
-    "wwii",
-    "mental health",
-    "exhibition",
-    "raf"
-   ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-18",
-   "open": "10:00",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Poetry Rising – An Evening Where Words Come Alive",
    "area": "Kensal Rise",
    "lat": 51.534,
@@ -42723,102 +41918,6 @@
    "rel": "keep"
   },
   {
-   "name": "Yoga for 55+",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "both",
-   "price": "£",
-   "ages": [
-    55,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "yoga",
-    "over 55s",
-    "gentle exercise",
-    "wellbeing",
-    "community"
-   ],
-   "blurb": "Gentle yoga session for people aged 55 and over. Check the timetable page for booking details.",
-   "emoji": "🧘",
-   "time": "10:00",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-18",
-   "source": "The Phoenix Garden",
-   "id": "ev-yoga-for-55-11-18",
-   "open": "10:00",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Pilates for 55+",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "both",
-   "price": "£",
-   "ages": [
-    55,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "pilates",
-    "over 55s",
-    "gentle exercise",
-    "wellbeing",
-    "community"
-   ],
-   "blurb": "Pilates session for people aged 55 and over. Check the timetable page for booking details.",
-   "emoji": "🤸",
-   "time": "11:15",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-18",
-   "source": "The Phoenix Garden",
-   "id": "ev-pilates-for-55-11-18",
-   "open": "11:15",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Volunteer gardening (Wednesday)",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "volunteering",
-    "gardening",
-    "community",
-    "wildlife",
-    "outdoors"
-   ],
-   "blurb": "Drop-in volunteer session to look after plants and wildlife in the garden. Stay as long as you like.",
-   "emoji": "🌱",
-   "time": "12:30",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-18",
-   "source": "The Phoenix Garden",
-   "id": "ev-volunteer-gardening-wednesday-11-18",
-   "open": "12:30",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Library Book Club: Mrs Palfrey at the Claremont",
    "area": "Primrose Hill",
    "lat": 51.5411,
@@ -43060,38 +42159,6 @@
    "source": "Edmonton Hundred Historical Society",
    "id": "ev-90th-anniversaries-edmonton-hundred-hist-11-18",
    "open": "19:30",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "From Country House to Listening Station Tour",
-   "area": "Cockfosters (Enfield)",
-   "lat": 51.66,
-   "lon": -0.137,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "guided tour",
-    "secret listeners",
-    "wwii history",
-    "country house"
-   ],
-   "blurb": "Former BBC analyst Stephen Dalziel covers the house's 1920s country retreat past and its WWII role gathering intel from captured German officers. Regular entry ticket needed.",
-   "emoji": "🏛️",
-   "close": "16:00",
-   "url": "https://trentparkhouse.org.uk/blogs/articles/whats-coming-up-this-november",
-   "date": "2026-11-18",
-   "time": "14:00",
-   "source": "Trent Park House of Secrets",
-   "id": "ev-from-country-house-to-listening-station--11-18",
-   "open": "14:00",
    "hrs": 1,
    "rel": "keep"
   },
@@ -44477,41 +43544,6 @@
    "rel": "keep"
   },
   {
-   "name": "Knit & Stitch Social",
-   "area": "Mitcham",
-   "lat": 51.402,
-   "lon": -0.166,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "knitting social",
-    "craft group",
-    "sustainable merton",
-    "social making"
-   ],
-   "blurb": "Sociable knitting and stitching session run by Sustainable Merton. Bring your current project and join other crafters.",
-   "emoji": "🧶",
-   "days": [
-    4
-   ],
-   "time": "10:00",
-   "url": "https://www.thecanonsmitcham.co.uk/events-activities",
-   "date": "2026-11-19",
-   "source": "The Canons, Mitcham",
-   "id": "ev-knit-stitch-social-11-19",
-   "open": "10:00",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Ashley Campbell with Full Band",
    "area": "Putney",
    "lat": 51.466,
@@ -45230,41 +44262,6 @@
    "hrs": 1
   },
   {
-   "name": "Pilates",
-   "area": "Brixton",
-   "lat": 51.4508,
-   "lon": -0.1197,
-   "url": "https://www.brixtonwindmill.org/events/pilates-for-50/",
-   "price": "£",
-   "source": "Brixton Windmill",
-   "date": "2026-11-20",
-   "time": null,
-   "in": "in",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1,
-   "days": [
-    5
-   ],
-   "open": "12:00",
-   "close": "13:00",
-   "tags": [
-    "pilates",
-    "beginners",
-    "weekly",
-    "mats provided",
-    "refreshments included"
-   ],
-   "blurb": "Weekly beginners' pilates on Fridays. Pay what you can, with £5 suggested per class. Mats supplied. Places are limited and first come, first served.",
-   "id": "ev-pilates-11-20",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "\"Too young to be old\" with Stewart Henderson and Roger McGough",
    "area": "Surbiton",
    "lat": 51.3878,
@@ -45326,37 +44323,6 @@
    "id": "ev-friday-morning-talks-hidden-in-plain-sig-11-20",
    "open": "11:00",
    "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-20/",
-   "price": "free",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-20",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "history",
-    "wwii",
-    "mental health",
-    "exhibition",
-    "raf"
-   ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-20",
-   "open": "10:00",
    "hrs": 1,
    "rel": "keep"
   },
@@ -45664,39 +44630,6 @@
    "lk": 1
   },
   {
-   "name": "Merry Little Makes: Christmas crochet hearts",
-   "area": "Kingston town centre",
-   "lat": 51.4123,
-   "lon": -0.3007,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 1,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "drop-in craft",
-    "learn to knit",
-    "christmas crafts",
-    "community hampers"
-   ],
-   "blurb": "Drop in and learn to knit Christmas crochet hearts for the council's Christmas hampers. No experience needed, and the session runs at 18 Southsea Road.",
-   "emoji": "🧶",
-   "url": "https://www.kingston.gov.uk/events",
-   "date": "2026-11-20",
-   "time": "13:00",
-   "source": "Kingston Council events",
-   "id": "ev-merry-little-makes-christmas-crochet-hea-11-20",
-   "open": "13:00",
-   "part": "afternoon",
-   "hrs": 1,
-   "rel": "keep",
-   "lk": 1
-  },
-  {
    "name": "Sparkle Festive Fair",
    "area": "Teddington",
    "lat": 51.4296,
@@ -45798,41 +44731,6 @@
    "rel": "keep"
   },
   {
-   "name": "Hackney Dudes",
-   "area": "Dalston",
-   "lat": 51.5467,
-   "lon": -0.0737,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "community group",
-    "social morning",
-    "friday",
-    "dalston garden"
-   ],
-   "blurb": "Friday morning community group at Dalston Eastern Curve Garden. Cost is not listed on the page, so check the Garden's site before going.",
-   "emoji": "☕",
-   "days": [
-    5
-   ],
-   "open": "11:00",
-   "close": "13:00",
-   "url": "https://dalstongarden.org/activities/",
-   "date": "2026-11-20",
-   "source": "Dalston Eastern Curve Garden",
-   "id": "ev-hackney-dudes-11-20",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "featuring Earl Slick: Camille O'Sullivan & Her Band",
    "area": "Islington",
    "lat": 51.5437,
@@ -45887,39 +44785,6 @@
    "date": "2026-11-20",
    "source": "Abney Park",
    "id": "ev-think-if-the-man-that-is-not-nigh-engrav-11-20",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "MRS H AND THE SING-ALONG BAND",
-   "area": "Walthamstow",
-   "lat": 51.583,
-   "lon": -0.02,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "sing-along",
-    "live band",
-    "music",
-    "group fun",
-    "evening show"
-   ],
-   "blurb": "A sing-along show with a live band where the audience joins in on well-known songs. Doors 8pm at Walthamstow Trades Hall.",
-   "emoji": "🎤",
-   "date": "2026-11-20",
-   "time": "20:00",
-   "url": "https://wegottickets.com/walthamstowtradeshall",
-   "source": "Walthamstow Trades Hall",
-   "id": "ev-mrs-h-and-the-sing-along-band-11-20",
-   "open": "20:00",
-   "part": "evening",
    "hrs": 1,
    "rel": "keep"
   },
@@ -47150,72 +46015,6 @@
    "open": "12:00"
   },
   {
-   "name": "Tai Chi in Windmill Gardens",
-   "area": "Brixton",
-   "lat": 51.4508,
-   "lon": -0.1197,
-   "url": "https://www.brixtonwindmill.org/events/tai-chi-in-windmill-gardens/",
-   "price": "£",
-   "source": "Brixton Windmill",
-   "date": "2026-11-21",
-   "time": null,
-   "in": "out",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 1,
-   "days": [
-    6
-   ],
-   "open": "11:30",
-   "close": "12:30",
-   "tags": [
-    "tai chi",
-    "qi gong",
-    "outdoor",
-    "weekly",
-    "instructor-led"
-   ],
-   "blurb": "Saturday tai chi and qi gong in Windmill Gardens, led by an experienced instructor. Pay what you can. Suits adults of all levels.",
-   "id": "ev-tai-chi-in-windmill-gardens-11-21",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-21/",
-   "price": "free",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-21",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "history",
-    "wwii",
-    "mental health",
-    "exhibition",
-    "raf"
-   ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-21",
-   "open": "10:00",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Family Shakespeare: Pyramus & Thisbe",
    "area": "Marylebone",
    "lat": 51.5233,
@@ -47487,38 +46286,6 @@
    "id": "ev-tool-shed-tool-tribute-11-21",
    "open": "19:30",
    "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Volunteer gardening (Saturday)",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 4,
-   "tags": [
-    "volunteering",
-    "gardening",
-    "community",
-    "wildlife",
-    "outdoors"
-   ],
-   "blurb": "Drop-in group session to help look after the garden's plants and wildlife, meet people and help at events. Stay as long as you like.",
-   "emoji": "🌱",
-   "time": "10:00",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-21",
-   "source": "The Phoenix Garden",
-   "id": "ev-volunteer-gardening-saturday-11-21",
-   "open": "10:00",
    "hrs": 1,
    "rel": "keep"
   },
@@ -48983,42 +47750,6 @@
    "rel": "keep"
   },
   {
-   "name": "Lunchtime Organ Recital",
-   "area": "Borough",
-   "lat": 51.5061,
-   "lon": -0.09,
-   "in": "in",
-   "price": "free",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 0.5,
-   "tags": [
-    "organ recital",
-    "free concert",
-    "lunchtime",
-    "classical music",
-    "quiet break"
-   ],
-   "blurb": "A free 30-minute organ recital, held most Mondays at lunchtime. A calm midday break in the cathedral.",
-   "emoji": "🎹",
-   "date": "2026-11-23",
-   "time": "13:20",
-   "url": "https://cathedral.southwark.anglican.org/whats-on/",
-   "source": "Southwark Cathedral",
-   "id": "ev-lunchtime-organ-recital-11-23",
-   "rel": "keep",
-   "hrs": 1,
-   "days": [
-    1
-   ],
-   "open": "13:20",
-   "part": "afternoon"
-  },
-  {
    "name": "K-Pop Party on the ice",
    "area": "Strand, Somerset House courtyard",
    "lat": 51.511,
@@ -49271,39 +48002,6 @@
    "rel": "keep"
   },
   {
-   "name": "Breathe",
-   "area": "London",
-   "lat": 51.504,
-   "lon": -0.113,
-   "url": "https://www.eventbrite.co.uk/e/breathe-tickets-2002724922154",
-   "price": "free",
-   "source": "St John's Waterloo",
-   "date": "2026-11-23",
-   "time": "6pm",
-   "in": "in",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 0.75,
-   "emoji": "🧘",
-   "tags": [
-    "meditation",
-    "mindfulness",
-    "city",
-    "calm",
-    "church"
-   ],
-   "blurb": "A free 45-minute meditation in the heart of the City, held indoors at St John's Waterloo. Suits adults looking for a quiet break.",
-   "id": "ev-breathe-11-23",
-   "open": "18:00",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Hilary Spencer at Croydon Folk Club",
    "area": "Croydon",
    "lat": 51.368,
@@ -49423,38 +48121,6 @@
    "date": "2026-11-23",
    "source": "St John the Baptist, Wimbledon",
    "id": "ev-wimf-amidst-the-shades-dowland-by-candle-11-23",
-   "open": "19:30",
-   "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "New Moon - A Night of New Music",
-   "area": "Putney",
-   "lat": 51.466,
-   "lon": -0.224,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2.5,
-   "tags": [
-    "new music",
-    "emerging artists",
-    "gig night",
-    "low cost"
-   ],
-   "blurb": "Low-cost night of new music showcasing emerging acts. Tickets just £2.50 in advance, or pay on the door.",
-   "emoji": "🎶",
-   "date": "2026-11-23",
-   "time": "19:30",
-   "url": "https://tickets.halfmoon.co.uk/",
-   "source": "The Half Moon, Putney",
-   "id": "ev-new-moon-a-night-of-new-music-11-23",
    "open": "19:30",
    "part": "evening",
    "hrs": 1,
@@ -49896,73 +48562,6 @@
    "rel": "keep"
   },
   {
-   "name": "Back to Nature",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "out",
-   "price": "£",
-   "ages": [
-    55,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "gardening",
-    "environment",
-    "over 55s",
-    "outdoors",
-    "nature"
-   ],
-   "blurb": "Gardening and environmental activities for people aged 55 and over. Register in advance by emailing Louise Gates at louise@thephoenixgarden.org.uk.",
-   "emoji": "🌿",
-   "time": "12:30",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-24",
-   "source": "The Phoenix Garden",
-   "id": "ev-back-to-nature-11-24",
-   "open": "12:30",
-   "part": "afternoon",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Weekly Older Peoples Group",
-   "area": "Dalston",
-   "lat": 51.5467,
-   "lon": -0.0737,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 2.5,
-   "tags": [
-    "older people",
-    "weekly group",
-    "social",
-    "dalston garden"
-   ],
-   "blurb": "Weekly social group for older people at Dalston Eastern Curve Garden. Cost is not listed on the page, so check the Garden's site before going.",
-   "emoji": "🤝",
-   "days": [
-    2
-   ],
-   "open": "11:00",
-   "close": "13:30",
-   "url": "https://dalstongarden.org/activities/",
-   "date": "2026-11-24",
-   "source": "Dalston Eastern Curve Garden",
-   "id": "ev-weekly-older-peoples-group-11-24",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Lunchtime Piano Recital: William Bracken",
    "area": "Fleet Street, City of London",
    "lat": 51.5137,
@@ -50056,41 +48655,6 @@
    ],
    "open": "19:30",
    "part": "evening",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Social Sewing Drop-in (Beginner/Intermediate)",
-   "area": "Mitcham",
-   "lat": 51.402,
-   "lon": -0.166,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "sewing drop-in",
-    "social making",
-    "beginner friendly",
-    "craft workshop"
-   ],
-   "blurb": "Relaxed drop-in sewing session for beginner and intermediate makers. Bring your own project and enjoy company while you stitch.",
-   "emoji": "🧵",
-   "days": [
-    2
-   ],
-   "time": "10:00",
-   "url": "https://www.thecanonsmitcham.co.uk/events-activities",
-   "date": "2026-11-24",
-   "source": "The Canons, Mitcham",
-   "id": "ev-social-sewing-drop-in-beginner-intermedi-11-24",
-   "open": "10:00",
-   "part": "morning",
    "hrs": 1,
    "rel": "keep"
   },
@@ -50475,37 +49039,6 @@
    "also": []
   },
   {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-25/",
-   "price": "free",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-25",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "history",
-    "wwii",
-    "mental health",
-    "exhibition",
-    "raf"
-   ],
-   "blurb": "Explore the mental health pressures faced by Fighter Command aircrew in WWII through personal stories and the factors that kept morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-25",
-   "open": "10:00",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Meet the Bloggers: Networking for Content Creators",
    "area": "Marylebone",
    "lat": 51.5233,
@@ -50627,37 +49160,6 @@
    "hrs": 1,
    "open": "18:30",
    "part": "evening"
-  },
-  {
-   "name": "Mrs H and the Sing-Along Band",
-   "area": "Walthamstow",
-   "lat": 51.583,
-   "lon": -0.02,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 2,
-   "adults": 2,
-   "dur": 1.5,
-   "tags": [
-    "sing-along",
-    "live music",
-    "morning",
-    "family"
-   ],
-   "blurb": "Another morning sing-along with a live band at Walthamstow Trades Hall. Doors 9:45am, start 10am.",
-   "url": "https://wegottickets.com/walthamstowtradeshall",
-   "date": "2026-11-25",
-   "time": "10:00",
-   "source": "Walthamstow Trades Hall",
-   "id": "ev-mrs-h-and-the-sing-along-band-11-25",
-   "open": "10:00",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
   },
   {
    "name": "Big World Pub Quiz",
@@ -50819,105 +49321,6 @@
    "rel": "keep"
   },
   {
-   "name": "Yoga for 55+",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "both",
-   "price": "£",
-   "ages": [
-    55,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "yoga",
-    "over 55s",
-    "gentle exercise",
-    "wellbeing",
-    "community"
-   ],
-   "blurb": "Gentle yoga session for people aged 55 and over. Check the timetable page for booking details.",
-   "emoji": "🧘",
-   "time": "10:00",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-25",
-   "source": "The Phoenix Garden",
-   "id": "ev-yoga-for-55-11-25",
-   "open": "10:00",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Pilates for 55+",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "both",
-   "price": "£",
-   "ages": [
-    55,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "pilates",
-    "over 55s",
-    "gentle exercise",
-    "wellbeing",
-    "community"
-   ],
-   "blurb": "Pilates session for people aged 55 and over. Check the timetable page for booking details.",
-   "emoji": "🤸",
-   "time": "11:15",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-25",
-   "source": "The Phoenix Garden",
-   "id": "ev-pilates-for-55-11-25",
-   "open": "11:15",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Volunteer gardening (Wednesday)",
-   "area": "Covent Garden",
-   "lat": 51.5144,
-   "lon": -0.1291,
-   "in": "out",
-   "price": "free",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 3,
-   "tags": [
-    "volunteering",
-    "gardening",
-    "community",
-    "wildlife",
-    "outdoors"
-   ],
-   "blurb": "Drop-in volunteer session to look after plants and wildlife in the garden. Stay as long as you like.",
-   "emoji": "🌱",
-   "time": "12:30",
-   "url": "https://www.thephoenixgarden.org/timetable-of-community-events/",
-   "date": "2026-11-25",
-   "source": "The Phoenix Garden",
-   "id": "ev-volunteer-gardening-wednesday-11-25",
-   "open": "12:30",
-   "part": "afternoon",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Sparko's Going Back Home",
    "area": "Walthamstow",
    "lat": 51.583,
@@ -51038,39 +49441,6 @@
    "id": "ev-the-room-in-the-corner-talk-11-25",
    "open": "11:00",
    "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "From Country House to Listening Station Tour",
-   "area": "Cockfosters (Enfield)",
-   "lat": 51.66,
-   "lon": -0.137,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    8,
-    99
-   ],
-   "kids": 1,
-   "adults": 3,
-   "dur": 1,
-   "tags": [
-    "guided tour",
-    "secret listeners",
-    "wwii history",
-    "country house"
-   ],
-   "blurb": "Former BBC analyst Stephen Dalziel covers the house's 1920s country retreat past and its WWII role gathering intel from captured German officers. Regular entry ticket needed.",
-   "emoji": "🏛️",
-   "close": "16:00",
-   "url": "https://trentparkhouse.org.uk/blogs/articles/whats-coming-up-this-november",
-   "date": "2026-11-25",
-   "time": "14:00",
-   "source": "Trent Park House of Secrets",
-   "id": "ev-from-country-house-to-listening-station--11-25",
-   "open": "14:00",
-   "part": "afternoon",
    "hrs": 1,
    "rel": "keep"
   },
@@ -52160,41 +50530,6 @@
    "rel": "keep"
   },
   {
-   "name": "Knit & Stitch Social",
-   "area": "Mitcham",
-   "lat": 51.402,
-   "lon": -0.166,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 3,
-   "dur": 2,
-   "tags": [
-    "knitting social",
-    "craft group",
-    "sustainable merton",
-    "social making"
-   ],
-   "blurb": "Sociable knitting and stitching session run by Sustainable Merton. Bring your current project and join other crafters.",
-   "emoji": "🧶",
-   "days": [
-    4
-   ],
-   "time": "10:00",
-   "url": "https://www.thecanonsmitcham.co.uk/events-activities",
-   "date": "2026-11-26",
-   "source": "The Canons, Mitcham",
-   "id": "ev-knit-stitch-social-11-26",
-   "open": "10:00",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Anna Howie Band",
    "area": "Putney",
    "lat": 51.466,
@@ -52653,41 +50988,6 @@
    "rel": "keep"
   },
   {
-   "name": "Pilates",
-   "area": "Brixton",
-   "lat": 51.4508,
-   "lon": -0.1197,
-   "url": "https://www.brixtonwindmill.org/events/pilates-for-50/",
-   "price": "£",
-   "source": "Brixton Windmill",
-   "date": "2026-11-27",
-   "time": null,
-   "in": "in",
-   "ages": [
-    16,
-    99
-   ],
-   "kids": 0,
-   "adults": 1,
-   "dur": 1,
-   "emoji": "🧘",
-   "days": [
-    5
-   ],
-   "open": "12:00",
-   "close": "13:00",
-   "tags": [
-    "pilates",
-    "beginners class",
-    "mats supplied",
-    "free refreshments"
-   ],
-   "blurb": "Weekly beginners' pilates in a warm, friendly room. Pay what you can, with £5 suggested. Mats provided and refreshments after class. Places are limited, first come, first served.",
-   "id": "ev-pilates-11-27",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Linda Moylan Band",
    "area": "Westcombe Park / Blackheath",
    "lat": 51.481,
@@ -52842,38 +51142,6 @@
    "rel": "keep"
   },
   {
-   "name": "Flying Stress Temporary Exhibition",
-   "area": "Stanmore",
-   "lat": 51.6147,
-   "lon": -0.327,
-   "url": "https://bentleypriorymuseum.org.uk/whats-on/flying-stress-temporary-exhibition-2/2026-11-27/",
-   "price": "£",
-   "source": "Bentley Priory Museum",
-   "date": "2026-11-27",
-   "time": "10am",
-   "in": "in",
-   "ages": [
-    12,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1,
-   "emoji": "🖼️",
-   "tags": [
-    "wwii",
-    "mental health",
-    "raf aircrew",
-    "temporary exhibition"
-   ],
-   "blurb": "Explore the mental health pressures on Fighter Command aircrew in the Second World War through personal stories and what kept their morale going.",
-   "id": "ev-flying-stress-temporary-exhibition-11-27",
-   "open": "10:00",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "Christmas Light Switch On",
    "area": "Chelsea",
    "lat": 51.4826,
@@ -53007,41 +51275,6 @@
    "rel": "keep"
   },
   {
-   "name": "Hackney Dudes",
-   "area": "Dalston",
-   "lat": 51.5467,
-   "lon": -0.0737,
-   "in": "both",
-   "price": "free",
-   "ages": [
-    18,
-    99
-   ],
-   "kids": 0,
-   "adults": 2,
-   "dur": 2,
-   "tags": [
-    "community group",
-    "social morning",
-    "friday",
-    "dalston garden"
-   ],
-   "blurb": "Friday morning community group at Dalston Eastern Curve Garden. Cost is not listed on the page, so check the Garden's site before going.",
-   "emoji": "☕",
-   "days": [
-    5
-   ],
-   "open": "11:00",
-   "close": "13:00",
-   "url": "https://dalstongarden.org/activities/",
-   "date": "2026-11-27",
-   "source": "Dalston Eastern Curve Garden",
-   "id": "ev-hackney-dudes-11-27",
-   "part": "morning",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
    "name": "An Evening with LAMBCHOP: Night One",
    "area": "Islington",
    "lat": 51.5437,
@@ -53166,39 +51399,6 @@
    "id": "ev-lunchtime-organ-recital-callum-anderson-11-27",
    "open": "13:15",
    "part": "afternoon",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Play: Make: Art",
-   "area": "Twickenham",
-   "lat": 51.4459,
-   "lon": -0.3196,
-   "in": "in",
-   "price": "£",
-   "ages": [
-    3,
-    8
-   ],
-   "kids": 3,
-   "adults": 1,
-   "dur": 1.5,
-   "tags": [
-    "family",
-    "art",
-    "making",
-    "craft",
-    "hands-on"
-   ],
-   "blurb": "Hands-on art-making session for children with a grown-up. Check the event page for booking and what materials are provided.",
-   "emoji": "🎨",
-   "days": [
-    5
-   ],
-   "url": "https://orleanshousegallery.org/whats-on/",
-   "date": "2026-11-27",
-   "source": "Orleans House Gallery",
-   "id": "ev-play-make-art-11-27",
    "hrs": 1,
    "rel": "keep"
   },

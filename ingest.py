@@ -208,6 +208,8 @@ def harvest_html(venue, horizon, log=None):
     prompt = f"""Extract things to do in London from this listings page for a weekend-planning app.
 Source: {venue['name']} ({final}). Today is {dt.date.today()}; include only events between today and {horizon}.
 Skip permanent attractions, online events, anything outside Greater London, anything without a usable date.
+Regular sessions the public can join (a weekly class, club, quiz, choir, open studio, baby group) count too: list each ONCE with
+"regular": true, "days": the weekday(s) it runs, "time", and "from"/"to" for the term or season (if no end is given, the next 3 months).
 If the venue is a single place, use lat {venue['lat']}, lon {venue['lon']}; otherwise estimate the venue's coordinates.
 Return ONLY a JSON array of at most 40 events, most relevant first.
 {SCHEMA}
@@ -267,6 +269,8 @@ def norm_dates(e, today):
 def valid(e, today, horizon):
     try:
         norm_dates(e, today)
+        if e.get("regular") and e.get("days") and not (e.get("date") or e.get("to")):     # a regular with no end: the next 3 months
+            e.setdefault("from", today.isoformat()); e["to"] = (today + dt.timedelta(days=90)).isoformat()
         if not (LONDON["lat"][0] <= float(e["lat"]) <= LONDON["lat"][1] and LONDON["lon"][0] <= float(e["lon"]) <= LONDON["lon"][1]): return False
         if e.get("in") not in ("in", "out", "both") or e.get("price") not in ("free", "£", "££"): return False
         if not e.get("name") or not e.get("blurb") or not str(e.get("url", "")).startswith("http"): return False

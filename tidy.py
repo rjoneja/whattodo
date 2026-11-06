@@ -54,6 +54,25 @@ for kb, ka in fold.items():
     while ka in fold: ka = fold[ka]
     groups[ka] += groups.pop(kb)
 if fold: print(f"tidy: {len(fold)} listings under longer/shorter names merged", file=sys.stderr)
+# the same session listed once per date ("Pilates" every Tuesday, a show every night): one listing with its dates
+def spot(e): return f"{round(float(e.get('lat', 0)) / 0.003)}:{round(float(e.get('lon', 0)) / 0.0045)}"
+series = {}
+for k, g in list(groups.items()):
+    e0 = g[0]
+    if e0.get("date") and not e0.get("dates"):
+        series.setdefault((namekey(e0, brackets=False), e0.get("source", ""), spot(e0)), []).append(k)
+joined = 0
+for sk, ks in series.items():
+    if len(ks) < 3: continue
+    ks.sort(key=lambda k: groups[k][0]["date"]); first = ks[0]
+    ds = sorted({groups[k][0]["date"] for k in ks})
+    for k in ks[1:]: groups[first] += groups.pop(k)
+    for e in groups[first]:
+        e["dates"] = ds; e.pop("date", None); e["from"], e["to"] = ds[0], ds[-1]
+        wd = {__import__("datetime").date.fromisoformat(d).weekday() for d in ds}
+        if len(wd) <= 2: e["regular"] = True
+    joined += len(ks) - 1
+if joined: print(f"tidy: {joined} repeat listings folded into their series", file=sys.stderr)
 merged = []
 for g in groups.values():
     g.sort(key=richness, reverse=True); best = dict(g[0])

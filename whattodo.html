@@ -823,7 +823,7 @@ function distPen(mins){ const R=REACH0+reach*REACH_STEP; return -(mins/15) - (mi
 // so the card you can see coming up is the card you get
 function rerank(keep){ deck.forEach(x=>{ const p=distPen(x.cost??x.mins??30); x.score+=p-(x.dpen||0); x.dpen=p; });
   const k=Math.min(keep||0,deck.length), head=deck.slice(0,k), rest=deck.slice(k);
-  deck=[...head,...diversify(rest.sort((a,b)=>b.score-a.score))]; }
+  deck=[...head,...mixIn(diversify(rest.sort((a,b)=>b.score-a.score)))]; }
 function openOn(it){ const d=fromIso(setup.date); if(it.days&&!it.days.includes(d.getDay())) return false; if(it.months&&!it.months.includes(d.getMonth()+1)) return false; return true; }
 let IMAGES={};
 async function loadImages(){ if(Object.keys(IMAGES).length) return; try{const r=await fetch('images.json',{cache:'no-store'}); if(r.ok) IMAGES=await r.json()}catch(e){} }
@@ -862,6 +862,13 @@ function stillOn(it,mins){
 const STOP=new Set(['london','event','events','sunday','saturday','weekend','family','families','festival','special','annual','street','centre','museum','gallery','free','park','day','days','tour','tours','november','december','october','with','from','your','their','great','winter','summer','autumn','spring','open','opening','evening','morning','night','late','lates']);
 function terms(x){ return new Set((x.name||'').toLowerCase().replace(/[^a-z ]/g,' ').split(/\s+/).filter(w=>w.length>=5&&!STOP.has(w))); }
 function similar(a,b){ const A=terms(a),B=terms(b); for(const w of A) if(B.has(w)) return true; return false; }
+// One-offs lead, but at least one in every five cards is a mainstay (an everyday place or a regular session) that suits you
+function isMain(x){ if(!x.event||x.regular) return true; if(x.from&&x.to&&!x.dates) return (fromIso(x.to)-fromIso(x.from))/864e5>45; return false; }
+function mixIn(list){ const out=[], rest=list.slice(); let since=0;
+  while(rest.length){ let i=0;
+    if(since>=4&&!isMain(rest[0])){ const j=rest.findIndex(isMain); if(j>0&&rest[j].score>-8) i=j; }
+    const [x]=rest.splice(i,1); out.push(x); since=isMain(x)?0:since+1; }
+  return out; }
 function diversify(list,n=60){
   // greedy re-rank: each pick costs later look-alikes 2.5 points, so four Remembrance services don't stack up
   const pool=list.slice(), out=[];
@@ -886,7 +893,7 @@ async function buildDeck(){
   const special=deck.filter(x=>x.event&&(x.date||(x.to&&(fromIso(x.to)-fromIso(setup.date))/864e5<=30)));
   deck.forEach(x=>{ if(!x.event && special.some(e=>km(e.lat,e.lon,x.lat,x.lon)<0.4)) x.score-=4; });
   deck.sort((a,b)=>b.score-a.score);
-  deck=diversify(deck);
+  deck=mixIn(diversify(deck));
   // drop near-duplicates (same event listed by two sources, or singular/plural titles)
   const seenKeys=new Set();
   deck=deck.filter(x=>{const k=x.name.toLowerCase().replace(/\(.*?\)/g,'').replace(/[^a-z0-9 ]/g,'').replace(/s\b/g,'').trim().split(/\s+/).slice(0,4).join(' ')+'|'+(x.date||x.from||'');
@@ -971,7 +978,8 @@ function cardHTML(c){
     badges.push(`<span class="badge warn">${dn}${hl?' · '+hl.replace(/^(Morning|Evening) · /,''):' only'}</span>`); }
   if(c.months) badges.push(`<span class="badge warn">Seasonal</span>`);
   if(c.ages&&c.ages[1]<99) badges.push(`<span class="badge good">Ages ${c.ages[0]}–${c.ages[1]}</span>`);
-  if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(Array.isArray(c.dates)&&c.dates.length){ const fut=c.dates.filter(x=>x>setup.date);
+  if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(Array.isArray(c.dates)&&c.dates.length&&everyText(c)){ badges.push(`<span class="badge">${everyText(c)}${c.time?' · '+escH(String(c.time).slice(0,12)):''}</span>`); }
+    else if(Array.isArray(c.dates)&&c.dates.length){ const fut=c.dates.filter(x=>x>setup.date);
       badges.push(fut.length?`<span class="badge">Also ${datesText(fut)}</span>`:`<span class="badge hot">Last date</span>`); }
     else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5), isToday=setup.date===iso(new Date());
       badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left===1&&isToday?'Ends tomorrow':left<=7&&isToday?'Ends in '+left+' days':left<=7?'Ends '+nice(fromIso(c.to)):'Until '+nice(fromIso(c.to))}</span>`)} }
@@ -1267,6 +1275,9 @@ const fold=t=>(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').repl
 async function openSearch(){ await Promise.all([loadEvents(),loadImages()]);
   if(!FOLLOWED) fetch('/followed.json',{cache:'no-cache'}).then(r=>r.ok?r.json():[]).then(j=>{FOLLOWED=j;runSearch()}).catch(()=>FOLLOWED=[]);
   const q=$('#q'); setTimeout(()=>q.focus(),60); runSearch(); }
+// a regular weekly session: "Every Fri" / "Every Tue & Sat" (only when the dates really repeat on those weekdays)
+function everyText(c){ if(!c.regular||!Array.isArray(c.dates)||c.dates.length<3) return ''; const W=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const wd=[...new Set(c.dates.map(d=>fromIso(d).getDay()))]; if(wd.length>2) return ''; return 'Every '+wd.sort((a,b)=>((a+6)%7)-((b+6)%7)).map(d=>W[d]).join(' & '); }
 // "15 Nov, 12–13 Dec": separate dates, runs of days joined, at most three groups
 function datesText(ds){ const g=[]; for(const d of ds){ const t=fromIso(d), last=g[g.length-1];
     if(last&&(t-last.b)/864e5===1&&t.getMonth()===last.b.getMonth()) last.b=t; else g.push({a:t,b:t}); }
