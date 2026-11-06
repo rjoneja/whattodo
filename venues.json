@@ -8378,6 +8378,28 @@
    "feed": "rss",
    "feed_url": "https://bermondseystreet.london/feed/",
    "has_rss": "https://bermondseystreet.london/feed/"
+  },
+  {
+   "id": "stationhallhernehill",
+   "name": "Station Hall Herne Hill",
+   "area": "Herne Hill",
+   "borough": "Lambeth",
+   "lat": 51.4535,
+   "lon": -0.1023,
+   "url": "https://www.stationhallhernehill.org/whats-on",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "note": "Community hall above Herne Hill station: makers' markets, family cinema, workshops, Santa, classes.",
+   "added": "2026-11-06"
   }
  ]
 }
