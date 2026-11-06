@@ -36073,13 +36073,20 @@
    "blurb": "An exciting science theatre show blasting off through space and answering big questions about the Universe. £8 per person, shows at 11:30 and 13:30.",
    "emoji": "🚀",
    "from": "2026-11-14",
-   "to": "2026-11-15",
+   "to": "2026-12-13",
    "url": "https://www.rmg.co.uk/whats-on",
    "source": "Royal Museums Greenwich",
    "id": "ev-unboxing-the-universe-11-14",
    "rel": "keep",
    "hrs": 1,
-   "lk": 1
+   "lk": 1,
+   "dates": [
+    "2026-11-14",
+    "2026-11-15",
+    "2026-12-12",
+    "2026-12-13"
+   ],
+   "time": "11:30 & 13:30"
   },
   {
    "name": "Santa's Grotto at the Queen's House",

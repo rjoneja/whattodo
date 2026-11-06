@@ -34,7 +34,9 @@ SCHEMA = """Each event is a JSON object:
  "dur": hours, "parking": short note only if the venue states it, e.g. "car park on site" / "no parking" (else omit), "tags": [3-5 lowercase words], "blurb": own words, max 35 words, practical,
  "emoji": one emoji for what the thing IS, not where it happens (a space science show → 🚀, a book talk → 📚, a carol concert → 🎄),
  "days": weekday names e.g. ["Sun"] ONLY if it runs on some weekdays but not others, "open"/"close": "HH:MM" opening hours or start/end ONLY if stated,
- "url": the event's own page, then EITHER "date": "YYYY-MM-DD" (+ optional "time") OR "from"/"to": "YYYY-MM-DD"."""
+ "url": the event's own page, then EITHER "date": "YYYY-MM-DD" (+ optional "time") OR "from"/"to": "YYYY-MM-DD".
+ If it runs on several separate days rather than every day in a span (e.g. "Sat 14 & Sun 15 Nov, Sat 12 & Sun 13 Dec"), also give
+ "dates": every one of those days as "YYYY-MM-DD", including ones further ahead, with "from"/"to" the first and last of them."""
 
 # ---------- fetch ----------
 def get(url):
@@ -251,8 +253,20 @@ def carry(old, new):
     return new
 
 # ---------- validate / merge ----------
+def norm_dates(e, today):
+    """A list of separate dates becomes the listing's own days: sorted, past ones dropped, from/to set to the first and last."""
+    ds = e.get("dates")
+    if not isinstance(ds, list): e.pop("dates", None); return
+    ds = sorted({str(d)[:10] for d in ds if re.match(r"\d{4}-\d{2}-\d{2}$", str(d)[:10]) and str(d)[:10] >= today.isoformat()})
+    if len(ds) < 2:
+        e.pop("dates", None)
+        if ds and not e.get("date"): e.pop("from", None); e.pop("to", None); e["date"] = ds[0]
+        return
+    e["dates"] = ds; e.pop("date", None); e["from"], e["to"] = ds[0], ds[-1]
+
 def valid(e, today, horizon):
     try:
+        norm_dates(e, today)
         if not (LONDON["lat"][0] <= float(e["lat"]) <= LONDON["lat"][1] and LONDON["lon"][0] <= float(e["lon"]) <= LONDON["lon"][1]): return False
         if e.get("in") not in ("in", "out", "both") or e.get("price") not in ("free", "£", "££"): return False
         if not e.get("name") or not e.get("blurb") or not str(e.get("url", "")).startswith("http"): return False

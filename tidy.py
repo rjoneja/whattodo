@@ -62,6 +62,8 @@ for g in groups.values():
             if not best.get(f) and o.get(f): best[f] = o[f]
         if o.get("from") and best.get("from"): best["from"] = min(best["from"], o["from"])
         if o.get("to") and best.get("to"): best["to"] = max(best["to"], o["to"])
+        if o.get("dates") or best.get("dates"):                 # separate dates from two sources: keep them all
+            best["dates"] = sorted(set(best.get("dates") or []) | set(o.get("dates") or []))
     prices = {o.get("price") for o in g}
     if best.get("price") == "free" and prices & {"£", "££"} and richness(best)[0] < 2:
         best["price"] = "£" if "£" in prices else "££"          # an aggregator says free but someone says ticketed: don't overpromise

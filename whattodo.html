@@ -800,10 +800,12 @@ function score(it,mins){
     // scarcity: the fewer chances left to go, the bigger the boost
     let left;
     if(it.date) left=1;
+    else if(Array.isArray(it.dates)&&it.dates.length){ const rest=it.dates.filter(x=>x>=setup.date); left=rest.length<=1?1:Math.max(2,Math.round((fromIso(rest[rest.length-1])-fromIso(setup.date))/864e5)+1); }
     else { const end=it.to?fromIso(it.to):null; left=end?Math.max(1,Math.round((end-fromIso(setup.date))/864e5)+1):365; }
     const boost = left<=1 ? 6 : left<=3 ? 5 : left<=7 ? 4.2 : left<=14 ? 3.4 : left<=30 ? 2.6 : left<=90 ? 1.6 : 0.8;
     s+=boost;
-    why.push(it.date?'one day only':left<=1?'last day':left===2?'ends tomorrow':left<=7?'ends in '+(left-1)+' days':left<=30?'on for a limited time':'temporary');
+    const today_=setup.date===iso(new Date()), multi=Array.isArray(it.dates)&&it.dates.length;
+    why.push(it.date?'one day only':multi?(left<=1?'last date':'only on certain days'):left<=1?'last day':left===2&&today_?'ends tomorrow':left<=7&&today_?'ends in '+(left-1)+' days':left<=7?'ends soon':left<=30?'on for a limited time':'temporary');
   }
   if(mins<=12) why.push('on your doorstep'); else if(mins<=22) why.push('close by');
   s+=Math.random()*0.5;
@@ -829,7 +831,7 @@ function linkFor(c){ const a=affOf(c.url||''); if(!a) return {url:c.url,aff:fals
   if(a.wrap) return {url:a.wrap.replace('{u}',encodeURIComponent(c.url)),aff:a.host};
   const u=new URL(c.url); for(const [k,v] of new URLSearchParams(a.append)) u.searchParams.set(k,v); return {url:u.toString(),aff:a.host}; }
 async function loadEvents(){ if(EVENTS.length) return; try{const r=await fetch('events.json',{cache:'no-store'}); if(r.ok){const j=await r.json(); EVENTS=(j.events||[]).map(e=>Object.assign({event:true},e))}}catch(e){} }
-function eventOn(e){ const d=setup.date; if(e.date) return e.date===d; if(e.from&&d<e.from) return false; if(e.to&&d>e.to) return false; return openOn(e); }
+function eventOn(e){ const d=setup.date; if(e.date) return e.date===d; if(Array.isArray(e.dates)&&e.dates.length) return e.dates.includes(d); if(e.from&&d<e.from) return false; if(e.to&&d>e.to) return false; return openOn(e); }
 // When in the day something is on, in minutes after midnight: from stated hours, else from a time like "10am–5pm" or "12:00"
 function toMin(t){ const m=/^\s*(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)?/i.exec(t||''); if(!m) return null; let h=+m[1]; const ap=(m[3]||'').toLowerCase();
   if(ap==='pm'&&h<12) h+=12; if(ap==='am'&&h===12) h=0; return h<24?h*60+(+m[2]||0):null; }
@@ -966,7 +968,10 @@ function cardHTML(c){
     badges.push(`<span class="badge warn">${dn}${hl?' · '+hl.replace(/^(Morning|Evening) · /,''):' only'}</span>`); }
   if(c.months) badges.push(`<span class="badge warn">Seasonal</span>`);
   if(c.ages&&c.ages[1]<99) badges.push(`<span class="badge good">Ages ${c.ages[0]}–${c.ages[1]}</span>`);
-  if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5); badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left===1?'Ends tomorrow':left<=7?'Ends in '+left+' days':'Until '+nice(fromIso(c.to))}</span>`)} }
+  if(c.event){ if(c.date) badges.push(`<span class="badge hot">${nice(fromIso(c.date))}${c.time?' · '+c.time:''}</span>`); else if(Array.isArray(c.dates)&&c.dates.length){ const fut=c.dates.filter(x=>x>setup.date);
+      badges.push(fut.length?`<span class="badge">Also ${datesText(fut)}</span>`:`<span class="badge hot">Last date</span>`); }
+    else if(c.to){const left=Math.round((fromIso(c.to)-fromIso(setup.date))/864e5), isToday=setup.date===iso(new Date());
+      badges.push(`<span class="badge ${left<=7?'hot':''}">${left<=0?'Last day':left===1&&isToday?'Ends tomorrow':left<=7&&isToday?'Ends in '+left+' days':left<=7?'Ends '+nice(fromIso(c.to)):'Until '+nice(fromIso(c.to))}</span>`)} }
   if(status[c.id]==='again') badges.push(`<span class="badge good">You'd go again</span>`);
   const why=c.why.length?`<p class="why"><b>Why this:</b> ${c.why.slice(0,2).join(' · ')}</p>`:'';
   // a real photo only when it shows this exact thing (a named exhibition, a place); otherwise our own illustration for the subject
@@ -1224,7 +1229,7 @@ function renderMapSel(pts){
   const sel=pts.find(p=>p.id===mapSelId); const box=$('#mapSel');
   if(!sel){box.hidden=true;return}
   box.hidden=false; const st=status[sel.id];
-  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ${travelLabel(sel)}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
+  box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ${travelLabel(sel)}${sel.event?' · '+whenText(sel):''}</span><span class="m">${sel.blurb}</span>
     <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${linkFor(sel).url}" target="_blank" rel="${linkFor(sel).aff?'sponsored noopener':'noopener'}" data-det="${sel.id}" data-from="map">${linkFor(sel).aff?'Tickets':'Details'} ›</a><a class="mini" href="https://www.google.com/maps/dir/?api=1&destination=${sel.lat},${sel.lon}&travelmode=${({drive:'driving',cycle:'bicycling',walk:'walking'})[sel.how]||'transit'}" target="_blank" rel="noopener">Directions ›</a></div>`;
   box.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{status[sel.id]=b.dataset.ms;save();track('map_action',{id:sel.id,kind:b.dataset.ms});deck=deck.filter(d=>d.id!==sel.id);renderMap();renderStack();toast(b.dataset.ms==='saved'?'Saved ♥':'Ticked off')});
 }
@@ -1259,8 +1264,15 @@ const fold=t=>(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').repl
 async function openSearch(){ await Promise.all([loadEvents(),loadImages()]);
   if(!FOLLOWED) fetch('/followed.json',{cache:'no-cache'}).then(r=>r.ok?r.json():[]).then(j=>{FOLLOWED=j;runSearch()}).catch(()=>FOLLOWED=[]);
   const q=$('#q'); setTimeout(()=>q.focus(),60); runSearch(); }
+// "15 Nov, 12–13 Dec": separate dates, runs of days joined, at most three groups
+function datesText(ds){ const g=[]; for(const d of ds){ const t=fromIso(d), last=g[g.length-1];
+    if(last&&(t-last.b)/864e5===1&&t.getMonth()===last.b.getMonth()) last.b=t; else g.push({a:t,b:t}); }
+  const M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const txt=g.slice(0,3).map(x=>x.a===x.b?x.a.getDate()+' '+M[x.a.getMonth()]:x.a.getDate()+'–'+x.b.getDate()+' '+M[x.b.getMonth()]).join(', ');
+  return txt+(g.length>3?' + more':''); }
 function whenText(e){ const today=iso(new Date());
   if(e.date) return nice(fromIso(e.date))+(e.time?' · '+e.time:'');
+  if(Array.isArray(e.dates)&&e.dates.length){ const fut=e.dates.filter(x=>x>=today); return fut.length?datesText(fut):'Over'; }
   const dn=e.days?(e.days.length===1?['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][e.days[0]]+'s ':''):'';
   if(e.to) return dn+(e.from&&e.from>today?'from '+nice(fromIso(e.from))+' ':'')+'until '+nice(fromIso(e.to));
   return dn?dn.trim():'Most days'; }
