@@ -2,7 +2,7 @@
 //  - the app posts small batches of usage events; the private dashboard reads totals with a key
 //  - organisers submit events; a GitHub job writes them up; Raj approves each by email (signed links)
 const ORIGINS = ["https://www.jauntout.com", "https://jauntout.com", "https://jauntout.pages.dev"];
-const TYPES = new Set(["visit", "share", "share_open", "swipe", "setup_done", "trip_open", "trip_pick", "map_action", "save", "undo", "search", "details", "directions", "dwell"]);
+const TYPES = new Set(["visit", "share", "share_open", "swipe", "setup_done", "trip_open", "trip_pick", "map_action", "save", "undo", "search", "details", "directions", "dwell", "place"]);
 const clip = (x, n = 60) => (x == null ? null : String(x).slice(0, n));
 const londonDay = ms => new Date(ms).toLocaleDateString("en-CA", { timeZone: "Europe/London" });
 
@@ -35,7 +35,7 @@ async function summary(req, env) {
   const days = Math.min(90, Math.max(7, +new URL(req.url).searchParams.get("days") || 30));
   const since = londonDay(Date.now() - (days - 1) * 864e5);
   const q = (sql, ...p) => env.DB.prepare(sql).bind(...p).all().then(r => r.results);
-  const [daily, firsts, types, swipes, who, modes, shareWho, opens, topSaved, topShared, returning, total, searches, misses, details, topDetails, dwell, visitLen, directions] = await Promise.all([
+  const [daily, firsts, types, swipes, who, modes, shareWho, opens, topSaved, topShared, returning, total, searches, misses, details, topDetails, dwell, visitLen, directions, places, boroughs] = await Promise.all([
     q("SELECT day, COUNT(DISTINCT dev) AS phones, SUM(t='visit') AS visits, SUM(t='share') AS shares, SUM(t='share_open') AS opens FROM ev WHERE day >= ? GROUP BY day ORDER BY day", since),
     q("SELECT first AS day, COUNT(*) AS n FROM (SELECT dev, MIN(day) AS first FROM ev GROUP BY dev) WHERE first >= ? GROUP BY first", since),
     q("SELECT t, COUNT(*) AS n FROM ev WHERE day >= ? GROUP BY t ORDER BY n DESC", since),
@@ -56,9 +56,11 @@ async function summary(req, env) {
     q(`SELECT CASE WHEN s < 30 THEN '1 under 30s' WHEN s < 120 THEN '2 30s–2 min' WHEN s < 300 THEN '3 2–5 min' WHEN s < 900 THEN '4 5–15 min' ELSE '5 15 min+' END AS band,
          COUNT(*) AS n, CAST(AVG(s) AS INTEGER) AS avg, SUM(s) AS total FROM (SELECT id, SUM(CAST(b AS INTEGER)) AS s FROM ev WHERE day >= ? AND t='dwell' GROUP BY id) GROUP BY band ORDER BY band`, since),
     q("SELECT COUNT(*) AS n FROM ev WHERE day >= ? AND t='directions'", since),
+    q("SELECT a AS pc, MIN(b) AS ll, MAX(id) AS borough, COUNT(DISTINCT dev) AS phones, COUNT(*) AS visits FROM ev WHERE day >= ? AND t='place' GROUP BY a ORDER BY phones DESC, visits DESC LIMIT 60", since),
+    q("SELECT COALESCE(id,'(postcode district only)') AS borough, COUNT(DISTINCT dev) AS phones FROM ev WHERE day >= ? AND t='place' GROUP BY id ORDER BY phones DESC", since),
   ]);
   return json(req, { days, since, daily, firsts, types, swipes, who, modes, shareWho, opens, topSaved, topShared, searches, misses, details, topDetails, dwell, visitLen,
-                     directions: directions[0]?.n || 0,
+                     directions: directions[0]?.n || 0, places, boroughs,
                      returning: returning[0]?.n || 0, phones: total[0]?.phones || 0 });
 }
 

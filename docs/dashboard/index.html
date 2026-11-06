@@ -86,6 +86,13 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--ink-2);font-size:13px
       <div class="panel"><table id="topShared"></table></div>
     </div>
 
+    <h2>Where people are</h2>
+    <p class="sub" style="color:var(--ink-3);font-size:13px;margin:-4px 0 10px">From the postcode people type in, by district only (e.g. SE4). "Nearby ideas" counts events listed now within about 2.5 km of the district's centre: thin areas need more local sources.</p>
+    <div class="cols">
+      <div class="panel"><table id="placesT"></table></div>
+      <div class="panel"><table id="boroughsT"></table></div>
+    </div>
+
     <h2>Time and taps</h2>
     <div class="tiles" id="tiles3"></div>
     <div class="cols" style="margin-top:10px">
@@ -138,6 +145,7 @@ $('#out').onclick=()=>{ store.set('wtd.dashkey',null); showLogin(); };
 $('#range').querySelectorAll('button').forEach(b=>b.onclick=()=>{ days=+b.dataset.d; $('#range').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); load(); });
 
 async function load(){
+  if(!window.__EV){ try{ window.__EV=(await (await fetch('/events.json',{cache:'no-cache'})).json()).events||[]; }catch(e){ window.__EV=[]; } }
   let r; try{ r=await fetch(URL0+'/summary?days='+days,{headers:{authorization:'Bearer '+store.get('wtd.dashkey')}}); }catch(e){ $('#err').textContent='Couldn’t reach the stats script.'; return; }
   if(r.status===401){ store.set('wtd.dashkey',null); return showLogin('That password didn’t work.'); }
   const S=await r.json(); $('#login').hidden=true; $('#main').hidden=false; $('#out').hidden=false; $('#err').textContent='';
@@ -156,6 +164,11 @@ function render(S){
   tiles('#tiles2',[[shares,'Shares','WhatsApp button pressed'],[opens,'Opened','shared links tapped'],[shares?Math.round(100*opens/shares)+'%':'—','Open rate','opens per share']]);
   table('#shareWho','Shared by',S.shareWho.map(x=>[lab(x.who),x.n]),'Shares');
   table('#topShared','Most shared',S.topShared.map(x=>[names[x.id]||x.id,x.n]),'Shares');
+  const EV=window.__EV||[], km=(a,b,c,d)=>6371*Math.hypot((c-a)*Math.PI/180,(d-b)*Math.PI/180*Math.cos(a*Math.PI/180));
+  const near=ll=>{ const [la,lo]=String(ll||'').split(',').map(Number); if(!la) return '—'; const n=EV.filter(e=>km(la,lo,+e.lat,+e.lon)<2.5).length; return n<20?n+' ⚠':String(n); };
+  $('#placesT').innerHTML='<tr><th>District</th><th style="text-align:right">Phones</th><th style="text-align:right">Nearby ideas</th></tr>'+((S.places||[]).length?(S.places||[]).map(x=>
+    `<tr><td>${esc(x.pc)}<small style="color:var(--ink-3)"> ${esc(x.borough||'')}</small></td><td class="v">${x.phones}</td><td class="v">${near(x.ll)}</td></tr>`).join(''):'<tr><td colspan="3" style="color:var(--ink-3)">No visits with a postcode yet</td></tr>');
+  table('#boroughsT','Borough',(S.boroughs||[]).map(x=>[x.borough,x.phones]),'Phones');
   const mins=s=>s<90?Math.round(s)+'s':s<5400?Math.round(s/60)+' min':(s/3600).toFixed(1)+' h';
   const VL={deck:'Ideas (swiping)',map:'Map',list:'My list',setup:'Who & when',search:'Search',journey:'Journey sheet'};
   const vl=S.visitLen||[], visits=sum(vl,'n'), vtotal=sum(vl,'total'), dtaps=sum(S.details||[],'n');

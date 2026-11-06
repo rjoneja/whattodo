@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='49d38a9f9a';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='c35db52392';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -511,7 +511,7 @@ const STAT_MAP={  // what's sent: event → [a, b, id]
   visit:d=>[d.via,d.ret?'returning':'new',null], share:d=>[d.who,d.event?'event':'place',d.id], share_open:d=>[d.via,null,d.id],
   swipe:d=>[d.kind,d.how,d.id], setup_done:d=>[d.who,d.mode,null], trip_open:d=>[null,null,d.id], trip_pick:d=>[d.kind,null,d.id],
   map_action:d=>[d.kind,null,d.id], undo:d=>[null,null,d.id], search:d=>[d.q,String(d.n),d.f?'1':null],
-  details:d=>[d.from,d.event?'event':'place',d.id], directions:d=>[null,null,d.id], dwell:d=>[d.view,String(d.secs),d.sess] };
+  details:d=>[d.from,d.event?'event':'place',d.id], directions:d=>[null,null,d.id], dwell:d=>[d.view,String(d.secs),d.sess], place:d=>[d.pc,d.ll,d.borough] };
 // Time on each screen. Counts only while the page is visible and someone has touched it in the last 2 minutes;
 // sent as one "dwell" per screen per visit when the page is hidden (that's also the visit's end).
 const SESS=Math.random().toString(36).slice(2,10); let curView='setup', dwellOn=null, dwellT0=0, lastAct=Date.now(); const dwellSum={};
@@ -610,7 +610,7 @@ $('#go').onclick=async()=>{
   b.disabled=false;b.innerHTML='Show me things <span>›</span>';
   // refine to the full postcode when the network allows (hosted version); silent if blocked
   if(pc.full){try{const r=await fetch('https://api.postcodes.io/postcodes/'+encodeURIComponent(pc.full.replace(/\s+/g,'')));const j=await r.json();
-    if(j.status===200){setup.lat=j.result.latitude;setup.lon=j.result.longitude;setup.place=(j.result.admin_ward||pc.out);setup.precise=true;save();travelCache={};deck.forEach(c=>{Object.assign(c,trip(c),{est:true})});renderStrip();renderStack()}}catch(e){}}
+    if(j.status===200){setup.lat=j.result.latitude;setup.lon=j.result.longitude;setup.place=(j.result.admin_ward||pc.out);setup.borough=j.result.admin_district||null;setup.precise=true;save();travelCache={};deck.forEach(c=>{Object.assign(c,trip(c),{est:true})});renderStrip();renderStack()}}catch(e){}}
 };
 
 /* ---------- WEATHER + TRAVEL ---------- */
@@ -859,6 +859,7 @@ function diversify(list,n=60){
   }
   return out.concat(pool);
 }
+let placeSent=false;
 async function buildDeck(){
   reach=0;
   await Promise.all([getWeather(),loadEvents(),loadImages()]);
@@ -880,6 +881,9 @@ async function buildDeck(){
   undoStack=[];
   renderStrip(); renderStack();
   track('deck_built',{n:deck.length,wx:wx&&wx.word});
+  // where people are, coarsely: the postcode district (e.g. SE4) and its centre, never the full postcode or exact spot
+  if(!placeSent&&setup.pc&&!setup.guest){ const oc=String(setup.pc).toUpperCase().replace(/\s+/g,' ').split(' ')[0]; const c=OUTCODES[oc];
+    if(c){ placeSent=true; track('place',{pc:oc,ll:c[0].toFixed(3)+','+c[1].toFixed(3),borough:setup.borough||null}); } }
 }
 
 /* ---------- DECK UI ---------- */
