@@ -8488,6 +8488,600 @@
    "note": "Community garden and courses by the Besson Street Trust; read through Eventbrite's API.",
    "local": true,
    "added": "2026-11-06"
+  },
+  {
+   "id": "greenwichtheatre",
+   "name": "Greenwich Theatre",
+   "area": "Greenwich town centre",
+   "borough": "Greenwich",
+   "lat": 51.48,
+   "lon": -0.007,
+   "url": "https://greenwichtheatre.org.uk/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Producing theatre on Crooms Hill: drama, family shows, comedy nights (Pints 'N' Punchlines), Christmas panto"
+  },
+  {
+   "id": "blackheathsociety",
+   "name": "Blackheath Society",
+   "area": "Blackheath",
+   "borough": "Lewisham",
+   "lat": 51.4655,
+   "lon": 0.008,
+   "url": "https://www.blackheath.org/events",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Amenity society running guided Walk & Talks and the village Christmas lights switch-on"
+  },
+  {
+   "id": "deptfordlounge",
+   "name": "Deptford Lounge",
+   "area": "Deptford",
+   "borough": "Lewisham",
+   "lat": 51.479,
+   "lon": -0.0255,
+   "url": "https://deptfordlounge.org.uk/whats-on/",
+   "kind": "library",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "books",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Library and community hub on Giffin St: family sessions, author panels, exhibitions, swaps, zine fair"
+  },
+  {
+   "id": "aptgallery",
+   "name": "APT Gallery",
+   "area": "Deptford Creekside",
+   "borough": "Lewisham",
+   "lat": 51.4778,
+   "lon": -0.0218,
+   "url": "https://aptstudios.org/whats-on",
+   "kind": "gallery",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "art",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Artist-run gallery and studios at Harold Wharf, Creekside; open Thu-Sun 12-5"
+  },
+  {
+   "id": "blackheathconservatoir",
+   "name": "Blackheath Conservatoire",
+   "area": "Blackheath",
+   "borough": "Greenwich",
+   "lat": 51.4648,
+   "lon": 0.0086,
+   "url": "https://www.conservatoire.org.uk/events",
+   "kind": "music",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Music and arts school on Lee Road: free Friday lunchtime concerts, student shows, family storytelling"
+  },
+  {
+   "id": "thamessidestudiosgalle",
+   "name": "Thames-Side Studios / Gallery Woolwich",
+   "area": "Woolwich",
+   "borough": "Greenwich",
+   "lat": 51.4925,
+   "lon": 0.043,
+   "url": "https://thames-sidestudios.co.uk/exhibitions/forthcoming",
+   "kind": "gallery",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "art",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Large artist studio complex on the Woolwich riverside with a public gallery, makers' markets and annual open studios"
+  },
+  {
+   "id": "cockpitdeptford",
+   "name": "Cockpit Deptford",
+   "area": "Deptford Creekside",
+   "borough": "Lewisham",
+   "lat": 51.4787,
+   "lon": -0.0213,
+   "url": "https://cockpitstudios.org/whats-on",
+   "kind": "arts",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "arts",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Craft studios on Creekside (with a Bloomsbury sister site): open studios, maker workshops, jazz nights; filter by site"
+  },
+  {
+   "id": "thefanmuseum",
+   "name": "The Fan Museum",
+   "area": "Greenwich town centre",
+   "borough": "Greenwich",
+   "lat": 51.4795,
+   "lon": -0.0075,
+   "url": "https://www.thefanmuseum.org.uk/calendar",
+   "kind": "gallery",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "art",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Small museum on Crooms Hill with Orangery events, candlelit evenings and craft workshops"
+  },
+  {
+   "id": "thespace",
+   "name": "The Space",
+   "area": "Isle of Dogs",
+   "borough": "Tower Hamlets",
+   "lat": 51.493,
+   "lon": -0.0225,
+   "url": "https://space.org.uk/whats-on/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Fringe performing arts centre in a converted church on Westferry Road"
+  },
+  {
+   "id": "newcrossinn",
+   "name": "New Cross Inn",
+   "area": "New Cross",
+   "borough": "Lewisham",
+   "lat": 51.476,
+   "lon": -0.037,
+   "url": "https://www.newcrossinn.com/gigs/",
+   "kind": "pub",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "local",
+     "pub"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Pub venue with gigs most nights, mainly punk, ska and alternative"
+  },
+  {
+   "id": "southwarkparkgalleries",
+   "name": "Southwark Park Galleries",
+   "area": "Rotherhithe",
+   "borough": "Southwark",
+   "lat": 51.4935,
+   "lon": -0.056,
+   "url": "https://southwarkparkgalleries.org/category/upcoming/",
+   "kind": "gallery",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "art",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Free galleries (Lake Gallery, Dilston Grove) in Southwark Park, plus garden and family programmes"
+  },
+  {
+   "id": "goldsmithscca",
+   "name": "Goldsmiths CCA",
+   "area": "New Cross",
+   "borough": "Lewisham",
+   "lat": 51.4745,
+   "lon": -0.0345,
+   "url": "https://goldsmithscca.art/events/",
+   "kind": "gallery",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "art",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Contemporary art centre on Laurie Grove with exhibitions, talks and performance lectures (separate host from gold.ac.uk)"
+  },
+  {
+   "id": "tramshed",
+   "name": "Tramshed",
+   "area": "Woolwich",
+   "borough": "Greenwich",
+   "lat": 51.4905,
+   "lon": 0.068,
+   "url": "https://www.tramshed.org/whatson",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Community arts venue in Woolwich town centre: drama, magic, comedy, youth theatre, exhibitions"
+  },
+  {
+   "id": "londoninternationalfes",
+   "name": "London International Festival of Early Music (LIFEM)",
+   "area": "Blackheath",
+   "borough": "Greenwich",
+   "lat": 51.4648,
+   "lon": 0.0086,
+   "url": "https://lifem.org/programme/",
+   "kind": "music",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Annual mid-November early music festival and instrument exhibition in Blackheath; one-off yearly programme"
+  },
+  {
+   "id": "blackheathartsociety",
+   "name": "Blackheath Art Society",
+   "area": "Blackheath",
+   "borough": "Greenwich",
+   "lat": 51.4648,
+   "lon": 0.0086,
+   "url": "https://blackheathartsociety.org.uk/exhibitions",
+   "kind": "gallery",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 1,
+    "tags": [
+     "art",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Amateur art society showing twice-yearly exhibitions, currently in the Blackheath Halls bar"
+  },
+  {
+   "id": "lewishamchoralsociety",
+   "name": "Lewisham Choral Society",
+   "area": "Lewisham town centre",
+   "borough": "Lewisham",
+   "lat": 51.453,
+   "lon": -0.0175,
+   "url": "https://www.lewishamchoralsociety.org.uk/concerts",
+   "kind": "music",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Large community choir; concerts at St Mary's Lewisham and Goldsmiths"
+  },
+  {
+   "id": "stalfegechurchconcerts",
+   "name": "St Alfege Church concerts",
+   "area": "Greenwich town centre",
+   "borough": "Greenwich",
+   "lat": 51.481,
+   "lon": -0.0095,
+   "url": "https://www.st-alfege.org.uk/Groups/395887/Concerts.aspx",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Hawksmoor church hosting orchestral and choral concerts (stalfege.org blocks bots; this st-alfege.org.uk page reads fine)"
+  },
+  {
+   "id": "greenwichhistoricalsoc",
+   "name": "Greenwich Historical Society",
+   "area": "Greenwich town centre",
+   "borough": "Greenwich",
+   "lat": 51.484,
+   "lon": -0.0045,
+   "url": "https://ghsoc.co.uk/programme",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Monthly history lectures at the Trafalgar Tavern, 7.30pm on the 4th Wednesday; guests £3"
+  },
+  {
+   "id": "studio101deptford",
+   "name": "Studio 101 Deptford",
+   "area": "Deptford",
+   "borough": "Lewisham",
+   "lat": 51.4789,
+   "lon": -0.026,
+   "url": "https://www.eventbrite.co.uk/o/studio-101-9387625583",
+   "kind": "market",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "market",
+     "food"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Creative studio in the Deptford station arches running indoor makers' markets, night markets and craft workshops (Eventbrite organiser page)"
+  },
+  {
+   "id": "blackheathfarmersmarke",
+   "name": "Blackheath Farmers' Market",
+   "area": "Blackheath",
+   "borough": "Lewisham",
+   "lat": 51.466,
+   "lon": 0.009,
+   "url": "https://lfm.org.uk/markets/blackheath",
+   "kind": "market",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "market",
+     "food"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Weekly farmers' market at Blackheath station car park"
+  },
+  {
+   "id": "stlukeschurchcharlton",
+   "name": "St Luke's Church Charlton",
+   "area": "Charlton",
+   "borough": "Greenwich",
+   "lat": 51.481,
+   "lon": 0.038,
+   "url": "https://www.achurchnearyou.com/church/586/service-and-events/events-all/",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 1,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Charlton Village parish: free community choir, under-3s play cafe, coffee mornings, occasional concerts"
+  },
+  {
+   "id": "friendsofmaryonparks",
+   "name": "Friends of Maryon Parks",
+   "area": "Charlton",
+   "borough": "Greenwich",
+   "lat": 51.487,
+   "lon": 0.039,
+   "url": "https://friendsofmaryonparks.org/park-info/events/",
+   "kind": "park",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 1,
+    "tags": [
+     "outdoors",
+     "local"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Friends group for Maryon and Maryon Wilson Parks (the animal park); monthly litter-picks and planting, summer festival"
+  },
+  {
+   "id": "docklandssailingwaters",
+   "name": "Docklands Sailing & Watersports Centre",
+   "area": "Isle of Dogs",
+   "borough": "Tower Hamlets",
+   "lat": 51.4955,
+   "lon": -0.0215,
+   "url": "https://www.dswc.org/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 1,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Watersports centre on Millwall Dock; calendar embedded on homepage"
+  },
+  {
+   "id": "friendsofbrockleyladyw",
+   "name": "Friends of Brockley & Ladywell Cemeteries",
+   "area": "Ladywell",
+   "borough": "Lewisham",
+   "lat": 51.458,
+   "lon": -0.031,
+   "url": "https://foblc.org.uk/posts/category/events/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Volunteer group running guided cemetery tours, open days and commemorations"
+  },
+  {
+   "id": "brockleysociety",
+   "name": "Brockley Society",
+   "area": "Brockley",
+   "borough": "Lewisham",
+   "lat": 51.465,
+   "lon": -0.037,
+   "url": "https://brockleysociety.org.uk/events/list/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 1,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Amenity society with open meetings and talks; runs the Midsummer Fayre (just outside the requested areas)"
+  },
+  {
+   "id": "pepyscommunityhub",
+   "name": "Pepys Community Hub",
+   "area": "Deptford",
+   "borough": "Lewisham",
+   "lat": 51.487,
+   "lon": -0.03,
+   "url": "https://www.pepyscommunityhub.org/events",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 1,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Community hub and library on the Pepys Estate; exhibitions, monthly concerts mentioned"
+  },
+  {
+   "id": "friendsofislandhistory",
+   "name": "Friends of Island History Trust",
+   "area": "Isle of Dogs",
+   "borough": "Tower Hamlets",
+   "lat": 51.492,
+   "lon": -0.011,
+   "url": "https://www.islandhistory.co.uk/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 1,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-06",
+   "note": "Isle of Dogs local history archive; weekly drop-in history group and an annual open day"
   }
  ]
 }
