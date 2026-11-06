@@ -9,6 +9,7 @@ Prints "changed=1" for the workflow when events.json was updated.
 import json, os, re, sys, html, datetime as dt
 from urllib.request import Request, urlopen
 import ingest
+import meter   # records what each Claude call costs, reported to the dashboard
 
 BASE = json.load(open("docs/stats.json"))["url"].rstrip("/")
 KEY = os.environ["DASH_KEY"]

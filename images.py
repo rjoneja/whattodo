@@ -13,6 +13,7 @@ Runs in the daily workflow; safe to re-run (keeps what it already has unless --r
 import argparse, json, os, re, sys, time, html
 from urllib.parse import quote, urljoin
 from urllib.request import Request, urlopen
+import meter   # records what each Claude call costs, reported to the dashboard
 
 UA = "JauntOut-images/0.2 (https://www.jauntout.com; one credited thumbnail per venue)"
 # regular id → Wikipedia title

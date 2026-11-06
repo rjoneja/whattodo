@@ -15,6 +15,7 @@ from email.message import Message
 from urllib.request import Request, urlopen
 from urllib.parse import urlparse
 import ingest   # SCHEMA, claude(), valid(), key(), slug(), carry()
+import meter   # records what each Claude call costs, reported to the dashboard
 
 P, SEEN = "docs/events.json", "news_seen.json"
 DAYS = int(sys.argv[sys.argv.index("--days") + 1]) if "--days" in sys.argv else 10

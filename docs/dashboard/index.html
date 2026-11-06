@@ -73,6 +73,16 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--ink-2);font-size:13px
     <p class="sub" id="asof"></p>
     <div class="range" id="range"><button data-d="7">7 days</button><button data-d="30" class="on">30 days</button><button data-d="90">90 days</button></div>
 
+    <h2>Claude API spend</h2>
+    <div class="tiles" id="tilesC"></div>
+    <div class="cols" style="margin-top:10px">
+      <div class="panel"><table id="costJobs"></table></div>
+      <div class="panel"><table id="costDays"></table>
+        <form id="topup" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--ink-3)">
+          Last top-up: $<input id="tuAmt" type="number" step="0.01" min="0" style="width:72px"> on <input id="tuDay" type="date"> <button>Save</button></form></div>
+    </div>
+    <p class="sub" style="color:var(--ink-3);font-size:13px;margin:6px 0 0">Worked out from the token counts each job gets back from the API, at Haiku 5.5's published prices, so it should be within a few per cent of the Console. Counting started on 6 Nov 2026. Your Console billing page has the exact balance.</p>
+
     <h2>People</h2>
     <div class="tiles" id="tiles1"></div>
     <h2>Phones each day</h2>
@@ -144,6 +154,8 @@ $('#login').onsubmit=e=>{ e.preventDefault(); store.set('wtd.dashkey',$('#key').
 $('#out').onclick=()=>{ store.set('wtd.dashkey',null); showLogin(); };
 $('#range').querySelectorAll('button').forEach(b=>b.onclick=()=>{ days=+b.dataset.d; $('#range').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); load(); });
 
+document.getElementById('topup').addEventListener('submit',e=>{ e.preventDefault(); const amt=parseFloat($('#tuAmt').value), day=$('#tuDay').value;
+  if(amt>0&&day){ store.set('wtd.topup',JSON.stringify({amt,day})); load(); } });
 async function load(){
   if(!window.__EV){ try{ window.__EV=(await (await fetch('/events.json',{cache:'no-cache'})).json()).events||[]; }catch(e){ window.__EV=[]; } }
   let r; try{ r=await fetch(URL0+'/summary?days='+days,{headers:{authorization:'Bearer '+store.get('wtd.dashkey')}}); }catch(e){ $('#err').textContent='Couldn’t reach the stats script.'; return; }
@@ -160,6 +172,16 @@ function render(S){
   const all=[]; for(let i=S.days-1;i>=0;i--){ const d=new Date(Date.now()-i*864e5).toLocaleDateString('en-CA',{timeZone:'Europe/London'}); all.push(Object.assign({day:d,phones:0,visits:0,shares:0,opens:0},byDay[d]||{},{fresh:newBy[d]||0})); }
   const shares=sum(S.daily,'shares'), opens=sum(S.daily,'opens');
   $('#asof').textContent=`Last ${S.days} days · from ${fmtDay(S.since)} · updated ${new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}`;
+  // Claude spend
+  const usd=x=>'$'+(+x||0).toFixed((+x||0)<1?3:2), today=new Date().toLocaleDateString('en-CA',{timeZone:'Europe/London'});
+  const callAll=S.costAll||[], wk=new Date(Date.now()-6*864e5).toLocaleDateString('en-CA',{timeZone:'Europe/London'});
+  const spent=f=>callAll.filter(f).reduce((a,x)=>a+(+x.usd||0),0);
+  let tu=null; try{ tu=JSON.parse(store.get('wtd.topup')||'null'); }catch(e){} let left=null; if(tu&&tu.amt){ left=tu.amt-spent(x=>x.day>=tu.day); }
+  tiles('#tilesC',[[usd(spent(x=>x.day===today)),'Today',''],[usd(spent(x=>x.day>=wk)),'Last 7 days',''],[usd(spent(x=>x.day>=S.since)),`Last ${S.days} days`,''],
+    ...(left!=null?[[usd(left),'Credit left (estimate)',`$${(+tu.amt).toFixed(2)} added ${fmtDay(tu.day)}`]]:[])]);
+  table('#costJobs','Spend by job',(S.costJobs||[]).map(x=>[x.job.replace(':',' · ')+` (${x.runs} run${x.runs==1?'':'s'})`,usd(x.usd)]),'');
+  table('#costDays','Spend by day',(S.costDays||[]).slice(-10).reverse().map(x=>[fmtDay(x.day),usd(x.usd)]),'');
+  if(tu){ $('#tuAmt').value=tu.amt; $('#tuDay').value=tu.day; }
   tiles('#tiles1',[[S.phones,'Phones','used JauntOut'],[sum(S.firsts,'n'),'New phones','first visit in this period'],[S.returning,'Came back','on more than one day']]);
   tiles('#tiles2',[[shares,'Shares','WhatsApp button pressed'],[opens,'Opened','shared links tapped'],[shares?Math.round(100*opens/shares)+'%':'—','Open rate','opens per share']]);
   table('#shareWho','Shared by',S.shareWho.map(x=>[lab(x.who),x.n]),'Shares');

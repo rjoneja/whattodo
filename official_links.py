@@ -14,6 +14,7 @@ Anything that can't be verified keeps its current link. Each event is checked on
 import json, os, re, sys, time, html
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
+import meter   # records what each Claude call costs, reported to the dashboard
 
 P = "docs/events.json"
 UA = "JauntOut-links/0.1 (+https://www.jauntout.com; finds the official page for a listing)"

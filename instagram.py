@@ -27,6 +27,7 @@ Usage
 import argparse, datetime as dt, json, os, re, sys, time
 from urllib.parse import quote
 from urllib.request import Request, urlopen
+import meter   # records what each Claude call costs, reported to the dashboard
 
 HOST = os.environ.get("IG_HOST", "graph.instagram.com")
 VER = os.environ.get("IG_API_VERSION", "v22.0")

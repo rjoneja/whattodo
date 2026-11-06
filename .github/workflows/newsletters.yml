@@ -12,6 +12,7 @@ jobs:
   read:
     runs-on: ubuntu-24.04
     env:
+      DASH_KEY: ${{ secrets.DASH_KEY }}   # lets meter.py report Claude spend to the dashboard
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       NEWS_IMAP_USER: ${{ secrets.NEWS_IMAP_USER }}
       NEWS_IMAP_PASS: ${{ secrets.NEWS_IMAP_PASS }}

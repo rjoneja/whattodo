@@ -20,6 +20,7 @@ Usage:
 import argparse, datetime as dt, json, os, re, sys, time, html
 from urllib.parse import urljoin
 from urllib.request import Request, urlopen
+import meter   # records what each Claude call costs, reported to the dashboard
 
 MODEL = os.environ.get("WTD_MODEL", "claude-haiku-5-5")
 UA = "WhatToDo-ingest/0.2 (+personal project; summarises in its own words and links back)"

@@ -22,3 +22,14 @@ CREATE TABLE IF NOT EXISTS sub (
   verdict TEXT                -- the pipeline's view: looks fine / why not
 );
 CREATE INDEX IF NOT EXISTS sub_status ON sub(status, ts);
+
+-- What the pipeline spends on Claude: one row per job run per model (from meter.py). Prices are estimates from the API's token counts.
+CREATE TABLE IF NOT EXISTS cost (
+  day   TEXT NOT NULL,    -- YYYY-MM-DD (London)
+  ts    INTEGER NOT NULL,
+  job   TEXT NOT NULL,    -- workflow:script, e.g. content:ingest
+  model TEXT,
+  calls INTEGER, tin INTEGER, tout INTEGER, cr INTEGER, cw INTEGER,
+  usd   REAL NOT NULL
+);
+CREATE INDEX IF NOT EXISTS cost_day ON cost(day);

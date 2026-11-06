@@ -6,6 +6,7 @@ jobs:
   pull:
     runs-on: ubuntu-latest
     env:
+      DASH_KEY: ${{ secrets.DASH_KEY }}   # lets meter.py report Claude spend to the dashboard
       ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
       IG_TOKEN: "${{ secrets.IG_TOKEN }}"
       IG_USER_ID: "${{ secrets.IG_USER_ID }}"

@@ -7,6 +7,8 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    env:
+      DASH_KEY: ${{ secrets.DASH_KEY }}   # lets meter.py report Claude spend to the dashboard
     steps:
       - uses: actions/checkout@v4
         with: {fetch-depth: 20}

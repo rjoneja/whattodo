@@ -10,6 +10,7 @@ Tidy docs/events.json after the harvesters run:
 """
 import json, os, re, sys
 from urllib.parse import urlparse
+import meter   # records what each Claude call costs, reported to the dashboard
 
 P = "docs/events.json"
 data = json.load(open(P)); events = data.get("events", [])
