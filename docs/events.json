@@ -1820,7 +1820,7 @@
    "id": "ev-ig-korea-special-exhibition-10-01",
    "hrs": 1,
    "rel": "keep",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Song",
@@ -16796,6 +16796,68 @@
    "id": "ev-ig-jolly-christmas-postman-exhibition-and-f-11-06",
    "hrs": 1,
    "rel": "keep",
+   "lk_try": 2
+  },
+  {
+   "name": "Low Life (Katrin Moye and Derrick Guild)",
+   "area": "Islington",
+   "lat": 51.5358,
+   "lon": -0.1038,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "contemporary art",
+    "ceramics",
+    "gallery",
+    "free exhibition"
+   ],
+   "blurb": "Contemporary historicism show at James Freeman Gallery: playful ceramics by Katrin Moye and Derrick Guild, including a raccoon sculpture and a saddled cassowary. Free until 14 November.",
+   "emoji": "🎨",
+   "from": "2026-11-06",
+   "to": "2026-11-14",
+   "url": "https://substack.com/redirect/151d9e89-5218-4389-8ff0-e96779b3f655?j=eyJ1IjoiOWV2NG9mIn0.WPgADUHF6O24Hb3vm2YcdAgzGnbiAm_s3413caRGRdw",
+   "source": "Newsletter: Londonist: Urban Palette",
+   "id": "ev-low-life-katrin-moye-and-derrick-guild-11-06",
+   "hrs": 1,
+   "rel": "keep",
+   "lk_try": 1
+  },
+  {
+   "name": "Yumi Katayama paintings",
+   "area": "Islington",
+   "lat": 51.5345,
+   "lon": -0.1105,
+   "in": "in",
+   "price": "free",
+   "ages": [
+    0,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 1,
+   "tags": [
+    "painting",
+    "landscape art",
+    "gallery",
+    "free exhibition"
+   ],
+   "blurb": "Landscape paintings by Yumi Katayama, incorporating gold, at White Conduit Projects in Chapel Market. Free to visit until 28 November.",
+   "emoji": "🖼️",
+   "from": "2026-11-06",
+   "to": "2026-11-28",
+   "url": "https://substack.com/redirect/e3fbe68e-b513-4805-8b60-dca8392d949a?j=eyJ1IjoiOWV2NG9mIn0.WPgADUHF6O24Hb3vm2YcdAgzGnbiAm_s3413caRGRdw",
+   "source": "Newsletter: Londonist: Urban Palette",
+   "id": "ev-yumi-katayama-paintings-11-06",
+   "hrs": 1,
+   "rel": "keep",
    "lk_try": 1
   },
   {
@@ -17088,7 +17150,8 @@
    "also": [
     "IanVisits"
    ],
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "id": "ev-sewing",
@@ -17247,7 +17310,9 @@
     6
    ],
    "also": [],
-   "rel": "keep"
+   "rel": "keep",
+   "open": "10:00",
+   "hrs": 1
   },
   {
    "name": "SEND Play drop-in",
@@ -17691,7 +17756,9 @@
    "id": "ev-gladiators-live-tour-4pm-show-11-07",
    "open": "10:00",
    "also": [],
-   "rel": "keep"
+   "rel": "keep",
+   "part": "afternoon",
+   "hrs": 1
   },
   {
    "name": "Ethiopian Dreams",
@@ -20155,7 +20222,8 @@
    "url": "https://www.rmg.co.uk/whats-on",
    "source": "Royal Museums Greenwich",
    "id": "ev-coder-dojo-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "Docklands highlights tour",
@@ -20185,7 +20253,8 @@
    "url": "https://www.londonmuseum.org.uk/whats-on/",
    "source": "London Museum",
    "id": "ev-docklands-highlights-tour-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "After Dark Visit to the Viewing Platform",
@@ -20213,7 +20282,8 @@
    "url": "https://severndroogcastle.org.uk/whats-on/",
    "source": "Severndroog Castle",
    "id": "ev-after-dark-visit-to-the-viewing-platform-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "Kirkaldy Taster Tour of the Testing Works (1:30pm)",
@@ -20244,7 +20314,9 @@
    "source": "Kirkaldy Testing Museum",
    "id": "ev-kirkaldy-taster-tour-of-the-testing-work-11-07",
    "also": [],
-   "rel": "keep"
+   "rel": "keep",
+   "open": "13:30",
+   "hrs": 1
   },
   {
    "name": "Battersea Brewery Open Late for Battersea Park Fireworks",
@@ -20274,7 +20346,9 @@
    "to": "2026-11-08",
    "source": "Battersea Power Station",
    "id": "ev-battersea-brewery-open-late-for-batterse-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "part": "evening",
+   "hrs": 1
   },
   {
    "name": "AllSaints 1 Year Anniversary",
@@ -20303,7 +20377,8 @@
    "date": "2026-11-07",
    "source": "Battersea Power Station",
    "id": "ev-allsaints-1-year-anniversary-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "Butterup Coffee X Grill Sessions",
@@ -20336,7 +20411,8 @@
    "source": "Southwark Council events",
    "id": "ev-butterup-coffee-x-grill-sessions-11-07",
    "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "hrs": 1
   },
   {
    "name": "Beginners Epoxy Resin Finishing Workshop",
@@ -20366,7 +20442,8 @@
    "id": "ev-beginners-epoxy-resin-finishing-workshop-11-07",
    "also": [],
    "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "hrs": 1
   },
   {
    "name": "Highgate Art Fair",
@@ -20398,7 +20475,8 @@
    "source": "Haringey events",
    "id": "ev-highgate-art-fair-11-07",
    "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "hrs": 1
   },
   {
    "name": "Nick Sharratt live in Tottenham! storytime and rug reveal",
@@ -20428,7 +20506,9 @@
    "source": "Haringey events",
    "id": "ev-nick-sharratt-live-in-tottenham-storytim-11-07",
    "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "open": "10:00",
+   "hrs": 1
   },
   {
    "name": "War Inna Babylon: the community's struggle for truth and justice",
@@ -20458,7 +20538,9 @@
    "source": "Haringey events",
    "id": "ev-war-inna-babylon-the-community-s-struggl-11-07",
    "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "open": "10:30",
+   "hrs": 1
   },
   {
    "name": "Bexley Mum2mum Nearly New Market",
@@ -20491,7 +20573,8 @@
    "source": "Bexley Council events",
    "id": "ev-bexley-mum2mum-nearly-new-market-11-07",
    "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "hrs": 1
   },
   {
    "name": "Bollywood by Candlelight",
@@ -20520,7 +20603,9 @@
    "source": "Harrow Council events",
    "id": "ev-bollywood-by-candlelight-11-07",
    "rel": "keep",
-   "lk": 1
+   "lk": 1,
+   "part": "evening",
+   "hrs": 1
   },
   {
    "name": "Coyote vs Acme",
@@ -20549,7 +20634,10 @@
    "url": "https://www.davidleancinema.org.uk/",
    "source": "David Lean Cinema",
    "id": "ev-coyote-vs-acme-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "14:00",
+   "part": "afternoon",
+   "hrs": 1
   },
   {
    "name": "Ghosts Of Seattle",
@@ -20578,7 +20666,9 @@
    "url": "https://the-fighting-cocks.co.uk/gigs-events/",
    "source": "The Fighting Cocks",
    "id": "ev-ghosts-of-seattle-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "19:30",
+   "hrs": 1
   },
   {
    "name": "Always Be Comedy: Lloyd Griffith, Josh Baulf & Thanyia Moore",
@@ -20608,7 +20698,9 @@
    "url": "https://thebedford.com/events/category/all/",
    "source": "The Bedford",
    "id": "ev-always-be-comedy-lloyd-griffith-josh-bau-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "20:00",
+   "hrs": 1
   },
   {
    "name": "Club Night: Live DJs",
@@ -20638,7 +20730,10 @@
    "url": "https://thebedford.com/events/category/all/",
    "source": "The Bedford",
    "id": "ev-club-night-live-djs-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "23:00",
+   "part": "evening",
+   "hrs": 1
   },
   {
    "name": "Vivaldi Four Seasons by Candlelight",
@@ -20667,7 +20762,10 @@
    "url": "https://www.sjp.org.uk/whats-on/",
    "source": "St James's Piccadilly",
    "id": "ev-vivaldi-four-seasons-by-candlelight-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "20:00",
+   "part": "evening",
+   "hrs": 1
   },
   {
    "name": "Moonlight Sonata by Candlelight",
@@ -20696,7 +20794,10 @@
    "url": "https://www.sjp.org.uk/whats-on/",
    "source": "St James's Piccadilly",
    "id": "ev-moonlight-sonata-by-candlelight-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "18:00",
+   "part": "evening",
+   "hrs": 1
   },
   {
    "name": "Saturday Live: Ke Ma (piano)",
@@ -20725,7 +20826,10 @@
    "url": "https://www.sjp.org.uk/whats-on/",
    "source": "St James's Piccadilly",
    "id": "ev-saturday-live-ke-ma-piano-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "11:00",
+   "part": "morning",
+   "hrs": 1
   },
   {
    "name": "Saturday Live: Ka Me (piano)",
@@ -20754,7 +20858,9 @@
    "url": "https://www.sjp.org.uk/whats-on/",
    "source": "St James's Piccadilly",
    "id": "ev-saturday-live-ka-me-piano-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "12:30",
+   "hrs": 1
   },
   {
    "name": "Volunteer gardening (Saturday)",
@@ -20784,7 +20890,9 @@
    "date": "2026-11-07",
    "source": "The Phoenix Garden",
    "id": "ev-volunteer-gardening-saturday-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "10:00",
+   "hrs": 1
   },
   {
    "name": "Michael Rosen: Peas on Your Knees signing",
@@ -20814,7 +20922,9 @@
    "url": "https://www.newhambooks.co.uk/events.php?within=NB",
    "source": "Newham Bookshop",
    "id": "ev-michael-rosen-peas-on-your-knees-signing-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "11:00",
+   "hrs": 1
   },
   {
    "name": "MRS H AND THE SING-ALONG BAND",
@@ -20844,7 +20954,9 @@
    "url": "https://wegottickets.com/walthamstowtradeshall",
    "source": "Walthamstow Trades Hall",
    "id": "ev-mrs-h-and-the-sing-along-band-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "20:00",
+   "hrs": 1
   },
   {
    "name": "Dissecting Aerial Symposium: The Big One",
@@ -20873,7 +20985,8 @@
    "date": "2026-11-07",
    "source": "Jacksons Lane",
    "id": "ev-dissecting-aerial-symposium-the-big-one-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "Dissecting Aerial Symposium: The Intimate One",
@@ -20902,7 +21015,8 @@
    "date": "2026-11-07",
    "source": "Jacksons Lane",
    "id": "ev-dissecting-aerial-symposium-the-intimate-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "Dissecting Aerial Symposium: The Practical One",
@@ -20931,7 +21045,8 @@
    "date": "2026-11-07",
    "source": "Jacksons Lane",
    "id": "ev-dissecting-aerial-symposium-the-practica-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "Conservation Working Party: Lady Gilbert's Orchard",
@@ -20961,7 +21076,10 @@
    "time": "10:30",
    "source": "Harrow Nature Conservation",
    "id": "ev-conservation-working-party-lady-gilbert--11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "10:30",
+   "close": "15:00",
+   "hrs": 1
   },
   {
    "name": "Conservation Working Party: Newton Farm Ecology Park",
@@ -20996,7 +21114,8 @@
    "to": "2026-11-21",
    "source": "Harrow Nature Conservation",
    "id": "ev-conservation-working-party-newton-farm-e-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "Live DJ at The Red Lion",
@@ -21029,7 +21148,8 @@
    "to": "2026-11-27",
    "source": "The Red Lion, Leytonstone",
    "id": "ev-live-dj-at-the-red-lion-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "Bottomless Brunch at Fleets",
@@ -21061,7 +21181,9 @@
    "to": "2026-11-28",
    "source": "The Red Lion, Leytonstone",
    "id": "ev-bottomless-brunch-at-fleets-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "part": "morning",
+   "hrs": 1
   },
   {
    "name": "Easy Robotics & Coding Club - Free Taster Session",
@@ -21091,7 +21213,8 @@
    "url": "https://www.woolwich.works/whats-on/category/free",
    "source": "Woolwich Works",
    "id": "ev-easy-robotics-coding-club-free-taster-se-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "hrs": 1
   },
   {
    "name": "The Southbury Child",
@@ -21121,7 +21244,9 @@
    "to": "2026-11-14",
    "source": "Geoffrey Whitworth Theatre",
    "id": "ev-the-southbury-child-11-07",
-   "rel": "keep"
+   "rel": "keep",
+   "open": "19:45",
+   "hrs": 1
   },
   {
    "name": "DJ Bottomless Brunch",
@@ -38252,7 +38377,7 @@
    "id": "ev-ig-santa-s-christmas-eve-unicorn-theatre-fa-11-14",
    "hrs": 1,
    "rel": "keep",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Talk: Art Deco and the Golden Age of Poster Design",
@@ -38284,7 +38409,7 @@
    "id": "ev-ig-talk-art-deco-and-the-golden-age-of-post-11-14",
    "hrs": 1,
    "rel": "keep",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Dungeons & Dragons with The Meat Shields",
@@ -40483,35 +40608,6 @@
    "to": "2027-01-03",
    "from": "2026-11-06",
    "also": []
-  },
-  {
-   "name": "Extended Skate Session",
-   "area": "Strand",
-   "lat": 51.511,
-   "lon": -0.117,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1.5,
-   "tags": [
-    "ice skating",
-    "outdoor rink",
-    "winter",
-    "family",
-    "central london"
-   ],
-   "blurb": "A full 90 minutes on London's outdoor rink at Somerset House. A longer, more relaxed skate than standard sessions.",
-   "date": "2026-11-17",
-   "url": "https://www.somersethouse.org.uk/whats-on",
-   "source": "Somerset House",
-   "id": "ev-extended-skate-session-11-17",
-   "rel": "keep",
-   "hrs": 1
   },
   {
    "name": "Fungi Walk: Citizen Science at The Regent's Park",
@@ -48880,35 +48976,6 @@
    "rel": "keep"
   },
   {
-   "name": "Extended Skate Session",
-   "area": "Strand",
-   "lat": 51.511,
-   "lon": -0.117,
-   "in": "out",
-   "price": "££",
-   "ages": [
-    5,
-    99
-   ],
-   "kids": 2,
-   "adults": 3,
-   "dur": 1.5,
-   "tags": [
-    "ice skating",
-    "outdoor rink",
-    "winter",
-    "family",
-    "central london"
-   ],
-   "blurb": "A full 90 minutes on London's outdoor rink at Somerset House. A longer, more relaxed skate than standard sessions.",
-   "date": "2026-11-23",
-   "url": "https://www.somersethouse.org.uk/whats-on",
-   "source": "Somerset House",
-   "id": "ev-extended-skate-session-11-23",
-   "rel": "keep",
-   "hrs": 1
-  },
-  {
    "name": "Lunchtime Organ Recital",
    "area": "Borough",
    "lat": 51.5061,
@@ -53581,7 +53648,7 @@
    "id": "ev-ig-winter-palace-the-christmas-beast-ball-11-28",
    "hrs": 1,
    "rel": "keep",
-   "lk_try": 1
+   "lk_try": 2
   },
   {
    "name": "Catford Christmas light switch-on",
@@ -53684,161 +53751,5 @@
    "via": "https://www.instagram.com/reel/DfDLukVhnoP/"
   }
  ],
- "dropped": [
-  {
-   "name": "Applications Are Now Open For ‘Arcadia: Outside’",
-   "source": "Stanley Arts",
-   "why": "open call applications"
-  },
-  {
-   "name": "Autumn Adult Tennis Courses",
-   "source": "The Royal Parks",
-   "why": "six-week enrolment course"
-  },
-  {
-   "name": "Autumn Adult Padel Courses",
-   "source": "The Royal Parks",
-   "why": "six-week enrolment course"
-  },
-  {
-   "name": "Autumn Junior Tennis Courses",
-   "source": "The Royal Parks",
-   "why": "six-week enrolment course"
-  },
-  {
-   "name": "Baby massage course at Triangle Family Hub",
-   "source": "Haringey events",
-   "why": "five-week enrolment course"
-  },
-  {
-   "name": "Watercolour in Practice (Autumn)",
-   "source": "Landmark Arts Centre",
-   "why": "six-week course"
-  },
-  {
-   "name": "Portrait Drawing (Autumn)",
-   "source": "Landmark Arts Centre",
-   "why": "multi-week course"
-  },
-  {
-   "name": "Botanical Art: Painting & Drawing",
-   "source": "Landmark Arts Centre",
-   "why": "multi-week course"
-  },
-  {
-   "name": "Dog Training Classes by Walkies and Waggietails",
-   "source": "Chiswick House & Gardens",
-   "why": "multi-week course"
-  },
-  {
-   "name": "Sculpture Inspired by Life",
-   "source": "Chiswick House & Gardens",
-   "why": "multi-week course"
-  },
-  {
-   "name": "Red Lion Theatre Classes",
-   "source": "The Red Lion, Leytonstone",
-   "why": "multi-week kids course"
-  },
-  {
-   "name": "Thursday Curry Night",
-   "source": "Knowles of Norwood",
-   "why": "food promo advert"
-  },
-  {
-   "name": "Brunch at Knowles",
-   "source": "Knowles of Norwood",
-   "why": "brunch deal advert"
-  },
-  {
-   "name": "Performance Makers: Theatre, Words & Movement",
-   "source": "Roundhouse",
-   "why": "multi-week enrolled course"
-  },
-  {
-   "name": "Drama Club",
-   "source": "Roundhouse",
-   "why": "multi-week enrolled club"
-  },
-  {
-   "name": "Arcadia: Outside Upcoming Events",
-   "source": "Stanley Arts",
-   "why": "index page, not event"
-  },
-  {
-   "name": "National Saturday Club at Stanley Arts with Global Academy",
-   "source": "Stanley Arts",
-   "why": "multi-week enrolled course"
-  },
-  {
-   "name": "Members' Treasures Tour",
-   "source": "Royal Museums Greenwich",
-   "why": "members-only tour"
-  },
-  {
-   "name": "Forest Hill Society AGM 2026",
-   "source": "Forest Hill Society",
-   "why": "members-only AGM"
-  },
-  {
-   "name": "Chinese Painting & Calligraphy",
-   "source": "Landmark Arts Centre",
-   "why": "multi-week course enrolment"
-  },
-  {
-   "name": "Padel courts plans drop-in session",
-   "source": "Friends of Kennington Park",
-   "why": "council consultation"
-  },
-  {
-   "name": "Tate Collective After Hours: Frida",
-   "source": "Tate Britain",
-   "why": "members-only visit"
-  },
-  {
-   "name": "Art and Expression After School Art Club",
-   "source": "Primrose Hill Community Library",
-   "why": "10-session enrolled course"
-  },
-  {
-   "name": "Brixton Society Committee Meeting",
-   "source": "The Brixton Society",
-   "why": "members committee meeting"
-  },
-  {
-   "name": "Members' Meet the Fish",
-   "source": "Horniman Museum & Gardens",
-   "why": "members-only session"
-  },
-  {
-   "name": "What University? & What Career? Live",
-   "source": "Olympia London",
-   "why": "careers fair"
-  },
-  {
-   "name": "Writing the Script with Peter Ansorge (5-week course)",
-   "source": "Bell House",
-   "why": "multi-week course"
-  },
-  {
-   "name": "Christmas Shop Open Days",
-   "source": "Turner's House",
-   "why": "shop advert"
-  },
-  {
-   "name": "M25/J24 Data Centre Consultation ends",
-   "source": "The Enfield Society",
-   "why": "council consultation deadline"
-  },
-  {
-   "name": "Wintry Tales Creative Writing Course with Steven Butler",
-   "source": "The Children's Bookshop",
-   "why": "multi-week enrolment course"
-  },
-  {
-   "name": "CEREMONY festival: GRAFTING // new connections",
-   "source": "Copeland Park",
-   "why": "professional networking only"
-  }
- ]
+ "dropped": []
 }
