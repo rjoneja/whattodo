@@ -5661,7 +5661,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Single-screen social-enterprise cinema on Chamberlayne Road; profits go to charity"
+   "note": "Single-screen social-enterprise cinema on Chamberlayne Road; profits go to charity",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://thelexicinema.co.uk/TheLexiCinema.dll/WhatsOn"
   },
   {
    "id": "willesdenlocalhistorys",
@@ -5683,7 +5686,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly local history talks and walks; visitors welcome for a donation"
+   "note": "Monthly local history talks and walks; visitors welcome for a donation",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://willesden-local-history.co.uk/feed/",
+   "has_rss": "https://willesden-local-history.co.uk/feed/"
   },
   {
    "id": "welshharpconservationg",
@@ -5705,7 +5712,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Volunteer group caring for the Welsh Harp reservoir; free monthly bird walks and wildlife events"
+   "note": "Volunteer group caring for the Welsh Harp reservoir; free monthly bird walks and wildlife events",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://brentres.wordpress.com/feed/",
+   "has_rss": "https://brentres.wordpress.com/feed/"
   },
   {
    "id": "londonmuseumofwaterste",
@@ -5727,7 +5738,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Victorian pumping station museum with working steam engines and a narrow-gauge railway"
+   "note": "Victorian pumping station museum with working steam engines and a narrow-gauge railway",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://waterandsteam.org.uk/whats-on-new"
   },
   {
    "id": "gunnersburyparkmuseum",
@@ -5749,7 +5763,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Rothschild mansion museum and park run by a CIC for Ealing and Hounslow; markets, family crafts, talks"
+   "note": "Rothschild mansion museum and park run by a CIC for Ealing and Hounslow; markets, family crafts, talks",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://visitgunnersbury.org/whats-on"
   },
   {
    "id": "hounslowsymphonyorches",
@@ -5771,7 +5788,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community symphony orchestra giving concerts at St Mary's Church, Osterley Road"
+   "note": "Community symphony orchestra giving concerts at St Mary's Church, Osterley Road",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.hounslow-symphony.org.uk/feed/",
+   "has_rss": "https://www.hounslow-symphony.org.uk/feed/"
   },
   {
    "id": "dukesmeadowstrust",
@@ -5793,7 +5814,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Riverside park trust; runs a weekly Sunday food market in the Grove Park farmyard plus Friday volunteering days"
+   "note": "Riverside park trust; runs a weekly Sunday food market in the Grove Park farmyard plus Friday volunteering days",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://dukesmeadowstrust.org/feed/",
+   "has_rss": "https://dukesmeadowstrust.org/feed/"
   },
   {
    "id": "harrowartscentre",
@@ -5815,7 +5840,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Multi-arts venue on Uxbridge Road with theatre, music, comedy, workshops and a panto"
+   "note": "Multi-arts venue on Uxbridge Road with theatre, music, comedy, workshops and a panto",
+   "probed": "2026-11-06",
+   "feed": "blocked",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "harrownatureconservati",
@@ -5837,7 +5865,12 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Volunteer group managing Harrow nature reserves (Stanmore Common, Old Redding, Newton Farm, Headstone Copse); walks, workshops, work parties"
+   "note": "Volunteer group managing Harrow nature reserves (Stanmore Common, Old Redding, Newton Farm, Headstone Copse); walks, workshops, work parties",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://harrownc.org.uk/feed/",
+   "has_rss": "https://harrownc.org.uk/feed/",
+   "has_eventbrite": "https://www.eventbrite.co.uk/o/hnc-harrow-nature-conservation-121349363761?_gl=1*12wgr7r*_up*MQ..*_ga*MTMyMjUxNjAwLjE3ODQ2NDg1MzI.*_ga_TQVES5V6SH*czE3ODQ2NDg1MzIkbzEkZzEkdDE3ODQ2NDg5MjgkajU1JGwwJGgw&aff=ebdsshcopyurl"
   },
   {
    "id": "pinnerplayers",
@@ -5859,7 +5892,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Amateur theatre company staging productions at Pinner Village Hall"
+   "note": "Amateur theatre company staging productions at Pinner Village Hall",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://pinnerplayers.com/feed/",
+   "has_rss": "https://pinnerplayers.com/feed/"
   },
   {
    "id": "ealingsymphonyorchestr",
@@ -5881,7 +5918,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community symphony orchestra giving concerts at St Barnabas Church, Pitshanger Lane"
+   "note": "Community symphony orchestra giving concerts at St Barnabas Church, Pitshanger Lane",
+   "probed": "2026-11-06",
+   "feed": "ics",
+   "feed_url": "https://www.ealingso.org.uk/whats-on/20261128?format=ical",
+   "has_ics": "https://www.ealingso.org.uk/whats-on/20261128?format=ical"
   },
   {
    "id": "ealingchoralsociety",
@@ -5903,7 +5944,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Large community choir; concerts and a charity carol concert at St Barnabas Church"
+   "note": "Large community choir; concerts and a charity carol concert at St Barnabas Church",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://ealingchoralsociety.org.uk/concerts/"
   },
   {
    "id": "thebrenthamclub",
@@ -5925,7 +5969,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Historic garden-suburb social and sports club with ticketed fireworks, tribute nights, quizzes and gigs"
+   "note": "Historic garden-suburb social and sports club with ticketed fireworks, tribute nights, quizzes and gigs",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.brenthamclub.co.uk"
   },
   {
    "id": "brunelarts",
@@ -5947,7 +5994,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "University arts programme with free public lunchtime concerts, writers' talks and lectures"
+   "note": "University arts programme with free public lunchtime concerts, writers' talks and lectures",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.brunel.ac.uk/news-and-events/events/upcoming"
   },
   {
    "id": "colnevalleyregionalpar",
@@ -5969,7 +6019,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Regional park CIC listing led walks, volunteering and open days along the Colne. Some events are in Iver (Bucks), so filter to the London side"
+   "note": "Regional park CIC listing led walks, volunteering and open days along the Colne. Some events are in Iver (Bucks), so filter to the London side",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.colnevalleypark.org.uk/feed/",
+   "has_rss": "https://www.colnevalleypark.org.uk/feed/"
   },
   {
    "id": "eastcotehorticulturals",
@@ -5991,7 +6045,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Local gardening society with seasonal flower and produce shows at Eastcote Community Centre"
+   "note": "Local gardening society with seasonal flower and produce shows at Eastcote Community Centre",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://succulent-plant.com/eastcote/programme.html"
   },
   {
    "id": "ruislipresidentsassoci",
@@ -6013,7 +6070,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Residents' association diary of local plays, concerts, talks and garden events around Ruislip"
+   "note": "Residents' association diary of local plays, concerts, talks and garden events around Ruislip",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.ruislipresidents.org.uk/feed/",
+   "has_rss": "https://www.ruislipresidents.org.uk/feed/"
   },
   {
    "id": "eastcoteruislipchorals",
@@ -6035,7 +6096,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community choir giving concerts at Ickenham URC and Northwood churches"
+   "note": "Community choir giving concerts at Ickenham URC and Northwood churches",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.eastcote-ruislip-choral.org/future-events"
   },
   {
    "id": "trinityorchestra",
@@ -6057,7 +6121,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Amateur symphony orchestra; all concerts at St Edmund's Church, Northwood Hills, with pre-concert talks"
+   "note": "Amateur symphony orchestra; all concerts at St Edmund's Church, Northwood Hills, with pre-concert talks",
+   "probed": "2026-11-06",
+   "feed": "error",
+   "error": "HTTP Error 404: Not Found"
   },
   {
    "id": "uxbridgelocalhistoryar",
@@ -6079,7 +6146,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly talks on the third Tuesday (Sep-May) at Christ Church, Redford Way"
+   "note": "Monthly talks on the third Tuesday (Sep-May) at Christ Church, Redford Way",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://uxbridgehistorysociety.co.uk/feed/",
+   "has_rss": "https://uxbridgehistorysociety.co.uk/feed/"
   },
   {
    "id": "ruislipnorthwoodeastco",
@@ -6101,7 +6172,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly lectures at St Martin's Church Hall, Ruislip, plus self-guided walk guides"
+   "note": "Monthly lectures at St Martin's Church Hall, Ruislip, plus self-guided walk guides",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://rnelhs.uk/feed/",
+   "has_rss": "https://rnelhs.uk/feed/"
   },
   {
    "id": "edmontonhundredhistori",
@@ -6123,7 +6198,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Local history society for Enfield/Edmonton; monthly talks, visitors £2 (based on the Oct talk at Jubilee Hall, Parsonage Lane EN2)."
+   "note": "Local history society for Enfield/Edmonton; monthly talks, visitors £2 (based on the Oct talk at Jubilee Hall, Parsonage Lane EN2).",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.edmontonhundred.org.uk/index.php?option=com_content&view=category&layout=blog&id=8&Itemid=101&format=feed&type=rss",
+   "has_rss": "https://www.edmontonhundred.org.uk/index.php?option=com_content&view=category&layout=blog&id=8&Itemid=101&format=feed&type=rss"
   },
   {
    "id": "enfieldarchaeologicals",
@@ -6145,7 +6224,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly Friday lectures at Jubilee Hall, Parsonage Lane; 'visitors very welcome', £1.50. Some lectures are on Zoom only."
+   "note": "Monthly Friday lectures at Jubilee Hall, Parsonage Lane; 'visitors very welcome', £1.50. Some lectures are on Zoom only.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://enfarchsoc.org:443/lectures/"
   },
   {
    "id": "trentparkhouseofsecret",
@@ -6167,7 +6249,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "New WWII 'secret listeners' museum in Trent Park mansion; open Tue-Sun; regular themed tours and talks. The events listing is a monthly blog post (index at /blogs/articles)."
+   "note": "New WWII 'secret listeners' museum in Trent Park mansion; open Tue-Sun; regular themed tours and talks. The events listing is a monthly blog post (index at /blogs/articles).",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://trentparkhouse.org.uk/blogs/articles.atom",
+   "has_rss": "https://trentparkhouse.org.uk/blogs/articles.atom"
   },
   {
    "id": "goodshepherdstudios",
@@ -6189,7 +6275,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community arts hub (15a Davies Lane, E11): community cinema, makers markets, lunchtime music, workshops."
+   "note": "Community arts hub (15a Davies Lane, E11): community cinema, makers markets, lunchtime music, workshops.",
+   "probed": "2026-11-06",
+   "feed": "ics",
+   "feed_url": "https://www.goodshepherdstudios.com/events/film-screening-simone-barbs-illustrated-talk?format=ical",
+   "has_ics": "https://www.goodshepherdstudios.com/events/film-screening-simone-barbs-illustrated-talk?format=ical"
   },
   {
    "id": "chingfordhistoricalsoc",
@@ -6211,7 +6301,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly Thursday 7:30pm local-history talks. The page names no venue and doesn't say if non-members are welcome; the lat/lon is approximate (Chingford)."
+   "note": "Monthly Thursday 7:30pm local-history talks. The page names no venue and doesn't say if non-members are welcome; the lat/lon is approximate (Chingford).",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.chingfordhistory.org.uk/events.html"
   },
   {
    "id": "thehousemill",
@@ -6233,7 +6326,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "World's largest surviving tidal mill, Three Mill Lane E3 3DU; open every Sunday with guided tours (£10). The verified URL is on a pages.dev domain, which looks like a new or staging site; the old hous"
+   "note": "World's largest surviving tidal mill, Three Mill Lane E3 3DU; open every Sunday with guided tours (£10). The verified URL is on a pages.dev domain, which looks like a new or staging site; the old hous",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://housemill-website.pages.dev/whats-on/"
   },
   {
    "id": "eppingforestheritagetr",
@@ -6255,7 +6351,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "WEAK: charity based in Loughton running occasional guided walks, some in the London end of the Forest; few dates listed. Lat/lon is Wanstead station, the meeting point for the Nov walk."
+   "note": "WEAK: charity based in Loughton running occasional guided walks, some in the London end of the Forest; few dates listed. Lat/lon is Wanstead station, the meeting point for the Nov walk.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://efht.org.uk/feed/",
+   "has_rss": "https://efht.org.uk/feed/"
   },
   {
    "id": "theredlionleytonstone",
@@ -6277,7 +6377,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "WEAK: big High Road pub with a weekly programme, but listings are on the operator's site (Urban Pubs & Bars, a London pub group) and the dates are inconsistent."
+   "note": "WEAK: big High Road pub with a weekly programme, but listings are on the operator's site (Urban Pubs & Bars, a London pub group) and the dates are inconsistent.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.urbanpubsandbars.com/whats-on"
   },
   {
    "id": "broadwaytheatre",
@@ -6299,7 +6402,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Grade II Art Deco theatre on Catford Broadway, with music tributes, comedy, drama and a Christmas panto."
+   "note": "Grade II Art Deco theatre on Catford Broadway, with music tributes, comedy, drama and a Christmas panto.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.broadwaytheatre.org.uk/whats-on"
   },
   {
    "id": "foresthillsociety",
@@ -6321,7 +6427,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Civic society that runs community events in Forest Hill."
+   "note": "Civic society that runs community events in Forest Hill.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.foresthillsociety.com/our-events"
   },
   {
    "id": "sydenhamgarden",
@@ -6343,7 +6452,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community garden and wellbeing charity on Wynell Road (SE23). It holds occasional public fairs and open mornings."
+   "note": "Community garden and wellbeing charity on Wynell Road (SE23). It holds occasional public fairs and open mornings.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.sydenhamgarden.org.uk/feed/",
+   "has_rss": "https://www.sydenhamgarden.org.uk/feed/"
   },
   {
    "id": "trinitylaban",
@@ -6365,7 +6478,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Conservatoire listings. Filter to the Laban Theatre on Creekside: many listed events are at Greenwich or Blackheath venues."
+   "note": "Conservatoire listings. Filter to the Laban Theatre on Creekside: many listed events are at Greenwich or Blackheath venues.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.trinitylaban.ac.uk/whats-on-performance/"
   },
   {
    "id": "goldsmithspublicevents",
@@ -6387,7 +6503,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "University calendar of public talks, concerts and exhibitions on the New Cross campus. Check each event is open to the public."
+   "note": "University calendar of public talks, concerts and exhibitions on the New Cross campus. Check each event is open to the public.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.gold.ac.uk/events/?collection=goldsmiths~sp-events&query=&form=rss&sort=date",
+   "has_rss": "https://www.gold.ac.uk/events/?collection=goldsmiths~sp-events&query=&form=rss&sort=date"
   },
   {
    "id": "leemanorsociety",
@@ -6409,7 +6529,13 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Amenity society for Lee. It holds talks, tree walks, a plant mart and the Manor House Gardens festival."
+   "note": "Amenity society for Lee. It holds talks, tree walks, a plant mart and the Manor House Gardens festival.",
+   "probed": "2026-11-06",
+   "feed": "jsonld",
+   "feed_url": "https://leemanorsociety.org/events/",
+   "jsonld_events": 1,
+   "has_ics": "webcal://leemanorsociety.org/?post_type=tribe_events&ical=1&eventDisplay=list",
+   "has_rss": "https://leemanorsociety.org/feed/"
   },
   {
    "id": "freefilmfestivals",
@@ -6431,7 +6557,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Volunteer-run free pop-up screenings across SE London, often in churches and community halls."
+   "note": "Volunteer-run free pop-up screenings across SE London, often in churches and community halls.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://freefilmfestivals.org/feed/",
+   "has_rss": "https://freefilmfestivals.org/feed/"
   },
   {
    "id": "woolwichworks",
@@ -6453,7 +6583,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Arts centre in the Royal Arsenal. The free category suits locals; the full whats-on has ticketed gigs and comedy."
+   "note": "Arts centre in the Royal Arsenal. The free category suits locals; the full whats-on has ticketed gigs and comedy.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.woolwich.works/feed.rss",
+   "has_rss": "https://www.woolwich.works/feed.rss"
   },
   {
    "id": "theelthamsociety",
@@ -6475,7 +6609,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Civic and local history society with evening talks."
+   "note": "Civic and local history society with evening talks.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://theelthamsociety.org.uk/events/"
   },
   {
    "id": "charltonblackheathamat",
@@ -6497,7 +6634,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Gardening talks on the third Monday of each month in the Old Library at Charlton House, plus seasonal shows."
+   "note": "Gardening talks on the third Monday of each month in the Old Library at Charlton House, plus seasonal shows.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://cabahs.com/feed/",
+   "has_rss": "https://cabahs.com/feed/"
   },
   {
    "id": "shrewsburyhousecommuni",
@@ -6519,7 +6660,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community centre in a 1920s mansion on Shooters Hill, with drama, workshops, whist and socials."
+   "note": "Community centre in a 1920s mansion on Shooters Hill, with drama, workshops, whist and socials.",
+   "probed": "2026-11-06",
+   "feed": "ics",
+   "feed_url": "https://www.shrewsburyhouse.org/events/echoes-from-the-great-war-shdc?format=ical",
+   "has_ics": "https://www.shrewsburyhouse.org/events/echoes-from-the-great-war-shdc?format=ical"
   },
   {
    "id": "thamesmeadnow",
@@ -6541,7 +6686,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Peabody's Thamesmead community programme: family sessions, yoga, tea room and festivals across the estate's venues."
+   "note": "Peabody's Thamesmead community programme: family sessions, yoga, tea room and festivals across the estate's venues.",
+   "probed": "2026-11-06",
+   "feed": "blocked",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "rosebrufordcollege",
@@ -6563,7 +6711,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Drama school in Lamorbey Park. Public student productions each term."
+   "note": "Drama school in Lamorbey Park. Public student productions each term.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.bruford.ac.uk/life-at-the-college/whats-on/"
   },
   {
    "id": "crayfordmanorhousehist",
@@ -6585,7 +6736,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly Saturday evening history lectures at the Baker Trust Hall, Maxim Road. Non-members pay GBP 5."
+   "note": "Monthly Saturday evening history lectures at the Baker Trust Hall, Maxim Road. Non-members pay GBP 5.",
+   "probed": "2026-11-06",
+   "feed": "blocked",
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "geoffreywhitworththeat",
@@ -6607,7 +6761,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Long-running amateur theatre in Crayford with a full season of plays."
+   "note": "Long-running amateur theatre in Crayford with a full season of plays.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.thegwt.org.uk/feed/",
+   "has_rss": "https://www.thegwt.org.uk/feed/"
   },
   {
    "id": "enjoybexleyheath",
@@ -6629,7 +6787,12 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Business district's programme of free family events on The Broadway."
+   "note": "Business district's programme of free family events on The Broadway.",
+   "probed": "2026-11-06",
+   "feed": "ics",
+   "feed_url": "https://www.enjoybexleyheath.co.uk/events/christmas-switch-on-2025-1?format=ical",
+   "has_ics": "https://www.enjoybexleyheath.co.uk/events/christmas-switch-on-2025-1?format=ical",
+   "has_eventbrite": "https://www.eventbrite.co.uk/o/bexley-libraries-7939598856"
   },
   {
    "id": "bridgehousetheatre",
@@ -6651,7 +6814,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Pub theatre above the Bridge House in Penge, with new writing, comedy, panto and monthly drag bingo."
+   "note": "Pub theatre above the Bridge House in Penge, with new writing, comedy, panto and monthly drag bingo.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://thebridgehousetheatre.co.uk/feed/",
+   "has_rss": "https://thebridgehousetheatre.co.uk/feed/"
   },
   {
    "id": "thechislehurstsociety",
@@ -6673,7 +6840,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Civic society listing village events and its own recurring activities. The events calendar is at /events-calendar/activities.htm."
+   "note": "Civic society listing village events and its own recurring activities. The events calendar is at /events-calendar/activities.htm.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://chislehurst-society.org.uk/whats-on/happening.htm"
   },
   {
    "id": "visitchislehurst",
@@ -6695,7 +6865,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Village business listings, mostly hospitality and shop events."
+   "note": "Village business listings, mostly hospitality and shop events.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.visitchislehurst.org.uk/feed/",
+   "has_rss": "https://www.visitchislehurst.org.uk/feed/"
   },
   {
    "id": "stgeorgesbeckenhamreci",
@@ -6717,7 +6891,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Free Friday and Saturday lunchtime recitals in the parish church; St George's Chamber Orchestra also plays here."
+   "note": "Free Friday and Saturday lunchtime recitals in the parish church; St George's Chamber Orchestra also plays here.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://stgeorgesbeckenham.co.uk/music/weekly-recitals/"
   },
   {
    "id": "orpingtondistrictarcha",
@@ -6739,7 +6916,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly first-Wednesday talks at Christ Church URC, Tudor Way. Non-members welcome for a GBP 3 donation."
+   "note": "Monthly first-Wednesday talks at Christ Church URC, Tudor Way. Non-members welcome for a GBP 3 donation.",
+   "probed": "2026-11-06",
+   "feed": "error",
+   "error": "HTTP Error 503: Service Unavailable"
   },
   {
    "id": "bournesociety",
@@ -6761,7 +6941,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Local history society for the Purley/Coulsdon/Sanderstead/Caterham area; monthly talks and forum meetings."
+   "note": "Local history society for the Purley/Coulsdon/Sanderstead/Caterham area; monthly talks and forum meetings.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://bournesoc.org.uk/feed/",
+   "has_rss": "https://bournesoc.org.uk/feed/"
   },
   {
    "id": "croydonnaturalhistorys",
@@ -6783,7 +6967,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Long-running local society; free in-person talks, non-members explicitly welcome (donation ~£3)."
+   "note": "Long-running local society; free in-person talks, non-members explicitly welcome (donation ~£3).",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://cnhss.co.uk/feed/",
+   "has_rss": "https://cnhss.co.uk/feed/"
   },
   {
    "id": "friendsofsouthnorwoodc",
@@ -6805,7 +6993,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Volunteer workdays and seasonal wildlife walks in South Norwood Country Park."
+   "note": "Volunteer workdays and seasonal wildlife walks in South Norwood Country Park.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://friendsofsncp.org.uk/feed/",
+   "has_rss": "https://friendsofsncp.org.uk/feed/"
   },
   {
    "id": "croydonfolkclub",
@@ -6827,7 +7019,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Weekly Monday folk club at Ruskin House, Coombe Road."
+   "note": "Weekly Monday folk club at Ruskin House, Coombe Road.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "http://croydonfolkclub.org.uk/feed/",
+   "has_rss": "http://croydonfolkclub.org.uk/feed/"
   },
   {
    "id": "eastcroydoncommunityor",
@@ -6849,7 +7045,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Volunteer-run hyperlocal community site; posts dated local events (no calendar, events appear as blog posts)."
+   "note": "Volunteer-run hyperlocal community site; posts dated local events (no calendar, events appear as blog posts).",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://eastcroydon.org.uk/feed/",
+   "has_rss": "https://eastcroydon.org.uk/feed/"
   },
   {
    "id": "wimbledoninternational",
@@ -6871,7 +7071,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Annual November classical festival in Wimbledon churches and venues."
+   "note": "Annual November classical festival in Wimbledon churches and venues.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://wimbledonmusicfestival.co.uk/feed/",
+   "has_rss": "https://wimbledonmusicfestival.co.uk/feed/"
   },
   {
    "id": "stjohnthebaptistwimble",
@@ -6893,7 +7097,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Parish church with a concert series, choir events and a Christmas fair; main WIMF venue."
+   "note": "Parish church with a concert series, choir events and a Christmas fair; main WIMF venue.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.stjohnswimbledon.co.uk/feed/",
+   "has_rss": "https://www.stjohnswimbledon.co.uk/feed/"
   },
   {
    "id": "thecanonsmitcham",
@@ -6915,7 +7123,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Restored historic house and grounds with a community café, free exhibitions and weekly activities."
+   "note": "Restored historic house and grounds with a community café, free exhibitions and weekly activities.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.thecanonsmitcham.co.uk/events-activities"
   },
   {
    "id": "wimbledonwindmillmuseu",
@@ -6937,7 +7148,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Volunteer-run windmill museum on Wimbledon Common; Sunday opening in summer, closed to walk-ins in winter."
+   "note": "Volunteer-run windmill museum on Wimbledon Common; Sunday opening in summer, closed to walk-ins in winter.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.wimbledonwindmill.org.uk/"
   },
   {
    "id": "orangetreetheatre",
@@ -6959,7 +7173,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Acclaimed in-the-round producing theatre opposite Richmond station."
+   "note": "Acclaimed in-the-round producing theatre opposite Richmond station.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://orangetreetheatre.co.uk/feed/",
+   "has_rss": "https://orangetreetheatre.co.uk/feed/"
   },
   {
    "id": "strawberryhillhousegar",
@@ -6981,7 +7199,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Horace Walpole's Gothic Revival villa; guided tours and seasonal events."
+   "note": "Horace Walpole's Gothic Revival villa; guided tours and seasonal events.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://tickets.strawberryhillhouse.org.uk/event-tickets/20610?catID=13844&"
   },
   {
    "id": "teddingtonsociety",
@@ -7003,7 +7224,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Civic society running talks, a gardens group, socials and coffee mornings."
+   "note": "Civic society running talks, a gardens group, socials and coffee mornings.",
+   "probed": "2026-11-06",
+   "feed": "ics",
+   "feed_url": "https://teddingtonsociety.org/our-events/coffee-tea-social-ewll7-3g9eb-93lta-gdcl2-ngywe-r9jp8-2akf4-zwlmh-sh39f?format=ical",
+   "has_ics": "https://teddingtonsociety.org/our-events/coffee-tea-social-ewll7-3g9eb-93lta-gdcl2-ngywe-r9jp8-2akf4-zwlmh-sh39f?format=ical"
   },
   {
    "id": "hamptonhilltheatre",
@@ -7025,7 +7250,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Well-run amateur theatre club with its own 2 auditoria; regular productions plus visiting shows."
+   "note": "Well-run amateur theatre club with its own 2 auditoria; regular productions plus visiting shows.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.hamptonhilltheatre.org.uk/whats-on/upcoming"
   },
   {
    "id": "langdondowncentre",
@@ -7047,7 +7275,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Grade II* Victorian theatre and Down's syndrome heritage museum; occasional opera, concerts and talks."
+   "note": "Grade II* Victorian theatre and Down's syndrome heritage museum; occasional opera, concerts and talks.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://langdondowncentre.org.uk/feed/",
+   "has_rss": "https://langdondowncentre.org.uk/feed/"
   },
   {
    "id": "boroughoftwickenhamloc",
@@ -7069,7 +7301,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly local history talks at St Mary's Church Hall, Church Street."
+   "note": "Monthly local history talks at St Mary's Church Hall, Church Street.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://botlhs.co.uk/feed/",
+   "has_rss": "https://botlhs.co.uk/feed/"
   },
   {
    "id": "hamptonwickassociation",
@@ -7091,7 +7327,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Residents' association diary of not-for-profit village events."
+   "note": "Residents' association diary of not-for-profit village events.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.hamptonwick.org.uk/events/single-listing-events.php"
   },
   {
    "id": "theatre503",
@@ -7113,7 +7352,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "New-writing fringe theatre above the Latchmere pub."
+   "note": "New-writing fringe theatre above the Latchmere pub.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://theatre503.com/whats-on/feed/",
+   "has_rss": "https://theatre503.com/whats-on/feed/"
   },
   {
    "id": "taratheatre",
@@ -7135,7 +7378,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Small intercultural theatre on Garratt Lane; plays, comedy and community theatre."
+   "note": "Small intercultural theatre on Garratt Lane; plays, comedy and community theatre.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://taratheatre.com/whats-on"
   },
   {
    "id": "thehalfmoonputney",
@@ -7157,7 +7403,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Historic live-music pub with gigs most nights; also a Wednesday quiz and a monthly music quiz."
+   "note": "Historic live-music pub with gigs most nights; also a Wednesday quiz and a monthly music quiz.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://tickets.halfmoon.co.uk/"
   },
   {
    "id": "theclaphamgrand",
@@ -7179,7 +7428,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Independent Victorian variety theatre: gigs, comedy, drag, club nights and history tours."
+   "note": "Independent Victorian variety theatre: gigs, comedy, drag, club nights and history tours.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://claphamgrand.com/"
   },
   {
    "id": "suttoncommunityfarm",
@@ -7201,7 +7453,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community-owned organic farm; seasonal open days, harvest festival and volunteer sessions."
+   "note": "Community-owned organic farm; seasonal open days, harvest festival and volunteer sessions.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.suttoncommunityfarm.org.uk/open-days"
   },
   {
    "id": "rosetheatrekingston",
@@ -7223,7 +7478,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Riverside producing theatre with drama, family shows and Friday jazz."
+   "note": "Riverside producing theatre with drama, family shows and Friday jazz.",
+   "probed": "2026-11-06",
+   "feed": "error",
+   "error": "HTTP Error 307: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error messag"
   },
   {
    "id": "stanleypickergallery",
@@ -7245,7 +7503,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Free Kingston University art gallery with exhibitions, Friday Lates and family drop-ins."
+   "note": "Free Kingston University art gallery with exhibitions, Friday Lates and family drop-ins.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.stanleypickergallery.org/feed/",
+   "has_rss": "https://www.stanleypickergallery.org/feed/"
   },
   {
    "id": "kingstonmuseumhistoryc",
@@ -7267,7 +7529,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Borough museum (Kingston Heritage Service) with free exhibitions and talks, plus a Friends talk series. Council-run but has its own site."
+   "note": "Borough museum (Kingston Heritage Service) with free exhibitions and talks, plus a Friends talk series. Council-run but has its own site.",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.kingstonheritage.org.uk/events"
   },
   {
    "id": "newmaldentowncentrepar",
@@ -7289,7 +7554,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community interest company running town-centre events in Jubilee Square."
+   "note": "Community interest company running town-centre events in Jubilee Square.",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.newmaldenpartnership.com/blog-feed.xml",
+   "has_rss": "https://www.newmaldenpartnership.com/blog-feed.xml"
   },
   {
    "id": "stjohnthebaptistchippi",
@@ -7311,7 +7580,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Parish church on the High Street with a concerts and recitals page"
+   "note": "Parish church on the High Street with a concerts and recitals page",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.barnetparishchurch.org.uk/concerts-and-recitals-239"
   },
   {
    "id": "stmaryatfinchley",
@@ -7333,7 +7605,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Church End parish church with regular concerts and recitals"
+   "note": "Church End parish church with regular concerts and recitals",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://stmaryatfinchley.org.uk/feed/",
+   "has_rss": "https://stmaryatfinchley.org.uk/feed/"
   },
   {
    "id": "trinitychurchmillhillo",
@@ -7355,7 +7631,13 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Fortnightly Thursday afternoon talks at the Eversfield Centre NW7 (also on Zoom)"
+   "note": "Fortnightly Thursday afternoon talks at the Eversfield Centre NW7 (also on Zoom)",
+   "probed": "2026-11-06",
+   "feed": "jsonld",
+   "feed_url": "https://www.trinitymillhill.org.uk/event/",
+   "jsonld_events": 2,
+   "has_ics": "webcal://www.trinitymillhill.org.uk/?post_type=tribe_events&ical=1&eventDisplay=list",
+   "has_rss": "https://www.trinitymillhill.org.uk/feed/"
   },
   {
    "id": "phoenixcinema",
@@ -7377,7 +7659,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Historic independent charity cinema in East Finchley. WEAK: showtimes load by script"
+   "note": "Historic independent charity cinema in East Finchley. WEAK: showtimes load by script",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.phoenixcinema.co.uk/PhoenixCinemaLondon.dll/Home"
   },
   {
    "id": "antwerparms",
@@ -7399,7 +7684,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community-owned pub with events almost every day: folk sessions, DJs, quizzes, crafts"
+   "note": "Community-owned pub with events almost every day: folk sessions, DJs, quizzes, crafts",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.antwerparms.co.uk/whats-on"
   },
   {
    "id": "brucecastlemuseum",
@@ -7421,7 +7709,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Tudor manor house museum in Bruce Castle Park. The museum is council-run, but this is its own site, not the council what's-on page"
+   "note": "Tudor manor house museum in Bruce Castle Park. The museum is council-run, but this is its own site, not the council what's-on page",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://brucecastle.org/events"
   },
   {
    "id": "tottenhamtrees",
@@ -7443,7 +7734,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Volunteer tree group running walks and talks. WEAK: thin programme"
+   "note": "Volunteer tree group running walks and talks. WEAK: thin programme",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.tottenhamtrees.org"
   },
   {
    "id": "karameln22",
@@ -7465,7 +7759,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Jazz and live-music venue in the Chocolate Factory, Coburg Rd N22, run by the Collage Arts charity"
+   "note": "Jazz and live-music venue in the Chocolate Factory, Coburg Rd N22, run by the Collage Arts charity",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.collage-arts.org/events/feed/",
+   "has_rss": "https://www.collage-arts.org/events/feed/"
   },
   {
    "id": "thechildrensbookshop",
@@ -7487,7 +7785,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Independent children's bookshop on Fortis Green Road with signings, storytime and courses"
+   "note": "Independent children's bookshop on Fortis Green Road with signings, storytime and courses",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.childrensbookshoplondon.com/events"
   },
   {
    "id": "crouchendopenstudios",
@@ -7509,7 +7810,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Local artists' collective: an annual open-studios weekend plus pop-up shows"
+   "note": "Local artists' collective: an annual open-studios weekend plus pop-up shows",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://crouchendopenstudios.org.uk/events/"
   },
   {
    "id": "bushhall",
@@ -7531,7 +7835,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Edwardian dance hall on Uxbridge Road turned intimate gig venue; full listings at /pages/whats-on"
+   "note": "Edwardian dance hall on Uxbridge Road turned intimate gig venue; full listings at /pages/whats-on",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://bushhallmusic.co.uk/"
   },
   {
    "id": "fulhampalace",
@@ -7553,7 +7860,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Historic palace, museum and walled garden by Bishop's Park. WEAK: events list loads by script"
+   "note": "Historic palace, museum and walled garden by Bishop's Park. WEAK: events list loads by script",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.fulhampalace.org/feed/",
+   "has_rss": "https://www.fulhampalace.org/feed/"
   },
   {
    "id": "thefulhamsociety",
@@ -7575,7 +7886,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Civic society running local walks and talks. WEAK: only one future date"
+   "note": "Civic society running local walks and talks. WEAK: only one future date",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.fulhamsociety.org/events?format=rss",
+   "has_rss": "https://www.fulhamsociety.org/events?format=rss"
   },
   {
    "id": "whitebeartheatre",
@@ -7597,7 +7912,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Long-running pub fringe theatre on Kennington Park Road. Listings are on its operator's site (London Pub Theatres)"
+   "note": "Long-running pub fringe theatre on Kennington Park Road. Listings are on its operator's site (London Pub Theatres)",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.londonpubtheatres.com/feed/rss2",
+   "has_rss": "https://www.londonpubtheatres.com/feed/rss2"
   },
   {
    "id": "royalvauxhalltavern",
@@ -7619,7 +7938,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Grade II-listed LGBTQ+ cabaret pub; full listings at /whats-on/"
+   "note": "Grade II-listed LGBTQ+ cabaret pub; full listings at /whats-on/",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.vauxhalltavern.com/"
   },
   {
    "id": "thestreathamsociety",
@@ -7641,7 +7963,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Local history and civic society with a regular talks programme (4 pages of listings)"
+   "note": "Local history and civic society with a regular talks programme (4 pages of listings)",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.streathamsociety.org.uk/news"
   },
   {
    "id": "southlondontheatre",
@@ -7663,7 +7988,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community theatre in West Norwood's old fire station"
+   "note": "Community theatre in West Norwood's old fire station",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.southlondontheatre.co.uk/whats-on/"
   },
   {
    "id": "thenorwoodsociety",
@@ -7685,7 +8013,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Monthly Thursday local-history talks (£3, booked on Eventbrite) plus walks"
+   "note": "Monthly Thursday local-history talks (£3, booked on Eventbrite) plus walks",
+   "probed": "2026-11-06",
+   "feed": "eventbrite",
+   "feed_url": "https://www.eventbrite.co.uk/o/norwood-society-34137969655",
+   "has_eventbrite": "https://www.eventbrite.co.uk/o/norwood-society-34137969655"
   },
   {
    "id": "norwoodforum",
@@ -7707,7 +8039,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Community forum's events diary for the Norwoods. Borderline: lists many local organisers"
+   "note": "Community forum's events diary for the Norwoods. Borderline: lists many local organisers",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.norwoodforum.org/events"
   },
   {
    "id": "knowlesofnorwood",
@@ -7729,7 +8064,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Norwood Road pub with a weekly quiz and monthly LGBTQIA+ meetup; what's on at /whats-on/"
+   "note": "Norwood Road pub with a weekly quiz and monthly LGBTQIA+ meetup; what's on at /whats-on/",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://knowlesofnorwood.co.uk/"
   },
   {
    "id": "thebrixtonsociety",
@@ -7751,7 +8089,13 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Civic society running heritage walks around Brixton"
+   "note": "Civic society running heritage walks around Brixton",
+   "probed": "2026-11-06",
+   "feed": "jsonld",
+   "feed_url": "https://www.brixtonsociety.org.uk/events/",
+   "jsonld_events": 2,
+   "has_ics": "webcal://www.brixtonsociety.org.uk/?post_type=tribe_events&ical=1&eventDisplay=list",
+   "has_rss": "https://www.brixtonsociety.org.uk/feed/"
   },
   {
    "id": "brixtonhouse",
@@ -7773,7 +8117,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Successor to Ovalhouse: theatre and comedy on Coldharbour Lane"
+   "note": "Successor to Ovalhouse: theatre and comedy on Coldharbour Lane",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://brixtonhouse.co.uk/feed/",
+   "has_rss": "https://brixtonhouse.co.uk/feed/"
   },
   {
    "id": "friendsofkenningtonpar",
@@ -7795,7 +8143,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Friends group: festival, bat walks, flower garden sessions. WEAK: quiet in winter"
+   "note": "Friends group: festival, bat walks, flower garden sessions. WEAK: quiet in winter",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.kenningtonpark.org/news"
   },
   {
    "id": "dulwichbooks",
@@ -7817,7 +8168,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Independent bookshop at 6 Croxted Road SE21. WEAK: only a recurring storytime"
+   "note": "Independent bookshop at 6 Croxted Road SE21. WEAK: only a recurring storytime",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://dulwichbooks.co.uk/index.php/feed/",
+   "has_rss": "https://dulwichbooks.co.uk/index.php/feed/"
   },
   {
    "id": "gipsyhillbrewingtaproo",
@@ -7839,7 +8194,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Brewery taproom on Hamilton Road SE27. WEAK: only recurring tours, which are booked through DesignMyNight"
+   "note": "Brewery taproom on Hamilton Road SE27. WEAK: only recurring tours, which are booked through DesignMyNight",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://gipsyhillbrew.com/"
   },
   {
    "id": "bellhouse",
@@ -7861,7 +8219,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Georgian house turned community arts and heritage space on College Road SE21"
+   "note": "Georgian house turned community arts and heritage space on College Road SE21",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.bellhouse.co.uk/upcoming-events"
   },
   {
    "id": "pembrokehouse",
@@ -7883,7 +8244,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Settlement and community centre whose Walworth Living Room hosts most of its events"
+   "note": "Settlement and community centre whose Walworth Living Room hosts most of its events",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.pembrokehouse.org.uk/feed/",
+   "has_rss": "https://www.pembrokehouse.org.uk/feed/"
   },
   {
    "id": "friendsofburgesspark",
@@ -7905,7 +8270,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Friends group running workshops and exhibitions at Chumleigh Gardens"
+   "note": "Friends group running workshops and exhibitions at Chumleigh Gardens",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.friendsofburgesspark.org.uk/feed/",
+   "has_rss": "https://www.friendsofburgesspark.org.uk/feed/"
   },
   {
    "id": "copelandpark",
@@ -7927,7 +8296,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Creative yard off Rye Lane (includes the Bussey Building) with markets, talks and nights"
+   "note": "Creative yard off Rye Lane (includes the Bussey Building) with markets, talks and nights",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://www.copelandpark.com/feed/",
+   "has_rss": "https://www.copelandpark.com/feed/"
   },
   {
    "id": "peckhamplex",
@@ -7949,7 +8322,10 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Low-price independent cinema on Rye Lane. WEAK: times load by script; weekly PDF listings exist"
+   "note": "Low-price independent cinema on Rye Lane. WEAK: times load by script; weekly PDF listings exist",
+   "probed": "2026-11-06",
+   "feed": "html",
+   "feed_url": "https://www.peckhamplex.london/films/out-now"
   },
   {
    "id": "thewalworthsociety",
@@ -7971,7 +8347,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Civic and heritage society. WEAK: events are announced in news posts"
+   "note": "Civic and heritage society. WEAK: events are announced in news posts",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://walworthsociety.co.uk/feed/",
+   "has_rss": "https://walworthsociety.co.uk/feed/"
   },
   {
    "id": "bermondseystreetareapa",
@@ -7993,7 +8373,11 @@
     ]
    },
    "added": "2026-11-05",
-   "note": "Neighbourhood partnership site. WEAK: events appear only as news posts"
+   "note": "Neighbourhood partnership site. WEAK: events appear only as news posts",
+   "probed": "2026-11-06",
+   "feed": "rss",
+   "feed_url": "https://bermondseystreet.london/feed/",
+   "has_rss": "https://bermondseystreet.london/feed/"
   }
  ]
 }

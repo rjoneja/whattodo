@@ -477,7 +477,8 @@
     "tags": [
      "museum"
     ]
-   }
+   },
+   "website": "https://lnk.bio/thepostalmuseum"
   },
   {
    "handle": "wellcomecollection",
@@ -496,7 +497,8 @@
     "tags": [
      "museum"
     ]
-   }
+   },
+   "website": "https://wellcomecollection.org"
   },
   {
    "handle": "ri_science",
@@ -512,7 +514,8 @@
      "science",
      "talk"
     ]
-   }
+   },
+   "website": "https://linkin.bio/ri_science"
   },
   {
    "handle": "imperialwarmuseums",
@@ -528,7 +531,8 @@
      "museum",
      "history"
     ]
-   }
+   },
+   "website": "https://linktr.ee/imperialwarmuseums"
   },
   {
    "handle": "designmuseum",
@@ -544,7 +548,8 @@
      "museum",
      "design"
     ]
-   }
+   },
+   "website": "https://sprout.link/designmuseum"
   },
   {
    "handle": "museumofthehome",
@@ -559,7 +564,8 @@
     "tags": [
      "museum"
     ]
-   }
+   },
+   "website": "https://linktr.ee/museumofthehome"
   },
   {
    "handle": "batterseapwrstn",
@@ -574,7 +580,8 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "website": "https://linkin.bio/batterseapwrstn"
   },
   {
    "handle": "kingscrossn1c",
@@ -589,7 +596,8 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "website": "http://linktr.ee/kingscrossn1c"
   },
   {
    "handle": "canarywharflondon",
@@ -604,7 +612,8 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "website": "https://linktr.ee/canarywharflondon"
   },
   {
    "handle": "yourallypally",
@@ -619,7 +628,8 @@
     "tags": [
      "events"
     ]
-   }
+   },
+   "website": "https://linktr.ee/alexandrapalace"
   },
   {
    "handle": "englishheritage",
@@ -634,7 +644,8 @@
     "tags": [
      "history"
     ]
-   }
+   },
+   "website": "https://linktr.ee/englishheritage"
   },
   {
    "handle": "historicroyalpalaces",
@@ -649,7 +660,8 @@
     "tags": [
      "palace"
     ]
-   }
+   },
+   "website": "https://linktr.ee/historicroyalpalaces"
   },
   {
    "handle": "lewishamcouncil",
@@ -664,7 +676,8 @@
     "tags": [
      "community"
     ]
-   }
+   },
+   "website": "https://lnk.bio/LewishamCouncil"
   },
   {
    "handle": "royal_greenwich",
