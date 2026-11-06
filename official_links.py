@@ -20,7 +20,7 @@ UA = "JauntOut-links/0.1 (+https://www.jauntout.com; finds the official page for
 MODEL = os.environ.get("WTD_MODEL", "claude-haiku-5-5")
 MIDDLEMEN = re.compile(r"(^|\.)(londonist\.com|ianvisits\.co\.uk|skiddle\.com|timeout\.com|visitlondon\.com|secretldn\.com|kidrated\.com|"
                        r"dadsinlondon\.com|hoop\.co\.uk|designmynight\.com|allevents\.in|fatsoma\.com|blogspot\.com|wordpress\.com|"
-                       r"instagram\.com|londonxlondon\.com|sohotheatre\.com\.ignored)$")
+                       r"instagram\.com|londonxlondon\.com|beehiiv\.com|substack\.com|list-manage\.com|sohotheatre\.com\.ignored)$")
 COUNCIL = re.compile(r"(\.gov\.uk|enjoyroyalgreenwich\.org\.uk)$")
 SKIP_OUT = re.compile(r"(facebook|twitter|x\.com|instagram|youtube|youtu\.be|tiktok|linkedin|pinterest|whatsapp|threads\.net|"
                       r"google\.[a-z.]+/maps|maps\.google|goo\.gl|maps\.apple|bit\.ly/share|addtoany|sharethis|mailchimp|list-manage|"

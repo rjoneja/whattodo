@@ -2165,11 +2165,11 @@
    ],
    "blurb": "Immersive walking light and sound journey through the Old Royal Naval College, from mythical Atlantis and Troy to the age of dinosaurs. Adults £22. Runs 6-8 and 11-15 November only.",
    "emoji": "✨",
-   "from": "2026-11-02",
+   "from": "2026-11-06",
    "to": "2026-11-15",
    "open": "17:45",
    "close": "21:00",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.UOf8NiIcquLeEIj6ZydBGz23oGAeQQT1m94-VaNo33A4FBDbs_xYZOex-H6SNluNHj9PSgX0yWM8SlI30jKYXzxVRR0oDGVpjKrmNYUt_LJqSq67FSWFlXj1yMVA0ncnrx2nfrMAehYygTebV1pr_GKW_e3BxsNnl6QuvrWthLjavsLiHMGp",
+   "url": "https://ornc.org/whats-on/lost-worlds-by-luxmuralis/",
    "source": "Newsletter: The London Weekend",
    "id": "ev-lost-worlds-by-luxmuralis-11-06",
    "time": "evenings",
@@ -2178,7 +2178,8 @@
    ],
    "part": "evening",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "lk": 1
   },
   {
    "name": "Schiaparelli: Fashion Becomes Art",
@@ -7782,14 +7783,15 @@
    "to": "2026-12-21",
    "open": "15:00",
    "close": "21:00",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.NoIdOKArwL3idfVweCG8yG-eQCSgV2aM4xjuXeFUhdIGf-gePBan6ri6WZBTbzATE24gDaJ7dVOon50v3KfNOLsP3HhVE30sCCAYnqIikr-qFBI3BaVo7kYtbbAULc0Xu13zU1EvUKjmIpuh316EyQX8669UabxIAfPeaAIbruvkcIW3L87f",
+   "url": "https://www.royalmarsden.org/ever-after-garden",
    "source": "Newsletter: The London Weekend",
    "id": "ev-the-ever-after-garden-11-05",
    "also": [
     "Londonist things to do (aggregator)"
    ],
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "lk": 1
   },
   {
    "name": "Teddington Beer Festival",
@@ -11536,11 +11538,12 @@
    "emoji": "🎨",
    "from": "2026-11-05",
    "to": "2026-11-08",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.NoIdOKArwL3idfVweCG8yNg3OfaG9OMIURIgOrBdLl0WLvoHBiT8x1EoXUHRCbvWyL3DWX8fIVdWyXMso2JuZahQXbLjJ5fSqf_CkxWqhUsy4eUdGBGetroTwWDDvvhEcC_1xDf7m2fsXwfAJjg3L2R-B2C1k2vvCROVMI96gH78rFIir5-j",
+   "url": "https://www.wimbledonartstudios.co.uk/wimbledon-art-fair",
    "source": "Newsletter: The London Weekend",
    "id": "ev-wimbledon-art-fair-11-05",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "lk": 1
   },
   {
    "name": "Being Human Festival",
@@ -11567,11 +11570,12 @@
    "emoji": "📚",
    "from": "2026-11-05",
    "to": "2026-11-14",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.NoIdOKArwL3idfVweCG8yBrZxOh9CzHb3wVK5iWCG9hGHYF-QKoQqjNn9tD59S4ezb3VEQratmseX2XwgS6FRtUux3W-gKc31tcIKF-pUuBhGj0zdecbUAP6dHwYxd8PwA_rKU41k3-YQAlAkt6ZMQVhVPh5JZ9pu8eXw-NgZ7J-cH89Z5Lc",
+   "url": "https://www.beinghumanfestival.org/",
    "source": "Newsletter: The London Weekend",
    "id": "ev-being-human-festival-11-05",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "lk": 1
   },
   {
    "name": "I Am Roland Mouret (talk)",
@@ -13813,7 +13817,7 @@
    "emoji": "🎆",
    "from": "2026-11-07",
    "to": "2026-11-08",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.NoIdOKArwL3idfVweCG8yDw9UyTNIMsk9LsgPG2W1oaaGfKS-CTM3CgblH2zBEcSlkCr5KXe2ziX6SHyBXznZPAMCkPFpIjbO1_2mHp70MnGVi-6jxWsiAf1Rf6yEIslH6P0U-qRdCDGjzf1hQSl6sYUya-aAcvYY5F_edadD7rWUy-D3SJ1",
+   "url": "https://www.batterseaparkfireworks.com/",
    "source": "Newsletter: The London Weekend",
    "id": "ev-bonfire-night-fireworks-battersea-park-11-07",
    "time": "8.30pm",
@@ -13823,7 +13827,8 @@
    ],
    "part": "evening",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "lk": 1
   },
   {
    "id": "ev-allypally-fw-sat",
@@ -16869,70 +16874,10 @@
    "rel": "keep"
   },
   {
-   "name": "Bonfire Night Fireworks, Blackheath",
-   "area": "Blackheath",
-   "lat": 51.461,
-   "lon": 0.001,
-   "in": "out",
-   "price": "£",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 3,
-   "tags": [
-    "bonfire night",
-    "fireworks",
-    "outdoor display",
-    "family evening"
-   ],
-   "blurb": "One of London's biggest Bonfire Night fireworks displays, on Blackheath. Ticket prices vary. Check the organiser's page for times and entry details.",
-   "emoji": "🎆",
-   "from": "2026-11-07",
-   "to": "2026-11-08",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.NoIdOKArwL3idfVweCG8yLPLQK4_q8_nyC08v-1in8kXZKw8GV4YOfUfddpij0Llie6009NJSF1CDQ-o50ooYfMyUNmDJT1HtYb--gIpzwZM0_TEM13nvHfvZYqqcvjByepj0WmxcGHQLVV29mIov-qnO7KWXMH9Tu43hZpE_9-qDBLPN1dV",
-   "source": "Newsletter: The London Weekend",
-   "id": "ev-bonfire-night-fireworks-blackheath-11-07",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Bonfire Night Fireworks, Alexandra Palace",
-   "area": "Alexandra Palace",
-   "lat": 51.5961,
-   "lon": -0.1208,
-   "in": "out",
-   "price": "£",
-   "ages": [
-    0,
-    99
-   ],
-   "kids": 3,
-   "adults": 2,
-   "dur": 3,
-   "tags": [
-    "bonfire night",
-    "fireworks",
-    "hilltop views",
-    "family evening"
-   ],
-   "blurb": "Bonfire Night fireworks display at Alexandra Palace, with views over London. Ticket prices vary. Check the organiser's page for times and entry details.",
-   "emoji": "🎆",
-   "from": "2026-11-07",
-   "to": "2026-11-08",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.mdZ7-F8PvujhOTDQUrP4wuo4VRGJ4fV03iN1UA9BZYILNlG2LJaHs9roiEmNddR6REt01yz6kId6SGfgsaoCKgl1pgKKlw88NRTJ7IKGxo02T2BW9uegn9ZbWJYSLaUBXvZfWLFFZSvOybMSPIJPaogU-mKxQN-tljKal-CeXXJP3WmQXT_H",
-   "source": "Newsletter: The London Weekend",
-   "id": "ev-bonfire-night-fireworks-alexandra-palace-11-07",
-   "hrs": 1,
-   "rel": "keep"
-  },
-  {
-   "name": "Bonfire Night Fireworks, Ealing",
+   "name": "Festival of Fire & Light, Ealing Cricket Club",
    "area": "Ealing",
-   "lat": 51.513,
-   "lon": -0.3089,
+   "lat": 51.5205,
+   "lon": -0.2985,
    "in": "out",
    "price": "£",
    "ages": [
@@ -16948,15 +16893,15 @@
     "outdoor display",
     "family evening"
    ],
-   "blurb": "Bonfire Night fireworks display in Ealing. Ticket prices vary. Check the organiser's page for times and entry details.",
+   "blurb": "Ealing Cricket Club's fireworks night, mixing Bonfire Night and Diwali, with a lantern parade and food stalls. Ticketed; book ahead.",
    "emoji": "🎆",
-   "from": "2026-11-07",
-   "to": "2026-11-08",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.NoIdOKArwL3idfVweCG8yI0S-7z_HRCjrZqBGyw2-twgKMqs0EzgGJeGbJryAr7ZGAcIHbeXW40VKDSuC6V3v2HagfG8Y18cLcHLZaubJNH0Rt2VgYvTR3T48s1imB1vuFFJOJjqtLcL9UPd4o81HHff6C6lwOpfVOgZXvnepn6p9DNE6EP4",
+   "url": "https://www.ealingcc.co.uk/news/ealing-cricket-clubs-festival-of-fire--light-2998002.html",
    "source": "Newsletter: The London Weekend",
    "id": "ev-bonfire-night-fireworks-ealing-11-07",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "date": "2026-11-07",
+   "lk": 1
   },
   {
    "name": "Bonfire Night Fireworks, Morden",
@@ -16978,15 +16923,15 @@
     "outdoor display",
     "family evening"
    ],
-   "blurb": "Bonfire Night fireworks display in Morden. Ticket prices vary. Check the organiser's page for times and entry details.",
+   "blurb": "Merton Council's Fireworks in the Park at Morden Park: funfair from 5.15pm, an early show at 6.45pm for young children and the main display at 8.30pm. Book tickets ahead.",
    "emoji": "🎆",
-   "from": "2026-11-07",
-   "to": "2026-11-08",
-   "url": "https://link.mail.beehiiv.com/ss/c/u001.NoIdOKArwL3idfVweCG8yJVA8Ev461gxnpSS1q3C5PbOAT3_NIEWhYFMEXv-OovU7M7h7XhTgzbp7zuTtCvQe4jAUoMQGqqiueX5NgqpNGnkMCSOTABmrcs27U6iPBUW19gUzy7gTkdkxsBrssOv7SiK6ppZcNYGyiKxME7D0JZdW6W335-b",
+   "url": "https://www.merton.gov.uk/fireworks",
    "source": "Newsletter: The London Weekend",
    "id": "ev-bonfire-night-fireworks-morden-11-07",
    "hrs": 1,
-   "rel": "keep"
+   "rel": "keep",
+   "date": "2026-11-07",
+   "lk": 1
   },
   {
    "id": "ev-battersea-fw-sun",
