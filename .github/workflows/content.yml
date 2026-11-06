@@ -2,6 +2,9 @@ name: content
 on:
   schedule: [{cron: "20 5 * * *"}, {cron: "20 7 * * *"}]   # second one is a back-up for late GitHub schedules
   workflow_dispatch:
+    inputs:
+      via: {description: "cron when started by the Cloudflare timer (then the once-a-day / every-other-day rules apply)", default: "hand"}
+concurrency: {group: content, cancel-in-progress: false}   # a second start waits, then sees today's run and skips
 permissions:
   contents: write
 jobs:
@@ -14,9 +17,9 @@ jobs:
         with: {fetch-depth: 20}
       - id: check
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ] && git log --since="$(date -u +%Y-%m-%d)T00:00:00Z" --format=%s | grep -q '^content '; then echo "skip=true" >> $GITHUB_OUTPUT; echo "already ran today"; fi
+          if { [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event.inputs.via }}" = "cron" ]; } && git log --since="$(date -u +%Y-%m-%d)T00:00:00Z" --format=%s | grep -q '^content '; then echo "skip=true" >> $GITHUB_OUTPUT; echo "already ran today"; fi
           # venue websites every other day (they post weeks ahead); Instagram and the rest stay daily
-          if [ "${{ github.event_name }}" != "schedule" ] || [ $(( 10#$(date -u +%j) % 2 )) -eq 0 ]; then echo "web=true" >> $GITHUB_OUTPUT; else echo "venue websites: not today"; fi
+          if { [ "${{ github.event_name }}" != "schedule" ] && [ "${{ github.event.inputs.via }}" != "cron" ]; } || [ $(( 10#$(date -u +%j) % 2 )) -eq 0 ]; then echo "web=true" >> $GITHUB_OUTPUT; else echo "venue websites: not today"; fi
       - if: ${{ steps.check.outputs.skip != 'true' }}
         uses: actions/setup-python@v5
         with: {python-version: "3.12"}

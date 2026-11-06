@@ -67,6 +67,20 @@ async function summary(req, env) {
                      returning: returning[0]?.n || 0, phones: total[0]?.phones || 0 });
 }
 
+// ---------- scheduler ----------
+// GitHub's own timers can run hours late or not at all, so Cloudflare's cron (reliable) starts the jobs instead.
+// Runs every hour at :17 (UTC). GitHub's schedules stay on as a back-up; the content job skips itself if it already ran,
+// and is told it was started on a timer (via=cron) so its once-a-day and every-other-day rules still apply.
+const JOBS = h => ["submissions", ...(h === 5 || h === 14 ? ["weather"] : []), ...(h === 5 || h === 7 ? ["content"] : []),
+                   ...(h === 7 ? ["newsletters"] : []), ...(h === 8 ? ["layout"] : [])];
+async function dispatch(env, wf) {
+  const body = { ref: "main", ...(wf === "content" ? { inputs: { via: "cron" } } : {}) };
+  const r = await fetch(`https://api.github.com/repos/rjoneja/whattodo/actions/workflows/${wf}.yml/dispatches`, {
+    method: "POST", body: JSON.stringify(body),
+    headers: { authorization: `Bearer ${env.GH_TOKEN}`, accept: "application/vnd.github+json", "user-agent": "jauntout-scheduler", "x-github-api-version": "2022-11-28" } });
+  return r.status;
+}
+
 // ---------- Claude spend (posted by the pipeline's meter.py) ----------
 async function usage(req, env) {
   if (!authed(req, env)) return json(req, { error: "wrong key" }, 401);
@@ -164,6 +178,11 @@ async function published(req, env) {
 }
 
 export default {
+  async scheduled(event, env, ctx) {
+    if (!env.GH_TOKEN) return;
+    const h = new Date(event.scheduledTime).getUTCHours();
+    for (const wf of JOBS(h)) ctx.waitUntil(dispatch(env, wf).then(st => console.log(`dispatch ${wf}: ${st}`)));
+  },
   async fetch(req, env) {
     const url = new URL(req.url);
     if (req.method === "OPTIONS") return new Response(null, { headers: cors(req) });
@@ -175,6 +194,7 @@ export default {
     if (url.pathname === "/review" && req.method === "GET") return review(req, env);
     if (url.pathname === "/e" && req.method === "POST") return ingest(req, env);
     if (url.pathname === "/usage" && req.method === "POST") return usage(req, env);
+    if (url.pathname === "/cron-check" && req.method === "GET") return authed(req, env) ? json(req, { scheduler: !!env.GH_TOKEN, nextJobs: JOBS((new Date().getUTCHours() + 1) % 24) }) : json(req, { error: "wrong key" }, 401);
     if (url.pathname === "/summary" && req.method === "GET") return summary(req, env);
     return new Response("JauntOut stats", { headers: cors(req) });
   },
