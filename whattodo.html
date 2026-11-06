@@ -47,6 +47,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .item.sr{cursor:pointer;grid-template-columns:auto 1fr auto}.item.sr .em{font-size:22px;line-height:1}.item.sr .go{color:var(--moss);font-family:var(--display);font-weight:700}
 .snone{border:1px dashed var(--line);border-radius:14px;padding:16px;color:var(--ink-2);font-size:14px}.snone b{color:var(--ink);display:block;margin-bottom:4px;font-family:var(--display)}
 .snone a,.hint a{color:var(--sky)}
+.hint.aboutl{text-align:center;margin-top:18px;font-size:13px}
 
 .eyebrow{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .step{display:flex;flex-direction:column;gap:calc(var(--u)*2)}
@@ -338,6 +339,7 @@ td.n{text-align:right}
       <button class="cta" id="go" disabled>Show me things <span>›</span></button>
     </div>
     <div class="row" id="setupNav"><button class="ghost" id="back" hidden>‹ Back</button></div>
+    <p class="hint aboutl"><a href="/about/">About JauntOut</a> · <a href="/submit/">List your event</a></p>
   </section>
 
   <!-- DECK -->
@@ -367,7 +369,7 @@ td.n{text-align:right}
       <button class="tab" data-tab="pass">Passed</button>
     </div>
     <div class="items" id="items"></div>
-    <p class="hint listyours">Running something people can turn up to? <a href="/submit/">List your event</a>, free.</p>
+    <p class="hint listyours">Running something people can turn up to? <a href="/submit/">List your event</a>, free. · <a href="/about/">About</a></p>
   </section>
 
   <!-- SEARCH -->
@@ -820,6 +822,12 @@ function rerank(keep){ deck.forEach(x=>{ const p=distPen(x.cost??x.mins??30); x.
 function openOn(it){ const d=fromIso(setup.date); if(it.days&&!it.days.includes(d.getDay())) return false; if(it.months&&!it.months.includes(d.getMonth()+1)) return false; return true; }
 let IMAGES={};
 async function loadImages(){ if(Object.keys(IMAGES).length) return; try{const r=await fetch('images.json',{cache:'no-store'}); if(r.ok) IMAGES=await r.json()}catch(e){} }
+// Affiliate partners (docs/affiliates.json): only links that already go to that seller get our tag. Never changes ranking.
+let AFF=[]; fetch('/affiliates.json',{cache:'no-cache'}).then(r=>r.ok?r.json():[]).then(j=>{AFF=(Array.isArray(j)?j:[]).filter(a=>a&&a.host&&(a.append||a.wrap));}).catch(()=>{});
+function affOf(u){ try{ const h=new URL(u).hostname.replace(/^www\./,''); return AFF.find(a=>h===a.host||h.endsWith('.'+a.host))||null; }catch(e){ return null; } }
+function linkFor(c){ const a=affOf(c.url||''); if(!a) return {url:c.url,aff:false};
+  if(a.wrap) return {url:a.wrap.replace('{u}',encodeURIComponent(c.url)),aff:a.host};
+  const u=new URL(c.url); for(const [k,v] of new URLSearchParams(a.append)) u.searchParams.set(k,v); return {url:u.toString(),aff:a.host}; }
 async function loadEvents(){ if(EVENTS.length) return; try{const r=await fetch('events.json',{cache:'no-store'}); if(r.ok){const j=await r.json(); EVENTS=(j.events||[]).map(e=>Object.assign({event:true},e))}}catch(e){} }
 function eventOn(e){ const d=setup.date; if(e.date) return e.date===d; if(e.from&&d<e.from) return false; if(e.to&&d>e.to) return false; return openOn(e); }
 // When in the day something is on, in minutes after midnight: from stated hours, else from a time like "10am–5pm" or "12:00"
@@ -945,7 +953,7 @@ function shareText(c){
 }
 function shareURL(c){ return 'https://www.jauntout.com/'+(c.event?'e/'+encodeURIComponent(c.id)+'/':'?e='+encodeURIComponent(c.id)+'&')+(c.event?'?':'')+'s=wa'; }
 function shareLink(c){ return 'https://wa.me/?text='+encodeURIComponent(shareText(c)+'\n'+shareURL(c)); }
-document.addEventListener('click',e=>{ const d=e.target.closest('[data-det]'); if(d){ const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===d.dataset.det); track('details',{id:d.dataset.det,from:d.dataset.from||'card',event:!!(c&&c.event)}); }
+document.addEventListener('click',e=>{ const d=e.target.closest('[data-det]'); if(d){ const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===d.dataset.det); track('details',{id:d.dataset.det,from:(d.dataset.from||'card')+(d.dataset.aff?'+'+d.dataset.aff:''),event:!!(c&&c.event)}); }
   if(e.target.closest('#tripGo')) track('directions',{id:tripState&&tripState.c&&tripState.c.id}); },true);
 document.addEventListener('click',e=>{const a=e.target.closest('[data-share]'); if(!a) return; const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===a.dataset.share); track('share',{id:a.dataset.share,who:setup.who,channel:'whatsapp',event:!!(c&&c.event)});
   if(c&&!['saved','again'].includes(status[c.id])){            // sharing it means you like it: put it on My list
@@ -969,7 +977,7 @@ function cardHTML(c){
     <div class="top"><div><div class="area">${c.area}</div><h3>${c.name}</h3></div><div class="price ${c.price==='free'?'free':''}">${c.price==='free'?'Free':c.price}</div></div>
     <div class="badges">${badges.join('')}</div>
     <p class="blurb">${c.blurb}</p>${why}
-    <div class="foot"><a class="det" href="${c.url}" target="_blank" rel="noopener" data-det="${c.id}" data-from="card">${c.event?'Details':'Website'} ›</a><span class="fa"><a class="wa" href="${shareLink(c)}" target="_blank" rel="noopener" data-share="${c.id}" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.7 8.7 0 0 0-7.5 13.1L3.3 20.8l4.6-1.2A8.7 8.7 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.5.3-1.2.5-1.9.3-2.4-.7-4.3-2.6-5-5-.2-.7 0-1.4.4-1.9Z" fill="currentColor"/></svg>Share</a></span></div>`;
+    <div class="foot">${(()=>{const L=linkFor(c);return `<a class="det" href="${L.url}" target="_blank" rel="${L.aff?'sponsored noopener':'noopener'}" data-det="${c.id}" data-from="card"${L.aff?` data-aff="${L.aff}"`:''}>${L.aff?'Tickets':c.event?'Details':'Website'} ›</a>`})()}<span class="fa"><a class="wa" href="${shareLink(c)}" target="_blank" rel="noopener" data-share="${c.id}" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.7 8.7 0 0 0-7.5 13.1L3.3 20.8l4.6-1.2A8.7 8.7 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.5.3-1.2.5-1.9.3-2.4-.7-4.3-2.6-5-5-.2-.7 0-1.4.4-1.9Z" fill="currentColor"/></svg>Share</a></span></div>`;
 }
 function renderStack(){
   const st=$('#stack'); st.innerHTML='';
@@ -1217,7 +1225,7 @@ function renderMapSel(pts){
   if(!sel){box.hidden=true;return}
   box.hidden=false; const st=status[sel.id];
   box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ${travelLabel(sel)}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
-    <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener" data-det="${sel.id}" data-from="map">Details ›</a><a class="mini" href="https://www.google.com/maps/dir/?api=1&destination=${sel.lat},${sel.lon}&travelmode=${({drive:'driving',cycle:'bicycling',walk:'walking'})[sel.how]||'transit'}" target="_blank" rel="noopener">Directions ›</a></div>`;
+    <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${linkFor(sel).url}" target="_blank" rel="${linkFor(sel).aff?'sponsored noopener':'noopener'}" data-det="${sel.id}" data-from="map">${linkFor(sel).aff?'Tickets':'Details'} ›</a><a class="mini" href="https://www.google.com/maps/dir/?api=1&destination=${sel.lat},${sel.lon}&travelmode=${({drive:'driving',cycle:'bicycling',walk:'walking'})[sel.how]||'transit'}" target="_blank" rel="noopener">Directions ›</a></div>`;
   box.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{status[sel.id]=b.dataset.ms;save();track('map_action',{id:sel.id,kind:b.dataset.ms});deck=deck.filter(d=>d.id!==sel.id);renderMap();renderStack();toast(b.dataset.ms==='saved'?'Saved ♥':'Ticked off')});
 }
 const ZOOMS=[1,2,4];

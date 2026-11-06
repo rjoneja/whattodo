@@ -56,7 +56,7 @@ jobs:
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 share_pages.py
       - if: ${{ steps.check.outputs.skip != 'true' }}
-        run: python3 sources_page.py || true
+        run: python3 sources_page.py || true; python3 about_page.py || true
       - if: ${{ steps.check.outputs.skip != 'true' }}
         run: |
-          .github/push.sh "content $(date +%F)" docs/events.json docs/images.json docs/e docs/sources docs/followed.json venues.json accounts.json ig_seen.json ingest_cache.json
+          .github/push.sh "content $(date +%F)" docs/events.json docs/images.json docs/e docs/sources docs/about docs/followed.json venues.json accounts.json ig_seen.json ingest_cache.json

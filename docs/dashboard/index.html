@@ -198,7 +198,7 @@ function render(S){
     [visits?(dtaps/visits).toFixed(2):'—','Details per visit',''],[S.directions||0,'Directions','opened Google Maps from a journey']]);
   table('#dwellT','Time on each screen',(S.dwell||[]).map(x=>[(VL[x.view]||x.view)+` · ${mins(x.secs/Math.max(1,x.visits))} a visit`,Math.round(x.secs/60)]),'Minutes');
   table('#visitLen','Visit length',vl.map(x=>[x.band.slice(2),x.n]),'Visits');
-  table('#detailsT','Details tapped from',(S.details||[]).map(x=>[(x.place==='map'?'Map':'Card')+' · '+(x.kind==='event'?'event':'everyday place'),x.n]),'Taps');
+  table('#detailsT','Details tapped from',(S.details||[]).map(x=>[(String(x.place).startsWith('map')?'Map':'Card')+(String(x.place).includes('+')?' · Tickets ('+String(x.place).split('+')[1]+')':'')+' · '+(x.kind==='event'?'event':'everyday place'),x.n]),'Taps');
   table('#topDetails','Most opened Details',(S.topDetails||[]).map(x=>[names[x.id]||x.id,x.n]),'Taps');
   table('#searches','Searched for (found something)',(S.searches||[]).map(x=>[x.q,x.n]),'Times');
   table('#misses','Searched for, nothing found: sources to add?',(S.misses||[]).map(x=>[x.q+(x.followed?' (we follow it)':''),x.n]),'Times');
