@@ -1,9 +1,9 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='17437cba94';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='49d38a9f9a';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
 <meta name="description" content="Things to do near you in London this weekend, matched to who's going, the weather and how far you'll travel.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 84 84%27%3E%3Crect width=%2784%27 height=%2784%27 rx=%2718%27 fill=%27%231E3F2B%27/%3E%3Cpath transform=%27translate(12 6) scale(1 .86)%27 fill-rule=%27evenodd%27 fill=%27%23E2582E%27 d=%27M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z%27/%3E%3C/svg%3E">
+<link rel="icon" href="/icons/icon.svg" type="image/svg+xml"><link rel="icon" href="/icons/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"><link rel="manifest" href="/manifest.webmanifest"><meta name="apple-mobile-web-app-title" content="JauntOut">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" content="#122018">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Jost:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -510,7 +510,17 @@ const STATS={url:null,q:[],dev:null};
 const STAT_MAP={  // what's sent: event → [a, b, id]
   visit:d=>[d.via,d.ret?'returning':'new',null], share:d=>[d.who,d.event?'event':'place',d.id], share_open:d=>[d.via,null,d.id],
   swipe:d=>[d.kind,d.how,d.id], setup_done:d=>[d.who,d.mode,null], trip_open:d=>[null,null,d.id], trip_pick:d=>[d.kind,null,d.id],
-  map_action:d=>[d.kind,null,d.id], undo:d=>[null,null,d.id], search:d=>[d.q,String(d.n),d.f?'1':null] };
+  map_action:d=>[d.kind,null,d.id], undo:d=>[null,null,d.id], search:d=>[d.q,String(d.n),d.f?'1':null],
+  details:d=>[d.from,d.event?'event':'place',d.id], directions:d=>[null,null,d.id], dwell:d=>[d.view,String(d.secs),d.sess] };
+// Time on each screen. Counts only while the page is visible and someone has touched it in the last 2 minutes;
+// sent as one "dwell" per screen per visit when the page is hidden (that's also the visit's end).
+const SESS=Math.random().toString(36).slice(2,10); let curView='setup', dwellOn=null, dwellT0=0, lastAct=Date.now(); const dwellSum={};
+function dwellStop(){ if(dwellOn){ const now=Math.min(Date.now(),lastAct+120000); const s=Math.max(0,(now-dwellT0)/1000); dwellSum[dwellOn]=(dwellSum[dwellOn]||0)+s; dwellOn=null; } }
+function dwellAt(name){ dwellStop(); if(document.visibilityState==='visible'){ dwellOn=name; dwellT0=Date.now(); lastAct=Date.now(); } }
+['pointerdown','keydown','scroll','touchstart'].forEach(ev=>addEventListener(ev,()=>{ const now=Date.now(); if(dwellOn&&now-lastAct>120000){ dwellStop(); dwellOn=(!$('#tripSheet').hidden?'journey':curView); dwellT0=now; } lastAct=now; },{passive:true,capture:true}));
+function dwellFlush(){ dwellStop(); for(const [k,v] of Object.entries(dwellSum)){ const secs=Math.round(v); if(secs>=1) track('dwell',{view:k,secs:Math.min(secs,3600),sess:SESS}); delete dwellSum[k]; } }
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='hidden') dwellFlush(); else dwellAt(!$('#tripSheet').hidden?'journey':curView); });
+addEventListener('pagehide',dwellFlush);
 function flushStats(leaving){ if(!STATS.url||!STATS.dev||!STATS.q.length) return; const body=JSON.stringify({d:STATS.dev,e:STATS.q.splice(0,60)});
   try{ if(leaving&&navigator.sendBeacon){ navigator.sendBeacon(STATS.url+'/e',new Blob([body],{type:'text/plain'})); return; }
     fetch(STATS.url+'/e',{method:'POST',body,headers:{'content-type':'text/plain'},keepalive:true}).catch(()=>{}); }catch(e){} }
@@ -931,6 +941,8 @@ function shareText(c){
 }
 function shareURL(c){ return 'https://www.jauntout.com/'+(c.event?'e/'+encodeURIComponent(c.id)+'/':'?e='+encodeURIComponent(c.id)+'&')+(c.event?'?':'')+'s=wa'; }
 function shareLink(c){ return 'https://wa.me/?text='+encodeURIComponent(shareText(c)+'\n'+shareURL(c)); }
+document.addEventListener('click',e=>{ const d=e.target.closest('[data-det]'); if(d){ const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===d.dataset.det); track('details',{id:d.dataset.det,from:d.dataset.from||'card',event:!!(c&&c.event)}); }
+  if(e.target.closest('#tripGo')) track('directions',{id:tripState&&tripState.c&&tripState.c.id}); },true);
 document.addEventListener('click',e=>{const a=e.target.closest('[data-share]'); if(!a) return; const c=[...deck,...EVENTS,...ITEMS].find(x=>x.id===a.dataset.share); track('share',{id:a.dataset.share,who:setup.who,channel:'whatsapp',event:!!(c&&c.event)});
   if(c&&!['saved','again'].includes(status[c.id])){            // sharing it means you like it: put it on My list
     status[c.id]='saved'; (c.tags||[]).forEach(t=>swipes.like[t]=(swipes.like[t]||0)+1); save(); toast('Shared · saved to My list'); } },true);   // the card stays put
@@ -953,7 +965,7 @@ function cardHTML(c){
     <div class="top"><div><div class="area">${c.area}</div><h3>${c.name}</h3></div><div class="price ${c.price==='free'?'free':''}">${c.price==='free'?'Free':c.price}</div></div>
     <div class="badges">${badges.join('')}</div>
     <p class="blurb">${c.blurb}</p>${why}
-    <div class="foot"><a class="det" href="${c.url}" target="_blank" rel="noopener">${c.event?'Details':'Website'} ›</a><span class="fa"><a class="wa" href="${shareLink(c)}" target="_blank" rel="noopener" data-share="${c.id}" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.7 8.7 0 0 0-7.5 13.1L3.3 20.8l4.6-1.2A8.7 8.7 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.5.3-1.2.5-1.9.3-2.4-.7-4.3-2.6-5-5-.2-.7 0-1.4.4-1.9Z" fill="currentColor"/></svg>Share</a></span></div>`;
+    <div class="foot"><a class="det" href="${c.url}" target="_blank" rel="noopener" data-det="${c.id}" data-from="card">${c.event?'Details':'Website'} ›</a><span class="fa"><a class="wa" href="${shareLink(c)}" target="_blank" rel="noopener" data-share="${c.id}" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.7 8.7 0 0 0-7.5 13.1L3.3 20.8l4.6-1.2A8.7 8.7 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.5.3-1.2.5-1.9.3-2.4-.7-4.3-2.6-5-5-.2-.7 0-1.4.4-1.9Z" fill="currentColor"/></svg>Share</a></span></div>`;
 }
 function renderStack(){
   const st=$('#stack'); st.innerHTML='';
@@ -1157,13 +1169,14 @@ async function openTrip(c){
   $('#tripSub').textContent=[ 'From '+fromLabel(), nice(fromIso(setup.date)), ab!=null?'arrive by '+fmtT(ab):'', hc!=null?'closes '+fmtT(hc):'' ].filter(Boolean).join(' · ');
   $('#tripFine').textContent='TfL times for '+nice(fromIso(setup.date))+'. Walk and cycle times are estimates.';
   const show=t=>{ const opts=tripOptions(c,t); tripState={c,opts,sel:Math.max(0,opts.findIndex(x=>x.pick)),touched:false}; renderTrip(); };
-  show(travelCache[c.id]||(travelCache[c.id]===null?null:undefined)); $('#tripSheet').hidden=false;
+  show(travelCache[c.id]||(travelCache[c.id]===null?null:undefined)); $('#tripSheet').hidden=false; dwellAt('journey');
   if(!travelCache[c.id]){ const t=await tflMins(c,true);
     if(!$('#tripSheet').hidden&&tripState&&tripState.c.id===c.id&&!tripState.touched) show(t||null); }
 }
-$('#tripDone').onclick=()=>$('#tripSheet').hidden=true;
-$('#tripSheet').addEventListener('click',e=>{if(e.target.id==='tripSheet')$('#tripSheet').hidden=true});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#tripSheet').hidden=true});
+function closeTrip(){ if($('#tripSheet').hidden) return; $('#tripSheet').hidden=true; dwellAt(curView); }
+$('#tripDone').onclick=closeTrip;
+$('#tripSheet').addEventListener('click',e=>{if(e.target.id==='tripSheet')closeTrip()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTrip()});
 
 function renderSchematic(){
   const W=360,H=414,cx=W/2,cy=H/2;
@@ -1200,7 +1213,7 @@ function renderMapSel(pts){
   if(!sel){box.hidden=true;return}
   box.hidden=false; const st=status[sel.id];
   box.innerHTML=`<b>${sel.name}</b><span class="m">${sel.area} · ${sel.price==='free'?'Free':sel.price} · ${travelLabel(sel)}${sel.event?' · '+(sel.date?nice(fromIso(sel.date)):'until '+nice(fromIso(sel.to))):''}</span><span class="m">${sel.blurb}</span>
-    <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener">Details ›</a><a class="mini" href="https://www.google.com/maps/dir/?api=1&destination=${sel.lat},${sel.lon}&travelmode=${({drive:'driving',cycle:'bicycling',walk:'walking'})[sel.how]||'transit'}" target="_blank" rel="noopener">Directions ›</a></div>`;
+    <div class="row">${st==='saved'?'<span class="badge good">Saved</span>':`<button class="mini" data-ms="saved">♥ Save</button>`}<button class="mini" data-ms="done">✓ Been</button><a class="mini" href="${sel.url}" target="_blank" rel="noopener" data-det="${sel.id}" data-from="map">Details ›</a><a class="mini" href="https://www.google.com/maps/dir/?api=1&destination=${sel.lat},${sel.lon}&travelmode=${({drive:'driving',cycle:'bicycling',walk:'walking'})[sel.how]||'transit'}" target="_blank" rel="noopener">Directions ›</a></div>`;
   box.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{status[sel.id]=b.dataset.ms;save();track('map_action',{id:sel.id,kind:b.dataset.ms});deck=deck.filter(d=>d.id!==sel.id);renderMap();renderStack();toast(b.dataset.ms==='saved'?'Saved ♥':'Ticked off')});
 }
 const ZOOMS=[1,2,4];
@@ -1280,6 +1293,7 @@ $('#q').addEventListener('keydown',e=>{ if(e.key==='Enter') e.target.blur(); });
 
 function go(v,push=true){
   if(v==='deck'&&!setup.lat) v='setup';
+  if(v!=='stats'){ curView=v; dwellAt(v); }
   VIEWS.forEach(x=>$('#v-'+x).hidden=x!==v); $('.wrap').classList.toggle('fit',v==='deck');
   $('#nav').hidden=!setup.lat||v==='stats'; $('#nav').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.go===v));
   if(v==='list')renderList(); if(v==='search')openSearch(); if(v==='map')renderMap(); if(v==='stats')renderStats(); if(v==='setup'){gotoStep('who');renderWho()}
