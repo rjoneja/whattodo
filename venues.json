@@ -8400,6 +8400,94 @@
    },
    "note": "Community hall above Herne Hill station: makers' markets, family cinema, workshops, Santa, classes.",
    "added": "2026-11-06"
+  },
+  {
+   "id": "brockwellgreenhouses",
+   "name": "Brockwell Park Community Greenhouses",
+   "area": "Herne Hill",
+   "borough": "Lambeth",
+   "lat": 51.4525,
+   "lon": -0.1063,
+   "url": "https://www.brockwellgreenhouses.org.uk/event/",
+   "kind": "gardens",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "gardens",
+     "workshops"
+    ]
+   },
+   "note": "Community greenhouses in Brockwell Park: craft and garden workshops, wreath making, open days.",
+   "local": true,
+   "added": "2026-11-06"
+  },
+  {
+   "id": "hernehillforum",
+   "name": "Herne Hill Forum (what's on)",
+   "area": "Herne Hill",
+   "borough": "Lambeth",
+   "lat": 51.4532,
+   "lon": -0.101,
+   "url": "https://www.hernehill.org.uk/events/",
+   "kind": "community",
+   "defaults": {
+    "in": "both",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "note": "Herne Hill's community listings: local classes, parties, brunch clubs and gigs around SE24.",
+   "local": true,
+   "added": "2026-11-06"
+  },
+  {
+   "id": "hernehillvelodrome",
+   "name": "Herne Hill Velodrome",
+   "area": "Herne Hill",
+   "borough": "Southwark",
+   "lat": 51.4458,
+   "lon": -0.0905,
+   "url": "https://www.hernehillvelodrome.com/race",
+   "kind": "park",
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "cycling",
+     "sport"
+    ]
+   },
+   "note": "London's oldest cycling track: free-to-watch races, cyclocross, family sessions. Winter is mostly cyclocross.",
+   "local": true,
+   "added": "2026-11-06"
+  },
+  {
+   "id": "bessonstreettrust",
+   "name": "Besson Street Community Garden",
+   "area": "New Cross",
+   "borough": "Lewisham",
+   "lat": 51.4744,
+   "lon": -0.0457,
+   "url": "https://www.eventbrite.co.uk/o/besson-street-trust-courses-32955268295",
+   "kind": "gardens",
+   "defaults": {
+    "in": "both",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "gardens",
+     "community"
+    ]
+   },
+   "note": "Community garden and courses by the Besson Street Trust; read through Eventbrite's API.",
+   "local": true,
+   "added": "2026-11-06"
   }
  ]
 }
