@@ -1329,14 +1329,18 @@ $('#nav').querySelectorAll('button').forEach(b=>b.onclick=()=>go(b.dataset.go));
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');if(VIEWS.includes(h))go(h,false)});
 (async function boot(){
   renderWho();
-  const qp=new URLSearchParams(location.search); const want=qp.get('e'), via=qp.get('s');
+  // a shared link: remember it for this tab, so a self-update reload (which can drop the address's ?e=) still opens it
+  const qp=new URLSearchParams(location.search); let want=qp.get('e'), via=qp.get('s'), wantName=qp.get('n');
+  try{ if(want) sessionStorage.setItem('wtd.want',JSON.stringify({e:want,n:wantName,s:via,t:Date.now()})); else { const w=JSON.parse(sessionStorage.getItem('wtd.want')||'null'); if(w&&Date.now()-w.t<30000){want=w.e;wantName=w.n;via=w.s;} } }catch(e){}   // good for 30 s: covers the update reload
   if(want){ track('share_open',{id:want,via:via||'link'}); try{history.replaceState(null,'',location.pathname+location.hash)}catch(e){} }
-  if(want){ await Promise.all([loadEvents(),loadImages()]); const ev=[...EVENTS,...ITEMS].find(x=>x.id===want);
-    if(ev){ if(ev.date) setup.date=ev.date; else if(!setup.date||fromIso(setup.date)<new Date(new Date().setHours(0,0,0,0))){const o=whenOptions();setup.date=iso(o.def);}
-      if(!setup.lat){ setup.lat=51.5074; setup.lon=-0.1278; setup.place='Central London'; setup.pc=setup.pc||''; if(!setup.modes.length){setup.modes=['transit'];syncMode();} setup.who=setup.who||'couple'; setup.guest=true; }
-      await buildDeck(); const i=deck.findIndex(x=>x.id===want);
-      if(i>0){ const [x]=deck.splice(i,1); deck.unshift(x); } else if(i<0){ deck.unshift(Object.assign({},ev,trip(ev),{est:true,score:99,why:['shared with you']})); }
-      renderStack(); go('deck'); if(setup.guest) toast('Shared with you · set your postcode in Who & when'); return; } }
+  if(want){ await Promise.all([loadEvents(),loadImages()]); let ev=[...EVENTS,...ITEMS].find(x=>x.id===want);
+    if(!ev){ // the listing's id changed (merged or re-read): find it by name, from the link or from the old id's words
+      const nm=fold(wantName||String(want).replace(/^ev-/,'').replace(/-\d{2}-\d{2}$/,'').replace(/-/g,' ')), today=iso(new Date());
+      const cands=EVENTS.filter(x=>(x.date||x.to||'9999')>=today&&nm&&(fold(x.name).startsWith(nm)||nm.startsWith(fold(x.name))||fold(x.name).includes(nm)));
+      ev=cands.sort((a,b)=>(a.date||a.from||'').localeCompare(b.date||b.from||''))[0]; }
+    if(ev){ await openInDeck(ev.id,'share');           // on a day it's actually on, as the top card
+      if(deck[0]&&deck[0].id===ev.id&&!(deck[0].why||[]).length) deck[0].why=['shared with you'];
+      renderStack(); if(setup.guest) toast('Shared with you · set your postcode in Who & when'); return; } }
   const h=location.hash.replace('#','');
   if(h==='stats'){go('stats');return}
   if(setup.lat&&setup.date&&fromIso(setup.date)>=new Date(new Date().setHours(0,0,0,0))){ await buildDeck(); go(VIEWS.includes(h)&&h!=='setup'?h:'deck'); }
