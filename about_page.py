@@ -41,7 +41,7 @@ ICONS = '<link rel="icon" href="/icons/icon.svg" type="image/svg+xml"><link rel=
 PIN = '<svg viewBox="0 0 60 84" aria-hidden="true"><path fill-rule="evenodd" d="M30 83 C30 83 3 53 3 30 A27 27 0 1 1 57 30 C57 53 30 83 30 83 Z M40 30 A10 10 0 1 0 20 30 A10 10 0 1 0 40 30 Z"/></svg>'
 page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018">{ICONS}
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><meta name="robots" content="noindex">{ICONS}
 <title>About · JauntOut London</title><meta name="description" content="What JauntOut is, where its listings come from, how it makes money and what it does with your data.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Jost:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
