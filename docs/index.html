@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='90d319b94c';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='5e44dd0203';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -88,7 +88,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .err{color:var(--verm);font-size:14px;font-weight:500}
 .row{display:flex;gap:var(--u);align-items:center;flex-wrap:wrap}
 .cta{align-self:stretch;display:flex;justify-content:center;align-items:center;gap:var(--u);background:var(--verm);color:var(--verm-ink);font-family:var(--display);font-weight:700;font-size:19px;padding:calc(var(--u)*2.2);border-radius:14px;box-shadow:var(--shadow)}
-.cta:disabled{opacity:.45;box-shadow:none}
+.cta:disabled{opacity:1;background:var(--verm-soft);color:var(--ink-3);box-shadow:none}   /* solid, so nothing shows through it */
 .ghost{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink-2);align-self:flex-start}
 
 .strip{display:grid;grid-template-columns:1fr auto;gap:var(--u);align-items:center;padding:calc(var(--u)*1.1) calc(var(--u)*1.8);background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:13px}
@@ -285,6 +285,8 @@ td.n{text-align:right}
 #modes{flex-wrap:nowrap}
 #modes .chip{padding:9px 13px;font-size:14px;white-space:nowrap}
 #s-where .cta{position:sticky;bottom:calc(max(2px,env(safe-area-inset-bottom,0px) - 20px) + 64px);z-index:5;padding:calc(var(--u)*1.8)}
+/* while typing, the keyboard squashes the screen: let the button sit in the form, never on top of it */
+#s-where:focus-within .cta{position:static}
 
 .trip .tripfoot{position:sticky;bottom:-12px;background:var(--card);padding:8px 0 12px;margin-bottom:-12px;z-index:2;box-shadow:0 -10px 10px -6px var(--card)}
 @media (max-height:640px){
