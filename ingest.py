@@ -295,7 +295,7 @@ def slug(e): return "ev-" + re.sub(r"[^a-z0-9]+", "-", e["name"].lower()).strip(
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=14); ap.add_argument("--out", default="events.json")
-    ap.add_argument("--venues", default="venues.json"); ap.add_argument("--no-llm", action="store_true"); ap.add_argument("--only")
+    ap.add_argument("--venues", default="venues.json"); ap.add_argument("--no-llm", action="store_true"); ap.add_argument("--only"); ap.add_argument("--unread", action="store_true", help="only venues never read yet (new sources, on the days venue sites are skipped)")
     a = ap.parse_args()
     today = dt.date.today(); horizon = today + dt.timedelta(days=a.days)
     venues = json.load(open(a.venues))["venues"]
@@ -338,7 +338,8 @@ def main():
         return log, ok
 
     from concurrent.futures import ThreadPoolExecutor
-    todo = [v for v in venues if not (a.only and v["id"] != a.only)]
+    todo = [v for v in venues if not (a.only and v["id"] != a.only) and not (a.unread and (v["id"] in CACHE or v.get("added", "") < (today - dt.timedelta(days=14)).isoformat()))]
+    if a.unread: print(f"reading {len(todo)} sources not read before", file=sys.stderr)
     found = []
     with ThreadPoolExecutor(max_workers=int(os.environ.get("INGEST_WORKERS", "6"))) as pool:
         for log, ok in pool.map(one, todo):

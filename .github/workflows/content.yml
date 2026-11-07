@@ -34,6 +34,11 @@ jobs:
         run: python3 ingest.py --days 21 --out docs/events.json
         continue-on-error: true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+      - name: Newly added sources (on the days venue sites are skipped)
+        if: ${{ steps.check.outputs.skip != 'true' && steps.check.outputs.web != 'true' }}
+        run: python3 probe.py --new || true; python3 ingest.py --days 21 --unread --out docs/events.json
+        continue-on-error: true
+        env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
       - name: Instagram
         if: ${{ steps.check.outputs.skip != 'true' && env.IG_TOKEN != '' }}
         run: python3 instagram.py --days 7 --out docs/events.json
