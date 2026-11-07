@@ -14397,7 +14397,8 @@
    "id": "ev-low-life-katrin-moye-and-derrick-guild-11-06",
    "hrs": 1,
    "rel": "keep",
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Yumi Katayama paintings",
@@ -14428,7 +14429,8 @@
    "id": "ev-yumi-katayama-paintings-11-06",
    "hrs": 1,
    "rel": "keep",
-   "lk_try": 2
+   "lk_try": 3,
+   "lk": 1
   },
   {
    "name": "Diwali at the National Maritime Museum",
@@ -15563,7 +15565,12 @@
    "lk": 1,
    "via": "https://www.instagram.com/reel/DfU8eECtJkY/",
    "site": "https://linktr.ee/vamuseum",
-   "dl": "https://www.vam.ac.uk/whatson"
+   "dl": "https://www.vam.ac.uk/whatson",
+   "to": "2027-05-09",
+   "from": "2026-11-07",
+   "also": [
+    "Newsletter: Time Out"
+   ]
   },
   {
    "name": "Film screening: Generative – A Computer Art Documentary",
@@ -19714,6 +19721,68 @@
    "source": "Instagram @tate",
    "site": "https://sked.link/tate",
    "id": "ev-ig-never-the-same-mohammed-z-rahman-art-now-11-07",
+   "hrs": 1,
+   "rel": "keep",
+   "lk": 1
+  },
+  {
+   "name": "Natural Jazz x Voices Radio",
+   "area": "Southbank",
+   "lat": 51.5076,
+   "lon": -0.0994,
+   "in": "in",
+   "price": "£",
+   "ages": [
+    18,
+    99
+   ],
+   "kids": 0,
+   "adults": 3,
+   "dur": 2,
+   "tags": [
+    "jazz",
+    "live music",
+    "bar",
+    "tate modern"
+   ],
+   "blurb": "Live jazz at the Tate Corner Bar with Voices Radio, running from 6 November to 4 December. Check the listing for session times.",
+   "emoji": "🎷",
+   "from": "2026-11-07",
+   "to": "2026-12-04",
+   "url": "http://r.email-newsletters.timeout.com/mk/cl/f/sh/28xHLtxYQ53EbVsO8bM9SggjE6kXDNUL33/ax9UnAFj0U-y",
+   "source": "Newsletter: Time Out",
+   "id": "ev-natural-jazz-x-voices-radio-11-07",
+   "hrs": 1,
+   "rel": "keep",
+   "lk": 1
+  },
+  {
+   "name": "Made in Prague Festival",
+   "area": "Various locations",
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "in": "both",
+   "price": "£",
+   "ages": [
+    12,
+    99
+   ],
+   "kids": 1,
+   "adults": 2,
+   "dur": 2,
+   "tags": [
+    "festival",
+    "czech culture",
+    "arts",
+    "across london"
+   ],
+   "blurb": "Festival celebrating Czech culture with events across various London venues, running until 29 November. Check the festival site for the programme.",
+   "emoji": "🎭",
+   "from": "2026-11-07",
+   "to": "2026-11-29",
+   "url": "http://r.email-newsletters.timeout.com/mk/cl/f/sh/8qyleR3u7gnBrBdGdyKzQELKK23GWMC9eWP/t8G0mxK5F11c",
+   "source": "Newsletter: Time Out",
+   "id": "ev-made-in-prague-festival-11-07",
    "hrs": 1,
    "rel": "keep",
    "lk": 1

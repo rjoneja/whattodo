@@ -162,5 +162,19 @@
   "subject": "Huw Lemmey, ishani 🎒, and Tabish Khan posted new notes",
   "n": 0,
   "day": "2026-11-06"
+ },
+ "<202611062220.75469936754@smtp-relay.mailin.fr>": {
+  "from": "Time Out",
+  "addr": "news@email-newsletters.timeout.com",
+  "subject": "Curate your journey with us and get more of what you love 💌",
+  "n": 0,
+  "day": "2026-11-07"
+ },
+ "<202606111542.6pfsi6n5xlin41zj@email-newsletters.timeout.com>": {
+  "from": "Time Out",
+  "addr": "news@email-newsletters.timeout.com",
+  "subject": "Where to watch fireworks in London this weekend",
+  "n": 3,
+  "day": "2026-11-07"
  }
 }
