@@ -9566,6 +9566,498 @@
    },
    "added": "2026-11-07",
    "note": "Methodist churches' shared calendar; Hampton Methodist on Percy Road hosts community events"
+  },
+  {
+   "id": "southwarklibsunder5",
+   "name": "Southwark libraries: baby & toddler sessions",
+   "area": "Peckham, Nunhead, Camberwell, East Dulwich",
+   "borough": "Southwark",
+   "lat": 51.4741,
+   "lon": -0.0687,
+   "url": "https://www.southwark.gov.uk/culture-and-sport/libraries/library-activities-babies-and-toddlers/story-music-and-play-sessions",
+   "kind": "library",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "books",
+     "toddlers",
+     "local"
+    ],
+    "price": "free"
+   },
+   "added": "2026-11-07",
+   "note": "One council table of every Southwark library's free rhyme times, toddler times and Bookstart sessions; put each session at its own library."
+  },
+  {
+   "id": "lewishamlibskids",
+   "name": "Lewisham libraries: children's events",
+   "area": "Forest Hill, Lee, Crofton Park, Deptford",
+   "borough": "Lewisham",
+   "lat": 51.438,
+   "lon": -0.054,
+   "url": "https://libraries.lewisham.gov.uk/events/category/kids",
+   "kind": "library",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "books",
+     "toddlers",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Lewisham library events for children: rhyme times, baby bounce, Hartbeeps and baby dance; put each at its own library. Skip events already past."
+  },
+  {
+   "id": "calicocroftonpark",
+   "name": "Calico: Crofton Park Library Baby Bounce & Story",
+   "area": "Crofton Park",
+   "borough": "Lewisham",
+   "lat": 51.4547,
+   "lon": -0.0369,
+   "url": "https://www.tickettailor.com/events/calico",
+   "kind": "library",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     2
+    ],
+    "tags": [
+     "books",
+     "toddlers",
+     "local"
+    ],
+    "price": "free"
+   },
+   "added": "2026-11-07",
+   "note": "30-minute songs and rhymes for under-2s at Crofton Park community library, Brockley Rd SE4 2AG, run by Calico (IG calicoprojects)."
+  },
+  {
+   "id": "deptfordloungeunder5",
+   "name": "Deptford Lounge Library Under 5s Rhymes & Stories / Baby Bounce",
+   "area": "Deptford",
+   "borough": "Lewisham",
+   "lat": 51.4765,
+   "lon": -0.0247,
+   "url": "https://deptfordlounge.org.uk/whats-on/event/under-5s-rhymes-and-stories/",
+   "kind": "library",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "books",
+     "toddlers",
+     "local"
+    ],
+    "price": "free"
+   },
+   "added": "2026-11-07",
+   "note": "Already-followed venue. This is its separate under-5 event page (Baby Bounce has its own page too: /whats-on/event/baby-bounce-deptford-lounge-childrens-library/)."
+  },
+  {
+   "id": "nxgstayandplay",
+   "name": "NXG Trust Stay and Play (Besson St)",
+   "area": "New Cross",
+   "borough": "Lewisham",
+   "lat": 51.4741,
+   "lon": -0.0519,
+   "url": "https://www.nxgtrust.org.uk/community/family-learning/",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "toddlers",
+     "play",
+     "local"
+    ],
+    "price": "free"
+   },
+   "added": "2026-11-07",
+   "note": "New Cross Gate Trust stay-and-play for under-5s and carers at its Besson Street centre, SE14."
+  },
+  {
+   "id": "glassmilltoddlers",
+   "name": "Glass Mill Leisure Centre Toddlers World & Family Fun Swim",
+   "area": "Lewisham",
+   "borough": "Lewisham",
+   "lat": 51.464,
+   "lon": -0.013,
+   "url": "https://www.better.org.uk/leisure-centre/london/lewisham/glass-mill-leisure-centre/timetable",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "toddlers",
+     "active",
+     "local"
+    ],
+    "price": "£"
+   },
+   "added": "2026-11-07",
+   "note": "Better leisure centre at 41 Loampit Vale SE13 7FT. Bookable Toddlers World soft play in the Atrium plus teaching-pool family swims."
+  },
+  {
+   "id": "wavelengthssoftplay",
+   "name": "Wavelengths Leisure Centre soft play & leisure pool",
+   "area": "Deptford",
+   "borough": "Lewisham",
+   "lat": 51.477,
+   "lon": -0.0255,
+   "url": "https://www.better.org.uk/leisure-centre/london/lewisham/wavelengths-leisure-centre/timetable",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "toddlers",
+     "active",
+     "local"
+    ],
+    "price": "£"
+   },
+   "added": "2026-11-07",
+   "note": "Deptford leisure centre (Giffin St, SE8) with soft play for kids up to 10 and a leisure pool. Toddler Splash appears in its filters."
+  },
+  {
+   "id": "littlekickersnunhead",
+   "name": "Little Kickers Nunhead (Ivydale School)",
+   "area": "Nunhead",
+   "borough": "Southwark",
+   "lat": 51.4588,
+   "lon": -0.0478,
+   "url": "https://www.littlekickers.co.uk/en-gb/locations/south-east-london/venues/nunhead-se15-saturday-ivydale-school-inverton-site-a0nol000004ernbyau",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     1,
+     4
+    ],
+    "tags": [
+     "toddlers",
+     "active",
+     "local"
+    ],
+    "price": "££"
+   },
+   "added": "2026-11-07",
+   "note": "Toddler football at Ivydale School, Inverton Rd SE15 3DD. Billed monthly on a rolling basis."
+  },
+  {
+   "id": "littlekickersbrockley",
+   "name": "Little Kickers Nunhead/Brockley (Haberdashers' Sports Grounds)",
+   "area": "Brockley",
+   "borough": "Lewisham",
+   "lat": 51.4575,
+   "lon": -0.0455,
+   "url": "https://www.littlekickers.co.uk/en-gb/locations/south-east-london/venues/nunhead-se4-saturday-haberdashers-sports-grounds-a0n1i00000aves6qab",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     1,
+     4
+    ],
+    "tags": [
+     "toddlers",
+     "active",
+     "local"
+    ],
+    "price": "££"
+   },
+   "added": "2026-11-07",
+   "note": "Saturday toddler football at the Haberdashers' playing fields on the SE4/SE15 border. Coordinates are approximate: the page gives no address."
+  },
+  {
+   "id": "littlekickerseastdulwich",
+   "name": "Little Kickers East Dulwich (St Clement with St Peter)",
+   "area": "East Dulwich",
+   "borough": "Southwark",
+   "lat": 51.4505,
+   "lon": -0.07,
+   "url": "https://www.littlekickers.co.uk/en-gb/locations/south-east-london/venues/east-dulwich-se22-st-clement-with-st-peter-parish-hall-thursdays-a0n1i00000cit3wqag",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     1,
+     4
+    ],
+    "tags": [
+     "toddlers",
+     "active",
+     "local"
+    ],
+    "price": "££"
+   },
+   "added": "2026-11-07",
+   "note": "Weekday toddler football in the parish hall at 140 Friern Rd SE22 0AY (SE22 stretch). The Friday page is the same URL ending -fridays-a0ni90000006pouiai."
+  },
+  {
+   "id": "naturetotscwg",
+   "name": "Nature Tots Forest School at Centre for Wildlife Gardening",
+   "area": "Peckham",
+   "borough": "Southwark",
+   "lat": 51.4618,
+   "lon": -0.0722,
+   "url": "https://www.wildlondon.org.uk/node/5469",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     1,
+     4
+    ],
+    "tags": [
+     "outdoors",
+     "toddlers",
+     "nature"
+    ],
+    "price": "££"
+   },
+   "added": "2026-11-07",
+   "note": "London Wildlife Trust (already followed) toddler forest school at 28 Marsden Rd SE15 4EE. This is the separate under-5 programme page."
+  },
+  {
+   "id": "secretadventurers",
+   "name": "Secret Adventurers' Club Little Explorers (Brockley Scout Hut)",
+   "area": "Brockley",
+   "borough": "Lewisham",
+   "lat": 51.4655,
+   "lon": -0.027,
+   "url": "https://bookwhen.com/secretadventurersclub",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "outdoors",
+     "toddlers",
+     "nature"
+    ],
+    "price": "£"
+   },
+   "added": "2026-11-07",
+   "note": "Nature stay-and-play for preschoolers (0-5) at the 1st New Cross Scout Hut, Breakspears Rd area, SE4 1UW. The same club also runs a Tuesday Little Explorers group at Dacres Wood, SE26."
+  },
+  {
+   "id": "bearcubsdeptford",
+   "name": "Bear Cubs toddler group (Leander Community Centre)",
+   "area": "Deptford",
+   "borough": "Lewisham",
+   "lat": 51.4745,
+   "lon": -0.023,
+   "url": "https://hoop.co.uk/bear-cubs",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "toddlers",
+     "play",
+     "local"
+    ],
+    "price": "£"
+   },
+   "added": "2026-11-07",
+   "note": "Under-5s play sessions with craft, stories and songs at Leander Community Centre, Ship St SE8 4DH, plus a Thursday 'Bear Hunt' outdoor play in green spaces across New Cross and Brockley (text 07888 436039 for the week's "
+  },
+  {
+   "id": "christchurchpeckhamplay",
+   "name": "Christ Church Peckham Stay and Play",
+   "area": "Peckham",
+   "borough": "Southwark",
+   "lat": 51.483,
+   "lon": -0.064,
+   "url": "https://www.achurchnearyou.com/church/567/service-and-events/events/780955/",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     4
+    ],
+    "tags": [
+     "toddlers",
+     "play",
+     "local"
+    ],
+    "price": "£"
+   },
+   "added": "2026-11-07",
+   "note": "Church toddler group with toys and activities for babies to preschoolers, 676-680 Old Kent Rd SE15 1JF."
+  },
+  {
+   "id": "stlukespeckhamfun",
+   "name": "St Luke's Peckham Bible Fun",
+   "area": "Peckham",
+   "borough": "Southwark",
+   "lat": 51.4801,
+   "lon": -0.0746,
+   "url": "https://www.achurchnearyou.com/church/571/service-and-events/events/1261547",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     7
+    ],
+    "tags": [
+     "toddlers",
+     "play",
+     "local"
+    ],
+    "price": "free"
+   },
+   "added": "2026-11-07",
+   "note": "After-school family session for babies to about 10s, with snacks from 15:30, at St Luke's, Chandler Way SE15 6DT. Faith-based."
+  },
+  {
+   "id": "kidsyogapeckham",
+   "name": "Kids Yoga in Peckham (The Good Flow)",
+   "area": "Peckham",
+   "borough": "Southwark",
+   "lat": 51.4745,
+   "lon": -0.0545,
+   "url": "https://www.southwark.gov.uk/southwark-presents/kids-yoga-peckham",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     2,
+     12
+    ],
+    "tags": [
+     "toddlers",
+     "active",
+     "local"
+    ],
+    "price": "£"
+   },
+   "added": "2026-11-07",
+   "note": "Weekly kids' yoga suitable from toddlers, at The Somerville, 260 Queens Rd SE14 5JN (Peckham/New Cross border). Do not use the booking link on this page: it goes to Happity."
+  },
+  {
+   "id": "edpicturehousebaby",
+   "name": "East Dulwich Picturehouse: Watch with Baby & Toddler Time",
+   "area": "East Dulwich",
+   "borough": "Southwark",
+   "lat": 51.459,
+   "lon": -0.0745,
+   "url": "https://www.picturehouses.com/cinema/9/information",
+   "kind": "kids",
+   "local": true,
+   "under5": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     1
+    ],
+    "tags": [
+     "toddlers",
+     "play",
+     "local"
+    ],
+    "price": "££"
+   },
+   "added": "2026-11-07",
+   "note": "Parent-and-baby screenings (Wed) and Toddler Time films (Mon, Tue, Fri)"
   }
  ]
 }

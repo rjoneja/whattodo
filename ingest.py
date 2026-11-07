@@ -214,7 +214,7 @@ def harvest_html(venue, horizon, log=None):
         return [dict(e) for e in c["evs"]]
     prompt = f"""Extract things to do in London from this listings page for a weekend-planning app.
 Source: {venue['name']} ({final}). Today is {dt.date.today()}; include only events between today and {horizon}.
-Skip permanent attractions, online events, anything outside the M25 (places just outside the London boroughs but inside the M25, like Thames Ditton or Esher, count), anything without a usable date.
+{("About this source: " + venue['note'] + chr(10)) if venue.get('note') else ""}Skip permanent attractions, online events, anything outside the M25 (places just outside the London boroughs but inside the M25, like Thames Ditton or Esher, count), anything without a usable date.
 Regular sessions the public can join (a weekly class, club, quiz, choir, open studio, baby group) count too: list each ONCE with
 "regular": true, "days": the weekday(s) it runs, "time", and "from"/"to" for the term or season (if no end is given, the next 3 months).
 If the venue is a single place, use lat {venue['lat']}, lon {venue['lon']}; otherwise estimate the venue's coordinates.
