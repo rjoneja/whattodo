@@ -1464,6 +1464,102 @@
     ]
    },
    "added": "2026-11-05"
+  },
+  {
+   "handle": "hellokidskingston",
+   "name": "Hello Kids Kingston",
+   "area": "Kingston",
+   "lat": 51.4123,
+   "lon": -0.3007,
+   "local": true,
+   "kind": "listings",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     12
+    ],
+    "tags": [
+     "kids",
+     "family",
+     "local"
+    ]
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "handle": "hellokidsrichmond",
+   "name": "Hello Kids Richmond",
+   "area": "Richmond",
+   "lat": 51.4613,
+   "lon": -0.3037,
+   "local": true,
+   "kind": "listings",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     12
+    ],
+    "tags": [
+     "kids",
+     "family",
+     "local"
+    ]
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "handle": "hellokidswalthamstow",
+   "name": "Hello Kids Walthamstow",
+   "area": "Walthamstow",
+   "lat": 51.583,
+   "lon": -0.02,
+   "local": true,
+   "kind": "listings",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     12
+    ],
+    "tags": [
+     "kids",
+     "family",
+     "local"
+    ]
+   },
+   "added": "2026-11-07"
+  },
+  {
+   "handle": "hellokidswimbledon",
+   "name": "Hello Kids Wimbledon",
+   "area": "Wimbledon",
+   "lat": 51.4214,
+   "lon": -0.2064,
+   "local": true,
+   "kind": "listings",
+   "defaults": {
+    "in": "both",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     12
+    ],
+    "tags": [
+     "kids",
+     "family",
+     "local"
+    ]
+   },
+   "added": "2026-11-07"
   }
  ],
  "parked": [

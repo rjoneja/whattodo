@@ -110,7 +110,7 @@ def main():
         prompt = f"""This is a London newsletter email from "{name}", sent {sent}. Today is {today.isoformat()}.
 List every event, exhibition, festival, market, show, talk, walk or activity in London that the public can go to
 between {today.isoformat()} and {horizon.isoformat()}. Skip adverts for products, restaurant openings with nothing to attend,
-competitions, things outside London, online-only things and anything already over.
+competitions, things outside the M25, online-only things and anything already over.
 For "url": use the link in the email that goes to THAT event's own page, preferably the venue's or organiser's site
 (links appear as "text [L12]": put just the ref, e.g. "url": "L12"). Use the newsletter's own article link only if
 nothing better is given. Never invent a URL or write one out yourself.
