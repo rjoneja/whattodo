@@ -1560,6 +1560,31 @@
     ]
    },
    "added": "2026-11-07"
+  },
+  {
+   "handle": "_shapes_and_colours_",
+   "name": "Shapes and Colours",
+   "area": "Brockley",
+   "lat": 51.4645,
+   "lon": -0.0375,
+   "local": true,
+   "kind": "kids",
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "ages": [
+     0,
+     5
+    ],
+    "tags": [
+     "kids",
+     "toddlers",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "suggested by Raj; area is a guess (SE4); posts that name a venue get that venue's location"
   }
  ],
  "parked": [
