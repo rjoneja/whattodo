@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='6b69044997';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#122018"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;background:#122018}img{max-width:100%}[hidden]{display:none!important}</style><script>window.WTD_VERSION='90d319b94c';(function(){var u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);}function chk(){if(!/^https?:/.test(location.protocol))return;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.v||j.v===window.WTD_VERSION)return;try{if(sessionStorage.getItem('wtd.upd')===j.v)return;sessionStorage.setItem('wtd.upd',j.v)}catch(e){}var n=new URL(location.href);n.searchParams.set('v',j.v);location.replace(n.toString())}).catch(function(){})}chk();document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})();</script></head><body><title>JauntOut London</title>
 <meta property="og:title" content="JauntOut London">
 <meta property="og:description" content="Swipe through things to do near you this weekend.">
 <meta property="og:url" content="https://www.jauntout.com/">
@@ -47,7 +47,12 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;
 .item.sr{cursor:pointer;grid-template-columns:auto 1fr auto}.item.sr .em{font-size:22px;line-height:1}.item.sr .go{color:var(--moss);font-family:var(--display);font-weight:700}
 .snone{border:1px dashed var(--line);border-radius:14px;padding:16px;color:var(--ink-2);font-size:14px}.snone b{color:var(--ink);display:block;margin-bottom:4px;font-family:var(--display)}
 .snone a,.hint a{color:var(--sky)}
-.hint.aboutl{text-align:center;margin-top:18px;font-size:13px}
+#ages .cta.agesnext{width:100%;margin-top:calc(var(--u)*1.6)}
+#ageChips{flex-wrap:nowrap;gap:6px}#ageChips .chip{flex:1 1 0;min-width:0;padding-inline:0;text-align:center;justify-content:center}
+/* once "Family with kids" is picked the four options slim down, so the ages and Next fit on screen */
+#who.picked{gap:calc(var(--u)*.8)}
+#who.picked .block{min-height:0;padding-block:calc(var(--u)*1.3)}
+#who.picked .block small{display:none}
 
 .eyebrow{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .step{display:flex;flex-direction:column;gap:calc(var(--u)*2)}
@@ -289,6 +294,15 @@ td.n{text-align:right}
   #s-where .pchint{display:none}
   #s-where h2{font-size:24px}
   .step h2{font-size:26px}
+  #who .block{min-height:calc(var(--u)*6.4);padding-block:calc(var(--u)*1.1)}
+  #ages .cta.agesnext{padding:calc(var(--u)*1.6);margin-top:var(--u)}
+  #who.picked .block{padding-block:calc(var(--u)*.8)}
+  #s-who h2{margin-block:calc(var(--u)*.6) calc(var(--u)*1.2)}
+  #s-who:has(#who.picked) .eyebrow{display:none}
+  #s-who:has(#who.picked) h2{margin-top:0}
+  #ages .field{margin-top:calc(var(--u)*.4)}
+  #ages .cta.agesnext{padding:calc(var(--u)*1.3)}
+  .bar .ctx{font-size:11px}
 }
 
 .listyours{margin-top:18px;text-align:center}
@@ -313,6 +327,7 @@ td.n{text-align:right}
       <div id="ages" hidden>
         <div class="field"><label>How old are the kids?</label>
           <div class="chips" id="ageChips"></div></div>
+        <button class="cta agesnext" id="agesNext" disabled>Next <span>›</span></button>
       </div>
     </div>
     <div class="step" id="s-when" hidden>
@@ -339,7 +354,6 @@ td.n{text-align:right}
       <button class="cta" id="go" disabled>Show me things <span>›</span></button>
     </div>
     <div class="row" id="setupNav"><button class="ghost" id="back" hidden>‹ Back</button></div>
-    <p class="hint aboutl"><a href="/submit/">List your event</a></p>
   </section>
 
   <!-- DECK -->
@@ -569,11 +583,11 @@ function whenOptions(){
 function renderWho(){
   $('#who').innerHTML=WHO.map(([k,l,s])=>`<button class="block ${setup.who===k?'on':''}" data-who="${k}">${l}<span><small>${s}</small></span><span class="chev">›</span></button>`).join('');
   $('#who').querySelectorAll('.block').forEach(b=>b.onclick=()=>{setup.who=b.dataset.who;renderWho();
-    if(setup.who==='family'){$('#ages').hidden=false;renderAges();} else {$('#ages').hidden=true;setup.ages=[];gotoStep('when');}});
-  $('#ages').hidden=setup.who!=='family';renderAges();
+    if(setup.who==='family'){$('#ages').hidden=false;renderAges();} else {$('#ages').hidden=true;setup.ages=[];gotoStep('when');} $('#who').classList.toggle('picked',setup.who==='family');});
+  $('#ages').hidden=setup.who!=='family';$('#who').classList.toggle('picked',setup.who==='family');renderAges();
 }
 function renderAges(){
-  $('#ageChips').innerHTML=AGEBANDS.map(([l])=>`<button class="chip ${setup.ages.includes(l)?'on':''}" data-age="${l}">${l}</button>`).join('')+`<button class="chip" id="agesNext" ${setup.ages.length?'':'disabled'}>Next ›</button>`;
+  $('#ageChips').innerHTML=AGEBANDS.map(([l])=>`<button class="chip ${setup.ages.includes(l)?'on':''}" data-age="${l}">${l}</button>`).join(''); $('#agesNext').disabled=!setup.ages.length;
   $('#ageChips').querySelectorAll('[data-age]').forEach(c=>c.onclick=()=>{const a=c.dataset.age;setup.ages=setup.ages.includes(a)?setup.ages.filter(x=>x!==a):[...setup.ages,a];renderAges()});
   $('#agesNext').onclick=()=>gotoStep('when');
 }
