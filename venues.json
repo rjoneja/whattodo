@@ -9082,6 +9082,490 @@
    },
    "added": "2026-11-06",
    "note": "Isle of Dogs local history archive; weekly drop-in history group and an annual open day"
+  },
+  {
+   "id": "thamesconcerts",
+   "name": "Thames Concerts",
+   "area": "Surbiton",
+   "borough": "Kingston upon Thames",
+   "lat": 51.3925,
+   "lon": -0.3075,
+   "url": "https://www.thamesconcerts.com/category/2026-27-concerts/",
+   "kind": "music",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Chamber music series at St Andrew's, Maple Road; also free Farmers' Market Day coffee concerts"
+  },
+  {
+   "id": "kingstonphilharmonia",
+   "name": "Kingston Philharmonia",
+   "area": "Surbiton",
+   "borough": "Kingston upon Thames",
+   "lat": 51.3925,
+   "lon": -0.3075,
+   "url": "https://www.kingstonphilharmonia.org.uk/",
+   "kind": "music",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Amateur symphony orchestra; concerts mostly at St Andrew's Surbiton (full list at dbpage.php?pg=evlist)"
+  },
+  {
+   "id": "antelope",
+   "name": "Antelope (Big Smoke Brew Co)",
+   "area": "Surbiton",
+   "borough": "Kingston upon Thames",
+   "lat": 51.392,
+   "lon": -0.3065,
+   "url": "https://www.theantelope.co.uk/whats-on",
+   "kind": "pub",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "local",
+     "pub"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Ale & cider house on Maple Road; weekly Sunday quiz (WEAK: dated listings stale)"
+  },
+  {
+   "id": "surbitonhighschoolcomm",
+   "name": "Surbiton High School Community Classroom",
+   "area": "Surbiton",
+   "borough": "Kingston upon Thames",
+   "lat": 51.4005,
+   "lon": -0.302,
+   "url": "https://community.surbitonhigh.com/events",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Evening adult courses open to anyone 16+ at Surbiton High, Surbiton Crescent"
+  },
+  {
+   "id": "verafletcherhall",
+   "name": "Vera Fletcher Hall",
+   "area": "Thames Ditton",
+   "borough": "Elmbridge",
+   "lat": 51.3925,
+   "lon": -0.3355,
+   "url": "https://www.verafletcherhall.co.uk/shows/",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Village hall/theatre on Embercourt Road with plays and Friday film nights"
+  },
+  {
+   "id": "thamesdittonfarmersmar",
+   "name": "Thames Ditton Farmers' Market",
+   "area": "Thames Ditton",
+   "borough": "Elmbridge",
+   "lat": 51.389,
+   "lon": -0.3375,
+   "url": "https://residents-association.com/?p=3438",
+   "kind": "market",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "market",
+     "food"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Monthly farmers' market run via the residents' association, Mercer Close car park"
+  },
+  {
+   "id": "thamesdittonwestongree",
+   "name": "Thames Ditton & Weston Green Residents' Association",
+   "area": "Thames Ditton",
+   "borough": "Elmbridge",
+   "lat": 51.3925,
+   "lon": -0.3355,
+   "url": "https://www.residents-association.com/",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 1,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Residents' association; open public meetings at Vera Fletcher Hall (WEAK: civic rather than leisure)"
+  },
+  {
+   "id": "dittonslibrary",
+   "name": "Dittons Library",
+   "area": "Thames Ditton",
+   "borough": "Elmbridge",
+   "lat": 51.389,
+   "lon": -0.337,
+   "url": "https://www.surreycc.gov.uk/libraries/your-library/find-your-nearest/dittons/events-and-activities",
+   "kind": "library",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "books",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Surrey library at Mercer Close; rhymetimes, storytimes, art club, monthly art classes"
+  },
+  {
+   "id": "thamesdittonregatta",
+   "name": "Thames Ditton Regatta",
+   "area": "Thames Ditton",
+   "borough": "Elmbridge",
+   "lat": 51.4005,
+   "lon": -0.3345,
+   "url": "https://thamesdittonregatta.co.uk/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Rowing regatta on the Thames alongside Hampton Court Palace; free to watch from the bank"
+  },
+  {
+   "id": "stmaryslongditton",
+   "name": "St Mary's Long Ditton",
+   "area": "Long Ditton",
+   "borough": "Elmbridge",
+   "lat": 51.3855,
+   "lon": -0.322,
+   "url": "https://www.stmaryslongditton.org.uk/events",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Parish church running 'BookBox' evening talks (£10) plus monthly Evensong"
+  },
+  {
+   "id": "longdittonresidentsass",
+   "name": "Long Ditton Residents Association - What's On",
+   "area": "Long Ditton",
+   "borough": "Elmbridge",
+   "lat": 51.3865,
+   "lon": -0.3145,
+   "url": "https://longditton.org/whats-on/",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 1,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Residents' association listing of local groups (WEAK: recurring only, latest dated post 2025)"
+  },
+  {
+   "id": "emberchoralsociety",
+   "name": "Ember Choral Society",
+   "area": "Claygate",
+   "borough": "Elmbridge",
+   "lat": 51.3605,
+   "lon": -0.336,
+   "url": "https://emberchoral.org.uk/next-concert/",
+   "kind": "music",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 3,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Local choral society performing at Holy Trinity Church, Claygate"
+  },
+  {
+   "id": "eshertheatre",
+   "name": "Esher Theatre",
+   "area": "Esher",
+   "borough": "Elmbridge",
+   "lat": 51.37,
+   "lon": -0.3655,
+   "url": "https://eshertheatre.com/whats-on",
+   "kind": "theatre",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 2,
+    "adults": 3,
+    "tags": [
+     "theatre",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Live venue in Community Walk, Esher: tribute acts, comedy, talks, panto"
+  },
+  {
+   "id": "garsonsesher",
+   "name": "Garsons Esher",
+   "area": "Esher",
+   "borough": "Elmbridge",
+   "lat": 51.362,
+   "lon": -0.388,
+   "url": "https://www.garsons.co.uk/activities",
+   "kind": "farm",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 2,
+    "adults": 2,
+    "tags": [
+     "animals",
+     "outdoors"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Family-run farm shop, garden centre and PYO with seasonal fairs and workshops"
+  },
+  {
+   "id": "elmbridgemuseum",
+   "name": "Elmbridge Museum",
+   "area": "Esher",
+   "borough": "Elmbridge",
+   "lat": 51.369,
+   "lon": -0.364,
+   "url": "https://elmbridgemuseum.org.uk/whats-on/",
+   "kind": "gallery",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "art",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Council-run museum with no single building; pop-up exhibitions in libraries and the Esher Civic Centre"
+  },
+  {
+   "id": "elmbridgeboroughcounci",
+   "name": "Elmbridge Borough Council - Royston Pike Lectures",
+   "area": "Elmbridge-wide (Walton-on-Thames venue)",
+   "borough": "Elmbridge",
+   "lat": 51.3895,
+   "lon": -0.417,
+   "url": "https://elmbridge.gov.uk/leisure-and-culture/arts-and-culture-whats/royston-pike-lectures",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Council's long-running £4 public lecture series; venue is Riverhouse Barn, Walton (outside the target patch)"
+  },
+  {
+   "id": "elmbridgeboroughcounci2",
+   "name": "Elmbridge Borough Council - Wellbeing Walks",
+   "area": "East Molesey / Claygate",
+   "borough": "Elmbridge",
+   "lat": 51.4,
+   "lon": -0.348,
+   "url": "https://www.elmbridge.gov.uk/sports-and-health/physical-activity/wellbeing-walks/walk-and-talk-and-regular-walks",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Free drop-in led walks, no booking"
+  },
+  {
+   "id": "moleseylocalhistorysoc",
+   "name": "Molesey Local History Society",
+   "area": "East Molesey",
+   "borough": "Elmbridge",
+   "lat": 51.399,
+   "lon": -0.349,
+   "url": "https://moleseyhistorysociety.org/mlhs/events",
+   "kind": "talks",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 2,
+    "tags": [
+     "history",
+     "talks"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Evening history talks; £3 non-members, cash"
+  },
+  {
+   "id": "stpeterscommunityandyo",
+   "name": "St Peter's Community and Youth Hub",
+   "area": "West Molesey",
+   "borough": "Elmbridge",
+   "lat": 51.3985,
+   "lon": -0.372,
+   "url": "https://spwm.org.uk/hub",
+   "kind": "community",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 3,
+    "adults": 1,
+    "tags": [
+     "local",
+     "community"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Church-run hub on Ray Road with monthly family sessions"
+  },
+  {
+   "id": "kingstonfirstchristmas",
+   "name": "Kingston First - Christmas in Kingston",
+   "area": "Kingston town centre",
+   "borough": "Kingston upon Thames",
+   "lat": 51.41,
+   "lon": -0.306,
+   "url": "https://www.kingstonfirst.co.uk/christmas-in-kingston-2026-everyones-coming-to-ours/",
+   "kind": "market",
+   "local": true,
+   "defaults": {
+    "in": "out",
+    "kids": 3,
+    "adults": 2,
+    "tags": [
+     "market",
+     "food"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Business improvement district's seasonal programme: markets, light installations, rides"
+  },
+  {
+   "id": "thebellinnhampton",
+   "name": "The Bell Inn Hampton",
+   "area": "Hampton",
+   "borough": "Richmond upon Thames",
+   "lat": 51.409,
+   "lon": -0.366,
+   "url": "https://www.thebellinnhampton.co.uk/",
+   "kind": "pub",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 0,
+    "adults": 3,
+    "tags": [
+     "local",
+     "pub"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Riverside pub opposite Hurst Park with gigs, Sunday quiz and a monthly comedy club; events page at /events/"
+  },
+  {
+   "id": "hamptonmissionpartners",
+   "name": "Hampton Mission Partnership (Hampton Methodist Church)",
+   "area": "Hampton",
+   "borough": "Richmond upon Thames",
+   "lat": 51.418,
+   "lon": -0.37,
+   "url": "https://hamptonmissionpartnership.org.uk/calendar/list/",
+   "kind": "church",
+   "local": true,
+   "defaults": {
+    "in": "in",
+    "kids": 1,
+    "adults": 2,
+    "tags": [
+     "music",
+     "local"
+    ]
+   },
+   "added": "2026-11-07",
+   "note": "Methodist churches' shared calendar; Hampton Methodist on Percy Road hosts community events"
   }
  ]
 }
