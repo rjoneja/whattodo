@@ -24,6 +24,7 @@ jobs:
         if: ${{ github.event.inputs.skip_ingest != 'yes' }}
         continue-on-error: true
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}
+      - run: python3 deep_links.py || true
       - run: python3 eventbrite_fill.py || true
       - run: python3 tidy.py
         env: {ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"}

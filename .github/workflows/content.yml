@@ -44,6 +44,9 @@ jobs:
           IG_USER_ID: "${{ secrets.IG_USER_ID }}"
           IG_HOST: graph.facebook.com
           IG_API_VERSION: v26.0
+      - name: Each event's own page
+        if: ${{ steps.check.outputs.skip != 'true' }}
+        run: python3 deep_links.py || true
       - name: Eventbrite details
         if: ${{ steps.check.outputs.skip != 'true' }}
         run: python3 eventbrite_fill.py || true

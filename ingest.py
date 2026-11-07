@@ -44,9 +44,16 @@ def get(url):
     with urlopen(req, timeout=25) as r:
         return r.geturl(), r.read().decode("utf-8", "ignore")
 
-def page_text(doc):
+def page_text(doc, base=None):
+    """The page's text. With base, links stay in as "text [url]" so each event can get its own page, not the listing."""
     doc = re.sub(r"(?is)<(script|style|nav|footer|header).*?</\1>", " ", doc)
-    return html.unescape(re.sub(r"\s+", " ", re.sub(r"(?s)<[^>]+>", " ", doc)))[:40000]
+    if base:
+        def a(m):
+            href = urljoin(base, html.unescape(m.group(1)).strip()); t = re.sub(r"<[^>]+>", " ", m.group(2))
+            if not href.startswith("http") or href.rstrip("/") == base.rstrip("/") or len(re.sub(r"\s+", "", t)) < 3: return t
+            return f"{t} [{href[:160]}]"
+        doc = re.sub(r'(?is)<a\b[^>]*href=["\']([^"\'#]+)["\'][^>]*>(.*?)</a>', a, doc)
+    return html.unescape(re.sub(r"\s+", " ", re.sub(r"(?s)<[^>]+>", " ", doc)))[:48000]
 
 # ---------- JSON-LD ----------
 def ld_objects(doc):
@@ -198,7 +205,7 @@ CACHE = json.load(open(CACHE_P)) if os.path.exists(CACHE_P) else {}
 def harvest_html(venue, horizon, log=None):
     try: final, doc = get(listing_url(venue))
     except Exception as ex: print(f"  fetch failed: {ex}", file=sys.stderr); return []
-    text = page_text(doc)
+    text = page_text(doc, final)
     import hashlib
     h = hashlib.sha1(re.sub(r"\d{1,2}:\d{2}(:\d{2})?", "", text).encode()).hexdigest()[:16]
     c = CACHE.get(venue["id"])
@@ -211,6 +218,8 @@ Skip permanent attractions, online events, anything outside Greater London, anyt
 Regular sessions the public can join (a weekly class, club, quiz, choir, open studio, baby group) count too: list each ONCE with
 "regular": true, "days": the weekday(s) it runs, "time", and "from"/"to" for the term or season (if no end is given, the next 3 months).
 If the venue is a single place, use lat {venue['lat']}, lon {venue['lon']}; otherwise estimate the venue's coordinates.
+For "url": each event's OWN page. Links in the text appear as "text [url]"; use the one next to that event (its title, "more info",
+"book"). Use the listing page {final} only if the event has no link of its own.
 Return ONLY a JSON array of at most 40 events, most relevant first.
 {SCHEMA}
 PAGE TEXT:
@@ -247,7 +256,7 @@ EVENTS: {json.dumps(compact, ensure_ascii=False)}"""
     return evs
 
 # fields later steps work out (relevance, hours, official link): keep them when an event is re-scraped
-CARRY = ("rel", "hrs", "days", "open", "close", "part", "lk", "lk_try", "via", "site", "emoji", "eb")
+CARRY = ("rel", "hrs", "days", "open", "close", "part", "lk", "lk_try", "via", "site", "emoji", "eb", "dl")
 def carry(old, new):
     for f in CARRY:
         if f in old and f not in new: new[f] = old[f]
